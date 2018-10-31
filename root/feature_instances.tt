@@ -1,0 +1,155 @@
+[%
+  USE JSON (convert_blessed => 1);
+
+  IF !suffix.defined;
+    suffix = '';
+  END;
+  id_dg_div = "bubblegram_seq" _ seq.id _ suffix;
+
+  dg = [{
+    id       => seq.id,
+    length   => seq.len,
+    domains  => [],
+    sites_up => [],
+  }];
+
+  fis = seq.feature_insts_no_overlap;
+  FOREACH fi IN fis.${source};
+    f = fi.feature;
+    e = fi.e_value FILTER format('%.2e');
+    dg.0.domains.push({
+      start          => fi.start_seq,
+      end            => fi.end_seq,
+      title          => f.id_src,
+      tt_desc        => f.ac_src _ ': ' _ f.description,
+      start_complete => 1,
+      end_complete   => 1,
+      display        => 1,
+    });
+  END;
+
+  IF posns.size > 0;
+    FOREACH pos_a1 IN posns;
+      FOREACH site IN json.results.thing.sites.${seq.id}.${pos_a1}.sites;
+        label_a1 = site.label;
+        blosum62 = site.blosum62;
+
+        IF (id_seq_b1 != '') AND (id_ch != '');
+          IF site.ppis.${id_seq_b1}.${id_ch}.defined;
+            ie = site.ppis.${id_seq_b1}.${id_ch}.ie;
+            ie_class = site.ppis.${id_seq_b1}.${id_ch}.ie_class;
+            tt_desc = site.label _ ', IE = ' _ ie _ ' (' _ ie_class _ ')';
+          ELSE;
+            ie = 0;
+            ie_class = 'not in this interface';
+            tt_desc = site.label _ ', IE = ' _ ie _ ' (' _ ie_class _ ')';
+          END;
+        ELSIF (id_fh != '') AND (type_chem != '') AND (id_chem != '');
+          IF site.pcis.${type_chem}.${id_chem}.${id_fh}.defined;
+            ie = site.pcis.${type_chem}.${id_chem}.${id_fh}.ie;
+            ie_class = site.pcis.${type_chem}.${id_chem}.${id_fh}.ie_class;
+            tt_desc = site.label _ ', IE = ' _ ie _ ' (' _ ie_class _ ')';
+          ELSIF site.pdis.${type_chem}.${id_chem}.${id_fh}.defined;
+            ie = site.pdis.${type_chem}.${id_chem}.${id_fh}.ie;
+            ie_class = site.pdis.${type_chem}.${id_chem}.${id_fh}.ie_class;
+            tt_desc = site.label _ ', IE = ' _ ie _ ' (' _ ie_class _ ')';
+          ELSE;
+            ie = 0;
+            ie_class = 'not in this interface';
+            tt_desc = site.label _ ', IE = ' _ ie _ ' (' _ ie_class _ ')';
+          END;
+        ELSE;
+          tt_desc = site.label _ ', Mechismo Score = ' _ site.mechScore;
+          IF site.mechScore > 0;
+            ie_class = "unknown";
+          ELSE;
+            ie_class = "not in this interface";
+          END;
+        END;
+
+        SWITCH ie_class;
+          CASE 'disabling';
+            headColour = "#FF0000";
+            headStyle = "diamond";
+          CASE 'disablingWeak';
+            headColour = "#FFAAAA";
+            headStyle = "diamond";
+          CASE 'neutral';
+            headColour = "#00CED1";
+            headStyle = "diamond";
+          CASE 'enabling';
+            headColour = "#00FF00";
+            headStyle = "diamond";
+          CASE 'enablingWeak';
+            headColour = "#AAFFAA";
+            headStyle = "diamond";
+          CASE 'unknown';
+            headColour = "#B22222";
+            headStyle = "diamond";
+          CASE;
+            headColour = "#EEEEEE";
+            headStyle = "circle";
+        END;
+
+        dg.0.sites_up.push({
+          lineColour => "#000000",
+          popHeight  => 1.0,
+          headStyle  => headStyle,
+          tt_desc    => tt_desc,
+          headColour => headColour,
+          position   => pos_a1,
+          display    => 1,
+          tt_type    => "mutation",
+        });
+      END;
+    END;
+  END;
+%]
+
+<!-- where we want to put the images/canvas -->
+<div id="[% id_dg_div %]" class='bubblegram'></div>
+
+<!-- code for generating tag dynamically by native javascript -->
+<script type="application/javascript">
+    <!-- escape jquery, use $j instead of $ in this html page -->
+    var $j=jQuery.noConflict();
+
+    $j(document).ready(function () {
+        <!-- dg_json is a list of bubblegrams, theoretically, it can contain -->
+        <!-- multiple bubblegrams, but in our case, there is just one bubblegram. -->
+        <!-- So we iterate the list anyway.-->
+        var i = 0;
+        $j.each([% dg.json %], function(key,value) {
+            i++;
+
+            <!-- inside a jQuery function -->
+            var container=document.getElementById("[% id_dg_div %]");
+
+            /*
+            var newPara=document.createElement("p");
+            var node=document.createTextNode("some Id (text element)");
+            newPara.appendChild(node);
+            container.appendChild(newPara);
+            */
+  
+            <!-- create new div element for single bubble gram -->
+            var newdiv=document.createElement("div");
+            newdiv.id = "[% id_dg_div %]_" + i;
+            newdiv.className='inner';
+            container.appendChild(newdiv);
+
+            <!-- spacer to separate multiple bubblegrams, defined in common.css -->
+            var spacer=document.createElement("div");
+            spacer.className="spacer30"
+            container.appendChild(spacer);
+  
+            try {
+                <!-- Parameters: json object, div tag, scale (float) -->
+                parser.draw(value,newdiv,2.0 );
+            }
+            catch(err) {
+                alert("cannot draw");
+            }
+        });
+    })
+</script>

@@ -1,0 +1,738 @@
+{
+   "parent" : {
+      "35" : "0",
+      "11" : "34",
+      "21" : "12",
+      "26" : "35",
+      "17" : "11",
+      "2" : "32",
+      "22" : "12",
+      "1" : "32",
+      "18" : "11",
+      "0" : "33",
+      "30" : "36",
+      "23" : "13",
+      "16" : "13",
+      "13" : "34",
+      "29" : "36",
+      "27" : "35",
+      "25" : "13",
+      "6" : "3",
+      "28" : "35",
+      "3" : "32",
+      "36" : "0",
+      "12" : "34",
+      "20" : "12",
+      "14" : "11",
+      "15" : "12",
+      "4" : "1",
+      "34" : "0",
+      "24" : "13",
+      "19" : "11",
+      "31" : "36",
+      "5" : "2"
+   },
+   "idx_node" : 36,
+   "visited" : {
+      "32" : "finished",
+      "33" : "finished",
+      "21" : "finished",
+      "7" : "finished",
+      "26" : "finished",
+      "2" : "finished",
+      "17" : "finished",
+      "1" : "finished",
+      "18" : "finished",
+      "30" : "finished",
+      "16" : "finished",
+      "27" : "finished",
+      "25" : "finished",
+      "28" : "finished",
+      "20" : "finished",
+      "14" : "finished",
+      "24" : "finished",
+      "10" : "finished",
+      "31" : "finished",
+      "35" : "finished",
+      "11" : "finished",
+      "22" : "finished",
+      "0" : "finished",
+      "13" : "finished",
+      "23" : "finished",
+      "29" : "finished",
+      "6" : "finished",
+      "36" : "finished",
+      "3" : "finished",
+      "9" : "finished",
+      "12" : "finished",
+      "15" : "finished",
+      "8" : "finished",
+      "4" : "finished",
+      "34" : "finished",
+      "19" : "finished",
+      "5" : "finished"
+   },
+   "children" : {
+      "33" : {
+         "0" : {
+            "source" : 33,
+            "target" : 0,
+            "value" : "20233"
+         }
+      },
+      "32" : {
+         "1" : {
+            "source" : 32,
+            "target" : 1,
+            "value" : "749083"
+         },
+         "3" : {
+            "source" : 32,
+            "target" : 3,
+            "value" : "359553"
+         },
+         "2" : {
+            "source" : 32,
+            "target" : 2,
+            "value" : "41563"
+         }
+      },
+      "21" : {},
+      "7" : {},
+      "26" : {},
+      "17" : {},
+      "2" : {
+         "5" : {
+            "source" : 2,
+            "target" : 5,
+            "value" : "2108"
+         }
+      },
+      "1" : {
+         "4" : {
+            "source" : 1,
+            "target" : 4,
+            "value" : "116940"
+         }
+      },
+      "18" : {},
+      "30" : {},
+      "16" : {},
+      "25" : {},
+      "27" : {},
+      "28" : {},
+      "20" : {},
+      "14" : {},
+      "24" : {},
+      "10" : {},
+      "31" : {},
+      "35" : {
+         "27" : {
+            "source" : 35,
+            "target" : 27,
+            "value" : "3067"
+         },
+         "28" : {
+            "source" : 35,
+            "target" : 28,
+            "value" : "1313"
+         },
+         "26" : {
+            "source" : 35,
+            "target" : 26,
+            "value" : "810"
+         }
+      },
+      "11" : {
+         "18" : {
+            "source" : 11,
+            "target" : 18,
+            "value" : "13689"
+         },
+         "19" : {
+            "source" : 11,
+            "target" : 19,
+            "value" : "7195"
+         },
+         "17" : {
+            "source" : 11,
+            "target" : 17,
+            "value" : "5011"
+         },
+         "14" : {
+            "source" : 11,
+            "target" : 14,
+            "value" : "4965"
+         }
+      },
+      "22" : {},
+      "0" : {
+         "35" : {
+            "source" : 0,
+            "target" : 35,
+            "value" : 5190
+         },
+         "34" : {
+            "source" : 0,
+            "target" : 34,
+            "value" : 1586461
+         },
+         "36" : {
+            "source" : 0,
+            "target" : 36,
+            "value" : 19220
+         }
+      },
+      "13" : {
+         "25" : {
+            "source" : 13,
+            "target" : 25,
+            "value" : "2350"
+         },
+         "24" : {
+            "source" : 13,
+            "target" : 24,
+            "value" : "4614"
+         },
+         "23" : {
+            "source" : 13,
+            "target" : 23,
+            "value" : "2028"
+         },
+         "16" : {
+            "source" : 13,
+            "target" : 16,
+            "value" : "2018"
+         }
+      },
+      "23" : {},
+      "29" : {},
+      "6" : {},
+      "36" : {
+         "30" : {
+            "source" : 36,
+            "target" : 30,
+            "value" : "10320"
+         },
+         "31" : {
+            "source" : 36,
+            "target" : 31,
+            "value" : "4081"
+         },
+         "29" : {
+            "source" : 36,
+            "target" : 29,
+            "value" : "4819"
+         }
+      },
+      "3" : {
+         "6" : {
+            "source" : 3,
+            "target" : 6,
+            "value" : "71724"
+         }
+      },
+      "9" : {},
+      "12" : {
+         "22" : {
+            "source" : 12,
+            "target" : 22,
+            "value" : "15455"
+         },
+         "21" : {
+            "source" : 12,
+            "target" : 21,
+            "value" : "21658"
+         },
+         "20" : {
+            "source" : 12,
+            "target" : 20,
+            "value" : "14197"
+         },
+         "15" : {
+            "source" : 12,
+            "target" : 15,
+            "value" : "14192"
+         }
+      },
+      "15" : {},
+      "8" : {},
+      "4" : {},
+      "34" : {
+         "11" : {
+            "source" : 34,
+            "target" : 11,
+            "value" : "34475"
+         },
+         "13" : {
+            "source" : 34,
+            "target" : 13,
+            "value" : "44024"
+         },
+         "12" : {
+            "source" : 34,
+            "target" : 12,
+            "value" : "1507962"
+         }
+      },
+      "19" : {},
+      "5" : {}
+   },
+   "nodes" : [
+      {
+         "n" : "20233",
+         "desc" : "Homo sapiens",
+         "name" : "Taxon-9606",
+         "class" : "normal",
+         "idx" : "0"
+      },
+      {
+         "n" : "749083",
+         "desc" : "PPI",
+         "name" : "pp",
+         "class" : "normal",
+         "idx" : "1"
+      },
+      {
+         "n" : "41563",
+         "desc" : "PDI",
+         "name" : "pd",
+         "class" : "normal",
+         "idx" : "2"
+      },
+      {
+         "n" : "359553",
+         "desc" : "PCI",
+         "name" : "pc",
+         "class" : "normal",
+         "idx" : "3"
+      },
+      {
+         "n" : "116940",
+         "desc" : "NR PPI",
+         "name" : "pp90",
+         "class" : "normal",
+         "idx" : "4"
+      },
+      {
+         "n" : "2108",
+         "desc" : "NR PDI",
+         "name" : "pd90",
+         "class" : "normal",
+         "idx" : "5"
+      },
+      {
+         "n" : "71724",
+         "desc" : "NR PCI",
+         "name" : "pc90",
+         "class" : "normal",
+         "idx" : "6"
+      },
+      {
+         "n" : "2984680",
+         "desc" : "ppPred",
+         "name" : "ppPred",
+         "class" : "normal",
+         "idx" : "7"
+      },
+      {
+         "n" : "63738",
+         "desc" : "High",
+         "name" : "ppPredHigh",
+         "class" : "high",
+         "idx" : "8"
+      },
+      {
+         "n" : "2828994",
+         "desc" : "Low",
+         "name" : "ppPredLow",
+         "class" : "low",
+         "idx" : "9"
+      },
+      {
+         "n" : "91948",
+         "desc" : "Med",
+         "name" : "ppPredMed",
+         "class" : "med",
+         "idx" : "10"
+      },
+      {
+         "n" : "34475",
+         "desc" : "High",
+         "name" : "ppPred-Taxon-9606-High",
+         "class" : "high",
+         "idx" : "11"
+      },
+      {
+         "n" : "1507962",
+         "desc" : "Low",
+         "name" : "ppPred-Taxon-9606-Low",
+         "class" : "low",
+         "idx" : "12"
+      },
+      {
+         "n" : "44024",
+         "desc" : "Med",
+         "name" : "ppPred-Taxon-9606-Med",
+         "class" : "med",
+         "idx" : "13"
+      },
+      {
+         "n" : "4965",
+         "desc" : "Direct",
+         "name" : "ppPred-Taxon-9606-High-Known-Direct",
+         "class" : "high",
+         "idx" : "14"
+      },
+      {
+         "n" : "14192",
+         "desc" : "Direct",
+         "name" : "ppPred-Taxon-9606-Low-Known-Direct",
+         "class" : "low",
+         "idx" : "15"
+      },
+      {
+         "n" : "2018",
+         "desc" : "Direct",
+         "name" : "ppPred-Taxon-9606-Med-Known-Direct",
+         "class" : "med",
+         "idx" : "16"
+      },
+      {
+         "n" : "5011",
+         "desc" : "UniRef100",
+         "name" : "ppPred-Taxon-9606-High-Known-UniRef100",
+         "class" : "high",
+         "idx" : "17"
+      },
+      {
+         "n" : "13689",
+         "desc" : "UniRef50",
+         "name" : "ppPred-Taxon-9606-High-Known-UniRef50",
+         "class" : "high",
+         "idx" : "18"
+      },
+      {
+         "n" : "7195",
+         "desc" : "UniRef90",
+         "name" : "ppPred-Taxon-9606-High-Known-UniRef90",
+         "class" : "high",
+         "idx" : "19"
+      },
+      {
+         "n" : "14197",
+         "desc" : "UniRef100",
+         "name" : "ppPred-Taxon-9606-Low-Known-UniRef100",
+         "class" : "low",
+         "idx" : "20"
+      },
+      {
+         "n" : "21658",
+         "desc" : "UniRef50",
+         "name" : "ppPred-Taxon-9606-Low-Known-UniRef50",
+         "class" : "low",
+         "idx" : "21"
+      },
+      {
+         "n" : "15455",
+         "desc" : "UniRef90",
+         "name" : "ppPred-Taxon-9606-Low-Known-UniRef90",
+         "class" : "low",
+         "idx" : "22"
+      },
+      {
+         "n" : "2028",
+         "desc" : "UniRef100",
+         "name" : "ppPred-Taxon-9606-Med-Known-UniRef100",
+         "class" : "med",
+         "idx" : "23"
+      },
+      {
+         "n" : "4614",
+         "desc" : "UniRef50",
+         "name" : "ppPred-Taxon-9606-Med-Known-UniRef50",
+         "class" : "med",
+         "idx" : "24"
+      },
+      {
+         "n" : "2350",
+         "desc" : "UniRef90",
+         "name" : "ppPred-Taxon-9606-Med-Known-UniRef90",
+         "class" : "med",
+         "idx" : "25"
+      },
+      {
+         "n" : "810",
+         "desc" : "High",
+         "name" : "pdPred-Taxon-9606-High",
+         "class" : "high",
+         "idx" : "26"
+      },
+      {
+         "n" : "3067",
+         "desc" : "Low",
+         "name" : "pdPred-Taxon-9606-Low",
+         "class" : "low",
+         "idx" : "27"
+      },
+      {
+         "n" : "1313",
+         "desc" : "Med",
+         "name" : "pdPred-Taxon-9606-Med",
+         "class" : "med",
+         "idx" : "28"
+      },
+      {
+         "n" : "4819",
+         "desc" : "High",
+         "name" : "pcPred-Taxon-9606-High",
+         "class" : "high",
+         "idx" : "29"
+      },
+      {
+         "n" : "10320",
+         "desc" : "Low",
+         "name" : "pcPred-Taxon-9606-Low",
+         "class" : "low",
+         "idx" : "30"
+      },
+      {
+         "n" : "4081",
+         "desc" : "Med",
+         "name" : "pcPred-Taxon-9606-Med",
+         "class" : "med",
+         "idx" : "31"
+      },
+      {
+         "n" : 1150199,
+         "desc" : "Interactions of Known Structure",
+         "name" : "Interactions of Known Structure",
+         "class" : "normal",
+         "idx" : "32"
+      },
+      {
+         "n" : 20233,
+         "desc" : "Proteins",
+         "name" : "Proteins",
+         "class" : "normal",
+         "idx" : "33"
+      },
+      {
+         "n" : 1586461,
+         "desc" : "ppPred-Taxon-9606",
+         "name" : "ppPred-Taxon-9606",
+         "class" : "normal",
+         "idx" : "34"
+      },
+      {
+         "n" : 5190,
+         "desc" : "pdPred-Taxon-9606",
+         "name" : "pdPred-Taxon-9606",
+         "class" : "normal",
+         "idx" : "35"
+      },
+      {
+         "n" : 19220,
+         "desc" : "pcPred-Taxon-9606",
+         "name" : "pcPred-Taxon-9606",
+         "class" : "normal",
+         "idx" : "36"
+      }
+   ],
+   "node2idx" : {
+      "pcPred-Taxon-9606-Med" : 31,
+      "ppPred-Taxon-9606-Med-Known-UniRef100" : 23,
+      "ppPred-Taxon-9606-High-Known-UniRef50" : 18,
+      "pcPred-Taxon-9606-Low" : 30,
+      "pdPred-Taxon-9606-Low" : 27,
+      "ppPred-Taxon-9606-High-Known-Direct" : 14,
+      "ppPred-Taxon-9606-Low-Known-UniRef100" : 20,
+      "ppPred-Taxon-9606-Med-Known-Direct" : 16,
+      "Taxon-9606" : 0,
+      "pd90" : 5,
+      "pc90" : 6,
+      "pp90" : 4,
+      "ppPredLow" : 9,
+      "ppPred-Taxon-9606-High-Known-UniRef100" : 17,
+      "ppPred-Taxon-9606-Low" : 12,
+      "ppPredMed" : 10,
+      "ppPred-Taxon-9606-High" : 11,
+      "ppPred-Taxon-9606-High-Known-UniRef90" : 19,
+      "pd" : 2,
+      "ppPred-Taxon-9606-Low-Known-Direct" : 15,
+      "ppPred-Taxon-9606-Med" : 13,
+      "ppPred-Taxon-9606" : 34,
+      "pcPred-Taxon-9606-High" : 29,
+      "pc" : 3,
+      "pdPred-Taxon-9606-High" : 26,
+      "ppPred-Taxon-9606-Low-Known-UniRef90" : 22,
+      "pdPred-Taxon-9606-Med" : 28,
+      "ppPredHigh" : 8,
+      "ppPred-Taxon-9606-Low-Known-UniRef50" : 21,
+      "pdPred-Taxon-9606" : 35,
+      "pcPred-Taxon-9606" : 36,
+      "pp" : 1,
+      "Proteins" : 33,
+      "ppPred" : 7,
+      "ppPred-Taxon-9606-Med-Known-UniRef50" : 24,
+      "ppPred-Taxon-9606-Med-Known-UniRef90" : 25,
+      "Interactions of Known Structure" : 32
+   },
+   "links" : [
+      {
+         "source" : 32,
+         "target" : 1,
+         "value" : "749083"
+      },
+      {
+         "source" : 32,
+         "target" : 3,
+         "value" : "359553"
+      },
+      {
+         "source" : 32,
+         "target" : 2,
+         "value" : "41563"
+      },
+      {
+         "source" : 1,
+         "target" : 4,
+         "value" : "116940"
+      },
+      {
+         "source" : 3,
+         "target" : 6,
+         "value" : "71724"
+      },
+      {
+         "source" : 2,
+         "target" : 5,
+         "value" : "2108"
+      },
+      {
+         "source" : 33,
+         "target" : 0,
+         "value" : "20233"
+      },
+      {
+         "source" : 0,
+         "target" : 34,
+         "value" : 1586461
+      },
+      {
+         "source" : 0,
+         "target" : 35,
+         "value" : 5190
+      },
+      {
+         "source" : 0,
+         "target" : 36,
+         "value" : 19220
+      },
+      {
+         "source" : 34,
+         "target" : 11,
+         "value" : "34475"
+      },
+      {
+         "source" : 34,
+         "target" : 13,
+         "value" : "44024"
+      },
+      {
+         "source" : 34,
+         "target" : 12,
+         "value" : "1507962"
+      },
+      {
+         "source" : 11,
+         "target" : 14,
+         "value" : "4965"
+      },
+      {
+         "source" : 12,
+         "target" : 15,
+         "value" : "14192"
+      },
+      {
+         "source" : 13,
+         "target" : 16,
+         "value" : "2018"
+      },
+      {
+         "source" : 11,
+         "target" : 17,
+         "value" : "5011"
+      },
+      {
+         "source" : 11,
+         "target" : 18,
+         "value" : "13689"
+      },
+      {
+         "source" : 11,
+         "target" : 19,
+         "value" : "7195"
+      },
+      {
+         "source" : 12,
+         "target" : 20,
+         "value" : "14197"
+      },
+      {
+         "source" : 12,
+         "target" : 21,
+         "value" : "21658"
+      },
+      {
+         "source" : 12,
+         "target" : 22,
+         "value" : "15455"
+      },
+      {
+         "source" : 13,
+         "target" : 23,
+         "value" : "2028"
+      },
+      {
+         "source" : 13,
+         "target" : 24,
+         "value" : "4614"
+      },
+      {
+         "source" : 13,
+         "target" : 25,
+         "value" : "2350"
+      },
+      {
+         "source" : 35,
+         "target" : 26,
+         "value" : "810"
+      },
+      {
+         "source" : 35,
+         "target" : 27,
+         "value" : "3067"
+      },
+      {
+         "source" : 35,
+         "target" : 28,
+         "value" : "1313"
+      },
+      {
+         "source" : 36,
+         "target" : 29,
+         "value" : "4819"
+      },
+      {
+         "source" : 36,
+         "target" : 30,
+         "value" : "10320"
+      },
+      {
+         "source" : 36,
+         "target" : 31,
+         "value" : "4081"
+      }
+   ]
+}

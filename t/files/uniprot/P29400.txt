@@ -1,0 +1,973 @@
+ID   CO4A5_HUMAN             Reviewed;        1685 AA.
+AC   P29400; Q16006; Q16126; Q6LD84; Q7Z700; Q9NUB7;
+DT   01-DEC-1992, integrated into UniProtKB/Swiss-Prot.
+DT   01-FEB-1994, sequence version 2.
+DT   22-FEB-2012, entry version 146.
+DE   RecName: Full=Collagen alpha-5(IV) chain;
+DE   Flags: Precursor;
+GN   Name=COL4A5;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=94165049; PubMed=8120014;
+RA   Zhou J., Leinonen A., Tryggvason K.;
+RT   "Structure of the human type IV collagen COL4A5 gene.";
+RL   J. Biol. Chem. 269:6608-6614(1994).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=15772651; DOI=10.1038/nature03440;
+RA   Ross M.T., Grafham D.V., Coffey A.J., Scherer S., McLay K., Muzny D.,
+RA   Platzer M., Howell G.R., Burrows C., Bird C.P., Frankish A.,
+RA   Lovell F.L., Howe K.L., Ashurst J.L., Fulton R.S., Sudbrak R., Wen G.,
+RA   Jones M.C., Hurles M.E., Andrews T.D., Scott C.E., Searle S.,
+RA   Ramser J., Whittaker A., Deadman R., Carter N.P., Hunt S.E., Chen R.,
+RA   Cree A., Gunaratne P., Havlak P., Hodgson A., Metzker M.L.,
+RA   Richards S., Scott G., Steffen D., Sodergren E., Wheeler D.A.,
+RA   Worley K.C., Ainscough R., Ambrose K.D., Ansari-Lari M.A., Aradhya S.,
+RA   Ashwell R.I., Babbage A.K., Bagguley C.L., Ballabio A., Banerjee R.,
+RA   Barker G.E., Barlow K.F., Barrett I.P., Bates K.N., Beare D.M.,
+RA   Beasley H., Beasley O., Beck A., Bethel G., Blechschmidt K., Brady N.,
+RA   Bray-Allen S., Bridgeman A.M., Brown A.J., Brown M.J., Bonnin D.,
+RA   Bruford E.A., Buhay C., Burch P., Burford D., Burgess J., Burrill W.,
+RA   Burton J., Bye J.M., Carder C., Carrel L., Chako J., Chapman J.C.,
+RA   Chavez D., Chen E., Chen G., Chen Y., Chen Z., Chinault C.,
+RA   Ciccodicola A., Clark S.Y., Clarke G., Clee C.M., Clegg S.,
+RA   Clerc-Blankenburg K., Clifford K., Cobley V., Cole C.G., Conquer J.S.,
+RA   Corby N., Connor R.E., David R., Davies J., Davis C., Davis J.,
+RA   Delgado O., Deshazo D., Dhami P., Ding Y., Dinh H., Dodsworth S.,
+RA   Draper H., Dugan-Rocha S., Dunham A., Dunn M., Durbin K.J., Dutta I.,
+RA   Eades T., Ellwood M., Emery-Cohen A., Errington H., Evans K.L.,
+RA   Faulkner L., Francis F., Frankland J., Fraser A.E., Galgoczy P.,
+RA   Gilbert J., Gill R., Gloeckner G., Gregory S.G., Gribble S.,
+RA   Griffiths C., Grocock R., Gu Y., Gwilliam R., Hamilton C., Hart E.A.,
+RA   Hawes A., Heath P.D., Heitmann K., Hennig S., Hernandez J.,
+RA   Hinzmann B., Ho S., Hoffs M., Howden P.J., Huckle E.J., Hume J.,
+RA   Hunt P.J., Hunt A.R., Isherwood J., Jacob L., Johnson D., Jones S.,
+RA   de Jong P.J., Joseph S.S., Keenan S., Kelly S., Kershaw J.K., Khan Z.,
+RA   Kioschis P., Klages S., Knights A.J., Kosiura A., Kovar-Smith C.,
+RA   Laird G.K., Langford C., Lawlor S., Leversha M., Lewis L., Liu W.,
+RA   Lloyd C., Lloyd D.M., Loulseged H., Loveland J.E., Lovell J.D.,
+RA   Lozado R., Lu J., Lyne R., Ma J., Maheshwari M., Matthews L.H.,
+RA   McDowall J., McLaren S., McMurray A., Meidl P., Meitinger T.,
+RA   Milne S., Miner G., Mistry S.L., Morgan M., Morris S., Mueller I.,
+RA   Mullikin J.C., Nguyen N., Nordsiek G., Nyakatura G., O'dell C.N.,
+RA   Okwuonu G., Palmer S., Pandian R., Parker D., Parrish J.,
+RA   Pasternak S., Patel D., Pearce A.V., Pearson D.M., Pelan S.E.,
+RA   Perez L., Porter K.M., Ramsey Y., Reichwald K., Rhodes S.,
+RA   Ridler K.A., Schlessinger D., Schueler M.G., Sehra H.K.,
+RA   Shaw-Smith C., Shen H., Sheridan E.M., Shownkeen R., Skuce C.D.,
+RA   Smith M.L., Sotheran E.C., Steingruber H.E., Steward C.A., Storey R.,
+RA   Swann R.M., Swarbreck D., Tabor P.E., Taudien S., Taylor T.,
+RA   Teague B., Thomas K., Thorpe A., Timms K., Tracey A., Trevanion S.,
+RA   Tromans A.C., d'Urso M., Verduzco D., Villasana D., Waldron L.,
+RA   Wall M., Wang Q., Warren J., Warry G.L., Wei X., West A.,
+RA   Whitehead S.L., Whiteley M.N., Wilkinson J.E., Willey D.L.,
+RA   Williams G., Williams L., Williamson A., Williamson H., Wilming L.,
+RA   Woodmansey R.L., Wray P.W., Yen J., Zhang J., Zhou J., Zoghbi H.,
+RA   Zorilla S., Buck D., Reinhardt R., Poustka A., Rosenthal A.,
+RA   Lehrach H., Meindl A., Minx P.J., Hillier L.W., Willard H.F.,
+RA   Wilson R.K., Waterston R.H., Rice C.M., Vaudin M., Coulson A.,
+RA   Nelson D.L., Weinstock G., Sulston J.E., Durbin R.M., Hubbard T.,
+RA   Gibbs R.A., Beck S., Rogers J., Bentley D.R.;
+RT   "The DNA sequence of the human X chromosome.";
+RL   Nature 434:325-337(2005).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (SEP-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE OF 1-910, AND VARIANT APSX CYS-521.
+RC   TISSUE=Kidney;
+RX   MEDLINE=92316923; PubMed=1352287;
+RA   Zhou J., Hertz J.M., Leinonen A., Tryggvason K.;
+RT   "Complete amino acid sequence of the human alpha 5 (IV) collagen chain
+RT   and identification of a single-base mutation in exon 23 converting
+RT   glycine 521 in the collagenous domain to cysteine in an Alport
+RT   syndrome patient.";
+RL   J. Biol. Chem. 267:12475-12481(1992).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 85-1685.
+RC   TISSUE=Placenta;
+RX   MEDLINE=90337990; PubMed=2380186;
+RA   Pihlajaniemi T., Pohjolainen E.R., Myers J.C.;
+RT   "Complete primary structure of the triple-helical region and the
+RT   carboxyl-terminal domain of a new type IV collagen chain, alpha
+RT   5(IV).";
+RL   J. Biol. Chem. 265:13758-13766(1990).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 924-1685.
+RX   MEDLINE=91169491; PubMed=2004755; DOI=10.1016/0888-7543(91)90214-Y;
+RA   Zhou J., Hostikka S.L., Chow L.T., Tryggvason K.;
+RT   "Characterization of the 3' half of the human type IV collagen alpha 5
+RT   gene that is affected in the Alport syndrome.";
+RL   Genomics 9:1-9(1991).
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 914-1685.
+RX   MEDLINE=90160375; PubMed=1689491; DOI=10.1073/pnas.87.4.1606;
+RA   Hostikka S.L., Eddy R.L., Byers M.G., Hoeyhtyae M., Shows T.B.,
+RA   Tryggvason K.;
+RT   "Identification of a distinct type IV collagen alpha chain with
+RT   restricted kidney distribution and assignment of its gene to the locus
+RT   of X chromosome-linked Alport syndrome.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 87:1606-1610(1990).
+RN   [8]
+RP   NUCLEOTIDE SEQUENCE OF 1442-1471.
+RX   MEDLINE=90252791; PubMed=2339699;
+RA   Myers J.C., Jones T.A., Pohjolainen E.R., Kadri A.S., Goddard A.D.,
+RA   Sheer D., Solomon E., Pihlajaniemi T.;
+RT   "Molecular cloning of alpha 5(IV) collagen and assignment of the gene
+RT   to the region of the X chromosome containing the Alport syndrome
+RT   locus.";
+RL   Am. J. Hum. Genet. 46:1024-1033(1990).
+RN   [9]
+RP   NUCLEOTIDE SEQUENCE OF 1-20.
+RA   Guo C., van Damme B., Vanrenterghem Y., Devriendt K., Cassiman J.-J.,
+RA   Marynen P.;
+RL   Submitted (SEP-1994) to the EMBL/GenBank/DDBJ databases.
+RN   [10]
+RP   NUCLEOTIDE SEQUENCE OF 1258-1270 (ISOFORM 2).
+RX   MEDLINE=94133540; PubMed=8301933; DOI=10.1038/ki.1993.384;
+RA   Guo C., van Damme B., van Damme-Lombaerts R., van den Berghe H.,
+RA   Cassiman J.-J., Marynen P.;
+RT   "Differential splicing of COL4A5 mRNA in kidney and white blood cells:
+RT   a complex mutation in the COL4A5 gene of an Alport patient deletes the
+RT   NC1 domain.";
+RL   Kidney Int. 44:1316-1321(1993).
+RN   [11]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1589-1598 AND 1677-1685, AND
+RP   VARIANTS APSX 1597-TYR--THR-1685 DEL AND 1679-GLQ--THR-1685 DEL.
+RX   PubMed=7853788; DOI=10.1038/ki.1994.399;
+RA   Nakazato H., Hattori S., Ushijima T., Matsuura T., Koitabashi Y.,
+RA   Takada T., Yoshioka K., Endo F., Matsuda I.;
+RT   "Mutations in the COL4A5 gene in Alport syndrome: a possible mutation
+RT   in primordial germ cells.";
+RL   Kidney Int. 46:1307-1314(1994).
+RN   [12]
+RP   REVIEW ON VARIANTS.
+RX   MEDLINE=97338662; PubMed=9195222;
+RX   DOI=10.1002/(SICI)1098-1004(1997)9:6<477::AID-HUMU1>3.3.CO;2-H;
+RA   Lemmink H.H., Schroeder C.H., Monnens L.A.H., Smeets H.J.M.;
+RT   "The clinical spectrum of type IV collagen mutations.";
+RL   Hum. Mutat. 9:477-499(1997).
+RN   [13]
+RP   VARIANT APSX SER-1564.
+RX   MEDLINE=91169492; PubMed=1672282; DOI=10.1016/0888-7543(91)90215-Z;
+RA   Zhou J., Barker D.F., Hostikka S.L., Gregory M.C., Atkin C.L.,
+RA   Tryggvason K.;
+RT   "Single base mutation in alpha 5(IV) collagen chain gene converting a
+RT   conserved cysteine to serine in Alport syndrome.";
+RL   Genomics 9:10-18(1991).
+RN   [14]
+RP   VARIANT APSX ARG-325.
+RX   MEDLINE=92303559; PubMed=1376965;
+RA   Knebelmann B., Deschenes G., Gros F., Hors M.-C., Gruenfeld J.-P.,
+RA   Tryggvason K., Gubler M.-C., Antignac C.;
+RT   "Substitution of arginine for glycine 325 in the collagen alpha 5 (IV)
+RT   chain associated with X-linked Alport syndrome: characterization of
+RT   the mutation by direct sequencing of PCR-amplified lymphoblast cDNA
+RT   fragments.";
+RL   Am. J. Hum. Genet. 51:135-142(1992).
+RN   [15]
+RP   VARIANT APSX GLU-325.
+RX   MEDLINE=93244772; PubMed=1363780; DOI=10.1093/hmg/1.2.127;
+RA   Renieri A., Seri M., Myers J.C., Pihlajaniemi T., Massella L.,
+RA   Rizzoni G.F., de Marchi M.;
+RT   "De novo mutation in the COL4A5 gene converting glycine 325 to
+RT   glutamic acid in Alport syndrome.";
+RL   Hum. Mol. Genet. 1:127-129(1992).
+RN   [16]
+RP   VARIANTS APSX THR-1517; SER-1538 AND GLN-1563.
+RX   MEDLINE=94010948; PubMed=8406498; DOI=10.1006/geno.1993.1351;
+RA   Lemmink H.L., Schroeder C.H., Brunner H.G., Nelen M.R., Zhou J.,
+RA   Tryggvason K., Haggsma-Schouten W.A.G., Roodvoets A.P., Rascher W.,
+RA   van Oost B.A., Smeets H.J.M.;
+RT   "Identification of four novel mutations in the COL4A5 gene of patients
+RT   with Alport syndrome.";
+RL   Genomics 17:485-489(1993).
+RN   [17]
+RP   INVOLVEMENT IN DL-ATS.
+RX   MEDLINE=93361972; PubMed=8356449; DOI=10.1126/science.8356449;
+RA   Zhou J., Mochizuki T., Smeets H., Antignac C., Laurila P.,
+RA   de Paepe A., Tryggvason K., Reeders S.T.;
+RT   "Deletion of the paired alpha 5(IV) and alpha 6(IV) collagen genes in
+RT   inherited smooth muscle tumors.";
+RL   Science 261:1167-1169(1993).
+RN   [18]
+RP   VARIANTS APSX GLU-400; VAL-406; VAL-638; ALA-638; ARG-653; ARG-796;
+RP   ARG-869; ARG-872 AND CYS-1241.
+RX   MEDLINE=95322976; PubMed=7599631; DOI=10.1002/humu.1380050303;
+RA   Boye E., Flinter F., Zhou J., Tryggvason K., Bobrow M., Harris A.;
+RT   "Detection of 12 novel mutations in the collagenous domain of the
+RT   COL4A5 gene in Alport syndrome patients.";
+RL   Hum. Mutat. 5:197-204(1995).
+RN   [19]
+RP   VARIANT APSX ARG-1649.
+RX   MEDLINE=96213750; PubMed=8651292;
+RA   Barker D.F., Pruchno C.J., Jiang X., Atkin C.L., Stone E.M.,
+RA   Denison J.C., Fain P.R., Gregory M.C.;
+RT   "A mutation causing Alport syndrome with tardive hearing loss is
+RT   common in the western United States.";
+RL   Am. J. Hum. Genet. 58:1157-1165(1996).
+RN   [20]
+RP   VARIANTS APSX.
+RX   MEDLINE=96213754; PubMed=8651296;
+RA   Renieri A., Bruttini M., Galli L., Zanelli P., Neri T.M., Rossetti S.,
+RA   Turco A.E., Heiskari N., Zhou J., Gusmano R., Massella L., Banfi G.,
+RA   Scolari F., Sessa A., Rizzoni G.F., Tryggvason K., Pignatti P.F.,
+RA   Savi M., Ballabio A., de Marchi M.;
+RT   "X-linked Alport syndrome: an SSCP-based mutation survey over all 51
+RT   exons of the COL4A5 gene.";
+RL   Am. J. Hum. Genet. 58:1192-1204(1996).
+RN   [21]
+RP   VARIANTS APSX, AND VARIANTS ASP-430; SER-444; SER-619; ASN-664 AND
+RP   MET-1428.
+RX   MEDLINE=97094179; PubMed=8940267;
+RA   Knebelmann B., Breillat C., Forestier L., Arrondel C., Jacassier D.,
+RA   Giatras I., Drouot L., Deschenes G., Gruenfeld J.-P., Broyer M.,
+RA   Gubler M.-C., Antignac C.;
+RT   "Spectrum of mutations in the COL4A5 collagen gene in X-linked Alport
+RT   syndrome.";
+RL   Am. J. Hum. Genet. 59:1221-1232(1996).
+RN   [22]
+RP   VARIANT APSX ASP-1498.
+RX   MEDLINE=96233932; PubMed=8829632;
+RX   DOI=10.1002/(SICI)1098-1004(1996)7:2<149::AID-HUMU9>3.3.CO;2-A;
+RA   Tverskaya S., Bobrynina V., Tsalykova F., Ignatova M.,
+RA   Krasnopolskaya X., Evgrafov O.;
+RT   "Substitution of A1498D in noncollagen domain of a5(IV) collagen chain
+RT   associated with adult-onset X-linked Alport syndrome.";
+RL   Hum. Mutat. 7:149-150(1996).
+RN   [23]
+RP   VARIANT APSX GLN-1677.
+RX   MEDLINE=97295089; PubMed=9150741; DOI=10.1007/s004390050429;
+RA   Barker D.F., Denison J.C., Atkin C.L., Gregory M.C.;
+RT   "Common ancestry of three Ashkenazi-American families with Alport
+RT   syndrome and COL4A5 R1677Q.";
+RL   Hum. Genet. 99:681-684(1997).
+RN   [24]
+RP   VARIANTS APSX ARG-174; ARG-177; ARG-325; CYS-1410; TRP-1421; THR-1517
+RP   AND ASP-1596.
+RX   MEDLINE=98112435; PubMed=9452056;
+RA   Neri T.M., Zanelli P., de Palma G., Savi M., Rossetti S., Turco A.E.,
+RA   Pignatti G.F., Galli L., Bruttini M., Renieri A., Mingarelli R.,
+RA   Trivelli A., Pinciaroli A.R., Ragaiolo M., Rizzoni G.F., de Marchi M.;
+RT   "Missense mutations in the COL4A5 gene in patients with X-linked
+RT   Alport syndrome.";
+RL   Hum. Mutat. Suppl. 1:S106-S109(1998).
+RN   [25]
+RP   VARIANTS APSX VAL-420; 456-PRO--PRO-458 DEL; ASP-573; ASP-624;
+RP   ASP-635; 802-GLY--PRO-807 DEL; ARG-869; CYS-941; SER-1030; SER-1066;
+RP   ASP-1143; ARG-1196; GLU-1261; SER-1357 AND ARG-1649.
+RX   MEDLINE=99063529; PubMed=9848783;
+RA   Martin P., Heiskari N., Zhou J., Leinonen A., Tumelius T., Hertz J.M.,
+RA   Barker D.F., Gregory M.C., Atkin C.L., Styrkarsdottir U., Neumann H.,
+RA   Springate J., Shows T.B., Pettersson E., Tryggvason K.;
+RT   "High mutation detection rate in the COL4A5 collagen gene in suspected
+RT   Alport syndrome using PCR and direct DNA sequencing.";
+RL   J. Am. Soc. Nephrol. 9:2291-2301(1998).
+RN   [26]
+RP   VARIANTS APSX GLU-579; LYS-633; ASP-947; VAL-953; ARG-1107; ARG-1158;
+RP   SER-1170 AND TRP-1678, AND VARIANTS SER-444 AND ALA-739.
+RX   MEDLINE=20030197; PubMed=10561141;
+RA   Inoue Y., Nishio H., Shirakawa T., Nakanishi K., Nakamura H.,
+RA   Sumino K., Nishiyama K., Iijima K., Yoshikawa N.;
+RT   "Detection of mutations in the COL4A5 gene in over 90% of male
+RT   patients with X-linked Alport's syndrome by RT-PCR and direct
+RT   sequencing.";
+RL   Am. J. Kidney Dis. 34:854-862(1999).
+RN   [27]
+RP   VARIANT APSX ARG-822.
+RX   MEDLINE=20025011; PubMed=10563487;
+RX   DOI=10.1034/j.1399-0004.1999.560312.x;
+RA   Cruz-Robles D., Garcia-Torres R., Antignac C., Forestier L.,
+RA   Garcia de la Puente S., Correa-Rotter R., Garcia-Lopez E., Orozco L.;
+RT   "Three novel mutations in the COL4A5 gene in Mexican Alport syndrome
+RT   patients.";
+RL   Clin. Genet. 56:242-243(1999).
+RN   [28]
+RP   VARIANTS APSX, AND VARIANTS.
+RX   MEDLINE=99140256; PubMed=10094548;
+RX   DOI=10.1002/(SICI)1098-1004(1999)13:2<124::AID-HUMU4>3.0.CO;2-Z;
+RA   Plant K.E., Green P.M., Vetrie D., Flinter F.A.;
+RT   "Detection of mutations in COL4A5 in patients with Alport syndrome.";
+RL   Hum. Mutat. 13:124-132(1999).
+RN   [29]
+RP   VARIANT APSX CYS-177.
+RX   MEDLINE=20460632; PubMed=11004279; DOI=10.1016/S0002-9394(00)00466-9;
+RA   Blasi M.A., Rinaldi R., Renieri A., Petrucci R., De Bernardo C.,
+RA   Bruttini M., Grammatico P.;
+RT   "Dot-and-fleck retinopathy in Alport syndrome caused by a novel
+RT   mutation in the COL4A5 gene.";
+RL   Am. J. Ophthalmol. 130:130-131(2000).
+RN   [30]
+RP   VARIANTS APSX ARG-216; ARG-415; GLU-1045; ASP-1086; SER-1167 AND
+RP   864-SER--GLY-875 DEL.
+RX   MEDLINE=20321306; PubMed=10862091;
+RX   DOI=10.1002/1098-1004(200006)15:6<579::AID-HUMU13>3.3.CO;2-B;
+RA   Martin P., Heiskari N., Pajari H., Groenhagen-Riska C.,
+RA   Kaeaeriaeinen H., Koskimies O., Tryggvason K.;
+RT   "Spectrum of COL4A5 mutations in Finnish Alport syndrome patients.";
+RL   Hum. Mutat. 15:579-579(2000).
+RN   [31]
+RP   VARIANTS APSX ARG-319; SER-739; VAL-902; GLU-911; ASP-1229 AND
+RP   HIS-1511.
+RX   MEDLINE=20148403; PubMed=10684360; DOI=10.1007/s004670050025;
+RA   Cheong H.I., Park H.W., Ha I.S., Choi Y.;
+RT   "Mutational analysis of COL4A5 gene in Korean Alport syndrome.";
+RL   Pediatr. Nephrol. 14:117-121(2000).
+RN   [32]
+RP   VARIANTS APSX ARG-192; ARG-292; ASP-295; ARG-325; ARG-558; VAL-603;
+RP   ASP-624; ASP-629; GLU-722; VAL-898; ALA-1006; VAL-1006; ASP-1244;
+RP   ARG-1649 AND PRO-1677, AND VARIANT SER-444.
+RX   MEDLINE=21123908; PubMed=11223851;
+RX   DOI=10.1002/1096-8628(20010115)98:2<148::AID-AJMG1024>3.0.CO;2-W;
+RA   Barker D.F., Denison J.C., Atkin C.L., Gregory M.C.;
+RT   "Efficient detection of Alport syndrome COL4A5 mutations with
+RT   multiplex genomic PCR-SSCP.";
+RL   Am. J. Med. Genet. 98:148-160(2001).
+RN   [33]
+RP   INVOLVEMENT IN DL-ATS.
+RX   PubMed=12784310; DOI=10.1002/ajmg.a.20019;
+RA   Anker M.C., Arnemann J., Neumann K., Ahrens P., Schmidt H., Koenig R.;
+RT   "Alport syndrome with diffuse leiomyomatosis.";
+RL   Am. J. Med. Genet. A 119:381-385(2003).
+CC   -!- FUNCTION: Type IV collagen is the major structural component of
+CC       glomerular basement membranes (GBM), forming a 'chicken-wire'
+CC       meshwork together with laminins, proteoglycans and
+CC       entactin/nidogen.
+CC   -!- SUBUNIT: There are six type IV collagen isoforms, alpha 1(IV)-
+CC       alpha 6(IV), each of which can form a triple helix structure with
+CC       2 other chains to generate type IV collagen network.
+CC   -!- SUBCELLULAR LOCATION: Secreted, extracellular space, extracellular
+CC       matrix, basement membrane.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1;
+CC         IsoId=P29400-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=P29400-2; Sequence=VSP_001173;
+CC         Note=Contains 2 extra G-X-X repeats into the triple-helix
+CC         domain;
+CC   -!- TISSUE SPECIFICITY: Isoform 2 is found in kidney.
+CC   -!- DOMAIN: Alpha chains of type IV collagen have a non-collagenous
+CC       domain (NC1) at their C-terminus, frequent interruptions of the G-
+CC       X-Y repeats in the long central triple-helical domain (which may
+CC       cause flexibility in the triple helix), and a short N-terminal
+CC       triple-helical 7S domain.
+CC   -!- PTM: Prolines at the third position of the tripeptide repeating
+CC       unit (G-X-Y) are hydroxylated in some or all of the chains.
+CC   -!- PTM: Type IV collagens contain numerous cysteine residues which
+CC       are involved in inter- and intramolecular disulfide bonding. 12 of
+CC       these, located in the NC1 domain, are conserved in all known type
+CC       IV collagens.
+CC   -!- PTM: The trimeric structure of the NC1 domains is stabilized by
+CC       covalent bonds between Lys and Met residues (By similarity).
+CC   -!- DISEASE: Defects in COL4A5 are the cause of Alport syndrome X-
+CC       linked (APSX) [MIM:301050]. APSX is characterized by progressive
+CC       glomerulonephritis, renal failure, sensorineural deafness,
+CC       specific eye abnormalities (lenticonous and macular flecks), and
+CC       glomerular basement membrane defects. The disorder shows
+CC       considerable heterogeneity in that families differ in the age of
+CC       end-stage renal disease and the occurrence of deafness.
+CC   -!- DISEASE: Note=Deletions covering the N-terminal regions of COL4A5
+CC       and COL4A6, which are localized in a head-to-head manner, are
+CC       found in the chromosome Xq22.3 centromeric deletion syndrome. This
+CC       results in a phenotype with features of diffuse leiomyomatosis and
+CC       Alport syndrome (DL-ATS).
+CC   -!- SIMILARITY: Belongs to the type IV collagen family.
+CC   -!- SIMILARITY: Contains 1 collagen IV NC1 (C-terminal non-
+CC       collagenous) domain.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/COL4A5";
+CC   -!- WEB RESOURCE: Name= Alport syndrome and COL4A5;
+CC       URL="http://www.arup.utah.edu/database/ALPORT/ALPORT_welcome.php";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; M58526; AAA99480.1; -; mRNA.
+DR   EMBL; AL034369; CAA22267.2; -; Genomic_DNA.
+DR   EMBL; AL031622; CAA22267.2; JOINED; Genomic_DNA.
+DR   EMBL; AL035425; CAA22267.2; JOINED; Genomic_DNA.
+DR   EMBL; AL035425; CAB90289.2; -; Genomic_DNA.
+DR   EMBL; AL031622; CAB90289.2; JOINED; Genomic_DNA.
+DR   EMBL; AL034369; CAB90289.2; JOINED; Genomic_DNA.
+DR   EMBL; AL031622; CAI43038.1; -; Genomic_DNA.
+DR   EMBL; AL034369; CAI43038.1; JOINED; Genomic_DNA.
+DR   EMBL; AL035425; CAI43038.1; JOINED; Genomic_DNA.
+DR   EMBL; AL136364; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; CH471120; EAX02683.1; -; Genomic_DNA.
+DR   EMBL; M90464; AAA52046.1; -; mRNA.
+DR   EMBL; U04520; AAC27816.1; -; Genomic_DNA.
+DR   EMBL; U04470; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04471; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04472; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04473; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04474; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04476; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04477; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04478; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04479; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04480; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04483; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04485; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04486; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04487; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04488; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04489; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04490; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04491; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04492; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04493; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04494; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04495; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04496; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04497; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04498; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04499; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04500; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04501; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04502; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04503; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04504; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04505; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04506; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04507; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04508; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04509; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04510; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04511; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04512; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04514; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04515; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04516; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04517; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04518; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04519; AAC27816.1; JOINED; Genomic_DNA.
+DR   EMBL; U04520; AAF66217.2; -; Genomic_DNA.
+DR   EMBL; U04470; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04471; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04472; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04473; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04474; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04476; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04477; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04478; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04479; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04480; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04483; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04485; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04486; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04487; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04488; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04489; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04490; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04491; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04492; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04493; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04494; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04495; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04496; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04497; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04498; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04499; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04500; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04501; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04502; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04503; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04504; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04505; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04506; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04507; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04508; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04509; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04510; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; AF199451; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; AF199452; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04511; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04512; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04514; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04515; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04516; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04517; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04518; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; U04519; AAF66217.2; JOINED; Genomic_DNA.
+DR   EMBL; M63473; AAA51558.1; -; Genomic_DNA.
+DR   EMBL; M63455; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63456; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63457; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63458; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63459; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63460; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63461; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63462; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63463; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63464; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63465; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63466; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63467; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63468; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63470; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63471; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M63472; AAA51558.1; JOINED; Genomic_DNA.
+DR   EMBL; M31115; AAA52045.1; -; mRNA.
+DR   EMBL; Z37153; CAA85512.1; -; Genomic_DNA.
+DR   EMBL; S69168; AAC60612.1; -; mRNA.
+DR   EMBL; S59334; AAD13909.1; -; mRNA.
+DR   EMBL; S75903; AAB33374.1; -; Genomic_DNA.
+DR   IPI; IPI00021715; -.
+DR   IPI; IPI00216007; -.
+DR   PIR; S22917; S22917.
+DR   RefSeq; NP_000486.1; NM_000495.4.
+DR   RefSeq; NP_203699.1; NM_033380.2.
+DR   UniGene; Hs.369089; -.
+DR   ProteinModelPortal; P29400; -.
+DR   SMR; P29400; 1460-1685.
+DR   IntAct; P29400; 2.
+DR   MINT; MINT-1388512; -.
+DR   STRING; P29400; -.
+DR   DMDM; 461675; -.
+DR   PRIDE; P29400; -.
+DR   Ensembl; ENST00000361603; ENSP00000354505; ENSG00000188153.
+DR   GeneID; 1287; -.
+DR   KEGG; hsa:1287; -.
+DR   UCSC; uc010npm.1; human.
+DR   CTD; 1287; -.
+DR   GeneCards; GC0XP107683; -.
+DR   H-InvDB; HIX0028371; -.
+DR   HGNC; HGNC:2207; COL4A5.
+DR   MIM; 301050; phenotype.
+DR   MIM; 303630; gene.
+DR   neXtProt; NX_P29400; -.
+DR   Orphanet; 88917; X-linked Alport syndrome.
+DR   Orphanet; 1018; X-linked diffuse leiomyomatosis - Alport syndrome.
+DR   PharmGKB; PA26722; -.
+DR   eggNOG; NOG12793; -.
+DR   GeneTree; ENSGT00650000093302; -.
+DR   HOVERGEN; HBG004933; -.
+DR   KO; K06237; -.
+DR   OMA; CSPGSKC; -.
+DR   PhylomeDB; P29400; -.
+DR   Reactome; REACT_111045; Developmental Biology.
+DR   Reactome; REACT_111102; Signal Transduction.
+DR   NextBio; 5205; -.
+DR   ArrayExpress; P29400; -.
+DR   Bgee; P29400; -.
+DR   CleanEx; HS_COL4A5; -.
+DR   Genevestigator; P29400; -.
+DR   GermOnline; ENSG00000188153; Homo sapiens.
+DR   GO; GO:0005587; C:collagen type IV; TAS:ProtInc.
+DR   GO; GO:0005488; F:binding; IEA:InterPro.
+DR   GO; GO:0005201; F:extracellular matrix structural constituent; IEA:InterPro.
+DR   GO; GO:0007411; P:axon guidance; TAS:Reactome.
+DR   InterPro; IPR016187; C-type_lectin_fold.
+DR   InterPro; IPR008160; Collagen.
+DR   InterPro; IPR001442; Collagen_VI_NC.
+DR   Gene3D; G3DSA:2.170.240.10; Procollagn4_C; 1.
+DR   Pfam; PF01413; C4; 2.
+DR   Pfam; PF01391; Collagen; 22.
+DR   SMART; SM00111; C4; 2.
+DR   SUPFAM; SSF56436; C-type_lectin_fold; 2.
+DR   PROSITE; PS51403; NC1_IV; 1.
+PE   1: Evidence at protein level;
+KW   Alport syndrome; Alternative splicing; Basement membrane;
+KW   Chromosomal rearrangement; Collagen; Complete proteome; Deafness;
+KW   Disease mutation; Disulfide bond; Extracellular matrix; Glycoprotein;
+KW   Hydroxylation; Polymorphism; Reference proteome; Repeat; Secreted;
+KW   Signal.
+FT   SIGNAL        1     26       Potential.
+FT   CHAIN        27   1685       Collagen alpha-5(IV) chain.
+FT                                /FTId=PRO_0000005852.
+FT   DOMAIN     1461   1685       Collagen IV NC1.
+FT   REGION       27     41       Nonhelical region (NC2).
+FT   REGION       42   1456       Triple-helical region.
+FT   CARBOHYD    125    125       N-linked (GlcNAc...) (Potential).
+FT   DISULFID    451    451       Interchain (Potential).
+FT   DISULFID    481    481       Interchain (Potential).
+FT   DISULFID    484    484       Interchain (Potential).
+FT   DISULFID   1476   1567       Or C-1476 with C-1564 (By similarity).
+FT   DISULFID   1509   1564       Or C-1509 with C-1567 (By similarity).
+FT   DISULFID   1521   1527       By similarity.
+FT   DISULFID   1586   1681       Or C-1586 with C-1678 (By similarity).
+FT   DISULFID   1620   1678       Or C-1620 with C-1681 (By similarity).
+FT   DISULFID   1632   1638       By similarity.
+FT   CROSSLNK   1549   1549       S-Lysyl-methionine sulfilimine (Met-Lys)
+FT                                (interchain with K-1667) (By similarity).
+FT   CROSSLNK   1667   1667       S-Lysyl-methionine sulfilimine (Lys-Met)
+FT                                (interchain with M-1549) (By similarity).
+FT   VAR_SEQ    1264   1264       G -> GPTGFQG (in isoform 2).
+FT                                /FTId=VSP_001173.
+FT   VARIANT      54     54       G -> D (in APSX; adult type).
+FT                                /FTId=VAR_001914.
+FT   VARIANT     114    114       G -> S (in APSX).
+FT                                /FTId=VAR_007991.
+FT   VARIANT     129    129       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_001915.
+FT   VARIANT     129    129       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_001916.
+FT   VARIANT     174    174       G -> R (in APSX).
+FT                                /FTId=VAR_001917.
+FT   VARIANT     177    177       G -> C (in APSX; presenting with dot-and-
+FT                                fleck retinopathy).
+FT                                /FTId=VAR_011220.
+FT   VARIANT     177    177       G -> R (in APSX; adult type).
+FT                                /FTId=VAR_001918.
+FT   VARIANT     192    192       G -> R (in APSX).
+FT                                /FTId=VAR_011221.
+FT   VARIANT     204    204       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_011222.
+FT   VARIANT     216    216       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_001919.
+FT   VARIANT     219    219       G -> S (in APSX).
+FT                                /FTId=VAR_001920.
+FT   VARIANT     230    230       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_011223.
+FT   VARIANT     239    239       G -> E (in APSX).
+FT                                /FTId=VAR_011224.
+FT   VARIANT     264    264       G -> R (in APSX; adult type).
+FT                                /FTId=VAR_011225.
+FT   VARIANT     289    289       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_001921.
+FT   VARIANT     292    292       G -> R (in APSX).
+FT                                /FTId=VAR_011226.
+FT   VARIANT     292    292       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_001922.
+FT   VARIANT     295    295       G -> D (in APSX).
+FT                                /FTId=VAR_011227.
+FT   VARIANT     298    298       G -> S (in APSX).
+FT                                /FTId=VAR_011228.
+FT   VARIANT     319    319       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_011229.
+FT   VARIANT     325    325       G -> E (in APSX).
+FT                                /FTId=VAR_001923.
+FT   VARIANT     325    325       G -> R (in APSX; juvenile and adult
+FT                                types).
+FT                                /FTId=VAR_001924.
+FT   VARIANT     331    331       G -> V (in APSX).
+FT                                /FTId=VAR_007992.
+FT   VARIANT     365    367       Missing (in APSX; juvenile type).
+FT                                /FTId=VAR_001926.
+FT   VARIANT     365    365       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_001925.
+FT   VARIANT     371    371       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_001927.
+FT   VARIANT     374    374       G -> A (in APSX).
+FT                                /FTId=VAR_001928.
+FT   VARIANT     383    383       G -> D (in APSX; juvenile type).
+FT                                /FTId=VAR_001929.
+FT   VARIANT     400    400       G -> E (in APSX; adult type).
+FT                                /FTId=VAR_001930.
+FT   VARIANT     406    406       G -> V (in APSX; adult type).
+FT                                /FTId=VAR_001931.
+FT   VARIANT     409    409       G -> D (in APSX).
+FT                                /FTId=VAR_001932.
+FT   VARIANT     412    412       G -> V (in APSX; adult type).
+FT                                /FTId=VAR_011230.
+FT   VARIANT     415    415       G -> R (in APSX).
+FT                                /FTId=VAR_011231.
+FT   VARIANT     420    420       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_011232.
+FT   VARIANT     420    420       G -> V (in APSX).
+FT                                /FTId=VAR_011233.
+FT   VARIANT     423    423       G -> E (in APSX).
+FT                                /FTId=VAR_011234.
+FT   VARIANT     430    430       A -> D.
+FT                                /FTId=VAR_001933.
+FT   VARIANT     444    444       I -> S (in dbSNP:rs2272946).
+FT                                /FTId=VAR_001934.
+FT   VARIANT     456    458       Missing (in APSX).
+FT                                /FTId=VAR_001935.
+FT   VARIANT     466    466       G -> E (in APSX).
+FT                                /FTId=VAR_001936.
+FT   VARIANT     472    472       G -> R (in APSX).
+FT                                /FTId=VAR_007993.
+FT   VARIANT     491    491       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_011235.
+FT   VARIANT     494    494       G -> D (in APSX; adult type).
+FT                                /FTId=VAR_001937.
+FT   VARIANT     496    507       Missing (in APSX; juvenile type).
+FT                                /FTId=VAR_001938.
+FT   VARIANT     497    497       G -> C (in APSX; adult type).
+FT                                /FTId=VAR_011236.
+FT   VARIANT     521    521       G -> C (in APSX).
+FT                                /FTId=VAR_001939.
+FT   VARIANT     521    521       G -> S (in APSX).
+FT                                /FTId=VAR_001940.
+FT   VARIANT     524    524       G -> D (in APSX; adult type).
+FT                                /FTId=VAR_011237.
+FT   VARIANT     545    545       G -> R (in APSX).
+FT                                /FTId=VAR_007994.
+FT   VARIANT     545    545       G -> V (in APSX).
+FT                                /FTId=VAR_007995.
+FT   VARIANT     558    558       G -> R (in APSX).
+FT                                /FTId=VAR_011238.
+FT   VARIANT     561    561       G -> R (in APSX).
+FT                                /FTId=VAR_007996.
+FT   VARIANT     567    567       G -> A (in APSX; juvenile type).
+FT                                /FTId=VAR_001941.
+FT   VARIANT     573    573       G -> D (in APSX).
+FT                                /FTId=VAR_011239.
+FT   VARIANT     579    579       G -> E (in APSX).
+FT                                /FTId=VAR_011240.
+FT   VARIANT     579    579       G -> R (in APSX; adult type).
+FT                                /FTId=VAR_007997.
+FT   VARIANT     603    603       G -> V (in APSX).
+FT                                /FTId=VAR_011241.
+FT   VARIANT     609    609       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_011242.
+FT   VARIANT     609    609       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_001942.
+FT   VARIANT     619    619       P -> S.
+FT                                /FTId=VAR_011243.
+FT   VARIANT     621    621       G -> C (in APSX).
+FT                                /FTId=VAR_011244.
+FT   VARIANT     624    624       G -> D (in APSX).
+FT                                /FTId=VAR_011245.
+FT   VARIANT     629    629       G -> D (in APSX).
+FT                                /FTId=VAR_011246.
+FT   VARIANT     632    632       G -> D (in APSX).
+FT                                /FTId=VAR_011247.
+FT   VARIANT     633    633       E -> K (in APSX).
+FT                                /FTId=VAR_011248.
+FT   VARIANT     635    635       G -> D (in APSX).
+FT                                /FTId=VAR_007998.
+FT   VARIANT     638    638       G -> A (in APSX).
+FT                                /FTId=VAR_001944.
+FT   VARIANT     638    638       G -> S (in APSX; juvenile type).
+FT                                /FTId=VAR_007999.
+FT   VARIANT     638    638       G -> V (in APSX).
+FT                                /FTId=VAR_001943.
+FT   VARIANT     653    653       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_001945.
+FT   VARIANT     664    664       K -> N (in dbSNP:rs34077552).
+FT                                /FTId=VAR_001946.
+FT   VARIANT     669    669       G -> A (in APSX; juvenile type).
+FT                                /FTId=VAR_008000.
+FT   VARIANT     681    681       G -> D (in APSX).
+FT                                /FTId=VAR_011249.
+FT   VARIANT     684    684       G -> V (in APSX; adult type).
+FT                                /FTId=VAR_001947.
+FT   VARIANT     687    687       G -> E (in APSX).
+FT                                /FTId=VAR_008001.
+FT   VARIANT     722    722       G -> E (in APSX).
+FT                                /FTId=VAR_011250.
+FT   VARIANT     739    739       P -> A.
+FT                                /FTId=VAR_011251.
+FT   VARIANT     739    739       P -> S (in APSX; juvenile type).
+FT                                /FTId=VAR_011252.
+FT   VARIANT     740    740       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_001948.
+FT   VARIANT     743    743       G -> D (in APSX).
+FT                                /FTId=VAR_008002.
+FT   VARIANT     772    772       G -> D (in APSX; juvenile type).
+FT                                /FTId=VAR_001949.
+FT   VARIANT     796    796       G -> R (in APSX).
+FT                                /FTId=VAR_001950.
+FT   VARIANT     802    807       Missing (in APSX).
+FT                                /FTId=VAR_011254.
+FT   VARIANT     802    802       G -> R (in APSX).
+FT                                /FTId=VAR_011253.
+FT   VARIANT     808    808       G -> E (in APSX; adult type).
+FT                                /FTId=VAR_008003.
+FT   VARIANT     811    811       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_011255.
+FT   VARIANT     822    824       Missing (in APSX).
+FT                                /FTId=VAR_008004.
+FT   VARIANT     822    822       G -> R (in APSX).
+FT                                /FTId=VAR_011256.
+FT   VARIANT     852    852       G -> E (in APSX; juvenile type).
+FT                                /FTId=VAR_008005.
+FT   VARIANT     852    852       G -> R (in APSX).
+FT                                /FTId=VAR_001951.
+FT   VARIANT     864    875       Missing (in APSX).
+FT                                /FTId=VAR_011257.
+FT   VARIANT     866    866       G -> E (in APSX; adult type).
+FT                                /FTId=VAR_001952.
+FT   VARIANT     869    869       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_001953.
+FT   VARIANT     872    872       G -> R (in APSX).
+FT                                /FTId=VAR_001954.
+FT   VARIANT     878    878       G -> R (in APSX).
+FT                                /FTId=VAR_008006.
+FT   VARIANT     898    898       M -> V (in APSX; mild phenotype).
+FT                                /FTId=VAR_011258.
+FT   VARIANT     902    902       G -> V (in APSX; juvenile type).
+FT                                /FTId=VAR_011259.
+FT   VARIANT     911    911       G -> E (in APSX).
+FT                                /FTId=VAR_011260.
+FT   VARIANT     941    941       G -> C (in APSX).
+FT                                /FTId=VAR_011261.
+FT   VARIANT     942    942       Missing (in APSX).
+FT                                /FTId=VAR_001955.
+FT   VARIANT     947    947       G -> D (in APSX).
+FT                                /FTId=VAR_011262.
+FT   VARIANT     953    953       G -> V (in APSX; found on the same allele
+FT                                as variant Glu-1211).
+FT                                /FTId=VAR_011263.
+FT   VARIANT     988    992       Missing (in APSX; adult type).
+FT                                /FTId=VAR_008007.
+FT   VARIANT    1006   1006       G -> A (in APSX).
+FT                                /FTId=VAR_011264.
+FT   VARIANT    1006   1006       G -> V (in APSX).
+FT                                /FTId=VAR_011265.
+FT   VARIANT    1015   1015       G -> E (in APSX).
+FT                                /FTId=VAR_011266.
+FT   VARIANT    1015   1015       G -> V (in APSX).
+FT                                /FTId=VAR_011267.
+FT   VARIANT    1030   1030       G -> S (in APSX).
+FT                                /FTId=VAR_011268.
+FT   VARIANT    1036   1036       G -> V (in APSX).
+FT                                /FTId=VAR_011269.
+FT   VARIANT    1039   1039       G -> S (in APSX; juvenile type).
+FT                                /FTId=VAR_011270.
+FT   VARIANT    1045   1045       G -> E (in APSX).
+FT                                /FTId=VAR_011271.
+FT   VARIANT    1066   1066       G -> R (in APSX).
+FT                                /FTId=VAR_011272.
+FT   VARIANT    1066   1066       G -> S (in APSX).
+FT                                /FTId=VAR_011273.
+FT   VARIANT    1086   1086       G -> D (in APSX).
+FT                                /FTId=VAR_011274.
+FT   VARIANT    1104   1104       G -> V (in APSX).
+FT                                /FTId=VAR_001956.
+FT   VARIANT    1107   1107       G -> R (in APSX).
+FT                                /FTId=VAR_008008.
+FT   VARIANT    1143   1143       G -> D (in APSX; juvenile type).
+FT                                /FTId=VAR_001957.
+FT   VARIANT    1143   1143       G -> S (in APSX; adult type).
+FT                                /FTId=VAR_001958.
+FT   VARIANT    1158   1158       G -> R (in APSX).
+FT                                /FTId=VAR_011275.
+FT   VARIANT    1161   1161       G -> R (in APSX).
+FT                                /FTId=VAR_008009.
+FT   VARIANT    1167   1167       G -> S (in APSX).
+FT                                /FTId=VAR_011276.
+FT   VARIANT    1170   1170       G -> S (in APSX).
+FT                                /FTId=VAR_011277.
+FT   VARIANT    1182   1182       G -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_001959.
+FT   VARIANT    1196   1196       G -> R (in APSX).
+FT                                /FTId=VAR_011278.
+FT   VARIANT    1205   1205       G -> C (in APSX; juvenile type).
+FT                                /FTId=VAR_011279.
+FT   VARIANT    1211   1211       G -> E (in APSX; found on the same allele
+FT                                as variant Val-953).
+FT                                /FTId=VAR_011280.
+FT   VARIANT    1211   1211       G -> R (in APSX).
+FT                                /FTId=VAR_008010.
+FT   VARIANT    1220   1220       G -> D (in APSX).
+FT                                /FTId=VAR_008011.
+FT   VARIANT    1229   1229       G -> D (in APSX; adult type).
+FT                                /FTId=VAR_011281.
+FT   VARIANT    1241   1241       G -> C (in APSX).
+FT                                /FTId=VAR_001960.
+FT   VARIANT    1244   1244       G -> D (in APSX).
+FT                                /FTId=VAR_011282.
+FT   VARIANT    1252   1252       G -> S (in APSX; adult type).
+FT                                /FTId=VAR_011283.
+FT   VARIANT    1261   1261       G -> E (in APSX).
+FT                                /FTId=VAR_011284.
+FT   VARIANT    1270   1270       G -> S (in APSX).
+FT                                /FTId=VAR_001961.
+FT   VARIANT    1333   1333       G -> S (in APSX).
+FT                                /FTId=VAR_008012.
+FT   VARIANT    1357   1357       G -> S (in APSX).
+FT                                /FTId=VAR_011285.
+FT   VARIANT    1379   1379       G -> V (in APSX; adult type).
+FT                                /FTId=VAR_001962.
+FT   VARIANT    1410   1410       R -> C (in APSX; adult and juvenile
+FT                                types).
+FT                                /FTId=VAR_001963.
+FT   VARIANT    1421   1421       G -> W (in APSX; adult type).
+FT                                /FTId=VAR_001964.
+FT   VARIANT    1422   1422       R -> C (in APSX; juvenile type).
+FT                                /FTId=VAR_001965.
+FT   VARIANT    1427   1427       G -> V (in APSX; adult type).
+FT                                /FTId=VAR_008013.
+FT   VARIANT    1428   1428       L -> M.
+FT                                /FTId=VAR_011286.
+FT   VARIANT    1442   1442       G -> D (in APSX).
+FT                                /FTId=VAR_008014.
+FT   VARIANT    1451   1451       G -> S (in APSX).
+FT                                /FTId=VAR_001966.
+FT   VARIANT    1486   1486       G -> A (in APSX; adult type).
+FT                                /FTId=VAR_008015.
+FT   VARIANT    1488   1488       S -> F (in APSX).
+FT                                /FTId=VAR_011287.
+FT   VARIANT    1498   1498       A -> D (in APSX).
+FT                                /FTId=VAR_001967.
+FT   VARIANT    1511   1511       R -> H (in APSX; juvenile type; could be
+FT                                a non pathogenic variant).
+FT                                /FTId=VAR_011288.
+FT   VARIANT    1517   1517       P -> T (in APSX; juvenile type).
+FT                                /FTId=VAR_001968.
+FT   VARIANT    1538   1538       W -> S (in APSX; adult type).
+FT                                /FTId=VAR_001969.
+FT   VARIANT    1559   1559       P -> A.
+FT                                /FTId=VAR_008016.
+FT   VARIANT    1563   1563       R -> Q (in APSX).
+FT                                /FTId=VAR_001970.
+FT   VARIANT    1564   1564       C -> S (in APSX; adult type).
+FT                                /FTId=VAR_001971.
+FT   VARIANT    1567   1567       C -> R (in APSX; juvenile type).
+FT                                /FTId=VAR_011289.
+FT   VARIANT    1596   1596       G -> D (in APSX).
+FT                                /FTId=VAR_001972.
+FT   VARIANT    1597   1685       Missing (in APSX).
+FT                                /FTId=VAR_019594.
+FT   VARIANT    1649   1649       L -> R (in APSX; adult type).
+FT                                /FTId=VAR_001973.
+FT   VARIANT    1677   1677       R -> P (in APSX).
+FT                                /FTId=VAR_011290.
+FT   VARIANT    1677   1677       R -> Q (in APSX).
+FT                                /FTId=VAR_001974.
+FT   VARIANT    1678   1678       C -> W (in APSX).
+FT                                /FTId=VAR_011291.
+FT   VARIANT    1679   1685       Missing (in APSX).
+FT                                /FTId=VAR_019595.
+FT   CONFLICT    440    441       AG -> GS (in Ref. 5; AAA99480).
+FT   CONFLICT    625    628       FGPP -> LALQ (in Ref. 5; AAA99480).
+FT   CONFLICT    667    668       LP -> FR (in Ref. 5; AAA99480).
+FT   CONFLICT    888    888       A -> R (in Ref. 5; AAA99480).
+SQ   SEQUENCE   1685 AA;  161044 MW;  4450A6762F12A626 CRC64;
+     MKLRGVSLAA GLFLLALSLW GQPAEAAACY GCSPGSKCDC SGIKGEKGER GFPGLEGHPG
+     LPGFPGPEGP PGPRGQKGDD GIPGPPGPKG IRGPPGLPGF PGTPGLPGMP GHDGAPGPQG
+     IPGCNGTKGE RGFPGSPGFP GLQGPPGPPG IPGMKGEPGS IIMSSLPGPK GNPGYPGPPG
+     IQGLPGPTGI PGPIGPPGPP GLMGPPGPPG LPGPKGNMGL NFQGPKGEKG EQGLQGPPGP
+     PGQISEQKRP IDVEFQKGDQ GLPGDRGPPG PPGIRGPPGP PGGEKGEKGE QGEPGKRGKP
+     GKDGENGQPG IPGLPGDPGY PGEPGRDGEK GQKGDTGPPG PPGLVIPRPG TGITIGEKGN
+     IGLPGLPGEK GERGFPGIQG PPGLPGPPGA AVMGPPGPPG FPGERGQKGD EGPPGISIPG
+     PPGLDGQPGA PGLPGPPGPA GPHIPPSDEI CEPGPPGPPG SPGDKGLQGE QGVKGDKGDT
+     CFNCIGTGIS GPPGQPGLPG LPGPPGSLGF PGQKGEKGQA GATGPKGLPG IPGAPGAPGF
+     PGSKGEPGDI LTFPGMKGDK GELGSPGAPG LPGLPGTPGQ DGLPGLPGPK GEPGGITFKG
+     ERGPPGNPGL PGLPGNIGPM GPPGFGPPGP VGEKGIQGVA GNPGQPGIPG PKGDPGQTIT
+     QPGKPGLPGN PGRDGDVGLP GDPGLPGQPG LPGIPGSKGE PGIPGIGLPG PPGPKGFPGI
+     PGPPGAPGTP GRIGLEGPPG PPGFPGPKGE PGFALPGPPG PPGLPGFKGA LGPKGDRGFP
+     GPPGPPGRTG LDGLPGPKGD VGPNGQPGPM GPPGLPGIGV QGPPGPPGIP GPIGQPGLHG
+     IPGEKGDPGP PGLDVPGPPG ERGSPGIPGA PGPIGPPGSP GLPGKAGASG FPGTKGEMGM
+     MGPPGPPGPL GIPGRSGVPG LKGDDGLQGQ PGLPGPTGEK GSKGEPGLPG PPGPMDPNLL
+     GSKGEKGEPG LPGIPGVSGP KGYQGLPGDP GQPGLSGQPG LPGPPGPKGN PGLPGQPGLI
+     GPPGLKGTIG DMGFPGPQGV EGPPGPSGVP GQPGSPGLPG QKGDKGDPGI SSIGLPGLPG
+     PKGEPGLPGY PGNPGIKGSV GDPGLPGLPG TPGAKGQPGL PGFPGTPGPP GPKGISGPPG
+     NPGLPGEPGP VGGGGHPGQP GPPGEKGKPG QDGIPGPAGQ KGEPGQPGFG NPGPPGLPGL
+     SGQKGDGGLP GIPGNPGLPG PKGEPGFHGF PGVQGPPGPP GSPGPALEGP KGNPGPQGPP
+     GRPGLPGPEG PPGLPGNGGI KGEKGNPGQP GLPGLPGLKG DQGPPGLQGN PGRPGLNGMK
+     GDPGLPGVPG FPGMKGPSGV PGSAGPEGEP GLIGPPGPPG LPGPSGQSII IKGDAGPPGI
+     PGQPGLKGLP GPQGPQGLPG PTGPPGDPGR NGLPGFDGAG GRKGDPGLPG QPGTRGLDGP
+     PGPDGLQGPP GPPGTSSVAH GFLITRHSQT TDAPQCPQGT LQVYEGFSLL YVQGNKRAHG
+     QDLGTAGSCL RRFSTMPFMF CNINNVCNFA SRNDYSYWLS TPEPMPMSMQ PLKGQSIQPF
+     ISRCAVCEAP AVVIAVHSQT IQIPHCPQGW DSLWIGYSFM MHTSAGAEGS GQALASPGSC
+     LEEFRSAPFI ECHGRGTCNY YANSYSFWLA TVDVSDMFSK PQSETLKAGD LRTRISRCQV
+     CMKRT
+//

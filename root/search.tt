@@ -1,0 +1,50 @@
+<div class="oneColumn">
+  <div class="column">
+    <div class="gallery">
+      <img src = "/static/images/mechismo_front_6.png" alt="counts"/>
+      <img src = "/static/images/mechismo_front_pretty4.png" alt="large network"/>
+      <img src = "/static/images/mechismo_front_pretty1.png" alt="network zoom"/>
+      <img src = "/static/images/mechismo_front_3.png" alt="bubblegram"/>
+      <img src = "/static/images/mechismo_front_pretty3.png" alt="structure view"/>
+      <img src = "/static/images/mechismo_front_2.png" alt="detailed structure view"/>
+    </div>
+  </div>
+</div>
+<div class="twoColumns">
+  <div class="column">
+    <div class="contents">
+      <h2>Welcome to Mechismo</h2>
+      <p>Mechismo is a tool that lets you find potential mechanisms for how proteins interact with other molecules
+      and, more importantly, for how any changes might affect these interactions and consequently an
+      entire biological system. We have constructed a database of roughly 50,000 protein-protein,
+      protein-small-molecule and protein-nucleic acid interactions of known structure and several million
+      interactions identified by other methods, all of which we use to identify or predict potential interactions
+      within a set of proteins or genes provided by you.</p>
+
+      <p>You can paste lists of proteins using most protein or accessions (UniProt, ENSEMBL, Gene symbols)
+      and if you have positional information, you simply append these as either variants/mutants (e.g. R152C) or
+      modifications (e.g. S88Sp, K75Ka where 'p' and 'a' represent phosphorylation or acetylation) separated by a 
+      forward slash (/) or a space (you can add comments/labels after this by separating them by a space).  
+       Click on one of the Examples (right) to get an idea of the format.  For more hints and information
+      click on the question-marks above anywhere, or Help above.</p>
+
+      <p>Mechismo was created by <a href="http://www.russelllab.org/people/matthew/" target="_blank">Matthew Betts</a> and
+      <a href="http://www.russelllab.org/people/rob/" target="_blank">Rob Russell</a> with help from Qianhao Lu and Ying-Ying Jiang and others 
+      from the <a href="http://www.russelllab.org/" target="_blank">Russell Lab</a>.</p>
+
+      <p>For updates
+      <a href="https://twitter.com/MechismoNews" class="twitter-follow-button" data-show-count="false">Follow @MechismoNews</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+      <!-- <p><a class="twitter-timeline" href="https://twitter.com/MechismoNews" data-widget-id="433495292432744448">Tweets by @MechismoNews</a></p> -->
+      <p>&copy; 2014-2018, University of Heidelberg</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="contents">
+      <h2>Search</h2>
+      [% INCLUDE search_form.tt class="searchShown"; %]
+    </div>
+  </div>
+</div>
+
+

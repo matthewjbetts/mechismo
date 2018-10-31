@@ -1,0 +1,2 @@
+/usr/bin/time -o ./data/pfam/uniprot/sprot_varsplic/hmmscan.time perl -I./lib script/hmmscan.pl --outdir ./data/pfam/uniprot/ --fork sprot_varsplic --n_jobs 8 --source 'uniprot-sprot' --source 'varsplic' 1> ./data/pfam/uniprot/sprot_varsplic/hmmscan.out 2> ./data/pfam/uniprot/sprot_varsplic/hmmscan.err
+/usr/bin/time -o ./data/pfam/fist/hmmscan.time perl -I./lib script/hmmscan.pl --outdir ./data/pfam/ --fork fist --n_jobs 8 --source fist 1> ./data/pfam/fist/hmmscan.out 2> ./data/pfam/fist/hmmscan.err

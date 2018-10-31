@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <title>Mechismo</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+  <link href="/static/images/favicon.ico" rel="shortcut icon" />
+  <link href="/static/css/default.css" rel="stylesheet" type="text/css" />
+  <link href="/static/js/jquery-ui/css/smoothness-squarecorners-theme/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" /> <!-- needed for colour animation -->
+  <link href="/static/js/DataTables/extensions/TableTools/css/dataTables.tableTools.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- ############################################################################## -->
+  <!-- js inclusion for domainGraphic, the order is important -->
+
+  <!-- prototype -->
+  <script type="text/javascript" src="/static/js/prototype.js"></script>
+
+  <!-- domain graphic adopted from pfam -->
+  <script type="text/javascript" src="/static/js/domainGraphic/js/domain_graphics.js"></script>
+
+  <!-- create tooltips when hover on element -->
+  <script type="text/javascript" src="/static/js/domainGraphic/js/prototip.js"></script>
+
+  <!-- excanvas for drawing -->
+  <script type="text/javascript" src="/static/js/domainGraphic/js/excanvas.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="/static/js/domainGraphic/css/prototip.css" media="screen" />
+
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+  <!-- dg_parser: the wrapper -->
+  <script type='application/javascript' src="/static/js/domainGraphic/js/dg_parser.js"></script>
+  <!-- ############################################################################## -->
+
+  <script type="text/javascript" src="/static/js/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script> <!-- needed for colour animation -->
+
+  <script type="text/javascript" src="/static/js/DataTables/media/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="/static/js/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+
+  <script type="text/javascript" src="/static/js/colorbrewer.js"></script>
+  <script type="text/javascript" src="/static/js/d3/d3.v3.min.js"></script>
+
+  <script type="text/javascript" src="/static/js/datatables.js"></script>
+  <script type="text/javascript" src="/static/js/forms.js"></script>
+  
+  <script type="text/javascript" src="/static/js/FileSaver.js-master/FileSaver.min.js"></script>
+  <script type="text/javascript" src="/static/js/network.js"></script>
+
+  <script type="text/javascript" src="/static/js/barchart.js"></script>
+  <script type="text/javascript" src="/static/js/scatterplot.js"></script>
+
+  <script type="text/javascript" src="/static/js/jsmol/JSmol.min.nojq.js"></script>
+
+  <script type="text/javascript">
+    //<![CDATA[
+    function timedRefresh(timeoutPeriod) {
+        setTimeout("location.reload(true);", timeoutPeriod);
+    }
+
+    var $j = jQuery.noConflict();
+
+    $j(document).ready(function() {
+      $j(".network").each(function() {
+        drawNetwork($j(this));
+      });
+
+      $j(".barchart").each(function() {
+        drawBarChart($j(this));
+      });
+
+      $j(".scatterplot").each(function() {
+        drawScatterPlot($j(this));
+      });
+
+      // Set the height of every column in a multi-column div to that of the tallest.
+      // Need to do this after drawing barcharts etc so that the max height is known.
+      $j(".twoColumns, .threeColumns").each(function() {
+        var height = 0;
+        $j(this).find(".contents").each(function() {
+          height = ($j(this).height() > height) ? $j(this).height() : height;
+        });
+        height += 10;
+        $j(this).find(".contents").each(function() {
+          $j(this).height(height);
+        });
+      });
+
+      // also allow changes on window resize
+      $j(window).resize(function() {
+        $j(".twoColumns, .threeColumns").each(function() {
+          //first set to auto
+          $j(this).find(".contents").height('auto');
+
+          //then set to the maximum
+          var height = 0;
+          $j(this).find(".contents").each(function() {
+            height = ($j(this).height() > height) ? $j(this).height() : height;
+          });
+          height += 10;
+          $j(this).find(".contents").each(function() {
+            $j(this).height(height);
+          });
+        });
+      });
+
+      $j(".jsmol").each(function() {
+        Jmol.is_Async = false;
+
+        var jmolApplet0;
+
+        var s = document.location.search;
+
+        jmol_isReady = function(applet) {};
+
+        // script contained within a separate div
+        var idScriptDiv = $j(this).attr('data-script-id');
+        var script = "zap; set echo middle center; echo Loading structure...;" + $j('#' + idScriptDiv).text() + "; select; set spinY 10;";
+
+        var Info = {
+          width: "100%",
+          height: "100%",
+          debug: false,
+          color: "0xFFFFFF",
+          addSelectionOptions: false,
+          use: "HTML5",
+          j2sPath: "/static/js/jsmol/j2s",
+          script: script,
+          serverURL: "http://mechismo_test.russelllab.org/static/js/jsmol/php/jsmol.php",
+          readyFunction: jmol_isReady,
+          disableJ2SLoadMonitor: true,
+          disableInitialConsole: true,
+          allowJavaScript: true
+        };
+
+        var controlsHtml = (
+          "<a href=\"javascript:Jmol.script(jmolApplet0, 'if(_spinning);spin off;else;spin on;endif')\">spin</a> | " +
+          "<a href=\"javascript:Jmol.script(jmolApplet0, 'console')\">console</a> | " +
+          "labels: <a href=\"javascript:Jmol.script(jmolApplet0, 'set labelfront on; font label 24')\">big</a> or " +
+          "<a href=\"javascript:Jmol.script(jmolApplet0, 'set labelfront off; font label 12')\">small</a> | " +
+          "antialias: <a href=\"javascript:Jmol.script(jmolApplet0, 'set antialiasdisplay on; set antialiasimages on')\">on</a> or " +
+          "<a href=\"javascript:Jmol.script(jmolApplet0, 'set antialiasdisplay off; set antialiasimages off')\">off</a> | " +
+          "<a href=\"javascript:Jmol.script(jmolApplet0, 'write jsmol.png')\">save image</a>"
+        );
+
+        $j(this).html(Jmol.getAppletHtml("jmolApplet0", Info) + controlsHtml);
+      });
+    });
+   //]]>
+  </script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <div id="header">
+      <a href="/"><img src="/static/images/mechismo_logo_white_transparent.png" alt="Mechismo Logo" /></a>
+      <h1><a href="/">Mechismo - mechanistic interpretations of structural modifications</a></h1>
+      <ul class="toolbar">
+        <li><a href="/" target="_blank">Home</a></li>
+        <li><a href="/about" target="_blank">About</a></li>
+        <li><a href="/examples" target="_blank">Examples</a></li>
+        <li><a href="/faq" target="_blank">FAQ</a></li>
+        <li><a href="/help" target="help">Help</a></li>
+        <li><a href="http://www.russelllab.org" target="group">Russell Lab</a></li>
+        <li><a href="https://twitter.com/MechismoNews" class="twitter" target="_blank"></a></li>
+      </ul>
+    </div> <!-- end of div#header -->
+    <div id="page">
+      [% content %]
+    </div> <!-- end of div#page -->
+
+    <div id="footer">
+      <p>
+        Mechismo was developed by Matthew Betts, Rob Russell and others in the <a href="http://www.russelllab.org/" target="_blank">Russell Lab</a>.
+        <a href="https://twitter.com/MechismoNews" target="_blank"><img src="/static/images/twitter_bird_blue_16.png" alt="twitter"/></a>
+      </p>
+      <p>&copy; 2014-2018, University of Heidelberg.</p>
+    </div> <!-- end of div#footer -->
+  </div> <!-- end of div#wrapper -->
+  </body>
+</html>

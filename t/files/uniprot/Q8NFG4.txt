@@ -1,0 +1,447 @@
+ID   FLCN_HUMAN              Reviewed;         579 AA.
+AC   Q8NFG4; A6NJJ8; Q6ZRX1; Q96BD2; Q96BE4;
+DT   21-FEB-2006, integrated into UniProtKB/Swiss-Prot.
+DT   01-OCT-2002, sequence version 1.
+DT   21-MAR-2012, entry version 75.
+DE   RecName: Full=Folliculin;
+DE   AltName: Full=BHD skin lesion fibrofolliculoma protein;
+DE   AltName: Full=Birt-Hogg-Dube syndrome protein;
+GN   Name=FLCN; Synonyms=BHD;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), FUNCTION, TISSUE SPECIFICITY,
+RP   DEVELOPMENTAL STAGE, AND INVOLVEMENT IN BIRT-HOGG-DUBE SYNDROME.
+RC   TISSUE=Lung;
+RX   MEDLINE=22193727; PubMed=12204536; DOI=10.1016/S1535-6108(02)00104-6;
+RA   Nickerson M.L., Warren M.B., Toro J.R., Matrosova V., Glenn G.,
+RA   Turner M.L., Duray P., Merino M., Choyke P.L., Pavlovich C.P.,
+RA   Sharma N., Walther M.M., Munroe D., Hill R., Maher E., Greenberg C.,
+RA   Lerman M.I., Linehan W.M., Zbar B., Schmidt L.S.;
+RT   "Mutations in a novel gene lead to kidney tumors, lung wall defects,
+RT   and benign tumors of the hair follicle in patients with the Birt-Hogg-
+RT   Dube syndrome.";
+RL   Cancer Cell 2:157-164(2002).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 3).
+RC   TISSUE=Spleen;
+RX   PubMed=14702039; DOI=10.1038/ng1285;
+RA   Ota T., Suzuki Y., Nishikawa T., Otsuki T., Sugiyama T., Irie R.,
+RA   Wakamatsu A., Hayashi K., Sato H., Nagai K., Kimura K., Makita H.,
+RA   Sekine M., Obayashi M., Nishi T., Shibahara T., Tanaka T., Ishii S.,
+RA   Yamamoto J., Saito K., Kawai Y., Isono Y., Nakamura Y., Nagahari K.,
+RA   Murakami K., Yasuda T., Iwayanagi T., Wagatsuma M., Shiratori A.,
+RA   Sudo H., Hosoiri T., Kaku Y., Kodaira H., Kondo H., Sugawara M.,
+RA   Takahashi M., Kanda K., Yokoi T., Furuya T., Kikkawa E., Omura Y.,
+RA   Abe K., Kamihara K., Katsuta N., Sato K., Tanikawa M., Yamazaki M.,
+RA   Ninomiya K., Ishibashi T., Yamashita H., Murakawa K., Fujimori K.,
+RA   Tanai H., Kimata M., Watanabe M., Hiraoka S., Chiba Y., Ishida S.,
+RA   Ono Y., Takiguchi S., Watanabe S., Yosida M., Hotuta T., Kusano J.,
+RA   Kanehori K., Takahashi-Fujii A., Hara H., Tanase T.-O., Nomura Y.,
+RA   Togiya S., Komai F., Hara R., Takeuchi K., Arita M., Imose N.,
+RA   Musashino K., Yuuki H., Oshima A., Sasaki N., Aotsuka S.,
+RA   Yoshikawa Y., Matsunawa H., Ichihara T., Shiohata N., Sano S.,
+RA   Moriya S., Momiyama H., Satoh N., Takami S., Terashima Y., Suzuki O.,
+RA   Nakagawa S., Senoh A., Mizoguchi H., Goto Y., Shimizu F., Wakebe H.,
+RA   Hishigaki H., Watanabe T., Sugiyama A., Takemoto M., Kawakami B.,
+RA   Yamazaki M., Watanabe K., Kumagai A., Itakura S., Fukuzumi Y.,
+RA   Fujimori Y., Komiyama M., Tashiro H., Tanigami A., Fujiwara T.,
+RA   Ono T., Yamada K., Fujii Y., Ozaki K., Hirao M., Ohmori Y.,
+RA   Kawabata A., Hikiji T., Kobatake N., Inagaki H., Ikema Y., Okamoto S.,
+RA   Okitani R., Kawakami T., Noguchi S., Itoh T., Shigeta K., Senba T.,
+RA   Matsumura K., Nakajima Y., Mizuno T., Morinaga M., Sasaki M.,
+RA   Togashi T., Oyama M., Hata H., Watanabe M., Komatsu T.,
+RA   Mizushima-Sugano J., Satoh T., Shirai Y., Takahashi Y., Nakagawa K.,
+RA   Okumura K., Nagase T., Nomura N., Kikuchi H., Masuho Y., Yamashita R.,
+RA   Nakai K., Yada T., Nakamura Y., Ohara O., Isogai T., Sugano S.;
+RT   "Complete sequencing and characterization of 21,243 full-length human
+RT   cDNAs.";
+RL   Nat. Genet. 36:40-45(2004).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=16625196; DOI=10.1038/nature04689;
+RA   Zody M.C., Garber M., Adams D.J., Sharpe T., Harrow J., Lupski J.R.,
+RA   Nicholson C., Searle S.M., Wilming L., Young S.K., Abouelleil A.,
+RA   Allen N.R., Bi W., Bloom T., Borowsky M.L., Bugalter B.E., Butler J.,
+RA   Chang J.L., Chen C.-K., Cook A., Corum B., Cuomo C.A., de Jong P.J.,
+RA   DeCaprio D., Dewar K., FitzGerald M., Gilbert J., Gibson R.,
+RA   Gnerre S., Goldstein S., Grafham D.V., Grocock R., Hafez N.,
+RA   Hagopian D.S., Hart E., Norman C.H., Humphray S., Jaffe D.B.,
+RA   Jones M., Kamal M., Khodiyar V.K., LaButti K., Laird G., Lehoczky J.,
+RA   Liu X., Lokyitsang T., Loveland J., Lui A., Macdonald P., Major J.E.,
+RA   Matthews L., Mauceli E., McCarroll S.A., Mihalev A.H., Mudge J.,
+RA   Nguyen C., Nicol R., O'Leary S.B., Osoegawa K., Schwartz D.C.,
+RA   Shaw-Smith C., Stankiewicz P., Steward C., Swarbreck D.,
+RA   Venkataraman V., Whittaker C.A., Yang X., Zimmer A.R., Bradley A.,
+RA   Hubbard T., Birren B.W., Rogers J., Lander E.S., Nusbaum C.;
+RT   "DNA sequence of human chromosome 17 and analysis of rearrangement in
+RT   the human lineage.";
+RL   Nature 440:1045-1049(2006).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (SEP-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 2), AND NUCLEOTIDE
+RP   SEQUENCE [LARGE SCALE MRNA] OF 267-579 (ISOFORM 1).
+RC   TISSUE=Skin;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [6]
+RP   POSSIBLE INVOLVEMENT IN COLORECTAL CANCER, AND VARIANTS TRP-79 AND
+RP   THR-445.
+RX   PubMed=12843323; DOI=10.1136/jmg.40.7.511;
+RA   Kahnoski K., Khoo S.K., Nassif N.T., Chen J., Lobo G.P., Segelov E.,
+RA   Teh B.T.;
+RT   "Alterations of the Birt-Hogg-Dube gene (BHD) in sporadic colorectal
+RT   tumours.";
+RL   J. Med. Genet. 40:511-515(2003).
+RN   [7]
+RP   POSSIBLE INVOLVEMENT IN RENAL CELL CARCINOMA AND COLORECTAL CANCER,
+RP   AND VARIANTS VAL-238; GLN-320; GLY-392 AND SER-444.
+RX   PubMed=14627671; DOI=10.1136/jmg.40.11.820;
+RA   da Silva N.F., Gentle D., Hesson L.B., Morton D.G., Latif F.,
+RA   Maher E.R.;
+RT   "Analysis of the Birt-Hogg-Dube (BHD) tumour suppressor gene in
+RT   sporadic renal cell carcinoma and colorectal cancer.";
+RL   J. Med. Genet. 40:820-824(2003).
+RN   [8]
+RP   INVOLVEMENT IN PSP.
+RX   PubMed=15657874; DOI=10.1086/428455;
+RA   Painter J.N., Tapanainen H., Somer M., Tukiainen P., Aittomaeki K.;
+RT   "A 4-bp deletion in the Birt-Hogg-Dube gene (FLCN) causes dominantly
+RT   inherited spontaneous pneumothorax.";
+RL   Am. J. Hum. Genet. 76:522-527(2005).
+RN   [9]
+RP   INVOLVEMENT IN BIRT-HOGG-DUBE SYNDROME.
+RX   PubMed=15852235; DOI=10.1086/430842;
+RA   Schmidt L.S., Nickerson M.L., Warren M.B., Glenn G.M., Toro J.R.,
+RA   Merino M.J., Turner M.L., Choyke P.L., Sharma N., Peterson J.,
+RA   Morrison P., Maher E.R., Walther M.M., Zbar B., Linehan W.M.;
+RT   "Germline BHD-mutation spectrum and phenotype analysis of a large
+RT   cohort of families with Birt-Hogg-Dube syndrome.";
+RL   Am. J. Hum. Genet. 76:1023-1033(2005).
+RN   [10]
+RP   FUNCTION, PHOSPHORYLATION, SUBCELLULAR LOCATION, INTERACTION WITH
+RP   FNIP1, AND IDENTIFICATION BY MASS SPECTROMETRY.
+RX   PubMed=17028174; DOI=10.1073/pnas.0603781103;
+RA   Baba M., Hong S.-B., Sharma N., Warren M.B., Nickerson M.L.,
+RA   Iwamatsu A., Esposito D., Gillette W.K., Hopkins R.F. III,
+RA   Hartley J.L., Furihata M., Oishi S., Zhen W., Burke T.R. Jr.,
+RA   Linehan W.M., Schmidt L.S., Zbar B.;
+RT   "Folliculin encoded by the BHD gene interacts with a binding protein,
+RT   FNIP1, and AMPK, and is involved in AMPK and mTOR signaling.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 103:15552-15557(2006).
+RN   [11]
+RP   INTERACTION WITH FNIP2.
+RX   PubMed=18403135; DOI=10.1016/j.gene.2008.02.022;
+RA   Hasumi H., Baba M., Hong S.-B., Hasumi Y., Huang Y., Yao M.,
+RA   Valera V.A., Linehan W.M., Schmidt L.S.;
+RT   "Identification and characterization of a novel folliculin-interacting
+RT   protein FNIP2.";
+RL   Gene 415:60-67(2008).
+RN   [12]
+RP   FUNCTION, SUBCELLULAR LOCATION, AND INTERACTION WITH FNIP2.
+RX   PubMed=18663353; DOI=10.1038/onc.2008.261;
+RA   Takagi Y., Kobayashi T., Shiono M., Wang L., Piao X., Sun G.,
+RA   Zhang D., Abe M., Hagiwara Y., Takahashi K., Hino O.;
+RT   "Interaction of folliculin (Birt-Hogg-Dube gene product) with a novel
+RT   Fnip1-like (FnipL/Fnip2) protein.";
+RL   Oncogene 27:5339-5347(2008).
+RN   [13]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-62 AND SER-73, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=18669648; DOI=10.1073/pnas.0805139105;
+RA   Dephoure N., Zhou C., Villen J., Beausoleil S.A., Bakalarski C.E.,
+RA   Elledge S.J., Gygi S.P.;
+RT   "A quantitative atlas of mitotic phosphorylation.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 105:10762-10767(2008).
+RN   [14]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-62; SER-73 AND SER-302,
+RP   AND MASS SPECTROMETRY.
+RC   TISSUE=Embryonic kidney;
+RX   PubMed=19413330; DOI=10.1021/ac9004309;
+RA   Gauci S., Helbig A.O., Slijper M., Krijgsveld J., Heck A.J.,
+RA   Mohammed S.;
+RT   "Lys-N and trypsin cover complementary parts of the phosphoproteome in
+RT   a refined SCX-based approach.";
+RL   Anal. Chem. 81:4493-4501(2009).
+RN   [15]
+RP   VARIANT RCC CYS-239.
+RX   PubMed=18794106; DOI=10.1158/1078-0432.CCR-08-0608;
+RA   Woodward E.R., Ricketts C., Killick P., Gad S., Morris M.R.,
+RA   Kavalier F., Hodgson S.V., Giraud S., Bressac-de Paillerets B.,
+RA   Chapman C., Escudier B., Latif F., Richard S., Maher E.R.;
+RT   "Familial non-VHL clear cell (conventional) renal cell carcinoma:
+RT   clinical features, segregation analysis, and mutation analysis of
+RT   FLCN.";
+RL   Clin. Cancer Res. 14:5925-5930(2008).
+RN   [16]
+RP   VARIANTS PSP PHE-157 DEL AND TYR-429.
+RX   PubMed=18505456; DOI=10.1111/j.1399-0004.2008.01030.x;
+RA   Ren H.Z., Zhu C.C., Yang C., Chen S.L., Xie J., Hou Y.Y., Xu Z.F.,
+RA   Wang D.J., Mu D.K., Ma D.H., Wang Y., Ye M.H., Ye Z.R., Chen B.F.,
+RA   Wang C.G., Lin J., Qiao D., Yi L.;
+RT   "Mutation analysis of the FLCN gene in Chinese patients with sporadic
+RT   and familial isolated primary spontaneous pneumothorax.";
+RL   Clin. Genet. 74:178-183(2008).
+RN   [17]
+RP   VARIANT PSP LYS-132.
+RX   PubMed=18579543; DOI=10.1183/09031936.00132707;
+RA   Frohlich B.A., Zeitz C., Matyas G., Alkadhi H., Tuor C., Berger W.,
+RA   Russi E.W.;
+RT   "Novel mutations in the folliculin gene associated with spontaneous
+RT   pneumothorax.";
+RL   Eur. Respir. J. 32:1316-1320(2008).
+RN   [18]
+RP   VARIANT BHD ARG-508.
+RX   PubMed=18234728; DOI=10.1136/jmg.2007.054304;
+RA   Toro J.R., Wei M.H., Glenn G.M., Weinreich M., Toure O., Vocke C.,
+RA   Turner M., Choyke P., Merino M.J., Pinto P.A., Steinberg S.M.,
+RA   Schmidt L.S., Linehan W.M.;
+RT   "BHD mutations, clinical and molecular genetic investigations of Birt-
+RT   Hogg-Dube syndrome: a new series of 50 families and a review of
+RT   published reports.";
+RL   J. Med. Genet. 45:321-331(2008).
+RN   [19]
+RP   VARIANT BHD ILE-108.
+RX   PubMed=19785621; DOI=10.1111/j.1365-2133.2009.09517.x;
+RA   Kluger N., Giraud S., Coupier I., Avril M.F., Dereure O., Guillot B.,
+RA   Richard S., Bessis D.;
+RT   "Birt-Hogg-Dube syndrome: clinical and genetic studies of 10 French
+RT   families.";
+RL   Br. J. Dermatol. 162:527-537(2010).
+RN   [20]
+RP   VARIANT CYS-362, AND CHARACTERIZATION OF VARIANTS PHE-157 DEL;
+RP   CYS-239; CYS-362 AND ARG-508.
+RX   PubMed=21538689; DOI=10.1002/humu.21519;
+RA   Nahorski M.S., Reiman A., Lim D.H., Nookala R.K., Seabra L., Lu X.,
+RA   Fenton J., Boora U., Nordenskjold M., Latif F., Hurst L.D.,
+RA   Maher E.R.;
+RT   "Birt Hogg-Dube syndrome-associated FLCN mutations disrupt protein
+RT   stability.";
+RL   Hum. Mutat. 32:921-929(2011).
+CC   -!- FUNCTION: May play a role in the pathogenesis of an uncommon form
+CC       of kidney cancer through its association with an inherited
+CC       disorder of the hair follicle (fibrofolliculomas). May be a tumor
+CC       suppressor. May be involved in colorectal tumorigenesis. May be
+CC       involved in energy and/or nutrient sensing through the AMPK and
+CC       mTOR signaling pathways. May regulate phosphorylation of RPS6KB1.
+CC   -!- SUBUNIT: Interacts (via C-terminus) with FNIP1 and FNIP2 (via C-
+CC       terminus). This mediates indirect interaction with the PRKAA1,
+CC       PRKAB1 and PRKAG1 subunits of 5'-AMP-activated protein kinase.
+CC   -!- SUBCELLULAR LOCATION: Cytoplasm. Nucleus. Note=Mainly localized in
+CC       the nucleus. Co-localizes with FNIP1 and FNIP2 in the cytoplasm.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=3;
+CC       Name=1;
+CC         IsoId=Q8NFG4-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=Q8NFG4-2; Sequence=VSP_017314, VSP_017315;
+CC         Note=No experimental confirmation available;
+CC       Name=3;
+CC         IsoId=Q8NFG4-3; Sequence=VSP_017312, VSP_017313;
+CC         Note=No experimental confirmation available;
+CC   -!- TISSUE SPECIFICITY: Expressed in most tissues tested, including
+CC       skin, lung, kidney, heart, testis and stomach.
+CC   -!- DEVELOPMENTAL STAGE: Expressed in fetal lung, kidney, liver, and
+CC       brain.
+CC   -!- PTM: Phosphorylated. Several different phosphorylated forms exist.
+CC   -!- DISEASE: Defects in FLCN are the cause of Birt-Hogg-Dube syndrome
+CC       (BHD) [MIM:135150]. BHD is a rare autosomal dominant
+CC       genodermatosis characterized by hair follicle hamartomas
+CC       (fibrofolliculomas), kidney tumors, and spontaneous pneumothorax.
+CC       Fibrofolliculomas are part of the triad of BHD skin lesions that
+CC       also includes trichodiscomas and acrochordons. Onset of this
+CC       dermatologic condition is invariably in adulthood. BHD is
+CC       associated with a variety of histologic types of renal tumors,
+CC       including chromophobe renal cell carcinoma (RCC), benign renal
+CC       oncocytoma, clear-cell RCC and papillary type I RCC. Multiple
+CC       lipomas, angiolipomas, and parathyroid adenomas are also seen in
+CC       patients affected with this disease. The majority of mutations are
+CC       predicted to prematurely terminate the protein.
+CC   -!- DISEASE: Defects in FLCN are in some cases a cause of primary
+CC       spontaneous pneumothorax (PSP) [MIM:173600]. PSP is a condition in
+CC       which air is present in the pleural space in the absence of a
+CC       precipitating event, such as trauma or lung disease. This results
+CC       in secondary collapse of the lung, either partially or completely,
+CC       and some degree of hypoxia. PSP is relatively common, with an
+CC       incidence between 7.4-18/100'000 for men and 1.2-6/100'000 for
+CC       women and a dose-dependent, increased risk among smokers. Most
+CC       cases are sporadic, typically occurring in tall, thin men aged 10-
+CC       30 years and generally while at rest. Familial PSP is rarer and
+CC       usually is inherited as an autosomal dominant condition with
+CC       reduced penetrance, although X-linked recessive and autosomal
+CC       recessive inheritance have also been suggested.
+CC   -!- DISEASE: Defects in FLCN may be a cause of renal cell carcinoma
+CC       (RCC) [MIM:144700]. Renal cell carcinoma is a heterogeneous group
+CC       of sporadic or hereditary carcinoma derived from cells of the
+CC       proximal renal tubular epithelium. It is subclassified into clear
+CC       cell renal carcinoma (non-papillary carcinoma), papillary renal
+CC       cell carcinoma, chromophobe renal cell carcinoma, collecting duct
+CC       carcinoma with medullary carcinoma of the kidney, and unclassified
+CC       renal cell carcinoma. Clear cell renal cell carcinoma is the most
+CC       common subtype.
+CC   -!- SIMILARITY: Belongs to the folliculin family.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/FLCN";
+CC   -!- WEB RESOURCE: Name=Atlas of Genetics and Cytogenetics in Oncology
+CC       and Haematology;
+CC       URL="http://atlasgeneticsoncology.org/Genes/FLCNID789ch17p11.html";
+CC   -!- WEB RESOURCE: Name=Leiden Open Variation Database; Note=Folliculin
+CC       (FLCN);
+CC       URL="http://grenada.lumc.nl/LOVD2/shared1/home.php?select_db=FLCN";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF517523; AAM94803.1; -; mRNA.
+DR   EMBL; AK127912; BAC87186.1; -; mRNA.
+DR   EMBL; AK126951; BAC86760.1; -; mRNA.
+DR   EMBL; AC055811; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; CH471196; EAW55716.1; -; Genomic_DNA.
+DR   EMBL; BC015687; AAH15687.1; -; mRNA.
+DR   EMBL; BC015725; AAH15725.2; -; mRNA.
+DR   IPI; IPI00185096; -.
+DR   IPI; IPI00329635; -.
+DR   IPI; IPI00444197; -.
+DR   RefSeq; NP_653207.1; NM_144606.5.
+DR   RefSeq; NP_659434.2; NM_144997.5.
+DR   UniGene; Hs.31652; -.
+DR   ProteinModelPortal; Q8NFG4; -.
+DR   IntAct; Q8NFG4; 3.
+DR   STRING; Q8NFG4; -.
+DR   PhosphoSite; Q8NFG4; -.
+DR   DMDM; 74751276; -.
+DR   PRIDE; Q8NFG4; -.
+DR   DNASU; 201163; -.
+DR   Ensembl; ENST00000285071; ENSP00000285071; ENSG00000154803.
+DR   GeneID; 201163; -.
+DR   KEGG; hsa:201163; -.
+DR   UCSC; uc002gra.2; human.
+DR   UCSC; uc002grb.2; human.
+DR   UCSC; uc002grc.2; human.
+DR   CTD; 201163; -.
+DR   GeneCards; GC17M017056; -.
+DR   H-InvDB; HIX0202417; -.
+DR   HGNC; HGNC:27310; FLCN.
+DR   HPA; CAB015158; -.
+DR   HPA; HPA028760; -.
+DR   MIM; 135150; phenotype.
+DR   MIM; 144700; phenotype.
+DR   MIM; 173600; phenotype.
+DR   MIM; 607273; gene.
+DR   neXtProt; NX_Q8NFG4; -.
+DR   Orphanet; 122; Birt-Hogg-Dube syndrome.
+DR   Orphanet; 2903; Familial spontaneous pneumothorax.
+DR   PharmGKB; PA134901005; -.
+DR   eggNOG; NOG319853; -.
+DR   GeneTree; ENSGT00390000009864; -.
+DR   HOGENOM; HBG716059; -.
+DR   HOVERGEN; HBG081531; -.
+DR   InParanoid; Q8NFG4; -.
+DR   KO; K09594; -.
+DR   OMA; LLKFWMT; -.
+DR   OrthoDB; EOG4P8FHW; -.
+DR   PhylomeDB; Q8NFG4; -.
+DR   NextBio; 90061; -.
+DR   ArrayExpress; Q8NFG4; -.
+DR   Bgee; Q8NFG4; -.
+DR   CleanEx; HS_FLCN; -.
+DR   Genevestigator; Q8NFG4; -.
+DR   GermOnline; ENSG00000154803; Homo sapiens.
+DR   GO; GO:0005737; C:cytoplasm; IDA:UniProtKB.
+DR   GO; GO:0005634; C:nucleus; IDA:UniProtKB.
+DR   GO; GO:0005886; C:plasma membrane; IDA:HPA.
+DR   GO; GO:0005515; F:protein binding; IPI:UniProtKB.
+DR   GO; GO:0001932; P:regulation of protein phosphorylation; IDA:UniProtKB.
+DR   InterPro; IPR021713; Folliculin.
+DR   Pfam; PF11704; Folliculin; 1.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Coiled coil; Complete proteome; Cytoplasm;
+KW   Disease mutation; Nucleus; Phosphoprotein; Reference proteome;
+KW   Tumor suppressor.
+FT   CHAIN         1    579       Folliculin.
+FT                                /FTId=PRO_0000223940.
+FT   COILED      287    310       Potential.
+FT   MOD_RES      62     62       Phosphoserine.
+FT   MOD_RES      73     73       Phosphoserine.
+FT   MOD_RES     302    302       Phosphoserine.
+FT   VAR_SEQ     134    197       CPGREGPIFFGDEQHGFVFSHTFFIKDSLARGFQRWYSIIT
+FT                                IMMDRIYLINSWPFLLGKVRGII -> SLVATEPVSVGAHM
+FT                                LPGALGGLGASIAQGGRHWSSLRADPQISTAQGTGRLPCPE
+FT                                LREESCWTC (in isoform 3).
+FT                                /FTId=VSP_017312.
+FT   VAR_SEQ     198    579       Missing (in isoform 3).
+FT                                /FTId=VSP_017313.
+FT   VAR_SEQ     291    342       DLEEESESWDNSEAEEEEKAPVLPESTEGRELTQGPAESSS
+FT                                LSGCGSWQPRK -> GEAGVLLPGPWPGWPWGGTSCLLSWQ
+FT                                ESLREGNAALNQPRTSLREAHPPISV (in isoform
+FT                                2).
+FT                                /FTId=VSP_017314.
+FT   VAR_SEQ     343    579       Missing (in isoform 2).
+FT                                /FTId=VSP_017315.
+FT   VARIANT      79     79       S -> W (in a sporadic colorectal
+FT                                carcinoma; somatic mutation).
+FT                                /FTId=VAR_025356.
+FT   VARIANT     108    108       S -> I (in BHD).
+FT                                /FTId=VAR_066023.
+FT   VARIANT     132    132       E -> K (in PSP).
+FT                                /FTId=VAR_066024.
+FT   VARIANT     157    157       Missing (in PSP; impaired protein
+FT                                stability).
+FT                                /FTId=VAR_066025.
+FT   VARIANT     238    238       A -> V (in a renal cell carcinoma cell
+FT                                line).
+FT                                /FTId=VAR_025357.
+FT   VARIANT     239    239       R -> C (in RCC; impaired protein
+FT                                stability).
+FT                                /FTId=VAR_066026.
+FT   VARIANT     320    320       R -> Q (in a primary colorectal cancer).
+FT                                /FTId=VAR_025358.
+FT   VARIANT     362    362       R -> C (found in a colorectal cell line;
+FT                                impaired protein stability).
+FT                                /FTId=VAR_066027.
+FT   VARIANT     392    392       R -> G (in a primary colorectal cancer;
+FT                                somatic mutation).
+FT                                /FTId=VAR_025359.
+FT   VARIANT     429    429       H -> Y (in PSP).
+FT                                /FTId=VAR_066028.
+FT   VARIANT     444    444       A -> S (in a primary clear-cell renal
+FT                                cell carcinoma; somatic mutation).
+FT                                /FTId=VAR_025360.
+FT   VARIANT     445    445       A -> T (in a sporadic colorectal
+FT                                carcinoma; somatic mutation;
+FT                                dbSNP:rs41419545).
+FT                                /FTId=VAR_025361.
+FT   VARIANT     508    508       K -> R (in BHD; does not impair protein
+FT                                stability, growth suppression activity or
+FT                                intracellular localization of
+FT                                folliculin).
+FT                                /FTId=VAR_066029.
+SQ   SEQUENCE   579 AA;  64473 MW;  E168EB34544C6336 CRC64;
+     MNAIVALCHF CELHGPRTLF CTEVLHAPLP QGDGNEDSPG QGEQAEEEEG GIQMNSRMRA
+     HSPAEGASVE SSSPGPKKSD MCEGCRSLAA GHPGYISHDK ETSIKYVSHQ HPSHPQLFSI
+     VRQACVRSLS CEVCPGREGP IFFGDEQHGF VFSHTFFIKD SLARGFQRWY SIITIMMDRI
+     YLINSWPFLL GKVRGIIDEL QGKALKVFEA EQFGCPQRAQ RMNTAFTPFL HQRNGNAARS
+     LTSLTSDDNL WACLHTSFAW LLKACGSRLT EKLLEGAPTE DTLVQMEKLA DLEEESESWD
+     NSEAEEEEKA PVLPESTEGR ELTQGPAESS SLSGCGSWQP RKLPVFKSLR HMRQVLGAPS
+     FRMLAWHVLM GNQVIWKSRD VDLVQSAFEV LRTMLPVGCV RIIPYSSQYE EAYRCNFLGL
+     SPHVQIPPHV LSSEFAVIVE VHAAARSTLH PVGCEDDQSL SKYEFVVTSG SPVAADRVGP
+     TILNKIEAAL TNQNLSVDVV DQCLVCLKEE WMNKVKVLFK FTKVDSRPKE DTQKLLSILG
+     ASEEDNVKLL KFWMTGLSKT YKSHLMSTVR SPTASESRN
+//

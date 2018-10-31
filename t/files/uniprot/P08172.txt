@@ -1,0 +1,290 @@
+ID   ACM2_HUMAN              Reviewed;         466 AA.
+AC   P08172; Q4VBK6; Q9P1X9;
+DT   01-AUG-1988, integrated into UniProtKB/Swiss-Prot.
+DT   01-AUG-1988, sequence version 1.
+DT   21-MAR-2012, entry version 129.
+DE   RecName: Full=Muscarinic acetylcholine receptor M2;
+GN   Name=CHRM2;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=87263421; PubMed=3037705; DOI=10.1126/science.3037705;
+RA   Bonner T.I., Buckley N.J., Young A.C., Brann M.R.;
+RT   "Identification of a family of muscarinic acetylcholine receptor
+RT   genes.";
+RL   Science 237:527-532(1987).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=88166632; PubMed=3443095;
+RA   Peralta E.G., Ashkenazi A., Winslow J.W., Smith D.H., Ramachandran J.,
+RA   Capon D.J.;
+RT   "Distinct primary structures, ligand-binding properties and tissue-
+RT   specific expression of four human muscarinic acetylcholine
+RT   receptors.";
+RL   EMBO J. 6:3923-3929(1987).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Brain;
+RA   Puhl H.L. III, Ikeda S.R., Aronstam R.S.;
+RT   "cDNA clones of human proteins involved in signal transduction
+RT   sequenced by the Guthrie cDNA resource center (www.cdna.org).";
+RL   Submitted (APR-2002) to the EMBL/GenBank/DDBJ databases.
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 27-466.
+RX   PubMed=15014171; DOI=10.1093/molbev/msh100;
+RA   Kitano T., Liu Y.-H., Ueda S., Saitou N.;
+RT   "Human-specific amino acid changes found in 103 protein-coding
+RT   genes.";
+RL   Mol. Biol. Evol. 21:936-944(2004).
+RN   [6]
+RP   INTERACTION WITH ARRB1 AND ARRB2.
+RX   PubMed=7822302; DOI=10.1074/jbc.270.2.720;
+RA   Gurevich V.V., Dion S.B., Onorato J.J., Ptasienski J., Kim C.M.,
+RA   Sterne-Marr R., Hosey M.M., Benovic J.L.;
+RT   "Arrestin interactions with G protein-coupled receptors. Direct
+RT   binding studies of wild type and mutant arrestins with rhodopsin, beta
+RT   2-adrenergic, and m2 muscarinic cholinergic receptors.";
+RL   J. Biol. Chem. 270:720-731(1995).
+RN   [7]
+RP   INDUCTION, AND MASS SPECTROMETRY.
+RX   PubMed=16548883; DOI=10.1111/j.1462-5822.2005.00644.x;
+RA   Leong W.F., Chow V.T.;
+RT   "Transcriptomic and proteomic analyses of rhabdomyosarcoma cells
+RT   reveal differential cellular gene expression in response to
+RT   enterovirus 71 infection.";
+RL   Cell. Microbiol. 8:565-580(2006).
+RN   [8]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO ALCOHOLISM AND MAJOR DEPRESSIVE
+RP   DISORDER.
+RX   PubMed=15229186; DOI=10.1093/hmg/ddh194;
+RA   Wang J.C., Hinrichs A.L., Stock H., Budde J., Allen R., Bertelsen S.,
+RA   Kwon J.M., Wu W., Dick D.M., Rice J., Jones K., Nurnberger J.I. Jr.,
+RA   Tischfield J., Porjesz B., Edenberg H.J., Hesselbrock V., Crowe R.,
+RA   Schuckit M., Begleiter H., Reich T., Goate A.M., Bierut L.J.;
+RT   "Evidence of common and specific genetic effects: association of the
+RT   muscarinic acetylcholine receptor M2 (CHRM2) gene with alcohol
+RT   dependence and major depressive syndrome.";
+RL   Hum. Mol. Genet. 13:1903-1911(2004).
+RN   [9]
+RP   INTERACTION WITH GNB2L1.
+RX   PubMed=20976005; DOI=10.1371/journal.pone.0013517;
+RA   Reiner C.L., McCullar J.S., Kow R.L., Le J.H., Goodlett D.R.,
+RA   Nathanson N.M.;
+RT   "RACK1 associates with muscarinic receptors and regulates M(2)
+RT   receptor trafficking.";
+RL   PLoS ONE 5:E13517-E13517(2010).
+CC   -!- FUNCTION: The muscarinic acetylcholine receptor mediates various
+CC       cellular responses, including inhibition of adenylate cyclase,
+CC       breakdown of phosphoinositides and modulation of potassium
+CC       channels through the action of G proteins. Primary transducing
+CC       effect is adenylate cyclase inhibition.
+CC   -!- SUBUNIT: Interacts with ARRB1 and ARRB2. Interacts with
+CC       GNB2L1/RACK1; the interaction regulates CHRM2 internalization.
+CC   -!- SUBCELLULAR LOCATION: Cell membrane; Multi-pass membrane protein.
+CC       Cell junction, synapse, postsynaptic cell membrane; Multi-pass
+CC       membrane protein.
+CC   -!- INDUCTION: Up-regulated in response to enterovirus 71 (EV71)
+CC       infection.
+CC   -!- POLYMORPHISM: Genetic variations in CHRM2 can influence
+CC       susceptibility to alcoholism [MIM:103780].
+CC   -!- DISEASE: Genetic variations in CHRM2 can influence susceptibility
+CC       to major depressive disorder (MDD) [MIM:608516]. MDD is one of the
+CC       most common psychiatric disorders. MDD is a complex trait
+CC       characterized by one or more major depressive episodes without a
+CC       history of manic, mixed, or hypomanic episodes. A major depressive
+CC       episode is characterized by at least 2 weeks during which there is
+CC       a new onset or clear worsening of either depressed mood or loss of
+CC       interest or pleasure in nearly all activities. Four additional
+CC       symptoms must also be present including changes in appetite,
+CC       weight, sleep, and psychomotor activity; decreased energy;
+CC       feelings of worthlessness or guilt; difficulty thinking,
+CC       concentrating, or making decisions; or recurrent thoughts of death
+CC       or suicidal ideation, plans, or attempts. The episode must be
+CC       accompanied by distress or impairment in social, occupational, or
+CC       other important areas of functioning.
+CC   -!- SIMILARITY: Belongs to the G-protein coupled receptor 1 family.
+CC       Muscarinic acetylcholine receptor subfamily. CHRM2 sub-subfamily.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; M16404; AAA51570.1; -; Genomic_DNA.
+DR   EMBL; X15264; CAA33335.1; -; Genomic_DNA.
+DR   EMBL; AF498916; AAM18939.1; -; mRNA.
+DR   EMBL; BC095547; AAH95547.1; -; mRNA.
+DR   EMBL; BC106741; AAI06742.1; -; mRNA.
+DR   EMBL; BC106742; AAI06743.1; -; mRNA.
+DR   EMBL; AB041391; BAA94476.1; -; Genomic_DNA.
+DR   IPI; IPI00027473; -.
+DR   PIR; S10126; S10126.
+DR   RefSeq; NP_000730.1; NM_000739.2.
+DR   RefSeq; NP_001006627.1; NM_001006626.1.
+DR   RefSeq; NP_001006628.1; NM_001006627.1.
+DR   RefSeq; NP_001006629.1; NM_001006628.1.
+DR   RefSeq; NP_001006630.1; NM_001006629.1.
+DR   RefSeq; NP_001006631.1; NM_001006630.1.
+DR   RefSeq; NP_001006632.1; NM_001006631.1.
+DR   RefSeq; NP_001006633.1; NM_001006632.1.
+DR   UniGene; Hs.535891; -.
+DR   PDB; 1LUB; Model; -; A=1-50.
+DR   PDB; 3UON; X-ray; 3.00 A; A=4-466.
+DR   PDBsum; 1LUB; -.
+DR   PDBsum; 3UON; -.
+DR   ProteinModelPortal; P08172; -.
+DR   SMR; P08172; 25-456.
+DR   IntAct; P08172; 4.
+DR   STRING; P08172; -.
+DR   PhosphoSite; P08172; -.
+DR   DMDM; 113122; -.
+DR   PRIDE; P08172; -.
+DR   DNASU; 1129; -.
+DR   Ensembl; ENST00000320658; ENSP00000319984; ENSG00000181072.
+DR   Ensembl; ENST00000397608; ENSP00000380733; ENSG00000181072.
+DR   Ensembl; ENST00000401861; ENSP00000384401; ENSG00000181072.
+DR   Ensembl; ENST00000402486; ENSP00000384937; ENSG00000181072.
+DR   Ensembl; ENST00000402594; ENSP00000385652; ENSG00000181072.
+DR   Ensembl; ENST00000406605; ENSP00000384346; ENSG00000181072.
+DR   Ensembl; ENST00000435017; ENSP00000406474; ENSG00000181072.
+DR   Ensembl; ENST00000445907; ENSP00000399745; ENSG00000181072.
+DR   Ensembl; ENST00000453373; ENSP00000415386; ENSG00000181072.
+DR   GeneID; 1129; -.
+DR   KEGG; hsa:1129; -.
+DR   UCSC; uc003vtf.1; human.
+DR   CTD; 1129; -.
+DR   GeneCards; GC07P136553; -.
+DR   H-InvDB; HIX0007117; -.
+DR   HGNC; HGNC:1951; CHRM2.
+DR   HPA; CAB022338; -.
+DR   HPA; HPA029795; -.
+DR   MIM; 103780; phenotype.
+DR   MIM; 118493; gene.
+DR   MIM; 608516; phenotype.
+DR   neXtProt; NX_P08172; -.
+DR   eggNOG; NOG250863; -.
+DR   GeneTree; ENSGT00560000076730; -.
+DR   HOGENOM; HBG713567; -.
+DR   HOVERGEN; HBG105720; -.
+DR   InParanoid; P08172; -.
+DR   KO; K04130; -.
+DR   OMA; NNNMPGS; -.
+DR   OrthoDB; EOG41JZCC; -.
+DR   PhylomeDB; P08172; -.
+DR   Pathway_Interaction_DB; arf6_traffickingpathway; Arf6 trafficking events.
+DR   Reactome; REACT_111102; Signal Transduction.
+DR   DrugBank; DB00517; Anisotropine Methylbromide.
+DR   DrugBank; DB00572; Atropine.
+DR   DrugBank; DB00767; Benzquinamide.
+DR   DrugBank; DB00411; Carbachol.
+DR   DrugBank; DB00785; Cryptenamine.
+DR   DrugBank; DB01176; Cyclizine.
+DR   DrugBank; DB01151; Desipramine.
+DR   DrugBank; DB01231; Diphenidol.
+DR   DrugBank; DB01334; Doxacurium.
+DR   DrugBank; DB01135; Doxacurium chloride.
+DR   DrugBank; DB01148; Flavoxate.
+DR   DrugBank; DB00483; Gallamine Triethiodide.
+DR   DrugBank; DB00725; Homatropine Methylbromide.
+DR   DrugBank; DB00424; Hyoscyamine.
+DR   DrugBank; DB00332; Ipratropium.
+DR   DrugBank; DB01403; Methotrimeprazine.
+DR   DrugBank; DB00340; Metixene.
+DR   DrugBank; DB01336; Metocurine.
+DR   DrugBank; DB01226; Mivacurium.
+DR   DrugBank; DB00334; Olanzapine.
+DR   DrugBank; DB01062; Oxybutynin.
+DR   DrugBank; DB00383; Oxyphencyclimine.
+DR   DrugBank; DB01085; Pilocarpine.
+DR   DrugBank; DB00387; Procyclidine.
+DR   DrugBank; DB00420; Promazine.
+DR   DrugBank; DB01069; Promethazine.
+DR   DrugBank; DB00777; Propiomazine.
+DR   DrugBank; DB00728; Rocuronium.
+DR   DrugBank; DB00372; Thiethylperazine.
+DR   DrugBank; DB01036; Tolterodine.
+DR   DrugBank; DB00505; Tridihexethyl.
+DR   DrugBank; DB00508; Triflupromazine.
+DR   NextBio; 4680; -.
+DR   ArrayExpress; P08172; -.
+DR   Bgee; P08172; -.
+DR   CleanEx; HS_CHRM2; -.
+DR   Genevestigator; P08172; -.
+DR   GermOnline; ENSG00000181072; Homo sapiens.
+DR   GO; GO:0030054; C:cell junction; IEA:UniProtKB-KW.
+DR   GO; GO:0005887; C:integral to plasma membrane; TAS:ProtInc.
+DR   GO; GO:0045211; C:postsynaptic membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0016907; F:G-protein coupled acetylcholine receptor activity; TAS:ProtInc.
+DR   GO; GO:0007207; P:activation of phospholipase C activity by G-protein coupled acetylcholine receptor signaling pathway; TAS:ProtInc.
+DR   GO; GO:0007188; P:G-protein signaling, coupled to cAMP nucleotide second messenger; TAS:ProtInc.
+DR   GO; GO:0007399; P:nervous system development; TAS:ProtInc.
+DR   GO; GO:0008016; P:regulation of heart contraction; TAS:ProtInc.
+DR   GO; GO:0009615; P:response to virus; IEP:UniProtKB.
+DR   InterPro; IPR000276; 7TM_GPCR_Rhodpsn.
+DR   InterPro; IPR017452; GPCR_Rhodpsn_supfam.
+DR   InterPro; IPR001065; Musac_M2_rcpt.
+DR   InterPro; IPR000995; Musac_rcpt.
+DR   Pfam; PF00001; 7tm_1; 1.
+DR   PRINTS; PR00237; GPCRRHODOPSN.
+DR   PRINTS; PR00243; MUSCARINICR.
+DR   PRINTS; PR00539; MUSCRINICM2R.
+DR   PROSITE; PS00237; G_PROTEIN_RECEP_F1_1; 1.
+DR   PROSITE; PS50262; G_PROTEIN_RECEP_F1_2; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Cell junction; Cell membrane; Complete proteome;
+KW   Disulfide bond; G-protein coupled receptor; Glycoprotein; Membrane;
+KW   Phosphoprotein; Postsynaptic cell membrane; Receptor;
+KW   Reference proteome; Synapse; Transducer; Transmembrane;
+KW   Transmembrane helix.
+FT   CHAIN         1    466       Muscarinic acetylcholine receptor M2.
+FT                                /FTId=PRO_0000069021.
+FT   TOPO_DOM      1     22       Extracellular (By similarity).
+FT   TRANSMEM     23     45       Helical; Name=1; (By similarity).
+FT   TOPO_DOM     46     59       Cytoplasmic (By similarity).
+FT   TRANSMEM     60     80       Helical; Name=2; (By similarity).
+FT   TOPO_DOM     81     97       Extracellular (By similarity).
+FT   TRANSMEM     98    119       Helical; Name=3; (By similarity).
+FT   TOPO_DOM    120    139       Cytoplasmic (By similarity).
+FT   TRANSMEM    140    162       Helical; Name=4; (By similarity).
+FT   TOPO_DOM    163    184       Extracellular (By similarity).
+FT   TRANSMEM    185    207       Helical; Name=5; (By similarity).
+FT   TOPO_DOM    208    388       Cytoplasmic (By similarity).
+FT   TRANSMEM    389    409       Helical; Name=6; (By similarity).
+FT   TOPO_DOM    410    423       Extracellular (By similarity).
+FT   TRANSMEM    424    443       Helical; Name=7; (By similarity).
+FT   TOPO_DOM    444    466       Cytoplasmic (By similarity).
+FT   MOD_RES     232    232       Phosphoserine (By similarity).
+FT   MOD_RES     234    234       Phosphoserine (By similarity).
+FT   MOD_RES     446    446       Phosphothreonine (Potential).
+FT   MOD_RES     450    450       Phosphothreonine (Potential).
+FT   MOD_RES     465    465       Phosphothreonine (Potential).
+FT   CARBOHYD      2      2       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD      3      3       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD      6      6       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD      9      9       N-linked (GlcNAc...) (Potential).
+FT   DISULFID     96    176       By similarity.
+FT   STRAND        5      7
+FT   STRAND       10     14
+FT   HELIX        16     18
+FT   TURN         24     26
+FT   TURN         30     32
+FT   HELIX        35     49
+SQ   SEQUENCE   466 AA;  51715 MW;  2FC2FD7748C22BEC CRC64;
+     MNNSTNSSNN SLALTSPYKT FEVVFIVLVA GSLSLVTIIG NILVMVSIKV NRHLQTVNNY
+     FLFSLACADL IIGVFSMNLY TLYTVIGYWP LGPVVCDLWL ALDYVVSNAS VMNLLIISFD
+     RYFCVTKPLT YPVKRTTKMA GMMIAAAWVL SFILWAPAIL FWQFIVGVRT VEDGECYIQF
+     FSNAAVTFGT AIAAFYLPVI IMTVLYWHIS RASKSRIKKD KKEPVANQDP VSPSLVQGRI
+     VKPNNNNMPS SDDGLEHNKI QNGKAPRDPV TENCVQGEEK ESSNDSTSVS AVASNMRDDE
+     ITQDENTVST SLGHSKDENS KQTCIRIGTK TPKSDSCTPT NTTVEVVGSS GQNGDEKQNI
+     VARKIVKMTK QPAKKKPPPS REKKVTRTIL AILLAFIITW APYNVMVLIN TFCAPCIPNT
+     VWTIGYWLCY INSTINPACY ALCNATFKKT FKHLLMCHYK NIGATR
+//

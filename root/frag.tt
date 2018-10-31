@@ -1,0 +1,6 @@
+[%
+page_title = 'Frag ' _ json.frag.id;
+%]
+
+[% json.frag.pdb.idcode %] { [% json.frag.dom %] }
+

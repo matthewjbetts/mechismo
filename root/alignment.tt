@@ -1,0 +1,59 @@
+<!--
+ to be passed in:
+   aln
+   pcid
+   e_value
+   ids_seqs - ordered list of seq ids to be shown
+   names    - hash of seq names, keyed by seq id (rather than using seq objects directly, so that different naming styles can be used)
+   posns    - hash of sequence positions to be highlighted, keyed by seq id (labels will be taken from json.results.thing.sites)
+-->
+[%
+  pcid = pcid FILTER format('%.2f%%');
+  e_value = e_value FILTER format('%.2e');
+
+  id_str = [];
+  seq_str = [];
+
+  FOREACH id_seq IN ids_seqs;
+    name = names.${id_seq};
+    aseq = aln.aseqs.${id_seq};
+
+    mutseq = aseq.aseq;
+    offset = 0;
+
+    IF posns.${id_seq}.defined;
+      FOREACH pos_a1 IN posns.${id_seq};
+        apos = aln.pos_to_apos.${id_seq}.${pos_a1};
+        IF apos > 0;
+          apos = apos + offset;
+          aa = mutseq.substr(apos - 1, 1);
+          replacement = [];
+          FOREACH site IN json.results.thing.sites.${id_seq}.${pos_a1}.sites;
+            replacement.push(site.label);
+          END;
+          replacement = "<span class='site' title='" _ replacement.join(', ') _ "'>${aa}</span>";
+          mutseq = mutseq.substr(apos - 1, 1, replacement);
+          offset = offset + replacement.length - 1;
+        END;
+      END;
+    END;
+    
+    id_str.push("<li>${name}/${aseq.start}-${aseq.end}</li>");
+    seq_str.push("<li>${mutseq}</li>");
+  END;
+  id_str.push("<li></li>");
+  seq_str.push("<li>${aln.id_line}</li>");
+  id_str = id_str.join('');
+  seq_str = seq_str.join('');
+%]
+
+<div class="aln">
+  [% "${pcid}, E = ${e_value}"; %]
+  <div class="aseqs">
+    <ul class="ids">[% id_str %]</ul>
+    <ul class="seqs">[% seq_str %]</ul>
+  </div>
+</div>
+
+[%
+%]

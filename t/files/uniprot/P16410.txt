@@ -1,0 +1,511 @@
+ID   CTLA4_HUMAN             Reviewed;         223 AA.
+AC   P16410; A0N1S0; E9PDH0; Q0PP65; Q52MC1; Q53TD5; Q5S005; Q8WXJ1;
+AC   Q96P43; Q9UKN9;
+DT   01-AUG-1990, integrated into UniProtKB/Swiss-Prot.
+DT   10-JAN-2003, sequence version 3.
+DT   21-MAR-2012, entry version 139.
+DE   RecName: Full=Cytotoxic T-lymphocyte protein 4;
+DE   AltName: Full=Cytotoxic T-lymphocyte-associated antigen 4;
+DE            Short=CTLA-4;
+DE   AltName: CD_antigen=CD152;
+DE   Flags: Precursor;
+GN   Name=CTLA4; Synonyms=CD152;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA / MRNA] (ISOFORM 1), TISSUE
+RP   SPECIFICITY, ALTERNATIVE SPLICING, AND VARIANT ALA-17.
+RX   MEDLINE=91318145; PubMed=1713603;
+RA   Harper K., Balzano C., Rouvier E., Mattei M.-G., Luciani M.-F.,
+RA   Golstein P.;
+RT   "CTLA-4 and CD28 activated lymphocyte molecules are closely related in
+RT   both mouse and human as to sequence, message expression, gene
+RT   structure, and chromosomal location.";
+RL   J. Immunol. 147:1037-1044(1991).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=21601151; PubMed=11735222; DOI=10.1006/geno.2001.6655;
+RA   Ling V., Wu P.W., Finnerty H.F., Agostino M.J., Graham J.R., Chen S.,
+RA   Jussiff J.M., Fisk G.J., Miller C.P., Collins M.;
+RT   "Assembly and annotation of human chromosome 2q33 sequence containing
+RT   the CD28, CTLA4, and ICOS gene cluster: analysis by computational,
+RT   comparative, and microarray approaches.";
+RL   Genomics 78:155-168(2001).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORMS 2; 3 AND 4), VARIANT ALA-17, AND
+RP   ALTERNATIVE SPLICING.
+RX   PubMed=18595775; DOI=10.1016/j.clim.2008.05.006;
+RA   Gu M., Kakoulidou M., Giscombe R., Pirskanen R., Lefvert A.K.,
+RA   Klareskog L., Wang X.;
+RT   "Identification of CTLA-4 isoforms produced by alternative splicing
+RT   and their association with myasthenia gravis.";
+RL   Clin. Immunol. 128:374-381(2008).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RA   Wu P.W., Ling V.;
+RT   "Full length sequence of hCTLA4 cDNA.";
+RL   Submitted (AUG-2001) to the EMBL/GenBank/DDBJ databases.
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RG   NIEHS SNPs program;
+RL   Submitted (JAN-2006) to the EMBL/GenBank/DDBJ databases.
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=15815621; DOI=10.1038/nature03466;
+RA   Hillier L.W., Graves T.A., Fulton R.S., Fulton L.A., Pepin K.H.,
+RA   Minx P., Wagner-McPherson C., Layman D., Wylie K., Sekhon M.,
+RA   Becker M.C., Fewell G.A., Delehaunty K.D., Miner T.L., Nash W.E.,
+RA   Kremitzki C., Oddy L., Du H., Sun H., Bradshaw-Cordum H., Ali J.,
+RA   Carter J., Cordes M., Harris A., Isak A., van Brunt A., Nguyen C.,
+RA   Du F., Courtney L., Kalicki J., Ozersky P., Abbott S., Armstrong J.,
+RA   Belter E.A., Caruso L., Cedroni M., Cotton M., Davidson T., Desai A.,
+RA   Elliott G., Erb T., Fronick C., Gaige T., Haakenson W., Haglund K.,
+RA   Holmes A., Harkins R., Kim K., Kruchowski S.S., Strong C.M.,
+RA   Grewal N., Goyea E., Hou S., Levy A., Martinka S., Mead K.,
+RA   McLellan M.D., Meyer R., Randall-Maher J., Tomlinson C.,
+RA   Dauphin-Kohlberg S., Kozlowicz-Reilly A., Shah N.,
+RA   Swearengen-Shahid S., Snider J., Strong J.T., Thompson J., Yoakum M.,
+RA   Leonard S., Pearman C., Trani L., Radionenko M., Waligorski J.E.,
+RA   Wang C., Rock S.M., Tin-Wollam A.-M., Maupin R., Latreille P.,
+RA   Wendl M.C., Yang S.-P., Pohl C., Wallis J.W., Spieth J., Bieri T.A.,
+RA   Berkowicz N., Nelson J.O., Osborne J., Ding L., Meyer R., Sabo A.,
+RA   Shotland Y., Sinha P., Wohldmann P.E., Cook L.L., Hickenbotham M.T.,
+RA   Eldred J., Williams D., Jones T.A., She X., Ciccarelli F.D.,
+RA   Izaurralde E., Taylor J., Schmutz J., Myers R.M., Cox D.R., Huang X.,
+RA   McPherson J.D., Mardis E.R., Clifton S.W., Warren W.C.,
+RA   Chinwalla A.T., Eddy S.R., Marra M.A., Ovcharenko I., Furey T.S.,
+RA   Miller W., Eichler E.E., Bork P., Suyama M., Torrents D.,
+RA   Waterston R.H., Wilson R.K.;
+RT   "Generation and annotation of the DNA sequences of human chromosomes 2
+RT   and 4.";
+RL   Nature 434:724-731(2005).
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Lung;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [8]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 38-223.
+RC   TISSUE=Lymphocyte;
+RX   MEDLINE=89120925; PubMed=3220103; DOI=10.1002/eji.1830181206;
+RA   Dariavach P., Mattei M.-G., Golstein P., Lefranc M.-P.;
+RT   "Human Ig superfamily CTLA-4 gene: chromosomal localization and
+RT   identity of protein sequence between murine and human CTLA-4
+RT   cytoplasmic domains.";
+RL   Eur. J. Immunol. 18:1901-1905(1988).
+RN   [9]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 140-223, AND TISSUE SPECIFICITY.
+RX   MEDLINE=99425274; PubMed=10493833; DOI=10.1006/geno.1999.5930;
+RA   Ling V., Wu P.W., Finnerty H.F., Sharpe A.H., Gray G.S., Collins M.;
+RT   "Complete sequence determination of the mouse and human CTLA4 gene
+RT   loci: cross-species DNA sequence similarity beyond exon borders.";
+RL   Genomics 60:341-355(1999).
+RN   [10]
+RP   FUNCTION.
+RX   MEDLINE=91341416; PubMed=1714933; DOI=10.1084/jem.174.3.561;
+RA   Linsley P.S., Brady W., Urnes M., Griosmaire L.S., Damle N.K.,
+RA   Ledbetter J.A.;
+RT   "CTLA-4 is a second receptor for the B cell activation antigen B7.";
+RL   J. Exp. Med. 174:561-569(1991).
+RN   [11]
+RP   PHOSPHORYLATION AT TYR-201.
+RX   PubMed=9175836; DOI=10.1016/S1074-7613(00)80346-5;
+RA   Shiratori T., Miyatake S., Ohno H., Nakaseko C., Isono K.,
+RA   Bonifacino J.S., Saito T.;
+RT   "Tyrosine phosphorylation controls internalization of CTLA-4 by
+RT   regulating its interaction with clathrin-associated adaptor complex
+RT   AP-2.";
+RL   Immunity 6:583-589(1997).
+RN   [12]
+RP   PHOSPHORYLATION AT TYR-201.
+RX   PubMed=9813138; DOI=10.1006/bbrc.1998.9559;
+RA   Schneider H., Schwartzberg P.L., Rudd C.E.;
+RT   "Resting lymphocyte kinase (Rlk/Txk) phosphorylates the YVKM motif and
+RT   regulates PI 3-kinase binding to T-cell antigen CTLA-4.";
+RL   Biochem. Biophys. Res. Commun. 252:14-19(1998).
+RN   [13]
+RP   POLYMORPHISM.
+RX   PubMed=12724780; DOI=10.1038/nature01621;
+RA   Ueda H., Howson J.M., Esposito L., Heward J., Snook H.,
+RA   Chamberlain G., Rainbow D.B., Hunter K.M., Smith A.N., Di Genova G.,
+RA   Herr M.H., Dahlman I., Payne F., Smyth D., Lowe C., Twells R.C.,
+RA   Howlett S., Healy B., Nutland S., Rance H.E., Everett V., Smink L.J.,
+RA   Lam A.C., Cordell H.J., Walker N.M., Bordin C., Hulme J., Motzo C.,
+RA   Cucca F., Hess J.F., Metzker M.L., Rogers J., Gregory S.,
+RA   Allahabadia A., Nithiyananthan R., Tuomilehto-Wolf E., Tuomilehto J.,
+RA   Bingley P., Gillespie K.M., Undlien D.E., Ronningen K.S., Guja C.,
+RA   Ionescu-Tirgoviste C., Savage D.A., Maxwell A.P., Carson D.J.,
+RA   Patterson C.C., Franklyn J.A., Clayton D.G., Peterson L.B.,
+RA   Wicker L.S., Todd J.A., Gough S.C.;
+RT   "Association of the T-cell regulatory gene CTLA4 with susceptibility
+RT   to autoimmune disease.";
+RL   Nature 423:506-511(2003).
+RN   [14]
+RP   GLYCOSYLATION AT ASN-113 AND ASN-145.
+RX   PubMed=16002699;
+RA   Darlington P.J., Kirchhof M.G., Criado G., Sondhi J., Madrenas J.;
+RT   "Hierarchical regulation of CTLA-4 dimer-based lattice formation and
+RT   its biological relevance for T cell inactivation.";
+RL   J. Immunol. 175:996-1004(2005).
+RN   [15]
+RP   FUNCTION, AND TISSUE SPECIFICITY.
+RX   PubMed=16551244; DOI=10.1146/annurev.immunol.24.021605.090535;
+RA   Teft W.A., Kirchhof M.G., Madrenas J.;
+RT   "A molecular perspective of CTLA-4 function.";
+RL   Annu. Rev. Immunol. 24:65-97(2006).
+RN   [16]
+RP   SUBCELLULAR LOCATION.
+RX   PubMed=18468488; DOI=10.1016/j.it.2008.02.011;
+RA   Valk E., Rudd C.E., Schneider H.;
+RT   "CTLA-4 trafficking and surface expression.";
+RL   Trends Immunol. 29:272-279(2008).
+RN   [17]
+RP   PHARMACEUTICAL.
+RX   PubMed=19426230; DOI=10.1111/j.1600-065X.2009.00780.x;
+RA   Linsley P.S., Nadler S.G.;
+RT   "The clinical utility of inhibiting CD28-mediated costimulation.";
+RL   Immunol. Rev. 229:307-321(2009).
+RN   [18]
+RP   STRUCTURE BY NMR OF 37-165.
+RX   MEDLINE=97372889; PubMed=9228944; DOI=10.1038/nsb0797-527;
+RA   Metzler W.J., Bajorath J., Fenderson W., Shaw S.Y., Constantine K.L.,
+RA   Naemura J., Leytze G., Peach R.J., Lavoie T.B., Mueller L.,
+RA   Linsley P.S.;
+RT   "Solution structure of human CTLA-4 and delineation of a CD80/CD86
+RT   binding site conserved in CD28.";
+RL   Nat. Struct. Biol. 4:527-531(1997).
+RN   [19]
+RP   X-RAY CRYSTALLOGRAPHY (3.2 ANGSTROMS) OF 36-161 IN COMPLEX WITH CD86,
+RP   SUBUNIT, AND DISULFIDE BONDS.
+RX   PubMed=11279501; DOI=10.1038/35069112;
+RA   Schwartz J.C., Zhang X., Fedorov A.A., Nathenson S.G., Almo S.C.;
+RT   "Structural basis for co-stimulation by the human CTLA-4/B7-2
+RT   complex.";
+RL   Nature 410:604-608(2001).
+RN   [20]
+RP   X-RAY CRYSTALLOGRAPHY (1.8 ANGSTROMS) OF 36-161, GLYCOSYLATION AT
+RP   ASN-113, SUBUNIT, AND DISULFIDE BONDS.
+RX   PubMed=21156796; DOI=10.1074/jbc.M110.182394;
+RA   Yu C., Sonnen A.F., George R., Dessailly B.H., Stagg L.J., Evans E.J.,
+RA   Orengo C.A., Stuart D.I., Ladbury J.E., Ikemizu S., Gilbert R.J.,
+RA   Davis S.J.;
+RT   "Rigid-body ligand recognition drives cytotoxic T-lymphocyte antigen 4
+RT   (CTLA-4) receptor triggering.";
+RL   J. Biol. Chem. 286:6685-6696(2011).
+RN   [21]
+RP   VARIANT ALA-17, AND INVOLVEMENT IN IDDM12.
+RX   MEDLINE=97402209; PubMed=9259273; DOI=10.1093/hmg/6.8.1275;
+RA   Marron M.P., Raffel L.J., Garchon H.-J., Jacob C.O., Serrano-Rios M.,
+RA   Martinez Larrad M.T., Teng W.-P., Park Y., Zhang Z.-X.,
+RA   Goldstein D.R., Tao Y.-W., Beaurain G., Bach J.-F., Huang H.-S.,
+RA   Luo D.-F., Zeidler A., Rotter J.I., Yang M.C.K., Modilevsky T.,
+RA   Maclaren N.K., She J.-X.;
+RT   "Insulin-dependent diabetes mellitus (IDDM) is associated with CTLA4
+RT   polymorphisms in multiple ethnic groups.";
+RL   Hum. Mol. Genet. 6:1275-1282(1997).
+RN   [22]
+RP   POLYMORPHISM, AND INVOLVEMENT IN CELIAC3.
+RX   MEDLINE=99205840; PubMed=10189842;
+RA   Djilali-Saiah I., Schmitz J., Harfouch-Hammoud E., Mougenot J.-F.,
+RA   Bach J.-F., Caillat-Zucman S.;
+RT   "CTLA-4 gene polymorphism is associated with predisposition to coeliac
+RT   disease.";
+RL   Gut 43:187-189(1998).
+RN   [23]
+RP   VARIANT ALA-17, AND INVOLVEMENT IN THYROID ASSOCIATED ORBITOPATHY.
+RX   MEDLINE=99402177; PubMed=10475192; DOI=10.1016/S0140-6736(99)01465-8;
+RA   Vaidya B., Imrie H., Perros P., Dickinson J., McCarthy M.I.,
+RA   Kendall-Taylor P., Pearce S.H.S.;
+RT   "Cytotoxic T lymphocyte antigen-4 (CTLA-4) gene polymorphism confers
+RT   susceptibility to thyroid associated orbitopathy.";
+RL   Lancet 354:743-744(1999).
+RN   [24]
+RP   VARIANT ALA-17, AND INVOLVEMENT IN GRAVES DISEASE.
+RX   MEDLINE=20385252; PubMed=10924276; DOI=10.1006/mgme.2000.3007;
+RA   Chistyakov D.A., Savost'anov K.V., Turakulov R.I., Petunina N.A.,
+RA   Trukhina L.V., Kudinova A.V., Balabolkin M.I., Nosikov V.V.;
+RT   "Complex association analysis of Graves disease using a set of
+RT   polymorphic markers.";
+RL   Mol. Genet. Metab. 70:214-218(2000).
+RN   [25]
+RP   VARIANT ALA-17.
+RX   MEDLINE=20395844; PubMed=10903931; DOI=10.1086/303059;
+RA   Deng Z., Morse J.H., Slager S.L., Cuervo N., Moore K.J., Venetos G.,
+RA   Kalachikov S., Cayanis E., Fischer S.G., Barst R.J., Hodge S.E.,
+RA   Knowles J.A.;
+RT   "Familial primary pulmonary hypertension (gene PPH1) is caused by
+RT   mutations in the bone morphogenetic protein receptor-II gene.";
+RL   Am. J. Hum. Genet. 67:737-744(2000).
+RN   [26]
+RP   INVOLVEMENT IN SYSTEMIC LUPUS ERYTHEMATOSUS.
+RX   PubMed=15138458; DOI=10.1038/sj.ejhg.5201214;
+RA   Barreto M., Santos E., Ferreira R., Fesel C., Fontes M.F., Pereira C.,
+RA   Martins B., Andreia R., Viana J.F., Crespo F., Vasconcelos C.,
+RA   Ferreira C., Vicente A.M.;
+RT   "Evidence for CTLA4 as a susceptibility gene for systemic lupus
+RT   erythematosus.";
+RL   Eur. J. Hum. Genet. 12:620-626(2004).
+RN   [27]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO HBV INFECTION, AND VARIANT ALA-17.
+RX   PubMed=15452244; DOI=10.1128/JVI.78.20.11258-11262.2004;
+RA   Thio C.L., Mosbruger T.L., Kaslow R.A., Karp C.L., Strathdee S.A.,
+RA   Vlahov D., O'Brien S.J., Astemborski J., Thomas D.L.;
+RT   "Cytotoxic T-lymphocyte antigen 4 gene and recovery from hepatitis B
+RT   virus infection.";
+RL   J. Virol. 78:11258-11262(2004).
+RN   [28]
+RP   INVOLVEMENT IN CELIAC3.
+RX   PubMed=15657618; DOI=10.1038/sj.ejhg.5201357;
+RA   Hunt K.A., McGovern D.P.B., Kumar P.J., Ghosh S., Travis S.P.L.,
+RA   Walters J.R.F., Jewell D.P., Playford R.J., van Heel D.A.;
+RT   "A common CTLA4 haplotype associated with coeliac disease.";
+RL   Eur. J. Hum. Genet. 13:440-444(2005).
+RN   [29]
+RP   INVOLVEMENT IN SYSTEMIC LUPUS ERYTHEMATOSUS.
+RX   PubMed=15688186; DOI=10.1007/s00439-004-1244-1;
+RA   Lee Y.H., Harley J.B., Nath S.K.;
+RT   "CTLA-4 polymorphisms and systemic lupus erythematosus (SLE): a meta-
+RT   analysis.";
+RL   Hum. Genet. 116:361-367(2005).
+CC   -!- FUNCTION: Inhibitory receptor acting as a major negative regulator
+CC       of T-cell responses. The affinity of CTLA4 for its natural B7
+CC       family ligands, CD80 and CD86, is considerably stronger than the
+CC       affinity of their cognate stimulatory coreceptor CD28.
+CC   -!- SUBUNIT: Homodimer; disulfide-linked. Binds to CD80/B7-1 and
+CC       CD86/B7.2.
+CC   -!- INTERACTION:
+CC       P33681:CD80; NbExp=3; IntAct=EBI-1030991, EBI-1031024;
+CC       P42081:CD86; NbExp=2; IntAct=EBI-1030991, EBI-1030956;
+CC   -!- SUBCELLULAR LOCATION: Cell membrane; Single-pass type I membrane
+CC       protein. Note=Exists primarily an intracellular antigen whose
+CC       surface expression is tightly regulated by restricted trafficking
+CC       to the cell surface and rapid internalisation;.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=4;
+CC       Name=1;
+CC         IsoId=P16410-1; Sequence=Displayed;
+CC       Name=2; Synonyms=ss-CTLA-4;
+CC         IsoId=P16410-2; Sequence=VSP_041284;
+CC       Name=3;
+CC         IsoId=P16410-3; Sequence=VSP_041284, VSP_041287;
+CC       Name=4;
+CC         IsoId=P16410-4; Sequence=VSP_041285, VSP_041286, VSP_041287;
+CC   -!- TISSUE SPECIFICITY: Widely expressed with highest levels in
+CC       lymphoid tissues. Detected in activated T-cells where expression
+CC       levels are 30- to 50-fold less than CD28, the stimulatory
+CC       coreceptor, on the cell surface following activation.
+CC   -!- PTM: N-glycosylation is important for dimerization.
+CC   -!- PTM: Phosphorylation at Tyr-201 prevents binding to the AP-2
+CC       adapter complex, blocks endocytosis, and leads to retention of
+CC       CTLA4 on the cell surface.
+CC   -!- POLYMORPHISM: Genetic variations in CTLA4 are associated with
+CC       susceptibility to several autoimmune disorders. They influence
+CC       responsiveness to hepatitis B virus (HBV) infection [MIM:610424].
+CC   -!- DISEASE: Genetic variation in CTLA4 influences susceptibility to
+CC       systemic lupus erythematosus (SLE) [MIM:152700]. SLE is a chronic,
+CC       inflammatory and often febrile multisystemic disorder of
+CC       connective tissue. It affects principally the skin, joints,
+CC       kidneys and serosal membranes. SLE is thought to represent a
+CC       failure of the regulatory mechanisms of the autoimmune system.
+CC   -!- DISEASE: Note=Genetic variations in CTLA4 may influence
+CC       susceptibility to Graves disease, an autoimmune disorder
+CC       associated with overactivity of the thyroid gland and
+CC       hyperthyroidism.
+CC   -!- DISEASE: Genetic variation in CTLA4 is the cause of susceptibility
+CC       to diabetes mellitus insulin-dependent type 12 (IDDM12)
+CC       [MIM:601388]. A multifactorial disorder of glucose homeostasis
+CC       that is characterized by susceptibility to ketoacidosis in the
+CC       absence of insulin therapy. Clinical fetaures are polydipsia,
+CC       polyphagia and polyuria which result from hyperglycemia-induced
+CC       osmotic diuresis and secondary thirst. These derangements result
+CC       in long-term complications that affect the eyes, kidneys, nerves,
+CC       and blood vessels.
+CC   -!- DISEASE: Genetic variation in CTLA4 is the cause of susceptibility
+CC       to celiac disease type 3 (CELIAC3) [MIM:609755]. It is a
+CC       multifactorial disorder of the small intestine that is influenced
+CC       by both environmental and genetic factors. It is characterized by
+CC       malabsorption resulting from inflammatory injury to the mucosa of
+CC       the small intestine after the ingestion of wheat gluten or related
+CC       rye and barley proteins. In its classic form, celiac disease is
+CC       characterized in children by malabsorption and failure to thrive.
+CC   -!- PHARMACEUTICAL: Engineered fusion proteins consisting of the
+CC       extracellular domain of CTLA4 and the IgG Fc region (Ctla4-Ig),
+CC       inhibit T-cell-dependent antibody responses, and are used as
+CC       immunosuppressive agents. They are soluble, have an enhanced
+CC       affinity for B7 ligands and act as a competitive inhibitor of
+CC       CD28.
+CC   -!- SIMILARITY: Contains 1 Ig-like V-type (immunoglobulin-like)
+CC       domain.
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=CLTA-4 entry;
+CC       URL="http://en.wikipedia.org/wiki/CTLA-4";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; L15006; AAB59385.1; -; mRNA.
+DR   EMBL; M74363; AAA52127.1; -; Genomic_DNA.
+DR   EMBL; AF411058; AAL40932.1; -; Genomic_DNA.
+DR   EMBL; AY792514; AAV66331.1; -; mRNA.
+DR   EMBL; AY999702; AAY00166.1; -; mRNA.
+DR   EMBL; DQ785106; ABG85285.1; -; mRNA.
+DR   EMBL; AF414120; AAL07473.1; -; mRNA.
+DR   EMBL; DQ357942; ABC67470.1; -; Genomic_DNA.
+DR   EMBL; AC010138; AAX93176.1; -; Genomic_DNA.
+DR   EMBL; BC074842; AAH74842.1; -; mRNA.
+DR   EMBL; BC074893; AAH74893.1; -; mRNA.
+DR   EMBL; M37245; AAA52773.1; -; Genomic_DNA.
+DR   EMBL; M37243; AAA52773.1; JOINED; Genomic_DNA.
+DR   EMBL; M37244; AAA52773.1; JOINED; Genomic_DNA.
+DR   EMBL; AF142144; AAF02499.1; -; Genomic_DNA.
+DR   IPI; IPI00028559; -.
+DR   IPI; IPI00604432; -.
+DR   IPI; IPI00945919; -.
+DR   IPI; IPI01018238; -.
+DR   PIR; S08614; S08614.
+DR   RefSeq; NP_001032720.1; NM_001037631.2.
+DR   RefSeq; NP_005205.2; NM_005214.4.
+DR   UniGene; Hs.247824; -.
+DR   PDB; 1AH1; NMR; -; A=37-161.
+DR   PDB; 1H6E; X-ray; 3.60 A; P=197-207.
+DR   PDB; 1I85; X-ray; 3.20 A; C/D=36-161.
+DR   PDB; 1I8L; X-ray; 3.00 A; C/D=36-161.
+DR   PDB; 2X44; X-ray; 2.60 A; D=36-161.
+DR   PDB; 3BX7; X-ray; 2.10 A; C=38-161.
+DR   PDB; 3OSK; X-ray; 1.80 A; A/B=36-161.
+DR   PDBsum; 1AH1; -.
+DR   PDBsum; 1H6E; -.
+DR   PDBsum; 1I85; -.
+DR   PDBsum; 1I8L; -.
+DR   PDBsum; 2X44; -.
+DR   PDBsum; 3BX7; -.
+DR   PDBsum; 3OSK; -.
+DR   ProteinModelPortal; P16410; -.
+DR   SMR; P16410; 38-160.
+DR   IntAct; P16410; 2.
+DR   STRING; P16410; -.
+DR   PhosphoSite; P16410; -.
+DR   DMDM; 27735177; -.
+DR   PRIDE; P16410; -.
+DR   Ensembl; ENST00000302823; ENSP00000303939; ENSG00000163599.
+DR   GeneID; 1493; -.
+DR   KEGG; hsa:1493; -.
+DR   UCSC; uc002vak.1; human.
+DR   CTD; 1493; -.
+DR   GeneCards; GC02P204696; -.
+DR   H-InvDB; HIX0029846; -.
+DR   HGNC; HGNC:2505; CTLA4.
+DR   MIM; 109100; phenotype.
+DR   MIM; 123890; gene.
+DR   MIM; 152700; phenotype.
+DR   MIM; 601388; phenotype.
+DR   MIM; 609755; phenotype.
+DR   MIM; 610424; phenotype.
+DR   neXtProt; NX_P16410; -.
+DR   Orphanet; 555; Celiac disease.
+DR   Orphanet; 855; Hashimoto struma.
+DR   Orphanet; 536; Systemic lupus erythematosus.
+DR   eggNOG; NOG42442; -.
+DR   GeneTree; ENSGT00530000063873; -.
+DR   HOGENOM; HBG280302; -.
+DR   HOVERGEN; HBG057978; -.
+DR   InParanoid; P16410; -.
+DR   KO; K06538; -.
+DR   OMA; SGNKVNL; -.
+DR   OrthoDB; EOG4Q58QK; -.
+DR   PhylomeDB; P16410; -.
+DR   Pathway_Interaction_DB; nfat_tfpathway; Calcineurin-regulated NFAT-dependent transcription in lymphocytes.
+DR   Reactome; REACT_6900; Immune System.
+DR   DrugBank; DB01281; Abatacept.
+DR   NextBio; 6133; -.
+DR   ArrayExpress; P16410; -.
+DR   Bgee; P16410; -.
+DR   CleanEx; HS_CTLA4; -.
+DR   Genevestigator; P16410; -.
+DR   GermOnline; ENSG00000163599; Homo sapiens.
+DR   GO; GO:0045334; C:clathrin-coated endocytic vesicle; IDA:BHF-UCL.
+DR   GO; GO:0009897; C:external side of plasma membrane; IDA:BHF-UCL.
+DR   GO; GO:0005794; C:Golgi apparatus; IDA:BHF-UCL.
+DR   GO; GO:0005887; C:integral to plasma membrane; TAS:ProtInc.
+DR   GO; GO:0048471; C:perinuclear region of cytoplasm; IDA:BHF-UCL.
+DR   GO; GO:0005515; F:protein binding; IPI:IntAct.
+DR   GO; GO:0050853; P:B cell receptor signaling pathway; IMP:UniProtKB.
+DR   GO; GO:0006955; P:immune response; TAS:ProtInc.
+DR   GO; GO:0030889; P:negative regulation of B cell proliferation; IMP:UniProtKB.
+DR   GO; GO:0045590; P:negative regulation of regulatory T cell differentiation; IDA:BHF-UCL.
+DR   GO; GO:0043065; P:positive regulation of apoptotic process; IMP:UniProtKB.
+DR   GO; GO:0006974; P:response to DNA damage stimulus; IMP:UniProtKB.
+DR   GO; GO:0031295; P:T cell costimulation; TAS:Reactome.
+DR   InterPro; IPR008096; CTLA4.
+DR   InterPro; IPR013783; Ig-like_fold.
+DR   InterPro; IPR013106; Ig_V-set.
+DR   InterPro; IPR003596; Ig_V-set_subgr.
+DR   Gene3D; G3DSA:2.60.40.10; Ig-like_fold; 1.
+DR   Pfam; PF07686; V-set; 1.
+DR   PRINTS; PR01720; CTLANTIGEN4.
+DR   SMART; SM00406; IGv; 1.
+DR   PROSITE; PS50835; IG_LIKE; FALSE_NEG.
+PE   1: Evidence at protein level;
+KW   3D-structure; Adaptive immunity; Alternative splicing; Cell membrane;
+KW   Complete proteome; Diabetes mellitus; Disulfide bond; Glycoprotein;
+KW   Immunity; Immunoglobulin domain; Membrane; Pharmaceutical;
+KW   Phosphoprotein; Polymorphism; Reference proteome; Signal;
+KW   Systemic lupus erythematosus; Transmembrane; Transmembrane helix.
+FT   SIGNAL        1     35       Potential.
+FT   CHAIN        36    223       Cytotoxic T-lymphocyte protein 4.
+FT                                /FTId=PRO_0000014734.
+FT   TOPO_DOM     36    161       Extracellular (Potential).
+FT   TRANSMEM    162    182       Helical; (Potential).
+FT   TOPO_DOM    183    223       Cytoplasmic (Potential).
+FT   DOMAIN       39    140       Ig-like V-type.
+FT   REGION       46     50       Homodimerization.
+FT   REGION      150    155       Homodimerization.
+FT   MOD_RES     201    201       Phosphotyrosine; by TXK.
+FT   CARBOHYD    113    113       N-linked (GlcNAc...).
+FT   CARBOHYD    145    145       N-linked (GlcNAc...).
+FT   DISULFID     58    129
+FT   DISULFID     85    103
+FT   DISULFID    157    157       Interchain.
+FT   VAR_SEQ      38    204       Missing (in isoform 2 and isoform 3).
+FT                                /FTId=VSP_041284.
+FT   VAR_SEQ      58     58       C -> S (in isoform 4).
+FT                                /FTId=VSP_041285.
+FT   VAR_SEQ      59    204       Missing (in isoform 4).
+FT                                /FTId=VSP_041286.
+FT   VAR_SEQ     205    223       PPTEPECEKQFQPYFIPIN -> KEKKPSYNRGLCENAPNR
+FT                                ARM (in isoform 3 and isoform 4).
+FT                                /FTId=VSP_041287.
+FT   VARIANT      17     17       T -> A (increased risk for Graves
+FT                                disease, insulin-dependent diabetes
+FT                                mellitus, thyroid-associated orbitopathy,
+FT                                systemic lupus erythematosus and
+FT                                susceptibility to HBV infection;
+FT                                dbSNP:rs231775).
+FT                                /FTId=VAR_013577.
+FT   CONFLICT     37     37       A -> V (in Ref. 3; ABG85285).
+FT   CONFLICT    147    147       T -> A (in Ref. 8; AAA52773).
+FT   STRAND       44     47
+FT   STRAND       57     60
+FT   STRAND       64     66
+FT   STRAND       69     73
+FT   STRAND       76     79
+FT   STRAND       85     89
+FT   STRAND      101    103
+FT   STRAND      109    113
+FT   TURN        121    123
+FT   STRAND      125    127
+FT   STRAND      129    133
+FT   STRAND      135    138
+FT   STRAND      147    150
+FT   STRAND      156    158
+SQ   SEQUENCE   223 AA;  24656 MW;  6F9466FB2E139A5A CRC64;
+     MACLGFQRHK AQLNLATRTW PCTLLFFLLF IPVFCKAMHV AQPAVVLASS RGIASFVCEY
+     ASPGKATEVR VTVLRQADSQ VTEVCAATYM MGNELTFLDD SICTGTSSGN QVNLTIQGLR
+     AMDTGLYICK VELMYPPPYY LGIGNGTQIY VIDPEPCPDS DFLLWILAAV SSGLFFYSFL
+     LTAVSLSKML KKRSPLTTGV YVKMPPTEPE CEKQFQPYFI PIN
+//

@@ -1,0 +1,218 @@
+ID   ACAD9_HUMAN             Reviewed;         621 AA.
+AC   Q9H845; D3DNB8; Q8WXX3;
+DT   03-JUL-2003, integrated into UniProtKB/Swiss-Prot.
+DT   01-MAR-2001, sequence version 1.
+DT   21-MAR-2012, entry version 101.
+DE   RecName: Full=Acyl-CoA dehydrogenase family member 9, mitochondrial;
+DE            Short=ACAD-9;
+DE            EC=1.3.99.-;
+DE   Flags: Precursor;
+GN   Name=ACAD9;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA], CHARACTERIZATION, AND TISSUE SPECIFICITY.
+RC   TISSUE=Dendritic cell;
+RX   MEDLINE=22246103; PubMed=12359260; DOI=10.1016/S0006-291X(02)02336-7;
+RA   Zhang J., Zhang W., Zou D., Chen G., Wan T., Zhang M., Cao X.;
+RT   "Cloning and functional characterization of ACAD-9, a novel member of
+RT   human acyl-CoA dehydrogenase family.";
+RL   Biochem. Biophys. Res. Commun. 297:1033-1042(2002).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RX   PubMed=14702039; DOI=10.1038/ng1285;
+RA   Ota T., Suzuki Y., Nishikawa T., Otsuki T., Sugiyama T., Irie R.,
+RA   Wakamatsu A., Hayashi K., Sato H., Nagai K., Kimura K., Makita H.,
+RA   Sekine M., Obayashi M., Nishi T., Shibahara T., Tanaka T., Ishii S.,
+RA   Yamamoto J., Saito K., Kawai Y., Isono Y., Nakamura Y., Nagahari K.,
+RA   Murakami K., Yasuda T., Iwayanagi T., Wagatsuma M., Shiratori A.,
+RA   Sudo H., Hosoiri T., Kaku Y., Kodaira H., Kondo H., Sugawara M.,
+RA   Takahashi M., Kanda K., Yokoi T., Furuya T., Kikkawa E., Omura Y.,
+RA   Abe K., Kamihara K., Katsuta N., Sato K., Tanikawa M., Yamazaki M.,
+RA   Ninomiya K., Ishibashi T., Yamashita H., Murakawa K., Fujimori K.,
+RA   Tanai H., Kimata M., Watanabe M., Hiraoka S., Chiba Y., Ishida S.,
+RA   Ono Y., Takiguchi S., Watanabe S., Yosida M., Hotuta T., Kusano J.,
+RA   Kanehori K., Takahashi-Fujii A., Hara H., Tanase T.-O., Nomura Y.,
+RA   Togiya S., Komai F., Hara R., Takeuchi K., Arita M., Imose N.,
+RA   Musashino K., Yuuki H., Oshima A., Sasaki N., Aotsuka S.,
+RA   Yoshikawa Y., Matsunawa H., Ichihara T., Shiohata N., Sano S.,
+RA   Moriya S., Momiyama H., Satoh N., Takami S., Terashima Y., Suzuki O.,
+RA   Nakagawa S., Senoh A., Mizoguchi H., Goto Y., Shimizu F., Wakebe H.,
+RA   Hishigaki H., Watanabe T., Sugiyama A., Takemoto M., Kawakami B.,
+RA   Yamazaki M., Watanabe K., Kumagai A., Itakura S., Fukuzumi Y.,
+RA   Fujimori Y., Komiyama M., Tashiro H., Tanigami A., Fujiwara T.,
+RA   Ono T., Yamada K., Fujii Y., Ozaki K., Hirao M., Ohmori Y.,
+RA   Kawabata A., Hikiji T., Kobatake N., Inagaki H., Ikema Y., Okamoto S.,
+RA   Okitani R., Kawakami T., Noguchi S., Itoh T., Shigeta K., Senba T.,
+RA   Matsumura K., Nakajima Y., Mizuno T., Morinaga M., Sasaki M.,
+RA   Togashi T., Oyama M., Hata H., Watanabe M., Komatsu T.,
+RA   Mizushima-Sugano J., Satoh T., Shirai Y., Takahashi Y., Nakagawa K.,
+RA   Okumura K., Nagase T., Nomura N., Kikuchi H., Masuho Y., Yamashita R.,
+RA   Nakai K., Yada T., Nakamura Y., Ohara O., Isogai T., Sugano S.;
+RT   "Complete sequencing and characterization of 21,243 full-length human
+RT   cDNAs.";
+RL   Nat. Genet. 36:40-45(2004).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (SEP-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Lung, and Uterus;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [5]
+RP   INVOLVEMENT IN ACAD9 DEFICIENCY.
+RX   PubMed=17564966; DOI=10.1086/519219;
+RA   He M., Rutledge S.L., Kelly D.R., Palmer C.A., Murdoch G.,
+RA   Majumder N., Nicholls R.D., Pei Z., Watkins P.A., Vockley J.;
+RT   "A new genetic disorder in mitochondrial fatty acid beta-oxidation:
+RT   ACAD9 deficiency.";
+RL   Am. J. Hum. Genet. 81:87-103(2007).
+RN   [6]
+RP   ACETYLATION [LARGE SCALE ANALYSIS] AT LYS-41 AND LYS-608, AND MASS
+RP   SPECTROMETRY.
+RX   PubMed=19608861; DOI=10.1126/science.1175371;
+RA   Choudhary C., Kumar C., Gnad F., Nielsen M.L., Rehman M., Walther T.,
+RA   Olsen J.V., Mann M.;
+RT   "Lysine acetylation targets protein complexes and co-regulates major
+RT   cellular functions.";
+RL   Science 325:834-840(2009).
+RN   [7]
+RP   IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=21269460; DOI=10.1186/1752-0509-5-17;
+RA   Burkard T.R., Planyavsky M., Kaupe I., Breitwieser F.P.,
+RA   Buerckstuemmer T., Bennett K.L., Superti-Furga G., Colinge J.;
+RT   "Initial characterization of the human central proteome.";
+RL   BMC Syst. Biol. 5:17-17(2011).
+CC   -!- FUNCTION: Has a dehydrogenase activity on palmitoyl-CoA (C16:0)
+CC       and stearoyl-CoA (C18:0). It is three times more active on
+CC       palmitoyl-CoA than on stearoyl-CoA. Has little activity on
+CC       octanoyl-CoA (C8:0), butyryl-CoA (C4:0) or isovaleryl-CoA (5:0).
+CC   -!- COFACTOR: FAD (By similarity).
+CC   -!- SUBCELLULAR LOCATION: Mitochondrion (Potential).
+CC   -!- TISSUE SPECIFICITY: Ubiquitously expressed in most normal human
+CC       tissues and cancer cell lines with high level of expression in
+CC       heart, skeletal muscles, brain, kidney and liver.
+CC   -!- DISEASE: Defects in ACAD9 are a cause of acyl-CoA dehydrogenase
+CC       family member type 9 deficiency (ACAD9 deficiency) [MIM:611126].
+CC       ACAD9 deficiency patients present with episodic liver dysfunction
+CC       during otherwise mild illnesses or cardiomyopathy, along with
+CC       chronic neurologic dysfunction.
+CC   -!- SIMILARITY: Belongs to the acyl-CoA dehydrogenase family.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF327351; AAL56011.1; -; mRNA.
+DR   EMBL; AK024012; BAB14775.1; -; mRNA.
+DR   EMBL; CH471052; EAW79295.1; -; Genomic_DNA.
+DR   EMBL; CH471052; EAW79296.1; -; Genomic_DNA.
+DR   EMBL; BC013354; AAH13354.1; -; mRNA.
+DR   EMBL; BC007970; AAH07970.1; -; mRNA.
+DR   IPI; IPI00152981; -.
+DR   PIR; JC7892; JC7892.
+DR   RefSeq; NP_054768.2; NM_014049.4.
+DR   UniGene; Hs.567482; -.
+DR   ProteinModelPortal; Q9H845; -.
+DR   SMR; Q9H845; 35-618.
+DR   DIP; DIP-53699N; -.
+DR   IntAct; Q9H845; 1.
+DR   STRING; Q9H845; -.
+DR   PhosphoSite; Q9H845; -.
+DR   DMDM; 32469596; -.
+DR   PeptideAtlas; Q9H845; -.
+DR   PRIDE; Q9H845; -.
+DR   DNASU; 28976; -.
+DR   Ensembl; ENST00000308982; ENSP00000312618; ENSG00000177646.
+DR   GeneID; 28976; -.
+DR   KEGG; hsa:28976; -.
+DR   UCSC; uc003ela.2; human.
+DR   CTD; 28976; -.
+DR   GeneCards; GC03P128599; -.
+DR   H-InvDB; HIX0003658; -.
+DR   H-InvDB; HIX0003659; -.
+DR   HGNC; HGNC:21497; ACAD9.
+DR   HPA; HPA037716; -.
+DR   MIM; 611103; gene.
+DR   MIM; 611126; phenotype.
+DR   neXtProt; NX_Q9H845; -.
+DR   Orphanet; 99901; Acyl-CoA dehydrogenase 9 deficiency.
+DR   Orphanet; 2609; Isolated NADH-CoQ reductase deficiency.
+DR   PharmGKB; PA134900655; -.
+DR   eggNOG; COG1960; -.
+DR   GeneTree; ENSGT00620000087522; -.
+DR   HOGENOM; HBG699365; -.
+DR   HOVERGEN; HBG050448; -.
+DR   InParanoid; Q9H845; -.
+DR   KO; K00257; -.
+DR   OMA; KDGVVHP; -.
+DR   OrthoDB; EOG40ZQX9; -.
+DR   PhylomeDB; Q9H845; -.
+DR   NextBio; 51851; -.
+DR   ArrayExpress; Q9H845; -.
+DR   Bgee; Q9H845; -.
+DR   CleanEx; HS_ACAD9; -.
+DR   Genevestigator; Q9H845; -.
+DR   GermOnline; ENSG00000177646; Homo sapiens.
+DR   GO; GO:0030425; C:dendrite; IDA:UniProtKB.
+DR   GO; GO:0005739; C:mitochondrion; IDA:LIFEdb.
+DR   GO; GO:0005634; C:nucleus; IDA:UniProtKB.
+DR   GO; GO:0003995; F:acyl-CoA dehydrogenase activity; IEA:InterPro.
+DR   GO; GO:0050660; F:flavin adenine dinucleotide binding; IEA:InterPro.
+DR   InterPro; IPR006089; Acyl-CoA_DH_CS.
+DR   InterPro; IPR006092; Acyl-CoA_DH_N.
+DR   InterPro; IPR006090; Acyl-CoA_Oxase/DH_1.
+DR   InterPro; IPR006091; Acyl-CoA_Oxase/DH_cen-dom.
+DR   InterPro; IPR009075; AcylCo_DH/oxidase_C.
+DR   InterPro; IPR013786; AcylCoA_DH/ox_N.
+DR   InterPro; IPR009100; AcylCoA_DH/oxidase.
+DR   Gene3D; G3DSA:2.40.110.10; Acyl_CoA_DH/ox_M; 1.
+DR   Gene3D; G3DSA:1.10.540.10; AcylCoA_DH/ox_N; 1.
+DR   Gene3D; G3DSA:1.20.140.10; AcylCoA_DH_1/2_C; 1.
+DR   Pfam; PF00441; Acyl-CoA_dh_1; 1.
+DR   Pfam; PF02770; Acyl-CoA_dh_M; 1.
+DR   Pfam; PF02771; Acyl-CoA_dh_N; 1.
+DR   SUPFAM; SSF56645; AcylCoA_dehyd_NM; 1.
+DR   SUPFAM; SSF47203; AcylCoADH_C_like; 1.
+DR   PROSITE; PS00072; ACYL_COA_DH_1; 1.
+DR   PROSITE; PS00073; ACYL_COA_DH_2; 1.
+PE   1: Evidence at protein level;
+KW   Acetylation; Complete proteome; FAD; Flavoprotein; Mitochondrion;
+KW   Oxidoreductase; Polymorphism; Reference proteome; Transit peptide.
+FT   TRANSIT       1      ?       Mitochondrion (Potential).
+FT   CHAIN         ?    621       Acyl-CoA dehydrogenase family member 9,
+FT                                mitochondrial.
+FT                                /FTId=PRO_0000000524.
+FT   ACT_SITE    426    426       Proton acceptor (By similarity).
+FT   MOD_RES      41     41       N6-acetyllysine.
+FT   MOD_RES     608    608       N6-acetyllysine.
+FT   VARIANT     477    477       R -> Q (in dbSNP:rs4494951).
+FT                                /FTId=VAR_033459.
+FT   CONFLICT    397    397       A -> V (in Ref. 1; AAL56011).
+SQ   SEQUENCE   621 AA;  68760 MW;  064BCE0378877F54 CRC64;
+     MSGCGLFLRT TAAARACRGL VVSTANRRLL RTSPPVRAFA KELFLGKIKK KEVFPFPEVS
+     QDELNEINQF LGPVEKFFTE EVDSRKIDQE GKIPDETLEK LKSLGLFGLQ VPEEYGGLGF
+     SNTMYSRLGE IISMDGSITV TLAAHQAIGL KGIILAGTEE QKAKYLPKLA SGEHIAAFCL
+     TEPASGSDAA SIRSRATLSE DKKHYILNGS KVWITNGGLA NIFTVFAKTE VVDSDGSVKD
+     KITAFIVERD FGGVTNGKPE DKLGIRGSNT CEVHFENTKI PVENILGEVG DGFKVAMNIL
+     NSGRFSMGSV VAGLLKRLIE MTAEYACTRK QFNKRLSEFG LIQEKFALMA QKAYVMESMT
+     YLTAGMLDQP GFPDCSIEAA MVKVFSSEAA WQCVSEALQI LGGLGYTRDY PYERILRDTR
+     ILLIFEGTNE ILRMYIALTG LQHAGRILTT RIHELKQAKV STVMDTVGRR LRDSLGRTVD
+     LGLTGNHGVV HPSLADSANK FEENTYCFGR TVETLLLRFG KTIMEEQLVL KRVANILINL
+     YGMTAVLSRA SRSIRIGLRN HDHEVLLANT FCVEAYLQNL FSLSQLDKYA PENLDEQIKK
+     VSQQILEKRA YICAHPLDRT C
+//

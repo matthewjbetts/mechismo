@@ -1,0 +1,376 @@
+ID   NALP1_HUMAN             Reviewed;        1473 AA.
+AC   Q9C000; Q9BZZ8; Q9BZZ9; Q9HAV8; Q9UFT4; Q9Y2E0;
+DT   18-OCT-2001, integrated into UniProtKB/Swiss-Prot.
+DT   01-JUN-2001, sequence version 1.
+DT   21-MAR-2012, entry version 126.
+DE   RecName: Full=NACHT, LRR and PYD domains-containing protein 1;
+DE   AltName: Full=Caspase recruitment domain-containing protein 7;
+DE   AltName: Full=Death effector filament-forming ced-4-like apoptosis protein;
+DE   AltName: Full=Nucleotide-binding domain and caspase recruitment domain;
+GN   Name=NLRP1; Synonyms=CARD7, DEFCAP, KIAA0926, NAC, NALP1;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 2), AND VARIANTS HIS-155; SER-246;
+RP   MET-878; VAL-1119; VAL-1184; LEU-1241 AND CYS-1366.
+RX   MEDLINE=21169419; PubMed=11270363; DOI=10.1038/sj.cdd.4400774;
+RA   Bertin J., DiStefano P.S.;
+RT   "The PYRIN domain: a novel motif found in apoptosis and inflammation
+RT   proteins.";
+RL   Cell Death Differ. 7:1273-1274(2000).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 2).
+RX   MEDLINE=21148093; PubMed=11250163; DOI=10.1016/S0960-9822(01)00056-2;
+RA   Martinon F., Hofmann K., Tschopp J.;
+RT   "The pyrin domain: a possible member of the death domain-fold family
+RT   implicated in apoptosis and inflammation.";
+RL   Curr. Biol. 11:R118-R120(2001).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORMS 1 AND 2), AND MUTAGENESIS OF
+RP   LYS-340.
+RC   TISSUE=Erythroleukemia;
+RX   MEDLINE=21153743; PubMed=11076957; DOI=10.1074/jbc.M009853200;
+RA   Hlaing T., Guo R.-F., Dilley K.A., Loussia J.M., Morrish T.A.,
+RA   Shi M.M., Vincenz C., Ward P.A.;
+RT   "Molecular cloning and characterization of DEFCAP-L and -S, two
+RT   isoforms of a novel member of the mammalian Ced-4 family of apoptosis
+RT   proteins.";
+RL   J. Biol. Chem. 276:9230-9238(2001).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORMS 1; 2; 3 AND 4), AND INTERACTION
+RP   WITH CASP2 AND CASP9.
+RC   TISSUE=T-cell;
+RX   MEDLINE=21153744; PubMed=11113115; DOI=10.1074/jbc.M006309200;
+RA   Chu Z.-L., Pio F., Xie Z., Welsh K., Krajewska M., Krajewski S.,
+RA   Godzik A., Reed J.C.;
+RT   "A novel enhancer of the Apaf1 apoptosome involved in cytochrome c-
+RT   dependent caspase activation and apoptosis.";
+RL   J. Biol. Chem. 276:9239-9245(2001).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 2).
+RC   TISSUE=Brain;
+RX   MEDLINE=99246063; PubMed=10231032; DOI=10.1093/dnares/6.1.63;
+RA   Nagase T., Ishikawa K., Suyama M., Kikuno R., Hirosawa M.,
+RA   Miyajima N., Tanaka A., Kotani H., Nomura N., Ohara O.;
+RT   "Prediction of the coding sequences of unidentified human genes. XIII.
+RT   The complete sequences of 100 new cDNA clones from brain which code
+RT   for large proteins in vitro.";
+RL   DNA Res. 6:63-70(1999).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] OF 282-1473 (ISOFORM 1), AND
+RP   VARIANT VAL-1184.
+RC   TISSUE=Uterus;
+RX   PubMed=17974005; DOI=10.1186/1471-2164-8-399;
+RA   Bechtel S., Rosenfelder H., Duda A., Schmidt C.P., Ernst U.,
+RA   Wellenreuther R., Mehrle A., Schuster C., Bahr A., Bloecker H.,
+RA   Heubner D., Hoerlein A., Michel G., Wedler H., Koehrer K.,
+RA   Ottenwaelder B., Poustka A., Wiemann S., Schupp I.;
+RT   "The full-ORF clone resource of the German cDNA consortium.";
+RL   BMC Genomics 8:399-399(2007).
+RN   [7]
+RP   FUNCTION, AND IDENTIFICATION IN NALP1 INFLAMMASOME COMPLEX.
+RX   PubMed=12191486; DOI=10.1016/S1097-2765(02)00599-3;
+RA   Martinon F., Burns K., Tschopp J.;
+RT   "The inflammasome: a molecular platform triggering activation of
+RT   inflammatory caspases and processing of proIL-beta.";
+RL   Mol. Cell 10:417-426(2002).
+RN   [8]
+RP   TISSUE SPECIFICITY.
+RX   PubMed=15285719; DOI=10.1042/BJ20040867;
+RA   Sanz C., Calasanz M.J., Andreu E., Richard C., Prosper F.,
+RA   Fernandez-Luna J.L.;
+RT   "NALP1 is a transcriptional target for cAMP-response-element-binding
+RT   protein (CREB) in myeloid leukaemia cells.";
+RL   Biochem. J. 384:281-286(2004).
+RN   [9]
+RP   FUNCTION, AND MUTAGENESIS OF 339-GLY-LYS-340.
+RX   PubMed=15212762; DOI=10.1016/j.cellsig.2004.02.006;
+RA   Liu F., Lo C.F., Ning X., Kajkowski E.M., Jin M., Chiriac C.,
+RA   Gonzales C., Naureckiene S., Lock Y.-W., Pong K., Zaleska M.M.,
+RA   Jacobsen J.S., Silverman S., Ozenberger B.A.;
+RT   "Expression of NALP1 in cerebellar granule neurons stimulates
+RT   apoptosis.";
+RL   Cell. Signal. 16:1013-1021(2004).
+RN   [10]
+RP   SUBCELLULAR LOCATION, AND TISSUE SPECIFICITY.
+RX   PubMed=17164409; DOI=10.1369/jhc.6A7101.2006;
+RA   Kummer J.A., Broekhuizen R., Everett H., Agostini L., Kuijk L.,
+RA   Martinon F., van Bruggen R., Tschopp J.;
+RT   "Inflammasome components NALP 1 and 3 Show distinct but separate
+RT   Expression profiles in human tissues suggesting a site-specific role
+RT   in the inflammatory response.";
+RL   J. Histochem. Cytochem. 55:443-452(2007).
+RN   [11]
+RP   FUNCTION.
+RX   PubMed=17349957; DOI=10.1016/j.molcel.2007.01.032;
+RA   Faustin B., Lartigue L., Bruey J.-M., Luciano F., Sergienko E.,
+RA   Bailly-Maitre B., Volkmann N., Hanein D., Rouiller I., Reed J.C.;
+RT   "Reconstituted NALP1 inflammasome reveals two-step mechanism of
+RT   caspase-1 activation.";
+RL   Mol. Cell 25:713-724(2007).
+RN   [12]
+RP   STRUCTURE BY NMR OF 1-93.
+RX   PubMed=14527388; DOI=10.1016/j.str.2003.08.009;
+RA   Hiller S., Kohl A., Fiorito F., Herrmann T., Wider G., Tschopp J.,
+RA   Gruetter M.G., Wuethrich K.;
+RT   "NMR structure of the apoptosis- and inflammation-related NALP1 pyrin
+RT   domain.";
+RL   Structure 11:1199-1205(2003).
+RN   [13]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO VITILIGO AND VITILIGO-ASSOCIATED
+RP   AUTOIMMUNE DISEASES, AND VARIANT HIS-155.
+RX   PubMed=17377159; DOI=10.1056/NEJMoa061592;
+RA   Jin Y., Mailloux C.M., Gowan K., Riccardi S.L., LaBerge G.,
+RA   Bennett D.C., Fain P.R., Spritz R.A.;
+RT   "NALP1 in vitiligo-associated multiple autoimmune disease.";
+RL   N. Engl. J. Med. 356:1216-1225(2007).
+RN   [14]
+RP   X-RAY CRYSTALLOGRAPHY (3.1 ANGSTROMS) OF 1371-1467.
+RG   Northeast structural genomics consortium (NESG);
+RT   "Northeast structural genomics consortium target HR3486E.";
+RL   Submitted (OCT-2009) to the PDB data bank.
+CC   -!- FUNCTION: Able to form cytoplasmic structures termed death
+CC       effector filaments. Enhances APAF1 and cytochrome c-dependent
+CC       activation of pro-caspase-9 and consecutive apoptosis. Stimulates
+CC       apoptosis through activation of caspase-3. Involved in activation
+CC       of caspase-1 and caspase-5 as part of the NALP1 inflammasome
+CC       complex which leads to processing and release of IL1B and IL18.
+CC       Binds ATP.
+CC   -!- SUBUNIT: Interacts strongly with caspase-2, weakly with caspase-9
+CC       and with APAF1 in a cytochrome c-inducible way, leading to the
+CC       formation of an apoptosome. This interaction may be ATP-dependent.
+CC       Part of the NALP1 inflammasome complex which is involved in
+CC       activation of caspase-1 and caspase-5, leading to processing of
+CC       IL1B and IL18. The complex is activated by bacterial muramyl
+CC       dipeptide which triggers ATP-binding and oligomerization of NALP1.
+CC   -!- INTERACTION:
+CC       P10415:BCL2; NbExp=12; IntAct=EBI-1220518, EBI-77694;
+CC       Q07817:BCL2L1; NbExp=9; IntAct=EBI-1220518, EBI-78035;
+CC       Q9ULZ3:PYCARD; NbExp=5; IntAct=EBI-1220518, EBI-751215;
+CC   -!- SUBCELLULAR LOCATION: Cytoplasm. Nucleus.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=4;
+CC       Name=1; Synonyms=NAC beta, DEFCAP-L;
+CC         IsoId=Q9C000-1; Sequence=Displayed;
+CC       Name=2; Synonyms=NAC alpha, DEFCAP-S;
+CC         IsoId=Q9C000-2; Sequence=VSP_004327;
+CC       Name=3; Synonyms=NAC gamma;
+CC         IsoId=Q9C000-3; Sequence=VSP_004326, VSP_004327;
+CC       Name=4; Synonyms=NAC delta;
+CC         IsoId=Q9C000-4; Sequence=VSP_004326;
+CC   -!- TISSUE SPECIFICITY: Widely expressed. Isoform 1 and isoform 2 are
+CC       expressed in peripheral blood leukocytes and chronic myelogenous
+CC       leukemia cell line K-562, followed by thymus, spleen and heart.
+CC       Also detected in brain, lung, placenta, small intestine, colon,
+CC       kidney, liver, muscle, testis and epithelial cells. Absent from
+CC       hematopoietic progenitor cells but expressed upon differentiation
+CC       of cells into granulocytes and, to a lesser extent, monocytes. In
+CC       peripheral blood cells, highest levels are found in T-lymphocytes,
+CC       granulocytes and monocytes. Expression is significantly increased
+CC       in bone marrow blast cells of some acute leukemia patients but not
+CC       in solid tumors.
+CC   -!- DISEASE: Genetic variations in NLRP1 are associated with
+CC       susceptibility to vitiligo (VTLG) [MIM:193200]. VTLG is a
+CC       pigmentary disorder of the skin characterized by circumscribed
+CC       depigmented macules and patches, commonly on extensor aspects of
+CC       extremities, on the face or neck and in skin folds. It is a
+CC       progressive disorder in which some or all of the melanocytes in
+CC       the affected skin are selectively destroyed. It is a
+CC       multifactorial disorder with a complex etiology probably including
+CC       autoimmune mechanisms, and is associated with an elevated risk of
+CC       other autoimmune diseases.
+CC   -!- DISEASE: Genetic variations in NLRP1 gene are associated with
+CC       susceptibility to vitiligo-associated multiple autoimmune disease
+CC       type 1 (VAMAS1) [MIM:606579]. VAMAS1 is an autoimmune disorder
+CC       characterized by the association of vitiligo with several
+CC       autoimmune and autoinflammatory diseases including autoimmune
+CC       thyroid disease, rheumatoid arthritis and systemic lupus
+CC       erythematosus.
+CC   -!- SIMILARITY: Belongs to the NLRP family.
+CC   -!- SIMILARITY: Contains 1 CARD domain.
+CC   -!- SIMILARITY: Contains 1 DAPIN domain.
+CC   -!- SIMILARITY: Contains 6 LRR (leucine-rich) repeats.
+CC   -!- SIMILARITY: Contains 1 NACHT domain.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=BAA76770.2; Type=Erroneous initiation;
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF298548; AAG15254.1; -; mRNA.
+DR   EMBL; AF310105; AAG30288.1; -; mRNA.
+DR   EMBL; AF229059; AAK00748.1; -; mRNA.
+DR   EMBL; AF229060; AAK00749.1; -; mRNA.
+DR   EMBL; AF229061; AAK00750.1; -; mRNA.
+DR   EMBL; AF229062; AAK00751.1; -; mRNA.
+DR   EMBL; AB023143; BAA76770.2; ALT_INIT; mRNA.
+DR   EMBL; AL117470; CAB55945.1; -; mRNA.
+DR   IPI; IPI00004551; -.
+DR   IPI; IPI00099688; -.
+DR   IPI; IPI00328123; -.
+DR   IPI; IPI00335800; -.
+DR   PIR; T17255; T17255.
+DR   RefSeq; NP_001028225.1; NM_001033053.2.
+DR   RefSeq; NP_055737.1; NM_014922.4.
+DR   RefSeq; NP_127497.1; NM_033004.3.
+DR   RefSeq; NP_127499.1; NM_033006.3.
+DR   RefSeq; NP_127500.1; NM_033007.3.
+DR   UniGene; Hs.652273; -.
+DR   PDB; 1PN5; NMR; -; A=1-93.
+DR   PDB; 3KAT; X-ray; 3.10 A; A=1371-1467.
+DR   PDBsum; 1PN5; -.
+DR   PDBsum; 3KAT; -.
+DR   ProteinModelPortal; Q9C000; -.
+DR   SMR; Q9C000; 1-93, 784-985, 1322-1463.
+DR   DIP; DIP-38407N; -.
+DR   IntAct; Q9C000; 8.
+DR   STRING; Q9C000; -.
+DR   DMDM; 17380146; -.
+DR   PRIDE; Q9C000; -.
+DR   DNASU; 22861; -.
+DR   Ensembl; ENST00000269280; ENSP00000269280; ENSG00000091592.
+DR   GeneID; 22861; -.
+DR   KEGG; hsa:22861; -.
+DR   UCSC; uc002gch.2; human.
+DR   UCSC; uc002gci.1; human.
+DR   UCSC; uc002gcj.1; human.
+DR   UCSC; uc002gcl.1; human.
+DR   CTD; 22861; -.
+DR   GeneCards; GC17M005407; -.
+DR   H-InvDB; HIX0013474; -.
+DR   HGNC; HGNC:14374; NLRP1.
+DR   HPA; CAB009189; -.
+DR   MIM; 193200; phenotype.
+DR   MIM; 606579; phenotype.
+DR   MIM; 606636; gene.
+DR   neXtProt; NX_Q9C000; -.
+DR   Orphanet; 3435; Vitiligo.
+DR   PharmGKB; PA162397797; -.
+DR   eggNOG; NOG146295; -.
+DR   GeneTree; ENSGT00650000093077; -.
+DR   HOGENOM; HBG282263; -.
+DR   HOVERGEN; HBG052573; -.
+DR   InParanoid; Q9C000; -.
+DR   KO; K12798; -.
+DR   OMA; PHLIMEL; -.
+DR   Pathway_Interaction_DB; anthraxpathway; Cellular roles of Anthrax toxin.
+DR   Reactome; REACT_6900; Immune System.
+DR   NextBio; 43357; -.
+DR   ArrayExpress; Q9C000; -.
+DR   Bgee; Q9C000; -.
+DR   CleanEx; HS_NLRP1; -.
+DR   Genevestigator; Q9C000; -.
+DR   GermOnline; ENSG00000091592; Homo sapiens.
+DR   GO; GO:0005829; C:cytosol; TAS:Reactome.
+DR   GO; GO:0072558; C:NLRP1 inflammasome complex; TAS:BHF-UCL.
+DR   GO; GO:0005634; C:nucleus; IDA:BHF-UCL.
+DR   GO; GO:0005524; F:ATP binding; IDA:HGNC.
+DR   GO; GO:0008656; F:cysteine-type endopeptidase activator activity involved in apoptotic process; NAS:UniProtKB.
+DR   GO; GO:0019899; F:enzyme binding; IPI:UniProtKB.
+DR   GO; GO:0019904; F:protein domain specific binding; IPI:UniProtKB.
+DR   GO; GO:0042742; P:defense response to bacterium; ISS:BHF-UCL.
+DR   GO; GO:0006917; P:induction of apoptosis; NAS:UniProtKB.
+DR   GO; GO:0045087; P:innate immune response; TAS:Reactome.
+DR   GO; GO:0051402; P:neuron apoptosis; IDA:HGNC.
+DR   GO; GO:0035872; P:nucleotide-binding domain, leucine rich repeat containing receptor signaling pathway; TAS:Reactome.
+DR   GO; GO:0050718; P:positive regulation of interleukin-1 beta secretion; ISS:BHF-UCL.
+DR   GO; GO:0050727; P:regulation of inflammatory response; IC:BHF-UCL.
+DR   GO; GO:0032495; P:response to muramyl dipeptide; ISS:BHF-UCL.
+DR   InterPro; IPR001315; CARD.
+DR   InterPro; IPR004020; DAPIN.
+DR   InterPro; IPR011029; DEATH-like.
+DR   InterPro; IPR000767; Disease_R.
+DR   InterPro; IPR001611; Leu-rich_rpt.
+DR   InterPro; IPR007111; NACHT_NTPase.
+DR   Gene3D; G3DSA:1.10.533.10; DEATH_like; 2.
+DR   Pfam; PF00619; CARD; 1.
+DR   Pfam; PF02758; PYRIN; 1.
+DR   PRINTS; PR00364; DISEASERSIST.
+DR   SUPFAM; SSF47986; DEATH_like; 2.
+DR   PROSITE; PS50209; CARD; 1.
+DR   PROSITE; PS50824; DAPIN; 1.
+DR   PROSITE; PS51450; LRR; 3.
+DR   PROSITE; PS50837; NACHT; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Alternative splicing; Apoptosis; ATP-binding;
+KW   Complete proteome; Cytoplasm; Leucine-rich repeat; Nucleotide-binding;
+KW   Nucleus; Polymorphism; Reference proteome; Repeat.
+FT   CHAIN         1   1473       NACHT, LRR and PYD domains-containing
+FT                                protein 1.
+FT                                /FTId=PRO_0000096710.
+FT   DOMAIN        1     92       DAPIN.
+FT   DOMAIN      328    637       NACHT.
+FT   REPEAT      809    830       LRR 1.
+FT   REPEAT      838    858       LRR 2.
+FT   REPEAT      866    887       LRR 3.
+FT   REPEAT      895    915       LRR 4.
+FT   REPEAT      923    944       LRR 5.
+FT   REPEAT      950    973       LRR 6.
+FT   DOMAIN     1374   1463       CARD.
+FT   NP_BIND     334    341       ATP (Potential).
+FT   VAR_SEQ     958    987       Missing (in isoform 3 and isoform 4).
+FT                                /FTId=VSP_004326.
+FT   VAR_SEQ    1262   1305       Missing (in isoform 2 and isoform 3).
+FT                                /FTId=VSP_004327.
+FT   VARIANT     155    155       L -> H (associated with susceptibility to
+FT                                vitiligo and vitiligo-associated
+FT                                autoimmune diseases; dbSNP:rs12150220).
+FT                                /FTId=VAR_033239.
+FT   VARIANT     246    246       T -> S (in dbSNP:rs11651595).
+FT                                /FTId=VAR_024238.
+FT   VARIANT     404    404       R -> Q (in dbSNP:rs3744718).
+FT                                /FTId=VAR_021886.
+FT   VARIANT     878    878       T -> M (in dbSNP:rs11657747).
+FT                                /FTId=VAR_033240.
+FT   VARIANT    1059   1059       V -> M (in dbSNP:rs2301582).
+FT                                /FTId=VAR_024239.
+FT   VARIANT    1069   1069       H -> Y (in dbSNP:rs9907167).
+FT                                /FTId=VAR_033241.
+FT   VARIANT    1119   1119       M -> V (in dbSNP:rs35596958).
+FT                                /FTId=VAR_033242.
+FT   VARIANT    1184   1184       M -> V (in dbSNP:rs11651270).
+FT                                /FTId=VAR_033243.
+FT   VARIANT    1241   1241       V -> L (in dbSNP:rs11653832).
+FT                                /FTId=VAR_033244.
+FT   VARIANT    1366   1366       R -> C (in dbSNP:rs2137722).
+FT                                /FTId=VAR_020437.
+FT   MUTAGEN     339    340       GK->EA: Abolishes binding to ATP.
+FT   MUTAGEN     340    340       K->L,S: No effect.
+FT   CONFLICT    782    782       T -> S (in Ref. 1; AAG15254).
+FT   CONFLICT    995    995       T -> I (in Ref. 1; AAG15254).
+FT   HELIX         9     15
+FT   HELIX        18     31
+FT   HELIX        50     60
+FT   HELIX        63     77
+FT   HELIX        80     85
+FT   STRAND       88     91
+SQ   SEQUENCE   1473 AA;  165866 MW;  438F0DCE45C2562D CRC64;
+     MAGGAWGRLA CYLEFLKKEE LKEFQLLLAN KAHSRSSSGE TPAQPEKTSG MEVASYLVAQ
+     YGEQRAWDLA LHTWEQMGLR SLCAQAQEGA GHSPSFPYSP SEPHLGSPSQ PTSTAVLMPW
+     IHELPAGCTQ GSERRVLRQL PDTSGRRWRE ISASLLYQAL PSSPDHESPS QESPNAPTST
+     AVLGSWGSPP QPSLAPREQE APGTQWPLDE TSGIYYTEIR EREREKSEKG RPPWAAVVGT
+     PPQAHTSLQP HHHPWEPSVR ESLCSTWPWK NEDFNQKFTQ LLLLQRPHPR SQDPLVKRSW
+     PDYVEENRGH LIEIRDLFGP GLDTQEPRIV ILQGAAGIGK STLARQVKEA WGRGQLYGDR
+     FQHVFYFSCR ELAQSKVVSL AELIGKDGTA TPAPIRQILS RPERLLFILD GVDEPGWVLQ
+     EPSSELCLHW SQPQPADALL GSLLGKTILP EASFLITART TALQNLIPSL EQARWVEVLG
+     FSESSRKEYF YRYFTDERQA IRAFRLVKSN KELWALCLVP WVSWLACTCL MQQMKRKEKL
+     TLTSKTTTTL CLHYLAQALQ AQPLGPQLRD LCSLAAEGIW QKKTLFSPDD LRKHGLDGAI
+     ISTFLKMGIL QEHPIPLSYS FIHLCFQEFF AAMSYVLEDE KGRGKHSNCI IDLEKTLEAY
+     GIHGLFGAST TRFLLGLLSD EGEREMENIF HCRLSQGRNL MQWVPSLQLL LQPHSLESLH
+     CLYETRNKTF LTQVMAHFEE MGMCVETDME LLVCTFCIKF SRHVKKLQLI EGRQHRSTWS
+     PTMVVLFRWV PVTDAYWQIL FSVLKVTRNL KELDLSGNSL SHSAVKSLCK TLRRPRCLLE
+     TLRLAGCGLT AEDCKDLAFG LRANQTLTEL DLSFNVLTDA GAKHLCQRLR QPSCKLQRLQ
+     LVSCGLTSDC CQDLASVLSA SPSLKELDLQ QNNLDDVGVR LLCEGLRHPA CKLIRLGLDQ
+     TTLSDEMRQE LRALEQEKPQ LLIFSRRKPS VMTPTEGLDT GEMSNSTSSL KRQRLGSERA
+     ASHVAQANLK LLDVSKIFPI AEIAEESSPE VVPVELLCVP SPASQGDLHT KPLGTDDDFW
+     GPTGPVATEV VDKEKNLYRV HFPVAGSYRW PNTGLCFVMR EAVTVEIEFC VWDQFLGEIN
+     PQHSWMVAGP LLDIKAEPGA VEAVHLPHFV ALQGGHVDTS LFQMAHFKEE GMLLEKPARV
+     ELHHIVLENP SFSPLGVLLK MIHNALRFIP VTSVVLLYHR VHPEEVTFHL YLIPSDCSIR
+     KAIDDLEMKF QFVRIHKPPP LTPLYMGCRY TVSGSGSGML EILPKELELC YRSPGEDQLF
+     SEFYVGHLGS GIRLQVKDKK DETLVWEALV KPGDLMPATT LIPPARIAVP SPLDAPQLLH
+     FVDQYREQLI ARVTSVEVVL DKLHGQVLSQ EQYERVLAEN TRPSQMRKLF SLSQSWDRKC
+     KDGLYQALKE THPHLIMELW EKGSKKGLLP LSS
+//

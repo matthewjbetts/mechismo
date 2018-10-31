@@ -1,0 +1,11 @@
+#PBS -N speedy19
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -l cput=04:59:59
+#PBS -l mem=20gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id phosphosites.background.10090 --stringency low < ${dn_fist}root/static/data/examples/phosphosites.background.10090.txt 1> ${dn_out}phosphosites.background.10090.out 2> ${dn_out}phosphosites.background.10090.err
+

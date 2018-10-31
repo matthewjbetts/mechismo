@@ -1,0 +1,234 @@
+# http://www.biochem.ucl.ac.uk/bsm/atlas/
+
+UNK	X	N	donor
+UNK	X	CA
+UNK	X	C
+UNK	X	O	acceptor
+
+CYS	C	N	donor
+CYS	C	CA
+CYS	C	C
+CYS	C	O	acceptor
+CYS	C	CB
+CYS	C	SG	donor	acceptor
+
+SER	S	N	donor
+SER	S	CA
+SER	S	C
+SER	S	O	acceptor
+SER	S	CB
+SER	S	OG      donor	acceptor
+
+THR	T	N	donor
+THR	T	CA
+THR	T	C
+THR	T	O	acceptor
+THR	T	CB
+THR	T	OG1	donor	acceptor
+THR	T	CG2
+
+ASP	D	N	donor
+ASP	D	CA
+ASP	D	C
+ASP	D	O	acceptor
+ASP	D	CB
+ASP	D	CG
+ASP	D	OD1	acceptor	salt
+ASP	D	OD2	acceptor	salt
+
+GLU	E	N	donor
+GLU	E	CA
+GLU	E	C
+GLU	E	O	acceptor
+GLU	E	CB
+GLU	E	CG
+GLU	E	CD
+GLU	E	OE1	acceptor	salt
+GLU	E	OE2	acceptor	salt
+
+ASN	N	N	donor
+ASN	N	CA
+ASN	N	C
+ASN	N	O       acceptor
+ASN	N	CB
+ASN	N	CG
+ASN	N	OD1	acceptor
+ASN	N	ND2	donor
+
+GLN	Q	N	donor
+GLN	Q	CA
+GLN	Q	C
+GLN	Q	O	acceptor
+GLN	Q	CB
+GLN	Q	CG
+GLN	Q	CD
+GLN	Q	OE1	acceptor
+GLN	Q	NE2	donor
+
+ARG	R	N	donor
+ARG	R	CA
+ARG	R	C
+ARG	R	O	acceptor
+ARG	R	CB
+ARG	R	CG
+ARG	R	CD
+ARG	R	NE	donor
+ARG	R	CZ
+ARG	R	NH1	donor	salt
+ARG	R	NH2	donor	salt
+
+LYS	K	N	donor
+LYS	K	CA
+LYS	K	C
+LYS	K	O	acceptor
+LYS	K	CB
+LYS	K	CG
+LYS	K	CD
+LYS	K	CE
+LYS	K	NZ	donor	salt
+
+HIS	H	N	donor
+HIS	H	CA
+HIS	H	C
+HIS	H	O	acceptor
+HIS	H	CB
+HIS	H	CG
+HIS	H	ND1	donor	acceptor
+HIS	H	CD2
+HIS	H	CE1
+HIS	H	NE2	donor	acceptor
+
+ILE	I	N	donor
+ILE	I	CA
+ILE	I	C
+ILE	I	O	acceptor
+ILE	I	CB
+ILE	I	CG1
+ILE	I	CG2
+ILE	I	CD1
+
+LEU	L	N	donor
+LEU	L	CA
+LEU	L	C
+LEU	L	O	acceptor
+LEU	L	CB
+LEU	L	CG
+LEU	L	CD1
+LEU	L	CD2
+
+MET	M	N	donor
+MET	M	CA
+MET	M	C
+MET	M	O	acceptor
+MET	M	CB
+MET	M	CG
+MET	M	SD
+MET	M	CE
+
+VAL	V	N	donor
+VAL	V	CA
+VAL	V	C
+VAL	V	O	acceptor
+VAL	V	CB
+VAL	V	CG1
+VAL	V	CG2
+
+PHE	F	N	donor
+PHE	F	CA
+PHE	F	C
+PHE	F	O	acceptor
+PHE	F	CB
+PHE	F	CG
+PHE	F	CD1
+PHE	F	CD2
+PHE	F	CE1
+PHE	F	CE2
+PHE	F	CZ
+
+TYR	Y	N	donor
+TYR	Y	CA
+TYR	Y	C
+TYR	Y	O	acceptor
+TYR	Y	CB
+TYR	Y	CG
+TYR	Y	CD1
+TYR	Y	CD2
+TYR	Y	CE1
+TYR	Y	CE2
+TYR	Y	CZ
+TYR	Y	OH	donor	acceptor
+
+TRP	W	N	donor
+TRP	W	CA
+TRP	W	C
+TRP	W	O	acceptor
+TRP	W	CB
+TRP	W	CG
+TRP	W	CD1
+TRP	W	CD2
+TRP	W	NE1	donor
+TRP	W	CE2
+TRP	W	CE3
+TRP	W	CZ2
+TRP	W	CZ3
+TRP	W	CH2
+
+PRO	P	N	donor
+PRO	P	CA
+PRO	P	C
+PRO	P	O	acceptor
+PRO	P	CB
+PRO	P	CG
+PRO	P	CD
+
+GLY	G	N	donor
+GLY	G	CA
+GLY	G	C
+GLY	G	O	acceptor
+GLY	G	CB
+
+ALA	A	N	donor
+ALA	A	CA
+ALA	A	C
+ALA	A	O	acceptor
+ALA	A	CB
+
+SEP	X	N	donor
+SEP	X       CA
+SEP	X       C
+SEP	X       O	acceptor
+SEP	X       CB
+SEP	X       OG	acceptor
+SEP	X       P
+SEP	X       O1P	acceptor
+SEP	X       O2P	acceptor
+SEP	X       O3P	acceptor
+
+TPO	X	N	donor
+TPO	X	CA
+TPO	X	C
+TPO	X	O	acceptor
+TPO	X	CB
+TPO	X	CG2
+TPO	X	OG1	acceptor
+TPO	X	P
+TPO	X	O1P	acceptor
+TPO	X	O2P	acceptor
+TPO	X	O3P	acceptor
+
+PTR	X	N	donor
+PTR	X	CA
+PTR	X	C
+PTR	X	O	acceptor
+PTR	X	CB
+PTR	X	CG
+PTR	X	CD1
+PTR	X	CD2
+PTR	X	CE1
+PTR	X	CE2
+PTR	X	CZ
+PTR	X	OH	acceptor
+PTR	X	P
+PTR	X	O1P	acceptor
+PTR	X	O2P	acceptor
+PTR	X	O3P	acceptor

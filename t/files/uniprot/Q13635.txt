@@ -1,0 +1,506 @@
+ID   PTC1_HUMAN              Reviewed;        1447 AA.
+AC   Q13635; A3KBI9; E9PEJ8; Q13463; Q5R1U7; Q5R1U9; Q5R1V0; Q5VZC0;
+AC   Q5VZC2; Q86XG7;
+DT   30-MAY-2000, integrated into UniProtKB/Swiss-Prot.
+DT   23-OCT-2007, sequence version 2.
+DT   21-MAR-2012, entry version 123.
+DE   RecName: Full=Protein patched homolog 1;
+DE            Short=PTC;
+DE            Short=PTC1;
+GN   Name=PTCH1; Synonyms=PTCH;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM L), AND VARIANTS BCC PRO-175;
+RP   PRO-ASN-ILE-815 INS AND LEU-1315.
+RC   TISSUE=Lung;
+RX   MEDLINE=96247324; PubMed=8658145; DOI=10.1126/science.272.5268.1668;
+RA   Johnson R.L., Rothman A.L., Xie J., Goodrich L.V., Bare J.W.,
+RA   Bonifas J.M., Quinn A.G., Myers R.M., Cox D.R., Epstein E.H. Jr.,
+RA   Scott M.P.;
+RT   "Human homolog of patched, a candidate gene for the basal cell nevus
+RT   syndrome.";
+RL   Science 272:1668-1671(1996).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM S), AND VARIANT LEU-1315.
+RC   TISSUE=Fetal brain;
+RX   MEDLINE=96218118; PubMed=8647801; DOI=10.1074/jbc.271.21.12125;
+RA   Hahn H., Christiansen J., Wicking C., Zaphiropolous P.G.,
+RA   Chidambaram A., Gerrard B., Vorechovsky I., Bale A.E., Toftgard R.,
+RA   Dean M., Wainwright B.J.;
+RT   "A mammalian patched homolog is expressed in target tissues of sonic
+RT   hedgehog and maps to a region associated with developmental
+RT   abnormalities.";
+RL   J. Biol. Chem. 271:12125-12128(1996).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=15164053; DOI=10.1038/nature02465;
+RA   Humphray S.J., Oliver K., Hunt A.R., Plumb R.W., Loveland J.E.,
+RA   Howe K.L., Andrews T.D., Searle S., Hunt S.E., Scott C.E., Jones M.C.,
+RA   Ainscough R., Almeida J.P., Ambrose K.D., Ashwell R.I.S.,
+RA   Babbage A.K., Babbage S., Bagguley C.L., Bailey J., Banerjee R.,
+RA   Barker D.J., Barlow K.F., Bates K., Beasley H., Beasley O., Bird C.P.,
+RA   Bray-Allen S., Brown A.J., Brown J.Y., Burford D., Burrill W.,
+RA   Burton J., Carder C., Carter N.P., Chapman J.C., Chen Y., Clarke G.,
+RA   Clark S.Y., Clee C.M., Clegg S., Collier R.E., Corby N., Crosier M.,
+RA   Cummings A.T., Davies J., Dhami P., Dunn M., Dutta I., Dyer L.W.,
+RA   Earthrowl M.E., Faulkner L., Fleming C.J., Frankish A.,
+RA   Frankland J.A., French L., Fricker D.G., Garner P., Garnett J.,
+RA   Ghori J., Gilbert J.G.R., Glison C., Grafham D.V., Gribble S.,
+RA   Griffiths C., Griffiths-Jones S., Grocock R., Guy J., Hall R.E.,
+RA   Hammond S., Harley J.L., Harrison E.S.I., Hart E.A., Heath P.D.,
+RA   Henderson C.D., Hopkins B.L., Howard P.J., Howden P.J., Huckle E.,
+RA   Johnson C., Johnson D., Joy A.A., Kay M., Keenan S., Kershaw J.K.,
+RA   Kimberley A.M., King A., Knights A., Laird G.K., Langford C.,
+RA   Lawlor S., Leongamornlert D.A., Leversha M., Lloyd C., Lloyd D.M.,
+RA   Lovell J., Martin S., Mashreghi-Mohammadi M., Matthews L., McLaren S.,
+RA   McLay K.E., McMurray A., Milne S., Nickerson T., Nisbett J.,
+RA   Nordsiek G., Pearce A.V., Peck A.I., Porter K.M., Pandian R.,
+RA   Pelan S., Phillimore B., Povey S., Ramsey Y., Rand V., Scharfe M.,
+RA   Sehra H.K., Shownkeen R., Sims S.K., Skuce C.D., Smith M.,
+RA   Steward C.A., Swarbreck D., Sycamore N., Tester J., Thorpe A.,
+RA   Tracey A., Tromans A., Thomas D.W., Wall M., Wallis J.M., West A.P.,
+RA   Whitehead S.L., Willey D.L., Williams S.A., Wilming L., Wray P.W.,
+RA   Young L., Ashurst J.L., Coulson A., Blocker H., Durbin R.M.,
+RA   Sulston J.E., Hubbard T., Jackson M.J., Bentley D.R., Beck S.,
+RA   Rogers J., Dunham I.;
+RT   "DNA sequence and analysis of human chromosome 9.";
+RL   Nature 429:369-374(2004).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 1-324 (ISOFORM L'), NUCLEOTIDE SEQUENCE
+RP   [MRNA] OF 1-259 (ISOFORM M), NUCLEOTIDE SEQUENCE [MRNA] OF 1-174
+RP   (ISOFORM S), AND ALTERNATIVE SPLICING.
+RX   PubMed=15780749; DOI=10.1016/j.ygeno.2004.11.014;
+RA   Nagao K., Toyoda M., Takeuchi-Inoue K., Fujii K., Yamada M.,
+RA   Miyashita T.;
+RT   "Identification and characterization of multiple isoforms of a murine
+RT   and human tumor suppressor, patched, having distinct first exons.";
+RL   Genomics 85:462-471(2005).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] OF 1-183 (ISOFORM M).
+RC   TISSUE=Brain;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 1-90 (ISOFORM S), AND ALTERNATIVE
+RP   SPLICING.
+RX   PubMed=17310997; DOI=10.1038/sj.onc.1210301;
+RA   Shimokawa T., Svard J., Heby-Henricson K., Teglund S., Toftgard R.,
+RA   Zaphiropoulos P.G.;
+RT   "Distinct roles of first exon variants of the tumor-suppressor
+RT   Patched1 in Hedgehog signaling.";
+RL   Oncogene 26:4889-4896(2007).
+RN   [7]
+RP   INTERACTION WITH SNX17.
+RX   PubMed=15769472; DOI=10.1016/j.jmb.2005.02.004;
+RA   Knauth P., Schlueter T., Czubayko M., Kirsch C., Florian V.,
+RA   Schreckenberger S., Hahn H., Bohnensack R.;
+RT   "Functions of sorting nexin 17 domains and recognition motif for P-
+RT   selectin trafficking.";
+RL   J. Mol. Biol. 347:813-825(2005).
+RN   [8]
+RP   VARIANTS BCNS ARG-509; VAL-509; GLN-816 DEL AND TYR-1132.
+RX   MEDLINE=96438609; PubMed=8840969;
+RA   Chidambaram A., Goldstein A.M., Gailani M.R., Gerrard B., Bale S.J.,
+RA   DiGiovanna J.J., Bale A.E., Dean M.;
+RT   "Mutations in the human homologue of the Drosophila patched gene in
+RT   Caucasian and African-American nevoid basal cell carcinoma syndrome
+RT   patients.";
+RL   Cancer Res. 56:4599-4601(1996).
+RN   [9]
+RP   VARIANTS BCNS TYR-513 AND ARG-1069.
+RX   MEDLINE=97136566; PubMed=8981943;
+RA   Wicking C., Shanley S., Smyth I., Gillies S., Negus K., Graham S.,
+RA   Suthers G., Haites N., Edwards M., Wainwright B.J.,
+RA   Chenevix-Trench G.;
+RT   "Most germ-line mutations in the nevoid basal cell carcinoma syndrome
+RT   lead to a premature termination of the PATCHED protein, and no
+RT   genotype-phenotype correlations are evident.";
+RL   Am. J. Hum. Genet. 60:21-26(1997).
+RN   [10]
+RP   VARIANT NBCCS ASP-1438.
+RX   MEDLINE=98001068; PubMed=9341860; DOI=10.1007/s004390050541;
+RA   Lench N.J., Telford E.A.R., High A.S., Markham A.F., Wicking C.,
+RA   Wainwright B.J.;
+RT   "Characterisation of human patched germ line mutations in naevoid
+RT   basal cell carcinoma syndrome.";
+RL   Hum. Genet. 100:497-502(1997).
+RN   [11]
+RP   VARIANT LEU-1315.
+RX   MEDLINE=99211211; PubMed=10200051;
+RX   DOI=10.1002/(SICI)1098-1004(1998)11:6<480::AID-HUMU9>3.3.CO;2-W;
+RA   Hasenpusch-Theil K., Bataille V., Laehdetie J., Obermayr F.,
+RA   Sampson J.R., Frischauf A.-M.;
+RT   "Gorlin syndrome: identification of 4 novel germ-line mutations of the
+RT   human patched (PTCH) gene.";
+RL   Hum. Mutat. 11:480-480(1998).
+RN   [12]
+RP   VARIANTS BCNS SER-376 AND VAL-1083 INS, AND VARIANT BCC TRP-1114.
+RX   MEDLINE=98281604; PubMed=9620294;
+RX   DOI=10.1046/j.1523-1747.1998.00222.x;
+RA   Aszterbaum M., Rothman A.L., Johnson R.L., Fisher M., Xie J.,
+RA   Bonifas J.M., Zhang X., Scott M.P., Epstein E.H. Jr.;
+RT   "Identification of mutations in the human PATCHED gene in sporadic
+RT   basal cell carcinomas and in patients with the basal cell nevus
+RT   syndrome.";
+RL   J. Invest. Dermatol. 110:885-888(1998).
+RN   [13]
+RP   VARIANT LEU-1315.
+RX   MEDLINE=20334946; PubMed=10874314;
+RX   DOI=10.1002/1098-1004(200007)16:1<89::AID-HUMU18>3.3.CO;2-Z;
+RA   Dong J., Gailani M.R., Pomeroy S.L., Reardon D., Bale A.E.;
+RT   "Identification of PATCHED mutations in medulloblastomas by direct
+RT   sequencing.";
+RL   Hum. Mutat. 16:89-90(2000).
+RN   [14]
+RP   VARIANT BCNS PRO-1132.
+RX   MEDLINE=21154106; PubMed=11231326;
+RX   DOI=10.1046/j.1523-1747.2001.01279-2.x;
+RA   Reifenberger J., Arnold N., Kiechle M., Reifenberger G., Hauschild A.;
+RT   "Coincident PTCH and BRCA1 germline mutations in a patient with nevoid
+RT   basal cell carcinoma syndrome and familial breast cancer.";
+RL   J. Invest. Dermatol. 116:472-474(2001).
+RN   [15]
+RP   VARIANTS SQUAMOUS CELL CARCINOMA MET-829 AND LYS-1242.
+RX   MEDLINE=21184537; PubMed=11286632;
+RX   DOI=10.1046/j.1523-1747.2001.01301.x;
+RA   Ping X.L., Ratner D., Zhang H., Wu X.L., Zhang M.J., Chen F.F.,
+RA   Silvers D.N., Peacocke M., Tsou H.C.;
+RT   "PTCH mutations in squamous cell carcinoma of the skin.";
+RL   J. Invest. Dermatol. 116:614-616(2001).
+RN   [16]
+RP   VARIANTS HPE7 THR-393; MET-728; GLY-827 AND MET-1052.
+RX   PubMed=11941477; DOI=10.1007/s00439-002-0695-5;
+RA   Ming J.E., Kaupas M.E., Roessler E., Brunner H.G., Golabi M.,
+RA   Tekin M., Stratton R.F., Sujansky E., Bale S.J., Muenke M.;
+RT   "Mutations in PATCHED-1, the receptor for SONIC HEDGEHOG, are
+RT   associated with holoprosencephaly.";
+RL   Hum. Genet. 110:297-301(2002).
+RN   [17]
+RP   ERRATUM.
+RA   Ming J.E., Kaupas M.E., Roessler E., Brunner H.G., Golabi M.,
+RA   Tekin M., Stratton R.F., Sujansky E., Bale S.J., Muenke M.;
+RL   Hum. Genet. 111:464-464(2002).
+RN   [18]
+RP   VARIANTS BCNS PRO-230 AND 505-LEU-ARG-506.
+RX   PubMed=15459969; DOI=10.1002/humu.9289;
+RA   Savino M., d'Apolito M., Formica V., Baorda F., Mari F., Renieri A.,
+RA   Carabba E., Tarantino E., Andreucci E., Belli S., Lo Muzio L.,
+RA   Dallapiccola B., Zelante L., Savoia A.;
+RT   "Spectrum of PTCH mutations in Italian nevoid basal cell-carcinoma
+RT   syndrome patients: identification of thirteen novel alleles.";
+RL   Hum. Mutat. 24:441-441(2004).
+RN   [19]
+RP   VARIANT HPE7 MET-728.
+RX   PubMed=17096318; DOI=10.1002/ajmg.a.31370;
+RA   Rahimov F., Ribeiro L.A., de Miranda E., Richieri-Costa A.,
+RA   Murray J.C.;
+RT   "GLI2 mutations in four Brazilian patients: how wide is the phenotypic
+RT   spectrum?";
+RL   Am. J. Med. Genet. A 140:2571-2576(2006).
+RN   [20]
+RP   VARIANTS HPE7 GLY-443; GLY-751; GLY-908 AND MET-1052.
+RX   PubMed=17001668; DOI=10.1002/ajmg.a.31369;
+RA   Ribeiro L.A., Murray J.C., Richieri-Costa A.;
+RT   "PTCH mutations in four Brazilian patients with holoprosencephaly and
+RT   in one with holoprosencephaly-like features and normal MRI.";
+RL   Am. J. Med. Genet. A 140:2584-2586(2006).
+CC   -!- FUNCTION: Acts as a receptor for sonic hedgehog (SHH), indian
+CC       hedgehog (IHH) and desert hedgehog (DHH). Associates with the
+CC       smoothened protein (SMO) to transduce the hedgehog's proteins
+CC       signal. Seems to have a tumor suppressor function, as inactivation
+CC       of this protein is probably a necessary, if not sufficient step
+CC       for tumorigenesis.
+CC   -!- SUBUNIT: Interacts with SNX17.
+CC   -!- SUBCELLULAR LOCATION: Membrane; Multi-pass membrane protein.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=4;
+CC       Name=L; Synonyms=1B;
+CC         IsoId=Q13635-1; Sequence=Displayed;
+CC       Name=L'; Synonyms=1Ckid;
+CC         IsoId=Q13635-2; Sequence=VSP_041369;
+CC       Name=M; Synonyms=1C;
+CC         IsoId=Q13635-3; Sequence=VSP_041371;
+CC       Name=S; Synonyms=1A, 1CdeltaE2;
+CC         IsoId=Q13635-4; Sequence=VSP_041370;
+CC   -!- TISSUE SPECIFICITY: In the adult, expressed in brain, lung, liver,
+CC       heart, placenta, skeletal muscle, pancreas and kidney. Expressed
+CC       in tumor cells but not in normal skin.
+CC   -!- DEVELOPMENTAL STAGE: In the embryo, found in all major target
+CC       tissues of sonic hedgehog, such as the ventral neural tube,
+CC       somites, and tissues surrounding the zone of polarizing activity
+CC       of the limb bud.
+CC   -!- PTM: Glycosylation is necessary for SHH binding (By similarity).
+CC   -!- DISEASE: Defects in PTCH1 are probably the cause of basal cell
+CC       nevus syndrome (BCNS) [MIM:109400]; also known as Gorlin syndrome
+CC       or Gorlin-Goltz syndrome. BCNS is an autosomal dominant disease
+CC       characterized by nevoid basal cell carcinomas (NBCCS) and
+CC       developmental abnormalities such as rib and craniofacial
+CC       alterations, polydactyly, syndactyly, and spina bifida. In
+CC       addition, the patients suffer from a multitude of tumors like
+CC       basal cell carcinomas (BCC), fibromas of the ovaries and heart,
+CC       cysts of the skin, jaws and mesentery, as well as medulloblastomas
+CC       and meningiomas. PTCH1 is also mutated in squamous cell carcinoma
+CC       (SCC). Could also be associated with large body size observed in
+CC       BCNS patients.
+CC   -!- DISEASE: Defects in PTCH1 are a cause of sporadic basal cell
+CC       carcinoma (BCC) [MIM:605462].
+CC   -!- DISEASE: Defects in PTCH1 are the cause of holoprosencephaly type
+CC       7 (HPE7) [MIM:610828]. Holoprosencephaly (HPE) [MIM:236100] is the
+CC       most common structural anomaly of the brain, in which the
+CC       developing forebrain fails to correctly separate into right and
+CC       left hemispheres. Holoprosencephaly is genetically heterogeneous
+CC       and associated with several distinct facies and phenotypic
+CC       variability.
+CC   -!- SIMILARITY: Belongs to the patched family.
+CC   -!- SIMILARITY: Contains 1 SSD (sterol-sensing) domain.
+CC   -!- WEB RESOURCE: Name=Atlas of Genetics and Cytogenetics in Oncology
+CC       and Haematology;
+CC       URL="http://atlasgeneticsoncology.org/Genes/PTCH100.html";
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/PTCH1";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; U59464; AAC50550.1; -; mRNA.
+DR   EMBL; U43148; AAC50496.1; -; mRNA.
+DR   EMBL; AL161729; CAH73817.1; -; Genomic_DNA.
+DR   EMBL; AL161729; CAH73818.1; -; Genomic_DNA.
+DR   EMBL; AB189436; BAD74184.1; -; mRNA.
+DR   EMBL; AB189437; BAD74185.1; -; mRNA.
+DR   EMBL; AB189438; BAD74186.1; -; mRNA.
+DR   EMBL; AB189439; BAD74187.1; -; mRNA.
+DR   EMBL; AB189440; BAD74188.1; -; mRNA.
+DR   EMBL; BC043542; AAH43542.1; -; mRNA.
+DR   EMBL; AB239329; BAF47712.1; -; mRNA.
+DR   IPI; IPI00014374; -.
+DR   IPI; IPI00643862; -.
+DR   IPI; IPI00654901; -.
+DR   IPI; IPI00844057; -.
+DR   RefSeq; NP_000255.2; NM_000264.3.
+DR   RefSeq; NP_001077071.1; NM_001083602.1.
+DR   RefSeq; NP_001077072.1; NM_001083603.1.
+DR   RefSeq; NP_001077073.1; NM_001083604.1.
+DR   RefSeq; NP_001077074.1; NM_001083605.1.
+DR   RefSeq; NP_001077075.1; NM_001083606.1.
+DR   RefSeq; NP_001077076.1; NM_001083607.1.
+DR   UniGene; Hs.494538; -.
+DR   ProteinModelPortal; Q13635; -.
+DR   DIP; DIP-44940N; -.
+DR   STRING; Q13635; -.
+DR   PhosphoSite; Q13635; -.
+DR   DMDM; 160415977; -.
+DR   PRIDE; Q13635; -.
+DR   DNASU; 5727; -.
+DR   Ensembl; ENST00000331920; ENSP00000332353; ENSG00000185920.
+DR   Ensembl; ENST00000375274; ENSP00000364423; ENSG00000185920.
+DR   GeneID; 5727; -.
+DR   KEGG; hsa:5727; -.
+DR   UCSC; uc004avk.2; human.
+DR   CTD; 5727; -.
+DR   GeneCards; GC09M098205; -.
+DR   H-InvDB; HIX0025725; -.
+DR   HGNC; HGNC:9585; PTCH1.
+DR   HPA; CAB013717; -.
+DR   MIM; 109400; phenotype.
+DR   MIM; 601309; gene.
+DR   MIM; 605462; phenotype.
+DR   MIM; 610828; phenotype.
+DR   neXtProt; NX_Q13635; -.
+DR   Orphanet; 377; Gorlin syndrome.
+DR   Orphanet; 2162; Holoprosencephaly.
+DR   PharmGKB; PA162400269; -.
+DR   PharmGKB; PA33937; -.
+DR   eggNOG; NOG313603; -.
+DR   GeneTree; ENSGT00550000074234; -.
+DR   HOGENOM; HBG713504; -.
+DR   HOVERGEN; HBG003801; -.
+DR   InParanoid; Q13635; -.
+DR   KO; K06225; -.
+DR   OMA; RPSYCDA; -.
+DR   OrthoDB; EOG40S0DT; -.
+DR   PhylomeDB; Q13635; -.
+DR   Pathway_Interaction_DB; glypican_3pathway; Glypican 3 network.
+DR   Pathway_Interaction_DB; hedgehog_glipathway; Hedgehog signaling events mediated by Gli proteins.
+DR   Pathway_Interaction_DB; hedgehog_2pathway; Signaling events mediated by the Hedgehog family.
+DR   Reactome; REACT_111102; Signal Transduction.
+DR   NextBio; 22266; -.
+DR   ArrayExpress; Q13635; -.
+DR   Bgee; Q13635; -.
+DR   CleanEx; HS_PTCH1; -.
+DR   Genevestigator; Q13635; -.
+DR   GermOnline; ENSG00000185920; Homo sapiens.
+DR   GO; GO:0005901; C:caveola; IDA:BHF-UCL.
+DR   GO; GO:0005887; C:integral to plasma membrane; ISS:BHF-UCL.
+DR   GO; GO:0043231; C:intracellular membrane-bounded organelle; IDA:BHF-UCL.
+DR   GO; GO:0048471; C:perinuclear region of cytoplasm; IDA:BHF-UCL.
+DR   GO; GO:0015485; F:cholesterol binding; IDA:BHF-UCL.
+DR   GO; GO:0030332; F:cyclin binding; IPI:BHF-UCL.
+DR   GO; GO:0097108; F:hedgehog family protein binding; IPI:BHF-UCL.
+DR   GO; GO:0008158; F:hedgehog receptor activity; IEA:InterPro.
+DR   GO; GO:0005119; F:smoothened binding; IPI:BHF-UCL.
+DR   GO; GO:0007420; P:brain development; ISS:BHF-UCL.
+DR   GO; GO:0071397; P:cellular response to cholesterol; IMP:BHF-UCL.
+DR   GO; GO:0030326; P:embryonic limb morphogenesis; ISS:UniProtKB.
+DR   GO; GO:0040015; P:negative regulation of multicellular organism growth; ISS:UniProtKB.
+DR   GO; GO:0045668; P:negative regulation of osteoblast differentiation; IMP:BHF-UCL.
+DR   GO; GO:0043433; P:negative regulation of sequence-specific DNA binding transcription factor activity; IMP:BHF-UCL.
+DR   GO; GO:0045879; P:negative regulation of smoothened signaling pathway; ISS:BHF-UCL.
+DR   GO; GO:0000122; P:negative regulation of transcription from RNA polymerase II promoter; IMP:BHF-UCL.
+DR   GO; GO:0021997; P:neural plate axis specification; ISS:BHF-UCL.
+DR   GO; GO:0060037; P:pharyngeal system development; IMP:BHF-UCL.
+DR   GO; GO:0010875; P:positive regulation of cholesterol efflux; IDA:BHF-UCL.
+DR   GO; GO:0016485; P:protein processing; ISS:UniProtKB.
+DR   GO; GO:0072661; P:protein targeting to plasma membrane; IDA:BHF-UCL.
+DR   GO; GO:0007224; P:smoothened signaling pathway; IEP:UniProtKB.
+DR   GO; GO:0061053; P:somite development; IMP:BHF-UCL.
+DR   InterPro; IPR003392; Patched.
+DR   InterPro; IPR000731; SSD.
+DR   InterPro; IPR004766; TM_rcpt_patched.
+DR   Pfam; PF02460; Patched; 1.
+DR   TIGRFAMs; TIGR00918; 2A060602; 1.
+DR   PROSITE; PS50156; SSD; 1.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Complete proteome; Disease mutation;
+KW   Glycoprotein; Holoprosencephaly; Membrane; Polymorphism; Receptor;
+KW   Reference proteome; Transmembrane; Transmembrane helix;
+KW   Tumor suppressor.
+FT   CHAIN         1   1447       Protein patched homolog 1.
+FT                                /FTId=PRO_0000205964.
+FT   TOPO_DOM      1    100       Cytoplasmic (Potential).
+FT   TRANSMEM    101    121       Helical; (Potential).
+FT   TOPO_DOM    122    436       Extracellular (Potential).
+FT   TRANSMEM    437    457       Helical; (Potential).
+FT   TOPO_DOM    458    472       Cytoplasmic (Potential).
+FT   TRANSMEM    473    493       Helical; (Potential).
+FT   TOPO_DOM    494    501       Extracellular (Potential).
+FT   TRANSMEM    502    522       Helical; (Potential).
+FT   TOPO_DOM    523    547       Cytoplasmic (Potential).
+FT   TRANSMEM    548    568       Helical; (Potential).
+FT   TOPO_DOM    569    577       Extracellular (Potential).
+FT   TRANSMEM    578    598       Helical; (Potential).
+FT   TOPO_DOM    599    748       Cytoplasmic (Potential).
+FT   TRANSMEM    749    769       Helical; (Potential).
+FT   TOPO_DOM    770   1027       Extracellular (Potential).
+FT   TRANSMEM   1028   1048       Helical; (Potential).
+FT   TOPO_DOM   1049   1055       Cytoplasmic (Potential).
+FT   TRANSMEM   1056   1076       Helical; (Potential).
+FT   TOPO_DOM   1077   1083       Extracellular (Potential).
+FT   TRANSMEM   1084   1104       Helical; (Potential).
+FT   TOPO_DOM   1105   1121       Cytoplasmic (Potential).
+FT   TRANSMEM   1122   1141       Helical; (Potential).
+FT   TOPO_DOM   1142   1154       Extracellular (Potential).
+FT   TRANSMEM   1155   1175       Helical; (Potential).
+FT   TOPO_DOM   1176   1447       Cytoplasmic (Potential).
+FT   DOMAIN      438    598       SSD.
+FT   COMPBIAS     14     31       Gly-rich.
+FT   CARBOHYD    141    141       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    312    312       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    349    349       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    414    414       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    875    875       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD   1000   1000       N-linked (GlcNAc...) (Potential).
+FT   VAR_SEQ       1     66       MASAGNAAEPQDRGGGGSGCIGAPGRPAGGGRRRRTGGLRR
+FT                                AAAPDRDYLHRPSYCDAAFALEQIS -> MELLNRNRLVIV
+FT                                SPRCTPPKASGGPARRGFYTFRSFCKDGGGGEEEEENGGEE
+FT                                KDDRGDKETRSD (in isoform L').
+FT                                /FTId=VSP_041369.
+FT   VAR_SEQ       2    152       Missing (in isoform S).
+FT                                /FTId=VSP_041370.
+FT   VAR_SEQ       2     67       Missing (in isoform M).
+FT                                /FTId=VSP_041371.
+FT   VARIANT     175    175       L -> P (in BCNS; sporadic BCC).
+FT                                /FTId=VAR_007843.
+FT   VARIANT     230    230       T -> P (in BCNS).
+FT                                /FTId=VAR_020845.
+FT   VARIANT     376    376       F -> S (in BCNS).
+FT                                /FTId=VAR_007844.
+FT   VARIANT     393    393       A -> T (in HPE7).
+FT                                /FTId=VAR_032952.
+FT   VARIANT     443    443       A -> G (in HPE7).
+FT                                /FTId=VAR_032953.
+FT   VARIANT     505    506       FL -> LR (in BCNS).
+FT                                /FTId=VAR_020846.
+FT   VARIANT     509    509       G -> R (in BCNS; could be a rare
+FT                                polymorphism).
+FT                                /FTId=VAR_010974.
+FT   VARIANT     509    509       G -> V (in BCNS).
+FT                                /FTId=VAR_010975.
+FT   VARIANT     513    513       D -> Y (in BCNS).
+FT                                /FTId=VAR_010976.
+FT   VARIANT     728    728       T -> M (in HPE7; dbSNP:rs28936404).
+FT                                /FTId=VAR_032954.
+FT   VARIANT     751    751       V -> G (in HPE7).
+FT                                /FTId=VAR_032955.
+FT   VARIANT     815    815       I -> IPNI (in BCNS).
+FT                                /FTId=VAR_007845.
+FT   VARIANT     816    816       Missing (in BCNS).
+FT                                /FTId=VAR_010977.
+FT   VARIANT     827    827       S -> G (in HPE7).
+FT                                /FTId=VAR_032956.
+FT   VARIANT     829    829       V -> M (in squamous cell carcinoma).
+FT                                /FTId=VAR_010978.
+FT   VARIANT     908    908       V -> G (in HPE7).
+FT                                /FTId=VAR_032957.
+FT   VARIANT    1052   1052       T -> M (in HPE7; dbSNP:rs28936405).
+FT                                /FTId=VAR_032958.
+FT   VARIANT    1069   1069       G -> R (in BCNS).
+FT                                /FTId=VAR_010979.
+FT   VARIANT    1083   1083       V -> VV (in BCNS).
+FT                                /FTId=VAR_007846.
+FT   VARIANT    1114   1114       R -> W (in BCNS and BCC).
+FT                                /FTId=VAR_007847.
+FT   VARIANT    1132   1132       S -> P (in BCNS).
+FT                                /FTId=VAR_010980.
+FT   VARIANT    1132   1132       S -> Y (in BCNS).
+FT                                /FTId=VAR_010981.
+FT   VARIANT    1195   1195       T -> S (in dbSNP:rs2236405).
+FT                                /FTId=VAR_020440.
+FT   VARIANT    1242   1242       E -> K (in squamous cell carcinoma).
+FT                                /FTId=VAR_010982.
+FT   VARIANT    1282   1282       P -> L (in dbSNP:rs2227968).
+FT                                /FTId=VAR_020847.
+FT   VARIANT    1315   1315       P -> L (in dbSNP:rs357564).
+FT                                /FTId=VAR_010983.
+FT   VARIANT    1438   1438       E -> D (in BCNS; sporadic NBCCS).
+FT                                /FTId=VAR_010984.
+FT   CONFLICT   1109   1109       G -> S (in Ref. 2; AAC50496).
+FT   CONFLICT   1144   1144       E -> D (in Ref. 2; AAC50496).
+FT   CONFLICT   1175   1175       L -> W (in Ref. 2; AAC50496).
+FT   CONFLICT   1283   1283       R -> K (in Ref. 2; AAC50496).
+FT   CONFLICT   1309   1309       E -> K (in Ref. 2; AAC50496).
+FT   CONFLICT   1353   1353       A -> T (in Ref. 2; AAC50496).
+SQ   SEQUENCE   1447 AA;  160545 MW;  F2937247BC812F85 CRC64;
+     MASAGNAAEP QDRGGGGSGC IGAPGRPAGG GRRRRTGGLR RAAAPDRDYL HRPSYCDAAF
+     ALEQISKGKA TGRKAPLWLR AKFQRLLFKL GCYIQKNCGK FLVVGLLIFG AFAVGLKAAN
+     LETNVEELWV EVGGRVSREL NYTRQKIGEE AMFNPQLMIQ TPKEEGANVL TTEALLQHLD
+     SALQASRVHV YMYNRQWKLE HLCYKSGELI TETGYMDQII EYLYPCLIIT PLDCFWEGAK
+     LQSGTAYLLG KPPLRWTNFD PLEFLEELKK INYQVDSWEE MLNKAEVGHG YMDRPCLNPA
+     DPDCPATAPN KNSTKPLDMA LVLNGGCHGL SRKYMHWQEE LIVGGTVKNS TGKLVSAHAL
+     QTMFQLMTPK QMYEHFKGYE YVSHINWNED KAAAILEAWQ RTYVEVVHQS VAQNSTQKVL
+     SFTTTTLDDI LKSFSDVSVI RVASGYLLML AYACLTMLRW DCSKSQGAVG LAGVLLVALS
+     VAAGLGLCSL IGISFNAATT QVLPFLALGV GVDDVFLLAH AFSETGQNKR IPFEDRTGEC
+     LKRTGASVAL TSISNVTAFF MAALIPIPAL RAFSLQAAVV VVFNFAMVLL IFPAILSMDL
+     YRREDRRLDI FCCFTSPCVS RVIQVEPQAY TDTHDNTRYS PPPPYSSHSF AHETQITMQS
+     TVQLRTEYDP HTHVYYTTAE PRSEISVQPV TVTQDTLSCQ SPESTSSTRD LLSQFSDSSL
+     HCLEPPCTKW TLSSFAEKHY APFLLKPKAK VVVIFLFLGL LGVSLYGTTR VRDGLDLTDI
+     VPRETREYDF IAAQFKYFSF YNMYIVTQKA DYPNIQHLLY DLHRSFSNVK YVMLEENKQL
+     PKMWLHYFRD WLQGLQDAFD SDWETGKIMP NNYKNGSDDG VLAYKLLVQT GSRDKPIDIS
+     QLTKQRLVDA DGIINPSAFY IYLTAWVSND PVAYAASQAN IRPHRPEWVH DKADYMPETR
+     LRIPAAEPIE YAQFPFYLNG LRDTSDFVEA IEKVRTICSN YTSLGLSSYP NGYPFLFWEQ
+     YIGLRHWLLL FISVVLACTF LVCAVFLLNP WTAGIIVMVL ALMTVELFGM MGLIGIKLSA
+     VPVVILIASV GIGVEFTVHV ALAFLTAIGD KNRRAVLALE HMFAPVLDGA VSTLLGVLML
+     AGSEFDFIVR YFFAVLAILT ILGVLNGLVL LPVLLSFFGP YPEVSPANGL NRLPTPSPEP
+     PPSVVRFAMP PGHTHSGSDS SDSEYSSQTT VSGLSEELRH YEAQQGAGGP AHQVIVEATE
+     NPVFAHSTVV HPESRHHPPS NPRQQPHLDS GSLPPGRQGQ QPRRDPPREG LWPPPYRPRR
+     DAFEISTEGH SGPSNRARWG PRGARSHNPR NPASTAMGSS VPGYCQPITT VTASASVTVA
+     VHPPPVPGPG RNPRGGLCPG YPETDHGLFE DPHVPFHVRC ERRDSKVEVI ELQDVECEER
+     PRGSSSN
+//

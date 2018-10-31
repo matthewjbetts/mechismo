@@ -1,0 +1,78 @@
+
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+
+
+<h2>Frequently asked questions (FAQ)</h2>
+
+<h3>What modelling technique are you using to get structures?</h3>
+
+<p>Simply put: none.  We do not <i>model</i> structures in mechismo as this would a) take a long time (imagine a query of 200 mutations in 50 proteins with 10 models each on average) and b) we do not believe it adds very much to the precision of the approach.  What we do in mechismo is to project a sequence onto a 3D template and then present both the alignment to template and the template structure with appropriate labels and colour schemes to show you if/how the template residues differ from the sequence of interest (residues shown in pink with larger spheres).  </p>
+
+<p>In the original <a href="http://www.ncbi.nlm.nih.gov/pubmed/25392414">publication</a> for mechismo we showed that modelling (using a simple automated modellingn approach) does not improve the accuracy of identifying contacting residues to other molecules (proteins, chemicals, nucleic acids).  The plot below is that for protein-protein interfaces, and shows how well 3D templates at different identities reproduce the original contacts comparing modelling (model) to mechismo's alignment (aln) strategy.  Essentially there is no difference, and one could even argue that modelling makes things worse. </p>
+
+<div class="twoColumns">
+  <div class="column">
+    <div class="contents">
+    <img height = "357" width = "237" src = "http://www.russelllab.org/images/mechismo1_big.PNG">
+   </div>
+ </div>
+</div>
+
+<p>Of course one can argue that more sophisticated modelling techniques would make the plot very different, but then this would take even more time and probably would involve manual fiddling which is precisely what we want to avoid in order to give answers quickly</p>
+
+<h3>Can you handle insertions, deletions or stop-gains?</h3>
+
+<p>Deletions can be marked by an 'X' and should be given for each amino acid deleted.  This is obviously problematic for
+long deletions (e.g. of more than about 10 residues) and we are working on a means to improve this.  Deletions are currently
+modelled as an omission of the amino acid from the protein (meaning scores of zero with all surrounding residues).</p>
+
+<p>You can specify insertions by simply adding residues to the site of the inserted amino acid (e.g. if TRPS is inserted 
+after W372 then you would write this as W372WTRPS.  Long insertions will almost always be considered to be deleterious 
+as the current model assigns deleterious scores for these changes.</p>
+
+<p>Stop-gains are not currently handled explicitly in the system in the sense that everything after the new stop is
+removed and scored.  If you add a stop as '*' it will be treated as a drastic change <i>only at the position where it occurs</i>,
+so be warned.</p>
+
+<h3>Why don't I see many of the interactions I know about?</h3>
+
+<p>
+Mechismo currently only shows interactions for which there is some evidence available
+from three-dimensional structures.  This means that many of the full universe of ineractions
+will not be visible currently.  We are planning, somehow, to show these data in the future,
+but in the mean time, you can always peruse interaction databases such as those available
+at <a href="http://www.ebi.ac.uk/Tools/webservices/psicquic/view/main.xhtml">PSICQUIC</a>, <a href="http://www.ebi.ac.uk/intact/">Intact</a> or <a href="http://string.embl.org">STRING</a>.
+You can also increase the number of interactions shown in Mechismo by relaxing the parameters, either
+by selecting an option other than "high" confidence on the main page, or by using the
+Advanced options (see Help).
+</p>
+
+<h3>Why does my dataset show so many mismatches in Mechismo?</h3>
+
+<p>
+There are many potenital reasons for this.  The most common is that one is using gene names and positions.  When
+doing this Mechismo assumes that you are referring to the <i>canonical</i> splice form (i.e. from Uniprot Swissprot)
+corresponding to that gene.  If the position refers to another transcript, or version of the gene, RNA or protein
+sequence then this will result in a mismatch.  There are also a number of issues with alternative accesions (e.g.
+NCBI versus UniProt versus Ensembl, etc.) that we are working to resolve.
+</p>
+
+<h3>Mechismo says that my protein binds to X and I know X doesn't bind, why?</h3>
+
+<p>
+This arises normally because of relatively weak sequence matches between the query protein and the template.  We have
+computed various confidence measures as to how to interpret predictions, which are given in the Help pages.
+</p>
+
+<h3>What's the difference between an interface and an interaction?</h3>
+
+<p>An interface, by our definition, is the atomic contacts between two molecules as deduced or predicted from 3D structures.  An
+interaction is a more generic term that refers to the fact that two molecules interact (not necessarily known from 3D structures,
+but from other experiments like the two-hybrid system or in vitro binding assays for protein-small-molecule binding).</p>
+
+
+  </div>
+ </div>
+</div>

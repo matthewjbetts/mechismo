@@ -1,0 +1,8 @@
+#PBS -N idseqs
+#PBS -o /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/contact_groups/identical_seqs/pbs.out
+#PBS -e /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/contact_groups/identical_seqs/pbs.err
+#PBS -l mem=20gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+
+perl -I/net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/lib /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/script/group_contacts_with_identical_seqs.pl /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/contact_groups/identical_seqs/

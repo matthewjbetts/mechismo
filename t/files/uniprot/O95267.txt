@@ -1,0 +1,374 @@
+ID   GRP1_HUMAN              Reviewed;         797 AA.
+AC   O95267; Q56CZ0; Q58G75; Q59HB1; Q5I3A8; Q6GV31; Q6NX39; Q7LDG6;
+AC   Q9UI94; Q9UNN9;
+DT   05-FEB-2008, integrated into UniProtKB/Swiss-Prot.
+DT   05-FEB-2008, sequence version 2.
+DT   21-MAR-2012, entry version 94.
+DE   RecName: Full=RAS guanyl-releasing protein 1;
+DE   AltName: Full=Calcium and DAG-regulated guanine nucleotide exchange factor II;
+DE            Short=CalDAG-GEFII;
+DE   AltName: Full=Ras guanyl-releasing protein;
+GN   Name=RASGRP1; Synonyms=RASGRP;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), TISSUE SPECIFICITY, AND
+RP   DEVELOPMENTAL STAGE.
+RC   TISSUE=Frontal cortex;
+RX   MEDLINE=99007305; PubMed=9789079; DOI=10.1073/pnas.95.22.13278;
+RA   Kawasaki H., Springett G.M., Toki S., Canales J.J., Harlan P.,
+RA   Blumenstiel J.P., Chen E.J., Bany I.A., Mochizuki N., Ashbacher A.,
+RA   Matsuda M., Housman D.E., Graybiel A.M.;
+RT   "A Rap guanine nucleotide exchange factor enriched highly in the basal
+RT   ganglia.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 95:13278-13283(1998).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RC   TISSUE=T-cell;
+RX   PubMed=10087292; DOI=10.1007/s003359901001;
+RA   Bottorff D.A., Ebinu J.O., Stone J.C.;
+RT   "RasGRP, a Ras activator: mouse and human cDNA sequences and
+RT   chromosomal positions.";
+RL   Mamm. Genome 10:358-361(1999).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORMS 2; 3; 4 AND 5), INVOLVEMENT IN
+RP   SYSTEMIC LUPUS ERYTHEMATOSUS, AND TISSUE SPECIFICITY.
+RC   TISSUE=Peripheral blood;
+RX   PubMed=17878389;
+RA   Yasuda S., Stevens R.L., Terada T., Takeda M., Hashimoto T., Fukae J.,
+RA   Horita T., Kataoka H., Atsumi T., Koike T.;
+RT   "Defective expression of ras guanyl nucleotide-releasing protein 1 in
+RT   a subset of patients with systemic lupus erythematosus.";
+RL   J. Immunol. 179:4890-4900(2007).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Testis;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] OF 233-797 (ISOFORM 2).
+RC   TISSUE=Brain;
+RA   Totoki Y., Toyoda A., Takeda T., Sakaki Y., Tanaka A., Yokoyama S.,
+RA   Ohara O., Nagase T., Kikuno R.F.;
+RL   Submitted (MAR-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [6]
+RP   FUNCTION IN T-CELL RECEPTOR SIGNALING, TOPOLOGY, AND TISSUE
+RP   SPECIFICITY.
+RX   PubMed=10807788;
+RA   Ebinu J.O., Stang S.L., Teixeira C., Bottorff D.A., Hooton J.,
+RA   Blumberg P.M., Barry M., Bleakley R.C., Ostergaard H.L., Stone J.C.;
+RT   "RasGRP links T-cell receptor signaling to Ras.";
+RL   Blood 95:3199-3203(2000).
+RN   [7]
+RP   IDENTIFICATION IN A COMPLEX WITH DGKZ AND HRAS, AND ENZYME REGULATION.
+RX   PubMed=11257115; DOI=10.1083/jcb.152.6.1135;
+RA   Topham M.K., Prescott S.M.;
+RT   "Diacylglycerol kinase zeta regulates Ras activation by a novel
+RT   mechanism.";
+RL   J. Cell Biol. 152:1135-1143(2001).
+RN   [8]
+RP   ENZYME REGULATION.
+RX   PubMed=11919165;
+RA   Jones D.R., Sanjuan M.A., Stone J.C., Merida I.;
+RT   "Expression of a catalytically inactive form of diacylglycerol kinase
+RT   alpha induces sustained signaling through RasGRP.";
+RL   FASEB J. 16:595-597(2002).
+RN   [9]
+RP   FUNCTION IN B-CELLS, SUBCELLULAR LOCATION, INTERACTION WITH F-ACTIN,
+RP   AND ENZYME REGULATION.
+RX   PubMed=12839994; DOI=10.1093/emboj/cdg316;
+RA   Caloca M.J., Zugaza J.L., Matallanas D., Crespo P., Bustelo X.R.;
+RT   "Vav mediates Ras stimulation by direct activation of the GDP/GTP
+RT   exchange factor Ras GRP1.";
+RL   EMBO J. 22:3326-3336(2003).
+RN   [10]
+RP   FUNCTION, SUBCELLULAR LOCATION, AND MUTAGENESIS OF TYR-549.
+RX   PubMed=12782630; DOI=10.1074/jbc.M302807200;
+RA   Caloca M.J., Zugaza J.L., Bustelo X.R.;
+RT   "Exchange factors of the RasGRP family mediate Ras activation in the
+RT   Golgi.";
+RL   J. Biol. Chem. 278:33465-33473(2003).
+RN   [11]
+RP   FUNCTION, AND MUTAGENESIS OF ARG-271.
+RX   PubMed=12845332; DOI=10.1038/nature01806;
+RA   Bivona T.G., Perez De Castro I., Ahearn I.M., Grana T.M., Chiu V.K.,
+RA   Lockyer P.J., Cullen P.J., Pellicer A., Cox A.D., Philips M.R.;
+RT   "Phospholipase Cgamma activates Ras on the Golgi apparatus by means of
+RT   RasGRP1.";
+RL   Nature 424:694-698(2003).
+RN   [12]
+RP   FUNCTION, AND SUBCELLULAR LOCATION.
+RX   PubMed=15060167; DOI=10.1128/MCB.24.8.3485-3496.2004;
+RA   Perez de Castro I., Bivona T.G., Philips M.R., Pellicer A.;
+RT   "Ras activation in Jurkat T cells following low-grade stimulation of
+RT   the T-cell receptor is specific to N-Ras and occurs only on the Golgi
+RT   apparatus.";
+RL   Mol. Cell. Biol. 24:3485-3496(2004).
+RN   [13]
+RP   FUNCTION, AND SUBCELLULAR LOCATION.
+RX   PubMed=15184873; DOI=10.1038/sj.onc.1207768;
+RA   Zugaza J.L., Caloca M.J., Bustelo X.R.;
+RT   "Inverted signaling hierarchy between RAS and RAC in T-lymphocytes.";
+RL   Oncogene 23:5823-5833(2004).
+RN   [14]
+RP   PHOSPHORYLATION AT THR-184 BY PKC.
+RX   PubMed=15657177; DOI=10.1182/blood-2004-10-3916;
+RA   Zheng Y., Liu H., Coughlin J.J., Zheng J., Li L., Stone J.C.;
+RT   "Phosphorylation of RasGRP3 on threonine 133 provides a mechanistic
+RT   link between PKC and Ras signaling systems in B cells.";
+RL   Blood 105:3648-3654(2005).
+RN   [15]
+RP   FUNCTION, AND PHOSPHORYLATION AT THR-184.
+RX   PubMed=15899849; DOI=10.1128/MCB.25.11.4426-4441.2005;
+RA   Roose J.P., Mollenauer M., Gupta V.A., Stone J.C., Weiss A.;
+RT   "A diacylglycerol-protein kinase C-RasGRP1 pathway directs Ras
+RT   activation upon antigen receptor stimulation of T cells.";
+RL   Mol. Cell. Biol. 25:4426-4441(2005).
+RN   [16]
+RP   INTERACTION WITH SKAP1.
+RX   PubMed=17658605; DOI=10.1016/j.molimm.2007.05.024;
+RA   Kosco K.A., Cerignoli F., Williams S., Abraham R.T., Mustelin T.;
+RT   "SKAP55 modulates T cell antigen receptor-induced activation of the
+RT   Ras-Erk-AP1 pathway by binding RasGRP1.";
+RL   Mol. Immunol. 45:510-522(2008).
+RN   [17]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-694, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Leukemic T-cell;
+RX   PubMed=19690332; DOI=10.1126/scisignal.2000007;
+RA   Mayya V., Lundgren D.H., Hwang S.-I., Rezaul K., Wu L., Eng J.K.,
+RA   Rodionov V., Han D.K.;
+RT   "Quantitative phosphoproteomic analysis of T cell receptor signaling
+RT   reveals system-wide modulation of protein-protein interactions.";
+RL   Sci. Signal. 2:RA46-RA46(2009).
+CC   -!- FUNCTION: Functions as a diacylglycerol (DAG)-regulated nucleotide
+CC       exchange factor specifically activating Ras through the exchange
+CC       of bound GDP for GTP. Activates the Erk/MAP kinase cascade.
+CC       Couples T-lymphocytes and B-lymphocytes antigen receptors to the
+CC       activation of Ras. Hence, regulates T-cells and B-cells
+CC       development, homeostasis and differentiation. Functions also in
+CC       FcERI-evoked degranulation and cytokine secretion by mast cells,
+CC       regulating allergic responses. May also function in other cell
+CC       types differentiation.
+CC   -!- ENZYME REGULATION: Probably regulated by calcium (By similarity).
+CC       Regulated by PLC gamma, DGKA, DGKZ and by F-actin polymerization.
+CC   -!- SUBUNIT: Forms a signaling complex with DGKZ and HRAS. Interacts
+CC       with F-actin. Interacts with SKAP1.
+CC   -!- SUBCELLULAR LOCATION: Cytoplasm, cytosol. Cell membrane;
+CC       Peripheral membrane protein. Golgi apparatus membrane; Peripheral
+CC       membrane protein. Endoplasmic reticulum membrane; Peripheral
+CC       membrane protein. Note=Found both in the cytosol and associated
+CC       with membranes. Relocalization to the cell membrane upon
+CC       activation is F-actin-dependent. Translocates to the Golgi in
+CC       response to phorbol ester or nerve growth factor. Localizes to
+CC       somata and dendrites but not to axons of hippocampal pyramidal
+CC       cells (By similarity).
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=5;
+CC         Comment=Additional isoforms seem to exist. Several splicing
+CC         events may be used independently in a modular way;
+CC       Name=1;
+CC         IsoId=O95267-1; Sequence=Displayed;
+CC       Name=2; Synonyms=A;
+CC         IsoId=O95267-2; Sequence=VSP_030836;
+CC       Name=3; Synonyms=B;
+CC         IsoId=O95267-3; Sequence=VSP_030836, VSP_030841, VSP_030842;
+CC       Name=4; Synonyms=C;
+CC         IsoId=O95267-4; Sequence=VSP_030836, VSP_030837, VSP_030838;
+CC       Name=5; Synonyms=D;
+CC         IsoId=O95267-5; Sequence=VSP_030836, VSP_030839, VSP_030840;
+CC         Note=No experimental confirmation available;
+CC   -!- TISSUE SPECIFICITY: Expressed in brain with higher expression in
+CC       cerebellum, cerebral cortex and amygdala. Expressed in the
+CC       hematopoietic system. Expressed in T-cells (at protein level).
+CC   -!- DEVELOPMENTAL STAGE: Expressed in fetal brain and kidney.
+CC   -!- DOMAIN: The phorbol-ester/DAG-type zinc finger is the principal
+CC       mediator of the targeting to membranes and is required for
+CC       functional activation through DAG-binding.
+CC   -!- DISEASE: Defects in RASGRP1 may contribute to susceptibility to
+CC       systemic lupus erythematosus (SLE) [MIM:152700]. SLE is a chronic,
+CC       inflammatory and often febrile multisystemic disorder of
+CC       connective tissue. It affects principally the skin, joints,
+CC       kidneys and serosal membranes. SLE is thought to represent a
+CC       failure of the regulatory mechanisms of the autoimmune system.
+CC       Note=Aberrantly spliced isoforms and/or diminished levels of
+CC       RASGRP1 are found in a cohort of SLE patients raising the
+CC       possibility that dysregulation of this signaling protein
+CC       contributes to the development of autoimmunity in a subset of SLE
+CC       patients.
+CC   -!- SIMILARITY: Belongs to the RASGRP family.
+CC   -!- SIMILARITY: Contains 2 EF-hand domains.
+CC   -!- SIMILARITY: Contains 1 N-terminal Ras-GEF domain.
+CC   -!- SIMILARITY: Contains 1 phorbol-ester/DAG-type zinc finger.
+CC   -!- SIMILARITY: Contains 1 Ras-GEF domain.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=AAH67298.1; Type=Miscellaneous discrepancy; Note=Contaminating sequence. Potential poly-A sequence;
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF081195; AAC79699.1; -; mRNA.
+DR   EMBL; AF081197; AAF21898.1; -; mRNA.
+DR   EMBL; AF106071; AAC97349.1; -; mRNA.
+DR   EMBL; AY634315; AAT47482.2; -; mRNA.
+DR   EMBL; AY858556; AAW32406.2; -; mRNA.
+DR   EMBL; AY954625; AAX54699.4; -; mRNA.
+DR   EMBL; AY966005; AAX76907.1; -; mRNA.
+DR   EMBL; BC067298; AAH67298.1; ALT_SEQ; mRNA.
+DR   EMBL; BC109296; AAI09297.1; -; mRNA.
+DR   EMBL; BC109297; AAI09298.1; -; mRNA.
+DR   EMBL; AB208848; BAD92085.1; -; mRNA.
+DR   IPI; IPI00024733; -.
+DR   IPI; IPI00885089; -.
+DR   IPI; IPI00885115; -.
+DR   IPI; IPI00885132; -.
+DR   IPI; IPI00885149; -.
+DR   RefSeq; NP_001122074.1; NM_001128602.1.
+DR   RefSeq; NP_005730.2; NM_005739.3.
+DR   UniGene; Hs.591127; -.
+DR   HSSP; P28867; 1PTQ.
+DR   ProteinModelPortal; O95267; -.
+DR   SMR; O95267; 53-461, 474-591, 713-796.
+DR   STRING; O95267; -.
+DR   PhosphoSite; O95267; -.
+DR   PRIDE; O95267; -.
+DR   DNASU; 10125; -.
+DR   Ensembl; ENST00000310803; ENSP00000310244; ENSG00000172575.
+DR   GeneID; 10125; -.
+DR   KEGG; hsa:10125; -.
+DR   UCSC; uc001zkd.2; human.
+DR   UCSC; uc001zke.2; human.
+DR   UCSC; uc010bbf.1; human.
+DR   UCSC; uc010bbg.1; human.
+DR   CTD; 10125; -.
+DR   GeneCards; GC15M038780; -.
+DR   H-InvDB; HIX0038076; -.
+DR   HGNC; HGNC:9878; RASGRP1.
+DR   MIM; 152700; phenotype.
+DR   MIM; 603962; gene.
+DR   neXtProt; NX_O95267; -.
+DR   eggNOG; NOG256085; -.
+DR   GeneTree; ENSGT00510000046358; -.
+DR   HOVERGEN; HBG007513; -.
+DR   InParanoid; O95267; -.
+DR   KO; K04350; -.
+DR   OMA; EESKDRT; -.
+DR   OrthoDB; EOG49ZXNS; -.
+DR   PhylomeDB; O95267; -.
+DR   Pathway_Interaction_DB; tcrpathway; TCR signaling in naive CD4+ T cells.
+DR   Pathway_Interaction_DB; cd8tcrpathway; TCR signaling in naive CD8+ T cells.
+DR   Reactome; REACT_111102; Signal Transduction.
+DR   Reactome; REACT_604; Hemostasis.
+DR   Reactome; REACT_6900; Immune System.
+DR   NextBio; 38299; -.
+DR   ArrayExpress; O95267; -.
+DR   Bgee; O95267; -.
+DR   Genevestigator; O95267; -.
+DR   GO; GO:0005829; C:cytosol; TAS:Reactome.
+DR   GO; GO:0005789; C:endoplasmic reticulum membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0000139; C:Golgi membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0005624; C:membrane fraction; TAS:ProtInc.
+DR   GO; GO:0005886; C:plasma membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0005509; F:calcium ion binding; TAS:ProtInc.
+DR   GO; GO:0005085; F:guanyl-nucleotide exchange factor activity; TAS:ProtInc.
+DR   GO; GO:0008289; F:lipid binding; TAS:ProtInc.
+DR   GO; GO:0030154; P:cell differentiation; IEA:UniProtKB-KW.
+DR   GO; GO:0030168; P:platelet activation; TAS:Reactome.
+DR   GO; GO:0007265; P:Ras protein signal transduction; TAS:ProtInc.
+DR   GO; GO:0051056; P:regulation of small GTPase mediated signal transduction; IEA:InterPro.
+DR   InterPro; IPR020454; DAG/PE-bd.
+DR   InterPro; IPR011992; EF-hand-like_dom.
+DR   InterPro; IPR018247; EF_Hand_1_Ca_BS.
+DR   InterPro; IPR018249; EF_HAND_2.
+DR   InterPro; IPR002219; Prot_Kinase_C-like_PE/DAG-bd.
+DR   InterPro; IPR000651; Ras-like_Gua-exchang_fac_N.
+DR   InterPro; IPR008937; Ras_GEF.
+DR   InterPro; IPR023578; Ras_GEF_dom.
+DR   InterPro; IPR001895; RasGRF_CDC25.
+DR   Gene3D; G3DSA:1.10.238.10; EF-Hand_type; 2.
+DR   Gene3D; G3DSA:1.10.840.10; RasGRF_CDC25; 1.
+DR   PANTHER; PTHR23113; Ras_GEF; 1.
+DR   Pfam; PF00130; C1_1; 1.
+DR   Pfam; PF00617; RasGEF; 1.
+DR   Pfam; PF00618; RasGEF_N; 1.
+DR   PRINTS; PR00008; DAGPEDOMAIN.
+DR   SMART; SM00109; C1; 1.
+DR   SMART; SM00147; RasGEF; 1.
+DR   SMART; SM00229; RasGEFN; 1.
+DR   SUPFAM; SSF48366; Ras_GEF; 1.
+DR   PROSITE; PS00018; EF_HAND_1; 2.
+DR   PROSITE; PS50222; EF_HAND_2; 3.
+DR   PROSITE; PS00720; RASGEF; FALSE_NEG.
+DR   PROSITE; PS50009; RASGEF_CAT; 1.
+DR   PROSITE; PS50212; RASGEF_NTER; 1.
+DR   PROSITE; PS00479; ZF_DAG_PE_1; 1.
+DR   PROSITE; PS50081; ZF_DAG_PE_2; 1.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Calcium; Cell membrane; Coiled coil;
+KW   Complete proteome; Cytoplasm; Differentiation; Endoplasmic reticulum;
+KW   Golgi apparatus; Guanine-nucleotide releasing factor; Membrane;
+KW   Metal-binding; Phosphoprotein; Reference proteome; Repeat;
+KW   Systemic lupus erythematosus; Zinc; Zinc-finger.
+FT   CHAIN         1    797       RAS guanyl-releasing protein 1.
+FT                                /FTId=PRO_0000316978.
+FT   DOMAIN       53    176       N-terminal Ras-GEF.
+FT   DOMAIN      205    436       Ras-GEF.
+FT   DOMAIN      470    505       EF-hand 1.
+FT   DOMAIN      497    532       EF-hand 2.
+FT   CA_BIND     483    494       1 (Potential).
+FT   CA_BIND     510    521       2 (Potential).
+FT   ZN_FING     541    591       Phorbol-ester/DAG-type.
+FT   REGION       57    110       Ras exchanger motif region; required for
+FT                                transforming activity (By similarity).
+FT   REGION      686    694       Suppress the PT region-mediated
+FT                                translocation to plasma membrane (By
+FT                                similarity).
+FT   REGION      718    797       PT region; mediates the BCR-dependent
+FT                                translocation to plasma membrane (By
+FT                                similarity).
+FT   COILED      746    786       Potential.
+FT   MOD_RES     184    184       Phosphothreonine; by PKC.
+FT   MOD_RES     694    694       Phosphoserine.
+FT   VAR_SEQ     442    476       Missing (in isoform 2, isoform 3, isoform
+FT                                4 and isoform 5).
+FT                                /FTId=VSP_030836.
+FT   VAR_SEQ     513    516       REGL -> SSGE (in isoform 4).
+FT                                /FTId=VSP_030837.
+FT   VAR_SEQ     517    797       Missing (in isoform 4).
+FT                                /FTId=VSP_030838.
+FT   VAR_SEQ     574    581       DCGMNCHK -> GNKYSESR (in isoform 5).
+FT                                /FTId=VSP_030839.
+FT   VAR_SEQ     582    797       Missing (in isoform 5).
+FT                                /FTId=VSP_030840.
+FT   VAR_SEQ     625    632       APEEGPFT -> GNKYSESR (in isoform 3).
+FT                                /FTId=VSP_030841.
+FT   VAR_SEQ     633    797       Missing (in isoform 3).
+FT                                /FTId=VSP_030842.
+FT   MUTAGEN     271    271       R->E: Loss of function; prevents Ras
+FT                                activation.
+FT   MUTAGEN     549    549       Y->F: Loss of localization to the
+FT                                endoplasmic reticulum and the Golgi
+FT                                apparatus.
+FT   CONFLICT    374    374       E -> G (in Ref. 1; AAC79699/AAF21898).
+SQ   SEQUENCE   797 AA;  90402 MW;  8ACDCF0F715ABAA9 CRC64;
+     MGTLGKAREA PRKPSHGCRA ASKARLEAKP ANSPFPSHPS LAHITQFRMM VSLGHLAKGA
+     SLDDLIDSCI QSFDADGNLC RSNQLLQVML TMHRIVISSA ELLQKVITLY KDALAKNSPG
+     LCLKICYFVR YWITEFWVMF KMDASLTDTM EEFQELVKAK GEELHCRLID TTQINARDWS
+     RKLTQRIKSN TSKKRKVSLL FDHLEPEELS EHLTYLEFKS FRRISFSDYQ NYLVNSCVKE
+     NPTMERSIAL CNGISQWVQL MVLSRPTPQL RAEVFIKFIQ VAQKLHQLQN FNTLMAVIGG
+     LCHSSISRLK ETSSHVPHEI NKVLGEMTEL LSSSRNYDNY RRAYGECTDF KIPILGVHLK
+     DLISLYEAMP DYLEDGKVNV HKLLALYNHI SELVQLQEVA PPLEANKDLV HLLTLSLDLY
+     YTEDEIYELS YAREPRNHRA PPLTPSKPPV VVDWASGVSP KPDPKTISKH VQRMVDSVFK
+     NYDHDQDGYI SQEEFEKIAA SFPFSFCVMD KDREGLISRD EITAYFMRAS SIYSKLGLGF
+     PHNFQETTYL KPTFCDNCAG FLWGVIKQGY RCKDCGMNCH KQCKDLVVFE CKKRAKNPVA
+     PTENNTSVGP VSNLCSLGAK DLLHAPEEGP FTFPNGEAVE HGEESKDRTI MLMGVSSQKI
+     SLRLKRAVAH KATQTESQPW IGSEGPSGPF VLSSPRKTAQ DTLYVLPSPT SPCPSPVLVR
+     KRAFVKWENK DSLIKSKEEL RHLRLPTYQE LEQEINTLKA DNDALKIQLK YAQKKIESLQ
+     LEKSNHVLAQ MEQGDCS
+//

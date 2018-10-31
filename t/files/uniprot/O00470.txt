@@ -1,0 +1,208 @@
+ID   MEIS1_HUMAN             Reviewed;         390 AA.
+AC   O00470; A8MV50;
+DT   15-JUL-1998, integrated into UniProtKB/Swiss-Prot.
+DT   01-JUL-1997, sequence version 1.
+DT   21-MAR-2012, entry version 97.
+DE   RecName: Full=Homeobox protein Meis1;
+GN   Name=MEIS1;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=97369938; PubMed=9226379; DOI=10.1006/geno.1997.4766;
+RA   Smith J.E. Jr., Bollekens J.A., Inghirami G., Takeshita K.;
+RT   "Cloning and mapping of the MEIS1 gene, the human homolog of a murine
+RT   leukemogenic gene.";
+RL   Genomics 43:99-103(1997).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 2).
+RC   TISSUE=Placenta;
+RA   Li W.B., Gruber C., Jessee J., Polayes D.;
+RT   "Full-length cDNA libraries and normalization.";
+RL   Submitted (JUL-2004) to the EMBL/GenBank/DDBJ databases.
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=15815621; DOI=10.1038/nature03466;
+RA   Hillier L.W., Graves T.A., Fulton R.S., Fulton L.A., Pepin K.H.,
+RA   Minx P., Wagner-McPherson C., Layman D., Wylie K., Sekhon M.,
+RA   Becker M.C., Fewell G.A., Delehaunty K.D., Miner T.L., Nash W.E.,
+RA   Kremitzki C., Oddy L., Du H., Sun H., Bradshaw-Cordum H., Ali J.,
+RA   Carter J., Cordes M., Harris A., Isak A., van Brunt A., Nguyen C.,
+RA   Du F., Courtney L., Kalicki J., Ozersky P., Abbott S., Armstrong J.,
+RA   Belter E.A., Caruso L., Cedroni M., Cotton M., Davidson T., Desai A.,
+RA   Elliott G., Erb T., Fronick C., Gaige T., Haakenson W., Haglund K.,
+RA   Holmes A., Harkins R., Kim K., Kruchowski S.S., Strong C.M.,
+RA   Grewal N., Goyea E., Hou S., Levy A., Martinka S., Mead K.,
+RA   McLellan M.D., Meyer R., Randall-Maher J., Tomlinson C.,
+RA   Dauphin-Kohlberg S., Kozlowicz-Reilly A., Shah N.,
+RA   Swearengen-Shahid S., Snider J., Strong J.T., Thompson J., Yoakum M.,
+RA   Leonard S., Pearman C., Trani L., Radionenko M., Waligorski J.E.,
+RA   Wang C., Rock S.M., Tin-Wollam A.-M., Maupin R., Latreille P.,
+RA   Wendl M.C., Yang S.-P., Pohl C., Wallis J.W., Spieth J., Bieri T.A.,
+RA   Berkowicz N., Nelson J.O., Osborne J., Ding L., Meyer R., Sabo A.,
+RA   Shotland Y., Sinha P., Wohldmann P.E., Cook L.L., Hickenbotham M.T.,
+RA   Eldred J., Williams D., Jones T.A., She X., Ciccarelli F.D.,
+RA   Izaurralde E., Taylor J., Schmutz J., Myers R.M., Cox D.R., Huang X.,
+RA   McPherson J.D., Mardis E.R., Clifton S.W., Warren W.C.,
+RA   Chinwalla A.T., Eddy S.R., Marra M.A., Ovcharenko I., Furey T.S.,
+RA   Miller W., Eichler E.E., Bork P., Suyama M., Torrents D.,
+RA   Waterston R.H., Wilson R.K.;
+RT   "Generation and annotation of the DNA sequences of human chromosomes 2
+RT   and 4.";
+RL   Nature 434:724-731(2005).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Uterus;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [5]
+RP   FUNCTION, AND INTERACTION WITH PBX1 AND PBX2.
+RX   PubMed=12609849; DOI=10.1182/blood-2002-02-0380;
+RA   Okada Y., Nagai R., Sato T., Matsuura E., Minami T., Morita I.,
+RA   Doi T.;
+RT   "Homeodomain proteins MEIS1 and PBXs regulate the lineage-specific
+RT   transcription of the platelet factor 4 gene.";
+RL   Blood 101:4748-4756(2003).
+RN   [6]
+RP   VARIANT HIS-272, AND POSSIBLE INVOLVEMENT IN SUSCEPTIBILITY TO
+RP   RESTLESS LEGS SYNDROME TYPE 7.
+RX   PubMed=19620614; DOI=10.1212/WNL.0b013e3181ae7c79;
+RA   Vilarino-Guell C., Chai H., Keeling B.H., Young J.E., Rajput A.,
+RA   Lynch T., Aasly J.O., Uitti R.J., Wszolek Z.K., Farrer M.J.,
+RA   Lin S.-C.;
+RT   "MEIS1 p.R272H in familial restless legs syndrome.";
+RL   Neurology 73:243-245(2009).
+CC   -!- FUNCTION: Acts as a transcriptional regulator of PAX6. Acts as a
+CC       transcriptional activator of PF4 in complex with PBX1 or PBX2.
+CC       Required for hematopoiesis, megakaryocyte lineage development and
+CC       vascular patterning. May function as a cofactor for HOXA7 and
+CC       HOXA9 in the induction of myeloid leukemias.
+CC   -!- SUBUNIT: Interacts with the N-terminal region of PBX1 to form a
+CC       heterodimer which binds DNA including a cAMP-responsive sequence
+CC       in CYP17. Also forms heterodimers with PBX2. Forms heterotrimers
+CC       with PBX1 or PBX2 and a number of HOX proteins including HOXA9,
+CC       HOXD4 and HOXD9 where it acts as a non-DNA-binding partner. Also
+CC       forms heterotrimers with PBX1 and HOX proteins including HOXD9 and
+CC       HOXD10 where PBX1 is the non-DNA-binding partner.
+CC   -!- INTERACTION:
+CC       P16220:CREB1; NbExp=9; IntAct=EBI-1210694, EBI-711855;
+CC       P14921:ETS1; NbExp=2; IntAct=EBI-1210694, EBI-913209;
+CC   -!- SUBCELLULAR LOCATION: Nucleus (By similarity).
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1;
+CC         IsoId=O00470-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=O00470-2; Sequence=VSP_034957, VSP_034958;
+CC   -!- TISSUE SPECIFICITY: Expressed at low level in normal
+CC       immunohepatopoietic tissues, including the fetal liver. Expressed
+CC       in a subset of myeloid leukemia cell lines, with the highest
+CC       expression seen in those with a megakaryocytic-erythroid
+CC       phenotype. Also expressed at high levels in the cerebellum.
+CC   -!- DISEASE: Defects in MEIS1 could be a cause of susceptibility to
+CC       restless legs syndrome type 7 (RLS7) [MIM:612853]. Restless legs
+CC       syndrome (RLS) is a neurologic sleep/wake disorder characterized
+CC       by uncomfortable and unpleasant sensations in the legs that appear
+CC       at rest, usually at night, inducing an irresistible desire to move
+CC       the legs. The disorder results in nocturnal insomnia and chronic
+CC       sleep deprivation.
+CC   -!- SIMILARITY: Belongs to the TALE/MEIS homeobox family.
+CC   -!- SIMILARITY: Contains 1 homeobox DNA-binding domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; U85707; AAC51642.1; -; mRNA.
+DR   EMBL; CR612956; -; NOT_ANNOTATED_CDS; mRNA.
+DR   EMBL; AC007392; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AC092669; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AC093641; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; BC043503; AAH43503.1; -; mRNA.
+DR   IPI; IPI00011756; -.
+DR   IPI; IPI00877788; -.
+DR   RefSeq; NP_002389.1; NM_002398.2.
+DR   UniGene; Hs.526754; -.
+DR   UniGene; Hs.603755; -.
+DR   ProteinModelPortal; O00470; -.
+DR   SMR; O00470; 279-334.
+DR   IntAct; O00470; 10.
+DR   STRING; O00470; -.
+DR   PRIDE; O00470; -.
+DR   Ensembl; ENST00000272369; ENSP00000272369; ENSG00000143995.
+DR   GeneID; 4211; -.
+DR   KEGG; hsa:4211; -.
+DR   UCSC; uc002sdu.1; human.
+DR   CTD; 4211; -.
+DR   GeneCards; GC02P066660; -.
+DR   H-InvDB; HIX0002114; -.
+DR   HGNC; HGNC:7000; MEIS1.
+DR   HPA; CAB011521; -.
+DR   MIM; 601739; gene.
+DR   MIM; 612853; phenotype.
+DR   neXtProt; NX_O00470; -.
+DR   PharmGKB; PA30740; -.
+DR   eggNOG; NOG302919; -.
+DR   GeneTree; ENSGT00550000074260; -.
+DR   HOVERGEN; HBG055193; -.
+DR   KO; K15613; -.
+DR   OrthoDB; EOG4XPQFW; -.
+DR   NextBio; 16590; -.
+DR   ArrayExpress; O00470; -.
+DR   Bgee; O00470; -.
+DR   CleanEx; HS_MEIS1; -.
+DR   Genevestigator; O00470; -.
+DR   GermOnline; ENSG00000143995; Homo sapiens.
+DR   GO; GO:0005634; C:nucleus; IEA:UniProtKB-SubCell.
+DR   GO; GO:0005515; F:protein binding; IPI:IntAct.
+DR   GO; GO:0043565; F:sequence-specific DNA binding; IEA:InterPro.
+DR   GO; GO:0003700; F:sequence-specific DNA binding transcription factor activity; IEA:InterPro.
+DR   GO; GO:0007275; P:multicellular organismal development; IEA:UniProtKB-KW.
+DR   GO; GO:0006351; P:transcription, DNA-dependent; IEA:UniProtKB-KW.
+DR   InterPro; IPR008422; Homeobox_KN_domain.
+DR   InterPro; IPR001356; Homeodomain.
+DR   InterPro; IPR009057; Homeodomain-like.
+DR   Gene3D; G3DSA:1.10.10.60; Homeodomain-rel; 1.
+DR   Pfam; PF05920; Homeobox_KN; 1.
+DR   SMART; SM00389; HOX; 1.
+DR   SUPFAM; SSF46689; Homeodomain_like; 1.
+DR   PROSITE; PS00027; HOMEOBOX_1; FALSE_NEG.
+DR   PROSITE; PS50071; HOMEOBOX_2; 1.
+PE   1: Evidence at protein level;
+KW   Activator; Alternative splicing; Complete proteome;
+KW   Developmental protein; DNA-binding; Homeobox; Nucleus; Polymorphism;
+KW   Reference proteome; Transcription.
+FT   CHAIN         1    390       Homeobox protein Meis1.
+FT                                /FTId=PRO_0000049105.
+FT   DNA_BIND    272    334       Homeobox; TALE-type.
+FT   REGION      335    390       Required for transcriptional activation
+FT                                (By similarity).
+FT   COMPBIAS    194    240       Ser/Thr-rich.
+FT   COMPBIAS    242    269       Asp/Glu-rich (acidic).
+FT   COMPBIAS    262    269       Poly-Asp.
+FT   VAR_SEQ       1      4       MAQR -> MQ (in isoform 2).
+FT                                /FTId=VSP_034957.
+FT   VAR_SEQ     373    390       PMSGMGMNMGMEGQWHYM -> LQSMPGEYVARGGPMGVSM
+FT                                GQPSYTQPQMPPHPAQLRHGPPMHTYIPGHPHHPTVMMHGG
+FT                                PPHPGMPMSASSPTVLNTGDPTMSGQVMDIHAQ (in
+FT                                isoform 2).
+FT                                /FTId=VSP_034958.
+FT   VARIANT     272    272       R -> H (found in a patient with
+FT                                susceptibility to restless legs syndrome;
+FT                                also found in unaffected persons,
+FT                                although very rare; dbSNP:rs61752693).
+FT                                /FTId=VAR_063166.
+SQ   SEQUENCE   390 AA;  43016 MW;  3B6A0ACCF0C39121 CRC64;
+     MAQRYDDLPH YGGMDGVGIP STMYGDPHAA RSMQPVHHLN HGPPLHSHQY PHTAHTNAMA
+     PSMGSSVNDA LKRDKDAIYG HPLFPLLALI FEKCELATCT PREPGVAGGD VCSSESFNED
+     IAVFAKQIRA EKPLFSSNPE LDNLMIQAIQ VLRFHLLELE KVHELCDNFC HRYISCLKGK
+     MPIDLVIDDR EGGSKSDSED ITRSANLTDQ PSWNRDHDDT ASTRSGGTPG PSSGGHTSHS
+     GDNSSEQGDG LDNSVASPST GDDDDPDKDK KRHKKRGIFP KVATNIMRAW LFQHLTHPYP
+     SEEQKKQLAQ DTGLTILQVN NWFINARRRI VQPMIDQSNR AVSQGTPYNP DGQPMGGFVM
+     DGQQHMGIRA PGPMSGMGMN MGMEGQWHYM
+//

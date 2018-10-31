@@ -1,0 +1,10 @@
+#PBS -N fist_hsps
+#PBS -o /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/fist_hsps.pbs.out
+#PBS -e /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/fist_hsps.pbs.err
+#PBS -l mem=20gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+
+perl -I/net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/lib /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/script/fist_hsps.pl 1> /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/fist_hsps.stdout 2> /net/netfile2/ag-russell/bq_mbetts/work/fist/trunk/Fist/data/fist_hsps.stderr
+
+

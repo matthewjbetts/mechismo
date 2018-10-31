@@ -1,0 +1,6 @@
+/net/netfile1/ds-russell/pdb/5c/pdb25c8.ent.gz 12 { CHAIN L }
+/net/netfile1/ds-russell/pdb-biounit/5c/25c8-1-1.pdb.gz 13 { CHAIN L }
+/net/netfile1/ds-russell/pdb/5c/pdb25c8.ent.gz 14 { CHAIN H }
+/net/netfile1/ds-russell/pdb-biounit/5c/25c8-1-1.pdb.gz 15 { CHAIN H }
+/net/netfile1/ds-russell/pdb/5c/pdb25c8.ent.gz 16 { L 212 _ to L 212 _ }
+/net/netfile1/ds-russell/pdb-biounit/5c/25c8-1-1.pdb.gz 17 { L 212 _ to L 212 _ }

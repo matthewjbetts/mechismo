@@ -1,0 +1,8 @@
+  <div class="oneColumn">
+    <div class="column">
+      <div class="error">
+        <h1>Error</h1>
+        [% error %]
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,189 @@
+ID   ALX4_HUMAN              Reviewed;         411 AA.
+AC   Q9H161; Q96JN7; Q9H198; Q9HAY9;
+DT   27-APR-2001, integrated into UniProtKB/Swiss-Prot.
+DT   28-JUL-2009, sequence version 2.
+DT   21-MAR-2012, entry version 110.
+DE   RecName: Full=Homeobox protein aristaless-like 4;
+GN   Name=ALX4; Synonyms=KIAA1788;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=20489877; PubMed=11017806;
+RA   Wu Y.-Q., Badano J.L., McCaskill C., Vogel H., Potocki L.,
+RA   Shaffer L.G.;
+RT   "Haploinsufficiency of ALX4 as a potential cause of parietal foramina
+RT   in the 11p11.2 contiguous gene-deletion syndrome.";
+RL   Am. J. Hum. Genet. 67:1327-1332(2000).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], VARIANT THR-35, AND VARIANT PFM2
+RP   PRO-272.
+RX   MEDLINE=20558895; PubMed=11106354; DOI=10.1136/jmg.37.12.916;
+RA   Wuyts W., Cleiren E., Homfray T., Rasore-Quartino A., Vanhoenacker F.,
+RA   Van Hul W.;
+RT   "The ALX4 homeobox gene is mutated in patients with ossification
+RT   defects of the skull (foramina parietalia permagna, OMIM 168500).";
+RL   J. Med. Genet. 37:916-920(2000).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA / MRNA], VARIANTS THR-35 AND SER-102,
+RP   AND VARIANT PFM2 GLN-218.
+RX   MEDLINE=20578741; PubMed=11137991; DOI=10.1038/83703;
+RA   Mavrogiannis L.A., Antonopoulou I., Baxova A., Kutilek S., Kim C.A.,
+RA   Sugayama S.M., Salamanca A., Wall S.A., Morriss-Kay G.M.,
+RA   Wilkie A.O.M.;
+RT   "Haploinsufficiency of the human homeobox gene ALX4 causes skull
+RT   ossification defects.";
+RL   Nat. Genet. 27:17-18(2001).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Brain;
+RX   MEDLINE=21245130; PubMed=11347906; DOI=10.1093/dnares/8.2.85;
+RA   Nagase T., Nakayama M., Nakajima D., Kikuno R., Ohara O.;
+RT   "Prediction of the coding sequences of unidentified human genes. XX.
+RT   The complete sequences of 100 new cDNA clones from brain which code
+RT   for large proteins in vitro.";
+RL   DNA Res. 8:85-95(2001).
+RN   [5]
+RP   INVOLVEMENT IN FND2, FUNCTION, AND SUBCELLULAR LOCATION.
+RX   PubMed=19692347; DOI=10.1093/hmg/ddp391;
+RA   Kayserili H., Uz E., Niessen C., Vargel I., Alanay Y., Tuncbilek G.,
+RA   Yigit G., Uyguner O., Candan S., Okur H., Kaygin S., Balci S.,
+RA   Mavili E., Alikasifoglu M., Haase I., Wollnik B., Akarsu N.A.;
+RT   "ALX4 dysfunction disrupts craniofacial and epidermal development.";
+RL   Hum. Mol. Genet. 18:4357-4366(2009).
+CC   -!- FUNCTION: Transcription factor involved in skull and limb
+CC       development. Plays an essential role in craniofacial development,
+CC       skin and hair follicle development.
+CC   -!- SUBUNIT: Binds DNA (By similarity).
+CC   -!- SUBCELLULAR LOCATION: Nucleus.
+CC   -!- TISSUE SPECIFICITY: Expression is likely to be restricted to bone.
+CC       Found in parietal bone.
+CC   -!- DISEASE: Defects in ALX4 are the cause of parietal foramina 2
+CC       (PFM2) [MIM:609597]; also known as foramina parietalia permagna
+CC       (FPP). PFM2 is an autosomal dominant disease characterized by oval
+CC       defects of the parietal bones caused by deficient ossification
+CC       around the parietal notch, which is normally obliterated during
+CC       the fifth fetal month. PFM2 is also a clinical feature of Potocki-
+CC       Shaffer syndrome.
+CC   -!- DISEASE: Defects in ALX4 are the cause of frontonasal dysplasia
+CC       type 2 (FND2) [MIM:613451]. The term frontonasal dysplasia
+CC       describes an array of abnormalities affecting the eyes, forehead
+CC       and nose and linked to midfacial dysraphia. The clinical picture
+CC       is highly variable. Major findings include true ocular
+CC       hypertelorism; broadening of the nasal root; median facial cleft
+CC       affecting the nose and/or upper lip and palate; unilateral or
+CC       bilateral clefting of the alae nasi; lack of formation of the
+CC       nasal tip; anterior cranium bifidum occultum; a V-shaped or
+CC       widow's peak frontal hairline.
+CC   -!- DISEASE: Involved in Potocki-Shaffer syndrome (PSS) [MIM:601224].
+CC       PSS is a contiguous gene syndrome caused by deletion of the
+CC       11p11.2 region.
+CC   -!- SIMILARITY: Belongs to the paired homeobox family.
+CC   -!- SIMILARITY: Contains 1 homeobox DNA-binding domain.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=AAG23961.1; Type=Frameshift; Positions=314, 323, 340;
+CC       Sequence=BAB47417.1; Type=Erroneous initiation;
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/ALX4";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF294629; AAG23961.1; ALT_FRAME; mRNA.
+DR   EMBL; AF308822; AAK38835.1; -; Genomic_DNA.
+DR   EMBL; AF308823; AAK38835.1; JOINED; Genomic_DNA.
+DR   EMBL; AF308824; AAK38835.1; JOINED; Genomic_DNA.
+DR   EMBL; AF308825; AAK38835.1; JOINED; Genomic_DNA.
+DR   EMBL; AJ404888; CAC15060.1; -; mRNA.
+DR   EMBL; AJ279074; CAC15120.1; -; Genomic_DNA.
+DR   EMBL; AJ279075; CAC15120.1; JOINED; Genomic_DNA.
+DR   EMBL; AJ279076; CAC15120.1; JOINED; Genomic_DNA.
+DR   EMBL; AJ279077; CAC15120.1; JOINED; Genomic_DNA.
+DR   EMBL; AB058691; BAB47417.1; ALT_INIT; mRNA.
+DR   IPI; IPI00334769; -.
+DR   RefSeq; NP_068745.2; NM_021926.3.
+DR   UniGene; Hs.436055; -.
+DR   ProteinModelPortal; Q9H161; -.
+DR   SMR; Q9H161; 215-271.
+DR   STRING; Q9H161; -.
+DR   DMDM; 254763249; -.
+DR   PRIDE; Q9H161; -.
+DR   DNASU; 60529; -.
+DR   Ensembl; ENST00000329255; ENSP00000332744; ENSG00000052850.
+DR   GeneID; 60529; -.
+DR   KEGG; hsa:60529; -.
+DR   UCSC; uc001myb.1; human.
+DR   CTD; 60529; -.
+DR   GeneCards; GC11M044238; -.
+DR   H-InvDB; HIX0009574; -.
+DR   HGNC; HGNC:450; ALX4.
+DR   MIM; 601224; phenotype.
+DR   MIM; 605420; gene.
+DR   MIM; 609597; phenotype.
+DR   MIM; 613451; phenotype.
+DR   neXtProt; NX_Q9H161; -.
+DR   Orphanet; 228390; Frontonasal dysplasia with alopecia and genital anomaly.
+DR   Orphanet; 60015; Parietal foramina.
+DR   Orphanet; 52022; Potocki-Shaffer syndrome.
+DR   PharmGKB; PA24755; -.
+DR   eggNOG; NOG309608; -.
+DR   GeneTree; ENSGT00650000092872; -.
+DR   HOGENOM; HBG713571; -.
+DR   HOVERGEN; HBG004214; -.
+DR   InParanoid; Q9H161; -.
+DR   KO; K09451; -.
+DR   OMA; KFQPQPS; -.
+DR   OrthoDB; EOG4ZGPCG; -.
+DR   PhylomeDB; Q9H161; -.
+DR   NextBio; 65433; -.
+DR   ArrayExpress; Q9H161; -.
+DR   Bgee; Q9H161; -.
+DR   CleanEx; HS_ALX4; -.
+DR   Genevestigator; Q9H161; -.
+DR   GermOnline; ENSG00000052850; Homo sapiens.
+DR   GO; GO:0001942; P:hair follicle development; IMP:UniProtKB.
+DR   GO; GO:0006351; P:transcription, DNA-dependent; IEA:UniProtKB-KW.
+DR   InterPro; IPR017970; Homeobox_CS.
+DR   InterPro; IPR001356; Homeodomain.
+DR   InterPro; IPR009057; Homeodomain-like.
+DR   InterPro; IPR003654; OAR_dom.
+DR   Gene3D; G3DSA:1.10.10.60; Homeodomain-rel; 1.
+DR   Pfam; PF00046; Homeobox; 1.
+DR   Pfam; PF03826; OAR; 1.
+DR   SMART; SM00389; HOX; 1.
+DR   SUPFAM; SSF46689; Homeodomain_like; 1.
+DR   PROSITE; PS00027; HOMEOBOX_1; 1.
+DR   PROSITE; PS50071; HOMEOBOX_2; 1.
+DR   PROSITE; PS50803; OAR; 1.
+PE   1: Evidence at protein level;
+KW   Activator; Complete proteome; Developmental protein; Disease mutation;
+KW   DNA-binding; Homeobox; Nucleus; Polymorphism; Reference proteome;
+KW   Transcription; Transcription regulation.
+FT   CHAIN         1    411       Homeobox protein aristaless-like 4.
+FT                                /FTId=PRO_0000048814.
+FT   DNA_BIND    214    273       Homeobox.
+FT   MOTIF       391    404       OAR.
+FT   COMPBIAS    104    115       Poly-Gln.
+FT   VARIANT      35     35       R -> T.
+FT                                /FTId=VAR_010783.
+FT   VARIANT     102    102       P -> S (in dbSNP:rs12421995).
+FT                                /FTId=VAR_010784.
+FT   VARIANT     218    218       R -> Q (in PFM2).
+FT                                /FTId=VAR_010785.
+FT   VARIANT     257    257       R -> T (in dbSNP:rs3824915).
+FT                                /FTId=VAR_058413.
+FT   VARIANT     272    272       R -> P (in PFM2).
+FT                                /FTId=VAR_010897.
+FT   CONFLICT    134    134       D -> N (in Ref. 1; AAG23961).
+SQ   SEQUENCE   411 AA;  44241 MW;  D41780B230C7E55C CRC64;
+     MNAETCVSYC ESPAAAMDAY YSPVSQSREG SSPFRAFPGG DKFGTTFLSA AAKAQGFGDA
+     KSRARYGAGQ QDLATPLESG AGARGSFNKF QPQPSTPQPQ PPPQPQPQQQ QPQPQPPAQP
+     HLYLQRGACK TPPDGSLKLQ EGSSGHSAAL QVPCYAKESS LGEPELPPDS DTVGMDSSYL
+     SVKEAGVKGP QDRASSDLPS PLEKADSESN KGKKRRNRTT FTSYQLEELE KVFQKTHYPD
+     VYAREQLAMR TDLTEARVQV WFQNRRAKWR KRERFGQMQQ VRTHFSTAYE LPLLTRAENY
+     AQIQNPSWLG NNGAASPVPA CVVPCDPVPA CMSPHAHPPG SGASSVTDFL SVSGAGSHVG
+     QTHMGSLFGA ASLSPGLNGY ELNGEPDRKT SSIAALRMKA KEHSAAISWA T
+//

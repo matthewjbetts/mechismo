@@ -1,0 +1,151 @@
+
+
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+
+<h2>Examples of running Mechismo on previously published datasets</h2>
+<p>We run many datasets through Mechismo for your perusual.  Below is the current list.  If you have
+suggestions please <a href="/about#contactUs">contact us</a>.</p>
+<p><em>Be warned that some of these datasets are very large and might not be visible on laptops, tablets or computers using slower internet connections.  If you don't think these limits apply to you and wish to view/use the data, please contact us.</em></p>
+<p><em>Please note that newly added datasets might still be running.</em></p>
+
+<table id="examples" class="dataTable">
+
+<thead>
+<tr>
+<th>Study</th> 
+<th>Publication</th>
+<th class="annotatedNumber">nGenes</th>
+<th>nSites</th>
+<th>Mechismo link</th>
+<th>Input data</th>
+<th>Comments</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Interaction pertubations in human genetic disorders</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/25910212">Sahni et al, Cell, 2015</a></td>
+<td>1129</td>
+<td>2927</td>
+<td>
+  <a href="/search/id/Sahni_et_al_Cell_2015_Table_S1A.high">high</a>
+  <a href="/search/id/Sahni_et_al_Cell_2015_Table_S1A.medium">med</a>
+  <a href="/search/id/Sahni_et_al_Cell_2015_Table_S1A.low">low</a>
+</td>
+<td><a href="/static/data/examples/Sahni_et_al_Cell_2015_Table_S1A.txt">Sahni_et_al_Cell_2015_Table_S1A.txt</a></td>
+<td>Diseases are labelled</td>
+</tr>
+
+<tr>
+<td>PTMs in Mycoplasma</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22373819">van Noort et al, MSB, 2012</a></td>
+<td>241</td>
+<td>883*</td>
+<td>
+  <a href="/search/id/vanNoort_et_al_MSB_2012.high">high</a>
+  <a href="/search/id/vanNoort_et_al_MSB_2012.medium">med</a>
+  <a href="/search/id/vanNoort_et_al_MSB_2012.low">low</a>
+  <a href="/search/id/vanNoort_et_al_MSB_2012.all">all</a>
+</td>
+<td><a href="/static/data/examples/vanNoort_et_al_MSB_2012.txt">vanNoort_et_al_MSB_2012.txt</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Mutations in Medulloblastoma</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/22832583">Jones, Jaeger et al, Nature, 2012</a></td>
+<td>619</td>
+<td>704</td>
+<td>
+  <a href="/search/id/Jones_Jaeger_Nature_Table_S3.high">high</a>
+  <a href="/search/id/Jones_Jaeger_Nature_Table_S3.medium">med</a>
+  <a href="/search/id/Jones_Jaeger_Nature_Table_S3.low">low</a>
+</td>
+<td><a href="/static/data/examples/Jones_Jaeger_Nature_Table_S3.txt">Jones_Jaeger_et_al_Nature_2012.txt</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Mutations in Pancreatic cancer</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/23103869">Biankin et al, Nature 2012</a></td>
+<td>1712</td>
+<td>2850</td>
+<td>
+  <a href="/search/id/Biankin_et_al_Nature_2012.high">high</a>
+  <a href="/search/id/Biankin_et_al_Nature_2012.medium">med</a>
+  <a href="/search/id/Biankin_et_al_Nature_2012.low">low</a>
+</td>
+<td><a href="/static/data/examples/Biankin_et_al_Nature_2012.txt">Biankin_et_al_Nature_2012.txt</a></td>
+<td></td>
+</tr>
+
+<!--
+<tr>
+<td>Mutations in Glioma</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/24336570">Johnson et al, Science, 2014</a></td>
+<td>1775</td>
+<td>2165</td>
+<td>
+  <a href="/search/id/">high</a>
+  <a href="/search/id/">med</a>
+  <a href="/search/id/">low</a>
+</td>
+<td></td>
+<td></td>
+</tr>
+-->
+
+<tr>
+<td>All non-SNP mutations in UniProt</td>
+<td><a href="http://www.uniprot.org">UniProt DB</a></td>
+<td>2116</td>
+<td>24960</td>
+<td>
+  <a href="/search/id/uniprot_disease_mods.high">high</a>
+  <a href="/search/id/uniprot_disease_mods.medium">med</a>
+  <a href="/search/id/uniprot_disease_mods.low">low</a>
+</td>
+<td><a href="/static/data/examples/uniprot_disease_mods.txt">uniprot_disease_mods.txt</a></td>
+<td>Diseases are labelled</td>
+</tr>
+
+<tr>
+<td>dbSNP mutations in UniProt</td>
+<td><a href="http://www.uniprot.org">UniProt DB</a></td>
+<td>2116</td>
+<td>24960</td>
+<td>
+  <a href="/search/id/uniprot_dbSNP.high">high</a>
+  <a href="/search/id/uniprot_dbSNP.medium">med</a>
+  <a href="/search/id/uniprot_dbSNP.low">low</a>
+</td>
+<td><a href="/static/data/examples/uniprot_dbSNP.txt">uniprot_dbSNP.txt</a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Phosphorylation in E.coli</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed/17938405">Macek et al, Mol Cell Proteomics, 2008</a></td>
+<td>79</td>
+<td>141*</td>
+<td>
+  <a href="/search/id/Macek_et_al_MCP_2008_Ecoli_phos_UP_p.high">high</a>
+  <a href="/search/id/Macek_et_al_MCP_2008_Ecoli_phos_UP_p.medium">med</a>
+  <a href="/search/id/Macek_et_al_MCP_2008_Ecoli_phos_UP_p.low">low</a>
+  <a href="/search/id/Macek_et_al_MCP_2008_Ecoli_phos_UP_p.all">all</a>
+</td>
+<td><a href="/static/data/examples/Macek_et_al_MCP_2008_Ecoli_phos_UP_p.txt">Macek_et_al_MCP_2008.txt</a></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+<p>* ambiguous MS identifications in one peptide were duplicated</p>
+
+  </div>
+ </div>
+</div>

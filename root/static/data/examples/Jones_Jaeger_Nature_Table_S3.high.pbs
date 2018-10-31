@@ -1,0 +1,11 @@
+#PBS -N jones_jaegr_high
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -l cput=04:59:59
+#PBS -l mem=5gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id Jones_Jaeger_Nature_Table_S3.high --stringency high < ${dn_fist}root/static/data/examples/Jones_Jaeger_Nature_Table_S3.txt 1> ${dn_out}Jones_Jaeger_Nature_Table_S3.high.out 2> ${dn_out}Jones_Jaeger_Nature_Table_S3.high.err
+

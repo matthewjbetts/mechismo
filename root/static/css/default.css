@@ -1,0 +1,966 @@
+/*
+ http://en.wikipedia.org/wiki/Web_colors
+
+ not all colour names are recognised by all browsers, so using hex codes
+
+ crimson: #DC143C
+ firebrick: #B22222
+
+*/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic&subset=latin,latin-ext);
+
+
+* {
+padding: 0;
+margin:  0;
+}
+
+body {
+  background-color: #EEEEEE;
+  font-family:      verdana, helvetica, arial, sans-serif;
+  font-size:        14px;
+  padding:          0 0 1em 0;
+  height:           100%;
+  //background-image: url('/static/images/mechismo_background1.png');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "SourceSansPro-Regular", "Source Sans Pro", Verdana, Arial, Helvetica, sans-serif;
+  color: #B22222;
+  margin: 1em 0 0 0;
+}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin: 0 0 0 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+}
+
+th {
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: underline;
+  color: #B22222;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #B22222;
+}
+
+body .wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  padding: 0 0 1em 2em;
+}
+
+ol {
+  padding: 0 0 1em 2em;
+}
+
+#header {
+  position: fixed;
+  font-family: "SourceSansPro-Regular", "Source Sans Pro", Verdana, Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3em; /* should be the same as #header h1 font-size + 1em for the menu + spacing */
+  z-index: 9999;
+  padding: 0.5em 20px 0.5em 20px;
+  background-color: #B22222;
+  color: #800000;
+  box-shadow: -10px 2px 10px #AAAAAA;
+  white-space: nowrap;
+}
+
+#header img {
+  display: inline-block;
+  float: left;
+  height: 3em;
+  padding: 0 0.5em 0 0;
+}
+
+#header h1 {
+  font-size: 1.5em;
+  line-height: 100%;
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+#header a {
+  color:           #FFFFFF;
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: #BBBBBB;
+}
+
+#header a.twitter {
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-image: url('/static/images/twitter_bird_white_16.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+#header a.twitter:hover {
+  background-image: url('/static/images/twitter_bird_gray_16.png');
+}
+
+#header ul.toolbar {
+  padding: 0 40px 0 0; /* padding-right = 40px to account for left padding (20px) + 100% width */
+  color: #FFFFFF;
+  list-style: none;
+  //line-height: normal;
+  line-height: 1.5em;
+}
+
+#header ul.toolbar li {
+  padding: 0 0.3em 0 0;
+  text-align: center;
+  float: left;
+}
+
+#header ul.toolbar li img {
+  vertical-align: middle;
+}
+
+#header ul.toolbar li:after {
+  content: " |";
+}
+
+#header ul.toolbar li:last-child:after {
+  content: "";
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 0.5em 20px 0.5em 20px;
+  text-align: center;
+  background-color: #FFFFFF;
+  box-shadow: -10px -1px 10px #AAAAAA;
+}
+
+#footer a {
+  text-decoration: none;
+}
+
+#page {
+  padding: 0 0 0 1em;
+  margin: 5em 0 3em 0; /* top = #header height + padding top + padding bottom + 1em */
+  height: 100%;
+  overflow: visible;
+}
+
+#page .oneColumn {
+  width: 100%;
+  overflow: auto;
+  margin: 0 0 0 0;
+}
+
+#page .oneColumn .column {
+  overflow: auto;
+  margin: 0 1em 1em 0;
+}
+
+#page .oneColumn .column .contents {
+  overflow: auto;
+  margin: 0 0 0 0;
+  padding: 1em 1em 1em 1em;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  //box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+/*
+#page .oneColumn .column .contents h2 {
+  margin: 1em 0 0 0;
+}
+
+#page .oneColumn .column .contents h2:first-child {
+  margin: 0 0 0 0;
+}
+
+#page .oneColumn .column .contents h3 {
+  margin: 1em 0 0 0;
+}
+
+#page .oneColumn .column .contents h3:first-child {
+  margin: 0 0 0 0;
+}
+*/
+
+#page .oneColumn .column .contents img {
+  display: block;
+  margin: 1em 0 1em 0;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+#page .oneColumn .column .contents .gallery {
+  margin: 0 0 0 0;
+  padding: 0 1em 0 1em;
+  border-style: none;
+}
+
+#page .oneColumn .column .contents .gallery img {
+  display: inline;
+  width: 14%;
+  padding: 1% 1% 1% 1%;
+  vertical-align: middle;
+}
+
+.column .gallery {
+  margin: 0 0 0 0;
+  padding: 0 1em 0 1em;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  //box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+.column .gallery img {
+  width: 14%;
+  padding: 1% 1% 1% 1%;
+  vertical-align: middle;
+}
+
+#page .oneColumn .column .contents .dataTables_wrapper {
+  border-style: none;
+  padding: 0 0 0 0;
+  margin: 1em 0 0 0;
+}
+
+#page .twoColumns {
+  overflow: auto;
+  width: 100%;
+  margin: 0 0 1em 0;
+}
+
+#page .twoColumns .column {
+  overflow: auto;
+  width: 50%;
+  float: left;
+}
+
+#page .twoColumns .column .contents {
+  overflow: auto;
+  margin: 0 1em 0 0;
+  padding: 1em 1em 1em 1em;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  //box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+#page .twoColumns .column .contents h2 {
+  margin: 0;
+}
+
+.column .contents p {
+  margin: 0 0 1em 0;
+}
+
+.column .contents p:last-child {
+  margin: 0 0 0 0;
+}
+
+#page .twoColumns .column .search form {
+  margin: 0 0 0 0;
+}
+
+#page .threeColumns {
+  overflow: auto;
+  margin: 0 0 1em 0;
+} 
+
+#page .threeColumns .column {
+  width: 33.333333%;
+  overflow: auto;
+  float: left;
+}
+
+#page .threeColumns .columnDouble {
+  width: 66.666666%;
+  float: left;
+}
+
+#page .threeColumns .column .contents {
+  margin: 0 1em 0 0;
+  overflow: auto;
+  height: 100%;
+  padding: 1em 1em 1em 1em;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  //box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+#page .threeColumns .column .contents div {
+  margin: 0 0 0 0;
+  padding: 1em 1em 1em 1em;
+  border-style: none;
+}
+
+#page .threeColumns .column .network {
+  height: 300px;
+}
+
+#page .threeColumns .column .contents h2 {
+  margin: 0;
+}
+
+#page .threeColumns .column .contents p {
+  text-align: justify;
+}
+
+.searchShown form, .searchHidden form {
+  margin: 0 0 1em 0;
+}
+
+.searchShown form textarea {
+  height: 20em;
+  background-color: #FFFFFF;
+}
+
+.searchHidden form textarea {
+  height: 2em;
+  background-color: #EEEEEE;
+}
+
+form {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  //box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+.contents form {
+}
+
+form textarea {
+  display: block;
+  width: 100%;
+  margin: 0 0 0 0;
+  overflow: hidden;
+  border-style: none;
+}
+
+form ul.controlPanel {
+  display: block;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0.5em;
+  background-color: #FEEEEE;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #DDDDDD;
+  list-style: none;
+}
+
+form ul.controlPanel div.fileInput {
+  display: inline;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.fileInput .display {
+  display: inline;
+}
+
+form ul.controlPanel div {
+  padding: 0.3em 0.3em 0.3em 0.3em;
+}
+
+form ul.controlPanel span {
+  padding: 0.3em 0 0.3em 0.3em;
+}
+
+form ul.controlPanel li {
+  display: block;
+  width: 100%;
+  margin: 0.5em 0 0 0;
+}
+
+form ul.controlPanel li ul {
+  display: block;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 0 0 0 1em;
+  list-style: none;
+}
+
+button, input[type=submit], input[type=text], select {
+  margin: 0 0 0 0;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #DDDDDD;
+  border-width: 1px;
+}
+
+button:hover, input[type=submit]:hover, select:hover {
+  background-color: #DDDDDD;
+  cursor: pointer;
+}
+
+.barchart {
+  overflow: auto;
+  padding: 0 0 0 0;
+  min-height: 200px;
+}
+
+.barchart .bar {
+  fill: #B22222;
+}
+
+.barchart .bar:hover {
+  fill: #DCCCCC;
+}
+
+.barchart .axis path,
+.barchart .axis line {
+  fill:   none;
+  stroke: #000000;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 0.5em;
+  background: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  box-shadow: 3px 3px 10px #AAAAAA;
+  z-index: 10;
+}
+
+.scatterplot {
+  width: 100%;
+  min-height: 400px;
+  clear: both;
+}
+
+.scatterplot .axis path,
+.scatterplot .axis line {
+  fill:   none;
+  stroke: #000000;
+}
+
+.dataTables_wrapper {
+  padding: 0.3em 0.3em 0.7em 0.3em;
+  margin: 0 0 1em 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+}
+
+table.dataTable {
+  width: 100%;
+}
+
+table.dataTable tr {
+  width: 100%;
+}
+
+table.dataTable thead th {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  background-color: #B22222;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "SourceSansPro-Regular", "Source Sans Pro", Verdana, Arial, Helvetica, sans-serif;
+}
+
+table.dataTable tr.odd {
+  background-color: #FEEEEE;
+}
+
+table.dataTable tr:hover {
+  background-color: #DCCCCC;
+}
+
+table.dataTable tr td ul {
+  list-style-type: none;
+}
+
+/*
+table.dataTable tr td ul li:nth-child(n+6) {
+  display: none;
+}
+*/
+
+table.dataTable tr td.dt-right {
+  text-align: right;
+}
+
+.DTTT_container {
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+.DTTT_container:hover {
+}
+
+.dataTables_paginate a {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  margin: 0;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+}
+
+.dataTables_paginate a:hover {
+  background-color: #DDDDDD;
+  cursor: pointer;
+}
+
+.DTTT_container a, .dataTables_paginate a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.dataTables_info, .dataTables_paginate {
+  margin: 0.5em 0.5em 0 0;
+}
+
+.dataTables_paginate a.current {
+  background-color: #B22222;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.dataTables_info {
+  float: left;
+}
+
+.dataTables_length {
+  display: inline-block;
+  padding: 0 0.5em 0 0.5em;
+  margin: 0 0.5em 0 1.5px;
+}
+
+.dataTables_filter {
+  display: inline-block;
+  padding: 0 0 0 0.5em;
+  margin: 0 0.5em 0 0;
+}
+
+.error {
+  color: #000000;
+  background-color: #FFFFFF;
+  padding: 0 1em 1em 1em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FF0000;
+}
+
+.column .error p {
+  margin: 0 0 1em 0;
+}
+
+.column .error p:last-child {
+  margin: 0 0 0 0;
+}
+
+.error h1 {
+  color: #FF0000;
+  margin: 0 0 0 0;
+}
+
+.error a {
+  text-decoration: underline;
+  color: #FF0000;
+}
+
+.bubblegram {
+  overflow: auto;
+  height: 120px;
+}
+
+.network {
+  position: relative;
+  padding: 0 0 0 0;
+  height: 800px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  background-color: #FFFFFF;
+  margin: 0 0 0 0;
+  //box-shadow: 5px 5px 10px #AAAAAA;
+}
+
+.network ul.controlPanel {
+  display: inline-block;
+  position: relative;
+  top: -0.5em;
+  left: -0.5em;
+  padding: 0 0 0 0;
+  list-style: none;
+  line-height: normal;
+  z-index: 10;
+}
+
+.network ul.controlPanel li {
+  float:        left;
+  padding:      0 0.2em 0 0.2em;
+  text-align:   center;
+  border-style: solid;
+  border-width: 1px 0 1px 1px;
+  border-color: #000000;
+  background-color: #FFFFFF;
+}
+
+.network ul.controlPanel li:last-child {
+  border-width: 1px 1px 1px 1px;
+}
+
+.network ul.controlPanel li.on {
+  background-color: #FFFFFF;
+}
+
+.network ul.controlPanel li.off {
+  background-color: #AAAAAA;
+}
+
+.network ul.controlPanel li:hover {
+  color: #FFFFFF;
+  background-color: #B22222;
+  cursor: pointer;
+}
+
+.network .messages {
+  display: inline;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  padding: 0 0 0 0;
+}
+
+.network svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+### SVG styles for network elements ###
+
+.network .node {
+}
+
+.network .node.query {
+  fill: #FF00FF;
+  cursor: pointer;
+}
+
+.network .node text {
+  fill: #000000;
+  stroke-width: 0;
+  font-size: 0.8em;
+  pointer-events: none;
+}
+
+.network .node {
+  fill: #EEEEEE;
+  stroke: #666666;
+}
+
+.network .node.query {
+  fill: #B22222;
+}
+
+.network .node.nucleic {
+  fill: #AFEEEE;
+}
+
+.network .node.chemical {
+  fill: #BA55D3;
+}
+
+.network .node.friend .circle {
+}
+
+.network .link {
+  stroke: #666666;
+  stroke-opacity: 0.6;
+  fill: none;
+}
+
+.network .link.enabling {
+  stroke: #00FF00;
+}
+
+.network .link.disabling {
+  stroke: #FF0000;
+}
+
+.network .link.enablingAndDisabling {
+  stroke: #FC8C00;
+}
+
+#######################################
+
+.aln {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  margin: 0 0 0 0;
+  padding: 5px 10px 0px 10px;
+}
+
+.aln h2 {
+  display: inline;
+  font-size: 1em;
+}
+
+.aln .aseqs {
+  font-family: courier, monospace;
+  margin: 1em 0 0 0;
+}
+
+.aln .aseqs ul {
+  padding: 0 0 0 0;
+}
+
+.aln .aseqs ul.ids {
+  list-style-type: none;
+  float: left;
+  margin: 0 1em 0 0;
+}
+
+.aln .aseqs ul.seqs {
+  list-style-type: none;
+  overflow: auto;  
+}
+
+.aln .aseqs ul.seqs li {
+  white-space: pre;
+  letter-spacing: 0.2em;
+}
+
+.aln .aseqs ul.seqs li .site {
+  color: #FFFFFF;
+  background-color: #B22222;
+}
+
+.jsmol {
+  display: block;
+  width: 600px;
+  height: 600px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  margin: 0 0 2em 0;
+}
+
+.jsmol-script {
+  display: none;
+}
+
+.contactMap {
+  position: relative;
+  display: block;
+  width: 600px;
+  height: 600px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  margin: 0 0 2em 0;
+}
+
+.contactMap .seqsA, .contactMap .seqsB {
+  display: none;
+}
+
+.contactMap .alnA { /* top */
+  position: absolute;
+  top: 0px;
+  left: 60px;
+  width: 540px;
+  height: 60px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.contactMap .alnB { /* left */
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  width: 60px;
+  height: 540px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.contactMap .contacts { /* centre */
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 540px;
+  height: 540px;
+  overflow: hidden;
+}
+
+iframe {
+  vertical-align: middle;
+}
+
+table.definitions {
+  margin: 1em 0 1em 0;
+}
+
+table.definitions th {
+  text-align: left;
+  padding: 0 1em 0 0;
+}
+
+.sankey {
+  height: 800px;
+}
+
+.sankey .node rect {
+  fill: #AAAAAA;
+  stroke: #FFFFFF;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+  cursor: move;
+}
+
+.sankey .node.high rect {
+  fill: #00FF00;
+}
+
+.sankey .node.med rect {
+  fill: #FF8500;
+}
+
+.sankey .node.low rect {
+  fill: #FF0000;
+}
+
+.sankey .node text {
+  font-family: "SourceSansPro-Regular", "Source Sans Pro", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  pointer-events: none;
+}
+
+.sankey .link {
+  fill: none;
+  stroke: #AAAAAA;
+  stroke-opacity: 0.4;
+}
+
+.sankey .link.high {
+  stroke: #00FF00;
+}
+
+.sankey .link.med {
+  stroke: #FF8500;
+}
+
+.sankey .link.low {
+  stroke: #FF0000;
+}
+
+.sankey .link:hover {
+  stroke-opacity: .5;
+}
+
+.sorting { background: url('/static/images/sort_both.png') no-repeat center right; }
+.sorting_asc { background: url('/static/images/sort_asc.png') no-repeat center right; }
+.sorting_desc { background: url('/static/images/sort_desc.png') no-repeat center right; }
+
+.sorting_asc_disabled { background: url('/static/images/sort_asc_disabled.png') no-repeat center right; }
+.sorting_desc_disabled { background: url('/static/images/sort_desc_disabled.png') no-repeat center right; }
+
+.highConfidence, .mediumConfidence, .lowConfidence, .disablingIE, .enablingIE, .disablingWeakIE, .enablingWeakIE, .neutralIE, .unknownIE {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000000;
+}
+
+/*
+.highConfidence {
+  content: url('/static/images/mechismo_logo_red_transparent.png');
+}
+*/
+
+.highConfidence {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+.mediumConfidence {
+  background-color: #FF8C00;
+  border-color: #FF8C00;
+}
+
+.lowConfidence {
+  background-color: #FFD700;
+  border-color: #FFD700;
+}
+
+.disablingIE {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+.disablingWeakIE {
+  border-color: #FF0000;
+}
+
+.enablingIE {
+  background-color: #00FF00;
+  border-color: #00FF00;
+}
+
+.enablingWeakIE {
+  border-color: #00FF00;
+}
+
+.neutralIE {
+  background-color: #00CED1;
+  border-color: #00CED1;
+}
+
+.unknownIE {
+  border-color: #AAAAAA;
+}
+
+.data {
+  display: none;
+}

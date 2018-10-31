@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# Controls the FastCGI daemon for Fist Catalyst web application.
+#
+# chkconfig: 345 87 16
+# description:  This service causes the FastCGI daemon for the Fist \
+#               application to be launched at startup. Start priority of XX \
+#               ensures it starts before httpd (85), whereas kill priority of 16 \
+#               ensures it stops after httpd (15).
+#
+
+server_name=mechismo
+
+start() {
+    # create a temporary directory for the server
+    /bin/su bq_mbetts -c "mkdir -p /net/netfile2/ag-russell/mechismo/processes/$server_name";
+
+    # run queues as user bq_mbetts
+    echo $"Starting $server_name queues..."
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue01.pid &"
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue02.pid &"
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue03.pid &"
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue04.pid &"
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue05.pid &"
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue06.pid &"
+
+    # run server as user bq_mbetts
+    echo $"Starting $server_name FastCGI server..."
+    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; ./script/fist_fastcgi.pl -l /net/netfile2/ag-russell/mechismo/processes/${server_name}.socket -n 5 -p /net/netfile2/ag-russell/mechismo/processes/${server_name}.pid -d"
+    echo
+}
+
+
+stop() {
+    echo $"Stopping $server_name queues..."
+    for fn in /net/netfile2/ag-russell/mechismo/processes/${server_name}/queue*.pid
+    do
+      cat $fn | xargs kill
+      rm -f $fn
+    done
+    echo $"Stopping $server_name FastCGI server..."
+    cat /net/netfile2/ag-russell/mechismo/processes/${server_name}.pid | xargs kill
+    rm -f /net/netfile2/ag-russell/mechismo/processes/${server_name}.pid
+}
+
+# See how we were called.
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    restart)
+	stop
+	start
+	;;
+    *)
+	echo $"Usage: $0 {start|stop|restart}"
+	;;
+esac
+
+exit 0

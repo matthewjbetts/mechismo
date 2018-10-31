@@ -1,0 +1,221 @@
+ID   ROM1_HUMAN              Reviewed;         351 AA.
+AC   Q03395; B2R978;
+DT   01-OCT-1993, integrated into UniProtKB/Swiss-Prot.
+DT   06-MAR-2007, sequence version 2.
+DT   21-MAR-2012, entry version 117.
+DE   RecName: Full=Rod outer segment membrane protein 1;
+DE            Short=ROSP1;
+DE   AltName: Full=Tetraspanin-23;
+DE            Short=Tspan-23;
+GN   Name=ROM1; Synonyms=TSPAN23;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA], AND VARIANT ALA-118.
+RC   TISSUE=Retina;
+RX   MEDLINE=92304584; PubMed=1610568; DOI=10.1016/0896-6273(92)90137-3;
+RA   Bascom R.A., Manara S., Collins L., Molday R.S., Kalnins V.I.,
+RA   McInnes R.R.;
+RT   "Cloning of the cDNA for a novel photoreceptor membrane protein (rom-
+RT   1) identifies a disk rim protein family implicated in human
+RT   retinopathies.";
+RL   Neuron 8:1171-1184(1992).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], AND VARIANT ALA-118.
+RX   MEDLINE=93278386; PubMed=8504299; DOI=10.1093/hmg/2.4.385;
+RA   Bascom R.A., Schappert K.T., McInnes R.R.;
+RT   "Cloning of the human and murine ROM1 genes: genomic organization and
+RT   sequence conservation.";
+RL   Hum. Mol. Genet. 2:385-391(1993).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA], AND VARIANT ALA-118.
+RC   TISSUE=Substantia nigra;
+RX   PubMed=14702039; DOI=10.1038/ng1285;
+RA   Ota T., Suzuki Y., Nishikawa T., Otsuki T., Sugiyama T., Irie R.,
+RA   Wakamatsu A., Hayashi K., Sato H., Nagai K., Kimura K., Makita H.,
+RA   Sekine M., Obayashi M., Nishi T., Shibahara T., Tanaka T., Ishii S.,
+RA   Yamamoto J., Saito K., Kawai Y., Isono Y., Nakamura Y., Nagahari K.,
+RA   Murakami K., Yasuda T., Iwayanagi T., Wagatsuma M., Shiratori A.,
+RA   Sudo H., Hosoiri T., Kaku Y., Kodaira H., Kondo H., Sugawara M.,
+RA   Takahashi M., Kanda K., Yokoi T., Furuya T., Kikkawa E., Omura Y.,
+RA   Abe K., Kamihara K., Katsuta N., Sato K., Tanikawa M., Yamazaki M.,
+RA   Ninomiya K., Ishibashi T., Yamashita H., Murakawa K., Fujimori K.,
+RA   Tanai H., Kimata M., Watanabe M., Hiraoka S., Chiba Y., Ishida S.,
+RA   Ono Y., Takiguchi S., Watanabe S., Yosida M., Hotuta T., Kusano J.,
+RA   Kanehori K., Takahashi-Fujii A., Hara H., Tanase T.-O., Nomura Y.,
+RA   Togiya S., Komai F., Hara R., Takeuchi K., Arita M., Imose N.,
+RA   Musashino K., Yuuki H., Oshima A., Sasaki N., Aotsuka S.,
+RA   Yoshikawa Y., Matsunawa H., Ichihara T., Shiohata N., Sano S.,
+RA   Moriya S., Momiyama H., Satoh N., Takami S., Terashima Y., Suzuki O.,
+RA   Nakagawa S., Senoh A., Mizoguchi H., Goto Y., Shimizu F., Wakebe H.,
+RA   Hishigaki H., Watanabe T., Sugiyama A., Takemoto M., Kawakami B.,
+RA   Yamazaki M., Watanabe K., Kumagai A., Itakura S., Fukuzumi Y.,
+RA   Fujimori Y., Komiyama M., Tashiro H., Tanigami A., Fujiwara T.,
+RA   Ono T., Yamada K., Fujii Y., Ozaki K., Hirao M., Ohmori Y.,
+RA   Kawabata A., Hikiji T., Kobatake N., Inagaki H., Ikema Y., Okamoto S.,
+RA   Okitani R., Kawakami T., Noguchi S., Itoh T., Shigeta K., Senba T.,
+RA   Matsumura K., Nakajima Y., Mizuno T., Morinaga M., Sasaki M.,
+RA   Togashi T., Oyama M., Hata H., Watanabe M., Komatsu T.,
+RA   Mizushima-Sugano J., Satoh T., Shirai Y., Takahashi Y., Nakagawa K.,
+RA   Okumura K., Nagase T., Nomura N., Kikuchi H., Masuho Y., Yamashita R.,
+RA   Nakai K., Yada T., Nakamura Y., Ohara O., Isogai T., Sugano S.;
+RT   "Complete sequencing and characterization of 21,243 full-length human
+RT   cDNAs.";
+RL   Nat. Genet. 36:40-45(2004).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=16554811; DOI=10.1038/nature04632;
+RA   Taylor T.D., Noguchi H., Totoki Y., Toyoda A., Kuroki Y., Dewar K.,
+RA   Lloyd C., Itoh T., Takeda T., Kim D.-W., She X., Barlow K.F.,
+RA   Bloom T., Bruford E., Chang J.L., Cuomo C.A., Eichler E.,
+RA   FitzGerald M.G., Jaffe D.B., LaButti K., Nicol R., Park H.-S.,
+RA   Seaman C., Sougnez C., Yang X., Zimmer A.R., Zody M.C., Birren B.W.,
+RA   Nusbaum C., Fujiyama A., Hattori M., Rogers J., Lander E.S.,
+RA   Sakaki Y.;
+RT   "Human chromosome 11 DNA sequence and analysis including novel gene
+RT   identification.";
+RL   Nature 440:497-500(2006).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA], AND VARIANT ALA-118.
+RC   TISSUE=Brain;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [6]
+RP   VARIANTS ALA-118; HIS-229; THR-265 AND THR-271.
+RX   MEDLINE=94108464; PubMed=7904211; DOI=10.1093/hmg/2.11.1975;
+RA   Bascom R.A., Liu L., Humphries P., Fishman G.A., Murray J.C.,
+RA   McInnes R.R.;
+RT   "Polymorphisms and rare sequence variants at the ROM1 locus.";
+RL   Hum. Mol. Genet. 2:1975-1977(1993).
+RN   [7]
+RP   VARIANTS THR-60; ASP-75; MET-108 AND GLN-242.
+RX   MEDLINE=96121588; PubMed=8595413; DOI=10.1093/hmg/4.10.1895;
+RA   Bascom R.A., Liu L., Heckenlively J.R., Stone E.M., McInnes R.R.;
+RT   "Mutation analysis of the ROM1 gene in retinitis pigmentosa.";
+RL   Hum. Mol. Genet. 4:1895-1902(1995).
+RN   [8]
+RP   VARIANT HIS-16.
+RX   MEDLINE=97470801; PubMed=9331261;
+RA   Dryja T.P., Hahn L.B., Kajiwara K., Berson E.L.;
+RT   "Dominant and digenic mutations in the peripherin/RDS and ROM1 genes
+RT   in retinitis pigmentosa.";
+RL   Invest. Ophthalmol. Vis. Sci. 38:1972-1982(1997).
+CC   -!- FUNCTION: May function as an adhesion molecule involved in
+CC       stabilization and compaction of outer segment disks or in the
+CC       maintenance of the curvature of the rim. It is essential for disk
+CC       morphogenesis.
+CC   -!- SUBUNIT: Homodimer; disulfide-linked. Probably forms a complex
+CC       with a PRPH2 homodimer. Other proteins could associate with this
+CC       complex in rods.
+CC   -!- SUBCELLULAR LOCATION: Membrane; Multi-pass membrane protein.
+CC   -!- TISSUE SPECIFICITY: Retina (photoreceptor). In rim region of ROS
+CC       (rod outer segment) disks.
+CC   -!- DISEASE: Defects in ROM1 may cause retinitis pigmentosa (RP)
+CC       [MIM:268000]; when associated with defects in PRPH2.
+CC   -!- SIMILARITY: Belongs to the PRPH2/ROM1 family.
+CC   -!- WEB RESOURCE: Name=Mutations of the ROM1 gene; Note=Retina
+CC       International's Scientific Newsletter;
+CC       URL="http://www.retina-international.com/sci-news/rommut.htm";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; L07894; AAA60274.1; -; mRNA.
+DR   EMBL; M96759; AAA60272.1; -; Genomic_DNA.
+DR   EMBL; AK313674; BAG36425.1; -; mRNA.
+DR   EMBL; AP001458; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; BC008100; AAH08100.1; -; mRNA.
+DR   IPI; IPI00010342; -.
+DR   PIR; I54347; I54347.
+DR   RefSeq; NP_000318.1; NM_000327.3.
+DR   UniGene; Hs.281564; -.
+DR   ProteinModelPortal; Q03395; -.
+DR   STRING; Q03395; -.
+DR   PhosphoSite; Q03395; -.
+DR   DMDM; 143745282; -.
+DR   PRIDE; Q03395; -.
+DR   DNASU; 6094; -.
+DR   Ensembl; ENST00000278833; ENSP00000278833; ENSG00000149489.
+DR   GeneID; 6094; -.
+DR   KEGG; hsa:6094; -.
+DR   UCSC; uc001ntv.1; human.
+DR   CTD; 6094; -.
+DR   GeneCards; GC11P062381; -.
+DR   HGNC; HGNC:10254; ROM1.
+DR   MIM; 180721; gene.
+DR   MIM; 268000; phenotype.
+DR   neXtProt; NX_Q03395; -.
+DR   Orphanet; 791; Retinitis pigmentosa.
+DR   PharmGKB; PA34626; -.
+DR   eggNOG; NOG296737; -.
+DR   GeneTree; ENSGT00390000016192; -.
+DR   HOGENOM; HBG444669; -.
+DR   HOVERGEN; HBG004964; -.
+DR   InParanoid; Q03395; -.
+DR   OMA; RYLQTAL; -.
+DR   OrthoDB; EOG4N04FM; -.
+DR   PhylomeDB; Q03395; -.
+DR   NextBio; 23699; -.
+DR   ArrayExpress; Q03395; -.
+DR   Bgee; Q03395; -.
+DR   CleanEx; HS_ROM1; -.
+DR   Genevestigator; Q03395; -.
+DR   GermOnline; ENSG00000149489; Homo sapiens.
+DR   GO; GO:0005887; C:integral to plasma membrane; TAS:ProtInc.
+DR   GO; GO:0007155; P:cell adhesion; IEA:UniProtKB-KW.
+DR   GO; GO:0007601; P:visual perception; TAS:ProtInc.
+DR   InterPro; IPR000830; Peripherin/rom-1.
+DR   InterPro; IPR018498; Peripherin/rom-1_CS.
+DR   InterPro; IPR018499; Tetraspanin.
+DR   InterPro; IPR008952; Tetraspanin_EC2.
+DR   Pfam; PF00335; Tetraspannin; 1.
+DR   PRINTS; PR00218; PERIPHERNRDS.
+DR   SUPFAM; SSF48652; Tetraspanin; 1.
+DR   PROSITE; PS00930; RDS_ROM1; 1.
+PE   1: Evidence at protein level;
+KW   Cell adhesion; Complete proteome; Disease mutation; Disulfide bond;
+KW   Membrane; Polymorphism; Reference proteome; Retinitis pigmentosa;
+KW   Transmembrane; Transmembrane helix.
+FT   CHAIN         1    351       Rod outer segment membrane protein 1.
+FT                                /FTId=PRO_0000168111.
+FT   TOPO_DOM      1     19       Cytoplasmic (Potential).
+FT   TRANSMEM     20     44       Helical; (Potential).
+FT   TOPO_DOM     45     64       Lumenal (Potential).
+FT   TRANSMEM     65     84       Helical; (Potential).
+FT   TOPO_DOM     85    102       Cytoplasmic (Potential).
+FT   TRANSMEM    103    125       Helical; (Potential).
+FT   TOPO_DOM    126    263       Lumenal (Potential).
+FT   TRANSMEM    264    286       Helical; (Potential).
+FT   TOPO_DOM    287    351       Cytoplasmic (Potential).
+FT   VARIANT      16     16       R -> H.
+FT                                /FTId=VAR_008269.
+FT   VARIANT      60     60       P -> T.
+FT                                /FTId=VAR_006896.
+FT   VARIANT      75     75       G -> D.
+FT                                /FTId=VAR_008270.
+FT   VARIANT     108    108       T -> M.
+FT                                /FTId=VAR_006897.
+FT   VARIANT     118    118       G -> A (in dbSNP:rs1799959).
+FT                                /FTId=VAR_008271.
+FT   VARIANT     229    229       R -> H.
+FT                                /FTId=VAR_006898.
+FT   VARIANT     242    242       R -> Q.
+FT                                /FTId=VAR_008272.
+FT   VARIANT     265    265       A -> T.
+FT                                /FTId=VAR_006899.
+FT   VARIANT     271    271       M -> T.
+FT                                /FTId=VAR_006900.
+SQ   SEQUENCE   351 AA;  37205 MW;  895C33382B681E84 CRC64;
+     MAPVLPLVLP LQPRIRLAQG LWLLSWLLAL AGGVILLCSG HLLVQLRHLG TFLAPSCQFP
+     VLPQAALAAG AVALGTGLVG VGASRASLNA ALYPPWRGVL GPLLVAGTAG GGGLLVVGLG
+     LALALPGSLD EALEEGLVTA LAHYKDTEVP GHCQAKRLVD ELQLRYHCCG RHGYKDWFGV
+     QWVSSRYLDP GDRDVADRIQ SNVEGLYLTD GVPFSCCNPH SPRPCLQNRL SDSYAHPLFD
+     PRQPNQNLWA QGCHEVLLEH LQDLAGTLGS MLAVTFLLQA LVLLGLRYLQ TALEGLGGVI
+     DAGGETQGYL FPSGLKDMLK TAWLQGGVAC RPAPEEAPPG EAPPKEDLSE A
+//

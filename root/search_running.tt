@@ -1,0 +1,30 @@
+<div class="oneColumn"><div class="column"><div class="contents">
+[%
+  IF job.status == 'queued';
+    "<h2>Your search is in the queue.</h2>";
+  ELSIF job.status == 'running';
+    "<h2>Your search is running.</h2>";
+  ELSE;
+    "<h2>Your search is has status '${job.status}'</h2>";
+  END;
+%]
+
+<p>
+[%
+  IF json.params.processed.search_name.defined && json.params.processed.search_name != '';
+    "Name: ${json.params.processed.search_name}<br/>";
+  END;
+
+  IF json.params.given.id_search.defined && json.params.given.id_search != '';
+    "ID: ${json.params.given.id_search}<br/>";
+  END;
+%]
+</p>
+
+<p>
+This page will refresh every [% refresh_rate / 1000 %]s until your results are ready.
+Please bookmark it and check again later.
+</p>
+</div></div></div>
+
+<script type="text/javascript">timedRefresh([% refresh_rate %])</script>

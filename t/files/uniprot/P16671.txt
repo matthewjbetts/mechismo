@@ -1,0 +1,425 @@
+ID   CD36_HUMAN              Reviewed;         472 AA.
+AC   P16671; Q13966; Q16093; Q8TCV7; Q9BPZ8; Q9BQC2; Q9BZM8; Q9BZN3;
+AC   Q9BZN4; Q9BZN5;
+DT   01-AUG-1990, integrated into UniProtKB/Swiss-Prot.
+DT   23-JAN-2007, sequence version 2.
+DT   21-MAR-2012, entry version 136.
+DE   RecName: Full=Platelet glycoprotein 4;
+DE   AltName: Full=Fatty acid translocase;
+DE            Short=FAT;
+DE   AltName: Full=Glycoprotein IIIb;
+DE            Short=GPIIIB;
+DE   AltName: Full=Leukocyte differentiation antigen CD36;
+DE   AltName: Full=PAS IV;
+DE   AltName: Full=PAS-4;
+DE   AltName: Full=Platelet collagen receptor;
+DE   AltName: Full=Platelet glycoprotein IV;
+DE            Short=GPIV;
+DE   AltName: Full=Thrombospondin receptor;
+DE   AltName: CD_antigen=CD36;
+GN   Name=CD36; Synonyms=GP3B, GP4;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Placenta;
+RX   MEDLINE=89324065; PubMed=2473841; DOI=10.1016/0092-8674(89)90406-6;
+RA   Oquendo P., Hundt E., Lawler J., Seed B.;
+RT   "CD36 directly mediates cytoadherence of Plasmodium falciparum
+RT   parasitized erythrocytes.";
+RL   Cell 58:95-101(1989).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RA   Sugimoto Y., Tsuruo T.;
+RL   Submitted (AUG-1992) to the EMBL/GenBank/DDBJ databases.
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=94040811; PubMed=7693552; DOI=10.1016/0378-1119(93)90639-K;
+RA   Taylor K.T., Tang Y., Sobieski D.A., Lipsky R.H.;
+RT   "Characterization of two alternatively spliced 5'-untranslated exons
+RT   of the human CD36 gene in different cell types.";
+RL   Gene 133:205-212(1993).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Platelet;
+RX   MEDLINE=94082337; PubMed=7505064;
+RA   Wyler B., Daviet L., Bortkiewicz H., Bordet J.C., McGregor J.L.;
+RT   "Cloning of the cDNA encoding human platelet CD36: comparison to PCR
+RT   amplified fragments of monocyte, endothelial and HEL cells.";
+RL   Thromb. Haemost. 70:500-505(1993).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=94308159; PubMed=7518447;
+RA   Armesilla A.L., Vega M.A.;
+RT   "Structural organization of the gene for human CD36 glycoprotein.";
+RL   J. Biol. Chem. 269:18985-18991(1994).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RG   SeattleSNPs variation discovery resource;
+RL   Submitted (JAN-2004) to the EMBL/GenBank/DDBJ databases.
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Skeletal muscle;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [8]
+RP   PROTEIN SEQUENCE OF 2-37, AND GLYCOSYLATION.
+RC   TISSUE=Platelet;
+RX   MEDLINE=89214205; PubMed=2468669;
+RA   Tandon N.N., Lipsky R.H., Burgess W.H., Jamieson G.A.;
+RT   "Isolation and characterization of platelet glycoprotein IV (CD36).";
+RL   J. Biol. Chem. 264:7570-7575(1989).
+RN   [9]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 41-203; 274-375 AND 419-472, AND
+RP   VARIANTS LYS-123; ALA-174; ASN-232 INS AND THR-271.
+RX   MEDLINE=21523008; PubMed=11668637; DOI=10.1002/humu.1215;
+RA   Gelhaus A., Scheding A., Browne E., Burchard G.D., Horstmann R.D.;
+RT   "Variability of the CD36 gene in West Africa.";
+RL   Hum. Mutat. 18:444-450(2001).
+RN   [10]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 144-203.
+RX   MEDLINE=94063924; PubMed=7503937; DOI=10.1006/geno.1993.1401;
+RA   Fernandez-Ruiz E., Armesilla A.L., Sanchez-Madrid F., Vega M.A.;
+RT   "Gene encoding the collagen type I and thrombospondin receptor CD36 is
+RT   located on chromosome 7q11.2.";
+RL   Genomics 17:759-761(1993).
+RN   [11]
+RP   PROTEIN SEQUENCE OF 261-273 AND 369-385.
+RC   TISSUE=Adipocyte;
+RX   PubMed=15242332; DOI=10.1042/BJ20040647;
+RA   Aboulaich N., Vainonen J.P., Stralfors P., Vener A.V.;
+RT   "Vectorial proteomics reveal targeting, phosphorylation and specific
+RT   fragmentation of polymerase I and transcript release factor (PTRF) at
+RT   the surface of caveolae in human adipocytes.";
+RL   Biochem. J. 383:237-248(2004).
+RN   [12]
+RP   INTERACTION WITH THBS1 AND THBS2.
+RX   PubMed=1371676; DOI=10.1016/0006-291X(92)91860-S;
+RA   Asch A.S., Silbiger S., Heimer E., Nachman R.L.;
+RT   "Thrombospondin sequence motif (CSVTCG) is responsible for CD36
+RT   binding.";
+RL   Biochem. Biophys. Res. Commun. 182:1208-1217(1992).
+RN   [13]
+RP   PALMITOYLATION AT CYS-3; CYS-7; CYS-464 AND CYS-466.
+RX   MEDLINE=96394284; PubMed=8798390; DOI=10.1074/jbc.271.37.22315;
+RA   Tao N., Wagner S.J., Lublin D.M.;
+RT   "CD36 is palmitoylated on both N- and C-terminal cytoplasmic tails.";
+RL   J. Biol. Chem. 271:22315-22320(1996).
+RN   [14]
+RP   GLYCOSYLATION [LARGE SCALE ANALYSIS] AT ASN-417, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Platelet;
+RX   PubMed=16263699; DOI=10.1074/mcp.M500324-MCP200;
+RA   Lewandrowski U., Moebius J., Walter U., Sickmann A.;
+RT   "Elucidation of N-glycosylation sites on human platelet proteins: a
+RT   glycoproteomic approach.";
+RL   Mol. Cell. Proteomics 5:226-233(2006).
+RN   [15]
+RP   GLYCOSYLATION [LARGE SCALE ANALYSIS] AT ASN-321, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Milk;
+RX   PubMed=18780401; DOI=10.1002/pmic.200701057;
+RA   Picariello G., Ferranti P., Mamone G., Roepstorff P., Addeo F.;
+RT   "Identification of N-linked glycoproteins in human milk by hydrophilic
+RT   interaction liquid chromatography and mass spectrometry.";
+RL   Proteomics 8:3833-3847(2008).
+RN   [16]
+RP   GLYCOSYLATION [LARGE SCALE ANALYSIS] AT ASN-205 AND ASN-417, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Liver;
+RX   PubMed=19159218; DOI=10.1021/pr8008012;
+RA   Chen R., Jiang X., Sun D., Han G., Wang F., Ye M., Wang L., Zou H.;
+RT   "Glycoproteomics analysis of human liver tissue by combination of
+RT   multiple enzyme digestion and hydrazide chemistry.";
+RL   J. Proteome Res. 8:651-661(2009).
+RN   [17]
+RP   VARIANT PG4D SER-90.
+RX   MEDLINE=95189997; PubMed=7533783; DOI=10.1172/JCI117749;
+RA   Kashiwagi H., Tomiyama Y., Honda S., Kosugi S., Shiraga M., Nagao N.,
+RA   Sekiguchi S., Kanayama Y., Kurata Y., Matsuzawa Y.;
+RT   "Molecular basis of CD36 deficiency. Evidence that a 478C-->T
+RT   substitution (proline90-->serine) in CD36 cDNA accounts for CD36
+RT   deficiency.";
+RL   J. Clin. Invest. 95:1040-1046(1995).
+RN   [18]
+RP   VARIANT PHE-154.
+RX   MEDLINE=99318093; PubMed=10391209; DOI=10.1038/10290;
+RA   Cargill M., Altshuler D., Ireland J., Sklar P., Ardlie K., Patil N.,
+RA   Shaw N., Lane C.R., Lim E.P., Kalyanaraman N., Nemesh J., Ziaugra L.,
+RA   Friedland L., Rolfe A., Warrington J., Lipshutz R., Daley G.Q.,
+RA   Lander E.S.;
+RT   "Characterization of single-nucleotide polymorphisms in coding regions
+RT   of human genes.";
+RL   Nat. Genet. 22:231-238(1999).
+RN   [19]
+RP   ERRATUM.
+RA   Cargill M., Altshuler D., Ireland J., Sklar P., Ardlie K., Patil N.,
+RA   Shaw N., Lane C.R., Lim E.P., Kalyanaraman N., Nemesh J., Ziaugra L.,
+RA   Friedland L., Rolfe A., Warrington J., Lipshutz R., Daley G.Q.,
+RA   Lander E.S.;
+RL   Nat. Genet. 23:373-373(1999).
+RN   [20]
+RP   ROLE IN MALARIA INFECTION.
+RX   MEDLINE=20346487; PubMed=10890433; DOI=10.1038/35016636;
+RA   Aitman T.J., Cooper L.D., Norsworthy P.J., Wahid F.N., Gray J.K.,
+RA   Curtis B.R., McKeigue P.M., Kwiatkowski D., Greenwood B.M., Snow R.W.,
+RA   Hill A.V., Scott J.;
+RT   "Malaria susceptibility and CD36 mutation.";
+RL   Nature 405:1015-1016(2000).
+RN   [21]
+RP   VARIANTS PG4D SER-90; LEU-254 AND LEU-413.
+RX   MEDLINE=21947857; PubMed=11950861; DOI=10.1136/jmg.39.4.286;
+RA   Hanawa H., Watanabe K., Nakamura T., Ogawa Y., Toba K., Fuse I.,
+RA   Kodama M., Kato K., Fuse K., Aizawa Y.;
+RT   "Identification of cryptic splice site, exon skipping, and novel point
+RT   mutations in type I CD36 deficiency.";
+RL   J. Med. Genet. 39:286-291(2002).
+RN   [22]
+RP   VARIANT LEU-127, AND ROLE IN MALARIA INFECTION.
+RX   MEDLINE=22428291; PubMed=12506336; DOI=10.1086/346091;
+RA   Omi K., Ohashi J., Patarapotikul J., Hananantachai H., Naka I.,
+RA   Looareesuwan S., Tokunaga K.;
+RT   "CD36 polymorphism is associated with protection from cerebral
+RT   malaria.";
+RL   Am. J. Hum. Genet. 72:364-374(2003).
+RN   [23]
+RP   INVOLVEMENT IN CHDS7.
+RX   PubMed=15282206; DOI=10.1093/hmg/ddh233;
+RA   Ma X., Bacci S., Mlynarski W., Gottardo L., Soccio T., Menzaghi C.,
+RA   Iori E., Lager R.A., Shroff A.R., Gervino E.V., Nesto R.W.,
+RA   Johnstone M.T., Abumrad N.A., Avogaro A., Trischitta V., Doria A.;
+RT   "A common haplotype at the CD36 locus is associated with high free
+RT   fatty acid levels and increased cardiovascular risk in Caucasians.";
+RL   Hum. Mol. Genet. 13:2197-2205(2004).
+RN   [24]
+RP   ERRATUM.
+RA   Ma X., Bacci S., Mlynarski W., Gottardo L., Soccio T., Menzaghi C.,
+RA   Iori E., Lager R.A., Shroff A.R., Gervino E.V., Nesto R.W.,
+RA   Johnstone M.T., Abumrad N.A., Avogaro A., Trischitta V., Doria A.;
+RL   Hum. Mol. Genet. 14:3973-3973(2005).
+CC   -!- FUNCTION: Seems to have numerous potential physiological
+CC       functions. Binds to collagen, thrombospondin, anionic
+CC       phospholipids and oxidized LDL. May function as a cell adhesion
+CC       molecule. Directly mediates cytoadherence of Plasmodium falciparum
+CC       parasitized erythrocytes. Binds long chain fatty acids and may
+CC       function in the transport and/or as a regulator of fatty acid
+CC       transport. Receptor for thombospondins, THBS1 AND THBS2, mediating
+CC       their antiangiogenic effects.
+CC   -!- SUBUNIT: Interacts with THBS1 and THBS2; the interactions mediate
+CC       the THBS antiangiogenic activity.
+CC   -!- SUBCELLULAR LOCATION: Membrane; Multi-pass membrane protein.
+CC   -!- PTM: N-glycosylated and O-glycosylated with a ratio of 2:1.
+CC   -!- POLYMORPHISM: Genetic variations in CD36 are involved in
+CC       susceptibility to malaria and influence the severity and outcome
+CC       of malaria infection [MIM:611162].
+CC   -!- DISEASE: Defects in CD36 are the cause of platelet glycoprotein IV
+CC       deficiency (PG4D)[MIM:608404]; also known as CD36 deficiency.
+CC       Platelet glycoprotein IV deficiency can be divided into 2
+CC       subgroups. The type I phenotype is characterized by platelets and
+CC       monocytes/macrophages exhibiting complete CD36 deficiency. The
+CC       type II phenotype lacks the surface expression of CD36 in
+CC       platelets, but expression in monocytes/macrophages is near normal.
+CC   -!- DISEASE: Genetic variations in CD36 are associated with
+CC       susceptibility to coronary heart disease type 7 (CHDS7)
+CC       [MIM:610938].
+CC   -!- SIMILARITY: Belongs to the CD36 family.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=AAM14636.2; Type=Frameshift; Positions=53;
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=CD36 entry;
+CC       URL="http://en.wikipedia.org/wiki/CD36";
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/CD36";
+CC   -!- WEB RESOURCE: Name=SeattleSNPs;
+CC       URL="http://pga.gs.washington.edu/data/cd36/";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; M24795; AAA35534.1; -; mRNA.
+DR   EMBL; M98398; AAA58412.1; -; mRNA.
+DR   EMBL; M98399; AAA58413.1; -; mRNA.
+DR   EMBL; L06850; AAA16068.1; -; mRNA.
+DR   EMBL; S67532; AAD13993.1; -; mRNA.
+DR   EMBL; Z32770; CAA83662.1; -; Genomic_DNA.
+DR   EMBL; Z32754; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32755; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32756; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32757; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32758; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32759; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32760; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32761; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32762; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32763; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; Z32764; CAA83662.1; JOINED; Genomic_DNA.
+DR   EMBL; AY095373; AAM14636.2; ALT_FRAME; Genomic_DNA.
+DR   EMBL; BC008406; AAH08406.1; -; mRNA.
+DR   EMBL; AF300626; AAG60625.1; -; Genomic_DNA.
+DR   EMBL; AF300627; AAG60626.1; -; Genomic_DNA.
+DR   EMBL; AF300628; AAG60627.1; -; Genomic_DNA.
+DR   EMBL; AF300633; AAG60632.1; -; Genomic_DNA.
+DR   EMBL; AF300634; AAG60633.1; -; Genomic_DNA.
+DR   EMBL; AF300635; AAG60634.1; -; Genomic_DNA.
+DR   EMBL; AF300639; AAG60638.1; -; Genomic_DNA.
+DR   EMBL; AF300640; AAG60639.1; -; Genomic_DNA.
+DR   EMBL; S67044; AAB28992.1; -; mRNA.
+DR   EMBL; Z22924; CAA80504.1; -; Genomic_DNA.
+DR   IPI; IPI00418495; -.
+DR   PIR; A54870; A54870.
+DR   RefSeq; NP_000063.2; NM_000072.3.
+DR   RefSeq; NP_001001547.1; NM_001001547.2.
+DR   RefSeq; NP_001001548.1; NM_001001548.2.
+DR   RefSeq; NP_001120915.1; NM_001127443.1.
+DR   RefSeq; NP_001120916.1; NM_001127444.1.
+DR   UniGene; Hs.120949; -.
+DR   ProteinModelPortal; P16671; -.
+DR   IntAct; P16671; 7.
+DR   STRING; P16671; -.
+DR   PhosphoSite; P16671; -.
+DR   DMDM; 115982; -.
+DR   PRIDE; P16671; -.
+DR   DNASU; 948; -.
+DR   Ensembl; ENST00000309881; ENSP00000308165; ENSG00000135218.
+DR   Ensembl; ENST00000394788; ENSP00000378268; ENSG00000135218.
+DR   Ensembl; ENST00000432207; ENSP00000411411; ENSG00000135218.
+DR   Ensembl; ENST00000433696; ENSP00000401863; ENSG00000135218.
+DR   Ensembl; ENST00000435819; ENSP00000399421; ENSG00000135218.
+DR   Ensembl; ENST00000447544; ENSP00000415743; ENSG00000135218.
+DR   GeneID; 948; -.
+DR   KEGG; hsa:948; -.
+DR   UCSC; uc003uhc.1; human.
+DR   CTD; 948; -.
+DR   GeneCards; GC07P080069; -.
+DR   H-InvDB; HIX0006805; -.
+DR   HGNC; HGNC:1663; CD36.
+DR   HPA; CAB025866; -.
+DR   HPA; HPA002018; -.
+DR   MIM; 173510; gene.
+DR   MIM; 248310; phenotype.
+DR   MIM; 608404; phenotype.
+DR   MIM; 610938; phenotype.
+DR   MIM; 611162; phenotype.
+DR   neXtProt; NX_P16671; -.
+DR   eggNOG; NOG257244; -.
+DR   GeneTree; ENSGT00530000062927; -.
+DR   HOVERGEN; HBG002754; -.
+DR   InParanoid; P16671; -.
+DR   KO; K06259; -.
+DR   OMA; FLSLVPY; -.
+DR   OrthoDB; EOG4KWJT5; -.
+DR   PhylomeDB; P16671; -.
+DR   Reactome; REACT_111045; Developmental Biology.
+DR   Reactome; REACT_111217; Metabolism.
+DR   Reactome; REACT_604; Hemostasis.
+DR   Reactome; REACT_6900; Immune System.
+DR   NextBio; 3938; -.
+DR   ArrayExpress; P16671; -.
+DR   Bgee; P16671; -.
+DR   Genevestigator; P16671; -.
+DR   GermOnline; ENSG00000135218; Homo sapiens.
+DR   GO; GO:0005887; C:integral to plasma membrane; TAS:BHF-UCL.
+DR   GO; GO:0005624; C:membrane fraction; TAS:ProtInc.
+DR   GO; GO:0045335; C:phagocytic vesicle; TAS:Reactome.
+DR   GO; GO:0031092; C:platelet alpha granule membrane; TAS:Reactome.
+DR   GO; GO:0008289; F:lipid binding; IDA:BHF-UCL.
+DR   GO; GO:0030169; F:low-density lipoprotein particle binding; IDA:BHF-UCL.
+DR   GO; GO:0005041; F:low-density lipoprotein receptor activity; IMP:BHF-UCL.
+DR   GO; GO:0070053; F:thrombospondin receptor activity; ISS:BHF-UCL.
+DR   GO; GO:0050431; F:transforming growth factor beta binding; ISS:BHF-UCL.
+DR   GO; GO:0002479; P:antigen processing and presentation of exogenous peptide antigen via MHC class I, TAP-dependent; TAS:Reactome.
+DR   GO; GO:0007155; P:cell adhesion; TAS:ProtInc.
+DR   GO; GO:0044255; P:cellular lipid metabolic process; TAS:Reactome.
+DR   GO; GO:0019934; P:cGMP-mediated signaling; IDA:BHF-UCL.
+DR   GO; GO:0030301; P:cholesterol transport; ISS:BHF-UCL.
+DR   GO; GO:0019915; P:lipid storage; IMP:BHF-UCL.
+DR   GO; GO:0042953; P:lipoprotein transport; IMP:BHF-UCL.
+DR   GO; GO:0034383; P:low-density lipoprotein particle clearance; IMP:BHF-UCL.
+DR   GO; GO:0007263; P:nitric oxide mediated signal transduction; IDA:BHF-UCL.
+DR   GO; GO:0015911; P:plasma membrane long-chain fatty acid transport; IDA:BHF-UCL.
+DR   GO; GO:0030168; P:platelet activation; TAS:Reactome.
+DR   GO; GO:0002576; P:platelet degranulation; TAS:Reactome.
+DR   GO; GO:0001954; P:positive regulation of cell-matrix adhesion; IDA:BHF-UCL.
+DR   GO; GO:0010744; P:positive regulation of macrophage derived foam cell differentiation; IMP:BHF-UCL.
+DR   GO; GO:0044281; P:small molecule metabolic process; TAS:Reactome.
+DR   InterPro; IPR002159; CD36.
+DR   InterPro; IPR005428; CD36_antigen.
+DR   PANTHER; PTHR11923; CD36; 1.
+DR   Pfam; PF01130; CD36; 1.
+DR   PRINTS; PR01610; CD36ANTIGEN.
+DR   PRINTS; PR01609; CD36FAMILY.
+PE   1: Evidence at protein level;
+KW   Cell adhesion; Complete proteome; Direct protein sequencing;
+KW   Disease mutation; Disulfide bond; Glycoprotein; Lipoprotein; Membrane;
+KW   Palmitate; Polymorphism; Receptor; Reference proteome; Transmembrane;
+KW   Transmembrane helix; Transport.
+FT   INIT_MET      1      1       Removed.
+FT   CHAIN         2    472       Platelet glycoprotein 4.
+FT                                /FTId=PRO_0000144151.
+FT   TOPO_DOM      2      7       Cytoplasmic (Potential).
+FT   TRANSMEM      8     29       Helical; (Potential).
+FT   TOPO_DOM     30    439       Extracellular (Potential).
+FT   TRANSMEM    440    461       Helical; (Potential).
+FT   TOPO_DOM    462    472       Cytoplasmic (Potential).
+FT   REGION       93    120       Required for interaction with
+FT                                thrombospondins, THBS1 and THBS2.
+FT   LIPID         3      3       S-palmitoyl cysteine.
+FT   LIPID         7      7       S-palmitoyl cysteine.
+FT   LIPID       464    464       S-palmitoyl cysteine.
+FT   LIPID       466    466       S-palmitoyl cysteine.
+FT   CARBOHYD     79     79       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    102    102       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    134    134       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    163    163       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    205    205       N-linked (GlcNAc...).
+FT   CARBOHYD    220    220       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    235    235       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    247    247       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    321    321       N-linked (GlcNAc...).
+FT   CARBOHYD    417    417       N-linked (GlcNAc...).
+FT   DISULFID    243    311       By similarity.
+FT   DISULFID    272    333       By similarity.
+FT   DISULFID    313    322       By similarity.
+FT   VARIANT      90     90       P -> S (in PG4D; type I; degradation in
+FT                                the cytoplasm due to defects in
+FT                                maturation; dbSNP:rs3765187).
+FT                                /FTId=VAR_017913.
+FT   VARIANT     123    123       E -> K (in individuals from a malaria
+FT                                endemic area in West Africa).
+FT                                /FTId=VAR_017914.
+FT   VARIANT     127    127       S -> L.
+FT                                /FTId=VAR_019049.
+FT   VARIANT     154    154       V -> F (in dbSNP:rs5957).
+FT                                /FTId=VAR_013918.
+FT   VARIANT     174    174       T -> A (in individuals from a malaria
+FT                                endemic area in West Africa).
+FT                                /FTId=VAR_017915.
+FT   VARIANT     232    232       G -> GN (in individuals from a malaria
+FT                                endemic area in West Africa).
+FT                                /FTId=VAR_017916.
+FT   VARIANT     254    254       F -> L (in PG4D; type I).
+FT                                /FTId=VAR_017917.
+FT   VARIANT     271    271       I -> T (in individuals from a malaria
+FT                                endemic area in West Africa).
+FT                                /FTId=VAR_017918.
+FT   VARIANT     413    413       I -> L (in PG4D; type I).
+FT                                /FTId=VAR_017919.
+FT   CONFLICT     44     44       L -> R (in Ref. 4; AAD13993).
+FT   CONFLICT    238    238       Y -> D (in Ref. 4; AAD13993).
+FT   CONFLICT    374    374       E -> Q (in Ref. 3; AAA16068 and 11; AA
+FT                                sequence).
+SQ   SEQUENCE   472 AA;  53053 MW;  543E748259A094FA CRC64;
+     MGCDRNCGLI AGAVIGAVLA VFGGILMPVG DLLIQKTIKK QVVLEEGTIA FKNWVKTGTE
+     VYRQFWIFDV QNPQEVMMNS SNIQVKQRGP YTYRVRFLAK ENVTQDAEDN TVSFLQPNGA
+     IFEPSLSVGT EADNFTVLNL AVAAASHIYQ NQFVQMILNS LINKSKSSMF QVRTLRELLW
+     GYRDPFLSLV PYPVTTTVGL FYPYNNTADG VYKVFNGKDN ISKVAIIDTY KGKRNLSYWE
+     SHCDMINGTD AASFPPFVEK SQVLQFFSSD ICRSIYAVFE SDVNLKGIPV YRFVLPSKAF
+     ASPVENPDNY CFCTEKIISK NCTSYGVLDI SKCKEGRPVY ISLPHFLYAS PDVSEPIDGL
+     NPNEEEHRTY LDIEPITGFT LQFAKRLQVN LLVKPSEKIQ VLKNLKRNYI VPILWLNETG
+     TIGDEKANMF RSQVTGKINL LGLIEMILLS VGVVMFVAFM ISYCACRSKT IK
+//

@@ -1,0 +1,10 @@
+#PBS -N uniprot_dbsnp_high
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -l mem=5gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id uniprot_dbSNP.high --stringency high < ${dn_fist}root/static/data/examples/uniprot_dbSNP.txt 1> ${dn_out}uniprot_dbSNP.high.out 2> ${dn_out}uniprot_dbSNP.high.err
+

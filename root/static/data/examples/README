@@ -1,0 +1,13 @@
+
+Cancer genomes: high/med/low
+Biankin_et_al_Nature_2012.txt  
+Jones_Jaeger_Nature_Table_S3.txt  
+
+PTM stuff in microbes: low/all
+Macek_et_al_MCP_2008_Ecoli_phos_UP_p.txt 
+vanNoort_et_al_MSB_2012.txt
+
+Big datasets: high/med
+uniprot_dbSNP.txt  
+uniprot_disease_mods.txt	
+

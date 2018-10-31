@@ -1,0 +1,227 @@
+ID   ARMS2_HUMAN             Reviewed;         107 AA.
+AC   P0C7Q2; B2Y7I5;
+DT   01-JUL-2008, integrated into UniProtKB/Swiss-Prot.
+DT   01-JUL-2008, sequence version 1.
+DT   21-MAR-2012, entry version 27.
+DE   RecName: Full=Age-related maculopathy susceptibility protein 2;
+GN   Name=ARMS2;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=15164054; DOI=10.1038/nature02462;
+RA   Deloukas P., Earthrowl M.E., Grafham D.V., Rubenfield M., French L.,
+RA   Steward C.A., Sims S.K., Jones M.C., Searle S., Scott C., Howe K.,
+RA   Hunt S.E., Andrews T.D., Gilbert J.G.R., Swarbreck D., Ashurst J.L.,
+RA   Taylor A., Battles J., Bird C.P., Ainscough R., Almeida J.P.,
+RA   Ashwell R.I.S., Ambrose K.D., Babbage A.K., Bagguley C.L., Bailey J.,
+RA   Banerjee R., Bates K., Beasley H., Bray-Allen S., Brown A.J.,
+RA   Brown J.Y., Burford D.C., Burrill W., Burton J., Cahill P., Camire D.,
+RA   Carter N.P., Chapman J.C., Clark S.Y., Clarke G., Clee C.M., Clegg S.,
+RA   Corby N., Coulson A., Dhami P., Dutta I., Dunn M., Faulkner L.,
+RA   Frankish A., Frankland J.A., Garner P., Garnett J., Gribble S.,
+RA   Griffiths C., Grocock R., Gustafson E., Hammond S., Harley J.L.,
+RA   Hart E., Heath P.D., Ho T.P., Hopkins B., Horne J., Howden P.J.,
+RA   Huckle E., Hynds C., Johnson C., Johnson D., Kana A., Kay M.,
+RA   Kimberley A.M., Kershaw J.K., Kokkinaki M., Laird G.K., Lawlor S.,
+RA   Lee H.M., Leongamornlert D.A., Laird G., Lloyd C., Lloyd D.M.,
+RA   Loveland J., Lovell J., McLaren S., McLay K.E., McMurray A.,
+RA   Mashreghi-Mohammadi M., Matthews L., Milne S., Nickerson T.,
+RA   Nguyen M., Overton-Larty E., Palmer S.A., Pearce A.V., Peck A.I.,
+RA   Pelan S., Phillimore B., Porter K., Rice C.M., Rogosin A., Ross M.T.,
+RA   Sarafidou T., Sehra H.K., Shownkeen R., Skuce C.D., Smith M.,
+RA   Standring L., Sycamore N., Tester J., Thorpe A., Torcasso W.,
+RA   Tracey A., Tromans A., Tsolas J., Wall M., Walsh J., Wang H.,
+RA   Weinstock K., West A.P., Willey D.L., Whitehead S.L., Wilming L.,
+RA   Wray P.W., Young L., Chen Y., Lovering R.C., Moschonas N.K.,
+RA   Siebert R., Fechtel K., Bentley D., Durbin R.M., Hubbard T.,
+RA   Doucette-Stamm L., Beck S., Smith D.R., Rogers J.;
+RT   "The DNA sequence and comparative analysis of human chromosome 10.";
+RL   Nature 429:375-381(2004).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 18-99.
+RX   PubMed=18511946; DOI=10.1038/ng.170;
+RA   Fritsche L.G., Loenhardt T., Janssen A., Fisher S.A., Rivera A.,
+RA   Keilhauer C.N., Weber B.H.;
+RT   "Age-related macular degeneration is associated with an unstable ARMS2
+RT   (LOC387715) mRNA.";
+RL   Nat. Genet. 40:892-896(2008).
+RN   [4]
+RP   SUBCELLULAR LOCATION, INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=16174643; DOI=10.1093/hmg/ddi353;
+RA   Rivera A., Fisher S.A., Fritsche L.G., Keilhauer C.N., Lichtner P.,
+RA   Meitinger T., Weber B.H.F.;
+RT   "Hypothetical LOC387715 is a second major susceptibility gene for age-
+RT   related macular degeneration, contributing independently of complement
+RT   factor H to disease risk.";
+RL   Hum. Mol. Genet. 14:3227-3236(2005).
+RN   [5]
+RP   PRELIMINARY SUBCELLULAR LOCATION, TISSUE SPECIFICITY, INVOLVEMENT IN
+RP   ARMD8, AND VARIANT SER-69.
+RX   PubMed=17884985; DOI=10.1073/pnas.0703933104;
+RA   Kanda A., Chen W., Othman M., Branham K.E.H., Brooks M., Khanna R.,
+RA   He S., Lyons R., Abecasis G.R., Swaroop A.;
+RT   "A variant of mitochondrial protein LOC387715/ARMS2, not HTRA1, is
+RT   strongly associated with age-related macular degeneration.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 104:16227-16232(2007).
+RN   [6]
+RP   PURIFICATION OF RECOMBINANT PROTEIN.
+RX   PubMed=17485225; DOI=10.1016/j.pep.2007.03.017;
+RA   Chen D., Langford M.P., Duggan C., Madden B.J., Edwards A.O.;
+RT   "Expression of recombinant protein encoded by LOC387715 in Escherichia
+RT   coli.";
+RL   Protein Expr. Purif. 54:275-282(2007).
+RN   [7]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=16642439; DOI=10.1086/503822;
+RA   Schmidt S., Hauser M.A., Scott W.K., Postel E.A., Agarwal A.,
+RA   Gallins P., Wong F., Chen Y.S., Spencer K., Schnetz-Boutaud N.,
+RA   Haines J.L., Pericak-Vance M.A.;
+RT   "Cigarette smoking strongly modifies the association of LOC387715 and
+RT   age-related macular degeneration.";
+RL   Am. J. Hum. Genet. 78:852-864(2006).
+RN   [8]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=17000705; DOI=10.1093/hmg/ddl396;
+RA   Conley Y.P., Jakobsdottir J., Mah T., Weeks D.E., Klein R., Kuller L.,
+RA   Ferrell R.E., Gorin M.B.;
+RT   "CFH, ELOVL4, PLEKHA1 and LOC387715 genes and susceptibility to age-
+RT   related maculopathy: AREDS and CHS cohorts and meta-analyses.";
+RL   Hum. Mol. Genet. 15:3206-3218(2006).
+RN   [9]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=16936732; DOI=10.1038/ng1873;
+RA   Maller J., George S., Purcell S., Fagerness J., Altshuler D.,
+RA   Daly M.J., Seddon J.M.;
+RT   "Common variation in three genes, including a noncoding variant in
+RT   CFH, strongly influences risk of age-related macular degeneration.";
+RL   Nat. Genet. 38:1055-1059(2006).
+RN   [10]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=17053108; DOI=10.1126/science.1133807;
+RA   Dewan A., Liu M., Hartman S., Zhang S.S.-M., Liu D.T.L., Zhao C.,
+RA   Tam P.O.S., Chan W.M., Lam D.S.C., Snyder M., Barnstable C.,
+RA   Pang C.P., Hoh J.;
+RT   "HTRA1 promoter polymorphism in wet age-related macular
+RT   degeneration.";
+RL   Science 314:989-992(2006).
+RN   [11]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=17210852; DOI=10.1001/archopht.125.1.55;
+RA   Schaumberg D.A., Hankinson S.E., Guo Q., Rimm E., Hunter D.J.;
+RT   "A prospective study of 2 major age-related macular degeneration
+RT   susceptibility alleles and interactions with modifiable risk
+RT   factors.";
+RL   Arch. Ophthalmol. 125:55-62(2007).
+RN   [12]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=18436811; DOI=10.1167/iovs.07-0560;
+RA   Kaur I., Katta S., Hussain A., Hussain N., Mathai A., Narayanan R.,
+RA   Hussain A., Reddy R.K., Majji A.B., Das T., Chakrabarti S.;
+RT   "Variants in the 10q26 gene cluster (LOC387715 and HTRA1) exhibit
+RT   enhanced risk of age-related macular degeneration along with CFH in
+RT   Indian patients.";
+RL   Invest. Ophthalmol. Vis. Sci. 49:1771-1776(2008).
+RN   [13]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=18452766; DOI=10.1016/j.ophtha.2007.12.012;
+RA   Recalde S., Fernandez-Robredo P., Altarriba M., Salinas-Alaman A.,
+RA   Garcia-Layana A.;
+RT   "Age-related macular degeneration genetics.";
+RL   Ophthalmology 115:916-916(2008).
+RN   [14]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=17675241; DOI=10.1016/j.ophtha.2007.05.038;
+RA   Wang J.J., Ross R.J., Tuo J., Burlutsky G., Tan A.G., Chan C.-C.,
+RA   Favaloro E.J., Williams A., Mitchell P.;
+RT   "The LOC387715 polymorphism, inflammatory markers, smoking, and age-
+RT   related macular degeneration. A population-based case-control study.";
+RL   Ophthalmology 115:693-699(2008).
+RN   [15]
+RP   INVOLVEMENT IN ARMD8, AND VARIANT SER-69.
+RX   PubMed=18423869; DOI=10.1016/j.ophtha.2008.01.036;
+RA   Klein M.L., Francis P.J., Rosner B., Reynolds R., Hamon S.C.,
+RA   Schultz D.W., Ott J., Seddon J.M.;
+RT   "CFH and LOC387715/ARMS2 genotypes and treatment with antioxidants and
+RT   zinc for age-related macular degeneration.";
+RL   Ophthalmology 115:1019-1025(2008).
+RN   [16]
+RP   SUBCELLULAR LOCATION.
+RC   TISSUE=Retinal pigment epithelium;
+RX   PubMed=19255159; DOI=10.1167/iovs.08-3240;
+RA   Wang G., Spencer K.L., Court B.L., Olson L.M., Scott W.K.,
+RA   Haines J.L., Pericak-Vance M.A.;
+RT   "Localization of age-related macular degeneration-associated ARMS2 in
+RT   cytosol, not mitochondria.";
+RL   Invest. Ophthalmol. Vis. Sci. 50:3084-3090(2009).
+CC   -!- SUBCELLULAR LOCATION: Cytoplasm.
+CC   -!- TISSUE SPECIFICITY: Detected in retina and placenta.
+CC   -!- DISEASE: Defects in ARMS2 influence susceptibility to age-related
+CC       macular degeneration type 8 (ARMD8) [MIM:613778]. ARMD is the most
+CC       common cause of irreversible vision loss in the developed world.
+CC       In most patients, the disease is manifest as ophthalmoscopically
+CC       visible yellowish accumulations of protein and lipid (known as
+CC       drusen) that lie beneath the retinal pigment epithelium and within
+CC       an elastin-containing structure known as Bruch's membrane. ARMD is
+CC       likely to be a mechanistically heterogeneous group of disorders,
+CC       and the specific disease mechanisms that underlie the vast
+CC       majority of cases are currently unknown. However, a number of
+CC       studies have suggested that both genetic and environmental factors
+CC       are likely to play a role.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/ARMS2";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; BX842242; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; BC066349; -; NOT_ANNOTATED_CDS; mRNA.
+DR   EMBL; EU427528; ACA35288.1; -; Genomic_DNA.
+DR   IPI; IPI00856107; -.
+DR   RefSeq; NP_001093137.1; NM_001099667.1.
+DR   UniGene; Hs.120359; -.
+DR   DMDM; 193806692; -.
+DR   PRIDE; P0C7Q2; -.
+DR   DNASU; 387715; -.
+DR   GeneID; 387715; -.
+DR   KEGG; hsa:387715; -.
+DR   UCSC; uc001lgi.1; human.
+DR   CTD; 387715; -.
+DR   GeneCards; GC10P124205; -.
+DR   HGNC; HGNC:32685; ARMS2.
+DR   MIM; 611313; gene.
+DR   MIM; 613778; phenotype.
+DR   neXtProt; NX_P0C7Q2; -.
+DR   Orphanet; 279; Age-related macular degeneration.
+DR   PharmGKB; PA162376896; -.
+DR   GeneTree; ENSGT00650000095054; -.
+DR   NextBio; 101537; -.
+DR   CleanEx; HS_ARMS2; -.
+DR   Genevestigator; P0C7Q2; -.
+DR   GO; GO:0005739; C:mitochondrion; IDA:BHF-UCL.
+DR   GO; GO:0001917; C:photoreceptor inner segment; IDA:BHF-UCL.
+DR   GO; GO:0001895; P:retina homeostasis; IMP:BHF-UCL.
+PE   2: Evidence at transcript level;
+KW   Age-related macular degeneration; Complete proteome; Cytoplasm;
+KW   Polymorphism; Reference proteome.
+FT   CHAIN         1    107       Age-related maculopathy susceptibility
+FT                                protein 2.
+FT                                /FTId=PRO_0000342668.
+FT   VARIANT       3      3       R -> H (in dbSNP:rs10490923).
+FT                                /FTId=VAR_044330.
+FT   VARIANT      69     69       A -> S (in dbSNP:rs10490924).
+FT                                /FTId=VAR_044331.
+SQ   SEQUENCE   107 AA;  11437 MW;  2F8D3812B5DDF55F CRC64;
+     MLRLYPGPMV TEAEGKGGPE MASLSSSVVP VSFISTLRES VLDPGVGGEG ASDKQRSKLS
+     LSHSMIPAAK IHTELCLPAF FSPAGTQRRF QQPQHHLTLS IIHTAAR
+//

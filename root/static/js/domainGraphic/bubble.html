@@ -1,0 +1,385 @@
+<html lang="en">
+<head>
+<title>Example</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="PPI, Protein interaction, Network, Domaingraphics, Bubblegram, Protein domain, Domain, Sequence, Javascript">
+<meta name="description" content="Domain network 2: Domain networks and domain graphics">
+<meta name="author" content="Quianhao Lu">
+
+
+<!-- js inclusion, the order is important -->
+<!-- prototype -->
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("prototype", "1.7");</script>
+
+<!-- domain graphic adopted from pfam -->
+<script type="application/javascript"
+	src="js/domain_graphics.js"></script>
+
+<!-- create tooltips when hover on element -->
+<script type="application/javascript"
+	src="js/prototip.js"></script>
+
+<!-- excanvas for drawing -->
+<script type="application/javascript"
+	src="js/excanvas.js"></script>
+
+<!-- jquery -->
+<script type="application/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- dg_parser: the wrapper -->
+<script type='application/javascript'
+	src="js/dg_parser.js"></script>
+
+<!-- now css -->
+
+<!-- prototips -->
+<link rel="stylesheet" type="text/css" href="css/prototip.css" media="screen" />
+
+<!-- common css, used generally by domnet2,  -->
+<link rel="stylesheet" type="text/css" href="css/common.css" media="screen" />
+
+
+<!-- inline  js for json object, which must be compiled by your program -->
+<script type="application/javascript">
+  dg_json=[
+    {
+        "domains": [
+            {
+                "start": 170, 
+                "end": 206, 
+                "title": "QLQ", 
+                "tt_desc": "qlq domain", 
+                "colour": "#0000ff", 
+                "end_complete": true, 
+                "start_complete": true, 
+                "display": true
+            }, 
+            {
+                "start": 460, 
+                "end": 532, 
+                "title": "HSA", 
+                "tt_desc": "hsa domain", 
+                "colour": "#800080", 
+                "end_complete": true, 
+                "start_complete": true, 
+                "display": true
+            }, 
+            {
+                "start": 610, 
+                "end": 655, 
+                "title": "BRK", 
+                "tt_desc": "brk domain", 
+                "colour": "#ff00ff", 
+                "end_complete": true, 
+                "start_complete": true, 
+                "display": true
+            }, 
+            {
+                "start": 750, 
+                "end": 942, 
+                "title": "DEXDC", 
+                "tt_desc": "dead-like helicases superfamily", 
+                "colour": "#00ffff", 
+                "end_complete": true, 
+                "start_complete": true, 
+                "display": true
+            }, 
+            {
+                "start": 953, 
+                "end": 985, 
+                "title": "DEXDC", 
+                "tt_desc": "deadc smart homologues blask", 
+                "colour": "#00ffff", 
+                "end_complete": true, 
+                "start_complete": true, 
+                "display": true
+            }, 
+            {
+                "start": 1114, 
+                "end": 1194, 
+                "title": "HELICASE_C", 
+                "tt_desc": "helicase conserved c-terminal domain", 
+                "colour": "#808080", 
+                "end_complete": true, 
+                "start_complete": false, 
+                "display": true
+            }, 
+            {
+                "start": 1321, 
+                "end": 1389, 
+                "title": "SNAC", 
+                "tt_desc": "snf2-atp coupling", 
+                "colour": "#800000", 
+                "end_complete": true, 
+                "start_complete": false, 
+                "display": true
+            }, 
+            {
+                "start": 1462, 
+                "end": 1551, 
+                "title": "BROMODOMAIN", 
+                "tt_desc": "bromodomain", 
+                "colour": "#808000", 
+                "end_complete": false, 
+                "start_complete": false, 
+                "display": true
+            }
+        ], 
+        "sites_up": [
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "e882k", 
+                "headColour": "#ffd500", 
+                "position": 882, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "r966w", 
+                "headColour": "#ff0000", 
+                "position": 966, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "p974s", 
+                "headColour": "#ff0000", 
+                "position": 974, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "r906c", 
+                "headColour": "#ff0000", 
+                "position": 906, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 3.0, 
+                "headStyle": "square", 
+                "tt_desc": "g1232s | g1232s | g1232s", 
+                "headColour": "#ffd500", 
+                "position": 1232, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "g1162v", 
+                "headColour": "#ff0000", 
+                "position": 1162, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "p49l", 
+                "headColour": "#ff0000", 
+                "position": 49, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "a1186v", 
+                "headColour": "#ffd500", 
+                "position": 1186, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "k981e", 
+                "headColour": "#ffd500", 
+                "position": 981, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "s1238p", 
+                "headColour": "#ff0000", 
+                "position": 1238, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "g1194r", 
+                "headColour": "#ff0000", 
+                "position": 1194, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 2.0, 
+                "headStyle": "square", 
+                "tt_desc": "r1243w | r1243w", 
+                "headColour": "#ff0000", 
+                "position": 1243, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "a1245t", 
+                "headColour": "#ffd500", 
+                "position": 1245, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "r521w", 
+                "headColour": "#ff0000", 
+                "position": 521, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 3.0, 
+                "headStyle": "square", 
+                "tt_desc": "r973w | r973q | r973q", 
+                "headColour": "#000000", 
+                "position": 973, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 3.0, 
+                "headStyle": "square", 
+                "tt_desc": "r1192c | r1192c | r1192c", 
+                "headColour": "#ff0000", 
+                "position": 1192, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "y372h", 
+                "headColour": "#ffd500", 
+                "position": 372, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "g911d", 
+                "headColour": "#ff0000", 
+                "position": 911, 
+                "display": true, 
+                "tt_type": "mutation"
+            }, 
+            {
+                "lineColour": "#000000", 
+                "popHeight": 1.0, 
+                "headStyle": "square", 
+                "tt_desc": "t910m", 
+                "headColour": "#ff0000", 
+                "position": 910, 
+                "display": true, 
+                "tt_type": "mutation"
+            }
+        ], 
+        "length": 1647, 
+        "id": "SMARCA4"
+    }
+];
+  
+</script>
+</head>
+
+<body>
+
+  
+  <p>Here the image:</p>
+
+  <!-- where we want to put the images/canvas -->
+  <div class='img_container'></div>
+
+  <!-- code for generating tag dynamically by native javascript -->
+  <script type="application/javascript">
+    <!-- escape jquery, use $j instead of $ in this html page -->
+    var $j=jQuery.noConflict();
+
+    $j(document).ready(function () {
+
+    <!-- dg_json is a list of bubblegrams, theoretically, it can contain -->
+    <!-- multiple bubblegrams, but in our case, there is just one bubblegram. -->
+    <!-- So we iterate the list anyway.-->
+    $j.each(dg_json, function(key,value) {
+      <!-- inside a jQuery function -->
+      var newPara=document.createElement("p");
+      var node=document.createTextNode("some Id (text element)");
+      newPara.appendChild(node);
+      var container=document.getElementsByClassName('img_container')[0];
+      container.appendChild(newPara)
+  
+      <!-- create new div element for single bubble gram -->
+      var newdiv=document.createElement("div");
+      newdiv.id="some_id";
+      newdiv.className='inner';
+      container.appendChild(newdiv);
+  
+      <!-- spacer to separate multiple bubblegrams, defined in common.css -->
+      var spacer=document.createElement("div");
+      spacer.className="spacer30"
+      container.appendChild(spacer);
+  
+  
+      try {
+      <!-- Parameters: json object, div tag, scale (float) -->
+        parser.draw(value,newdiv,2.0 );
+      }
+      catch(err) {
+        alert("can't draw...because of error.");
+      }
+      
+    });
+    
+    })
+    
+  </script>
+
+</body>
+
+</html>

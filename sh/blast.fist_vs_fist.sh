@@ -1,0 +1,2 @@
+/usr/bin/time -o ./data/blast/fist-fist/blast.time perl -I./lib ./script/blast.pl --outdir ./data/blast/fist-fist --db ./data/blast/fist `ls data/pdb/*/fist_aa.fasta | perl -ne 'chomp; print " -fasta $_";'` 1> ./data/blast/fist-fist/blast.out 2> ./data/blast/fist-fist/blast.err
+cat ./data/blast/fist-fist/blast.time | mail -r matthew.betts@bioquant.uni-heidelberg.de -s 'fist vs. fist finished' matthew.betts@bioquant.uni-heidelberg.de

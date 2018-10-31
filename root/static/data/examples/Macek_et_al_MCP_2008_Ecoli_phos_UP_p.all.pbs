@@ -1,0 +1,11 @@
+#PBS -N macek_all
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -l cput=04:59:59
+#PBS -l mem=5gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id Macek_et_al_MCP_2008_Ecoli_phos_UP_p.all --stringency all < ${dn_fist}root/static/data/examples/Macek_et_al_MCP_2008_Ecoli_phos_UP_p.txt 1> ${dn_out}Macek_et_al_MCP_2008_Ecoli_phos_UP_p.all.out 2> ${dn_out}Macek_et_al_MCP_2008_Ecoli_phos_UP_p.all.err
+

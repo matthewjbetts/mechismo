@@ -1,0 +1,163 @@
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+
+<h2><a name="elevatorPitch">Elevator pitch</a></h2>
+<p>Mechismo is a tool that lets you find potential mechanisms for how proteins interact with other molecules
+and more importantly for how any changes that might affect these interactions, and consequently an
+entire biological system.  We have constructed a database of roughly 50,000 protein-protein, 
+protein-small-molecule and protein-nucelic acid interactions of known structure and several million
+interactions identified by other methods, all of which we use to identify or predict potential interactions 
+within a set of proteins or genes provided by you.</p>
+
+<h2><a name="publications">Publications using mechismo</a></h2>
+
+<p>The primary reference for mechismo is: <br>
+Betts MJ, Lu Q, Jiang YY, Drusko A, Wichmann A, Utz M, Valtierra-Gutiérrez IA, Schlesner M, Jaeger N, Jones DT, Pfister S, Lichter P, Eils R, Siebert R, Bork B, Apic G, Gavin AC, Russell RB<br>
+Mechismo: predicting the mechanistic impact of mutations and modifications on molecular interactions<br>
+Nucl Acids Res, 43(2):e10, 2015 (<a href="http://www.ncbi.nlm.nih.gov/pubmed/25392414">PubMed</a>).</p>
+
+<p>Mechismo, or the data behind it, has been used in a number of studies:
+<ul>
+<li>Vitale et al, Cryptogenic cholestasis in young and adults: ATP8B1, ABCB11, ABCB4, and TJP2 gene variants analysis by high-throughput sequencing. J. Gastroenterol  2017 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/29238877">PubMed</a></li>
+
+<li>Raimondi et al, Natural genetic variants affecting equivalent protein family positions reflect human diversity. Sci. Rep. 2017 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/28986545">PubMed</a></li>
+
+<li>Betts et al, Systematic identification of phosphorylation-mediated protein interaction switches. PLoS Comp. Biol. 2017 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/28346509">PubMed</a></li>
+
+<li>Raimondi, Singh et al, Insights into cancer severity from biomolecular interaction mechanisms. Sci. Rep. 2016 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/27698488">PubMed</a></li>
+
+<li>Boldt et al, An organelle-specific protein landscape identifies novel diseases and molecular mechanisms. Nat Commun. 2016 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/27173435">PubMed</a></li>
+
+<li>Lopez et al. Genes encoding members of the JAK-STAT pathway or epigenetic regulators are recurrently mutated in T-cell prolymphocytic leukaemia. Br J Haematol. 2016 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/">PubMed</a></li>
+
+<li>Kretzmer et al.  DNA methylome analysis in Burkitt and follicular lymphomas identifies differentially methylated regions linked to somatic mutation and transcriptional control. Nat Genet. 2015 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/26437030">PubMed</a></li>
+
+<li>Wagener et al. The PCBP1 gene encoding poly(rc) binding protein I is recurrently mutated in Burkitt lymphoma.  Genes Chromosomes Cancer. 2015 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/26173642">PubMed</a></li>
+
+<li>Sahni et al.  Widespread macromolecular interaction perturbations in human genetic disorders.
+Cell. 2015  <a href="http://www.ncbi.nlm.nih.gov/pubmed/25910212">PubMed</a>.</li>
+
+<li>Yang et al.  Protein domain-level landscape of cancer-type-specific somatic mutations.
+PLoS Comput Biol. 2015 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25794154">PubMed</a>.</li>
+
+<li>Vater et al. The mutational pattern of primary lymphoma of the central nervous system determined by whole exomoe sequencing.  
+Leukemia. 2014 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25189415">PubMed</a>.</li>
+
+<li>Hasselblatt et al. SMARCA4-mutated atypical teratoid/rhabdoid tumors are 
+associated with inherited germline alterations and poor prognosis. 
+Acta Neuropathol. 2014 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25060813">PubMed</a>.</li>
+
+<li>Rohde et al. Recurrent RHOA mutations in
+pediatric Burkitt lymphoma treated according to the NHL-BFM protocols. Genes
+Chromosomes Cancer. 2014 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25044415">PubMed</a>.</li>
+
+<li>Bergmann et al. Recurrent mutation of JAK3 in T-cell
+prolymphocytic leukemia. Genes Chromosomes Cancer. 2014 <a href="http://www.ncbi.nlm.nih.gov/pubmed/24446122">PubMed</a>.</li>
+
+<li>Salaverria et al.  A recurrent 11q aberration pattern characterizes a subset of MYC-negative
+high-grade B-cell lymphomas resembling Burkitt lymphoma. Blood. 2014 <a href="http://www.ncbi.nlm.nih.gov/pubmed/Pubmed 24398325">PubMed</a>.</li>
+
+<li>Richter et al.  Recurrent mutation of the ID3 gene in Burkitt
+lymphoma identified by integrated genome, exome and transcriptome sequencing. Nat
+Genet. 2012 <a href="http://www.ncbi.nlm.nih.gov/pubmed/23143595">PubMed</a>.</li>
+
+<li>Jones et al. Dissecting the genomic complexity underlying
+medulloblastoma. Nature. 2012 <a href="http://www.ncbi.nlm.nih.gov/pubmed/22832583">PubMed</a>.</li>
+
+<li>van Noort et al. Cross-talk between phosphorylation and
+lysine acetylation in a genome-reduced bacterium. Mol Syst Biol. 2012
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/22373819">PubMed</a>.</li>
+</ul>
+</p>
+
+
+<h2><a name="moreAboutMechismo">More about Mechismo</a></h2>
+<p>
+The primary data behind Mechismo consists of:<br>
+<ul>
+<li>Three-dimensional structures from the Protein Databank or <a href="http://www.rcsb.org" target="_blank">PDB</a></li>
+<li>Sequences and annotation from <a href="http://www.uniprot.org" target="_blank">Uniprot</a></li>
+<li>Protein-protein Interaction from <a href="http://www.ebi.ac.uk/Tools/webservices/psicquic/registry/registry?action=STATUS#" target="_blank">PSICQUIC</a> (a collation of most interaction databases)</li>
+<li>Domain annotations from <a href="http://pfam.sanger.ac.uk" target="_blank">Pfam</a></li>
+</ul>
+The current data dates from Jan 2014 (PDB and interactions).
+</p>
+
+<p>For our current list of supported organisms/proteomes (Human, Mouse, C.elegans, D.melanogaster, S.cerivisae, E.coli, B.subtilis and M.pneumoniae) 
+we have compared all sequences in Uniprot SPROT/VARSPLIC to the sequences of known structure using BLAST/SIFTS  to obtain a list of significant matches between the model organisms and sequences of known structure.  We use
+these matches to identify known (i.e. identical or near identical) or predicted (i.e. lower sequence similarity) sites in
+contact with proteins, chemicals or nucleic acids.</p>
+
+<p>Each site in known or predicted contact with another molecules is assigned a confidence that we have derived by a careful
+analysis of the entire dataset based on the expected False Positive Rate (FRP) as a function of percentage sequence identity between
+the sequence of interest and the particular <i>template</i> of known structure.  As sequence similarity decreases, so does the
+confidence in the prediction.</p>
+
+<p>For protein-protein interactions, we collated all interactions and grouped them carefully according to Uniref classifications
+(into Uniref100, Uniref90, Uniref50).  This allows (e.g.) interactions within Mouse to be used as evidence of an interaction between
+Human proteins, though how the interactions are used depends on your stringency settings.  Via the standard or advanced interface you
+can specify only interactions of great confidence (e.g. if studying a cancer genome) or allow for weaker evidence (e.g. if exploring
+Yeast or Bacterial interactions) as suits your particular case.</p>
+
+<p>Additionally for protein-protein interactions, we have established a metric for assessing whether any provided mutation or modification
+will increase or decrease the affinity at the interface.  To do this we used an updated matrix of amino-acid interaction preferences that
+says how favorable/disfavorable a pair of interacting amino acids is.  For example, if a hydrophobic residue (e.g. Leucine) in a hydrophobic 
+pocket is mutated to a charged residues (e.g. Aspartate) then this matrix will suggest a negative (i.e. deterimental) score for the change.</p>
+
+<p>For chemicals we have performed an automated classification via chemoinformatics tools, which we then manually processed to assign
+chemicals into about 50 groups. These groups provide specific information for chemicals or chemical types that are abundant in
+known structures (e.g. ATP-like, Zn++), and general properties (e.g. Organic) for chemicals that are unique.</p>
+
+<h2><a name="directionPPints">Predicting effect of modifications on interactions</a></h2>
+
+<p>For changes at interfaces we use <i>empirical pair potentials</i> which score the likelihood
+of amino acid side chains interacting across an interface.  Essentially these are log odds values with positive
+values indicating favored pairings and negative values unfavorable pairings.  When considering a change of
+an amino acid, we sum the scores for the original amino acid and subtract these from the sum for the changed
+amino acid.  Thus positive scores indicate a change that is expected to improve the interface (i.e. to increase
+affinity), and negative scores indicate a change expected to worsen it.
+<br>
+<br>
+The matrix of these values for protein-protein interactions can be seen <a href="/static/data/matrices/ss_mat_rbr_2014-07-30.dat">here</a>. These are an updated version of those first described in
+the paper describing the <a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/11972061">InterPReTS</a> method. The values for protein-chemical and protein-DNA/RNA interactions
+can be seen <a href="/static/data/matrices/prot_chem_class_2014-03-06.txt">here</a>.
+</p>
+
+
+<h2><a name="confidence">Confidence in predictions</a></h2>
+
+<p>
+It has long been known that the lower the sequence identity between a sequence
+and the template on which it is modelled, the less likely the predictions are to be correct.
+To put specific numbers on this we performed an assessment of how accurate predictions are by studying 
+known structures.  Specifically, we cacluated false positive rates for predicting known sites using 
+templates at various levels of identity.   Below is the table used to define the confidence intervals shown
+in the software.
+<br>
+
+<br>
+<pre>
+FPR     conf.  Prot-chem Prot-DNA/RNA Prot-prot
+ <0.500 low       <34        <41          <29
+>=0.500 medium   >=34       >=41         >=29
+>=0.200 medium   >=47       >=51         >=34
+>=0.100 high     >=64       >=56         >=37
+>=0.050 high     >=81       >=86         >=40
+>=0.010 high     >=90       >=90         >=60
+</pre>
+<br>
+For instance if one predicts a DNA binding site with an template sharing 58% identity to a Yeast
+protein, then the expected false-positive rate is approximately 10% (which we define as high confidence).
+The low/medium/high confidence limits were deduced by a consideration of the balance of positives and negatives in the dataset overall and the overall accuracy ( (TP + TN)/(TP + FP + TN + FN)), which is low <53%, medium (53-78%) and high >=78% (average values give across the three types).
+ </p>
+
+<h2><a name="contactUs">Contact</a></h2>
+<p>
+  Matthew Betts: matthew.betts@bioquant.uni-heidelberg.de<br/>
+  Rob Russell: robert.russell@bioquant.uni-heidelberg.de<br/>
+</p>
+
+   </div>
+ </div>
+</div>

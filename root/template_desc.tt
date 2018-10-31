@@ -1,0 +1,24 @@
+<br/>
+3D structure (template):
+<ul>
+  <li><a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=[% pdb.idcode %]" target="_blank">[% pdb.idcode %]-[% assembly %]-[% model %]</a>/[% frag.dom %]/[% start2 %]-[% end2 %]</li>
+  <li>Description: [% IF frag.description == '' %] - [% ELSE %] [% frag.description %] [% END %]</li>
+  <!-- [% IF seq.ids_taxa.size > 0 %] <li>Species: [% FOREACH id_taxon IN seq.ids_taxa.nsort %][% id_taxon %] [% json.taxa.${id_taxon}.scientific_name %][% END %]</li>[% END %] -->
+</ul>
+
+[% IF type_chem == 'peptide' %]
+  Domains in the template structure:
+  [% INCLUDE feature_instances.tt instances=json.feature_instances.${seq.id} seq=seq posns=[] source="Pfam" suffix=suffix %]
+
+  [%
+  #  scop_str = [];
+  #  IF frag.scops.size > 0;
+  #    FOREACH scop IN frag.scops;
+  #      scop_str.push("Scop <a href='http://scop.mrc-lmb.cam.ac.uk/scop/search.cgi?key=${scop.class}.${scop.fold}.${scop.superfamily}.${scop.family}' target='_blank'>${scop.class}.${scop.fold}.${scop.superfamily}.${scop.family}</a> (${scop.description})");
+  #    END;
+  #    scop_str = scop_str.join('; ');
+  #    "Scop: ${scop_str}<br/>";
+  #  END;
+  %]
+  <p>Protein-template similarity: [% pcid FILTER format('%.2f%%') %], E = [% e_value FILTER format('%.2e') %]</p>
+[% END %]

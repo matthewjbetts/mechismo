@@ -1,0 +1,19 @@
+[% IF id_chem == 'peptide' %]
+  <h2>Protein [% seq.name %]</h2>
+  <ul>
+    <li>Gene Name: [% seq.name %]</li>
+    <li>Primary Identifier: <a href="[% seq.url_in_source %]" target="_blank">[% seq.primary_id %]</a></li>
+    <li>Description: [% seq.description %]</li>
+    <li>Species: [% FOREACH taxon IN seq.taxa %][% taxon.scientific_name %][% END %]</li>
+    <li>Sequence Length: [% seq.len %]</li>
+  </ul>
+  Domains in this protein and sites (if given):<br/>
+  [% INCLUDE feature_instances.tt seq=seq suffix=suffix posns=posns source="Pfam" id_seq_b1=id_seq_b1 id_ch=id_ch type_chem=type_chem id_chem=id_chem id_fh=id_fh %]
+[% ELSIF id_chem == 'nucleotide' %]
+  <h2>DNA/RNA</h2>
+[% ELSE %]
+  <h2>[% type_chem %] Chemical [% id_chem %]</h2>
+  <ul>
+    <li>Chemical name: <a href='http://www.ebi.ac.uk/pdbe-srv/pdbechem/chemicalCompound/show/[% id_chem %]' target='_blank'>[% id_chem %]</a></li>
+  </ul>
+[% END %]

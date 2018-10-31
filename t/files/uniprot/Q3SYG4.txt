@@ -1,0 +1,258 @@
+ID   PTHB1_HUMAN             Reviewed;         887 AA.
+AC   Q3SYG4; P78514; Q7KYS6; Q7KYS7; Q8N570; Q99844; Q99854; Q9Y699;
+AC   Q9Y6A0;
+DT   16-MAY-2006, integrated into UniProtKB/Swiss-Prot.
+DT   11-OCT-2005, sequence version 1.
+DT   22-FEB-2012, entry version 59.
+DE   RecName: Full=Protein PTHB1;
+DE   AltName: Full=Bardet-Biedl syndrome 9 protein;
+DE   AltName: Full=Parathyroid hormone-responsive B1 gene protein;
+GN   Name=BBS9; Synonyms=PTHB1;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORMS 1 AND 5).
+RC   TISSUE=Uterus;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 20-887 (ISOFORM 2), INDUCTION, AND
+RP   TISSUE SPECIFICITY.
+RC   TISSUE=Osteosarcoma;
+RX   MEDLINE=99236731; PubMed=10221542; DOI=10.1016/S8756-3282(98)00188-4;
+RA   Adams A.E., Rosenblatt M., Suva L.J.;
+RT   "Identification of a novel parathyroid hormone-responsive gene in
+RT   human osteoblastic cells.";
+RL   Bone 24:305-313(1999).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 424-887 (ISOFORM 4), NUCLEOTIDE SEQUENCE
+RP   [MRNA] OF 611-887 (ISOFORM 1), NUCLEOTIDE SEQUENCE [MRNA] OF 435-887
+RP   (ISOFORM 3), AND NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 842-887.
+RC   TISSUE=Brain, and Spleen;
+RA   Keen T.J.;
+RT   "Positional candidates for the RP9 retinitis pigmentosa gene.";
+RL   Submitted (JAN-1997) to the EMBL/GenBank/DDBJ databases.
+RN   [4]
+RP   ALTERNATIVE SPLICING (ISOFORMS 1; 2; 4 AND 6), AND CHROMOSOMAL
+RP   TRANSLOCATION WITH OBSCN.
+RX   PubMed=12618763; DOI=10.1038/sj.onc.1206332;
+RA   Vernon E.G., Malik K., Reynolds P., Powlesland R., Dallosso A.R.,
+RA   Jackson S., Henthorn K., Green E.D., Brown K.W.;
+RT   "The parathyroid hormone-responsive B1 gene is interrupted by a
+RT   t(1;7)(q42;p15) breakpoint associated with Wilms' tumour.";
+RL   Oncogene 22:1371-1380(2003).
+RN   [5]
+RP   IDENTIFICATION BY MASS SPECTROMETRY, SUBUNIT, FUNCTION, AND
+RP   SUBCELLULAR LOCATION.
+RX   PubMed=17574030; DOI=10.1016/j.cell.2007.03.053;
+RA   Nachury M.V., Loktev A.V., Zhang Q., Westlake C.J., Peraenen J.,
+RA   Merdes A., Slusarski D.C., Scheller R.H., Bazan J.F., Sheffield V.C.,
+RA   Jackson P.K.;
+RT   "A core complex of BBS proteins cooperates with the GTPase Rab8 to
+RT   promote ciliary membrane biogenesis.";
+RL   Cell 129:1201-1213(2007).
+RN   [6]
+RP   VARIANT BBS9 ARG-141, AND TISSUE SPECIFICITY.
+RX   PubMed=16380913; DOI=10.1086/498323;
+RA   Nishimura D.Y., Swiderski R.E., Searby C.C., Berg E.M., Ferguson A.L.,
+RA   Hennekam R.C.M., Merin S., Weleber R.G., Biesecker L.G., Stone E.M.,
+RA   Sheffield V.C.;
+RT   "Comparative genomics and gene expression analysis identifies BBS9, a
+RT   new Bardet-Biedl syndrome gene.";
+RL   Am. J. Hum. Genet. 77:1021-1033(2005).
+RN   [7]
+RP   VARIANTS ILE-549; PHE-665 AND GLN-779.
+RX   PubMed=21344540; DOI=10.1002/humu.21480;
+RA   Deveault C., Billingsley G., Duncan J.L., Bin J., Theal R.,
+RA   Vincent A., Fieggen K.J., Gerth C., Noordeh N., Traboulsi E.I.,
+RA   Fishman G.A., Chitayat D., Knueppel T., Millan J.M., Munier F.L.,
+RA   Kennedy D., Jacobson S.G., Innes A.M., Mitchell G.A., Boycott K.,
+RA   Heon E.;
+RT   "BBS genotype-phenotype assessment of a multiethnic patient cohort
+RT   calls for a revision of the disease definition.";
+RL   Hum. Mutat. 32:610-619(2011).
+CC   -!- FUNCTION: The BBSome complex is required for ciliogenesis but is
+CC       dispensable for centriolar satellite function. This ciliogenic
+CC       function is mediated in part by the Rab8 GDP/GTP exchange factor,
+CC       which localizes to the basal body and contacts the BBSome.
+CC       Rab8(GTP) enters the primary cilium and promotes extension of the
+CC       ciliary membrane. Firstly the BBSome associates with the ciliary
+CC       membrane and binds to RAB3IP/Rabin8, the guanosyl exchange factor
+CC       (GEF) for Rab8 and then the Rab8-GTP localizes to the cilium and
+CC       promotes docking and fusion of carrier vesicles to the base of the
+CC       ciliary membrane.
+CC   -!- SUBUNIT: Part of BBSome complex, that contains BBS1, BBS2, BBS4,
+CC       BBS5, BBS7, BBS8, BBS9 and BBIP10. The BBSome complex binds to
+CC       PCM1 and tubulin.
+CC   -!- INTERACTION:
+CC       Q8NFJ9:BBS1; NbExp=3; IntAct=EBI-2826852, EBI-1805484;
+CC       Q9BXC9:BBS2; NbExp=2; IntAct=EBI-2826852, EBI-748297;
+CC       Q8N3I7:BBS5; NbExp=2; IntAct=EBI-2826852, EBI-2892592;
+CC       Q8TAM2:TTC8; NbExp=2; IntAct=EBI-2826852, EBI-2892638;
+CC   -!- SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, centrosome. Cell
+CC       projection, cilium membrane. Cytoplasm. Note=Localizes to
+CC       nonmembranous centriolar satellites in the cytoplasm.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=6;
+CC       Name=1;
+CC         IsoId=Q3SYG4-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=Q3SYG4-2; Sequence=VSP_018426;
+CC       Name=3;
+CC         IsoId=Q3SYG4-3; Sequence=VSP_018428;
+CC       Name=4;
+CC         IsoId=Q3SYG4-4; Sequence=VSP_018427;
+CC       Name=5;
+CC         IsoId=Q3SYG4-5; Sequence=VSP_018421, VSP_018422, VSP_018423;
+CC         Note=No experimental confirmation available;
+CC       Name=6;
+CC         IsoId=Q3SYG4-6; Sequence=VSP_018424, VSP_018425;
+CC   -!- TISSUE SPECIFICITY: Widely expressed. Expressed in adult heart,
+CC       skeletal muscle, lung, liver, kidney, placenta and brain, and in
+CC       fetal kidney, lung, liver and brain.
+CC   -!- INDUCTION: Down-regulated by parathyroid hormone.
+CC   -!- DISEASE: A chromosomal aberration involving PTHB1 is found in
+CC       Wilms tumor 5 (WT5) [MIM:601583]. Translocation t(1;7)(q42;p15)
+CC       with OBSCN.
+CC   -!- DISEASE: Defects in BBS9 are a cause of Bardet-Biedl syndrome type
+CC       9 (BBS9) [MIM:209900]. Bardet-Biedl syndrome (BBS) is a
+CC       genetically heterogeneous, autosomal recessive disorder
+CC       characterized by usually severe pigmentary retinopathy, early
+CC       onset obesity, polydactyly, hypogenitalism, renal malformation and
+CC       mental retardation.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=AAD25980.1; Type=Miscellaneous discrepancy; Note=Chimera;
+CC       Sequence=AAD25981.1; Type=Erroneous initiation;
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/BBS9";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; BC032715; AAH32715.1; -; mRNA.
+DR   EMBL; BC103831; AAI03832.1; -; mRNA.
+DR   EMBL; AF095770; AAD25980.1; ALT_SEQ; mRNA.
+DR   EMBL; AF095771; AAD25981.1; ALT_INIT; mRNA.
+DR   EMBL; U85994; AAB61918.1; -; mRNA.
+DR   EMBL; U85995; AAB61919.1; -; mRNA.
+DR   EMBL; U85997; AAB46606.1; -; Genomic_DNA.
+DR   EMBL; U87408; AAB47568.1; -; mRNA.
+DR   IPI; IPI00166804; -.
+DR   IPI; IPI00477766; -.
+DR   IPI; IPI00479833; -.
+DR   IPI; IPI00651741; -.
+DR   IPI; IPI00658164; -.
+DR   IPI; IPI00748340; -.
+DR   RefSeq; NP_001028776.1; NM_001033604.1.
+DR   RefSeq; NP_001028777.1; NM_001033605.1.
+DR   RefSeq; NP_055266.2; NM_014451.3.
+DR   RefSeq; NP_940820.1; NM_198428.2.
+DR   UniGene; Hs.372360; -.
+DR   ProteinModelPortal; Q3SYG4; -.
+DR   IntAct; Q3SYG4; 6.
+DR   STRING; Q3SYG4; -.
+DR   DMDM; 97180305; -.
+DR   PRIDE; Q3SYG4; -.
+DR   Ensembl; ENST00000242067; ENSP00000242067; ENSG00000122507.
+DR   GeneID; 27241; -.
+DR   KEGG; hsa:27241; -.
+DR   UCSC; uc003tdn.1; human.
+DR   UCSC; uc003tdo.1; human.
+DR   UCSC; uc003tdp.1; human.
+DR   UCSC; uc003tdq.1; human.
+DR   CTD; 27241; -.
+DR   GeneCards; GC07P033136; -.
+DR   H-InvDB; HIX0021908; -.
+DR   HGNC; HGNC:30000; BBS9.
+DR   HPA; HPA021289; -.
+DR   MIM; 209900; phenotype.
+DR   MIM; 601583; phenotype.
+DR   MIM; 607968; gene.
+DR   neXtProt; NX_Q3SYG4; -.
+DR   Orphanet; 110; Bardet-Biedl syndrome.
+DR   PharmGKB; PA162377359; -.
+DR   eggNOG; NOG329692; -.
+DR   GeneTree; ENSGT00390000000803; -.
+DR   HOVERGEN; HBG082225; -.
+DR   OrthoDB; EOG4Z36D1; -.
+DR   PhylomeDB; Q3SYG4; -.
+DR   NextBio; 50129; -.
+DR   ArrayExpress; Q3SYG4; -.
+DR   Bgee; Q3SYG4; -.
+DR   Genevestigator; Q3SYG4; -.
+DR   GO; GO:0034464; C:BBSome; IDA:BHF-UCL.
+DR   GO; GO:0060170; C:cilium membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0005815; C:microtubule organizing center; IEA:UniProtKB-SubCell.
+DR   GO; GO:0005634; C:nucleus; IDA:HPA.
+DR   GO; GO:0005515; F:protein binding; IPI:IntAct.
+DR   GO; GO:0045444; P:fat cell differentiation; ISS:BHF-UCL.
+DR   GO; GO:0050896; P:response to stimulus; IEA:UniProtKB-KW.
+DR   GO; GO:0007601; P:visual perception; IEA:UniProtKB-KW.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Bardet-Biedl syndrome; Cell membrane;
+KW   Cell projection; Chromosomal rearrangement; Ciliopathy; Cilium;
+KW   Complete proteome; Cytoplasm; Cytoskeleton; Disease mutation;
+KW   Membrane; Mental retardation; Obesity; Polymorphism;
+KW   Reference proteome; Sensory transduction; Vision.
+FT   CHAIN         1    887       Protein PTHB1.
+FT                                /FTId=PRO_0000235269.
+FT   VAR_SEQ       1     45       Missing (in isoform 5).
+FT                                /FTId=VSP_018421.
+FT   VAR_SEQ     339    355       HDLKGVIVTLSDDGHLQ -> QFSLWKHLLPRSSTLEK
+FT                                (in isoform 5).
+FT                                /FTId=VSP_018422.
+FT   VAR_SEQ     356    887       Missing (in isoform 5).
+FT                                /FTId=VSP_018423.
+FT   VAR_SEQ     478    518       TPDLTRTVSFSVYLKRSYTPSELEGNAVVSYSRPTDRNPDG
+FT                                -> S (in isoform 2).
+FT                                /FTId=VSP_018426.
+FT   VAR_SEQ     478    513       TPDLTRTVSFSVYLKRSYTPSELEGNAVVSYSRPTD -> N
+FT                                (in isoform 4).
+FT                                /FTId=VSP_018427.
+FT   VAR_SEQ     478    481       TPDL -> IFSS (in isoform 6).
+FT                                /FTId=VSP_018424.
+FT   VAR_SEQ     482    887       Missing (in isoform 6).
+FT                                /FTId=VSP_018425.
+FT   VAR_SEQ     878    887       EVSPLQGVSE -> GKRLDGLHKR (in isoform 3).
+FT                                /FTId=VSP_018428.
+FT   VARIANT      12     12       T -> A (in dbSNP:rs4498440).
+FT                                /FTId=VAR_051289.
+FT   VARIANT     141    141       G -> R (in BBS9).
+FT                                /FTId=VAR_026389.
+FT   VARIANT     455    455       A -> T (in dbSNP:rs11773504).
+FT                                /FTId=VAR_051290.
+FT   VARIANT     455    455       A -> V (in dbSNP:rs11773504).
+FT                                /FTId=VAR_026390.
+FT   VARIANT     521    521       R -> Q (in dbSNP:rs34218557).
+FT                                /FTId=VAR_051291.
+FT   VARIANT     549    549       T -> I (in dbSNP:rs59252892).
+FT                                /FTId=VAR_066292.
+FT   VARIANT     665    665       L -> F (in dbSNP:rs116262072).
+FT                                /FTId=VAR_066293.
+FT   VARIANT     779    779       L -> Q (in dbSNP:rs142434516).
+FT                                /FTId=VAR_066294.
+FT   CONFLICT    282    282       K -> R (in Ref. 2; AAD25981).
+FT   CONFLICT    759    759       L -> V (in Ref. 3; AAB47568).
+SQ   SEQUENCE   887 AA;  99280 MW;  8E333B7680243B7A CRC64;
+     MSLFKARDWW STILGDKEEF DQGCLCLANV DNSGNGQDKI IVGSFMGYLR IFSPHPAKTG
+     DGAQAEDLLL EVDLRDPVLQ VEVGKFVSGT EMLHLAVLHS RKLCVYSVSG TLGNVEHGNQ
+     CQMKLMYEHN LQRTACNMTY GSFGGVKGRD LICIQSMDGM LMVFEQESYA FGRFLPGFLL
+     PGPLAYSSRT DSFLTVSSCQ QVESYKYQVL AFATDADKRQ ETEQQKLGSG KRLVVDWTLN
+     IGEQALDICI VSFNQSASSV FVLGERNFFC LKDNGQIRFM KKLDWSPSCF LPYCSVSEGT
+     INTLIGNHNN MLHIYQDVTL KWATQLPHIP VAVRVGCLHD LKGVIVTLSD DGHLQCSYLG
+     TDPSLFQAPN VQSRELNYDE LDVEMKELQK IIKDVNKSQG VWPMTEREDD LNVSVVVSPN
+     FDSVSQATDV EVGTDLVPSV TVKVTLQNRV ILQKAKLSVY VQPPLELTCD QFTFEFMTPD
+     LTRTVSFSVY LKRSYTPSEL EGNAVVSYSR PTDRNPDGIP RVIQCKFRLP LKLICLPGQP
+     SKTASHKITI DTNKSPVSLL SLFPGFASQS DDDQVNVMGF HFLGGARITV LASKTSQRYR
+     IQSEQFEDLW LITNELILRL QEYFEKQGVK DFACSFSGSI PLQEYFELID HHFELRINGE
+     KLEELLSERA VQFRAIQRRL LARFKDKTPA PLQHLDTLLD GTYKQVIALA DAVEENQGNL
+     FQSFTRLKSA THLVILLIAL WQKLSADQVA ILEAAFLPLQ EDTQELGWEE TVDAAISHLL
+     KTCLSKSSKE QALNLNSQLN IPKDTSQLKK HITLLCDRLS KGGRLCLSTD AAAPQTMVMP
+     GGCTTIPESD LEERSVEQDS TELFTNHRHL TAETPRPEVS PLQGVSE
+//

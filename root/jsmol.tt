@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/js/jsmol/JSmol.min.nojq.js"></script>
+
+  <script type="text/javascript">
+    Jmol._isAsync = true;
+
+    var jmolApplet0;
+
+    var s = document.location.search;
+
+    jmol_isReady = function(applet) {};
+
+    var Info = {
+      width: 400,
+      height: 400,
+      debug: false,
+      color: "0xFFFFFF",
+      addSelectionOptions: false,
+      use: "HTML5",
+      j2sPath: "/static/js/jsmol/j2s",
+      //script: "zap; load ASYNC /static/data/pdb/ex/pdb3ex7.ent.gz; restrict model = 1; background white; colour labels black; background labels lightgrey; set showHydrogens false; wireframe off; spacefill off; colour [xEEEEEE]; backbone 50; select (hetero and !hoh); wireframe 50; spacefill 100; colour cpk; select nucleic; colour cpk;",
+      //script: "zap; load ASYNC http://www.rcsb.org/pdb/files/3ex7.pdb; restrict model = 1; background white; colour labels black; background labels lightgrey; set showHydrogens false; wireframe off; spacefill off; colour [xEEEEEE]; backbone 50; select (hetero and !hoh); wireframe 50; spacefill 100; colour cpk; select nucleic; colour cpk;",
+      script: "zap; load ASYNC /static/data/pdb/ex/pdb3ex7.ent.gz; restrict model = 1; background white; colour labels black; background labels lightgrey; set showHydrogens false; wireframe off; spacefill off; colour [xEEEEEE]; backbone 50; select (hetero and !hoh); wireframe 50; spacefill 100; colour cpk; select nucleic; colour cpk; define A2 22-413:C; define B2 3-146:A; select A2; colour [x00FFFF]; select B2; colour [xFF00FF]; define cr 248:C, 145:A; select cr; wireframe off; background labels white; select cr and (alpha, sidechain); wireframe 50; select cr and sidechain; colour cpk; define res 248:C, 248:C, 145:A; centre res; zoomto 1 {res} 0; define A2s 248:C; select A2s; wireframe off; select A2s and (alpha, sidechain); wireframe 100; colour label red; select A2s and sidechain; colour cpk; select 145A and alpha; label P145; select 248C and alpha; label 'S412F'; select (248:C and !(atomname = 'N' or atomname='CA' or atomname='O' or atomname='C' or atomname='CB')); colour pink; select (248:C and (atomname='CG' or atomname='CG1' or atomname='SG' or atomname='OG' or atomname='OG1')); spacefill 200; colour pink; select; set spinY 10;",
+      serverURL: "http://mechismo_test.russelllab.org/static/js/jsmol/php/jsmol.php",
+      readyFunction: jmol_isReady,
+      disableJ2SLoadMonitor: true,
+      disableInitialConsole: true,
+      allowJavaScript: true
+    };
+
+    $(document).ready(function() {
+      $("#appdiv").html(Jmol.getAppletHtml("jmolApplet0", Info))
+    });
+
+  </script>
+</head>
+<body>
+  <div id="appdiv"></div>
+  <a href="javascript:Jmol.script(jmolApplet0, 'if(_spinning);spin off;else;spin on;endif')">spin</a>
+  | <a href="javascript:Jmol.script(jmolApplet0,'console')">console</a>
+  | labels: <a href="javascript:Jmol.script(jmolApplet0,'set labelfront on; font label 24')">big</a> or <a href="javascript:Jmol.script(jmolApplet0,'set labelfront off; font label 12')">small</a>
+</body>
+</html>
+
+<!--
+"zap; load ASYNC /static/data/pdb/ex/pdb3ex7.ent.gz; restrict model = 1; background white; colour labels black; background labels lightgrey; set showHydrogens false; wireframe off; spacefill off; colour [xEEEEEE]; backbone 50; select (hetero and !hoh); wireframe 50; spacefill 100; colour cpk; select nucleic; colour cpk; define A2 22-413C; define B2 3-146A; select A2; colour [x00FFFF]; select B2; colour [xFF00FF]; define cr 248C, 145A; select cr; wireframe off; background labels white; select cr and (alpha, sidechain); wireframe 50; select cr and sidechain; colour cpk; define res 248C, 248C, 145A; centre res; zoomto 1 {res} 0; define A2s 248C; select A2s; wireframe off; select A2s and (alpha, sidechain); wireframe 100; colour label red; select A2s and sidechain; colour cpk; select 145A and alpha; label P145; select 248C and alpha; label \"S412F\"; select (248C and !(atomname = 'N' or atomname='CA' or atomname='O' or atomname='C' or atomname='CB')); colour pink; select (248C and (atomname='CG' or atomname='CG1' or atomname='SG' or atomname='OG' or atomname='OG1')); spacefill 200; colour pink; select; set spinY 10;",
+-->

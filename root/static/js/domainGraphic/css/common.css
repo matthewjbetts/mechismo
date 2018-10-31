@@ -1,0 +1,52 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.noteArea {
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+}
+
+.navbar-fixed-bottom {
+	min-height: 20px;
+	height: 40px;
+}
+
+div.cy {
+	border: 2px solid #888888;
+	border-radius: 0.55em 0.55em 0.55em 0.55em;
+	color: #A9A9A9;
+	float: left;
+	font-weight: 100;
+	height: 50em;
+	margin: 1em;
+	overflow: hidden !important;
+	width: 98%;
+	position: relative;
+}
+
+.cytoscape-navigatorView {
+	background: #B7E1ED;
+	opacity: 0.5;
+}
+
+.tooltip {
+    opacity: 1;
+}
+
+
+/* vertical spacers */
+.spacer5 { height: 5px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer10 { height: 10px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer15 { height: 15px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer20 { height: 20px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer25 { height: 25px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer30 { height: 30px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer35 { height: 35px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer40 { height: 40px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer45 { height: 45px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer50 { height: 50px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }

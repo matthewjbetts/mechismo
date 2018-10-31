@@ -1,0 +1,43 @@
+[%
+  job_title = [];
+
+  IF json.params.search_name.defined && json.params.search_name != '';
+    job_title.push(json.params.search_name);
+  END;
+
+  IF json.params.search_file.defined && json.params.search_file != '';
+    job_title.push(json.params.search_file);
+  END;
+
+  IF job_title.size > 0;
+    job_title = job_title.join(', ');
+    "<h2>${job_title}</h2>";
+  END;
+%]
+<!-- 
+<p>The input file contained [X] genes and [Y] sites which
+were allowed to match to species: [Species].  
+-->
+<p>Sequence identity thresholds: [% json.params.processed.min_pcid %]% for structure matches,
+[% json.params.processed.min_pcid_homo %]% / [% json.params.processed.min_pcid_hetero %]% for homo-/hetero-dimeric prot-prot interactions, 
+[% json.params.processed.min_pcid_chem %]% for prot-chem and [% json.params.processed.min_pcid_nuc %]% for prot-DNA/RNA interactions.  
+Proteins in experimental protein interactions were grouped using [% json.params.processed.known_level %], and interactions were also
+considered to be reliable if both proteins had at least [% json.params.processed.min_pcid_known %]% seq identity to an interaction of 3D structure.  
+
+Protein-protein interactions were considered to be reliable if they had a
+<a href="https://string-db.org/" target="_blank">STRING</a>
+score >= [% json.params.processed.known_min_string_score %] or
+both proteins had at least [% json.params.processed.min_pcid_known %]%
+sequence identity to a 3D structure of an interaction.  
+
+[%
+  IF json.params.processed.known_max_n_prots.defined;
+    IF json.params.processed.known_max_n_prots == 1;
+      "Known interactions involving more than 1 were ignored.";
+    ELSIF json.params.processed.known_max_n_prots > 1;
+      "Known interactions involving more than ${json.params.processed.known_max_n_prots} proteins were ignored.";
+    END;
+  END;
+%]
+</p>
+

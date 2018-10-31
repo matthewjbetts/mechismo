@@ -1,0 +1,167 @@
+<script type="text/javascript">
+  var jmolApplet0;
+
+  var use = "HTML5";
+  var s = document.location.search;
+
+  jmol_isReady = function(applet) {};		
+</script>
+
+[%
+  USE JSON (convert_blessed => 1);
+  USE String;
+%]
+
+[%
+  fh        = json.results.thing.frag_hit;
+  type_chem = json.results.thing.type_chem;
+  id_chem   = json.results.thing.id_chem;
+  id_fh     = json.results.thing.id_fh;
+  id_seq_a1 = fh.id_seq1;
+  seq_a1    = fh.seq1;
+  id_seq_a2 = fh.id_seq2;
+  seq_a2    = fh.seq2;
+  frag      = seq_a2.frag;
+  pdb       = frag.pdb;
+  posns_a1  = json.results.thing.sites.${id_seq_a1}.keys.nsort;
+%]
+
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+      [% INCLUDE seq_desc.tt seq=seq_a1 suffix="_a1" posns=posns_a1 type_chem=type_chem id_chem=id_chem id_fh=id_fh %]
+      [% INCLUDE template_desc.tt seq=seq_a2 frag=frag pdb=pdb assembly=0 model=0 start2=fh.start2 end2=fh.end2 pcid=fh.pcid e_value=fh.e_value %]
+
+[% 
+  ids_seqs = [id_seq_a1, id_seq_a2];
+  names = {};
+  names.${id_seq_a1} = seq_a1.name;
+  names.${id_seq_a2} = pdb.idcode _ '-0-0' _ frag.dom;
+  posns = {};
+  posns.${id_seq_a1} = posns_a1;
+  INCLUDE alignment.tt aln=fh.aln pcid=fh.pcid e_value=fh.e_value ids_seqs=ids_seqs names=names posns=posns;
+%]
+
+Template from:<br/>
+[% INCLUDE pdb_desc.tt pdb=pdb assembly=0 %]<br/>
+
+[%
+#fn_pdb = "/static/data/pdb/" _ pdb.idcode.substr(1, 2) _ "/pdb" _ pdb.idcode _ ".ent.gz; restrict model = 1";
+fn_pdb = "http://www.rcsb.org/pdb/files/" _ pdb.idcode _ ".pdb; restrict model = 1";
+jsmol_script = [
+  "zap",
+  "load ASYNC ${fn_pdb}",
+  "background white",
+  "colour labels black",
+  "background labels lightgrey",
+  "set showHydrogens false",
+  "wireframe off",
+  "spacefill off",
+  "colour [xEEEEEE]",
+  "backbone 50",
+  "select (hetero and !hoh)",
+  "wireframe 50",
+  "spacefill 100",
+  "colour cpk",
+  "select nucleic",
+  "colour cpk",
+
+  "define A2 ${frag.jmol_str}",
+
+  "select A2",
+  "colour [x${colours.A2}]",
+];
+
+# Jmol selection strings for sidechain-sidechain contact residues involving sites
+jsmol_strs = fh.jsmol_ss_str(posns_a1, json.results.thing.sites.${id_seq_a1});
+site_resns_a2 = jsmol_strs.0;
+atomdiffs_a2 = jsmol_strs.1;
+lcas_a2 = jsmol_strs.2;
+a1_to_pdbres = jsmol_strs.3;
+labels_by_pdbres = jsmol_strs.4;
+
+IF site_resns_a2;
+  jsmol_script.push(
+    "define A2s $site_resns_a2",
+    "select A2s",
+    "wireframe off", # may be a hetatm and have had wireframe turned on for all atoms (inc mainchain)
+    "select A2s and (alpha, sidechain)",
+    "wireframe 100",
+    "colour label red",
+    "select A2s and sidechain",
+    "colour cpk",
+    "define res $site_resns_a2"
+    "centre res",
+    "zoomto 1 {res} 0",
+  );
+END;
+
+FOREACH pdbres IN labels_by_pdbres.keys;
+  label = labels_by_pdbres.${pdbres};
+  jsmol_script.push("select $pdbres and alpha", "label $label");
+END;
+
+FOREACH pos_a1 IN posns_a1;
+  pdbres_a2 = a1_to_pdbres.${pos_a1};
+  IF pdbres_a2.defined;
+    colour = json.results.thing.sites.${id_seq_a1}.${pos_a1}.colour;
+    bg_colour = json.results.thing.sites.${id_seq_a1}.${pos_a1}.bg_colour;
+    IF colour.defined && (colour != "");
+      IF bg_colour.defined && (bg_colour != "");
+        jsmol_script.push("select $pdbres_a2", "colour label $colour", "background labels $bg_colour");
+      ELSE;
+        jsmol_script.push("select $pdbres_a2", "colour label $colour");
+      END;
+    ELSIF bg_colour.defined && (bg_colour != "");
+      jsmol_script.push("select $pdbres_a2", "background labels $bg_colour");
+    END;
+  END;
+END;
+
+IF atomdiffs_a2;
+  jsmol_script.push(
+    "select ${atomdiffs_a2}",
+    "colour pink",
+  );
+END;
+
+IF lcas_a2;
+  jsmol_script.push(
+    "select ${lcas_a2}",
+    "spacefill 200",
+    "colour pink",
+  );
+END;
+
+jsmol_script.push(
+  "select",
+  "set spinY 10",
+);
+
+jsmol_script = jsmol_script.join("; ") _ ";";
+%]
+
+<div class="jsmol" data-script-id="jsmol-script"></div>
+<div id="jsmol-script" class="jsmol-script">[% jsmol_script %]</div>
+
+<!--
+<div class="contactMap">
+  <div class="seqsA">[[% seq_a1.json %], [% seq_a2.json %]]</div>
+  <div class="seqsB">[[% seq_a1.json %], [% seq_a2.json %]]</div>
+  <div class="alnA">[% fh.aln.json %]</div>
+  <div class="alnB">[% fh.aln.json %]</div>
+  <div class="contacts">[% json.res_contacts.json %]</div>
+</div>
+-->
+  In the structure above the region corresponding to your protein is in cyan (greenish blue) and shown as
+  C-alpha trace.  Sites specified are labelled red.  DNA/RNA are shown as gold trace, and small-molecules
+  are shown as ball-and-stick in CPK colour (grey=carbon, red=oxygen, blue=nitrogen, etc).  Residues shown
+  in pink are those where the residue in the <i>template</i> (i.e. known 3D structure) are different from
+  the residue in the protein of interest.  For these the larger sphere shows the approximate position of the
+  amino acid side-chain.
+    </div>
+  </div>
+</div>
+
+
+<!-- [% INCLUDE thresholds.tt %] -->

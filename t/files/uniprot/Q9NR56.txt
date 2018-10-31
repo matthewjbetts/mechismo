@@ -1,0 +1,233 @@
+ID   MBNL1_HUMAN             Reviewed;         388 AA.
+AC   Q9NR56; O43311; O43797;
+DT   16-NOV-2001, integrated into UniProtKB/Swiss-Prot.
+DT   16-NOV-2001, sequence version 2.
+DT   21-MAR-2012, entry version 91.
+DE   RecName: Full=Muscleblind-like protein 1;
+DE   AltName: Full=Triplet-expansion RNA-binding protein;
+GN   Name=MBNL1; Synonyms=EXP, KIAA0428, MBNL;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RA   Borsani G., Barbieri A.;
+RL   Submitted (JUN-1997) to the EMBL/GenBank/DDBJ databases.
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 2).
+RC   TISSUE=Brain;
+RX   MEDLINE=98116655; PubMed=9455477; DOI=10.1093/dnares/4.5.307;
+RA   Ishikawa K., Nagase T., Nakajima D., Seki N., Ohira M., Miyajima N.,
+RA   Tanaka A., Kotani H., Nomura N., Ohara O.;
+RT   "Prediction of the coding sequences of unidentified human genes. VIII.
+RT   78 new cDNA clones from brain which code for large proteins in
+RT   vitro.";
+RL   DNA Res. 4:307-313(1997).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 3), FUNCTION, ALTERNATIVE
+RP   SPLICING, SUBCELLULAR LOCATION, RNA-BINDING, TISSUE SPECIFICITY, ROLE
+RP   IN MYOTONIC DYSTROPHY, AND IDENTIFICATION BY MASS SPECTROMETRY.
+RX   MEDLINE=20428414; PubMed=10970838; DOI=10.1093/emboj/19.17.4439;
+RA   Miller J.W., Urbinati C.R., Teng-Umnuay P., Stenberg M.G., Byrne B.J.,
+RA   Thornton C.A., Swanson M.S.;
+RT   "Recruitment of human muscleblind proteins to (CUG)(n) expansions
+RT   associated with myotonic dystrophy.";
+RL   EMBO J. 19:4439-4448(2000).
+RN   [4]
+RP   SUBCELLULAR LOCATION, AND TISSUE SPECIFICITY.
+RX   MEDLINE=21927047; PubMed=11929853; DOI=10.1093/hmg/11.7.805;
+RA   Fardaei M., Rogers M.T., Thorpe H.M., Larkin K., Hamshere M.G.,
+RA   Harper P.S., Brook J.D.;
+RT   "Three proteins, MBNL, MBLL and MBXL, co-localize in vivo with nuclear
+RT   foci of expanded-repeat transcripts in DM1 and DM2 cells.";
+RL   Hum. Mol. Genet. 11:805-814(2002).
+RN   [5]
+RP   FUNCTION, AND RNA-BINDING.
+RX   PubMed=15257297; DOI=10.1038/sj.emboj.7600300;
+RA   Ho T.H., Charlet-B N., Poulos M.G., Singh G., Swanson M.S.,
+RA   Cooper T.A.;
+RT   "Muscleblind proteins regulate alternative splicing.";
+RL   EMBO J. 23:3103-3112(2004).
+RN   [6]
+RP   FUNCTION, INTERACTION WITH HNRNPH1, AND RNA-BINDING.
+RX   PubMed=16946708; DOI=10.1038/sj.emboj.7601296;
+RA   Paul S., Dansithong W., Kim D., Rossi J., Webster N.J., Comai L.,
+RA   Reddy S.;
+RT   "Interaction of muscleblind, CUG-BP1 and hnRNP H proteins in DM1-
+RT   associated aberrant IR splicing.";
+RL   EMBO J. 25:4271-4283(2006).
+RN   [7]
+RP   FUNCTION, INTERACTION WITH DDX1 AND YBX1, SUBCELLULAR LOCATION, AND
+RP   IDENTIFICATION BY MASS SPECTROMETRY.
+RX   PubMed=18335541; DOI=10.1002/jnr.21655;
+RA   Onishi H., Kino Y., Morita T., Futai E., Sasagawa N., Ishiura S.;
+RT   "MBNL1 associates with YB-1 in cytoplasmic stress granules.";
+RL   J. Neurosci. Res. 86:1994-2002(2008).
+RN   [8]
+RP   FUNCTION, AND RNA-BINDING.
+RX   PubMed=19470458; DOI=10.1073/pnas.0900342106;
+RA   Warf M.B., Diegel J.V., von Hippel P.H., Berglund J.A.;
+RT   "The protein factors MBNL1 and U2AF65 bind alternative RNA structures
+RT   to regulate splicing.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 106:9203-9208(2009).
+RN   [9]
+RP   X-RAY CRYSTALLOGRAPHY (1.50 ANGSTROMS) OF 9-90 IN COMPLEX WITH ZINC
+RP   IONS AND 178-246 IN COMPLEX WITH ZINC IONS AND RNA, AND RNA-BINDING.
+RX   PubMed=19043415; DOI=10.1038/nsmb.1519;
+RA   Teplova M., Patel D.J.;
+RT   "Structural insights into RNA recognition by the alternative-splicing
+RT   regulator muscleblind-like MBNL1.";
+RL   Nat. Struct. Mol. Biol. 15:1343-1351(2008).
+CC   -!- FUNCTION: Mediates pre-mRNA alternative splicing regulation. Acts
+CC       either as activator or repressor of splicing on specific pre-mRNA
+CC       targets. Inhibits cardiac troponin-T (TNNT2) pre-mRNA exon
+CC       inclusion but induces insulin receptor (IR) pre-mRNA exon
+CC       inclusion in muscle. Antagonizes the alternative splicing activity
+CC       pattern of CELF proteins. Regulates the TNNT2 exon 5 skipping
+CC       through competition with U2AF2. Inhibits the formation of the
+CC       spliceosome A complex on intron 4 of TNNT2 pre-mRNA. Binds to the
+CC       stem-loop structure within the polypyrimidine tract of TNNT2
+CC       intron 4 during spliceosome assembly. Binds to the 5'-YGCU(U/G)Y-
+CC       3'consensus sequence. Binds to the IR RNA. Binds to expanded CUG
+CC       repeat RNA, which folds into a hairpin structure containing GC
+CC       base pairs and bulged, unpaired U residues.
+CC   -!- SUBUNIT: Interacts with DDX1 and YBX1. Interacts with HNRNPH1; the
+CC       interaction in RNA-independent.
+CC   -!- SUBCELLULAR LOCATION: Nucleus. Cytoplasm. Cytoplasmic granule.
+CC       Note=Localized with DDX1, TIAL1 and YBX1 in stress granules upon
+CC       stress. Localized in the cytoplasm of multinucleated myotubes.
+CC       Colocalizes with nuclear foci of retained expanded-repeat
+CC       transcripts in myotubes from patients affected by myotonic
+CC       dystrophy.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=3;
+CC       Name=1; Synonyms=EXP42;
+CC         IsoId=Q9NR56-1; Sequence=Displayed;
+CC       Name=2; Synonyms=EXP40;
+CC         IsoId=Q9NR56-2; Sequence=VSP_006430;
+CC       Name=3; Synonyms=EXP35;
+CC         IsoId=Q9NR56-3; Sequence=VSP_006429, VSP_006430;
+CC   -!- TISSUE SPECIFICITY: Highly expressed in cardiac, skeletal muscle
+CC       and during myoblast differentiation. Weakly expressed in other
+CC       tissues (at protein level). Expressed in heart, brain, placenta,
+CC       lung, liver, skeletal muscle, kidney and pancreas.
+CC   -!- DISEASE: Plays a role in the pathogenesis of dystrophia myotonica
+CC       type 1 (DM1) [MIM:160900]. A muscular disorder characterized by
+CC       myotonia, muscle wasting in the distal extremities, cataract,
+CC       hypogonadism, defective endocrine functions, male baldness and
+CC       cardiac arrhythmias. Note=In muscle cells from DM1 patients, MBNL1
+CC       is sequestered by DMPK RNAs containing CUG triplet repeat
+CC       expansions. MBNL1 binding is proportional to repeat length
+CC       consistent with the direct correlation between the length of
+CC       repeat expansion and disease severity.
+CC   -!- SIMILARITY: Belongs to the muscleblind family.
+CC   -!- SIMILARITY: Contains 4 C3H1-type zinc fingers.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=BAA24858.2; Type=Erroneous initiation;
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; Y13829; CAA74155.1; -; mRNA.
+DR   EMBL; AB007888; BAA24858.2; ALT_INIT; mRNA.
+DR   EMBL; AF255334; AAF76138.1; -; mRNA.
+DR   IPI; IPI00021692; -.
+DR   IPI; IPI00218263; -.
+DR   IPI; IPI00410205; -.
+DR   RefSeq; NP_066368.2; NM_021038.3.
+DR   RefSeq; NP_997175.1; NM_207292.1.
+DR   RefSeq; NP_997176.1; NM_207293.1.
+DR   RefSeq; NP_997177.1; NM_207294.1.
+DR   RefSeq; NP_997178.1; NM_207295.1.
+DR   RefSeq; NP_997179.1; NM_207296.1.
+DR   RefSeq; NP_997180.1; NM_207297.1.
+DR   UniGene; Hs.201858; -.
+DR   UniGene; Hs.725347; -.
+DR   PDB; 3D2N; X-ray; 2.70 A; A=9-90.
+DR   PDB; 3D2Q; X-ray; 1.50 A; A/B/C/D=178-246.
+DR   PDB; 3D2S; X-ray; 1.70 A; A/B/C/D=178-246.
+DR   PDBsum; 3D2N; -.
+DR   PDBsum; 3D2Q; -.
+DR   PDBsum; 3D2S; -.
+DR   ProteinModelPortal; Q9NR56; -.
+DR   SMR; Q9NR56; 11-86, 178-244.
+DR   IntAct; Q9NR56; 13.
+DR   MINT; MINT-3072751; -.
+DR   STRING; Q9NR56; -.
+DR   DMDM; 17369313; -.
+DR   PeptideAtlas; Q9NR56; -.
+DR   PRIDE; Q9NR56; -.
+DR   DNASU; 4154; -.
+DR   Ensembl; ENST00000282486; ENSP00000282486; ENSG00000152601.
+DR   Ensembl; ENST00000463374; ENSP00000418108; ENSG00000152601.
+DR   GeneID; 4154; -.
+DR   KEGG; hsa:4154; -.
+DR   UCSC; uc003ezi.1; human.
+DR   UCSC; uc003ezm.1; human.
+DR   UCSC; uc003ezo.1; human.
+DR   CTD; 4154; -.
+DR   GeneCards; GC03P151961; -.
+DR   HGNC; HGNC:6923; MBNL1.
+DR   HPA; CAB016398; -.
+DR   MIM; 160900; phenotype.
+DR   MIM; 606516; gene.
+DR   neXtProt; NX_Q9NR56; -.
+DR   eggNOG; NOG241142; -.
+DR   GeneTree; ENSGT00390000001586; -.
+DR   HOGENOM; HBG446050; -.
+DR   HOVERGEN; HBG006999; -.
+DR   InParanoid; Q9NR56; -.
+DR   KO; K14943; -.
+DR   OMA; YQRGNCT; -.
+DR   OrthoDB; EOG4BRWN5; -.
+DR   PhylomeDB; Q9NR56; -.
+DR   NextBio; 16346; -.
+DR   ArrayExpress; Q9NR56; -.
+DR   Bgee; Q9NR56; -.
+DR   CleanEx; HS_MBNL1; -.
+DR   Genevestigator; Q9NR56; -.
+DR   GermOnline; ENSG00000152601; Homo sapiens.
+DR   GO; GO:0010494; C:cytoplasmic stress granule; IDA:UniProtKB.
+DR   GO; GO:0005634; C:nucleus; IDA:UniProtKB.
+DR   GO; GO:0003725; F:double-stranded RNA binding; IDA:UniProtKB.
+DR   GO; GO:0005515; F:protein binding; IPI:UniProtKB.
+DR   GO; GO:0008270; F:zinc ion binding; IEA:InterPro.
+DR   GO; GO:0030326; P:embryonic limb morphogenesis; ISS:UniProtKB.
+DR   GO; GO:0001701; P:in utero embryonic development; ISS:UniProtKB.
+DR   GO; GO:0045445; P:myoblast differentiation; ISS:UniProtKB.
+DR   GO; GO:0007399; P:nervous system development; ISS:UniProtKB.
+DR   InterPro; IPR000571; Znf_CCCH.
+DR   SMART; SM00356; ZnF_C3H1; 4.
+DR   PROSITE; PS50103; ZF_C3H1; 4.
+PE   1: Evidence at protein level;
+KW   3D-structure; Alternative splicing; Complete proteome; Cytoplasm;
+KW   Metal-binding; mRNA processing; mRNA splicing; Nucleus;
+KW   Reference proteome; Repeat; RNA-binding; Zinc; Zinc-finger.
+FT   CHAIN         1    388       Muscleblind-like protein 1.
+FT                                /FTId=PRO_0000089178.
+FT   ZN_FING      13     41       C3H1-type 1.
+FT   ZN_FING      47     73       C3H1-type 2.
+FT   ZN_FING     179    207       C3H1-type 3.
+FT   ZN_FING     215    241       C3H1-type 4.
+FT   VAR_SEQ     116    183       Missing (in isoform 3).
+FT                                /FTId=VSP_006429.
+FT   VAR_SEQ     270    287       Missing (in isoform 3 and isoform 2).
+FT                                /FTId=VSP_006430.
+FT   STRAND      181    184
+FT   HELIX       186    189
+FT   STRAND      201    203
+FT   TURN        213    216
+FT   STRAND      217    220
+FT   HELIX       222    225
+FT   HELIX       241    244
+SQ   SEQUENCE   388 AA;  41817 MW;  118D256A81A86695 CRC64;
+     MAVSVTPIRD TKWLTLEVCR EFQRGTCSRP DTECKFAHPS KSCQVENGRV IACFDSLKGR
+     CSRENCKYLH PPPHLKTQLE INGRNNLIQQ KNMAMLAQQM QLANAMMPGA PLQPVPMFSV
+     APSLATNASA AAFNPYLGPV SPSLVPAEIL PTAPMLVTGN PGVPVPAAAA AAAQKLMRTD
+     RLEVCREYQR GNCNRGENDC RFAHPADSTM IDTNDNTVTV CMDYIKGRCS REKCKYFHPP
+     AHLQAKIKAA QYQVNQAAAA QAAATAAAMT QSAVKSLKRP LEATFDLGIP QAVLPPLPKR
+     PALEKTNGAT AVFNTGIFQY QQALANMQLQ QHTAFLPPVP MVHGATPATV SAATTSATSV
+     PFAATATANQ IPIISAEHLT SHKYVTQM
+//

@@ -1,0 +1,629 @@
+ID   THYG_HUMAN              Reviewed;        2768 AA.
+AC   P01266; O15274; O43899; Q15593; Q15948; Q9NYR1; Q9NYR2; Q9UMZ0;
+AC   Q9UNY3;
+DT   21-JUL-1986, integrated into UniProtKB/Swiss-Prot.
+DT   20-FEB-2007, sequence version 5.
+DT   22-FEB-2012, entry version 142.
+DE   RecName: Full=Thyroglobulin;
+DE            Short=Tg;
+DE   Flags: Precursor;
+GN   Name=TG;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), AND VARIANTS ASP-604; ASP-653;
+RP   GLN-985 DEL; TYR-1043; THR-1059; GLY-1312; ARG-1437; HIS-1463;
+RP   THR-1936; GLU-2091; LEU-2149; ARG-2170 AND HIS-2242.
+RX   MEDLINE=87246630; PubMed=3595599;
+RX   DOI=10.1111/j.1432-1033.1987.tb11466.x;
+RA   Malthiery Y., Lissitzky S.;
+RT   "Primary structure of human thyroglobulin deduced from the sequence of
+RT   its 8448-base complementary DNA.";
+RL   Eur. J. Biochem. 165:491-498(1987).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), AND VARIANT GLY-1312.
+RC   TISSUE=Thyroid;
+RX   MEDLINE=97329813; PubMed=9186272;
+RA   van de Graaf S.A.R., Pauws E., de Vijlder J.J.M., Ris-Stalpers C.;
+RT   "The revised 8307 base pair coding sequence of human thyroglobulin
+RT   transiently expressed in eukaryotic cells.";
+RL   Eur. J. Endocrinol. 136:508-515(1997).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA], AND VARIANT GLU-515.
+RX   PubMed=16421571; DOI=10.1038/nature04406;
+RA   Nusbaum C., Mikkelsen T.S., Zody M.C., Asakawa S., Taudien S.,
+RA   Garber M., Kodira C.D., Schueler M.G., Shimizu A., Whittaker C.A.,
+RA   Chang J.L., Cuomo C.A., Dewar K., FitzGerald M.G., Yang X.,
+RA   Allen N.R., Anderson S., Asakawa T., Blechschmidt K., Bloom T.,
+RA   Borowsky M.L., Butler J., Cook A., Corum B., DeArellano K.,
+RA   DeCaprio D., Dooley K.T., Dorris L. III, Engels R., Gloeckner G.,
+RA   Hafez N., Hagopian D.S., Hall J.L., Ishikawa S.K., Jaffe D.B.,
+RA   Kamat A., Kudoh J., Lehmann R., Lokitsang T., Macdonald P.,
+RA   Major J.E., Matthews C.D., Mauceli E., Menzel U., Mihalev A.H.,
+RA   Minoshima S., Murayama Y., Naylor J.W., Nicol R., Nguyen C.,
+RA   O'Leary S.B., O'Neill K., Parker S.C.J., Polley A., Raymond C.K.,
+RA   Reichwald K., Rodriguez J., Sasaki T., Schilhabel M., Siddiqui R.,
+RA   Smith C.L., Sneddon T.P., Talamas J.A., Tenzin P., Topham K.,
+RA   Venkataraman V., Wen G., Yamazaki S., Young S.K., Zeng Q.,
+RA   Zimmer A.R., Rosenthal A., Birren B.W., Platzer M., Shimizu N.,
+RA   Lander E.S.;
+RT   "DNA sequence and analysis of human chromosome 8.";
+RL   Nature 439:331-335(2006).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 1-730, AND VARIANTS ASP-604 AND ASP-653.
+RX   MEDLINE=85127024; PubMed=3971976;
+RX   DOI=10.1111/j.1432-1033.1985.tb08717.x;
+RA   Malthiery Y., Lissitzky S.;
+RT   "Sequence of the 5'-end quarter of the human-thyroglobulin messenger
+RT   ribonucleic acid and of its deduced amino-acid sequence.";
+RL   Eur. J. Biochem. 147:53-58(1985).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1-415; 640-737 AND 880-1000, AND
+RP   VARIANT ALA-734.
+RX   MEDLINE=88062712; PubMed=3681978; DOI=10.1016/0022-2836(87)90403-7;
+RA   Parma J., Christophe D., Pohl V., Vassart G.;
+RT   "Structural organization of the 5' region of the thyroglobulin gene.
+RT   Evidence for intron loss and 'exonization' during evolution.";
+RL   J. Mol. Biol. 196:769-779(1987).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1-25.
+RX   MEDLINE=85269632; PubMed=2991855; DOI=10.1093/nar/13.14.5127;
+RA   Christophe D., Cabrer B., Bacolla A., Targovnik H.M., Pohl V.,
+RA   Vassart G.;
+RT   "An unusually long poly(purine)-poly(pyrimidine) sequence is located
+RT   upstream from the human thyroglobulin gene.";
+RL   Nucleic Acids Res. 13:5127-5144(1985).
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1002-1566 (ISOFORM 1), AND
+RP   VARIANT GLY-1312.
+RX   MEDLINE=21064424; PubMed=11124863; DOI=10.1530/eje.0.1430789;
+RA   Moya C.M., Mendive F.M., Rivolta C.M., Vassart G., Targovnik H.M.;
+RT   "Genomic organization of the 5' region of the human thyroglobulin
+RT   gene.";
+RL   Eur. J. Endocrinol. 143:789-798(2000).
+RN   [8]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1645-2768, AND VARIANTS LEU-2149
+RP   AND ARG-2170.
+RX   MEDLINE=99452200; PubMed=10524569;
+RA   Mendive F.M., Rivolta C.M., Vassart G., Targovnik H.M.;
+RT   "Genomic organization of the 3' region of the human thyroglobulin
+RT   gene.";
+RL   Thyroid 9:903-912(1999).
+RN   [9]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 1504-1602 (ISOFORM 2).
+RX   MEDLINE=92347597; PubMed=1639210; DOI=10.1016/0303-7207(92)90087-M;
+RA   Targovnik H.M., Cochaux P., Corach D., Vassart G.;
+RT   "Identification of a minor Tg mRNA transcript in RNA from normal and
+RT   goitrous thyroids.";
+RL   Mol. Cell. Endocrinol. 84:R23-R26(1992).
+RN   [10]
+RP   PARTIAL PROTEIN SEQUENCE.
+RX   MEDLINE=89121111; PubMed=2914619; DOI=10.1016/0014-5793(89)80513-7;
+RA   Marriq C., Lejeune P.J., Venot N., Vinet L.;
+RT   "Hormone synthesis in human thyroglobulin: possible cleavage of the
+RT   polypeptide chain at the tyrosine donor site.";
+RL   FEBS Lett. 242:414-418(1989).
+RN   [11]
+RP   PARTIAL PROTEIN SEQUENCE.
+RX   MEDLINE=94094855; PubMed=8269951;
+RX   DOI=10.1111/j.1432-1033.1993.tb18414.x;
+RA   Gentile F., Salvatore G.;
+RT   "Preferential sites of proteolytic cleavage of bovine, human and rat
+RT   thyroglobulin. The use of limited proteolysis to detect solvent-
+RT   exposed regions of the primary structure.";
+RL   Eur. J. Biochem. 218:603-621(1993).
+RN   [12]
+RP   PARTIAL PROTEIN SEQUENCE.
+RX   MEDLINE=95314327; PubMed=7793989; DOI=10.1006/abbi.1995.1346;
+RA   Xiao S., Pollock H.G., Taurog A., Rawitch A.B.;
+RT   "Characterization of hormonogenic sites in an N-terminal, cyanogen
+RT   bromide fragment of human thyroglobulin.";
+RL   Arch. Biochem. Biophys. 320:96-105(1995).
+RN   [13]
+RP   PARTIAL PROTEIN SEQUENCE, GLYCOSYLATION AT ASN-76; ASN-198; ASN-484;
+RP   ASN-529; ASN-748; ASN-816; ASN-947; ASN-1220; ASN-1348; ASN-1349;
+RP   ASN-1365; ASN-1716; ASN-1774; ASN-2013; ASN-2250; ASN-2295 AND
+RP   ASN-2582, AND ABSENCE OF GLYCOSYLATION AT ASN-110; ASN-496; ASN-1869
+RP   AND ASN-2122.
+RX   MEDLINE=96201348; PubMed=8615697; DOI=10.1006/abbi.1996.0093;
+RA   Yang S.X., Pollock H.G., Rawitch A.B.;
+RT   "Glycosylation in human thyroglobulin: location of the N-linked
+RT   oligosaccharide units and comparison with bovine thyroglobulin.";
+RL   Arch. Biochem. Biophys. 327:61-70(1996).
+RN   [14]
+RP   PRESENCE OF A 11TH TYROGLOBULIN TYPE-1 REPEAT.
+RX   MEDLINE=96390872; PubMed=8797845;
+RX   DOI=10.1111/j.1432-1033.1996.0125h.x;
+RA   Molina F., Bouanani M., Pau B., Granier C.;
+RT   "Characterization of the type-1 repeat from thyroglobulin, a cysteine-
+RT   rich module found in proteins from different families.";
+RL   Eur. J. Biochem. 240:125-133(1996).
+RN   [15]
+RP   IODINATION AT TYR-24; TYR-1310; TYR-2573; TYR-2587 AND TYR-2766.
+RX   MEDLINE=89340430; PubMed=2760035;
+RA   Lamas L., Anderson P.C., Fox J.W., Dunn J.T.;
+RT   "Consensus sequences for early iodination and hormonogenesis in human
+RT   thyroglobulin.";
+RL   J. Biol. Chem. 264:13541-13545(1989).
+RN   [16]
+RP   SULFATION.
+RX   MEDLINE=99382264; PubMed=10448091; DOI=10.1006/bbrc.1999.1173;
+RA   Nlend M.-C., Cauvi D., Venot N., Chabaud O.;
+RT   "Sulfated tyrosines of thyroglobulin are involved in thyroid hormone
+RT   synthesis.";
+RL   Biochem. Biophys. Res. Commun. 262:193-197(1999).
+RN   [17]
+RP   SULFATION AT TYR-24.
+RX   MEDLINE=22275644; PubMed=12387814; DOI=10.1016/S0006-291X(02)02425-7;
+RA   Venot N., Nlend M.-C., Cauvi D., Chabaud O.;
+RT   "The hormonogenic tyrosine 5 of porcine thyroglobulin is sulfated.";
+RL   Biochem. Biophys. Res. Commun. 298:193-197(2002).
+RN   [18]
+RP   GLYCOSYLATION AT SER-2749.
+RX   PubMed=16679516; DOI=10.1074/jbc.M513382200;
+RA   Conte M., Arcaro A., D'Angelo D., Gnata A., Mamone G., Ferranti P.,
+RA   Formisano S., Gentile F.;
+RT   "A single chondroitin 6-sulfate oligosaccharide unit at Ser-2730 of
+RT   human thyroglobulin enhances hormone formation and limits proteolytic
+RT   accessibility at the carboxyl terminus. Potential insights into
+RT   thyroid homeostasis and autoimmunity.";
+RL   J. Biol. Chem. 281:22200-22211(2006).
+RN   [19]
+RP   VARIANT HIS-870.
+RX   MEDLINE=93164775; PubMed=8094490; DOI=10.1016/0140-6736(93)90209-Y;
+RA   Corral J., Martin C., Perez R., Sanchez I., Mories M.T.,
+RA   San Millan J.L., Miralles J.M., Gonzalez-Sarmiento R.;
+RT   "Thyroglobulin gene point mutation associated with non-endemic simple
+RT   goitre.";
+RL   Lancet 341:462-464(1993).
+RN   [20]
+RP   VARIANTS TDH3 ARG-1264 AND SER-1996, AND VARIANTS HIS-135; ASP-604;
+RP   ASP-653; ALA-734; GLU-830; GLN-985 DEL; VAL-1028; TYR-1043; THR-1059;
+RP   ARG-1437; HIS-1463; ASN-1838; THR-1936; TRP-1999; GLU-2091; LEU-2149;
+RP   ARG-2170; HIS-2242; ARG-2501 AND GLN-2530.
+RX   MEDLINE=99213884; PubMed=10199792; DOI=10.1210/jc.84.4.1438;
+RA   Hishinuma A., Takamatsu J., Ohyama Y., Yokozawa T., Kanno Y., Kuma K.,
+RA   Yoshida S., Matsuura N., Ieiri T.;
+RT   "Two novel cysteine substitutions (C1263R and C1995S) of thyroglobulin
+RT   cause a defect in intracellular transport of thyroglobulin in patients
+RT   with congenital goiter and the variant type of adenomatous goiter.";
+RL   J. Clin. Endocrinol. Metab. 84:1438-1444(1999).
+RN   [21]
+RP   VARIANTS ALA-734; VAL-1028 AND TRP-1979, AND INVOLVEMENT IN AITD3.
+RX   PubMed=14657345; DOI=10.1073/pnas.2434175100;
+RA   Ban Y., Greenberg D.A., Concepcion E., Skrabanek L., Villanueva R.,
+RA   Tomer Y.;
+RT   "Amino acid substitutions in the thyroglobulin gene are associated
+RT   with susceptibility to human and murine autoimmune thyroid disease.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 100:15119-15124(2003).
+RN   [22]
+RP   VARIANTS TDH3 TYR-1897 AND GLN-2336.
+RX   PubMed=16477365; DOI=10.1007/s10038-006-0360-2;
+RA   Kitanaka S., Takeda A., Sato U., Miki Y., Hishinuma A., Ieiri T.,
+RA   Igarashi T.;
+RT   "A novel compound heterozygous mutation in the thyroglobulin gene
+RT   resulting in congenital goitrous hypothyroidism with high serum
+RT   triiodothyronine levels.";
+RL   J. Hum. Genet. 51:379-382(2006).
+RN   [23]
+RP   VARIANTS TDH3 TYR-183 AND ASP-2234.
+RX   PubMed=17532758; DOI=10.1111/j.1365-2265.2007.02889.x;
+RA   Caputo M., Rivolta C.M., Esperante S.A., Gruneiro-Papendieck L.,
+RA   Chiesa A., Pellizas C.G., Gonzalez-Sarmiento R., Targovnik H.M.;
+RT   "Congenital hypothyroidism with goitre caused by new mutations in the
+RT   thyroglobulin gene.";
+RL   Clin. Endocrinol. (Oxf.) 67:351-357(2007).
+RN   [24]
+RP   VARIANT TDH3 ARG-2375.
+RX   PubMed=17244789; DOI=10.1210/jc.2006-1242;
+RA   Kanou Y., Hishinuma A., Tsunekawa K., Seki K., Mizuno Y., Fujisawa H.,
+RA   Imai T., Miura Y., Nagasaka T., Yamada C., Ieiri T., Murakami M.,
+RA   Murata Y.;
+RT   "Thyroglobulin gene mutations producing defective intracellular
+RT   transport of thyroglobulin are associated with increased thyroidal
+RT   type 2 iodothyronine deiodinase activity.";
+RL   J. Clin. Endocrinol. Metab. 92:1451-1457(2007).
+RN   [25]
+RP   VARIANT TDH3 ASP-2234, AND CHARACTERIZATION OF VARIANT TDH3 ASP-2234.
+RX   PubMed=19509106; DOI=10.1210/jc.2009-0150;
+RA   Pardo V., Vono-Toniolo J., Rubio I.G., Knobel M., Possato R.F.,
+RA   Targovnik H.M., Kopp P., Medeiros-Neto G.;
+RT   "The p.A2215D thyroglobulin gene mutation leads to deficient synthesis
+RT   and secretion of the mutated protein and congenital hypothyroidism
+RT   with wide phenotype variation.";
+RL   J. Clin. Endocrinol. Metab. 94:2938-2944(2009).
+CC   -!- FUNCTION: Precursor of the iodinated thyroid hormones thyroxine
+CC       (T4) and triiodothyronine (T3).
+CC   -!- SUBUNIT: Homodimer.
+CC   -!- SUBCELLULAR LOCATION: Secreted.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1; Synonyms=Major;
+CC         IsoId=P01266-1; Sequence=Displayed;
+CC       Name=2; Synonyms=Minor;
+CC         IsoId=P01266-2; Sequence=VSP_012655;
+CC   -!- TISSUE SPECIFICITY: Thyroid gland specific.
+CC   -!- PTM: Sulfated tyrosines are desulfated during iodination.
+CC   -!- DISEASE: Defects in TG are the cause of thyroid dyshormonogenesis
+CC       3 (TDH3) [MIM:274700]. A disorder due to thyroid
+CC       dyshormonogenesis, causing large goiters of elastic and soft
+CC       consistency in the majority of patients. Although the degree of
+CC       thyroid dysfunction varies considerably among patients with
+CC       defective thyroglobulin synthesis, patients usually have a
+CC       relatively high serum free triiodothyronine (T3) concentration
+CC       with disproportionately low free tetraiodothyronine (T4) level.
+CC       The maintenance of relatively high free T3 levels prevents
+CC       profound tissue hypothyroidism except in brain and pituitary,
+CC       which are dependent on T4 supply, resulting in neurologic and
+CC       intellectual defects in some cases.
+CC   -!- DISEASE: Variations in TG are associated with susceptibility to
+CC       autoimmune thyroid disease type 3 (AITD3) [MIM:608175]. AITDs
+CC       including Graves disease (GD) and Hashimoto thyroiditis (HT), are
+CC       among the most common human autoimmune diseases. They are complex
+CC       diseases, which are caused by an interaction between
+CC       susceptibility genes and nongenetic factors, such as infection.
+CC   -!- SIMILARITY: Belongs to the type-B carboxylesterase/lipase family.
+CC   -!- SIMILARITY: Contains 11 thyroglobulin type-1 domains.
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=Thyroglobulin entry;
+CC       URL="http://en.wikipedia.org/wiki/Thyroglobulin";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; X05615; CAA29104.1; -; mRNA.
+DR   EMBL; U93033; AAC51924.1; -; mRNA.
+DR   EMBL; AF230667; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AF235100; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AF230666; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AF305872; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; X02154; CAA26089.1; -; mRNA.
+DR   EMBL; X06059; CAA29454.1; -; Genomic_DNA.
+DR   EMBL; X06060; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06061; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06062; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06063; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06064; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06065; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06066; CAA29454.1; JOINED; Genomic_DNA.
+DR   EMBL; X06067; CAA29455.1; -; Genomic_DNA.
+DR   EMBL; X06068; CAA29455.1; JOINED; Genomic_DNA.
+DR   EMBL; X06069; CAA29456.1; -; Genomic_DNA.
+DR   EMBL; X06070; CAA29456.1; JOINED; Genomic_DNA.
+DR   EMBL; X02749; CAA26527.1; -; Genomic_DNA.
+DR   EMBL; AF170489; AAD51647.1; -; Genomic_DNA.
+DR   EMBL; AF170486; AAD51647.1; JOINED; Genomic_DNA.
+DR   EMBL; AF170487; AAD51647.1; JOINED; Genomic_DNA.
+DR   EMBL; AF170488; AAD51647.1; JOINED; Genomic_DNA.
+DR   EMBL; AF105687; AAC95473.1; -; Genomic_DNA.
+DR   EMBL; AF105681; AAC95473.1; JOINED; Genomic_DNA.
+DR   EMBL; AF105682; AAC95473.1; JOINED; Genomic_DNA.
+DR   EMBL; AF105683; AAC95473.1; JOINED; Genomic_DNA.
+DR   EMBL; AF105684; AAC95473.1; JOINED; Genomic_DNA.
+DR   EMBL; AF105685; AAC95473.1; JOINED; Genomic_DNA.
+DR   EMBL; AF105686; AAC95473.1; JOINED; Genomic_DNA.
+DR   EMBL; AF080484; AAD50912.2; -; Genomic_DNA.
+DR   EMBL; AF169654; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169655; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169656; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169657; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169658; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169659; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169661; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169662; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169663; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF169664; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080472; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080473; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080474; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080475; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080476; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080477; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080478; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080479; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080480; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080481; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080482; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; AF080483; AAD50912.2; JOINED; Genomic_DNA.
+DR   EMBL; S40807; AAB22685.1; -; mRNA.
+DR   IPI; IPI00306129; -.
+DR   IPI; IPI00549199; -.
+DR   PIR; A59110; UIHU.
+DR   RefSeq; NP_003226.4; NM_003235.4.
+DR   UniGene; Hs.654591; -.
+DR   ProteinModelPortal; P01266; -.
+DR   SMR; P01266; 48-85, 93-161, 314-358, 611-798, 1024-1073, 1147-1211, 2198-2730.
+DR   IntAct; P01266; 2.
+DR   STRING; P01266; -.
+DR   MEROPS; S09.978; -.
+DR   PhosphoSite; P01266; -.
+DR   DMDM; 126302607; -.
+DR   PRIDE; P01266; -.
+DR   Ensembl; ENST00000220616; ENSP00000220616; ENSG00000042832.
+DR   GeneID; 7038; -.
+DR   KEGG; hsa:7038; -.
+DR   UCSC; uc003ytw.1; human.
+DR   CTD; 7038; -.
+DR   GeneCards; GC08P133948; -.
+DR   H-InvDB; HIX0034371; -.
+DR   HGNC; HGNC:11764; TG.
+DR   HPA; CAB000077; -.
+DR   HPA; HPA002740; -.
+DR   MIM; 188450; gene.
+DR   MIM; 274700; phenotype.
+DR   MIM; 608175; phenotype.
+DR   neXtProt; NX_P01266; -.
+DR   PharmGKB; PA36479; -.
+DR   eggNOG; COG2272; -.
+DR   GeneTree; ENSGT00600000084208; -.
+DR   HOVERGEN; HBG017929; -.
+DR   InParanoid; P01266; -.
+DR   KO; K10809; -.
+DR   OMA; RGTFNFS; -.
+DR   PhylomeDB; P01266; -.
+DR   NextBio; 27497; -.
+DR   ArrayExpress; P01266; -.
+DR   Bgee; P01266; -.
+DR   Genevestigator; P01266; -.
+DR   GO; GO:0005615; C:extracellular space; IBA:RefGenome.
+DR   GO; GO:0005179; F:hormone activity; IEA:UniProtKB-KW.
+DR   GO; GO:0042446; P:hormone biosynthetic process; IEA:UniProtKB-KW.
+DR   GO; GO:0007165; P:signal transduction; NAS:ProtInc.
+DR   GO; GO:0030878; P:thyroid gland development; IEP:UniProtKB.
+DR   GO; GO:0006590; P:thyroid hormone generation; IBA:RefGenome.
+DR   InterPro; IPR002018; CarbesteraseB.
+DR   InterPro; IPR019819; Carboxylesterase_B_CS.
+DR   InterPro; IPR016324; Thyroglobulin.
+DR   InterPro; IPR000716; Thyroglobulin_1.
+DR   InterPro; IPR011641; Tyr-kin_ephrin_A/B_rcpt-like.
+DR   Gene3D; G3DSA:4.10.800.10; Thyroglobulin_1; 13.
+DR   Pfam; PF00135; COesterase; 1.
+DR   Pfam; PF07699; GCC2_GCC3; 1.
+DR   Pfam; PF00086; Thyroglobulin_1; 8.
+DR   PIRSF; PIRSF001831; Thyroglobulin; 1.
+DR   SMART; SM00211; TY; 10.
+DR   SUPFAM; SSF57610; Thyroglobulin_1; 11.
+DR   PROSITE; PS00941; CARBOXYLESTERASE_B_2; 1.
+DR   PROSITE; PS00484; THYROGLOBULIN_1_1; 9.
+DR   PROSITE; PS51162; THYROGLOBULIN_1_2; 11.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Complete proteome; Congenital hypothyroidism;
+KW   Direct protein sequencing; Disease mutation; Disulfide bond;
+KW   Glycoprotein; Hormone; Iodination; Polymorphism; Reference proteome;
+KW   Repeat; Secreted; Signal; Sulfation; Thyroid hormone;
+KW   Thyroid hormones biosynthesis.
+FT   SIGNAL        1     19
+FT   CHAIN        20   2768       Thyroglobulin.
+FT                                /FTId=PRO_0000008636.
+FT   DOMAIN       31     92       Thyroglobulin type-1 1.
+FT   DOMAIN       93    160       Thyroglobulin type-1 2.
+FT   DOMAIN      161    297       Thyroglobulin type-1 3.
+FT   DOMAIN      298    358       Thyroglobulin type-1 4.
+FT   DOMAIN      605    658       Thyroglobulin type-1 5.
+FT   DOMAIN      659    726       Thyroglobulin type-1 6.
+FT   DOMAIN      727    921       Thyroglobulin type-1 7.
+FT   DOMAIN      922   1073       Thyroglobulin type-1 8.
+FT   DOMAIN     1074   1145       Thyroglobulin type-1 9.
+FT   DOMAIN     1146   1210       Thyroglobulin type-1 10.
+FT   REPEAT     1456   1469       Type II.
+FT   REPEAT     1470   1486       Type II.
+FT   REPEAT     1487   1503       Type II.
+FT   DOMAIN     1511   1565       Thyroglobulin type-1 11.
+FT   REPEAT     1603   1723       Type IIIA.
+FT   REPEAT     1724   1892       Type IIIB.
+FT   REPEAT     1893   1995       Type IIIA.
+FT   REPEAT     1996   2129       Type IIIB.
+FT   REPEAT     2130   2187       Type IIIA.
+FT   SITE        110    110       Not glycosylated.
+FT   SITE        496    496       Not glycosylated.
+FT   SITE       1869   1869       Not glycosylated.
+FT   SITE       2122   2122       Not glycosylated.
+FT   MOD_RES      24     24       Sulfotyrosine; alternate (By similarity).
+FT   MOD_RES      24     24       Thyroxine; alternate.
+FT   MOD_RES    1310   1310       Thyroxine.
+FT   MOD_RES    2573   2573       Thyroxine.
+FT   MOD_RES    2587   2587       Thyroxine.
+FT   MOD_RES    2766   2766       Triiodothyronine.
+FT   CARBOHYD     76     76       N-linked (GlcNAc...).
+FT   CARBOHYD    198    198       N-linked (GlcNAc...).
+FT   CARBOHYD    484    484       N-linked (GlcNAc...).
+FT   CARBOHYD    529    529       N-linked (GlcNAc...).
+FT   CARBOHYD    748    748       N-linked (GlcNAc...).
+FT   CARBOHYD    816    816       N-linked (GlcNAc...).
+FT   CARBOHYD    947    947       N-linked (GlcNAc...).
+FT   CARBOHYD   1220   1220       N-linked (GlcNAc...).
+FT   CARBOHYD   1348   1348       N-linked (GlcNAc...) (Probable).
+FT   CARBOHYD   1349   1349       N-linked (GlcNAc...).
+FT   CARBOHYD   1365   1365       N-linked (GlcNAc...).
+FT   CARBOHYD   1716   1716       N-linked (GlcNAc...).
+FT   CARBOHYD   1774   1774       N-linked (GlcNAc...).
+FT   CARBOHYD   2013   2013       N-linked (GlcNAc...).
+FT   CARBOHYD   2250   2250       N-linked (GlcNAc...).
+FT   CARBOHYD   2295   2295       N-linked (GlcNAc...).
+FT   CARBOHYD   2582   2582       N-linked (GlcNAc...).
+FT   CARBOHYD   2749   2749       O-linked (Xyl...) (chondroitin sulfate).
+FT   DISULFID     34     52       By similarity.
+FT   DISULFID     63     70       By similarity.
+FT   DISULFID     72     92       By similarity.
+FT   DISULFID     96    120       By similarity.
+FT   DISULFID    131    138       By similarity.
+FT   DISULFID    140    160       By similarity.
+FT   DISULFID    164    183       By similarity.
+FT   DISULFID    194    235       By similarity.
+FT   DISULFID    301    319       By similarity.
+FT   DISULFID    330    336       By similarity.
+FT   DISULFID    338    358       By similarity.
+FT   DISULFID    608    620       By similarity.
+FT   DISULFID    631    636       By similarity.
+FT   DISULFID    638    658       By similarity.
+FT   DISULFID    662    687       By similarity.
+FT   DISULFID    698    703       By similarity.
+FT   DISULFID    705    726       By similarity.
+FT   DISULFID    730    763       By similarity.
+FT   DISULFID    774    898       By similarity.
+FT   DISULFID    900    921       By similarity.
+FT   DISULFID   1042   1049       By similarity.
+FT   DISULFID   1051   1073       By similarity.
+FT   DISULFID   1077   1108       By similarity.
+FT   DISULFID   1126   1145       By similarity.
+FT   DISULFID   1149   1169       By similarity.
+FT   DISULFID   1181   1188       By similarity.
+FT   DISULFID   1190   1210       By similarity.
+FT   DISULFID   1514   1523       By similarity.
+FT   DISULFID   1543   1565       By similarity.
+FT   DISULFID   2264   2281       Potential.
+FT   VAR_SEQ    1510   1567       CVTDCQRNEAGLQCDQNGQYRASQKDRGSGKAFCVDGEGRR
+FT                                LPWWETEAPLEDSQCLM -> L (in isoform 2).
+FT                                /FTId=VSP_012655.
+FT   VARIANT     135    135       Q -> H (in dbSNP:rs2069546).
+FT                                /FTId=VAR_010212.
+FT   VARIANT     183    183       C -> Y (in TDH3).
+FT                                /FTId=VAR_063034.
+FT   VARIANT     515    515       Q -> E (in dbSNP:rs180222).
+FT                                /FTId=VAR_016190.
+FT   VARIANT     604    604       S -> D (requires 2 nucleotide
+FT                                substitutions; dbSNP:rs2069547).
+FT                                /FTId=VAR_016852.
+FT   VARIANT     653    653       G -> D (in dbSNP:rs2069548).
+FT                                /FTId=VAR_016853.
+FT   VARIANT     734    734       S -> A (polymorphism associated with
+FT                                AITD3; dbSNP:rs180223).
+FT                                /FTId=VAR_010213.
+FT   VARIANT     777    777       P -> L (in dbSNP:rs3739274).
+FT                                /FTId=VAR_049077.
+FT   VARIANT     815    815       G -> R (in dbSNP:rs16904774).
+FT                                /FTId=VAR_049078.
+FT   VARIANT     830    830       Q -> E (in dbSNP:rs2076737).
+FT                                /FTId=VAR_010214.
+FT   VARIANT     870    870       Q -> H (in dbSNP:rs2229843).
+FT                                /FTId=VAR_002365.
+FT   VARIANT     985    985       Missing.
+FT                                /FTId=VAR_016854.
+FT   VARIANT     988    988       R -> P (in dbSNP:rs16893332).
+FT                                /FTId=VAR_049079.
+FT   VARIANT    1028   1028       M -> V (polymorphism associated with
+FT                                AITD3; dbSNP:rs853326).
+FT                                /FTId=VAR_010215.
+FT   VARIANT    1043   1043       H -> Y.
+FT                                /FTId=VAR_016855.
+FT   VARIANT    1059   1059       I -> T.
+FT                                /FTId=VAR_016856.
+FT   VARIANT    1063   1063       L -> M (in dbSNP:rs11992497).
+FT                                /FTId=VAR_049080.
+FT   VARIANT    1222   1222       S -> L (in dbSNP:rs12549018).
+FT                                /FTId=VAR_049081.
+FT   VARIANT    1264   1264       C -> R (in TDH3; autosomal recessive;
+FT                                dbSNP:rs2076738).
+FT                                /FTId=VAR_010216.
+FT   VARIANT    1312   1312       D -> G (in dbSNP:rs2069556).
+FT                                /FTId=VAR_010217.
+FT   VARIANT    1437   1437       W -> R (in dbSNP:rs2069558).
+FT                                /FTId=VAR_016857.
+FT   VARIANT    1463   1463       P -> H.
+FT                                /FTId=VAR_016858.
+FT   VARIANT    1740   1740       T -> K (in dbSNP:rs16904791).
+FT                                /FTId=VAR_049082.
+FT   VARIANT    1838   1838       D -> N (in dbSNP:rs2069561).
+FT                                /FTId=VAR_010218.
+FT   VARIANT    1897   1897       C -> Y (in TDH3).
+FT                                /FTId=VAR_063035.
+FT   VARIANT    1936   1936       A -> T (in dbSNP:rs2069562).
+FT                                /FTId=VAR_016859.
+FT   VARIANT    1974   1974       M -> T (in dbSNP:rs56230101).
+FT                                /FTId=VAR_061173.
+FT   VARIANT    1979   1979       R -> W (polymorphism associated with
+FT                                AITD3).
+FT                                /FTId=VAR_032013.
+FT   VARIANT    1996   1996       C -> S (in TDH3; autosomal recessive;
+FT                                dbSNP:rs2076739).
+FT                                /FTId=VAR_010219.
+FT   VARIANT    1999   1999       R -> W (in dbSNP:rs2076740).
+FT                                /FTId=VAR_010220.
+FT   VARIANT    2091   2091       D -> E.
+FT                                /FTId=VAR_016860.
+FT   VARIANT    2149   2149       P -> L (in dbSNP:rs2069564).
+FT                                /FTId=VAR_016861.
+FT   VARIANT    2170   2170       Q -> R (in dbSNP:rs2069565).
+FT                                /FTId=VAR_016862.
+FT   VARIANT    2234   2234       A -> D (in TDH3; reduces thyroglobulin
+FT                                synthesis and secretion; promotes
+FT                                thyroglobulin retention within the
+FT                                endoplasmic reticulum).
+FT                                /FTId=VAR_063036.
+FT   VARIANT    2242   2242       R -> H (in dbSNP:rs2069566).
+FT                                /FTId=VAR_016863.
+FT   VARIANT    2336   2336       R -> Q (in TDH3).
+FT                                /FTId=VAR_063037.
+FT   VARIANT    2375   2375       G -> R (in TDH3).
+FT                                /FTId=VAR_063038.
+FT   VARIANT    2455   2455       R -> H (in dbSNP:rs2272707).
+FT                                /FTId=VAR_049083.
+FT   VARIANT    2469   2469       L -> P (in dbSNP:rs2069568).
+FT                                /FTId=VAR_049084.
+FT   VARIANT    2501   2501       W -> R (in dbSNP:rs2069569).
+FT                                /FTId=VAR_010221.
+FT   VARIANT    2526   2526       F -> L (in dbSNP:rs12114109).
+FT                                /FTId=VAR_049085.
+FT   VARIANT    2530   2530       R -> Q (in dbSNP:rs1133076).
+FT                                /FTId=VAR_010222.
+FT   VARIANT    2616   2616       N -> S (in dbSNP:rs10091530).
+FT                                /FTId=VAR_049086.
+FT   CONFLICT     23     25       EYQ -> GKF (in Ref. 6; CAA26527).
+FT   CONFLICT    848    848       Missing (in Ref. 13; AA sequence).
+FT   CONFLICT    984    985       EQ -> DR (in Ref. 5; CAA29456).
+FT   CONFLICT   1359   1360       Missing (in Ref. 13; AA sequence).
+FT   CONFLICT   1717   1717       L -> A (in Ref. 13; AA sequence).
+FT   CONFLICT   1776   1776       T -> S (in Ref. 13; AA sequence).
+FT   CONFLICT   2019   2019       G -> H (in Ref. 13; AA sequence).
+FT   CONFLICT   2287   2287       F -> P (in Ref. 13; AA sequence).
+SQ   SEQUENCE   2768 AA;  304790 MW;  69A87D935F1BAA72 CRC64;
+     MALVLEIFTL LASICWVSAN IFEYQVDAQP LRPCELQRET AFLKQADYVP QCAEDGSFQT
+     VQCQNDGRSC WCVGANGSEV LGSRQPGRPV ACLSFCQLQK QQILLSGYIN STDTSYLPQC
+     QDSGDYAPVQ CDVQQVQCWC VDAEGMEVYG TRQLGRPKRC PRSCEIRNRR LLHGVGDKSP
+     PQCSAEGEFM PVQCKFVNTT DMMIFDLVHS YNRFPDAFVT FSSFQRRFPE VSGYCHCADS
+     QGRELAETGL ELLLDEIYDT IFAGLDLPST FTETTLYRIL QRRFLAVQSV ISGRFRCPTK
+     CEVERFTATS FGHPYVPSCR RNGDYQAVQC QTEGPCWCVD AQGKEMHGTR QQGEPPSCAE
+     GQSCASERQQ ALSRLYFGTS GYFSQHDLFS SPEKRWASPR VARFATSCPP TIKELFVDSG
+     LLRPMVEGQS QQFSVSENLL KEAIRAIFPS RGLARLALQF TTNPKRLQQN LFGGKFLVNV
+     GQFNLSGALG TRGTFNFSQF FQQLGLASFL NGGRQEDLAK PLSVGLDSNS STGTPEAAKK
+     DGTMNKPTVG SFGFEINLQE NQNALKFLAS LLELPEFLLF LQHAISVPED VARDLGDVME
+     TVLSSQTCEQ TPERLFVPSC TTEGSYEDVQ CFSGECWCVN SWGKELPGSR VRGGQPRCPT
+     DCEKQRARMQ SLMGSQPAGS TLFVPACTSE GHFLPVQCFN SECYCVDAEG QAIPGTRSAI
+     GKPKKCPTPC QLQSEQAFLR TVQALLSNSS MLPTLSDTYI PQCSTDGQWR QVQCNGPPEQ
+     VFELYQRWEA QNKGQDLTPA KLLVKIMSYR EAASGNFSLF IQSLYEAGQQ DVFPVLSQYP
+     SLQDVPLAAL EGKRPQPREN ILLEPYLFWQ ILNGQLSQYP GSYSDFSTPL AHFDLRNCWC
+     VDEAGQELEG MRSEPSKLPT CPGSCEEAKL RVLQFIRETE EIVSASNSSR FPLGESFLVA
+     KGIRLRNEDL GLPPLFPPRE AFAEQFLRGS DYAIRLAAQS TLSFYQRRRF SPDDSAGASA
+     LLRSGPYMPQ CDAFGSWEPV QCHAGTGHCW CVDEKGGFIP GSLTARSLQI PQCPTTCEKS
+     RTSGLLSSWK QARSQENPSP KDLFVPACLE TGEYARLQAS GAGTWCVDPA SGEELRPGSS
+     SSAQCPSLCN VLKSGVLSRR VSPGYVPACR AEDGGFSPVQ CDQAQGSCWC VMDSGEEVPG
+     TRVTGGQPAC ESPRCPLPFN ASEVVGGTIL CETISGPTGS AMQQCQLLCR QGSWSVFPPG
+     PLICSLESGR WESQLPQPRA CQRPQLWQTI QTQGHFQLQL PPGKMCSADY ADLLQTFQVF
+     ILDELTARGF CQIQVKTFGT LVSIPVCNNS SVQVGCLTRE RLGVNVTWKS RLEDIPVASL
+     PDLHDIERAL VGKDLLGRFT DLIQSGSFQL HLDSKTFPAE TIRFLQGDHF GTSPRTWFGC
+     SEGFYQVLTS EASQDGLGCV KCPEGSYSQD EECIPCPVGF YQEQAGSLAC VPCPVGRTTI
+     SAGAFSQTHC VTDCQRNEAG LQCDQNGQYR ASQKDRGSGK AFCVDGEGRR LPWWETEAPL
+     EDSQCLMMQK FEKVPESKVI FDANAPVAVR SKVPDSEFPV MQCLTDCTED EACSFFTVST
+     TEPEISCDFY AWTSDNVACM TSDQKRDALG NSKATSFGSL RCQVKVRSHG QDSPAVYLKK
+     GQGSTTTLQK RFEPTGFQNM LSGLYNPIVF SASGANLTDA HLFCLLACDR DLCCDGFVLT
+     QVQGGAIICG LLSSPSVLLC NVKDWMDPSE AWANATCPGV TYDQESHQVI LRLGDQEFIK
+     SLTPLEGTQD TFTNFQQVYL WKDSDMGSRP ESMGCRKDTV PRPASPTEAG LTTELFSPVD
+     LNQVIVNGNQ SLSSQKHWLF KHLFSAQQAN LWCLSRCVQE HSFCQLAEIT ESASLYFTCT
+     LYPEAQVCDD IMESNAQGCR LILPQMPKAL FRKKVILEDK VKNFYTRLPF QKLMGISIRN
+     KVPMSEKSIS NGFFECERRC DADPCCTGFG FLNVSQLKGG EVTCLTLNSL GIQMCSEENG
+     GAWRILDCGS PDIEVHTYPF GWYQKPIAQN NAPSFCPLVV LPSLTEKVSL DSWQSLALSS
+     VVVDPSIRHF DVAHVSTAAT SNFSAVRDLC LSECSQHEAC LITTLQTQPG AVRCMFYADT
+     QSCTHSLQGQ NCRLLLREEA THIYRKPGIS LLSYEASVPS VPISTHGRLL GRSQAIQVGT
+     SWKQVDQFLG VPYAAPPLAE RRFQAPEPLN WTGSWDASKP RASCWQPGTR TSTSPGVSED
+     CLYLNVFIPQ NVAPNASVLV FFHNTMDREE SEGWPAIDGS FLAAVGNLIV VTASYRVGVF
+     GFLSSGSGEV SGNWGLLDQV AALTWVQTHI RGFGGDPRRV SLAADRGGAD VASIHLLTAR
+     ATNSQLFRRA VLMGGSALSP AAVISHERAQ QQAIALAKEV SCPMSSSQEV VSCLRQKPAN
+     VLNDAQTKLL AVSGPFHYWG PVIDGHFLRE PPARALKRSL WVEVDLLIGS SQDDGLINRA
+     KAVKQFEESR GRTSSKTAFY QALQNSLGGE DSDARVEAAA TWYYSLEHST DDYASFSRAL
+     ENATRDYFII CPIIDMASAW AKRARGNVFM YHAPENYGHG SLELLADVQF ALGLPFYPAY
+     EGQFSLEEKS LSLKIMQYFS HFIRSGNPNY PYEFSRKVPT FATPWPDFVP RAGGENYKEF
+     SELLPNRQGL KKADCSFWSK YISSLKTSAD GAKGGQSAES EEEELTAGSG LREDLLSLQE
+     PGSKTYSK
+//

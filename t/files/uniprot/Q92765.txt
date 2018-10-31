@@ -1,0 +1,216 @@
+ID   SFRP3_HUMAN             Reviewed;         325 AA.
+AC   Q92765; O00181; Q99686;
+DT   01-JUN-2001, integrated into UniProtKB/Swiss-Prot.
+DT   01-JUN-2001, sequence version 2.
+DT   21-MAR-2012, entry version 112.
+DE   RecName: Full=Secreted frizzled-related protein 3;
+DE            Short=sFRP-3;
+DE   AltName: Full=Frezzled;
+DE   AltName: Full=Fritz;
+DE   AltName: Full=Frizzled-related protein 1;
+DE   AltName: Full=FrzB-1;
+DE   Flags: Precursor;
+GN   Name=FRZB; Synonyms=FIZ, FRE, FRP, FRZB1, SFRP3;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Placenta;
+RX   MEDLINE=96421609; PubMed=8824257; DOI=10.1074/jbc.271.42.26131;
+RA   Hoang B., Moos M. Jr., Vukicevic S., Luyten F.P.;
+RT   "Primary structure and tissue distribution of FRZB, a novel protein
+RT   related to Drosophila frizzled, suggest a role in skeletal
+RT   morphogenesis.";
+RL   J. Biol. Chem. 271:26131-26137(1996).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=97321551; PubMed=9178261; DOI=10.1016/S0925-4773(97)00035-X;
+RA   Mayr T., Deutsch U., Kuehl M., Drexler H.C.A., Lottspeich F.,
+RA   Deutzmann R., Wedlich D., Risau W.;
+RT   "Fritz: a secreted frizzled-related protein that inhibits Wnt
+RT   activity.";
+RL   Mech. Dev. 63:109-125(1997).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Embryo;
+RX   MEDLINE=97236495; PubMed=9118218; DOI=10.1016/S0092-8674(00)81921-2;
+RA   Leyns L., Bouwmeester T., Kim S.-H., Piccolo S., de Robertis E.M.;
+RT   "Frzb-1 is a secreted antagonist of Wnt signaling expressed in the
+RT   Spemann organizer.";
+RL   Cell 88:747-756(1997).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RA   Kalnine N., Chen X., Rolfs A., Halleck A., Hines L., Eisenstein S.,
+RA   Koundinya M., Raphael J., Moreira D., Kelley T., LaBaer J., Lin Y.,
+RA   Phelan M., Farmer A.;
+RT   "Cloning of human full-length CDSs in BD Creator(TM) system donor
+RT   vector.";
+RL   Submitted (OCT-2004) to the EMBL/GenBank/DDBJ databases.
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Pancreas, and Spleen;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [6]
+RP   PROTEIN SEQUENCE OF 33-47.
+RX   PubMed=15340161; DOI=10.1110/ps.04682504;
+RA   Zhang Z., Henzel W.J.;
+RT   "Signal peptide prediction based on analysis of experimentally
+RT   verified cleavage sites.";
+RL   Protein Sci. 13:2819-2824(2004).
+RN   [7]
+RP   VARIANT HIP OA SUSCEPTIBILITY GLY-324, AND VARIANT TRP-200.
+RX   PubMed=15210948; DOI=10.1073/pnas.0403456101;
+RA   Loughlin J., Dowling B., Chapman K., Marcelline L., Mustafa Z.,
+RA   Southam L., Ferreira A., Ciesielski C., Carson D.A., Corr M.;
+RT   "Functional variants within the secreted frizzled-related protein 3
+RT   gene are associated with hip osteoarthritis in females.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 101:9757-9762(2004).
+CC   -!- FUNCTION: Soluble frizzled-related proteins (sFRPS) function as
+CC       modulators of Wnt signaling through direct interaction with Wnts.
+CC       They have a role in regulating cell growth and differentiation in
+CC       specific cell types. SFRP3/FRZB appears to be involved in limb
+CC       skeletogenesis. Antagonist of Wnt8 signaling. Regulates
+CC       chondrocyte maturation and long bone development.
+CC   -!- SUBCELLULAR LOCATION: Secreted (Probable).
+CC   -!- TISSUE SPECIFICITY: Expressed primarily in the cartilaginous cores
+CC       of the long bone during embryonic and fetal development and in the
+CC       appendicular skeleton (6-13 weeks). At 13 weeks of gestation,
+CC       transcripts were present in early chondroblasts of the tarsal
+CC       bones of the foot, the carpal bones of the hands and the epiphysis
+CC       of long bones. Highly expressed in placenta and heart, followed by
+CC       brain, skeletal muscle, kidney and pancreas. Weakly expressed in
+CC       lung and liver.
+CC   -!- DOMAIN: The FZ domain is involved in binding with Wnt ligands (By
+CC       similarity).
+CC   -!- DISEASE: Defects in FRZB are associated with susceptibility to
+CC       osteoarthritis type 1(OS1) [MIM:165720]. Osteoarthritis is a
+CC       degenerative disease of the joints characterized by degradation of
+CC       the hyaline articular cartilage and remodeling of the subchondral
+CC       bone with sclerosis. Clinical symptoms include pain and joint
+CC       stiffness often leading to significant disability and joint
+CC       replacement.
+CC   -!- SIMILARITY: Belongs to the secreted frizzled-related protein
+CC       (sFRP) family.
+CC   -!- SIMILARITY: Contains 1 FZ (frizzled) domain.
+CC   -!- SIMILARITY: Contains 1 NTR domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; U24163; AAC50736.1; -; mRNA.
+DR   EMBL; U91903; AAB51298.1; -; mRNA.
+DR   EMBL; U68057; AAC51217.1; -; mRNA.
+DR   EMBL; BT019883; AAV38686.1; -; mRNA.
+DR   EMBL; BC027855; AAH27855.1; -; mRNA.
+DR   IPI; IPI00294650; -.
+DR   RefSeq; NP_001454.2; NM_001463.3.
+DR   UniGene; Hs.128453; -.
+DR   ProteinModelPortal; Q92765; -.
+DR   SMR; Q92765; 33-157, 167-278.
+DR   IntAct; Q92765; 1.
+DR   STRING; Q92765; -.
+DR   DMDM; 14194748; -.
+DR   PRIDE; Q92765; -.
+DR   DNASU; 2487; -.
+DR   Ensembl; ENST00000295113; ENSP00000295113; ENSG00000162998.
+DR   GeneID; 2487; -.
+DR   KEGG; hsa:2487; -.
+DR   UCSC; uc002upa.1; human.
+DR   CTD; 2487; -.
+DR   GeneCards; GC02M183662; -.
+DR   H-InvDB; HIX0002650; -.
+DR   HGNC; HGNC:3959; FRZB.
+DR   HPA; CAB009249; -.
+DR   MIM; 165720; phenotype.
+DR   MIM; 605083; gene.
+DR   neXtProt; NX_Q92765; -.
+DR   PharmGKB; PA28377; -.
+DR   eggNOG; NOG304384; -.
+DR   GeneTree; ENSGT00560000076776; -.
+DR   HOGENOM; HBG403122; -.
+DR   HOVERGEN; HBG070536; -.
+DR   InParanoid; Q92765; -.
+DR   OMA; EEYLIMG; -.
+DR   OrthoDB; EOG4B8JDD; -.
+DR   PhylomeDB; Q92765; -.
+DR   NextBio; 9825; -.
+DR   ArrayExpress; Q92765; -.
+DR   Bgee; Q92765; -.
+DR   CleanEx; HS_FRZB; -.
+DR   Genevestigator; Q92765; -.
+DR   GermOnline; ENSG00000162998; Homo sapiens.
+DR   GO; GO:0005737; C:cytoplasm; IBA:RefGenome.
+DR   GO; GO:0005615; C:extracellular space; IDA:BHF-UCL.
+DR   GO; GO:0016020; C:membrane; TAS:ProtInc.
+DR   GO; GO:0030165; F:PDZ domain binding; IBA:RefGenome.
+DR   GO; GO:0042813; F:Wnt-activated receptor activity; IBA:RefGenome.
+DR   GO; GO:0017147; F:Wnt-protein binding; ISS:UniProtKB.
+DR   GO; GO:0007420; P:brain development; IBA:RefGenome.
+DR   GO; GO:0090103; P:cochlea morphogenesis; IBA:RefGenome.
+DR   GO; GO:0008406; P:gonad development; IBA:RefGenome.
+DR   GO; GO:0060056; P:mammary gland involution; IBA:RefGenome.
+DR   GO; GO:0090090; P:negative regulation of canonical Wnt receptor signaling pathway; IDA:UniProtKB.
+DR   GO; GO:0061037; P:negative regulation of cartilage development; IBA:RefGenome.
+DR   GO; GO:0030308; P:negative regulation of cell growth; IDA:UniProtKB.
+DR   GO; GO:0008285; P:negative regulation of cell proliferation; IDA:UniProtKB.
+DR   GO; GO:0070367; P:negative regulation of hepatocyte differentiation; IBA:RefGenome.
+DR   GO; GO:0043065; P:positive regulation of apoptotic process; IGI:MGI.
+DR   GO; GO:0045600; P:positive regulation of fat cell differentiation; IDA:MGI.
+DR   GO; GO:0001501; P:skeletal system development; TAS:ProtInc.
+DR   GO; GO:0001944; P:vasculature development; IBA:RefGenome.
+DR   GO; GO:0016055; P:Wnt receptor signaling pathway; IEA:UniProtKB-KW.
+DR   InterPro; IPR015526; Frizzled-related.
+DR   InterPro; IPR020067; Frizzled_dom.
+DR   InterPro; IPR001134; Netrin_domain.
+DR   InterPro; IPR018933; Netrin_module_non-TIMP.
+DR   InterPro; IPR008993; TIMP-like_OB-fold.
+DR   Gene3D; G3DSA:1.10.2000.10; Frizzled_Cys-rich; 1.
+DR   PANTHER; PTHR11309; Fz_related; 1.
+DR   Pfam; PF01392; Fz; 1.
+DR   Pfam; PF01759; NTR; 1.
+DR   SMART; SM00643; C345C; 1.
+DR   SMART; SM00063; FRI; 1.
+DR   SUPFAM; SSF63501; Frizzled_Cys-rich; 1.
+DR   SUPFAM; SSF50242; TIMP_like; 1.
+DR   PROSITE; PS50038; FZ; 1.
+DR   PROSITE; PS50189; NTR; 1.
+PE   1: Evidence at protein level;
+KW   Complete proteome; Developmental protein; Differentiation;
+KW   Direct protein sequencing; Disease mutation; Disulfide bond;
+KW   Glycoprotein; Polymorphism; Reference proteome; Secreted; Signal;
+KW   Wnt signaling pathway.
+FT   SIGNAL        1     32
+FT   CHAIN        33    325       Secreted frizzled-related protein 3.
+FT                                /FTId=PRO_0000032546.
+FT   DOMAIN       33    150       FZ.
+FT   DOMAIN      178    298       NTR.
+FT   COMPBIAS    301    318       Ser-rich.
+FT   CARBOHYD     49     49       N-linked (GlcNAc...) (Potential).
+FT   DISULFID     35     96       By similarity.
+FT   DISULFID     43     89       By similarity.
+FT   DISULFID     80    119       By similarity.
+FT   DISULFID    108    147       By similarity.
+FT   DISULFID    112    136       By similarity.
+FT   VARIANT     200    200       R -> W (in dbSNP:rs288326).
+FT                                /FTId=VAR_021411.
+FT   VARIANT     324    324       R -> G (in hip OA susceptibility; has
+FT                                diminished ability to antagonize Wnt
+FT                                signaling, in vitro; dbSNP:rs7775).
+FT                                /FTId=VAR_014862.
+FT   CONFLICT     63     63       A -> D (in Ref. 2; AAB51298).
+FT   CONFLICT    106    106       K -> N (in Ref. 1; AAC50736).
+SQ   SEQUENCE   325 AA;  36254 MW;  8337C51BBA9A4B07 CRC64;
+     MVCGSPGGML LLRAGLLALA ALCLLRVPGA RAAACEPVRI PLCKSLPWNM TKMPNHLHHS
+     TQANAILAIE QFEGLLGTHC SPDLLFFLCA MYAPICTIDF QHEPIKPCKS VCERARQGCE
+     PILIKYRHSW PENLACEELP VYDRGVCISP EAIVTADGAD FPMDSSNGNC RGASSERCKC
+     KPIRATQKTY FRNNYNYVIR AKVKEIKTKC HDVTAVVEVK EILKSSLVNI PRDTVNLYTS
+     SGCLCPPLNV NEEYIIMGYE DEERSRLLLV EGSIAEKWKD RLGKKVKRWD MKLRHLGLSK
+     SDSSNSDSTQ SQKSGRNSNP RQARN
+//

@@ -1,0 +1,420 @@
+ID   HCD2_HUMAN              Reviewed;         261 AA.
+AC   Q99714; Q5H927; Q8TCV9; Q96HD5;
+DT   01-NOV-1997, integrated into UniProtKB/Swiss-Prot.
+DT   23-JAN-2007, sequence version 3.
+DT   21-MAR-2012, entry version 139.
+DE   RecName: Full=3-hydroxyacyl-CoA dehydrogenase type-2;
+DE            EC=1.1.1.35;
+DE   AltName: Full=17-beta-hydroxysteroid dehydrogenase 10;
+DE            Short=17-beta-HSD 10;
+DE   AltName: Full=3-hydroxy-2-methylbutyryl-CoA dehydrogenase;
+DE            EC=1.1.1.178;
+DE   AltName: Full=3-hydroxyacyl-CoA dehydrogenase type II;
+DE   AltName: Full=Endoplasmic reticulum-associated amyloid beta-peptide-binding protein;
+DE   AltName: Full=Mitochondrial ribonuclease P protein 2;
+DE            Short=Mitochondrial RNase P protein 2;
+DE   AltName: Full=Short-chain type dehydrogenase/reductase XH98G2;
+DE   AltName: Full=Type II HADH;
+GN   Name=HSD17B10; Synonyms=ERAB, HADH2, MRPP2, SCHAD, XH98G2;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RC   TISSUE=Brain;
+RX   MEDLINE=97478528; PubMed=9338779; DOI=10.1038/39522;
+RA   Yan S.D., Fu J., Soto C., Chen X., Zhu H., Al-Mohanna F.,
+RA   Collinson K., Zhu A., Stern E., Saido T., Tohyama M., Ogawa S.,
+RA   Roher A., Stern D.;
+RT   "An intracellular protein that binds amyloid-beta peptide and mediates
+RT   neurotoxicity in Alzheimer's disease.";
+RL   Nature 389:689-695(1997).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RA   Zhuchenko O.P., Wehnert M., Bailey J., Sun Z.S., Lee C.C.;
+RL   Submitted (JAN-1997) to the EMBL/GenBank/DDBJ databases.
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=98337980; PubMed=9671743; DOI=10.1073/pnas.95.15.8709;
+RA   Miller A.P., Willard H.F.;
+RT   "Chromosomal basis of X chromosome inactivation: identification of a
+RT   multigene domain in Xp11.21-p11.22 that escapes X inactivation.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 95:8709-8714(1998).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA / MRNA] (ISOFORM 1).
+RC   TISSUE=Brain;
+RX   MEDLINE=98221216; PubMed=9553139; DOI=10.1074/jbc.273.17.10741;
+RA   He X.Y., Schulz H., Yang S.Y.;
+RT   "A human brain L-3-hydroxyacyl-coenzyme A dehydrogenase is identical
+RT   to an amyloid beta-peptide-binding protein involved in Alzheimer's
+RT   disease.";
+RL   J. Biol. Chem. 273:10741-10746(1998).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=15772651; DOI=10.1038/nature03440;
+RA   Ross M.T., Grafham D.V., Coffey A.J., Scherer S., McLay K., Muzny D.,
+RA   Platzer M., Howell G.R., Burrows C., Bird C.P., Frankish A.,
+RA   Lovell F.L., Howe K.L., Ashurst J.L., Fulton R.S., Sudbrak R., Wen G.,
+RA   Jones M.C., Hurles M.E., Andrews T.D., Scott C.E., Searle S.,
+RA   Ramser J., Whittaker A., Deadman R., Carter N.P., Hunt S.E., Chen R.,
+RA   Cree A., Gunaratne P., Havlak P., Hodgson A., Metzker M.L.,
+RA   Richards S., Scott G., Steffen D., Sodergren E., Wheeler D.A.,
+RA   Worley K.C., Ainscough R., Ambrose K.D., Ansari-Lari M.A., Aradhya S.,
+RA   Ashwell R.I., Babbage A.K., Bagguley C.L., Ballabio A., Banerjee R.,
+RA   Barker G.E., Barlow K.F., Barrett I.P., Bates K.N., Beare D.M.,
+RA   Beasley H., Beasley O., Beck A., Bethel G., Blechschmidt K., Brady N.,
+RA   Bray-Allen S., Bridgeman A.M., Brown A.J., Brown M.J., Bonnin D.,
+RA   Bruford E.A., Buhay C., Burch P., Burford D., Burgess J., Burrill W.,
+RA   Burton J., Bye J.M., Carder C., Carrel L., Chako J., Chapman J.C.,
+RA   Chavez D., Chen E., Chen G., Chen Y., Chen Z., Chinault C.,
+RA   Ciccodicola A., Clark S.Y., Clarke G., Clee C.M., Clegg S.,
+RA   Clerc-Blankenburg K., Clifford K., Cobley V., Cole C.G., Conquer J.S.,
+RA   Corby N., Connor R.E., David R., Davies J., Davis C., Davis J.,
+RA   Delgado O., Deshazo D., Dhami P., Ding Y., Dinh H., Dodsworth S.,
+RA   Draper H., Dugan-Rocha S., Dunham A., Dunn M., Durbin K.J., Dutta I.,
+RA   Eades T., Ellwood M., Emery-Cohen A., Errington H., Evans K.L.,
+RA   Faulkner L., Francis F., Frankland J., Fraser A.E., Galgoczy P.,
+RA   Gilbert J., Gill R., Gloeckner G., Gregory S.G., Gribble S.,
+RA   Griffiths C., Grocock R., Gu Y., Gwilliam R., Hamilton C., Hart E.A.,
+RA   Hawes A., Heath P.D., Heitmann K., Hennig S., Hernandez J.,
+RA   Hinzmann B., Ho S., Hoffs M., Howden P.J., Huckle E.J., Hume J.,
+RA   Hunt P.J., Hunt A.R., Isherwood J., Jacob L., Johnson D., Jones S.,
+RA   de Jong P.J., Joseph S.S., Keenan S., Kelly S., Kershaw J.K., Khan Z.,
+RA   Kioschis P., Klages S., Knights A.J., Kosiura A., Kovar-Smith C.,
+RA   Laird G.K., Langford C., Lawlor S., Leversha M., Lewis L., Liu W.,
+RA   Lloyd C., Lloyd D.M., Loulseged H., Loveland J.E., Lovell J.D.,
+RA   Lozado R., Lu J., Lyne R., Ma J., Maheshwari M., Matthews L.H.,
+RA   McDowall J., McLaren S., McMurray A., Meidl P., Meitinger T.,
+RA   Milne S., Miner G., Mistry S.L., Morgan M., Morris S., Mueller I.,
+RA   Mullikin J.C., Nguyen N., Nordsiek G., Nyakatura G., O'dell C.N.,
+RA   Okwuonu G., Palmer S., Pandian R., Parker D., Parrish J.,
+RA   Pasternak S., Patel D., Pearce A.V., Pearson D.M., Pelan S.E.,
+RA   Perez L., Porter K.M., Ramsey Y., Reichwald K., Rhodes S.,
+RA   Ridler K.A., Schlessinger D., Schueler M.G., Sehra H.K.,
+RA   Shaw-Smith C., Shen H., Sheridan E.M., Shownkeen R., Skuce C.D.,
+RA   Smith M.L., Sotheran E.C., Steingruber H.E., Steward C.A., Storey R.,
+RA   Swann R.M., Swarbreck D., Tabor P.E., Taudien S., Taylor T.,
+RA   Teague B., Thomas K., Thorpe A., Timms K., Tracey A., Trevanion S.,
+RA   Tromans A.C., d'Urso M., Verduzco D., Villasana D., Waldron L.,
+RA   Wall M., Wang Q., Warren J., Warry G.L., Wei X., West A.,
+RA   Whitehead S.L., Whiteley M.N., Wilkinson J.E., Willey D.L.,
+RA   Williams G., Williams L., Williamson A., Williamson H., Wilming L.,
+RA   Woodmansey R.L., Wray P.W., Yen J., Zhang J., Zhou J., Zoghbi H.,
+RA   Zorilla S., Buck D., Reinhardt R., Poustka A., Rosenthal A.,
+RA   Lehrach H., Meindl A., Minx P.J., Hillier L.W., Willard H.F.,
+RA   Wilson R.K., Waterston R.H., Rice C.M., Vaudin M., Coulson A.,
+RA   Nelson D.L., Weinstock G., Sulston J.E., Durbin R.M., Hubbard T.,
+RA   Gibbs R.A., Beck S., Rogers J., Bentley D.R.;
+RT   "The DNA sequence of the human X chromosome.";
+RL   Nature 434:325-337(2005).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (JUL-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORMS 1 AND 2).
+RC   TISSUE=Brain, and Lung;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [8]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 51-246.
+RA   Deininger M.H., Meyermann R., Schluesener H.J.;
+RT   "Expression, release and induction of endoplasmic reticulum-associated
+RT   amyloid beta-binding protein in brain disease.";
+RL   Submitted (MAR-2002) to the EMBL/GenBank/DDBJ databases.
+RN   [9]
+RP   INVOLVEMENT IN MRXS10.
+RX   PubMed=17236142; DOI=10.1086/511527;
+RA   Lenski C., Kooy R.F., Reyniers E., Loessner D., Wanders R.J.A.,
+RA   Winnepenninckx B., Hellebrand H., Engert S., Schwartz C.E., Meindl A.,
+RA   Ramser J.;
+RT   "The reduced expression of the HADH2 protein causes X-linked mental
+RT   retardation, choreoathetosis, and abnormal behavior.";
+RL   Am. J. Hum. Genet. 80:372-377(2007).
+RN   [10]
+RP   INVOLVEMENT IN MRX17.
+RX   PubMed=18252223; DOI=10.1016/j.ajhg.2007.11.002;
+RA   Froyen G., Corbett M., Vandewalle J., Jarvela I., Lawrence O.,
+RA   Meldrum C., Bauters M., Govaerts K., Vandeleur L., Van Esch H.,
+RA   Chelly J., Sanlaville D., van Bokhoven H., Ropers H.-H.,
+RA   Laumonnier F., Ranieri E., Schwartz C.E., Abidi F., Tarpey P.S.,
+RA   Futreal P.A., Whibley A., Raymond F.L., Stratton M.R., Fryns J.-P.,
+RA   Scott R., Peippo M., Sipponen M., Partington M., Mowat D., Field M.,
+RA   Hackett A., Marynen P., Turner G., Gecz J.;
+RT   "Submicroscopic duplications of the hydroxysteroid dehydrogenase
+RT   HSD17B10 and the E3 ubiquitin ligase HUWE1 are associated with mental
+RT   retardation.";
+RL   Am. J. Hum. Genet. 82:432-443(2008).
+RN   [11]
+RP   IDENTIFICATION BY MASS SPECTROMETRY, FUNCTION, INTERACTION WITH
+RP   KIAA0391 AND RG9MTD1, AND SUBCELLULAR LOCATION.
+RX   PubMed=18984158; DOI=10.1016/j.cell.2008.09.013;
+RA   Holzmann J., Frank P., Loeffler E., Bennett K.L., Gerner C.,
+RA   Rossmanith W.;
+RT   "RNase P without RNA: identification and functional reconstitution of
+RT   the human mitochondrial tRNA processing enzyme.";
+RL   Cell 135:462-474(2008).
+RN   [12]
+RP   ACETYLATION [LARGE SCALE ANALYSIS] AT ALA-2, AND MASS SPECTROMETRY.
+RC   TISSUE=Embryonic kidney;
+RX   PubMed=19413330; DOI=10.1021/ac9004309;
+RA   Gauci S., Helbig A.O., Slijper M., Krijgsveld J., Heck A.J.,
+RA   Mohammed S.;
+RT   "Lys-N and trypsin cover complementary parts of the phosphoproteome in
+RT   a refined SCX-based approach.";
+RL   Anal. Chem. 81:4493-4501(2009).
+RN   [13]
+RP   IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=21269460; DOI=10.1186/1752-0509-5-17;
+RA   Burkard T.R., Planyavsky M., Kaupe I., Breitwieser F.P.,
+RA   Buerckstuemmer T., Bennett K.L., Superti-Furga G., Colinge J.;
+RT   "Initial characterization of the human central proteome.";
+RL   BMC Syst. Biol. 5:17-17(2011).
+RN   [14]
+RP   X-RAY CRYSTALLOGRAPHY (2.0 ANGSTROMS) IN COMPLEX WITH NAD.
+RX   PubMed=15342248; DOI=10.1016/j.jmb.2004.07.071;
+RA   Kissinger C.R., Rejto P.A., Pelletier L.A., Thomson J.A.,
+RA   Showalter R.E., Abreo M.A., Agree C.S., Margosiak S., Meng J.J.,
+RA   Aust R.M., Vanderpool D., Li B., Tempczyk-Russell A.,
+RA   Villafranca J.E.;
+RT   "Crystal structure of human ABAD/HSD10 with a bound inhibitor:
+RT   implications for design of Alzheimer's disease therapeutics.";
+RL   J. Mol. Biol. 342:943-952(2004).
+RN   [15]
+RP   X-RAY CRYSTALLOGRAPHY (2.3 ANGSTROMS).
+RX   PubMed=15087549; DOI=10.1126/science.1091230;
+RA   Lustbader J.W., Cirilli M., Lin C., Xu H.W., Takuma K., Wang N.,
+RA   Caspersen C., Chen X., Pollak S., Chaney M., Trinchese F., Liu S.,
+RA   Gunn-Moore F., Lue L.-F., Walker D.G., Kuppusamy P., Zewier Z.L.,
+RA   Arancio O., Stern D., Yan S.-S., Wu H.;
+RT   "ABAD directly links Abeta to mitochondrial toxicity in Alzheimer's
+RT   disease.";
+RL   Science 304:448-452(2004).
+RN   [16]
+RP   VARIANTS MHBD DEFICIENCY VAL-122 AND CYS-130.
+RX   MEDLINE=22589980; PubMed=12696021; DOI=10.1086/375116;
+RA   Ofman R., Ruiter J.P.N., Feenstra M., Duran M., Poll-The B.T.,
+RA   Zschocke J., Ensenauer R., Lehnert W., Sass J.O., Sperl W.,
+RA   Wanders R.J.A.;
+RT   "2-methyl-3-hydroxybutyryl-CoA dehydrogenase deficiency is caused by
+RT   mutations in the HADH2 gene.";
+RL   Am. J. Hum. Genet. 72:1300-1307(2003).
+RN   [17]
+RP   VARIANTS MHBD DEFICIENCY CYS-130 AND SER-247, AND CHARACTERIZATION OF
+RP   VARIANT MHBD DEFICIENCY SER-247.
+RX   PubMed=16148061; DOI=10.1203/01.pdr.0000176916.94328.cd;
+RA   Perez-Cerda C., Garcia-Villoria J., Ofman R., Sala P.R., Merinero B.,
+RA   Ramos J., Garcia-Silva M.T., Beseler B., Dalmau J., Wanders R.J.A.,
+RA   Ugarte M., Ribes A.;
+RT   "2-methyl-3-hydroxybutyryl-CoA dehydrogenase (MHBD) deficiency: an X-
+RT   linked inborn error of isoleucine metabolism that may mimic a
+RT   mitochondrial disease.";
+RL   Pediatr. Res. 58:488-491(2005).
+RN   [18]
+RP   ERRATUM.
+RA   Perez-Cerda C., Garcia-Villoria J., Ofman R., Sala P.R., Merinero B.,
+RA   Ramos J., Garcia-Silva M.T., Beseler B., Dalmau J., Wanders R.J.,
+RA   Ugarte M., Ribes A.;
+RL   Pediatr. Res. 59:162-162(2006).
+CC   -!- FUNCTION: Functions in mitochondrial tRNA maturation. Part of
+CC       mitochondrial ribonuclease P, an enzyme composed of MRPP1/RG9MTD1,
+CC       MRPP2/HSD17B10 and MRPP3/KIAA0391, which cleaves tRNA molecules in
+CC       their 5'-ends. By interacting with intracellular amyloid-beta, it
+CC       may contribute to the neuronal dysfunction associated with
+CC       Alzheimer disease (AD).
+CC   -!- CATALYTIC ACTIVITY: (S)-3-hydroxyacyl-CoA + NAD(+) = 3-oxoacyl-CoA
+CC       + NADH.
+CC   -!- CATALYTIC ACTIVITY: (2S,3S)-3-hydroxy-2-methylbutanoyl-CoA +
+CC       NAD(+) = 2-methylacetoacetyl-CoA + NADH.
+CC   -!- SUBUNIT: Homotetramer (By similarity). Interacts with
+CC       MRPP1/RG9MTD1 and MRPP3/KIAA0391.
+CC   -!- INTERACTION:
+CC       P05067:APP; NbExp=4; IntAct=EBI-79964, EBI-77613;
+CC       Q7L0Y3:RG9MTD1; NbExp=4; IntAct=EBI-79964, EBI-2107046;
+CC   -!- SUBCELLULAR LOCATION: Mitochondrion.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1;
+CC         IsoId=Q99714-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=Q99714-2; Sequence=VSP_007830;
+CC         Note=No experimental confirmation available;
+CC   -!- TISSUE SPECIFICITY: Expressed in normal tissues but is
+CC       overexpressed in neurons affected in AD.
+CC   -!- DISEASE: Defects in HSD17B10 are the cause of 2-methyl-3-
+CC       hydroxybutyryl-CoA dehydrogenase deficiency (MHBD deficiency)
+CC       [MIM:300438]. MHBD deficiency leads to neurological abnormalities,
+CC       including psychomotor retardation, and, in virtually all patients,
+CC       loss of mental and motor skills.
+CC   -!- DISEASE: Defects in HSD17B10 are the cause of mental retardation
+CC       syndromic X-linked type 10 (MRXS10) [MIM:300220]. MRXS10 is
+CC       characterized by mild mental retardation, choreoathetosis and
+CC       abnormal behavior.
+CC   -!- DISEASE: A chromosomal microduplication involving HSD17B10 and
+CC       HUWE1 is the cause of mental retardation X-linked type 17 (MRX17)
+CC       [MIM:300705]; also known as mental retardation X-linked type 31
+CC       (MRX31). Mental retardation is characterized by significantly sub-
+CC       average general intellectual functioning associated with
+CC       impairments in adaptative behavior and manifested during the
+CC       developmental period. In contrast to syndromic or specific X-
+CC       linked mental retardation which also present with associated
+CC       physical, neurological and/or psychiatric manifestations,
+CC       intellectual deficiency is the only primary symptom of non-
+CC       syndromic X-linked mental retardation.
+CC   -!- SIMILARITY: Belongs to the short-chain dehydrogenases/reductases
+CC       (SDR) family.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/HSD17B10";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; U96132; AAC51812.1; -; mRNA.
+DR   EMBL; U73514; AAB68958.1; -; mRNA.
+DR   EMBL; AF069134; AAC39900.1; -; mRNA.
+DR   EMBL; AF035555; AAC15902.1; -; mRNA.
+DR   EMBL; AF037438; AAC16419.1; -; Genomic_DNA.
+DR   EMBL; Z97054; CAI42652.1; -; Genomic_DNA.
+DR   EMBL; CH471154; EAW93158.1; -; Genomic_DNA.
+DR   EMBL; BC000372; AAH00372.1; -; mRNA.
+DR   EMBL; BC008708; AAH08708.1; -; mRNA.
+DR   EMBL; AY092415; AAM18189.1; -; mRNA.
+DR   IPI; IPI00017726; -.
+DR   IPI; IPI00336094; -.
+DR   RefSeq; NP_001032900.1; NM_001037811.2.
+DR   RefSeq; NP_004484.1; NM_004493.2.
+DR   UniGene; Hs.171280; -.
+DR   PDB; 1F67; Model; -; A=1-261.
+DR   PDB; 1SO8; X-ray; 2.30 A; A=1-261.
+DR   PDB; 1U7T; X-ray; 2.00 A; A/B/C/D=1-261.
+DR   PDB; 2O23; X-ray; 1.20 A; A/B=1-261.
+DR   PDBsum; 1F67; -.
+DR   PDBsum; 1SO8; -.
+DR   PDBsum; 1U7T; -.
+DR   PDBsum; 2O23; -.
+DR   ProteinModelPortal; Q99714; -.
+DR   SMR; Q99714; 7-261.
+DR   IntAct; Q99714; 10.
+DR   MINT; MINT-3059664; -.
+DR   STRING; Q99714; -.
+DR   PhosphoSite; Q99714; -.
+DR   DMDM; 2492759; -.
+DR   REPRODUCTION-2DPAGE; IPI00017726; -.
+DR   REPRODUCTION-2DPAGE; Q99714; -.
+DR   UCD-2DPAGE; Q99714; -.
+DR   PeptideAtlas; Q99714; -.
+DR   PRIDE; Q99714; -.
+DR   DNASU; 3028; -.
+DR   Ensembl; ENST00000168216; ENSP00000168216; ENSG00000072506.
+DR   GeneID; 3028; -.
+DR   KEGG; hsa:3028; -.
+DR   UCSC; uc004dsl.1; human.
+DR   UCSC; uc004dsm.1; human.
+DR   CTD; 3028; -.
+DR   GeneCards; GC0XM053475; -.
+DR   H-InvDB; HIX0016816; -.
+DR   HGNC; HGNC:4800; HSD17B10.
+DR   HPA; HPA001432; -.
+DR   MIM; 300220; phenotype.
+DR   MIM; 300256; gene.
+DR   MIM; 300438; phenotype.
+DR   MIM; 300705; phenotype.
+DR   neXtProt; NX_Q99714; -.
+DR   Orphanet; 85295; Intellectual deficit, X-linked - choreoathetosis - abnormal behavior.
+DR   Orphanet; 35123; Short chain 3-hydroxyacyl-CoA dehydrogenase deficiency.
+DR   eggNOG; COG1028; -.
+DR   GeneTree; ENSGT00640000091086; -.
+DR   HOGENOM; HBG750976; -.
+DR   HOVERGEN; HBG002145; -.
+DR   InParanoid; Q99714; -.
+DR   KO; K08683; -.
+DR   OMA; AIKTYNL; -.
+DR   OrthoDB; EOG46MBKC; -.
+DR   PhylomeDB; Q99714; -.
+DR   BioCyc; MetaCyc:MONOMER-11801; -.
+DR   BRENDA; 1.1.1.135; 908.
+DR   Reactome; REACT_111217; Metabolism.
+DR   DrugBank; DB00157; NADH.
+DR   NextBio; 11984; -.
+DR   ArrayExpress; Q5H927; -.
+DR   Bgee; Q99714; -.
+DR   CleanEx; HS_HSD17B10; -.
+DR   Genevestigator; Q99714; -.
+DR   GermOnline; ENSG00000072506; Homo sapiens.
+DR   GO; GO:0005759; C:mitochondrial matrix; TAS:Reactome.
+DR   GO; GO:0005886; C:plasma membrane; TAS:ProtInc.
+DR   GO; GO:0047015; F:3-hydroxy-2-methylbutyryl-CoA dehydrogenase activity; IEA:EC.
+DR   GO; GO:0003857; F:3-hydroxyacyl-CoA dehydrogenase activity; EXP:Reactome.
+DR   GO; GO:0008709; F:cholate 7-alpha-dehydrogenase activity; TAS:ProtInc.
+DR   GO; GO:0009083; P:branched chain family amino acid catabolic process; TAS:Reactome.
+DR   GO; GO:0006629; P:lipid metabolic process; TAS:ProtInc.
+DR   GO; GO:0008033; P:tRNA processing; IEA:UniProtKB-KW.
+DR   InterPro; IPR002198; DH_sc/Rdtase_SDR.
+DR   InterPro; IPR002347; Glc/ribitol_DH.
+DR   InterPro; IPR016040; NAD(P)-bd_dom.
+DR   InterPro; IPR020904; Sc_DH/Rdtase_CS.
+DR   Gene3D; G3DSA:3.40.50.720; NAD(P)-bd; 1.
+DR   Pfam; PF00106; adh_short; 1.
+DR   PRINTS; PR00081; GDHRDH.
+DR   PRINTS; PR00080; SDRFAMILY.
+DR   PROSITE; PS00061; ADH_SHORT; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Acetylation; Alternative splicing;
+KW   Chromosomal rearrangement; Complete proteome; Disease mutation;
+KW   Mental retardation; Mitochondrion; NAD; Oxidoreductase;
+KW   Reference proteome; tRNA processing.
+FT   INIT_MET      1      1       Removed.
+FT   CHAIN         2    261       3-hydroxyacyl-CoA dehydrogenase type-2.
+FT                                /FTId=PRO_0000054810.
+FT   NP_BIND      12     41       NAD.
+FT   ACT_SITE    168    168       Proton acceptor.
+FT   BINDING     155    155       Substrate.
+FT   BINDING     172    172       NAD.
+FT   MOD_RES       2      2       N-acetylalanine.
+FT   VAR_SEQ     191    199       Missing (in isoform 2).
+FT                                /FTId=VSP_007830.
+FT   VARIANT     122    122       L -> V (in MHBD deficiency;
+FT                                dbSNP:rs28935476).
+FT                                /FTId=VAR_015987.
+FT   VARIANT     130    130       R -> C (in MHBD deficiency;
+FT                                dbSNP:rs28935475).
+FT                                /FTId=VAR_015988.
+FT   VARIANT     247    247       N -> S (in MHBD deficiency; intermediate
+FT                                enzyme activity).
+FT                                /FTId=VAR_032093.
+FT   STRAND       12     16
+FT   TURN         17     19
+FT   HELIX        21     32
+FT   STRAND       36     41
+FT   HELIX        47     53
+FT   STRAND       58     62
+FT   HELIX        68     82
+FT   STRAND       87     89
+FT   STRAND      116    118
+FT   HELIX       120    137
+FT   STRAND      148    153
+FT   HELIX       165    168
+FT   HELIX       174    186
+FT   HELIX       187    189
+FT   STRAND      191    197
+FT   HELIX       230    242
+FT   STRAND      250    252
+SQ   SEQUENCE   261 AA;  26923 MW;  9E74F242E3E6FEF1 CRC64;
+     MAAACRSVKG LVAVITGGAS GLGLATAERL VGQGASAVLL DLPNSGGEAQ AKKLGNNCVF
+     APADVTSEKD VQTALALAKG KFGRVDVAVN CAGIAVASKT YNLKKGQTHT LEDFQRVLDV
+     NLMGTFNVIR LVAGEMGQNE PDQGGQRGVI INTASVAAFE GQVGQAAYSA SKGGIVGMTL
+     PIARDLAPIG IRVMTIAPGL FGTPLLTSLP EKVCNFLASQ VPFPSRLGDP AEYAHLVQAI
+     IENPFLNGEV IRLDGAIRMQ P
+//

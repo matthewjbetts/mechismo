@@ -1,0 +1,257 @@
+ID   TNFL4_HUMAN             Reviewed;         183 AA.
+AC   P23510; Q5JZA5; Q9HCN9;
+DT   01-NOV-1991, integrated into UniProtKB/Swiss-Prot.
+DT   01-NOV-1991, sequence version 1.
+DT   21-MAR-2012, entry version 104.
+DE   RecName: Full=Tumor necrosis factor ligand superfamily member 4;
+DE   AltName: Full=Glycoprotein Gp34;
+DE   AltName: Full=OX40 ligand;
+DE            Short=OX40L;
+DE   AltName: Full=TAX transcriptionally-activated glycoprotein 1;
+DE   AltName: CD_antigen=CD252;
+GN   Name=TNFSF4; Synonyms=TXGP1;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=91141479; PubMed=1996093;
+RA   Miura S., Ohtani K., Numata N., Niki M., Ohbo K., Ina Y., Gojobori T.,
+RA   Tanaka Y., Tozawa H., Nakamura M., Sugamura K.;
+RT   "Molecular cloning and characterization of a novel glycoprotein, gp34,
+RT   that is specifically induced by the human T-cell leukemia virus type I
+RT   transactivator p40tax.";
+RL   Mol. Cell. Biol. 11:1313-1325(1991).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=94321936; PubMed=7913952; DOI=10.1084/jem.180.2.757;
+RA   Godfrey W.R., Fagnoni F.F., Harara M.A., Buck D., Engleman E.G.;
+RT   "Identification of a human OX-40 ligand, a costimulator of CD4+ T
+RT   cells with homology to tumor necrosis factor.";
+RL   J. Exp. Med. 180:757-762(1994).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=16710414; DOI=10.1038/nature04727;
+RA   Gregory S.G., Barlow K.F., McLay K.E., Kaul R., Swarbreck D.,
+RA   Dunham A., Scott C.E., Howe K.L., Woodfine K., Spencer C.C.A.,
+RA   Jones M.C., Gillson C., Searle S., Zhou Y., Kokocinski F.,
+RA   McDonald L., Evans R., Phillips K., Atkinson A., Cooper R., Jones C.,
+RA   Hall R.E., Andrews T.D., Lloyd C., Ainscough R., Almeida J.P.,
+RA   Ambrose K.D., Anderson F., Andrew R.W., Ashwell R.I.S., Aubin K.,
+RA   Babbage A.K., Bagguley C.L., Bailey J., Beasley H., Bethel G.,
+RA   Bird C.P., Bray-Allen S., Brown J.Y., Brown A.J., Buckley D.,
+RA   Burton J., Bye J., Carder C., Chapman J.C., Clark S.Y., Clarke G.,
+RA   Clee C., Cobley V., Collier R.E., Corby N., Coville G.J., Davies J.,
+RA   Deadman R., Dunn M., Earthrowl M., Ellington A.G., Errington H.,
+RA   Frankish A., Frankland J., French L., Garner P., Garnett J., Gay L.,
+RA   Ghori M.R.J., Gibson R., Gilby L.M., Gillett W., Glithero R.J.,
+RA   Grafham D.V., Griffiths C., Griffiths-Jones S., Grocock R.,
+RA   Hammond S., Harrison E.S.I., Hart E., Haugen E., Heath P.D.,
+RA   Holmes S., Holt K., Howden P.J., Hunt A.R., Hunt S.E., Hunter G.,
+RA   Isherwood J., James R., Johnson C., Johnson D., Joy A., Kay M.,
+RA   Kershaw J.K., Kibukawa M., Kimberley A.M., King A., Knights A.J.,
+RA   Lad H., Laird G., Lawlor S., Leongamornlert D.A., Lloyd D.M.,
+RA   Loveland J., Lovell J., Lush M.J., Lyne R., Martin S.,
+RA   Mashreghi-Mohammadi M., Matthews L., Matthews N.S.W., McLaren S.,
+RA   Milne S., Mistry S., Moore M.J.F., Nickerson T., O'Dell C.N.,
+RA   Oliver K., Palmeiri A., Palmer S.A., Parker A., Patel D., Pearce A.V.,
+RA   Peck A.I., Pelan S., Phelps K., Phillimore B.J., Plumb R., Rajan J.,
+RA   Raymond C., Rouse G., Saenphimmachak C., Sehra H.K., Sheridan E.,
+RA   Shownkeen R., Sims S., Skuce C.D., Smith M., Steward C.,
+RA   Subramanian S., Sycamore N., Tracey A., Tromans A., Van Helmond Z.,
+RA   Wall M., Wallis J.M., White S., Whitehead S.L., Wilkinson J.E.,
+RA   Willey D.L., Williams H., Wilming L., Wray P.W., Wu Z., Coulson A.,
+RA   Vaudin M., Sulston J.E., Durbin R.M., Hubbard T., Wooster R.,
+RA   Dunham I., Carter N.P., McVean G., Ross M.T., Harrow J., Olson M.V.,
+RA   Beck S., Rogers J., Bentley D.R.;
+RT   "The DNA sequence and biological annotation of human chromosome 1.";
+RL   Nature 441:315-321(2006).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (JUL-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1-67.
+RX   MEDLINE=21069360; PubMed=11197696; DOI=10.1038/sj.gene.6363709;
+RA   Hikami K., Tsuchiya N., Tokunaga K.;
+RT   "New variations in human OX40 ligand (CD134L) gene.";
+RL   Genes Immun. 1:521-522(2000).
+RN   [6]
+RP   CHARACTERIZATION.
+RX   MEDLINE=94357171; PubMed=8076595;
+RA   Baum P.R., Gayle R.B. III, Ramsdell F., Srinivasan S., Sorensen R.A.,
+RA   Watson M.L., Seldin M.F., Baker E., Sutherland G.R., Clifford K.N.,
+RA   Alderson M.R., Goodwin R.G., Fanslow W.C.;
+RT   "Molecular characterization of murine and human OX40/OX40 ligand
+RT   systems: identification of a human OX40 ligand as the HTLV-1-regulated
+RT   protein gp34.";
+RL   EMBO J. 13:3992-4001(1994).
+RN   [7]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO SLE.
+RX   PubMed=18059267; DOI=10.1038/ng.2007.47;
+RA   Cunninghame Graham D.S., Graham R.R., Manku H., Wong A.K.,
+RA   Whittaker J.C., Gaffney P.M., Moser K.L., Rioux J.D., Altshuler D.,
+RA   Behrens T.W., Vyse T.J.;
+RT   "Polymorphism at the TNF superfamily gene TNFSF4 confers
+RT   susceptibility to systemic lupus erythematosus.";
+RL   Nat. Genet. 40:83-89(2008).
+RN   [8]
+RP   X-RAY CRYSTALLOGRAPHY (2.41 ANGSTROMS) OF 48-183 IN COMPLEX WITH
+RP   TNFRSF4, SUBUNIT, DISULFIDE BOND, AND GLYCOSYLATION AT ASN-152.
+RX   PubMed=16905106; DOI=10.1016/j.str.2006.06.015;
+RA   Compaan D.M., Hymowitz S.G.;
+RT   "The crystal structure of the costimulatory OX40-OX40L complex.";
+RL   Structure 14:1321-1330(2006).
+CC   -!- FUNCTION: Cytokine that binds to TNFRSF4. Co-stimulates T-cell
+CC       proliferation and cytokine production.
+CC   -!- SUBUNIT: Homotrimer.
+CC   -!- SUBCELLULAR LOCATION: Membrane; Single-pass type II membrane
+CC       protein.
+CC   -!- INDUCTION: By HTLV-1 transactivator p40-Tax.
+CC   -!- DISEASE: Genetic variations in TNFSF4 influence susceptibility to
+CC       systemic lupus erythematosus (SLE) [MIM:152700]. SLE is a chronic,
+CC       inflammatory and often febrile multisystemic disorder of
+CC       connective tissue. It affects principally the skin, joints,
+CC       kidneys and serosal membranes. It is thought to represent a
+CC       failure of the regulatory mechanisms of the autoimmune system.
+CC       Note=The upstream region of TNFSF4 contains a single risk
+CC       haplotype for SLE, which is correlated with increased expression
+CC       of both cell-surface TNFSF4 and TNFSF4 transcripts. Increased
+CC       levels of TNFSF4 are thought to augment T-cell-APC interaction and
+CC       the functional consequences of T-cell activation, thereby
+CC       destabilizing peripheral tolerance.
+CC   -!- SIMILARITY: Belongs to the tumor necrosis factor family.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=CAA18438.2; Type=Erroneous gene model prediction;
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; D90224; BAA14259.1; -; mRNA.
+DR   EMBL; X79929; CAA56284.1; -; mRNA.
+DR   EMBL; AL022310; CAA18438.2; ALT_SEQ; Genomic_DNA.
+DR   EMBL; AL022310; CAI20416.1; -; Genomic_DNA.
+DR   EMBL; CH471067; EAW90938.1; -; Genomic_DNA.
+DR   EMBL; AB042988; BAB18304.1; -; Genomic_DNA.
+DR   IPI; IPI00011974; -.
+DR   PIR; A39680; A39680.
+DR   RefSeq; NP_003317.1; NM_003326.3.
+DR   UniGene; Hs.181097; -.
+DR   PDB; 2HEV; X-ray; 2.41 A; F=51-183.
+DR   PDBsum; 2HEV; -.
+DR   ProteinModelPortal; P23510; -.
+DR   SMR; P23510; 58-183.
+DR   DIP; DIP-3023N; -.
+DR   STRING; P23510; -.
+DR   DMDM; 121540; -.
+DR   PRIDE; P23510; -.
+DR   DNASU; 7292; -.
+DR   Ensembl; ENST00000281834; ENSP00000281834; ENSG00000117586.
+DR   GeneID; 7292; -.
+DR   KEGG; hsa:7292; -.
+DR   UCSC; uc001giw.1; human.
+DR   CTD; 7292; -.
+DR   GeneCards; GC01M173152; -.
+DR   H-InvDB; HIX0023642; -.
+DR   HGNC; HGNC:11934; TNFSF4.
+DR   MIM; 152700; phenotype.
+DR   MIM; 603594; gene.
+DR   neXtProt; NX_P23510; -.
+DR   PharmGKB; PA36625; -.
+DR   eggNOG; NOG47572; -.
+DR   GeneTree; ENSGT00390000015127; -.
+DR   HOGENOM; HBG125858; -.
+DR   HOVERGEN; HBG056457; -.
+DR   InParanoid; P23510; -.
+DR   KO; K05469; -.
+DR   OMA; YPPIQSI; -.
+DR   OrthoDB; EOG4K3KXF; -.
+DR   PhylomeDB; P23510; -.
+DR   NextBio; 28511; -.
+DR   ArrayExpress; P23510; -.
+DR   Bgee; P23510; -.
+DR   CleanEx; HS_TNFSF4; -.
+DR   Genevestigator; P23510; -.
+DR   GermOnline; ENSG00000117586; Homo sapiens.
+DR   GO; GO:0009986; C:cell surface; IDA:BHF-UCL.
+DR   GO; GO:0005615; C:extracellular space; IDA:BHF-UCL.
+DR   GO; GO:0005887; C:integral to plasma membrane; NAS:BHF-UCL.
+DR   GO; GO:0005125; F:cytokine activity; IEA:UniProtKB-KW.
+DR   GO; GO:0002526; P:acute inflammatory response; ISS:BHF-UCL.
+DR   GO; GO:0071222; P:cellular response to lipopolysaccharide; IDA:BHF-UCL.
+DR   GO; GO:0071380; P:cellular response to prostaglandin E stimulus; IDA:BHF-UCL.
+DR   GO; GO:0071954; P:chemokine (C-C motif) ligand 11 production; ISS:BHF-UCL.
+DR   GO; GO:0002215; P:defense response to nematode; ISS:BHF-UCL.
+DR   GO; GO:0035708; P:interleukin-4-dependent isotype switching to IgE isotypes; ISS:BHF-UCL.
+DR   GO; GO:0035709; P:memory T cell activation; ISS:BHF-UCL.
+DR   GO; GO:0032689; P:negative regulation of interferon-gamma production; ISS:BHF-UCL.
+DR   GO; GO:0032700; P:negative regulation of interleukin-17 production; IDA:BHF-UCL.
+DR   GO; GO:0045590; P:negative regulation of regulatory T cell differentiation; ISS:BHF-UCL.
+DR   GO; GO:0043433; P:negative regulation of sequence-specific DNA binding transcription factor activity; ISS:BHF-UCL.
+DR   GO; GO:0045626; P:negative regulation of T-helper 1 cell differentiation; ISS:BHF-UCL.
+DR   GO; GO:0045892; P:negative regulation of transcription, DNA-dependent; ISS:BHF-UCL.
+DR   GO; GO:0046641; P:positive regulation of alpha-beta T cell proliferation; ISS:BHF-UCL.
+DR   GO; GO:0050871; P:positive regulation of B cell activation; ISS:BHF-UCL.
+DR   GO; GO:0002891; P:positive regulation of immunoglobulin mediated immune response; ISS:BHF-UCL.
+DR   GO; GO:0051024; P:positive regulation of immunoglobulin secretion; ISS:BHF-UCL.
+DR   GO; GO:0050729; P:positive regulation of inflammatory response; IDA:BHF-UCL.
+DR   GO; GO:0032729; P:positive regulation of interferon-gamma production; IDA:BHF-UCL.
+DR   GO; GO:0032733; P:positive regulation of interleukin-10 production; ISS:BHF-UCL.
+DR   GO; GO:0032735; P:positive regulation of interleukin-12 production; ISS:BHF-UCL.
+DR   GO; GO:0032736; P:positive regulation of interleukin-13 production; ISS:BHF-UCL.
+DR   GO; GO:0032753; P:positive regulation of interleukin-4 production; IDA:BHF-UCL.
+DR   GO; GO:0032755; P:positive regulation of interleukin-6 production; IDA:BHF-UCL.
+DR   GO; GO:0043382; P:positive regulation of memory T cell differentiation; ISS:BHF-UCL.
+DR   GO; GO:0002726; P:positive regulation of T cell cytokine production; ISS:BHF-UCL.
+DR   GO; GO:0045630; P:positive regulation of T-helper 2 cell differentiation; ISS:BHF-UCL.
+DR   GO; GO:0002830; P:positive regulation of type 2 immune response; ISS:BHF-UCL.
+DR   GO; GO:0009615; P:response to virus; ISS:BHF-UCL.
+DR   GO; GO:0007165; P:signal transduction; TAS:ProtInc.
+DR   GO; GO:0035712; P:T-helper 2 cell activation; ISS:BHF-UCL.
+DR   InterPro; IPR006052; TNF.
+DR   InterPro; IPR021184; TNF_CS.
+DR   InterPro; IPR008983; Tumour_necrosis_fac-like.
+DR   Pfam; PF00229; TNF; 1.
+DR   SMART; SM00207; TNF; 1.
+DR   SUPFAM; SSF49842; TNF_like; 1.
+DR   PROSITE; PS00251; TNF_1; 1.
+DR   PROSITE; PS50049; TNF_2; FALSE_NEG.
+PE   1: Evidence at protein level;
+KW   3D-structure; Complete proteome; Cytokine; Disulfide bond;
+KW   Glycoprotein; Membrane; Reference proteome; Signal-anchor;
+KW   Systemic lupus erythematosus; Transmembrane; Transmembrane helix.
+FT   CHAIN         1    183       Tumor necrosis factor ligand superfamily
+FT                                member 4.
+FT                                /FTId=PRO_0000185493.
+FT   TOPO_DOM      1     23       Cytoplasmic (Potential).
+FT   TRANSMEM     24     50       Helical; Signal-anchor for type II
+FT                                membrane protein; (Potential).
+FT   TOPO_DOM     51    183       Extracellular (Potential).
+FT   CARBOHYD     90     90       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    114    114       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    152    152       N-linked (GlcNAc...).
+FT   CARBOHYD    157    157       N-linked (GlcNAc...) (Potential).
+FT   DISULFID     97    181
+FT   STRAND       61     70
+FT   TURN         71     73
+FT   STRAND       74     78
+FT   STRAND       92     94
+FT   STRAND       99    120
+FT   STRAND      126    143
+FT   STRAND      148    155
+FT   STRAND      165    174
+SQ   SEQUENCE   183 AA;  21050 MW;  0D5604AD29D529CF CRC64;
+     MERVQPLEEN VGNAARPRFE RNKLLLVASV IQGLGLLLCF TYICLHFSAL QVSHRYPRIQ
+     SIKVQFTEYK KEKGFILTSQ KEDEIMKVQN NSVIINCDGF YLISLKGYFS QEVNISLHYQ
+     KDEEPLFQLK KVRSVNSLMV ASLTYKDKVY LNVTTDNTSL DDFHVNGGEL ILIHQNPGEF
+     CVL
+//

@@ -1,0 +1,428 @@
+ID   SMAD7_HUMAN             Reviewed;         426 AA.
+AC   O15105; O14740; Q6DK23;
+DT   04-MAY-2001, integrated into UniProtKB/Swiss-Prot.
+DT   01-JAN-1998, sequence version 1.
+DT   22-FEB-2012, entry version 125.
+DE   RecName: Full=Mothers against decapentaplegic homolog 7;
+DE            Short=MAD homolog 7;
+DE            Short=Mothers against DPP homolog 7;
+DE   AltName: Full=Mothers against decapentaplegic homolog 8;
+DE            Short=MAD homolog 8;
+DE            Short=Mothers against DPP homolog 8;
+DE   AltName: Full=SMAD family member 7;
+DE            Short=SMAD 7;
+DE            Short=Smad7;
+DE            Short=hSMAD7;
+GN   Name=SMAD7; Synonyms=MADH7, MADH8;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA], AND MUTAGENESIS OF 409-ARG--ARG-426.
+RC   TISSUE=Umbilical vein endothelial cell;
+RX   MEDLINE=97358542; PubMed=9215638; DOI=10.1016/S0092-8674(00)80303-7;
+RA   Hayashi H., Abdollah S., Qiu Y., Cai J., Xu Y.-Y., Grinnell B.W.,
+RA   Richardson M.A., Topper J.N., Gimbrone M.A. Jr., Wrana J.L., Falb D.;
+RT   "The MAD-related protein Smad7 associates with the TGFbeta receptor
+RT   and functions as an antagonist of TGFbeta signaling.";
+RL   Cell 89:1165-1173(1997).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Umbilical vein endothelial cell;
+RX   MEDLINE=97404392; PubMed=9256479; DOI=10.1073/pnas.94.17.9314;
+RA   Topper J.N., Cai J., Qui Y., Anderson K.R., Xu Y.-Y., Deeds J.D.,
+RA   Feeley R., Gimeno C.J., Woolf E.A., Tayber O., Mays G.G.,
+RA   Sampson B.A., Schoen F.J., Gimbrone M.A. Jr., Falb D.;
+RT   "Vascular MADs: two novel MAD-related genes selectively inducible by
+RT   flow in human vascular endothelium.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 94:9314-9319(1997).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Brain;
+RX   MEDLINE=97474483; PubMed=9335507; DOI=10.1038/39369;
+RA   Nakao A., Afrakhte M., Moren A., Nakayama T., Christian J.L.,
+RA   Heuchel R., Itoh S., Kawabata M., Heldin N.-E., Heldin C.-H.,
+RA   ten Dijke P.;
+RT   "Identification of Smad7, a TGFbeta-inducible antagonist of TGF-beta
+RT   signalling.";
+RL   Nature 389:631-635(1997).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RA   Hagiwara K., Yang K., McMenamin M.G., Freeman A.H., Bennett W.P.,
+RA   Nagashima M., Minter A.R., Miyazono K., Takenoshita S., Harris C.C.;
+RL   Submitted (SEP-1997) to the EMBL/GenBank/DDBJ databases.
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Lung;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [6]
+RP   REVIEW.
+RX   MEDLINE=98431667; PubMed=9759503;
+RX   DOI=10.1146/annurev.biochem.67.1.753;
+RA   Massague J.;
+RT   "TGF-beta signal transduction.";
+RL   Annu. Rev. Biochem. 67:753-791(1998).
+RN   [7]
+RP   REVIEW.
+RX   MEDLINE=20112302; PubMed=10647776; DOI=10.1016/S1359-6101(99)00012-X;
+RA   Verschueren K., Huylebroeck D.;
+RT   "Remarkable versatility of Smad proteins in the nucleus of
+RT   transforming growth factor-beta activated cells.";
+RL   Cytokine Growth Factor Rev. 10:187-199(1999).
+RN   [8]
+RP   INTERACTION WITH ACVR1B, AND FUNCTION.
+RX   PubMed=9892009; DOI=10.1210/me.13.1.15;
+RA   Lebrun J.J., Takabe K., Chen Y., Vale W.;
+RT   "Roles of pathway-specific and inhibitory Smads in activin receptor
+RT   signaling.";
+RL   Mol. Endocrinol. 13:15-23(1999).
+RN   [9]
+RP   REVIEW.
+RX   MEDLINE=20175821; PubMed=10708948; DOI=10.1016/S1359-6101(99)00024-6;
+RA   Wrana J.L., Attisano L.;
+RT   "The Smad pathway.";
+RL   Cytokine Growth Factor Rev. 11:5-13(2000).
+RN   [10]
+RP   REVIEW.
+RX   MEDLINE=20175822; PubMed=10708949; DOI=10.1016/S1359-6101(99)00025-8;
+RA   Miyazono K.;
+RT   "TGF-beta signaling by Smad proteins.";
+RL   Cytokine Growth Factor Rev. 11:15-22(2000).
+RN   [11]
+RP   FUNCTION, MUTAGENESIS OF TYR-211 AND 207-PRO--TYR-211, AND INTERACTION
+RP   WITH SMURF2 AND TGFBR1.
+RX   MEDLINE=21111046; PubMed=11163210; DOI=10.1016/S1097-2765(00)00134-9;
+RA   Kavsak P., Rasmussen R.K., Causing C.G., Bonni S., Zhu H.,
+RA   Thomsen G.H., Wrana J.L.;
+RT   "Smad7 binds to Smurf2 to form an E3 ubiquitin ligase that targets the
+RT   TGF-beta receptor for degradation.";
+RL   Mol. Cell 6:1365-1375(2000).
+RN   [12]
+RP   INTERACTION WITH STAMBP.
+RX   PubMed=11483516; DOI=10.1093/emboj/20.15.4132;
+RA   Itoh F., Asao H., Sugamura K., Heldin C.-H., ten Dijke P., Itoh S.;
+RT   "Promoting bone morphogenetic protein signaling through negative
+RT   regulation of inhibitory Smads.";
+RL   EMBO J. 20:4132-4142(2001).
+RN   [13]
+RP   INTERACTION WITH SMURF1 AND TGFBR1, AND PROTEASOMAL DEGRADATION.
+RX   PubMed=11278251; DOI=10.1074/jbc.C100008200;
+RA   Ebisawa T., Fukuchi M., Murakami G., Chiba T., Tanaka K., Imamura T.,
+RA   Miyazono K.;
+RT   "Smurf1 interacts with transforming growth factor-beta type I receptor
+RT   through Smad7 and induces receptor degradation.";
+RL   J. Biol. Chem. 276:12477-12480(2001).
+RN   [14]
+RP   INTERACTION WITH ACVR1B, AND FUNCTION.
+RX   PubMed=12023024; DOI=10.1016/S0014-5793(02)02718-7;
+RA   Liu X., Nagarajan R.P., Vale W., Chen Y.;
+RT   "Phosphorylation regulation of the interaction between Smad7 and
+RT   activin type I receptor.";
+RL   FEBS Lett. 519:93-98(2002).
+RN   [15]
+RP   INTERACTION WITH EP300, ACETYLATION AT LYS-64 AND LYS-70,
+RP   UBIQUITINATION AT LYS-64 AND LYS-70, AND MUTAGENESIS OF LYS-64 AND
+RP   LYS-70.
+RX   PubMed=12408818; DOI=10.1016/S1097-2765(02)00639-1;
+RA   Gronroos E., Hellman U., Heldin C.H., Ericsson J.;
+RT   "Control of Smad7 stability by competition between acetylation and
+RT   ubiquitination.";
+RL   Mol. Cell 10:483-493(2002).
+RN   [16]
+RP   INTERACTION WITH RNF111, UBIQUITINATION, AND SUBCELLULAR LOCATION.
+RX   PubMed=14657019; DOI=10.1093/emboj/cdg632;
+RA   Koinuma D., Shinozaki M., Komuro A., Goto K., Saitoh M., Hanyu A.,
+RA   Ebina M., Nukiwa T., Miyazawa K., Imamura T., Miyazono K.;
+RT   "Arkadia amplifies TGF-beta superfamily signaling through degradation
+RT   of Smad7.";
+RL   EMBO J. 22:6458-6470(2003).
+RN   [17]
+RP   FUNCTION, AND INTERACTION WITH PPP1R15A.
+RX   PubMed=14718519; DOI=10.1083/jcb.200307151;
+RA   Shi W., Sun C., He B., Xiong W., Shi X., Yao D., Cao X.;
+RT   "GADD34-PP1c recruited by Smad7 dephosphorylates TGFbeta type I
+RT   receptor.";
+RL   J. Cell Biol. 164:291-300(2004).
+RN   [18]
+RP   INTERACTION WITH COPS5.
+RX   PubMed=14993265; DOI=10.1128/MCB.24.6.2251-2262.2004;
+RA   Kim B.-C., Lee H.-J., Park S.H., Lee S.R., Karpova T.S., McNally J.G.,
+RA   Felici A., Lee D.K., Kim S.-J.;
+RT   "Jab1/CSN5, a component of the COP9 signalosome, regulates
+RT   transforming growth factor beta signaling by binding to Smad7 and
+RT   promoting its degradation.";
+RL   Mol. Cell. Biol. 24:2251-2262(2004).
+RN   [19]
+RP   INTERACTION WITH SMURF2.
+RX   PubMed=16061177; DOI=10.1016/j.molcel.2005.06.028;
+RA   Ogunjimi A.A., Briant D.J., Pece-Barbara N., Le Roy C.,
+RA   Di Guglielmo G.M., Kavsak P., Rasmussen R.K., Seet B.T., Sicheri F.,
+RA   Wrana J.L.;
+RT   "Regulation of Smurf2 ubiquitin ligase activity by anchoring the E2 to
+RT   the HECT domain.";
+RL   Mol. Cell 19:297-308(2005).
+RN   [20]
+RP   INTERACTION WITH AXIN1 AND AXIN2, UBIQUITINATION, AND SUBCELLULAR
+RP   LOCATION.
+RX   PubMed=16601693; DOI=10.1038/sj.emboj.7601057;
+RA   Liu W., Rui H., Wang J., Lin S., He Y., Chen M., Li Q., Ye Z.,
+RA   Zhang S., Chan S.C., Chen Y.-G., Han J., Lin S.-C.;
+RT   "Axin is a scaffold protein in TGF-beta signaling that promotes
+RT   degradation of Smad7 by Arkadia.";
+RL   EMBO J. 25:1646-1658(2006).
+RN   [21]
+RP   FUNCTION, SUBCELLULAR LOCATION, PHOSPHORYLATION BY PDPK1, AND
+RP   INTERACTION WITH PDPK1.
+RX   PubMed=17327236; DOI=10.1074/jbc.M609279200;
+RA   Seong H.A., Jung H., Kim K.T., Ha H.;
+RT   "3-Phosphoinositide-dependent PDK1 negatively regulates transforming
+RT   growth factor-beta-induced signaling in a kinase-dependent manner
+RT   through physical interaction with Smad proteins.";
+RL   J. Biol. Chem. 282:12272-12289(2007).
+RN   [22]
+RP   STRUCTURE BY NMR OF 203-217 IN COMPLEX WITH SMURF2.
+RX   PubMed=16641086; DOI=10.1074/jbc.M601493200;
+RA   Chong P.A., Lin H., Wrana J.L., Forman-Kay J.D.;
+RT   "An expanded WW domain recognition motif revealed by the interaction
+RT   between Smad7 and the E3 ubiquitin ligase Smurf2.";
+RL   J. Biol. Chem. 281:17069-17075(2006).
+RN   [23]
+RP   INVOLVEMENT IN CRCS3.
+RX   PubMed=17934461; DOI=10.1038/ng.2007.18;
+RG   Members of the CORGI consortium;
+RA   Broderick P., Carvajal-Carmona L., Pittman A.M., Webb E., Howarth K.,
+RA   Rowan A., Lubbe S., Spain S., Sullivan K., Fielding S., Jaeger E.,
+RA   Vijayakrishnan J., Kemp Z., Gorman M., Chandler I., Papaemmanuil E.,
+RA   Penegar S., Wood W., Sellick G., Qureshi M., Teixeira A., Domingo E.,
+RA   Barclay E., Martin L., Sieber O., Kerr D., Gray R., Peto J.,
+RA   Cazier J.-B., Tomlinson I., Houlston R.S.;
+RT   "A genome-wide association study shows that common alleles of SMAD7
+RT   influence colorectal cancer risk.";
+RL   Nat. Genet. 39:1315-1317(2007).
+CC   -!- FUNCTION: Antagonist of signaling by TGF-beta (transforming growth
+CC       factor) type 1 receptor superfamily members; has been shown to
+CC       inhibit TGF-beta (Transforming growth factor) and activin
+CC       signaling by associating with their receptors thus preventing
+CC       SMAD2 access. Functions as an adapter to recruit SMURF2 to the
+CC       TGF-beta receptor complex. Also acts by recruiting the PPP1R15A-
+CC       PP1 complex to TGFBR1, which promotes its dephosphorylation.
+CC       Positively regulates PDPK1 kinase activity by stimulating its
+CC       dissociation from the 14-3-3 protein YWHAQ which acts as a
+CC       negative regulator (By similarity).
+CC   -!- SUBUNIT: Interacts with WWP1 (By similarity). Interacts with
+CC       COPS5. Interacts with NEDD4L. Interacts with STAMBP. Interacts
+CC       with RNF111, AXIN1 and AXIN2. Interacts with PPP1R15A. Interacts
+CC       (via MH2 domain) with EP300. Interacts with ACVR1B, SMURF1, SMURF2
+CC       and TGFBR1; SMAD7 recruits SMURF1 and SMURF2 to the TGF-beta
+CC       receptor and regulates its degradation. Interacts with PDPK1 (via
+CC       PH domain).
+CC   -!- INTERACTION:
+CC       Q92905:COPS5; NbExp=10; IntAct=EBI-3861591, EBI-594661;
+CC       O00308:WWP2; NbExp=5; IntAct=EBI-3861591, EBI-743923;
+CC   -!- SUBCELLULAR LOCATION: Nucleus. Cytoplasm. Note=Interaction with
+CC       NEDD4L or RNF111 or induces translocation from the nucleus to the
+CC       cytoplasm. TGF-beta stimulates its translocation from the nucleus
+CC       to the cytoplasm. PDPK1 inhibits its translocation from the
+CC       nucleus to the cytoplasm in response to TGF-beta.
+CC   -!- TISSUE SPECIFICITY: Ubiquitous with higher expression in the lung
+CC       and vascular endothelium.
+CC   -!- INDUCTION: By TGFB1.
+CC   -!- PTM: Phosphorylation on Ser-249 does not affect its stability,
+CC       nuclear localization or inhibitory function in TGFB signaling;
+CC       however it affects its ability to regulate transcription (By
+CC       similarity). Phosphorylated by PDPK1.
+CC   -!- PTM: Ubiquitinated by WWP1 (By similarity). Polyubiquitinated by
+CC       RNF111, which is enhanced by AXIN1 and promotes proteasomal
+CC       degradation. In response to TGF-beta, ubiquitinated by SMURF1;
+CC       which promotes its degradation.
+CC   -!- PTM: Acetylation prevents ubiquitination and degradation mediated
+CC       by SMURF1.
+CC   -!- DISEASE: Genetic variations in SMAD7 influence susceptibility to
+CC       colorectal cancer type 3 (CRCS3) [MIM:612229]. Colorectal cancer
+CC       consists of tumors or cancer of either the colon or rectum or
+CC       both. Cancers of the large intestine are the second most common
+CC       form of cancer found in males and females. Symptoms include rectal
+CC       bleeding, occult blood in stools, bowel obstruction and weight
+CC       loss. Treatment is based largely on the extent of cancer
+CC       penetration into the intestinal wall. Surgical cures are possible
+CC       if the malignancy is confined to the intestine. Risk can be
+CC       reduced when following a diet which is low in fat and high in
+CC       fiber.
+CC   -!- SIMILARITY: Belongs to the dwarfin/SMAD family.
+CC   -!- SIMILARITY: Contains 1 MH1 (MAD homology 1) domain.
+CC   -!- SIMILARITY: Contains 1 MH2 (MAD homology 2) domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF010193; AAB81246.1; -; mRNA.
+DR   EMBL; AF015261; AAB81354.1; -; mRNA.
+DR   EMBL; AF026559; AAL68977.1; -; Genomic_DNA.
+DR   EMBL; AF026556; AAL68977.1; JOINED; Genomic_DNA.
+DR   EMBL; AF026557; AAL68977.1; JOINED; Genomic_DNA.
+DR   EMBL; AF026558; AAL68977.1; JOINED; Genomic_DNA.
+DR   EMBL; BC074818; AAH74818.2; -; mRNA.
+DR   EMBL; BC074819; AAH74819.2; -; mRNA.
+DR   IPI; IPI00005079; -.
+DR   RefSeq; NP_001177750.1; NM_001190821.1.
+DR   RefSeq; NP_001177751.1; NM_001190822.1.
+DR   RefSeq; NP_001177752.1; NM_001190823.1.
+DR   RefSeq; NP_005895.1; NM_005904.3.
+DR   UniGene; Hs.465087; -.
+DR   PDB; 2DJY; NMR; -; B=203-217.
+DR   PDBsum; 2DJY; -.
+DR   ProteinModelPortal; O15105; -.
+DR   SMR; O15105; 86-203, 254-426.
+DR   IntAct; O15105; 3.
+DR   MINT; MINT-1179821; -.
+DR   STRING; O15105; -.
+DR   PhosphoSite; O15105; -.
+DR   PRIDE; O15105; -.
+DR   Ensembl; ENST00000262158; ENSP00000262158; ENSG00000101665.
+DR   GeneID; 4092; -.
+DR   KEGG; hsa:4092; -.
+DR   UCSC; uc002ldg.1; human.
+DR   CTD; 4092; -.
+DR   GeneCards; GC18M046446; -.
+DR   H-InvDB; HIX0039705; -.
+DR   HGNC; HGNC:6773; SMAD7.
+DR   HPA; CAB026212; -.
+DR   HPA; HPA028897; -.
+DR   MIM; 602932; gene.
+DR   MIM; 612229; phenotype.
+DR   neXtProt; NX_O15105; -.
+DR   PharmGKB; PA134875286; -.
+DR   eggNOG; NOG309572; -.
+DR   GeneTree; ENSGT00600000084353; -.
+DR   HOGENOM; HBG715578; -.
+DR   HOVERGEN; HBG053021; -.
+DR   InParanoid; O15105; -.
+DR   KO; K04677; -.
+DR   OMA; CSENKSQ; -.
+DR   OrthoDB; EOG41G34G; -.
+DR   PhylomeDB; O15105; -.
+DR   Pathway_Interaction_DB; bmppathway; BMP receptor signaling.
+DR   Pathway_Interaction_DB; ifngpathway; IFN-gamma pathway.
+DR   Pathway_Interaction_DB; smad2_3nuclearpathway; Regulation of nuclear SMAD2/3 signaling.
+DR   Pathway_Interaction_DB; hdac_classi_pathway; Signaling events mediated by HDAC Class I.
+DR   Pathway_Interaction_DB; tgfbrpathway; TGF-beta receptor signaling.
+DR   Reactome; REACT_111102; Signal Transduction.
+DR   NextBio; 16046; -.
+DR   ArrayExpress; O15105; -.
+DR   Bgee; O15105; -.
+DR   CleanEx; HS_SMAD7; -.
+DR   Genevestigator; O15105; -.
+DR   GermOnline; ENSG00000101665; Homo sapiens.
+DR   GO; GO:0005813; C:centrosome; IDA:HPA.
+DR   GO; GO:0005829; C:cytosol; TAS:Reactome.
+DR   GO; GO:0005730; C:nucleolus; IDA:HPA.
+DR   GO; GO:0005886; C:plasma membrane; IDA:BHF-UCL.
+DR   GO; GO:0005667; C:transcription factor complex; IEA:InterPro.
+DR   GO; GO:0048185; F:activin binding; IPI:BHF-UCL.
+DR   GO; GO:0008013; F:beta-catenin binding; IPI:BHF-UCL.
+DR   GO; GO:0070411; F:I-SMAD binding; IPI:BHF-UCL.
+DR   GO; GO:0003700; F:sequence-specific DNA binding transcription factor activity; IEA:InterPro.
+DR   GO; GO:0044212; F:transcription regulatory region DNA binding; IDA:BHF-UCL.
+DR   GO; GO:0030617; F:transforming growth factor beta receptor, inhibitory cytoplasmic mediator activity; IDA:BHF-UCL.
+DR   GO; GO:0034713; F:type I transforming growth factor beta receptor binding; IPI:BHF-UCL.
+DR   GO; GO:0031625; F:ubiquitin protein ligase binding; IPI:BHF-UCL.
+DR   GO; GO:0034333; P:adherens junction assembly; IMP:BHF-UCL.
+DR   GO; GO:0048844; P:artery morphogenesis; ISS:BHF-UCL.
+DR   GO; GO:0030509; P:BMP signaling pathway; TAS:Reactome.
+DR   GO; GO:0034629; P:cellular protein complex localization; IDA:BHF-UCL.
+DR   GO; GO:0030514; P:negative regulation of BMP signaling pathway; IDA:BHF-UCL.
+DR   GO; GO:0030336; P:negative regulation of cell migration; TAS:BHF-UCL.
+DR   GO; GO:0010719; P:negative regulation of epithelial to mesenchymal transition; TAS:BHF-UCL.
+DR   GO; GO:0060394; P:negative regulation of pathway-restricted SMAD protein phosphorylation; IDA:BHF-UCL.
+DR   GO; GO:0033137; P:negative regulation of peptidyl-serine phosphorylation; IDA:BHF-UCL.
+DR   GO; GO:0010801; P:negative regulation of peptidyl-threonine phosphorylation; IDA:BHF-UCL.
+DR   GO; GO:0043433; P:negative regulation of sequence-specific DNA binding transcription factor activity; IDA:BHF-UCL.
+DR   GO; GO:0010944; P:negative regulation of transcription by competitive promoter binding; IDA:BHF-UCL.
+DR   GO; GO:0000122; P:negative regulation of transcription from RNA polymerase II promoter; IDA:BHF-UCL.
+DR   GO; GO:0030512; P:negative regulation of transforming growth factor beta receptor signaling pathway; IDA:BHF-UCL.
+DR   GO; GO:0051444; P:negative regulation of ubiquitin-protein ligase activity; IDA:BHF-UCL.
+DR   GO; GO:0060389; P:pathway-restricted SMAD protein phosphorylation; ISS:BHF-UCL.
+DR   GO; GO:0045768; P:positive regulation of anti-apoptosis; TAS:BHF-UCL.
+DR   GO; GO:0022409; P:positive regulation of cell-cell adhesion; IDA:BHF-UCL.
+DR   GO; GO:0032436; P:positive regulation of proteasomal ubiquitin-dependent protein catabolic process; IDA:BHF-UCL.
+DR   GO; GO:0031398; P:positive regulation of protein ubiquitination; IDA:BHF-UCL.
+DR   GO; GO:0050821; P:protein stabilization; IDA:BHF-UCL.
+DR   GO; GO:0032925; P:regulation of activin receptor signaling pathway; IDA:BHF-UCL.
+DR   GO; GO:0060373; P:regulation of ventricular cardiomyocyte membrane depolarization; IC:BHF-UCL.
+DR   GO; GO:0034616; P:response to laminar fluid shear stress; IEP:BHF-UCL.
+DR   GO; GO:0006351; P:transcription, DNA-dependent; IEA:UniProtKB-KW.
+DR   GO; GO:0007179; P:transforming growth factor beta receptor signaling pathway; TAS:Reactome.
+DR   GO; GO:0055010; P:ventricular cardiac muscle tissue morphogenesis; ISS:BHF-UCL.
+DR   GO; GO:0060412; P:ventricular septum morphogenesis; ISS:BHF-UCL.
+DR   InterPro; IPR013790; Dwarfin.
+DR   InterPro; IPR003619; MAD_homology1_Dwarfin-type.
+DR   InterPro; IPR013019; MAD_homology_MH1.
+DR   InterPro; IPR017855; SMAD_dom-like.
+DR   InterPro; IPR001132; SMAD_dom_Dwarfin-type.
+DR   InterPro; IPR008984; SMAD_FHA_domain.
+DR   Gene3D; G3DSA:3.90.520.10; MAD_MH1; 2.
+DR   Gene3D; G3DSA:2.60.200.10; MH2_Dwarfin-type; 1.
+DR   PANTHER; PTHR13703; Dwarfin; 1.
+DR   Pfam; PF03165; MH1; 1.
+DR   Pfam; PF03166; MH2; 1.
+DR   SMART; SM00523; DWA; 1.
+DR   SMART; SM00524; DWB; 1.
+DR   SUPFAM; SSF56366; MAD_MH1; 1.
+DR   SUPFAM; SSF49879; SMAD_FHA; 1.
+DR   PROSITE; PS51075; MH1; 1.
+DR   PROSITE; PS51076; MH2; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Acetylation; Complete proteome; Cytoplasm;
+KW   Isopeptide bond; Nucleus; Phosphoprotein; Reference proteome;
+KW   Transcription; Transcription regulation; Ubl conjugation.
+FT   CHAIN         1    426       Mothers against decapentaplegic homolog
+FT                                7.
+FT                                /FTId=PRO_0000090872.
+FT   DOMAIN       64    207       MH1.
+FT   DOMAIN      261    426       MH2.
+FT   REGION      208    217       Important for interaction with SMURF2.
+FT   MOTIF       208    211       PY-motif.
+FT   COMPBIAS     27     35       Poly-Gly.
+FT   COMPBIAS     49     56       Poly-Gly.
+FT   COMPBIAS    207    210       Poly-Pro.
+FT   MOD_RES      64     64       N6-acetyllysine; alternate.
+FT   MOD_RES      70     70       N6-acetyllysine; alternate.
+FT   MOD_RES     249    249       Phosphoserine (By similarity).
+FT   CROSSLNK     64     64       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in ubiquitin);
+FT                                alternate.
+FT   CROSSLNK     70     70       Glycyl lysine isopeptide (Lys-Gly)
+FT                                (interchain with G-Cter in ubiquitin);
+FT                                alternate.
+FT   MUTAGEN      64     64       K->A: Loss of acetylation, and of SMURF1-
+FT                                dependent degradation; when associated
+FT                                with A-70.
+FT   MUTAGEN      70     70       K->A: Loss of acetylation, and of SMURF1-
+FT                                dependent degradation; when associated
+FT                                with A-64.
+FT   MUTAGEN     207    211       Missing: Diminishes interaction with
+FT                                SMURF2.
+FT   MUTAGEN     211    211       Y->A: Diminishes interaction with SMURF2
+FT                                and reduces inhibition of TGF-beta
+FT                                signaling.
+FT   MUTAGEN     409    426       Missing: 90% reduction in TGF-beta
+FT                                receptor binding.
+FT   CONFLICT     71     71       G -> C (in Ref. 3; AAB81354).
+FT   STRAND      204    206
+FT   STRAND      212    214
+SQ   SEQUENCE   426 AA;  46426 MW;  5B76EC986776C102 CRC64;
+     MFRTKRSALV RRLWRSRAPG GEDEEEGAGG GGGGGELRGE GATDSRAHGA GGGGPGRAGC
+     CLGKAVRGAK GHHHPHPPAA GAGAAGGAEA DLKALTHSVL KKLKERQLEL LLQAVESRGG
+     TRTACLLLPG RLDCRLGPGA PAGAQPAQPP SSYSLPLLLC KVFRWPDLRH SSEVKRLCCC
+     ESYGKINPEL VCCNPHHLSR LCELESPPPP YSRYPMDFLK PTADCPDAVP SSAETGGTNY
+     LAPGGLSDSQ LLLEPGDRSH WCVVAYWEEK TRVGRLYCVQ EPSLDIFYDL PQGNGFCLGQ
+     LNSDNKSQLV QKVRSKIGCG IQLTREVDGV WVYNRSSYPI FIKSATLDNP DSRTLLVHKV
+     FPGFSIKAFD YEKAYSLQRP NDHEFMQQPW TGFTVQISFV KGWGQCYTRQ FISSCPCWLE
+     VIFNSR
+//

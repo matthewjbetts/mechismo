@@ -1,0 +1,728 @@
+ID   PK3CA_HUMAN             Reviewed;        1068 AA.
+AC   P42336; Q14CW1; Q99762;
+DT   01-NOV-1995, integrated into UniProtKB/Swiss-Prot.
+DT   20-FEB-2007, sequence version 2.
+DT   21-MAR-2012, entry version 128.
+DE   RecName: Full=Phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha isoform;
+DE            Short=PI3-kinase subunit alpha;
+DE            Short=PI3K-alpha;
+DE            Short=PI3Kalpha;
+DE            Short=PtdIns-3-kinase subunit alpha;
+DE            EC=2.7.1.153;
+DE   AltName: Full=Phosphatidylinositol-4,5-bisphosphate 3-kinase 110 kDa catalytic subunit alpha;
+DE            Short=PtdIns-3-kinase subunit p110-alpha;
+DE            Short=p110alpha;
+DE   AltName: Full=Phosphoinositide-3-kinase catalytic alpha polypeptide;
+DE   AltName: Full=Serine/threonine protein kinase PIK3CA;
+DE            EC=2.7.11.1;
+GN   Name=PIK3CA;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA], AND VARIANTS VAL-43 AND ARG-332.
+RX   MEDLINE=95229146; PubMed=7713498; DOI=10.1006/geno.1994.1655;
+RA   Volinia S., Hiles I., Ormondroyd E., Nizetic D., Antonacci R.,
+RA   Rocchi M., Waterfield M.;
+RT   "Molecular cloning, cDNA sequence, and chromosomal localization of the
+RT   human phosphatidylinositol 3-kinase p110 alpha (PIK3CA) gene.";
+RL   Genomics 24:472-477(1994).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=97196568; PubMed=9043658; DOI=10.1016/S0968-0896(96)00196-4;
+RA   Stirdivant S.M., Ahern J., Conroy R.R., Barnett S.F., Ledder L.M.,
+RA   Oliff A., Heimbrook D.C.;
+RT   "Cloning and mutagenesis of the p110 alpha subunit of human
+RT   phosphoinositide 3'-hydroxykinase.";
+RL   Bioorg. Med. Chem. 5:65-74(1997).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Lung;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [4]
+RP   INTERACTION WITH APPL1.
+RX   MEDLINE=99422021; PubMed=10490823; DOI=10.1038/sj.onc.1203080;
+RA   Mitsuuchi Y., Johnson S.W., Sonoda G., Tanno S., Golemis E.A.,
+RA   Testa J.R.;
+RT   "Identification of a chromosome 3p14.3-21.1 gene, APPL, encoding an
+RT   adaptor molecule that interacts with the oncoprotein-serine/threonine
+RT   kinase AKT2.";
+RL   Oncogene 18:4891-4898(1999).
+RN   [5]
+RP   FUNCTION IN INVADOPODIA FORMATION, AND CHARACTERIZATION OF VARIANTS
+RP   LYS-545 AND ARG-1047.
+RX   PubMed=21708979; DOI=10.1083/jcb.201009126;
+RA   Yamaguchi H., Yoshida S., Muroi E., Yoshida N., Kawamura M.,
+RA   Kouchi Z., Nakamura Y., Sakai R., Fukami K.;
+RT   "Phosphoinositide 3-kinase signaling pathway mediated by p110{alpha}
+RT   regulates invadopodia formation.";
+RL   J. Cell Biol. 193:1275-1288(2011).
+RN   [6]
+RP   REVIEW ON CANCER.
+RX   PubMed=18418043;
+RA   Huang C.-H., Mandelker D., Gabelli S.B., Amzel L.M.;
+RT   "Insights into the oncogenic effects of PIK3CA mutations from the
+RT   structure of p110alpha/p85alpha.";
+RL   Cell Cycle 7:1151-1156(2008).
+RN   [7]
+RP   REVIEW ON FUNCTION, AND REVIEW ON CANCER.
+RX   PubMed=18794883; DOI=10.1038/onc.2008.244;
+RA   Zhao L., Vogt P.K.;
+RT   "Class I PI3K in oncogenic cellular transformation.";
+RL   Oncogene 27:5486-5496(2008).
+RN   [8]
+RP   REVIEW ON FUNCTION.
+RX   PubMed=19200708; DOI=10.1016/j.ceb.2008.12.007;
+RA   Jia S., Roberts T.M., Zhao J.J.;
+RT   "Should individual PI3 kinase isoforms be targeted in cancer?";
+RL   Curr. Opin. Cell Biol. 21:199-208(2009).
+RN   [9]
+RP   X-RAY CRYSTALLOGRAPHY (3 ANGSTROMS) IN A COMPLEX WITH PIK3R1, AND
+RP   DOMAINS.
+RX   PubMed=18079394; DOI=10.1126/science.1150799;
+RA   Huang C.-H., Mandelker D., Schmidt-Kittler O., Samuels Y.,
+RA   Velculescu V.E., Kinzler K.W., Vogelstein B., Gabelli S.B.,
+RA   Amzel L.M.;
+RT   "The structure of a human p110alpha/p85alpha complex elucidates the
+RT   effects of oncogenic PI3Kalpha mutations.";
+RL   Science 318:1744-1748(2007).
+RN   [10]
+RP   STRUCTURE BY NMR OF 331-481.
+RG   RIKEN structural genomics initiative (RSGI);
+RT   "Solution structure of the C2 domain from human PI3-kinase p110
+RT   subunit alpha.";
+RL   Submitted (APR-2008) to the PDB data bank.
+RN   [11]
+RP   X-RAY CRYSTALLOGRAPHY (2.8 ANGSTROMS) OF MUTANT HIS-1047 IN COMPLEX
+RP   WITH WORTMANNIN AND PIK3R1, INTERACTION WITH PIK3R1, CHARACTERIZATION
+RP   OF VARIANT ARG-1047, AND DOMAINS.
+RX   PubMed=19805105; DOI=10.1073/pnas.0908444106;
+RA   Mandelker D., Gabelli S.B., Schmidt-Kittler O., Zhu J., Cheong I.,
+RA   Huang C.H., Kinzler K.W., Vogelstein B., Amzel L.M.;
+RT   "A frequent kinase domain mutation that changes the interaction
+RT   between PI3Kalpha and the membrane.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 106:16996-17001(2009).
+RN   [12]
+RP   VARIANTS CANCER LYS-542; LYS-545; PRO-546; ASN-1021; ARG-1047;
+RP   LEU-1047 AND TYR-1065.
+RX   PubMed=15289301; DOI=10.1158/0008-5472.CAN-04-1170;
+RA   Broderick D.K., Di C., Parrett T.J., Samuels Y.R., Cummins J.M.,
+RA   McLendon R.E., Fults D.W., Velculescu V.E., Bigner D.D., Yan H.;
+RT   "Mutations of PIK3CA in anaplastic oligodendrogliomas, high-grade
+RT   astrocytomas, and medulloblastomas.";
+RL   Cancer Res. 64:5048-5050(2004).
+RN   [13]
+RP   VARIANTS CANCER GLY-545; LYS-545; LYS-546; GLU-546; ARG-1047 AND
+RP   LEU-1047.
+RX   PubMed=15520168; DOI=10.1158/0008-5472.CAN-04-2933;
+RA   Campbell I.G., Russell S.E., Choong D.Y.H., Montgomery K.G.,
+RA   Ciavarella M.L., Hooi C.S.F., Cristiano B.E., Pearson R.B.,
+RA   Phillips W.A.;
+RT   "Mutation of the PIK3CA gene in ovarian and breast cancer.";
+RL   Cancer Res. 64:7678-7681(2004).
+RN   [14]
+RP   VARIANT CANCER ARG-1047.
+RX   PubMed=15016963; DOI=10.1126/science.1096502;
+RA   Samuels Y., Wang Z., Bardelli A., Silliman N., Ptak J., Szabo S.,
+RA   Yan H., Gazdar A., Powell S.M., Riggins G.J., Willson J.K.V.,
+RA   Markowitz S., Kinzler K.W., Vogelstein B., Velculescu V.E.;
+RT   "High frequency of mutations of the PIK3CA gene in human cancers.";
+RL   Science 304:554-554(2004).
+RN   [15]
+RP   VARIANTS CANCER GLN-88; LYS-542; ALA-545 AND ASN-1025.
+RX   PubMed=15924253; DOI=10.1007/s00401-005-1000-1;
+RA   Hartmann C., Bartels G., Gehlhaar C., Holtkamp N., von Deimling A.;
+RT   "PIK3CA mutations in glioblastoma multiforme.";
+RL   Acta Neuropathol. 109:639-642(2005).
+RN   [16]
+RP   VARIANTS CANCER LYS-542; LYS-545 AND ARG-1047.
+RX   PubMed=15784156; DOI=10.1186/1471-2407-5-29;
+RA   Li V.S.W., Wong C.W., Chan T.L., Chan A.S.W., Zhao W., Chu K.-M.,
+RA   So S., Chen X., Yuen S.T., Leung S.Y.;
+RT   "Mutations of PIK3CA in gastric adenocarcinoma.";
+RL   BMC Cancer 5:29-29(2005).
+RN   [17]
+RP   CHARACTERIZATION OF VARIANTS CANCER HIS-38; VAL-106; ARG-420; GLN-453;
+RP   LYS-542; LYS-545; ILE-1043 AND ARG-1047.
+RX   PubMed=15930273; DOI=10.1158/0008-5472.CAN-04-4114;
+RA   Ikenoue T., Kanai F., Hikiba Y., Obata T., Tanaka Y., Imamura J.,
+RA   Ohta M., Jazag A., Guleng B., Tateishi K., Asaoka Y., Matsumura M.,
+RA   Kawabe T., Omata M.;
+RT   "Functional analysis of PIK3CA gene mutations in human colorectal
+RT   cancer.";
+RL   Cancer Res. 65:4562-4567(2005).
+RN   [18]
+RP   VARIANTS CANCER GLN-542; LYS-542; GLY-545; LYS-545; ARG-1007;
+RP   HIS-1021; CYS-1021; VAL-1035; ILE-1043; TYR-1047; ARG-1047; ASP-1050;
+RP   LYS-1052 AND LEU-1065.
+RX   PubMed=16322209; DOI=10.1158/0008-5472.CAN-05-2620;
+RA   Oda K., Stokoe D., Taketani Y., McCormick F.;
+RT   "High frequency of coexistent mutations of PIK3CA and PTEN genes in
+RT   endometrial carcinoma.";
+RL   Cancer Res. 65:10669-10673(2005).
+RN   [19]
+RP   VARIANTS CANCER LYS-542; GLY-545; LYS-545; GLN-1023; ARG-1047 AND
+RP   LEU-1047.
+RX   PubMed=15994075; DOI=10.1016/j.ejca.2005.04.022;
+RA   Velho S., Oliveira C., Ferreira A., Ferreira A.C., Suriano G.,
+RA   Schwartz S. Jr., Duval A., Carneiro F., Machado J.C., Hamelin R.,
+RA   Seruca R.;
+RT   "The prevalence of PIK3CA mutations in gastric and colon cancer.";
+RL   Eur. J. Cancer 41:1649-1654(2005).
+RN   [20]
+RP   VARIANTS CANCER LYS-545 AND ARG-1047.
+RX   PubMed=15712344; DOI=10.1002/humu.9316;
+RA   Wang Y., Helland A., Holm R., Kristensen G.B., Boerresen-Dale A.-L.;
+RT   "PIK3CA mutations in advanced ovarian carcinomas.";
+RL   Hum. Mutat. 25:322-322(2005).
+RN   [21]
+RP   VARIANT HCC ALA-545.
+RX   PubMed=15608678; DOI=10.1038/sj.onc.1208304;
+RA   Lee J.W., Soung Y.H., Kim S.Y., Lee H.W., Park W.S., Nam S.W.,
+RA   Kim S.H., Lee J.Y., Yoo N.J., Lee S.H.;
+RT   "PIK3CA gene is frequently mutated in breast carcinomas and
+RT   hepatocellular carcinomas.";
+RL   Oncogene 24:1477-1480(2005).
+RN   [22]
+RP   VARIANTS CANCER CYS-343; LYS-542; LYS-545 AND ARG-1047, AND VARIANT
+RP   MET-391.
+RX   PubMed=16533766; DOI=10.1158/1078-0432.CCR-05-2173;
+RA   Qiu W., Schoenleben F., Li X., Ho D.J., Close L.G., Manolidis S.,
+RA   Bennett B.P., Su G.H.;
+RT   "PIK3CA mutations in head and neck squamous cell carcinoma.";
+RL   Clin. Cancer Res. 12:1441-1446(2006).
+RN   [23]
+RP   VARIANT CANCER ARG-1047.
+RX   PubMed=16114017; DOI=10.1002/ijc.21444;
+RA   Or Y.Y.-Y., Hui A.B.-Y., To K.-F., Lam C.N.-Y., Lo K.-W.;
+RT   "PIK3CA mutations in nasopharyngeal carcinoma.";
+RL   Int. J. Cancer 118:1065-1067(2006).
+RN   [24]
+RP   VARIANTS CANCER LYS-542; VAL-542; LYS-545; ARG-546; ARG-1047 AND
+RP   LEU-1047.
+RX   PubMed=16353168; DOI=10.1002/path.1908;
+RA   Buttitta F., Felicioni L., Barassi F., Martella C., Paolizzi D.,
+RA   Fresu G., Salvatore S., Cuccurullo F., Mezzetti A., Campani D.,
+RA   Marchetti A.;
+RT   "PIK3CA mutation and histological type in breast carcinoma: high
+RT   frequency of mutations in lobular carcinoma.";
+RL   J. Pathol. 208:350-355(2006).
+RN   [25]
+RP   CHARACTERIZATION OF VARIANTS CANCER LYS-542; LYS-545 AND ARG-1047.
+RX   PubMed=16432179; DOI=10.1073/pnas.0510857103;
+RA   Bader A.G., Kang S., Vogt P.K.;
+RT   "Cancer-specific mutations in PIK3CA are oncogenic in vivo.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 103:1475-1479(2006).
+RN   [26]
+RP   VARIANTS KERSEB LYS-542; LYS-545; GLY-545 AND ARG-1047.
+RX   PubMed=17673550; DOI=10.1073/pnas.0705218104;
+RA   Hafner C., Lopez-Knowles E., Luis N.M., Toll A., Baselga E.,
+RA   Fernandez-Casado A., Hernandez S., Ribe A., Mentzel T., Stoehr R.,
+RA   Hofstaedter F., Landthaler M., Vogt T., Pujol R.M., Hartmann A.,
+RA   Real F.X.;
+RT   "Oncogenic PIK3CA mutations occur in epidermal nevi and seborrheic
+RT   keratoses with a characteristic mutation pattern.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 104:13450-13454(2007).
+CC   -!- FUNCTION: Phosphoinositide-3-kinase (PI3K) that phosphorylates
+CC       PtdIns (Phosphatidylinositol), PtdIns4P (Phosphatidylinositol 4-
+CC       phosphate) and PtdIns(4,5)P2 (Phosphatidylinositol 4,5-
+CC       bisphosphate) to generate phosphatidylinositol 3,4,5-trisphosphate
+CC       (PIP3). PIP3 plays a key role by recruiting PH domain-containing
+CC       proteins to the membrane, including AKT1 and PDPK1, activating
+CC       signaling cascades involved in cell growth, survival,
+CC       proliferation, motility and morphology. Participates in cellular
+CC       signaling in response to various growth factors. Involved in the
+CC       activation of AKT1 upon stimulation by receptor tyrosine kinases
+CC       ligands such as EGF, insulin, IGF1, VEGFA and PDGF. Involved in
+CC       signaling via insulin-receptor substrate (IRS) proteins. Essential
+CC       in endothelial cell migration during vascular development through
+CC       VEGFA signaling, possibly by regulating RhoA activity. Required
+CC       for lymphatic vasculature development, possibly by binding to RAS
+CC       and by activation by EGF and FGF2, but not by PDGF. Regulates
+CC       invadopodia formation in breast cancer cells through the PDPK1-
+CC       AKT1 pathway. Participates in cardiomyogenesis in embryonic stem
+CC       cells through a AKT1 pathway. Participates in vasculogenesis in
+CC       embryonic stem cells through PDK1 and protein kinase C pathway.
+CC       Has also serine-protein kinase activity: phosphorylates PIK3R1
+CC       (p85alpha regulatory subunit), EIF4EBP1 and HRAS.
+CC   -!- CATALYTIC ACTIVITY: ATP + 1-phosphatidyl-1D-myo-inositol 4,5-
+CC       bisphosphate = ADP + 1-phosphatidyl-1D-myo-inositol 3,4,5-
+CC       trisphosphate.
+CC   -!- CATALYTIC ACTIVITY: ATP + a protein = ADP + a phosphoprotein.
+CC   -!- SUBUNIT: Heterodimer of a catalytic subunit PIK3CA and a p85
+CC       regulatory subunit (PIK3R1, PIK3R2 or PIK3R3). Interacts with IRS1
+CC       in nuclear extracts. Interacts with RUFY3 (By similarity).
+CC       Interacts with RASD2 (By similarity). Interacts with APPL1.
+CC       Interacts with HRAS1 and KRAS (By similarity). Interaction with
+CC       HRAS1/KRAS is required for PI3K pathway signaling and cell
+CC       proliferation stimulated by EGF and FGF2 (By similarity).
+CC   -!- DOMAIN: The PI3K-ABD domain and the PI3K-RBD domain interact with
+CC       the PI3K/PI4K kinase domain. The C2 PI3K-type domain may
+CC       facilitate the recruitment to the plasma membrane. The inhibitory
+CC       interactions with PIK3R1 are mediated by the PI3K-ABD domain and
+CC       the C2 PI3K-type domain with the iSH2 (inter-SH2) region of
+CC       PIK3R1, and the C2 PI3K-type domain, the PI3K helical domain, and
+CC       the PI3K/PI4K kinase domain with the nSH2 (N-terminal SH2) region
+CC       of PIK3R1.
+CC   -!- DISEASE: Note=Most of the cancer-derived mutations are missense
+CC       mutations and map to one of the three hotspots: Glu-542; Glu-545
+CC       and His-1047. Mutated isoforms participate in cellular
+CC       transformation and tumorigenesis induced by oncogenic receptor
+CC       tyrosine kinases (RTKs) and HRAS1/KRAS. Interaction with
+CC       HRAS1/KRAS is required for Ras-driven tumor formation. Mutations
+CC       increasing the lipid kinase activity are required for oncogenic
+CC       signaling. The protein kinase activity may not be required for
+CC       tumorigenesis.
+CC   -!- DISEASE: Defects in PIK3CA are associated with colorectal cancer
+CC       (CRC) [MIM:114500].
+CC   -!- DISEASE: Defects in PIK3CA are a cause of susceptibility to breast
+CC       cancer (BC) [MIM:114480]. A common malignancy originating from
+CC       breast epithelial tissue. Breast neoplasms can be distinguished by
+CC       their histologic pattern. Invasive ductal carcinoma is by far the
+CC       most common type. Breast cancer is etiologically and genetically
+CC       heterogeneous. Important genetic factors have been indicated by
+CC       familial occurrence and bilateral involvement. Mutations at more
+CC       than one locus can be involved in different families or even in
+CC       the same case.
+CC   -!- DISEASE: Defects in PIK3CA are a cause of susceptibility to
+CC       ovarian cancer (OC) [MIM:167000]. Ovarian cancer common malignancy
+CC       originating from ovarian tissue. Although many histologic types of
+CC       ovarian neoplasms have been described, epithelial ovarian
+CC       carcinoma is the most common form. Ovarian cancers are often
+CC       asymptomatic and the recognized signs and symptoms, even of late-
+CC       stage disease, are vague. Consequently, most patients are
+CC       diagnosed with advanced disease.
+CC   -!- DISEASE: Defects in PIK3CA may underlie hepatocellular carcinoma
+CC       (HCC) [MIM:114550].
+CC   -!- DISEASE: Defects in PIK3CA are a cause of keratosis seborrheic
+CC       (KERSEB) [MIM:182000]. A common benign skin tumor. Seborrheic
+CC       keratoses usually begin with the appearance of one or more sharply
+CC       defined, light brown, flat macules. The lesions may be sparse or
+CC       numerous. As they initially grow, they develop a velvety to finely
+CC       verrucous surface, followed by an uneven warty surface with
+CC       multiple plugged follicles and a dull or lackluster appearance.
+CC   -!- MISCELLANEOUS: The avian sarcoma virus 16 genome encodes an
+CC       oncogene derived from PIK3CA (PubMed:18418043).
+CC   -!- SIMILARITY: Belongs to the PI3/PI4-kinase family.
+CC   -!- SIMILARITY: Contains 1 C2 PI3K-type domain.
+CC   -!- SIMILARITY: Contains 1 PI3K-ABD domain.
+CC   -!- SIMILARITY: Contains 1 PI3K-RBD domain.
+CC   -!- SIMILARITY: Contains 1 PI3K/PI4K domain.
+CC   -!- SIMILARITY: Contains 1 PIK helical domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; Z29090; CAA82333.1; -; mRNA.
+DR   EMBL; U79143; AAB39753.1; -; mRNA.
+DR   EMBL; BC113601; AAI13602.1; -; mRNA.
+DR   EMBL; BC113603; AAI13604.1; -; mRNA.
+DR   IPI; IPI00031386; -.
+DR   PIR; I38110; I38110.
+DR   RefSeq; NP_006209.2; NM_006218.2.
+DR   UniGene; Hs.553498; -.
+DR   UniGene; Hs.85701; -.
+DR   PDB; 2ENQ; NMR; -; A=331-481.
+DR   PDB; 2RD0; X-ray; 3.05 A; A=1-1068.
+DR   PDB; 3HHM; X-ray; 2.80 A; A=1-1068.
+DR   PDB; 3HIZ; X-ray; 3.30 A; A=1-1068.
+DR   PDBsum; 2ENQ; -.
+DR   PDBsum; 2RD0; -.
+DR   PDBsum; 3HHM; -.
+DR   PDBsum; 3HIZ; -.
+DR   ProteinModelPortal; P42336; -.
+DR   SMR; P42336; 16-105, 333-481.
+DR   DIP; DIP-42728N; -.
+DR   IntAct; P42336; 16.
+DR   MINT; MINT-1367228; -.
+DR   STRING; P42336; -.
+DR   PhosphoSite; P42336; -.
+DR   DMDM; 126302584; -.
+DR   PRIDE; P42336; -.
+DR   DNASU; 5290; -.
+DR   Ensembl; ENST00000263967; ENSP00000263967; ENSG00000121879.
+DR   GeneID; 5290; -.
+DR   KEGG; hsa:5290; -.
+DR   UCSC; uc003fjk.1; human.
+DR   CTD; 5290; -.
+DR   GeneCards; GC03P178865; -.
+DR   H-InvDB; HIX0030866; -.
+DR   HGNC; HGNC:8975; PIK3CA.
+DR   HPA; CAB017804; -.
+DR   HPA; HPA009985; -.
+DR   MIM; 114480; phenotype.
+DR   MIM; 114500; phenotype.
+DR   MIM; 114550; phenotype.
+DR   MIM; 167000; phenotype.
+DR   MIM; 171834; gene.
+DR   MIM; 182000; phenotype.
+DR   neXtProt; NX_P42336; -.
+DR   Orphanet; 144; Hereditary nonpolyposis colon cancer.
+DR   PharmGKB; PA33308; -.
+DR   eggNOG; COG5032; -.
+DR   GeneTree; ENSGT00620000087742; -.
+DR   HOVERGEN; HBG052721; -.
+DR   InParanoid; P42336; -.
+DR   KO; K00922; -.
+DR   OMA; AFAVRCL; -.
+DR   OrthoDB; EOG45TCMC; -.
+DR   PhylomeDB; P42336; -.
+DR   BioCyc; MetaCyc:ENSG00000121879-MONOMER; -.
+DR   BRENDA; 2.7.1.137; 2681.
+DR   Pathway_Interaction_DB; a6b1_a6b4_integrin_pathway; a6b1 and a6b4 Integrin signaling.
+DR   Pathway_Interaction_DB; angiopoietinreceptor_pathway; Angiopoietin receptor Tie2-mediated signaling.
+DR   Pathway_Interaction_DB; arf6cyclingpathway; Arf6 signaling events.
+DR   Pathway_Interaction_DB; nfkappabatypicalpathway; Atypical NF-kappaB pathway.
+DR   Pathway_Interaction_DB; bcr_5pathway; BCR signaling pathway.
+DR   Pathway_Interaction_DB; pi3kcipathway; Class I PI3K signaling events.
+DR   Pathway_Interaction_DB; epha2_fwdpathway; EPHA2 forward signaling.
+DR   Pathway_Interaction_DB; ephbfwdpathway; EPHB forward signaling.
+DR   Pathway_Interaction_DB; ephrinbrevpathway; Ephrin B reverse signaling.
+DR   Pathway_Interaction_DB; fcer1pathway; Fc-epsilon receptor I signaling in mast cells.
+DR   Pathway_Interaction_DB; fgf_pathway; FGF signaling pathway.
+DR   Pathway_Interaction_DB; ifngpathway; IFN-gamma pathway.
+DR   Pathway_Interaction_DB; igf1_pathway; IGF1 pathway.
+DR   Pathway_Interaction_DB; il1pathway; IL1-mediated signaling events.
+DR   Pathway_Interaction_DB; il2_pi3kpathway; IL2 signaling events mediated by PI3K.
+DR   Pathway_Interaction_DB; il2_stat5pathway; IL2 signaling events mediated by STAT5.
+DR   Pathway_Interaction_DB; il2_1pathway; IL2-mediated signaling events.
+DR   Pathway_Interaction_DB; il23pathway; IL23-mediated signaling events.
+DR   Pathway_Interaction_DB; il4_2pathway; IL4-mediated signaling events.
+DR   Pathway_Interaction_DB; il6_7pathway; IL6-mediated signaling events.
+DR   Pathway_Interaction_DB; insulin_pathway; Insulin Pathway.
+DR   Pathway_Interaction_DB; avb3_integrin_pathway; Integrins in angiogenesis.
+DR   Pathway_Interaction_DB; mtor_4pathway; mTOR signaling pathway.
+DR   Pathway_Interaction_DB; trkrpathway; Neurotrophic factor-mediated Trk receptor signaling.
+DR   Pathway_Interaction_DB; avb3_opn_pathway; Osteopontin-mediated events.
+DR   Pathway_Interaction_DB; p75ntrpathway; p75(NTR)-mediated signaling.
+DR   Pathway_Interaction_DB; a4b1_paxdep_pathway; Paxillin-dependent events mediated by a4b1.
+DR   Pathway_Interaction_DB; a4b1_paxindep_pathway; Paxillin-independent events mediated by a4b1 and a4b7.
+DR   Pathway_Interaction_DB; pdgfrapathway; PDGFR-alpha signaling pathway.
+DR   Pathway_Interaction_DB; pdgfrbpathway; PDGFR-beta signaling pathway.
+DR   Pathway_Interaction_DB; er_nongenomic_pathway; Plasma membrane estrogen receptor signaling.
+DR   Pathway_Interaction_DB; reelinpathway; Reelin signaling pathway.
+DR   Pathway_Interaction_DB; met_pathway; Signaling events activated by Hepatocyte Growth Factor Receptor (c-Met).
+DR   Pathway_Interaction_DB; ptp1bpathway; Signaling events mediated by PTP1B.
+DR   Pathway_Interaction_DB; kitpathway; Signaling events mediated by Stem cell factor receptor (c-Kit).
+DR   Pathway_Interaction_DB; hedgehog_2pathway; Signaling events mediated by the Hedgehog family.
+DR   Pathway_Interaction_DB; vegfr1_2_pathway; Signaling events mediated by VEGFR1 and VEGFR2.
+DR   Pathway_Interaction_DB; ret_pathway; Signaling events regulated by Ret tyrosine kinase.
+DR   Pathway_Interaction_DB; trail_pathway; TRAIL signaling pathway.
+DR   Pathway_Interaction_DB; pi3kplctrkpathway; Trk receptor signaling mediated by PI3K and PLC-gamma.
+DR   Pathway_Interaction_DB; vegfr1_pathway; VEGFR1 specific signals.
+DR   Pathway_Interaction_DB; lymphangiogenesis_pathway; VEGFR3 signaling in lymphatic endothelium.
+DR   Reactome; REACT_111102; Signal Transduction.
+DR   Reactome; REACT_111155; Cell-Cell communication.
+DR   Reactome; REACT_116125; Disease.
+DR   Reactome; REACT_604; Hemostasis.
+DR   Reactome; REACT_6900; Immune System.
+DR   BindingDB; P42336; -.
+DR   NextBio; 20442; -.
+DR   ArrayExpress; P42336; -.
+DR   Bgee; P42336; -.
+DR   CleanEx; HS_PIK3CA; -.
+DR   Genevestigator; P42336; -.
+DR   GermOnline; ENSG00000121879; Homo sapiens.
+DR   GO; GO:0016303; F:1-phosphatidylinositol-3-kinase activity; IDA:UniProtKB.
+DR   GO; GO:0005524; F:ATP binding; IEA:UniProtKB-KW.
+DR   GO; GO:0046934; F:phosphatidylinositol-4,5-bisphosphate 3-kinase activity; TAS:Reactome.
+DR   GO; GO:0004674; F:protein serine/threonine kinase activity; IEA:UniProtKB-KW.
+DR   GO; GO:0001525; P:angiogenesis; IEA:UniProtKB-KW.
+DR   GO; GO:0060048; P:cardiac muscle contraction; TAS:UniProtKB.
+DR   GO; GO:0043542; P:endothelial cell migration; TAS:UniProtKB.
+DR   GO; GO:0007173; P:epidermal growth factor receptor signaling pathway; TAS:Reactome.
+DR   GO; GO:0008543; P:fibroblast growth factor receptor signaling pathway; TAS:Reactome.
+DR   GO; GO:0038028; P:insulin receptor signaling pathway via phosphatidylinositol 3-kinase cascade; TAS:UniProtKB.
+DR   GO; GO:0050900; P:leukocyte migration; TAS:Reactome.
+DR   GO; GO:0048011; P:nerve growth factor receptor signaling pathway; TAS:Reactome.
+DR   GO; GO:0048015; P:phosphatidylinositol-mediated signaling; TAS:Reactome.
+DR   GO; GO:0030168; P:platelet activation; TAS:UniProtKB.
+DR   GO; GO:0031295; P:T cell costimulation; TAS:Reactome.
+DR   GO; GO:0050852; P:T cell receptor signaling pathway; TAS:Reactome.
+DR   InterPro; IPR016024; ARM-type_fold.
+DR   InterPro; IPR000008; C2_Ca-dep.
+DR   InterPro; IPR008973; C2_Ca/lipid-bd_dom_CaLB.
+DR   InterPro; IPR011009; Kinase-like_dom.
+DR   InterPro; IPR000403; PI3/4_kinase_cat_dom.
+DR   InterPro; IPR018936; PI3/4_kinase_CS.
+DR   InterPro; IPR002420; PI3K_C2.
+DR   InterPro; IPR003113; PI3K_p85-bd.
+DR   InterPro; IPR000341; PI3K_ras-bd.
+DR   InterPro; IPR015433; PI_Kinase.
+DR   InterPro; IPR001263; PInositide-3_kin_accessory_dom.
+DR   Gene3D; G3DSA:1.10.1070.11; PI3/4_kinase_cat; 1.
+DR   Gene3D; G3DSA:1.25.40.70; PI3Ka; 1.
+DR   PANTHER; PTHR10048; PI_Kinase; 1.
+DR   Pfam; PF00454; PI3_PI4_kinase; 1.
+DR   Pfam; PF00792; PI3K_C2; 1.
+DR   Pfam; PF02192; PI3K_p85B; 1.
+DR   Pfam; PF00794; PI3K_rbd; 1.
+DR   Pfam; PF00613; PI3Ka; 1.
+DR   SMART; SM00239; C2; 1.
+DR   SMART; SM00142; PI3K_C2; 1.
+DR   SMART; SM00143; PI3K_p85B; 1.
+DR   SMART; SM00144; PI3K_rbd; 1.
+DR   SMART; SM00145; PI3Ka; 1.
+DR   SMART; SM00146; PI3Kc; 1.
+DR   SUPFAM; SSF48371; ARM-type_fold; 1.
+DR   SUPFAM; SSF49562; C2_CaLB; 1.
+DR   SUPFAM; SSF56112; Kinase_like; 1.
+DR   PROSITE; PS50004; C2; FALSE_NEG.
+DR   PROSITE; PS00915; PI3_4_KINASE_1; 1.
+DR   PROSITE; PS00916; PI3_4_KINASE_2; 1.
+DR   PROSITE; PS50290; PI3_4_KINASE_3; 1.
+DR   PROSITE; PS51544; PI3K_ABD; 1.
+DR   PROSITE; PS51547; PI3K_C2; 1.
+DR   PROSITE; PS51546; PI3K_RBD; 1.
+DR   PROSITE; PS51545; PIK_HELICAL; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Angiogenesis; ATP-binding; Complete proteome;
+KW   Disease mutation; Kinase; Nucleotide-binding; Polymorphism;
+KW   Proto-oncogene; Reference proteome; Serine/threonine-protein kinase;
+KW   Transferase.
+FT   CHAIN         1   1068       Phosphatidylinositol-4,5-bisphosphate 3-
+FT                                kinase catalytic subunit alpha isoform.
+FT                                /FTId=PRO_0000088785.
+FT   DOMAIN       16    105       PI3K-ABD.
+FT   DOMAIN      187    289       PI3K-RBD.
+FT   DOMAIN      330    487       C2 PI3K-type.
+FT   DOMAIN      517    694       PIK helical.
+FT   DOMAIN      797   1068       PI3K/PI4K.
+FT   VARIANT      38     38       R -> H (in cancer; shows an increase in
+FT                                lipid kinase activity; may disrupt the
+FT                                interaction between the PI3K-ABD domain
+FT                                and the N-terminal lobe of PI3K/PI4K
+FT                                kinase domain possibly affecting the
+FT                                conformation of the kinase domain).
+FT                                /FTId=VAR_026166.
+FT   VARIANT      43     43       I -> V (in dbSNP:rs1051399).
+FT                                /FTId=VAR_042942.
+FT   VARIANT      88     88       R -> Q (in cancer; may disrupt the
+FT                                interaction between the PI3K-ABD domain
+FT                                and the N-terminal lobe of PI3K/PI4K
+FT                                kinase domain possibly affecting the
+FT                                conformation of the kinase domain).
+FT                                /FTId=VAR_026167.
+FT   VARIANT     106    106       G -> V (in cancer; shows an increase in
+FT                                lipid kinase activity).
+FT                                /FTId=VAR_026168.
+FT   VARIANT     332    332       S -> R (in dbSNP:rs1051407).
+FT                                /FTId=VAR_042943.
+FT   VARIANT     343    343       Y -> C (in cancer).
+FT                                /FTId=VAR_026169.
+FT   VARIANT     391    391       I -> M (in dbSNP:rs3729680).
+FT                                /FTId=VAR_026170.
+FT   VARIANT     420    420       C -> R (in cancer; shows an increase in
+FT                                lipid kinase activity; may increase the
+FT                                affinity for lipid membranes).
+FT                                /FTId=VAR_026171.
+FT   VARIANT     453    453       E -> Q (in cancer; shows an increase in
+FT                                lipid kinase activity; may disrupt the
+FT                                interaction of the C2 PI3K-type domain
+FT                                with the iSH2 region of the p85
+FT                                regulatory subunit).
+FT                                /FTId=VAR_026172.
+FT   VARIANT     542    542       E -> K (in KERSEB; shows an increase in
+FT                                lipid kinase activity; oncogenic in vivo;
+FT                                occurs in the interface between the PI3K
+FT                                helical domain and the nSH2 (N-terminal
+FT                                SH2) region of the p85 regulatory subunit
+FT                                and may reduce the inhibitory effect of
+FT                                p85; requires interaction with RAS to
+FT                                induce cellular transformation).
+FT                                /FTId=VAR_026173.
+FT   VARIANT     542    542       E -> Q (in cancer).
+FT                                /FTId=VAR_026174.
+FT   VARIANT     542    542       E -> V (in cancer).
+FT                                /FTId=VAR_026175.
+FT   VARIANT     545    545       E -> A (in cancer).
+FT                                /FTId=VAR_026176.
+FT   VARIANT     545    545       E -> G (in KERSEB).
+FT                                /FTId=VAR_026177.
+FT   VARIANT     545    545       E -> K (in KERSEB; shows an increase in
+FT                                lipid kinase activity; oncogenic in vivo;
+FT                                occurs in the interface between the PI3K
+FT                                helical domain and the nSH2 (N-terminal
+FT                                SH2) region of the p85 regulatory subunit
+FT                                and may reduce the inhibitory effect of
+FT                                p85; requires interaction with RAS to
+FT                                induce cellular transformation; enhances
+FT                                invadopodia-mediated extracellular matrix
+FT                                degradation and invasion in breast cancer
+FT                                cells).
+FT                                /FTId=VAR_026178.
+FT   VARIANT     546    546       Q -> E (in cancer).
+FT                                /FTId=VAR_026179.
+FT   VARIANT     546    546       Q -> K (in cancer).
+FT                                /FTId=VAR_026180.
+FT   VARIANT     546    546       Q -> P (in cancer).
+FT                                /FTId=VAR_026181.
+FT   VARIANT     546    546       Q -> R (in cancer).
+FT                                /FTId=VAR_026182.
+FT   VARIANT    1007   1007       G -> R (in cancer).
+FT                                /FTId=VAR_026183.
+FT   VARIANT    1021   1021       Y -> C (in cancer).
+FT                                /FTId=VAR_026184.
+FT   VARIANT    1021   1021       Y -> H (in cancer).
+FT                                /FTId=VAR_026185.
+FT   VARIANT    1021   1021       Y -> N (in cancer).
+FT                                /FTId=VAR_026186.
+FT   VARIANT    1023   1023       R -> Q (in cancer).
+FT                                /FTId=VAR_026187.
+FT   VARIANT    1025   1025       T -> N (in cancer).
+FT                                /FTId=VAR_026188.
+FT   VARIANT    1035   1035       A -> V (in cancer).
+FT                                /FTId=VAR_026189.
+FT   VARIANT    1043   1043       M -> I (in cancer; shows an increase in
+FT                                lipid kinase activity).
+FT                                /FTId=VAR_026190.
+FT   VARIANT    1047   1047       H -> L (in cancer).
+FT                                /FTId=VAR_026191.
+FT   VARIANT    1047   1047       H -> R (in KERSEB; shows an increase in
+FT                                lipid kinase activity; oncogenic in vivo;
+FT                                requires binding to p85 regulatory
+FT                                subunit to induce cellular transformation
+FT                                but not interaction with RAS; may mimic
+FT                                the conformatitonal change triggered by
+FT                                the interaction with RAS; enhances
+FT                                invadopodia-mediated extracellular matrix
+FT                                degradation and invasion in breast cancer
+FT                                cells; increases lipid kinase activity;
+FT                                may alter the interaction of the PI3K/
+FT                                PI4K kinase domain with the cell
+FT                                membrane).
+FT                                /FTId=VAR_026192.
+FT   VARIANT    1047   1047       H -> Y (in cancer).
+FT                                /FTId=VAR_026193.
+FT   VARIANT    1050   1050       G -> D (in cancer).
+FT                                /FTId=VAR_026194.
+FT   VARIANT    1052   1052       T -> K (in cancer).
+FT                                /FTId=VAR_026195.
+FT   VARIANT    1065   1065       H -> L (in cancer).
+FT                                /FTId=VAR_026196.
+FT   VARIANT    1065   1065       H -> Y (in cancer).
+FT                                /FTId=VAR_026197.
+FT   CONFLICT    170    170       N -> H (in Ref. 1; CAA82333).
+FT   CONFLICT    187    187       K -> R (in Ref. 1; CAA82333).
+FT   CONFLICT    286    287       ML -> KM (in Ref. 1; CAA82333).
+FT   CONFLICT    346    346       V -> L (in Ref. 1; CAA82333).
+FT   CONFLICT    723    723       K -> R (in Ref. 1; CAA82333).
+FT   CONFLICT    751    751       F -> L (in Ref. 1; CAA82333).
+FT   CONFLICT    767    767       E -> K (in Ref. 1; CAA82333).
+FT   STRAND       13     15
+FT   STRAND       18     25
+FT   STRAND       31     37
+FT   HELIX        42     52
+FT   HELIX        53     55
+FT   STRAND       56     58
+FT   HELIX        59     61
+FT   HELIX        65     67
+FT   STRAND       69     74
+FT   TURN         75     77
+FT   STRAND       78     82
+FT   HELIX        89     91
+FT   STRAND       95    102
+FT   HELIX       109    113
+FT   HELIX       114    117
+FT   HELIX       118    121
+FT   HELIX       134    142
+FT   HELIX       144    155
+FT   TURN        156    159
+FT   HELIX       160    165
+FT   TURN        179    181
+FT   HELIX       182    185
+FT   STRAND      187    198
+FT   TURN        199    202
+FT   STRAND      203    212
+FT   HELIX       217    229
+FT   HELIX       236    240
+FT   HELIX       247    249
+FT   STRAND      250    257
+FT   HELIX       267    269
+FT   HELIX       271    279
+FT   STRAND      284    289
+FT   HELIX       290    294
+FT   STRAND      332    341
+FT   STRAND      357    364
+FT   STRAND      377    380
+FT   STRAND      382    393
+FT   STRAND      401    405
+FT   STRAND      425    430
+FT   STRAND      439    444
+FT   STRAND      453    455
+FT   STRAND      458    460
+FT   STRAND      468    470
+FT   STRAND      472    477
+FT   HELIX       488    492
+FT   HELIX       495    498
+FT   HELIX       539    541
+FT   HELIX       545    553
+FT   HELIX       555    558
+FT   HELIX       562    564
+FT   HELIX       565    570
+FT   HELIX       577    588
+FT   HELIX       597    602
+FT   HELIX       609    622
+FT   HELIX       625    630
+FT   HELIX       632    638
+FT   HELIX       639    641
+FT   STRAND      643    646
+FT   HELIX       648    657
+FT   HELIX       661    672
+FT   TURN        673    676
+FT   HELIX       678    694
+FT   HELIX       698    720
+FT   HELIX       728    738
+FT   HELIX       742    747
+FT   STRAND      750    753
+FT   STRAND      756    761
+FT   STRAND      774    776
+FT   STRAND      779    783
+FT   TURN        791    794
+FT   STRAND      797    805
+FT   HELIX       808    826
+FT   STRAND      838    842
+FT   STRAND      845    849
+FT   STRAND      852    856
+FT   HELIX       857    862
+FT   STRAND      867    869
+FT   HELIX       871    873
+FT   TURN        876    878
+FT   HELIX       879    882
+FT   TURN        886    888
+FT   HELIX       889    911
+FT   STRAND      920    924
+FT   STRAND      929    931
+FT   HELIX       958    963
+FT   HELIX       975    993
+FT   HELIX       995   1003
+FT   TURN       1004   1007
+FT   STRAND     1015   1018
+FT   HELIX      1020   1025
+FT   HELIX      1032   1047
+SQ   SEQUENCE   1068 AA;  124284 MW;  041487231A9A1207 CRC64;
+     MPPRPSSGEL WGIHLMPPRI LVECLLPNGM IVTLECLREA TLITIKHELF KEARKYPLHQ
+     LLQDESSYIF VSVTQEAERE EFFDETRRLC DLRLFQPFLK VIEPVGNREE KILNREIGFA
+     IGMPVCEFDM VKDPEVQDFR RNILNVCKEA VDLRDLNSPH SRAMYVYPPN VESSPELPKH
+     IYNKLDKGQI IVVIWVIVSP NNDKQKYTLK INHDCVPEQV IAEAIRKKTR SMLLSSEQLK
+     LCVLEYQGKY ILKVCGCDEY FLEKYPLSQY KYIRSCIMLG RMPNLMLMAK ESLYSQLPMD
+     CFTMPSYSRR ISTATPYMNG ETSTKSLWVI NSALRIKILC ATYVNVNIRD IDKIYVRTGI
+     YHGGEPLCDN VNTQRVPCSN PRWNEWLNYD IYIPDLPRAA RLCLSICSVK GRKGAKEEHC
+     PLAWGNINLF DYTDTLVSGK MALNLWPVPH GLEDLLNPIG VTGSNPNKET PCLELEFDWF
+     SSVVKFPDMS VIEEHANWSV SREAGFSYSH AGLSNRLARD NELRENDKEQ LKAISTRDPL
+     SEITEQEKDF LWSHRHYCVT IPEILPKLLL SVKWNSRDEV AQMYCLVKDW PPIKPEQAME
+     LLDCNYPDPM VRGFAVRCLE KYLTDDKLSQ YLIQLVQVLK YEQYLDNLLV RFLLKKALTN
+     QRIGHFFFWH LKSEMHNKTV SQRFGLLLES YCRACGMYLK HLNRQVEAME KLINLTDILK
+     QEKKDETQKV QMKFLVEQMR RPDFMDALQG FLSPLNPAHQ LGNLRLEECR IMSSAKRPLW
+     LNWENPDIMS ELLFQNNEII FKNGDDLRQD MLTLQIIRIM ENIWQNQGLD LRMLPYGCLS
+     IGDCVGLIEV VRNSHTIMQI QCKGGLKGAL QFNSHTLHQW LKDKNKGEIY DAAIDLFTRS
+     CAGYCVATFI LGIGDRHNSN IMVKDDGQLF HIDFGHFLDH KKKKFGYKRE RVPFVLTQDF
+     LIVISKGAQE CTKTREFERF QEMCYKAYLA IRQHANLFIN LFSMMLGSGM PELQSFDDIA
+     YIRKTLALDK TEQEALEYFM KQMNDAHHGG WTTKMDWIFH TIKQHALN
+//

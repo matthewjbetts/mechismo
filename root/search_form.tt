@@ -1,0 +1,339 @@
+[% USE JSON (convert_blessed => 1) %]
+[%
+  IF !class.defined;
+    class = "searchHidden";
+  END;
+%]
+
+<div class="search [% class %]">
+<form name="search" method="post" action="/search/text" enctype="multipart/form-data">
+  <textarea name="search" rows="1" cols="40">[% json.params.given.search %]</textarea>
+
+  <ul class="controlPanel">
+      <li><div>Name your search: <input type="text" name="search_name" /></div></li>
+
+      <li>
+        <span title="Select the species of your input sequences">Species:</span>
+        <select name="taxon">
+          <!-- <option value="-1"     title="any species" selected="selected">Any species</option> -->
+          <option value="9606"   title="Homo sapiens" selected="selected">H.sapiens</option>
+          <option value="10090"  title="Mus musculus">M.musculus</option>
+          <option value="559292" title="Saccharomyces cerevisiae S288c">S.cerevisiae</option>
+          <option value="6239"   title="Caenorhabditis elegans">C.elegans</option>
+          <option value="7227"   title="Drosophila melanogaster">D.melanogaster</option>
+          <option value="83333"  title="Escherichia coli K-12">E.coli</option>
+          <option value="224308" title="Bacillus subtilis subsp. subtilis str. 168">B.subtilis</option>
+          <option value="272634" title="Mycoplasma pneumoniae M129">M.pneumoniae</option>
+          <option value="9606,10090,559292,6239,7227,83333,224308,272634" title="Any of these species">Any of the above</option> 
+        </select>
+      </li>
+
+      <li>
+        <span title="Select the required stringency of your predicted interaction structures">Stringency:</span>
+        <select name="stringency">
+          <option value="high"   title="High stringency templates for known interactions">High</option>
+          <option value="medium" title="Medium stringency templates for known interactions">Medium</option>
+          <option value="low"    title="Templates of remote similarity for known interactions" selected="selected">Low</option>
+          <option value="all"    title="All templates without filtering by known interactions">None (use with caution)</option>
+        </select>
+      </li>
+
+      <li>
+        <span title="Include non-canonical isoforms as possible interactors">Isoforms as interactors:</span>
+        <select name="isoforms">
+          <option value="yes" title="Include non-canonical isoforms as possible interactors">Yes</option>
+          <option value="no" title="No not include non-canonical isoforms as possible interactors" selected="selected">No</option>
+        </select>
+      </li>
+
+      <li>
+        <span title="Include mutations and modifications from the selected sources in your search">Include mutations and modifications from:</span>
+        <ul>
+          <li><input type="checkbox" name="extSites" value="all"             onclick="toggleCheckboxes('extSites', this.checked)"/> All</li>
+          <li><input type="checkbox" name="extSites" value="uniprot|MOD_RES" /> UniProt <a href="http://www.uniprot.org/help/mod_res" target="_blank">MOD_RES</a></li>
+          <li><input type="checkbox" name="extSites" value="uniprot|MUTAGEN" /> UniProt <a href="http://www.uniprot.org/help/mutagen" target="_blank">MUTAGEN</a></li>
+          <li><input type="checkbox" name="extSites" value="uniprot|VARIANT" /> UniProt <a href="http://www.uniprot.org/help/variant" target="_blank">VARIANT</a></li>
+        </ul>
+      </li>
+
+      <li>
+<div class="examples">
+Examples:
+[%
+  example = {
+    search => "# HRas mutations from UniProt
+RASH_HUMAN/G12A
+RASH_HUMAN/G12C
+RASH_HUMAN/G12D
+RASH_HUMAN/G12E
+RASH_HUMAN/G12S
+RASH_HUMAN/G12V
+RASH_HUMAN/G13C
+RASH_HUMAN/G13D
+RASH_HUMAN/G13R
+RASH_HUMAN/Q22K
+RASH_HUMAN/E37EE
+RASH_HUMAN/T58I
+RASH_HUMAN/Q61L
+RASH_HUMAN/E63K
+RASH_HUMAN/K117R
+RASH_HUMAN/A146T
+RASH_HUMAN/A146V",
+    params => {
+      search_name = "HRas",
+      taxon => 9606,
+      stringency = "high",
+      isoforms = "no",
+    },
+  };
+%]
+<button class="example" type="button" title="HRas mutations from UniProt" value='[% example.json %]'>HRas</button>
+
+[%
+  example = {
+    search => "# A selection of phosphorylations and acetylations 
+# in P53 and interaction partners
+P53_HUMAN/S9Sp
+P53_HUMAN/S15Sp
+P53_HUMAN/T18Tp
+P53_HUMAN/S20Sp
+P53_HUMAN/S33Sp
+P53_HUMAN/S37Sp
+P53_HUMAN/S46Sp
+P53_HUMAN/T55Tp
+P53_HUMAN/K120Ka
+P53_HUMAN/S183Sp
+P53_HUMAN/S269Sp
+P53_HUMAN/T284Tp
+P53_HUMAN/K305Ka
+P53_HUMAN/S315Sp
+P53_HUMAN/K373Ka
+P53_HUMAN/K381Ka
+P53_HUMAN/K382Ka
+P53_HUMAN/S392Sp
+EP300_HUMAN/S89Sp
+EP300_HUMAN/S285Sp
+EP300_HUMAN/K636Ka
+EP300_HUMAN/T885Tp
+EP300_HUMAN/T887Tp
+EP300_HUMAN/K977Ka
+EP300_HUMAN/K981Ka
+EP300_HUMAN/K1020Ka
+EP300_HUMAN/K1024Ka
+EP300_HUMAN/S1038Sp
+EP300_HUMAN/K1103Ka
+EP300_HUMAN/K1336Ka
+EP300_HUMAN/K1473Ka
+EP300_HUMAN/K1499Ka
+EP300_HUMAN/K1542Ka
+EP300_HUMAN/K1546Ka
+EP300_HUMAN/K1549Ka
+EP300_HUMAN/K1554Ka
+EP300_HUMAN/K1555Ka
+EP300_HUMAN/K1558Ka
+EP300_HUMAN/K1560Ka
+EP300_HUMAN/K1583Ka
+EP300_HUMAN/K1590Ka
+EP300_HUMAN/K1674Ka
+EP300_HUMAN/S1734Sp
+EP300_HUMAN/T1857Tp
+EP300_HUMAN/T1859Tp
+CBP_HUMAN/S121Sp
+CBP_HUMAN/K1014Ka
+CBP_HUMAN/S1030Sp
+CBP_HUMAN/K1216Ka
+CBP_HUMAN/S1382Sp
+CBP_HUMAN/S1386Sp
+CBP_HUMAN/K1583Ka
+CBP_HUMAN/K1586Ka
+CBP_HUMAN/K1591Ka
+CBP_HUMAN/K1592Ka
+CBP_HUMAN/K1595Ka
+CBP_HUMAN/K1597Ka
+CBP_HUMAN/K1741Ka
+CBP_HUMAN/K1744Ka
+CBP_HUMAN/S2063Sp
+CBP_HUMAN/S2076Sp
+CBP_HUMAN/S2079Sp
+TP53B_HUMAN/S25Sp
+TP53B_HUMAN/S105Sp
+TP53B_HUMAN/S124Sp
+TP53B_HUMAN/S166Sp
+TP53B_HUMAN/S176Sp
+TP53B_HUMAN/S178Sp
+TP53B_HUMAN/S222Sp
+TP53B_HUMAN/S265Sp
+TP53B_HUMAN/S294Sp
+TP53B_HUMAN/T302Tp
+TP53B_HUMAN/S366Sp
+TP53B_HUMAN/S380Sp
+TP53B_HUMAN/S395Sp
+TP53B_HUMAN/S398Sp
+TP53B_HUMAN/S452Sp
+TP53B_HUMAN/S500Sp
+TP53B_HUMAN/S523Sp
+TP53B_HUMAN/S525Sp
+TP53B_HUMAN/T543Tp
+TP53B_HUMAN/T548Tp
+TP53B_HUMAN/S552Sp
+TP53B_HUMAN/S566Sp
+TP53B_HUMAN/S580Sp
+TP53B_HUMAN/S635Sp
+TP53B_HUMAN/S639Sp
+TP53B_HUMAN/S640Sp
+TP53B_HUMAN/S809Sp
+TP53B_HUMAN/S831Sp
+TP53B_HUMAN/S834Sp
+TP53B_HUMAN/T855Tp
+TP53B_HUMAN/T922Tp
+TP53B_HUMAN/S970Sp
+TP53B_HUMAN/S975Sp
+TP53B_HUMAN/S1028Sp
+TP53B_HUMAN/S1068Sp
+TP53B_HUMAN/S1094Sp
+TP53B_HUMAN/S1101Sp
+TP53B_HUMAN/S1114Sp
+TP53B_HUMAN/T1214Tp
+TP53B_HUMAN/S1216Sp
+TP53B_HUMAN/S1219Sp
+TP53B_HUMAN/S1362Sp
+TP53B_HUMAN/S1368Sp
+TP53B_HUMAN/T1372Tp
+TP53B_HUMAN/S1426Sp
+TP53B_HUMAN/S1430Sp
+TP53B_HUMAN/S1460Sp
+TP53B_HUMAN/S1462Sp
+TP53B_HUMAN/S1474Sp
+TP53B_HUMAN/T1609Tp
+TP53B_HUMAN/S1618Sp
+TP53B_HUMAN/S1678Sp
+TP53B_HUMAN/S1701Sp
+TP53B_HUMAN/S1759Sp
+TP53B_HUMAN/S1778Sp
+HMGB1_HUMAN/K30Ka
+HMGB1_HUMAN/S35Sp
+HMGB1_HUMAN/S100Sp
+HMGB2_HUMAN/K30Ka",
+    params => {
+      search_name = "P53",
+      taxon => 9606,
+      stringency = "high",
+      isoforms = "no",
+    },
+  };
+%]
+<button class="example" type="button" title="A selection of phosphorylations and acetylations in P53 and interaction partners" value='[% example.json %]'>P53</button>
+
+[%
+  example = {
+    search => "# P53 sites from external sources
+P53_HUMAN",
+    params => {
+      search_name = "P53 ExtSites",
+      taxon => 9606,
+      stringency = "high",
+      isoforms = "no",
+      extSites = "all",
+    },
+  };
+%]
+<button class="example" type="button" title="P53 sites from external sources" value='[% example.json %]'>P53 ExtSites</button>
+
+[%
+  example = {
+    search => "# Phosphorylations and acetylations in 
+# Mycoplasma pneumoniae Elongation factor Tu
+taxon=272634
+min_pcid=0
+min_pcid_homo=0
+min_pcid_hetero=0
+min_pcid_chem=0
+min_pcid_nuc=0
+known=none
+min_pcid_known=0
+P23568/K177Ka
+P23568/K184Ka
+P23568/K263Ka
+P23568/K285Ka
+P23568/K306Ka
+P23568/K313Ka
+P23568/K374Ka
+P23568/K38Ka
+P23568/K52Ka
+P23568/K57Ka
+P23568/K5Ka
+P23568/K74Ka
+P23568/T34Tp
+P23568/T383Tp",
+    params => {
+      search_name = "EFTU",
+      taxon => 272634,
+      stringency => "low",
+      isoforms = "no",
+    },
+  };
+%]
+<button class="example" type="button" title="Phosphorylations and acetylations in Mycoplasma pneumoniae Elongation factor Tu" value='[% example.json %]'>EFTU</button>
+
+[%
+  example = {
+    search => "# Medulloblastoma mutations in DDX3X
+# From Jones, Jaeger et al, Nature, 2012
+O00571/D329V
+O00571/R326C
+O00571/G530A
+O00571/R534S
+O00571/R475C
+O00571/R376S
+O00571/S412F
+O00571/H527Y
+O00571/I214S
+O00571/F357S",
+    params => {
+      search_name = "DDX3X",
+      taxon => 9606,
+      stringency => "low",
+      isoforms = "no",
+    },
+  };
+%]
+      <button class="example" type="button" title="Medulloblastoma mutations in DDX3X from Jones, Jaeger et al, Nature, 2012" value='[% example.json %]'>DDX3X</button>
+
+
+[%
+  example = {
+    search => "# RhoA GTPase mutations in Burkitt lymphoma
+# From Rohde et al, Genes Chromosomes Cancer, 2014
+P61586/R5Q
+P61586/I23R
+P61586/Y42F
+P61586/L69R
+P61586/D76V
+",
+    params => {
+      search_name = "RhoA",
+      taxon => 9606,
+      stringency => "high",
+      isoforms = "no",
+    },
+  };
+%]
+<button class="example" type="button" title="RhoA GTPase mutations in Burkitt lymphoma from Rohde et al, Genes Chromosomes Cancer, 2014" value='[% example.json %]'>RhoA</button>
+</div>
+      </li>
+
+      <li>
+        <div>
+          <input type="submit" name="Search" value="Search" title="Search"/>
+          <button class="clearButton" type="button" title="Clear search form">Clear</button>
+          <div class="fileInput">
+            <button class="fileupload" type="button" value="" title="Upload file of search text">Upload File</button>
+            <input type="file" name="search_file"/>
+            <div class="display"></div>
+          </div>
+          <button class="helpButton" type="button" onclick="window.open('/help')" title="Click for an explanation of the search query format and parameters, and how to run advanced searches">?</button>
+        </div>
+      </li>
+    </ul>
+</form>
+</div>

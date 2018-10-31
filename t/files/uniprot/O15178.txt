@@ -1,0 +1,193 @@
+ID   BRAC_HUMAN              Reviewed;         435 AA.
+AC   O15178;
+DT   15-JUL-1999, integrated into UniProtKB/Swiss-Prot.
+DT   01-JAN-1998, sequence version 1.
+DT   22-FEB-2012, entry version 96.
+DE   RecName: Full=Brachyury protein;
+DE   AltName: Full=Protein T;
+GN   Name=T;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=96402060; PubMed=8963900;
+RA   Edwards Y.H., Putt W., Lekoape K.M., Stott D., Fox M., Hopkinson D.A.,
+RA   Sowden J.;
+RT   "The human homolog T of the mouse T(Brachyury) gene; gene structure,
+RT   cDNA sequence, and assignment to chromosome 6q27.";
+RL   Genome Res. 6:226-233(1996).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   MEDLINE=22935763; PubMed=14574404; DOI=10.1038/nature02055;
+RA   Mungall A.J., Palmer S.A., Sims S.K., Edwards C.A., Ashurst J.L.,
+RA   Wilming L., Jones M.C., Horton R., Hunt S.E., Scott C.E.,
+RA   Gilbert J.G.R., Clamp M.E., Bethel G., Milne S., Ainscough R.,
+RA   Almeida J.P., Ambrose K.D., Andrews T.D., Ashwell R.I.S.,
+RA   Babbage A.K., Bagguley C.L., Bailey J., Banerjee R., Barker D.J.,
+RA   Barlow K.F., Bates K., Beare D.M., Beasley H., Beasley O., Bird C.P.,
+RA   Blakey S.E., Bray-Allen S., Brook J., Brown A.J., Brown J.Y.,
+RA   Burford D.C., Burrill W., Burton J., Carder C., Carter N.P.,
+RA   Chapman J.C., Clark S.Y., Clark G., Clee C.M., Clegg S., Cobley V.,
+RA   Collier R.E., Collins J.E., Colman L.K., Corby N.R., Coville G.J.,
+RA   Culley K.M., Dhami P., Davies J., Dunn M., Earthrowl M.E.,
+RA   Ellington A.E., Evans K.A., Faulkner L., Francis M.D., Frankish A.,
+RA   Frankland J., French L., Garner P., Garnett J., Ghori M.J.,
+RA   Gilby L.M., Gillson C.J., Glithero R.J., Grafham D.V., Grant M.,
+RA   Gribble S., Griffiths C., Griffiths M.N.D., Hall R., Halls K.S.,
+RA   Hammond S., Harley J.L., Hart E.A., Heath P.D., Heathcott R.,
+RA   Holmes S.J., Howden P.J., Howe K.L., Howell G.R., Huckle E.,
+RA   Humphray S.J., Humphries M.D., Hunt A.R., Johnson C.M., Joy A.A.,
+RA   Kay M., Keenan S.J., Kimberley A.M., King A., Laird G.K., Langford C.,
+RA   Lawlor S., Leongamornlert D.A., Leversha M., Lloyd C.R., Lloyd D.M.,
+RA   Loveland J.E., Lovell J., Martin S., Mashreghi-Mohammadi M.,
+RA   Maslen G.L., Matthews L., McCann O.T., McLaren S.J., McLay K.,
+RA   McMurray A., Moore M.J.F., Mullikin J.C., Niblett D., Nickerson T.,
+RA   Novik K.L., Oliver K., Overton-Larty E.K., Parker A., Patel R.,
+RA   Pearce A.V., Peck A.I., Phillimore B.J.C.T., Phillips S., Plumb R.W.,
+RA   Porter K.M., Ramsey Y., Ranby S.A., Rice C.M., Ross M.T., Searle S.M.,
+RA   Sehra H.K., Sheridan E., Skuce C.D., Smith S., Smith M., Spraggon L.,
+RA   Squares S.L., Steward C.A., Sycamore N., Tamlyn-Hall G., Tester J.,
+RA   Theaker A.J., Thomas D.W., Thorpe A., Tracey A., Tromans A., Tubby B.,
+RA   Wall M., Wallis J.M., West A.P., White S.S., Whitehead S.L.,
+RA   Whittaker H., Wild A., Willey D.J., Wilmer T.E., Wood J.M., Wray P.W.,
+RA   Wyatt J.C., Young L., Younger R.M., Bentley D.R., Coulson A.,
+RA   Durbin R.M., Hubbard T., Sulston J.E., Dunham I., Rogers J., Beck S.;
+RT   "The DNA sequence and analysis of human chromosome 6.";
+RL   Nature 425:805-811(2003).
+RN   [3]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO NTD.
+RX   PubMed=15449172; DOI=10.1007/s00439-004-1185-8;
+RA   Jensen L.E., Barbaux S., Hoess K., Fraterman S., Whitehead A.S.,
+RA   Mitchell L.E.;
+RT   "The human T locus and spina bifida risk.";
+RL   Hum. Genet. 115:475-482(2004).
+RN   [4]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO THE DEVELOPMENT OF CHORDOMA.
+RX   PubMed=19801981; DOI=10.1038/ng.454;
+RA   Yang X.R., Ng D., Alcorta D.A., Liebsch N.J., Sheridan E., Li S.,
+RA   Goldstein A.M., Parry D.M., Kelley M.J.;
+RT   "T (brachyury) gene duplication confers major susceptibility to
+RT   familial chordoma.";
+RL   Nat. Genet. 41:1176-1178(2009).
+CC   -!- FUNCTION: Involved in the transcriptional regulation of genes
+CC       required for mesoderm formation and differentiation. Binds to a
+CC       palindromic site (called T site) and activates gene transcription
+CC       when bound to such a site.
+CC   -!- SUBUNIT: Monomer (By similarity).
+CC   -!- SUBCELLULAR LOCATION: Nucleus.
+CC   -!- DISEASE: Genetic variations in T are associated with
+CC       susceptibility to neural tube defects (NTD) [MIM:182940]. NTD are
+CC       common congenital malformations. Spina bifida, which results from
+CC       malformations in the caudal region of the neural tube, is
+CC       compatible with life but associated with significant morbidity,
+CC       including lower limb paralysis.
+CC   -!- DISEASE: T is involved in susceptibility to the development of
+CC       chordoma (CHDM) [MIM:215400]. Chordomas are rare, clinically
+CC       malignant tumors derived from notochordal remnants. They occur
+CC       along the length of the spinal axis, predominantly in the
+CC       sphenooccipital, vertebral and sacrococcygeal regions. They are
+CC       characterized by slow growth, local destruction of bone, extension
+CC       into adjacent soft tissues and rarely, distant metastatic spread.
+CC       Note=Susceptibility to development of chordomas is due to a T gene
+CC       duplication.
+CC   -!- SIMILARITY: Contains 1 T-box DNA-binding domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AJ001699; CAA04938.1; -; mRNA.
+DR   EMBL; AL627443; CAI14269.1; -; Genomic_DNA.
+DR   IPI; IPI00005203; -.
+DR   RefSeq; NP_003172.1; NM_003181.2.
+DR   UniGene; Hs.389457; -.
+DR   ProteinModelPortal; O15178; -.
+DR   SMR; O15178; 41-223.
+DR   STRING; O15178; -.
+DR   PhosphoSite; O15178; -.
+DR   PRIDE; O15178; -.
+DR   Ensembl; ENST00000296946; ENSP00000296946; ENSG00000164458.
+DR   Ensembl; ENST00000366876; ENSP00000355841; ENSG00000164458.
+DR   GeneID; 6862; -.
+DR   KEGG; hsa:6862; -.
+DR   UCSC; uc003qut.1; human.
+DR   CTD; 6862; -.
+DR   GeneCards; GC06M166541; -.
+DR   H-InvDB; HIX0032807; -.
+DR   HGNC; HGNC:11515; T.
+DR   HPA; HPA003322; -.
+DR   MIM; 182940; phenotype.
+DR   MIM; 215400; phenotype.
+DR   MIM; 601397; gene.
+DR   neXtProt; NX_O15178; -.
+DR   Orphanet; 3027; Caudal regression sequence.
+DR   Orphanet; 823; Isolated spina bifida.
+DR   PharmGKB; PA36296; -.
+DR   eggNOG; NOG257463; -.
+DR   GeneTree; ENSGT00650000092870; -.
+DR   HOGENOM; HBG402911; -.
+DR   HOVERGEN; HBG004599; -.
+DR   InParanoid; O15178; -.
+DR   KO; K10172; -.
+DR   OMA; PTYSDNS; -.
+DR   OrthoDB; EOG4FXR7S; -.
+DR   PhylomeDB; O15178; -.
+DR   NextBio; 26779; -.
+DR   ArrayExpress; O15178; -.
+DR   Bgee; O15178; -.
+DR   CleanEx; HS_T; -.
+DR   Genevestigator; O15178; -.
+DR   GermOnline; ENSG00000164458; Homo sapiens.
+DR   GO; GO:0000790; C:nuclear chromatin; IDA:BHF-UCL.
+DR   GO; GO:0000980; F:RNA polymerase II distal enhancer sequence-specific DNA binding; IDA:BHF-UCL.
+DR   GO; GO:0003705; F:sequence-specific distal enhancer binding RNA polymerase II transcription factor activity; IDA:BHF-UCL.
+DR   GO; GO:0008595; P:anterior/posterior axis specification, embryo; TAS:ProtInc.
+DR   GO; GO:0003007; P:heart morphogenesis; IDA:BHF-UCL.
+DR   GO; GO:0007498; P:mesoderm development; TAS:ProtInc.
+DR   GO; GO:0003257; P:positive regulation of transcription from RNA polymerase II promoter involved in myocardial precursor cell differentiation; IDA:BHF-UCL.
+DR   GO; GO:0090009; P:primitive streak formation; NAS:BHF-UCL.
+DR   InterPro; IPR008967; p53-like_TF_DNA-bd.
+DR   InterPro; IPR002070; TF_Brachyury.
+DR   InterPro; IPR001699; TF_T-box.
+DR   InterPro; IPR018186; TF_T-box_CS.
+DR   Gene3D; G3DSA:2.60.40.820; TF_T-box; 1.
+DR   PANTHER; PTHR11267; TF_T-box; 1.
+DR   Pfam; PF00907; T-box; 1.
+DR   PRINTS; PR00938; BRACHYURY.
+DR   PRINTS; PR00937; TBOX.
+DR   SMART; SM00425; TBOX; 1.
+DR   SUPFAM; SSF49417; P53_like_DNA_bnd; 1.
+DR   PROSITE; PS01283; TBOX_1; 1.
+DR   PROSITE; PS01264; TBOX_2; 1.
+DR   PROSITE; PS50252; TBOX_3; 1.
+PE   2: Evidence at transcript level;
+KW   Activator; Complete proteome; Developmental protein; DNA-binding;
+KW   Nucleus; Polymorphism; Reference proteome; Transcription;
+KW   Transcription regulation.
+FT   CHAIN         1    435       Brachyury protein.
+FT                                /FTId=PRO_0000184414.
+FT   DNA_BIND     51    219       T-box.
+FT   VARIANT     177    177       G -> D (in dbSNP:rs2305089).
+FT                                /FTId=VAR_021982.
+FT   VARIANT     356    356       G -> S (in dbSNP:rs3127328).
+FT                                /FTId=VAR_024656.
+FT   VARIANT     358    358       V -> I (in dbSNP:rs77703807).
+FT                                /FTId=VAR_063239.
+FT   VARIANT     367    367       V -> M (in dbSNP:rs35292451).
+FT                                /FTId=VAR_032457.
+FT   VARIANT     369    369       N -> S (in dbSNP:rs3816300).
+FT                                /FTId=VAR_020250.
+FT   VARIANT     402    402       E -> K (in dbSNP:rs34517945).
+FT                                /FTId=VAR_032458.
+SQ   SEQUENCE   435 AA;  47443 MW;  9D470088C8602631 CRC64;
+     MSSPGTESAG KSLQYRVDHL LSAVENELQA GSEKGDPTER ELRVGLEESE LWLRFKELTN
+     EMIVTKNGRR MFPVLKVNVS GLDPNAMYSF LLDFVAADNH RWKYVNGEWV PGGKPEPQAP
+     SCVYIHPDSP NFGAHWMKAP VSFSKVKLTN KLNGGGQIML NSLHKYEPRI HIVRVGGPQR
+     MITSHCFPET QFIAVTAYQN EEITALKIKY NPFAKAFLDA KERSDHKEMM EEPGDSQQPG
+     YSQWGWLLPG TSTLCPPANP HPQFGGALSL PSTHSCDRYP TLRSHRSSPY PSPYAHRNNS
+     PTYSDNSPAC LSMLQSHDNW SSLGMPAHPS MLPVSHNASP PTSSSQYPSL WSVSNGAVTP
+     GSQAAAVSNG LGAQFFRGSP AHYTPLTHPV SAPSSSGSPL YEGAAAATDI VDSQYDAAAQ
+     GRLIASWTPV SPPSM
+//

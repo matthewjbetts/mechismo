@@ -1,0 +1,364 @@
+ID   CNTP2_HUMAN             Reviewed;        1331 AA.
+AC   Q9UHC6; D3DWG2; Q14DG2; Q52LV1; Q5H9Q7; Q9UQ12;
+DT   05-DEC-2001, integrated into UniProtKB/Swiss-Prot.
+DT   01-MAY-2000, sequence version 1.
+DT   21-MAR-2012, entry version 114.
+DE   RecName: Full=Contactin-associated protein-like 2;
+DE   AltName: Full=Cell recognition molecule Caspr2;
+DE   Flags: Precursor;
+GN   Name=CNTNAP2; Synonyms=CASPR2, KIAA0868;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), AND CHARACTERIZATION.
+RC   TISSUE=Brain;
+RX   MEDLINE=20088303; PubMed=10624965; DOI=10.1016/S0896-6273(00)81049-1;
+RA   Poliak S., Gollan L., Martinez R., Custer A., Einheber S.,
+RA   Salzer J.L., Trimmer J.S., Shrager P., Peles E.;
+RT   "Caspr2, a new member of the neurexin superfamily, is localized at the
+RT   juxtaparanodes of myelinated axons and associates with K+ channels.";
+RL   Neuron 24:1037-1047(1999).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=21250995; PubMed=11352571; DOI=10.1006/geno.2001.6517;
+RA   Nakabayashi K., Scherer S.W.;
+RT   "The human contactin-associated protein-like 2 gene (CNTNAP2) spans
+RT   over 2 Mb of DNA at chromosome 7q35.";
+RL   Genomics 73:108-112(2001).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Brain;
+RX   MEDLINE=99156230; PubMed=10048485; DOI=10.1093/dnares/5.6.355;
+RA   Nagase T., Ishikawa K., Suyama M., Kikuno R., Hirosawa M.,
+RA   Miyajima N., Tanaka A., Kotani H., Nomura N., Ohara O.;
+RT   "Prediction of the coding sequences of unidentified human genes. XII.
+RT   The complete sequences of 100 new cDNA clones from brain which code
+RT   for large proteins in vitro.";
+RL   DNA Res. 5:355-364(1998).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 2).
+RC   TISSUE=Retina;
+RX   PubMed=17974005; DOI=10.1186/1471-2164-8-399;
+RA   Bechtel S., Rosenfelder H., Duda A., Schmidt C.P., Ernst U.,
+RA   Wellenreuther R., Mehrle A., Schuster C., Bahr A., Bloecker H.,
+RA   Heubner D., Hoerlein A., Michel G., Wedler H., Koehrer K.,
+RA   Ottenwaelder B., Poustka A., Wiemann S., Schupp I.;
+RT   "The full-ORF clone resource of the German cDNA consortium.";
+RL   BMC Genomics 8:399-399(2007).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (SEP-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Brain;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [7]
+RP   INVOLVEMENT IN CDFES.
+RX   PubMed=16571880; DOI=10.1056/NEJMoa052773;
+RA   Strauss K.A., Puffenberger E.G., Huentelman M.J., Gottlieb S.,
+RA   Dobrin S.E., Parod J.M., Stephan D.A., Morton D.H.;
+RT   "Recessive symptomatic focal epilepsy and mutant contactin-associated
+RT   protein-like 2.";
+RL   N. Engl. J. Med. 354:1370-1377(2006).
+RN   [8]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-1303 AND SER-1306, AND
+RP   MASS SPECTROMETRY.
+RC   TISSUE=Embryonic kidney;
+RX   PubMed=19413330; DOI=10.1021/ac9004309;
+RA   Gauci S., Helbig A.O., Slijper M., Krijgsveld J., Heck A.J.,
+RA   Mohammed S.;
+RT   "Lys-N and trypsin cover complementary parts of the phosphoproteome in
+RT   a refined SCX-based approach.";
+RL   Anal. Chem. 81:4493-4501(2009).
+RN   [9]
+RP   VARIANTS GLN-114; MET-218; MET-226; CYS-283; ASN-382; SER-407;
+RP   ASP-418; LYS-680; GLN-699; CYS-716; SER-731; ASP-779; THR-869;
+RP   HIS-906; ASN-1038; ALA-1102; GLY-1114; HIS-1119; HIS-1129; THR-1227;
+RP   THR-1253 AND ILE-1278, CHROMOSOMAL REARRANGEMENT, AND ASSOCIATION WITH
+RP   SUSCEPTIBILITY TO AUTISM.
+RX   PubMed=18179895; DOI=10.1016/j.ajhg.2007.09.017;
+RA   Bakkaloglu B., O'Roak B.J., Louvi A., Gupta A.R., Abelson J.F.,
+RA   Morgan T.M., Chawarska K., Klin A., Ercan-Sencicek A.G.,
+RA   Stillman A.A., Tanriover G., Abrahams B.S., Duvall J.A., Robbins E.M.,
+RA   Geschwind D.H., Biederer T., Gunel M., Lifton R.P., State M.W.;
+RT   "Molecular cytogenetic analysis and resequencing of contactin
+RT   associated protein-like 2 in autism spectrum disorders.";
+RL   Am. J. Hum. Genet. 82:165-173(2008).
+CC   -!- FUNCTION: May play a role in the formation of functional distinct
+CC       domains critical for saltatory conduction of nerve impulses in
+CC       myelinated nerve fibers. Seems to demarcate the juxtaparanodal
+CC       region of the axo-glial junction.
+CC   -!- SUBUNIT: Associates with KCNA2 (By similarity).
+CC   -!- SUBCELLULAR LOCATION: Membrane; Single-pass type I membrane
+CC       protein (Potential).
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1;
+CC         IsoId=Q9UHC6-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=Q9UHC6-2; Sequence=VSP_014976;
+CC         Note=No experimental confirmation available;
+CC   -!- TISSUE SPECIFICITY: Predominantly expressed in nervous system.
+CC   -!- DISEASE: Defects in CNTNAP2 are the cause of cortical dysplasia-
+CC       focal epilepsy syndrome (CDFES) [MIM:610042]. Affected individuals
+CC       manifest cortical dysplasia, focal epilepsy, relative
+CC       macrocephaly, and diminished deep-tendon reflexes. Intractable
+CC       focal seizures begin in early childhood, after which language
+CC       regression, hyperactivity, impulsive and aggressive behavior, and
+CC       mental retardation develop.
+CC   -!- DISEASE: Genetic variations in CNTNAP2 influences susceptibility
+CC       to autism type 15 (AUTS15) [MIM:612100]. Autism is a
+CC       neurodevelopmental disorder characterized by disturbance in
+CC       language, perception and socialization. The disorder is
+CC       classically defined by a triad of limited or absent verbal
+CC       communication, a lack of reciprocal social interaction or
+CC       responsiveness, and restricted, stereotypical, and ritualized
+CC       patterns of interests and behavior.
+CC   -!- DISEASE: Note=A chromosomal aberration involving CNTNAP2 is found
+CC       in a patient with autism spectrum disorder. Paracentric inversion
+CC       46,XY,inv(7)(q11.22;q35). The inversion breakpoints disrupt the
+CC       genes AUTS2 and CNTNAP2.
+CC   -!- SIMILARITY: Belongs to the neurexin family.
+CC   -!- SIMILARITY: Contains 2 EGF-like domains.
+CC   -!- SIMILARITY: Contains 1 F5/8 type C domain.
+CC   -!- SIMILARITY: Contains 1 fibrinogen C-terminal domain.
+CC   -!- SIMILARITY: Contains 4 laminin G-like domains.
+CC   -!- SEQUENCE CAUTION:
+CC       Sequence=BAA74891.1; Type=Erroneous initiation;
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; AF193613; AAF25199.1; -; mRNA.
+DR   EMBL; AF319045; AAK34932.1; -; mRNA.
+DR   EMBL; AF318292; AAK49902.1; -; Genomic_DNA.
+DR   EMBL; AF318298; AAK49903.1; -; Genomic_DNA.
+DR   EMBL; AB020675; BAA74891.1; ALT_INIT; mRNA.
+DR   EMBL; CR933671; CAI45967.1; -; mRNA.
+DR   EMBL; CH471146; EAW80084.1; -; Genomic_DNA.
+DR   EMBL; BC093780; AAH93780.1; -; mRNA.
+DR   EMBL; BC113373; AAI13374.1; -; mRNA.
+DR   IPI; IPI00029343; -.
+DR   IPI; IPI00646209; -.
+DR   RefSeq; NP_054860.1; NM_014141.5.
+DR   UniGene; Hs.655684; -.
+DR   ProteinModelPortal; Q9UHC6; -.
+DR   SMR; Q9UHC6; 33-182, 184-606, 798-1209.
+DR   IntAct; Q9UHC6; 5.
+DR   MINT; MINT-241211; -.
+DR   STRING; Q9UHC6; -.
+DR   PhosphoSite; Q9UHC6; -.
+DR   DMDM; 17433089; -.
+DR   PRIDE; Q9UHC6; -.
+DR   Ensembl; ENST00000361727; ENSP00000354778; ENSG00000174469.
+DR   GeneID; 26047; -.
+DR   KEGG; hsa:26047; -.
+DR   UCSC; uc003weu.1; human.
+DR   UCSC; uc003wev.1; human.
+DR   CTD; 26047; -.
+DR   GeneCards; GC07P145863; -.
+DR   H-InvDB; HIX0021741; -.
+DR   HGNC; HGNC:13830; CNTNAP2.
+DR   HPA; HPA002739; -.
+DR   MIM; 604569; gene.
+DR   MIM; 610042; phenotype.
+DR   MIM; 612100; phenotype.
+DR   neXtProt; NX_Q9UHC6; -.
+DR   Orphanet; 163681; Cortical dysplasia - focal epilepsy syndrome.
+DR   Orphanet; 221150; Pitt-Hopkins-like syndrome.
+DR   eggNOG; NOG291100; -.
+DR   GeneTree; ENSGT00560000076804; -.
+DR   HOGENOM; HBG443585; -.
+DR   HOVERGEN; HBG057718; -.
+DR   InParanoid; Q9UHC6; -.
+DR   KO; K07380; -.
+DR   OMA; RAWTAPS; -.
+DR   OrthoDB; EOG4RV2QH; -.
+DR   PhylomeDB; Q9UHC6; -.
+DR   NextBio; 47891; -.
+DR   ArrayExpress; Q9UHC6; -.
+DR   Bgee; Q9UHC6; -.
+DR   CleanEx; HS_CNTNAP2; -.
+DR   Genevestigator; Q9UHC6; -.
+DR   GO; GO:0030673; C:axolemma; IDA:BHF-UCL.
+DR   GO; GO:0009986; C:cell surface; IDA:BHF-UCL.
+DR   GO; GO:0030425; C:dendrite; ISS:BHF-UCL.
+DR   GO; GO:0005769; C:early endosome; IDA:BHF-UCL.
+DR   GO; GO:0005794; C:Golgi apparatus; IDA:BHF-UCL.
+DR   GO; GO:0044224; C:juxtaparanode region of axon; ISS:BHF-UCL.
+DR   GO; GO:0043204; C:perikaryon; ISS:BHF-UCL.
+DR   GO; GO:0008076; C:voltage-gated potassium channel complex; IDA:BHF-UCL.
+DR   GO; GO:0019899; F:enzyme binding; IPI:BHF-UCL.
+DR   GO; GO:0005102; F:receptor binding; IEA:InterPro.
+DR   GO; GO:0007155; P:cell adhesion; IEA:UniProtKB-KW.
+DR   GO; GO:0045163; P:clustering of voltage-gated potassium channels; ISS:BHF-UCL.
+DR   GO; GO:0021761; P:limbic system development; IEP:BHF-UCL.
+DR   GO; GO:0008038; P:neuron recognition; NAS:UniProtKB.
+DR   GO; GO:0007165; P:signal transduction; IEA:InterPro.
+DR   GO; GO:0021756; P:striatum development; IEP:BHF-UCL.
+DR   GO; GO:0071109; P:superior temporal gyrus development; IEP:BHF-UCL.
+DR   GO; GO:0021794; P:thalamus development; IEP:BHF-UCL.
+DR   GO; GO:0019226; P:transmission of nerve impulse; NAS:UniProtKB.
+DR   GO; GO:0071625; P:vocalization behavior; IMP:BHF-UCL.
+DR   InterPro; IPR000421; Coagulation_fac_5/8-C_type_dom.
+DR   InterPro; IPR008985; ConA-like_lec_gl.
+DR   InterPro; IPR013320; ConA-like_subgrp.
+DR   InterPro; IPR000742; EG-like_dom.
+DR   InterPro; IPR006210; EGF-like.
+DR   InterPro; IPR006209; EGF-like_dom.
+DR   InterPro; IPR002181; Fibrinogen_a/b/g_C.
+DR   InterPro; IPR008979; Galactose-bd-like.
+DR   InterPro; IPR001791; Laminin_G.
+DR   InterPro; IPR003585; Neurexin-like.
+DR   Gene3D; G3DSA:2.60.120.200; ConA_like_subgrp; 5.
+DR   Pfam; PF00008; EGF; 1.
+DR   Pfam; PF00754; F5_F8_type_C; 1.
+DR   Pfam; PF02210; Laminin_G_2; 4.
+DR   SMART; SM00294; 4.1m; 1.
+DR   SMART; SM00181; EGF; 1.
+DR   SMART; SM00231; FA58C; 1.
+DR   SMART; SM00282; LamG; 4.
+DR   SUPFAM; SSF49899; ConA_like_lec_gl; 4.
+DR   SUPFAM; SSF56496; Fibrinogen_a/b/g_C; 1.
+DR   SUPFAM; SSF49785; Gal_bind_like; 1.
+DR   PROSITE; PS00022; EGF_1; FALSE_NEG.
+DR   PROSITE; PS01186; EGF_2; FALSE_NEG.
+DR   PROSITE; PS50026; EGF_3; 2.
+DR   PROSITE; PS01285; FA58C_1; 1.
+DR   PROSITE; PS01286; FA58C_2; 1.
+DR   PROSITE; PS50022; FA58C_3; 1.
+DR   PROSITE; PS00514; FIBRINOGEN_C_1; FALSE_NEG.
+DR   PROSITE; PS51406; FIBRINOGEN_C_2; 1.
+DR   PROSITE; PS50025; LAM_G_DOMAIN; 4.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Cell adhesion; Chromosomal rearrangement;
+KW   Complete proteome; Disulfide bond; EGF-like domain; Epilepsy;
+KW   Glycoprotein; Membrane; Phosphoprotein; Polymorphism;
+KW   Reference proteome; Repeat; Signal; Transmembrane;
+KW   Transmembrane helix.
+FT   SIGNAL        1     27       Potential.
+FT   CHAIN        28   1331       Contactin-associated protein-like 2.
+FT                                /FTId=PRO_0000019506.
+FT   TOPO_DOM     28   1262       Extracellular (Potential).
+FT   TRANSMEM   1263   1283       Helical; (Potential).
+FT   TOPO_DOM   1284   1331       Cytoplasmic (Potential).
+FT   DOMAIN       35    181       F5/8 type C.
+FT   DOMAIN      216    368       Laminin G-like 1.
+FT   DOMAIN      401    552       Laminin G-like 2.
+FT   DOMAIN      554    591       EGF-like 1.
+FT   DOMAIN      592    798       Fibrinogen C-terminal.
+FT   DOMAIN      799    963       Laminin G-like 3.
+FT   DOMAIN      963   1002       EGF-like 2.
+FT   DOMAIN     1055   1214       Laminin G-like 4.
+FT   MOD_RES    1303   1303       Phosphoserine.
+FT   MOD_RES    1306   1306       Phosphoserine.
+FT   CARBOHYD    289    289       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    346    346       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    363    363       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    379    379       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    436    436       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    506    506       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    507    507       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    546    546       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    630    630       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD    735    735       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD   1116   1116       N-linked (GlcNAc...) (Potential).
+FT   CARBOHYD   1198   1198       N-linked (GlcNAc...) (Potential).
+FT   DISULFID     35    181       By similarity.
+FT   DISULFID    336    368       By similarity.
+FT   DISULFID    520    552       By similarity.
+FT   DISULFID    558    569       By similarity.
+FT   DISULFID    563    578       By similarity.
+FT   DISULFID    580    590       By similarity.
+FT   DISULFID    936    963       By similarity.
+FT   DISULFID    967    980       By similarity.
+FT   DISULFID    974    989       By similarity.
+FT   DISULFID    991   1001       By similarity.
+FT   DISULFID   1178   1214       By similarity.
+FT   VAR_SEQ       1   1223       Missing (in isoform 2).
+FT                                /FTId=VSP_014976.
+FT   VARIANT     114    114       R -> Q.
+FT                                /FTId=VAR_046227.
+FT   VARIANT     218    218       T -> M.
+FT                                /FTId=VAR_046228.
+FT   VARIANT     226    226       L -> M.
+FT                                /FTId=VAR_046229.
+FT   VARIANT     283    283       R -> C.
+FT                                /FTId=VAR_046230.
+FT   VARIANT     382    382       S -> N.
+FT                                /FTId=VAR_046231.
+FT   VARIANT     407    407       N -> S.
+FT                                /FTId=VAR_046232.
+FT   VARIANT     418    418       N -> D.
+FT                                /FTId=VAR_046233.
+FT   VARIANT     680    680       E -> K.
+FT                                /FTId=VAR_046234.
+FT   VARIANT     699    699       P -> Q.
+FT                                /FTId=VAR_046235.
+FT   VARIANT     716    716       Y -> C.
+FT                                /FTId=VAR_046236.
+FT   VARIANT     731    731       G -> S.
+FT                                /FTId=VAR_046237.
+FT   VARIANT     779    779       G -> D.
+FT                                /FTId=VAR_046238.
+FT   VARIANT     869    869       I -> T (associated with susceptibility to
+FT                                autism).
+FT                                /FTId=VAR_046239.
+FT   VARIANT     906    906       R -> H.
+FT                                /FTId=VAR_046240.
+FT   VARIANT    1038   1038       D -> N.
+FT                                /FTId=VAR_046241.
+FT   VARIANT    1102   1102       V -> A.
+FT                                /FTId=VAR_046242.
+FT   VARIANT    1114   1114       S -> G.
+FT                                /FTId=VAR_046243.
+FT   VARIANT    1119   1119       R -> H.
+FT                                /FTId=VAR_046244.
+FT   VARIANT    1129   1129       D -> H.
+FT                                /FTId=VAR_046245.
+FT   VARIANT    1227   1227       A -> T.
+FT                                /FTId=VAR_046246.
+FT   VARIANT    1253   1253       I -> T.
+FT                                /FTId=VAR_046247.
+FT   VARIANT    1278   1278       T -> I.
+FT                                /FTId=VAR_046248.
+SQ   SEQUENCE   1331 AA;  148167 MW;  CFB2CB55BEFB99C2 CRC64;
+     MQAAPRAGCG AALLLWIVSS CLCRAWTAPS TSQKCDEPLV SGLPHVAFSS SSSISGSYSP
+     GYAKINKRGG AGGWSPSDSD HYQWLQVDFG NRKQISAIAT QGRYSSSDWV TQYRMLYSDT
+     GRNWKPYHQD GNIWAFPGNI NSDGVVRHEL QHPIIARYVR IVPLDWNGEG RIGLRIEVYG
+     CSYWADVINF DGHVVLPYRF RNKKMKTLKD VIALNFKTSE SEGVILHGEG QQGDYITLEL
+     KKAKLVLSLN LGSNQLGPIY GHTSVMTGSL LDDHHWHSVV IERQGRSINL TLDRSMQHFR
+     TNGEFDYLDL DYEITFGGIP FSGKPSSSSR KNFKGCMESI NYNGVNITDL ARRKKLEPSN
+     VGNLSFSCVE PYTVPVFFNA TSYLEVPGRL NQDLFSVSFQ FRTWNPNGLL VFSHFADNLG
+     NVEIDLTESK VGVHINITQT KMSQIDISSG SGLNDGQWHE VRFLAKENFA ILTIDGDEAS
+     AVRTNSPLQV KTGEKYFFGG FLNQMNNSSH SVLQPSFQGC MQLIQVDDQL VNLYEVAQRK
+     PGSFANVSID MCAIIDRCVP NHCEHGGKCS QTWDSFKCTC DETGYSGATC HNSIYEPSCE
+     AYKHLGQTSN YYWIDPDGSG PLGPLKVYCN MTEDKVWTIV SHDLQMQTPV VGYNPEKYSV
+     TQLVYSASMD QISAITDSAE YCEQYVSYFC KMSRLLNTPD GSPYTWWVGK ANEKHYYWGG
+     SGPGIQKCAC GIERNCTDPK YYCNCDADYK QWRKDAGFLS YKDHLPVSQV VVGDTDRQGS
+     EAKLSVGPLR CQGDRNYWNA ASFPNPSSYL HFSTFQGETS ADISFYFKTL TPWGVFLENM
+     GKEDFIKLEL KSATEVSFSF DVGNGPVEIV VRSPTPLNDD QWHRVTAERN VKQASLQVDR
+     LPQQIRKAPT EGHTRLELYS QLFVGGAGGQ QGFLGCIRSL RMNGVTLDLE ERAKVTSGFI
+     SGCSGHCTSY GTNCENGGKC LERYHGYSCD CSNTAYDGTF CNKDVGAFFE EGMWLRYNFQ
+     APATNARDSS SRVDNAPDQQ NSHPDLAQEE IRFSFSTTKA PCILLYISSF TTDFLAVLVK
+     PTGSLQIRYN LGGTREPYNI DVDHRNMANG QPHSVNITRH EKTIFLKLDH YPSVSYHLPS
+     SSDTLFNSPK SLFLGKVIET GKIDQEIHKY NTPGFTGCLS RVQFNQIAPL KAALRQTNAS
+     AHVHIQGELV ESNCGASPLT LSPMSSATDP WHLDHLDSAS ADFPYNPGQG QAIRNGVNRN
+     SAIIGGVIAV VIFTILCTLV FLIRYMFRHK GTYHTNEAKG AESAESADAA IMNNDPNFTE
+     TIDESKKEWL I
+//

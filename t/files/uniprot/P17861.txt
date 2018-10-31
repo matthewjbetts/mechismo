@@ -1,0 +1,280 @@
+ID   XBP1_HUMAN              Reviewed;         261 AA.
+AC   P17861; Q8WYK6; Q969P1; Q96BD7;
+DT   01-NOV-1990, integrated into UniProtKB/Swiss-Prot.
+DT   01-MAR-2005, sequence version 2.
+DT   21-MAR-2012, entry version 123.
+DE   RecName: Full=X-box-binding protein 1;
+DE            Short=XBP-1;
+DE   AltName: Full=Tax-responsive element-binding protein 5;
+GN   Name=XBP1; Synonyms=TREB5, XBP2;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), AND FUNCTION.
+RX   MEDLINE=90208323; PubMed=2321018; DOI=10.1126/science.2321018;
+RA   Liou H.-C., Boothby M.R., Finn P.W., Davidon R., Nabavi N.,
+RA   Zeleznik-Le N.J., Ting J.P.-Y., Glimcher L.H.;
+RT   "A new member of the leucine zipper class of proteins that binds to
+RT   the HLA DR alpha promoter.";
+RL   Science 247:1581-1584(1990).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1), AND FUNCTION.
+RX   MEDLINE=90316112; PubMed=2196176;
+RA   Yoshimura T., Fujisawa J., Yoshida M.;
+RT   "Multiple cDNA clones encoding nuclear proteins that bind to the tax-
+RT   dependent enhancer of HTLV-1: all contain a leucine zipper structure
+RT   and basic amino acid domain.";
+RL   EMBO J. 9:2537-2542(1990).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], AND FUNCTION.
+RX   MEDLINE=93352484; PubMed=8349596;
+RA   Ponath P.D., Fass D., Liou H.C., Glimcher L.H., Strominger J.L.;
+RT   "The regulatory gene, hXBP-1, and its target, HLA-DRA, utilize both
+RT   common and distinct regulatory elements and protein complexes.";
+RL   J. Biol. Chem. 268:17074-17082(1993).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORMS 1 AND 2), INDUCTION, AND
+RP   FUNCTION.
+RX   MEDLINE=21638093; PubMed=11779464; DOI=10.1016/S0092-8674(01)00611-0;
+RA   Yoshida H., Matsui T., Yamamoto A., Okada T., Mori K.;
+RT   "XBP1 mRNA is induced by ATF6 and spliced by IRE1 in response to ER
+RT   stress to produce a highly active transcription factor.";
+RL   Cell 107:881-891(2001).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RX   PubMed=15461802; DOI=10.1186/gb-2004-5-10-r84;
+RA   Collins J.E., Wright C.L., Edwards C.A., Davis M.P., Grinham J.A.,
+RA   Cole C.G., Goward M.E., Aguado B., Mallya M., Mokrab Y., Huckle E.J.,
+RA   Beare D.M., Dunham I.;
+RT   "A genome annotation-driven approach to cloning the human ORFeome.";
+RL   Genome Biol. 5:R84.1-R84.11(2004).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   MEDLINE=20057165; PubMed=10591208; DOI=10.1038/990031;
+RA   Dunham I., Hunt A.R., Collins J.E., Bruskiewich R., Beare D.M.,
+RA   Clamp M., Smink L.J., Ainscough R., Almeida J.P., Babbage A.K.,
+RA   Bagguley C., Bailey J., Barlow K.F., Bates K.N., Beasley O.P.,
+RA   Bird C.P., Blakey S.E., Bridgeman A.M., Buck D., Burgess J.,
+RA   Burrill W.D., Burton J., Carder C., Carter N.P., Chen Y., Clark G.,
+RA   Clegg S.M., Cobley V.E., Cole C.G., Collier R.E., Connor R.,
+RA   Conroy D., Corby N.R., Coville G.J., Cox A.V., Davis J., Dawson E.,
+RA   Dhami P.D., Dockree C., Dodsworth S.J., Durbin R.M., Ellington A.G.,
+RA   Evans K.L., Fey J.M., Fleming K., French L., Garner A.A.,
+RA   Gilbert J.G.R., Goward M.E., Grafham D.V., Griffiths M.N.D., Hall C.,
+RA   Hall R.E., Hall-Tamlyn G., Heathcott R.W., Ho S., Holmes S.,
+RA   Hunt S.E., Jones M.C., Kershaw J., Kimberley A.M., King A.,
+RA   Laird G.K., Langford C.F., Leversha M.A., Lloyd C., Lloyd D.M.,
+RA   Martyn I.D., Mashreghi-Mohammadi M., Matthews L.H., Mccann O.T.,
+RA   Mcclay J., Mclaren S., McMurray A.A., Milne S.A., Mortimore B.J.,
+RA   Odell C.N., Pavitt R., Pearce A.V., Pearson D., Phillimore B.J.C.T.,
+RA   Phillips S.H., Plumb R.W., Ramsay H., Ramsey Y., Rogers L., Ross M.T.,
+RA   Scott C.E., Sehra H.K., Skuce C.D., Smalley S., Smith M.L.,
+RA   Soderlund C., Spragon L., Steward C.A., Sulston J.E., Swann R.M.,
+RA   Vaudin M., Wall M., Wallis J.M., Whiteley M.N., Willey D.L.,
+RA   Williams L., Williams S.A., Williamson H., Wilmer T.E., Wilming L.,
+RA   Wright C.L., Hubbard T., Bentley D.R., Beck S., Rogers J., Shimizu N.,
+RA   Minoshima S., Kawasaki K., Sasaki T., Asakawa S., Kudoh J.,
+RA   Shintani A., Shibuya K., Yoshizaki Y., Aoki N., Mitsuyama S.,
+RA   Roe B.A., Chen F., Chu L., Crabtree J., Deschamps S., Do A., Do T.,
+RA   Dorman A., Fang F., Fu Y., Hu P., Hua A., Kenton S., Lai H., Lao H.I.,
+RA   Lewis J., Lewis S., Lin S.-P., Loh P., Malaj E., Nguyen T., Pan H.,
+RA   Phan S., Qi S., Qian Y., Ray L., Ren Q., Shaull S., Sloan D., Song L.,
+RA   Wang Q., Wang Y., Wang Z., White J., Willingham D., Wu H., Yao Z.,
+RA   Zhan M., Zhang G., Chissoe S., Murray J., Miller N., Minx P.,
+RA   Fulton R., Johnson D., Bemis G., Bentley D., Bradshaw H., Bourne S.,
+RA   Cordes M., Du Z., Fulton L., Goela D., Graves T., Hawkins J.,
+RA   Hinds K., Kemp K., Latreille P., Layman D., Ozersky P., Rohlfing T.,
+RA   Scheet P., Walker C., Wamsley A., Wohldmann P., Pepin K., Nelson J.,
+RA   Korf I., Bedell J.A., Hillier L.W., Mardis E., Waterston R.,
+RA   Wilson R., Emanuel B.S., Shaikh T., Kurahashi H., Saitta S.,
+RA   Budarf M.L., McDermid H.E., Johnson A., Wong A.C.C., Morrow B.E.,
+RA   Edelmann L., Kim U.J., Shizuya H., Simon M.I., Dumanski J.P.,
+RA   Peyrard M., Kedra D., Seroussi E., Fransson I., Tapia I., Bruder C.E.,
+RA   O'Brien K.P., Wilkinson P., Bodenteich A., Hartman K., Hu X.,
+RA   Khan A.S., Lane L., Tilahun Y., Wright H.;
+RT   "The DNA sequence of human chromosome 22.";
+RL   Nature 402:489-495(1999).
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Ovary, and Placenta;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [8]
+RP   FUNCTION.
+RX   MEDLINE=96226171; PubMed=8657566; DOI=10.1093/nar/24.10.1855;
+RA   Clauss I.M., Chu M., Zhao J.-L., Glimcher L.H.;
+RT   "The basic domain/leucine zipper protein hXBP-1 preferentially binds
+RT   to and transactivates CRE-like sequences containing an ACGT core.";
+RL   Nucleic Acids Res. 24:1855-1864(1996).
+RN   [9]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO MAJOR AFFECTIVE DISORDER TYPE 7.
+RX   PubMed=12949534; DOI=10.1038/ng1235;
+RA   Kakiuchi C., Iwamoto K., Ishiwata M., Bundo M., Kasahara T.,
+RA   Kusumi I., Tsujita T., Okazaki Y., Nanko S., Kunugi H., Sasaki T.,
+RA   Kato T.;
+RT   "Impaired feedback regulation of XBP1 as a genetic risk factor for
+RT   bipolar disorder.";
+RL   Nat. Genet. 35:171-175(2003).
+RN   [10]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-47, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Embryonic kidney;
+RX   PubMed=19413330; DOI=10.1021/ac9004309;
+RA   Gauci S., Helbig A.O., Slijper M., Krijgsveld J., Heck A.J.,
+RA   Mohammed S.;
+RT   "Lys-N and trypsin cover complementary parts of the phosphoproteome in
+RT   a refined SCX-based approach.";
+RL   Anal. Chem. 81:4493-4501(2009).
+RN   [11]
+RP   VARIANT [LARGE SCALE ANALYSIS] VAL-12.
+RX   PubMed=16959974; DOI=10.1126/science.1133427;
+RA   Sjoeblom T., Jones S., Wood L.D., Parsons D.W., Lin J., Barber T.D.,
+RA   Mandelker D., Leary R.J., Ptak J., Silliman N., Szabo S.,
+RA   Buckhaults P., Farrell C., Meeh P., Markowitz S.D., Willis J.,
+RA   Dawson D., Willson J.K.V., Gazdar A.F., Hartigan J., Wu L., Liu C.,
+RA   Parmigiani G., Park B.H., Bachman K.E., Papadopoulos N.,
+RA   Vogelstein B., Kinzler K.W., Velculescu V.E.;
+RT   "The consensus coding sequences of human breast and colorectal
+RT   cancers.";
+RL   Science 314:268-274(2006).
+RN   [12]
+RP   VARIANT LYS-232.
+RX   PubMed=17224074; DOI=10.1186/bcr1637;
+RA   Chanock S.J., Burdett L., Yeager M., Llaca V., Langeroed A.,
+RA   Presswalla S., Kaaresen R., Strausberg R.L., Gerhard D.S.,
+RA   Kristensen V., Perou C.M., Boerresen-Dale A.-L.;
+RT   "Somatic sequence alterations in twenty-one genes selected by
+RT   expression profile analysis of breast carcinomas.";
+RL   Breast Cancer Res. 9:R5-R5(2007).
+CC   -!- FUNCTION: Transcription factor essential for hepatocyte growth,
+CC       the differentiation of plasma cells, the immunoglobulin secretion,
+CC       and the unfolded protein response (UPR). Acts during endoplasmic
+CC       reticulum stress (ER) by activating unfolded protein response
+CC       (UPR) target genes via direct binding to the UPR element (UPRE).
+CC       Binds DNA preferably to the CRE-like element 5'-
+CC       GATGACGTG[TG]N(3)[AT]T-3', and also to some TPA response elements
+CC       (TRE). Binds to the HLA DR-alpha promoter. Binds to the Tax-
+CC       responsive element (TRE) of HTLV-I.
+CC   -!- SUBCELLULAR LOCATION: Nucleus.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1; Synonyms=XBP-1U;
+CC         IsoId=P17861-1; Sequence=Displayed;
+CC       Name=2; Synonyms=XBP-1S;
+CC         IsoId=P17861-2; Sequence=VSP_012936;
+CC         Note=Potent transcriptional activator. Induced by ERN1 in
+CC         response to endoplasmic reticulum stress. ENR1 cleaves a 26-bp
+CC         fragment causing a frameshift of the mRNA transcript;
+CC   -!- INDUCTION: Up-regulated by ATF6 via direct binding to the ERSE in
+CC       response to endoplasmic reticulum stress.
+CC   -!- DISEASE: Genetic variations in XBP1 could be associated with
+CC       susceptibility to major affective disorder type 7 (MAFD7)
+CC       [MIM:612371]. Major affective disorders represent a class of
+CC       mental disorders characterized by a disturbance in mood as their
+CC       predominant feature.
+CC   -!- SIMILARITY: Belongs to the bZIP family.
+CC   -!- SIMILARITY: Contains 1 bZIP domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; M31627; AAA36031.1; -; mRNA.
+DR   EMBL; X55543; CAA39149.1; -; Genomic_DNA.
+DR   EMBL; L13850; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AB076383; BAB82981.1; -; mRNA.
+DR   EMBL; AB076384; BAB82982.1; -; mRNA.
+DR   EMBL; CR456611; CAG30497.1; -; mRNA.
+DR   EMBL; Z93930; CAB45016.1; -; Genomic_DNA.
+DR   EMBL; BC000938; AAH00938.1; -; mRNA.
+DR   EMBL; BC012841; AAH12841.1; -; mRNA.
+DR   EMBL; BC015709; AAH15709.1; -; mRNA.
+DR   IPI; IPI00056479; -.
+DR   IPI; IPI00411953; -.
+DR   PIR; A36299; A36299.
+DR   RefSeq; NP_001073007.1; NM_001079539.1.
+DR   RefSeq; NP_005071.2; NM_005080.3.
+DR   UniGene; Hs.437638; -.
+DR   ProteinModelPortal; P17861; -.
+DR   SMR; P17861; 71-133.
+DR   MINT; MINT-268152; -.
+DR   STRING; P17861; -.
+DR   DMDM; 60416406; -.
+DR   PRIDE; P17861; -.
+DR   DNASU; 7494; -.
+DR   Ensembl; ENST00000216037; ENSP00000216037; ENSG00000100219.
+DR   GeneID; 7494; -.
+DR   KEGG; hsa:7494; -.
+DR   UCSC; uc010gvl.1; human.
+DR   CTD; 7494; -.
+DR   GeneCards; GC22M029190; -.
+DR   H-InvDB; HIX0016344; -.
+DR   HGNC; HGNC:12801; XBP1.
+DR   MIM; 194355; gene.
+DR   MIM; 612371; phenotype.
+DR   neXtProt; NX_P17861; -.
+DR   PharmGKB; PA37400; -.
+DR   eggNOG; NOG285368; -.
+DR   GeneTree; ENSGT00390000017751; -.
+DR   HOVERGEN; HBG061457; -.
+DR   KO; K09027; -.
+DR   OMA; HVYTKPL; -.
+DR   OrthoDB; EOG4BK54X; -.
+DR   Pathway_Interaction_DB; hnf3apathway; FOXA1 transcription factor network.
+DR   Reactome; REACT_116125; Disease.
+DR   NextBio; 29352; -.
+DR   ArrayExpress; P17861; -.
+DR   Bgee; P17861; -.
+DR   CleanEx; HS_XBP1; -.
+DR   Genevestigator; P17861; -.
+DR   GermOnline; ENSG00000100219; Homo sapiens.
+DR   GO; GO:0005654; C:nucleoplasm; TAS:Reactome.
+DR   GO; GO:0046983; F:protein dimerization activity; IEA:InterPro.
+DR   GO; GO:0003700; F:sequence-specific DNA binding transcription factor activity; TAS:ProtInc.
+DR   GO; GO:0006987; P:activation of signaling protein activity involved in unfolded protein response; TAS:Reactome.
+DR   GO; GO:0006955; P:immune response; TAS:ProtInc.
+DR   InterPro; IPR004827; bZIP.
+DR   InterPro; IPR011700; bZIP_2.
+DR   Pfam; PF07716; bZIP_2; 1.
+DR   SMART; SM00338; BRLZ; 1.
+DR   PROSITE; PS50217; BZIP; 1.
+DR   PROSITE; PS00036; BZIP_BASIC; 1.
+PE   1: Evidence at protein level;
+KW   Alternative splicing; Complete proteome; DNA-binding; Nucleus;
+KW   Phosphoprotein; Polymorphism; Reference proteome; Transcription;
+KW   Transcription regulation.
+FT   CHAIN         1    261       X-box-binding protein 1.
+FT                                /FTId=PRO_0000076543.
+FT   DOMAIN       98    126       Leucine-zipper.
+FT   DNA_BIND     72     94       Basic motif.
+FT   MOD_RES      47     47       Phosphoserine.
+FT   VAR_SEQ     167    261       LRLRAPLQQVQAQLSPLQNISPWILAVLTLQIQSLISCWAF
+FT                                WTTWTQSCSSNALPQSLPAWRSSQRSTQKDPVPYQPPFLCQ
+FT                                WGRHQPSWKPLMN -> GAGPVVTPPEHLPMDSGGIDSSDS
+FT                                ESDILLGILDNLDPVMFFKCPSPEPASLEELPEVYPEGPSS
+FT                                LPASLSLSVGTSSAKLEAINELIRFDHIYTKPLVLEIPSET
+FT                                ESQANVVVKIEEAPLSPSENDHPEFIVSVKEEPVEDDLVPE
+FT                                LGISNLLSSSHCPKPSSCLLDAYSDCGYGGSLSPFSDMSSL
+FT                                LGVNHSWEDTFANELFPQLISV (in isoform 2).
+FT                                /FTId=VSP_012936.
+FT   VARIANT      12     12       D -> V (in a breast cancer sample;
+FT                                somatic mutation).
+FT                                /FTId=VAR_035998.
+FT   VARIANT     232    232       R -> K (in a breast cancer sample;
+FT                                somatic mutation).
+FT                                /FTId=VAR_033023.
+FT   CONFLICT     33     35       GQA -> AR (in Ref. 1; AAA36031).
+FT   CONFLICT    130    130       N -> T (in Ref. 3; L13850).
+FT   CONFLICT    196    196       L -> F (in Ref. 3; L13850).
+SQ   SEQUENCE   261 AA;  28695 MW;  A4EF69EEE0D344A6 CRC64;
+     MVVVAAAPNP ADGTPKVLLL SGQPASAAGA PAGQALPLMV PAQRGASPEA ASGGLPQARK
+     RQRLTHLSPE EKALRRKLKN RVAAQTARDR KKARMSELEQ QVVDLEEENQ KLLLENQLLR
+     EKTHGLVVEN QELRQRLGMD ALVAEEEAEA KGNEVRPVAG SAESAALRLR APLQQVQAQL
+     SPLQNISPWI LAVLTLQIQS LISCWAFWTT WTQSCSSNAL PQSLPAWRSS QRSTQKDPVP
+     YQPPFLCQWG RHQPSWKPLM N
+//

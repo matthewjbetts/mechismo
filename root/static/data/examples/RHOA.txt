@@ -1,0 +1,7 @@
+# RhoA GTPase mutations in Burkitt lymphoma
+# From Rohde et al, Genes Chromosomes Cancer, 2014
+P61586/R5Q
+P61586/I23R
+P61586/Y42F
+P61586/L69R
+P61586/D76V

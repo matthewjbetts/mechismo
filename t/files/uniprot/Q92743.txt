@@ -1,0 +1,318 @@
+ID   HTRA1_HUMAN             Reviewed;         480 AA.
+AC   Q92743; D3DRE4; Q9UNS5;
+DT   26-SEP-2001, integrated into UniProtKB/Swiss-Prot.
+DT   01-FEB-1997, sequence version 1.
+DT   21-MAR-2012, entry version 116.
+DE   RecName: Full=Serine protease HTRA1;
+DE            EC=3.4.21.-;
+DE   AltName: Full=High-temperature requirement A serine peptidase 1;
+DE   AltName: Full=L56;
+DE   AltName: Full=Serine protease 11;
+DE   Flags: Precursor;
+GN   Name=HTRA1; Synonyms=HTRA, PRSS11;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RC   TISSUE=Placenta;
+RX   MEDLINE=97131593; PubMed=8977104; DOI=10.1016/S0014-5793(96)01229-X;
+RA   Zumbrunn J., Trueb B.;
+RT   "Primary structure of a putative serine protease specific for IGF-
+RT   binding proteins.";
+RL   FEBS Lett. 398:187-192(1996).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RA   Crowl R.M., Luk D., Milnamow M.;
+RT   "Genomic organization and promoter characterization of the human HTRA
+RT   (PRSS11) gene.";
+RL   Submitted (JUN-1999) to the EMBL/GenBank/DDBJ databases.
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (SEP-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 144-480, PROTEIN SEQUENCE OF 33-44,
+RP   FUNCTION, SUBCELLULAR LOCATION, TISSUE SPECIFICITY, AND MUTAGENESIS OF
+RP   SER-328.
+RC   TISSUE=Cartilage;
+RX   MEDLINE=99069438; PubMed=9852107; DOI=10.1074/jbc.273.51.34406;
+RA   Hu S.I., Carozza M., Klein M., Nantermet P., Luk D., Crowl R.M.;
+RT   "Human HtrA, an evolutionarily conserved serine protease identified as
+RT   a differentially expressed gene product in osteoarthritic cartilage.";
+RL   J. Biol. Chem. 273:34406-34412(1998).
+RN   [5]
+RP   SUBCELLULAR LOCATION, TISSUE SPECIFICITY, AND DEVELOPMENTAL STAGE.
+RX   PubMed=15208355; DOI=10.1369/jhc.3A6186.2004;
+RA   De Luca A., De Falco M., Fedele V., Cobellis L., Mastrogiacomo A.,
+RA   Laforgia V., Tuduce I.L., Campioni M., Giraldi D., Paggi M.G.,
+RA   Baldi A.;
+RT   "The serine protease HtrA1 is upregulated in the human placenta during
+RT   pregnancy.";
+RL   J. Histochem. Cytochem. 52:885-892(2004).
+RN   [6]
+RP   FUNCTION, AND TISSUE SPECIFICITY.
+RX   PubMed=16377621; DOI=10.1074/jbc.M500361200;
+RA   Grau S., Richards P.J., Kerr B., Hughes C., Caterson B.,
+RA   Williams A.S., Junker U., Jones S.A., Clausen T., Ehrmann M.;
+RT   "The role of human HtrA1 in arthritic disease.";
+RL   J. Biol. Chem. 281:6124-6129(2006).
+RN   [7]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO ARMD7.
+RX   PubMed=17053108; DOI=10.1126/science.1133807;
+RA   Dewan A., Liu M., Hartman S., Zhang S.S.-M., Liu D.T.L., Zhao C.,
+RA   Tam P.O.S., Chan W.M., Lam D.S.C., Snyder M., Barnstable C.,
+RA   Pang C.P., Hoh J.;
+RT   "HTRA1 promoter polymorphism in wet age-related macular
+RT   degeneration.";
+RL   Science 314:989-992(2006).
+RN   [8]
+RP   INVOLVEMENT IN SUSCEPTIBILITY TO ARMD7.
+RX   PubMed=17053109; DOI=10.1126/science.1133811;
+RA   Yang Z., Camp N.J., Sun H., Tong Z., Gibbs D., Cameron D.J., Chen H.,
+RA   Zhao Y., Pearson E., Li X., Chien J., DeWan A., Harmon J.,
+RA   Bernstein P.S., Shridhar V., Zabriskie N.A., Hoh J., Howes K.,
+RA   Zhang K.;
+RT   "A variant of the HTRA1 gene increases susceptibility to age-related
+RT   macular degeneration.";
+RL   Science 314:992-993(2006).
+RN   [9]
+RP   FUNCTION, AND SUBCELLULAR LOCATION.
+RX   PubMed=20671064; DOI=10.1158/1541-7786.MCR-09-0473;
+RA   Campioni M., Severino A., Manente L., Tuduce I.L., Toldo S.,
+RA   Caraglia M., Crispi S., Ehrmann M., He X., Maguire J., De Falco M.,
+RA   De Luca A., Shridhar V., Baldi A.;
+RT   "The serine protease HtrA1 specifically interacts and degrades the
+RT   tuberous sclerosis complex 2 protein.";
+RL   Mol. Cancer Res. 8:1248-1260(2010).
+RN   [10]
+RP   STRUCTURE BY NMR OF 367-480.
+RG   RIKEN structural genomics initiative (RSGI);
+RT   "Solution structure of the PDZ-domain of human protease HTRA 1
+RT   precursor.";
+RL   Submitted (APR-2008) to the PDB data bank.
+RN   [11]
+RP   X-RAY CRYSTALLOGRAPHY (2.75 ANGSTROMS) OF 158-480, HOMOTRIMERIZATION,
+RP   SUBCELLULAR LOCATION, AND MUTAGENESIS OF SER-328.
+RX   PubMed=21297635; DOI=10.1038/nsmb.2013;
+RA   Truebestein L., Tennstaedt A., Monig T., Krojer T., Canellas F.,
+RA   Kaiser M., Clausen T., Ehrmann M.;
+RT   "Substrate-induced remodeling of the active site regulates human HTRA1
+RT   activity.";
+RL   Nat. Struct. Mol. Biol. 18:386-388(2011).
+RN   [12]
+RP   VARIANTS CARASIL THR-252 AND MET-297, AND CHARACTERIZATION OF VARIANTS
+RP   CARASIL THR-252 AND MET-297.
+RX   PubMed=19387015; DOI=10.1056/NEJMoa0801560;
+RA   Hara K., Shiga A., Fukutake T., Nozaki H., Miyashita A., Yokoseki A.,
+RA   Kawata H., Koyama A., Arima K., Takahashi T., Ikeda M., Shiota H.,
+RA   Tamura M., Shimoe Y., Hirayama M., Arisato T., Yanagawa S., Tanaka A.,
+RA   Nakano I., Ikeda S., Yoshida Y., Yamamoto T., Ikeuchi T., Kuwano R.,
+RA   Nishizawa M., Tsuji S., Onodera O.;
+RT   "Association of HTRA1 mutations and familial ischemic cerebral small-
+RT   vessel disease.";
+RL   N. Engl. J. Med. 360:1729-1739(2009).
+CC   -!- FUNCTION: Serine protease with a variety of targets, including
+CC       extracellular matrix proteins such as fibronectin. HTRA1-generated
+CC       fibronectin fragments further induce synovial cells to up-regulate
+CC       MMP1 and MMP3 production. May also degrade proteoglycans, such as
+CC       aggrecan, decorin and fibromodulin. Through cleavage of
+CC       proteoglycans, may release soluble FGF-glycosaminoglycan complexes
+CC       that promote the range and intensity of FGF signals in the
+CC       extracellular space. Regulates the availability of insulin-like
+CC       growth factors (IGFs) by cleaving IGF-binding proteins. Inhibits
+CC       signaling mediated by TGF-beta family members. This activity
+CC       requires the integrity of the catalytic site, although it is
+CC       unclear whether TGF-beta proteins are themselves degraded. By
+CC       acting on TGF-beta signaling, may regulate many physiological
+CC       processes, including retinal angiogenesis and neuronal survival
+CC       and maturation during development. Intracellularly, degrades TSC2,
+CC       leading to the activation of TSC2 downstream targets.
+CC   -!- SUBUNIT: Forms homotrimers. In the presence of substrate, may form
+CC       higher-order multimers in a PDZ-independent manner. Interacts with
+CC       TGF-beta family members, including BMP4, TGFB1, TGFB2, activin A
+CC       and GDF5 (By similarity).
+CC   -!- SUBCELLULAR LOCATION: Secreted. Cytoplasm, cytosol.
+CC       Note=Predominantly secreted. Also found associated with the plasma
+CC       membrane.
+CC   -!- TISSUE SPECIFICITY: Widely expressed, with strongest expression in
+CC       placenta (at protein level). Secreted by synovial fibroblasts. Up-
+CC       regulated in osteoarthritis and rheumatoid arthritis synovial
+CC       fluids and cartilage as compared with non-arthritic (at protein
+CC       level).
+CC   -!- DEVELOPMENTAL STAGE: In the placenta, in the first trimester of
+CC       gestation, low expression in the cells surrounding villi both in
+CC       the inner layer of the cytotrophoblast and in the outer layer of
+CC       the syncytiotrophoblast (at protein level). In the third trimester
+CC       of gestation, very strong expression in the outer layer forming
+CC       the syncytiotrophoblast and lower in the cytotrophoblast (at
+CC       protein level).
+CC   -!- DOMAIN: The IGFBP N-terminal domain mediates interaction with TSC2
+CC       substrate.
+CC   -!- DISEASE: Variations in the promoter region of HTRA1 are the cause
+CC       of susceptibility to age-related macular degeneration type 7
+CC       (ARMD7) [MIM:610149]. ARMD is the leading cause of vision loss and
+CC       blindness among older individuals in the developed word. It is
+CC       classified as either dry (nonneovascular) or wet (neovascular).
+CC       ARMD7 is a wet form, in which new blood vessels form and break
+CC       beneath the retina. This leakage causes permanent damage to
+CC       surrounding retinal tissue, distorting and destroying central
+CC       vision. Wet ARMD is more prevalent among Asians than Caucasians.
+CC   -!- DISEASE: Defects in HTRA1 are the cause of cerebral autosomal
+CC       recessive arteriopathy with subcortical infarcts and
+CC       leukoencephalopathy (CARASIL) [MIM:600142]. CARASIL is
+CC       characterized by nonhypertensive cerebral small-vessel
+CC       arteriopathy with subcortical infarcts, alopecia, and spondylosis,
+CC       with an onset in early adulthood. On neuropathological
+CC       examination, atherosclerosis associated with intimal thickening
+CC       and dense collagen fibers, loss of vascular smooth-muscle cells,
+CC       and hyaline degeneration of the tunica media has been observed in
+CC       cerebral small arteries.
+CC   -!- SIMILARITY: Belongs to the peptidase S1B family.
+CC   -!- SIMILARITY: Contains 1 IGFBP N-terminal domain.
+CC   -!- SIMILARITY: Contains 1 Kazal-like domain.
+CC   -!- SIMILARITY: Contains 1 PDZ (DHR) domain.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/HTRA1";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; Y07921; CAA69226.1; -; mRNA.
+DR   EMBL; AF157623; AAD41525.1; -; Genomic_DNA.
+DR   EMBL; CH471066; EAW49312.1; -; Genomic_DNA.
+DR   EMBL; CH471066; EAW49313.1; -; Genomic_DNA.
+DR   EMBL; AF097709; AAC97211.1; -; mRNA.
+DR   IPI; IPI00003176; -.
+DR   RefSeq; NP_002766.1; NM_002775.4.
+DR   UniGene; Hs.501280; -.
+DR   PDB; 2JOA; NMR; -; A=380-480.
+DR   PDB; 2YTW; NMR; -; A=370-480.
+DR   PDB; 3NUM; X-ray; 2.75 A; A=158-480.
+DR   PDB; 3NWU; X-ray; 3.20 A; A/B/C=158-375.
+DR   PDB; 3NZI; X-ray; 2.75 A; A=158-480.
+DR   PDBsum; 2JOA; -.
+DR   PDBsum; 2YTW; -.
+DR   PDBsum; 3NUM; -.
+DR   PDBsum; 3NWU; -.
+DR   PDBsum; 3NZI; -.
+DR   ProteinModelPortal; Q92743; -.
+DR   SMR; Q92743; 51-480.
+DR   DIP; DIP-33195N; -.
+DR   IntAct; Q92743; 5.
+DR   MINT; MINT-1198897; -.
+DR   STRING; Q92743; -.
+DR   MEROPS; S01.277; -.
+DR   DMDM; 18202620; -.
+DR   PeptideAtlas; Q92743; -.
+DR   PRIDE; Q92743; -.
+DR   DNASU; 5654; -.
+DR   Ensembl; ENST00000368984; ENSP00000357980; ENSG00000166033.
+DR   GeneID; 5654; -.
+DR   KEGG; hsa:5654; -.
+DR   UCSC; uc001lgj.2; human.
+DR   CTD; 5654; -.
+DR   GeneCards; GC10P124221; -.
+DR   H-InvDB; HIX0009274; -.
+DR   HGNC; HGNC:9476; HTRA1.
+DR   HPA; HPA036655; -.
+DR   MIM; 600142; phenotype.
+DR   MIM; 602194; gene.
+DR   MIM; 610149; phenotype.
+DR   neXtProt; NX_Q92743; -.
+DR   Orphanet; 279; Age-related macular degeneration.
+DR   Orphanet; 199354; CARASIL syndrome.
+DR   PharmGKB; PA33829; -.
+DR   eggNOG; COG0265; -.
+DR   GeneTree; ENSGT00510000046315; -.
+DR   HOGENOM; HBG585708; -.
+DR   HOVERGEN; HBG052044; -.
+DR   InParanoid; Q92743; -.
+DR   KO; K08784; -.
+DR   OMA; GNNTVEL; -.
+DR   OrthoDB; EOG4KH2V3; -.
+DR   PhylomeDB; Q92743; -.
+DR   NextBio; 21974; -.
+DR   ArrayExpress; Q92743; -.
+DR   Bgee; Q92743; -.
+DR   CleanEx; HS_HTRA1; -.
+DR   Genevestigator; Q92743; -.
+DR   GermOnline; ENSG00000166033; Homo sapiens.
+DR   GO; GO:0005615; C:extracellular space; TAS:ProtInc.
+DR   GO; GO:0005520; F:insulin-like growth factor binding; IEA:InterPro.
+DR   GO; GO:0004252; F:serine-type endopeptidase activity; TAS:ProtInc.
+DR   GO; GO:0006508; P:proteolysis; IEA:UniProtKB-KW.
+DR   GO; GO:0001558; P:regulation of cell growth; IEA:InterPro.
+DR   InterPro; IPR000867; IGFBP-like.
+DR   InterPro; IPR001478; PDZ.
+DR   InterPro; IPR009003; Pept_cys/ser_Trypsin-like.
+DR   InterPro; IPR001940; Peptidase_S1C.
+DR   InterPro; IPR002350; Prot_inh_Kazal.
+DR   InterPro; IPR011497; Prot_Inh_Kazal_2.
+DR   Pfam; PF00219; IGFBP; 1.
+DR   Pfam; PF07648; Kazal_2; 1.
+DR   Pfam; PF00595; PDZ; 1.
+DR   PRINTS; PR00834; PROTEASES2C.
+DR   SMART; SM00121; IB; 1.
+DR   SMART; SM00280; KAZAL; 1.
+DR   SMART; SM00228; PDZ; 1.
+DR   SUPFAM; SSF50156; PDZ; 1.
+DR   SUPFAM; SSF50494; Pept_Ser_Cys; 1.
+DR   PROSITE; PS51323; IGFBP_N_2; 1.
+DR   PROSITE; PS51465; KAZAL_2; 1.
+DR   PROSITE; PS50106; PDZ; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Age-related macular degeneration; Complete proteome;
+KW   Cytoplasm; Direct protein sequencing; Disease mutation;
+KW   Growth factor binding; Hydrolase; Protease; Reference proteome;
+KW   Secreted; Serine protease; Signal.
+FT   SIGNAL        1     22       Potential.
+FT   CHAIN        23    480       Serine protease HTRA1.
+FT                                /FTId=PRO_0000026943.
+FT   DOMAIN       33    100       IGFBP N-terminal.
+FT   DOMAIN       98    157       Kazal-like.
+FT   DOMAIN      365    467       PDZ.
+FT   REGION      204    364       Serine protease.
+FT   ACT_SITE    220    220       Charge relay system (Potential).
+FT   ACT_SITE    250    250       Charge relay system (Potential).
+FT   ACT_SITE    328    328       Charge relay system.
+FT   SITE        169    169       Involved in trimer stabilization.
+FT   SITE        171    171       Involved in trimer stabilization.
+FT   SITE        278    278       Involved in trimer stabilization.
+FT   VARIANT     252    252       A -> T (in CARASIL; has 21 to 50% normal
+FT                                protease activity; is unable to suppress
+FT                                TGF-beta activity; dbSNP:rs113993968).
+FT                                /FTId=VAR_063148.
+FT   VARIANT     297    297       V -> M (in CARASIL; has 21 to 50% normal
+FT                                protease activity; is unable to suppress
+FT                                TGF-beta activity; dbSNP:rs113993969).
+FT                                /FTId=VAR_063149.
+FT   MUTAGEN     328    328       S->A: Loss of activity.
+FT   CONFLICT    323    323       I -> T (in Ref. 4; AAC97211).
+FT   STRAND      384    389
+FT   HELIX       392    401
+FT   STRAND      411    417
+FT   STRAND      419    421
+FT   HELIX       422    426
+FT   HELIX       445    454
+FT   STRAND      456    464
+FT   STRAND      467    473
+SQ   SEQUENCE   480 AA;  51287 MW;  CA20A99480FB2330 CRC64;
+     MQIPRAALLP LLLLLLAAPA SAQLSRAGRS APLAAGCPDR CEPARCPPQP EHCEGGRARD
+     ACGCCEVCGA PEGAACGLQE GPCGEGLQCV VPFGVPASAT VRRRAQAGLC VCASSEPVCG
+     SDANTYANLC QLRAASRRSE RLHRPPVIVL QRGACGQGQE DPNSLRHKYN FIADVVEKIA
+     PAVVHIELFR KLPFSKREVP VASGSGFIVS EDGLIVTNAH VVTNKHRVKV ELKNGATYEA
+     KIKDVDEKAD IALIKIDHQG KLPVLLLGRS SELRPGEFVV AIGSPFSLQN TVTTGIVSTT
+     QRGGKELGLR NSDMDYIQTD AIINYGNSGG PLVNLDGEVI GINTLKVTAG ISFAIPSDKI
+     KKFLTESHDR QAKGKAITKK KYIGIRMMSL TSSKAKELKD RHRDFPDVIS GAYIIEVIPD
+     TPAEAGGLKE NDVIISINGQ SVVSANDVSD VIKRESTLNM VVRRGNEDIM ITVIPEEIDP
+//

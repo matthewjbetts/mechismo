@@ -1,0 +1,545 @@
+<div class="oneColumn"><div class="column"><div class="contents">
+
+<h2><a name="input"></a>Input format and options</h2>
+
+<p>Mechismo requires a list of one or more proteins, which can be specified using most protein or accessions (UniProt, ENSEMBL, Gene symbols).
+If you wish to study mutations or post-translational modifications, you simply append these as either variants/mutants (e.g. R152C) or
+modifications (e.g. S88Sp, K75Ka where 'p' and 'a' represent phosphorylation or acetylateion) separated by a forward slash (/) or a space.  Larger modifications
+can be specified (e.g. sumo, ubiq, nedd for SUMOylation, ubiquitination, neddylation) though be warned that these are treated simply as large changes
+to the site, and would invariably be predicted to disable any interaction.</p>
+
+<p>You can provide additional information about sites or modifications by simply adding text (any format) after the protein/genes/sites information 
+above separated by a space. For example:
+<br>
+
+<pre>
+
+RASH_HUMAN/G12A Sample1
+RASH_HUMAN/G12C Lung-cancer
+RASH_HUMAN/G12D Sample2
+RASH_HUMAN/G12E Sample2
+RASH_HUMAN/G12S Control
+</pre>
+
+</p>
+
+<p>On the default form there are also several options:</p>
+
+<table class="definitions">
+<tr><th>Name your search </th><td>provide a name so that you can find your results easily in the future</td></tr>
+<tr><th>Species          </th><td>specify a species (only necessary if using gene names or ambiguous gene/protein identifiers)</td></tr>
+<tr><th>Stringency       </th><td>how restrictive to be when mapping sequences to structure (i.e. what is to be included in the output)</td></tr>
+<tr><th>                 </th><td>high: only consider known interactions (no orthologues) and very high sequence similarity to structures</td></tr>
+<tr><th>                 </th><td>medium: consider interactions involving close homologues and moderate sequence similarity to structures</td></tr>
+<tr><th>                 </th><td>low: consider interactions involving close homologues and any sequence similarity to structures</td></tr>
+<tr><th>                 </th><td>all: consider all predicted interactions (using structure) and any sequence similarity to structures</td></tr>
+<tr><th>Example 1        </th><td>a set of H-ras mutations from Uniprot</td></tr>
+<tr><th>Example 2        </th><td>a set of phosphorylations and acetylations in P53 and some of its interaction partners</td></tr>
+<tr><th>Example 3        </th><td>a set of phosphorylations and acetylations from M.pnemoniae</td></tr>
+<tr><th>Example 4        </th><td>a set of Medulloblastoma mutations within DDX3X</td></tr>
+<tr><th>Search           </th><td>execute the search</td></tr>
+<tr><th>Clear            </th><td>clear the form</td></tr>
+<tr><th>Upload file      </th><td>upload a file containing proteins/mutations/modifications and <a href="#advancedSearch">advanced options</a></td></tr>
+</table>
+</div></div></div>
+
+
+<div class="oneColumn"><div class="column"><div class="contents">
+
+<h2><a name="stringency"></a>Stringency</h2>
+
+This lets you select the quality of the data you use to make predictions. 
+Two things are modified: 1) the quality of the structural matches used to model interactions, 
+and 2) the underlying interaction evidence for protein-protein interactions.  <br><br>
+
+<ul>
+<li><i>High stringency</i> will use only exact structures or very close homologues (70% or greater sequence identity), and only 
+high quality protein-protein interactions (i.e. likely to be direct).  For example, if you are searching
+with human proteins, then this setting will use human structures and probably mouse or other mammal structures,
+but most probably not Yeast or bacterial structures to model the interactions. </li>
+
+<li><i>Low stringency</i> uses any structural matches and any interaction evidence, including interactions from other
+species, or those coming from indirect experiments (e.g. affinity purification data, etc.).   As long as there
+is some evidence of an interaction between the proteins, and there is some kind of structure available to model them,
+this setting will show it to you regardless of how weak the interaction evidence is, or how low the sequence similarity 
+to the structure is.</li>
+
+<li><i>Medium</i> is in between: a bit more relaxed on both structure and interaction quality, but still more conservative
+than low stringency.</li>
+
+<li>Using <i>all</i> is a kind of last resort.  This will show you any model of any interaction regardless of quality and (more imporantly)
+regardless of whether there is any evidence of an interaction at all.  In other words, if there is a sequence match to a known
+structure, then this setting will show you an interaction.  </li>
+
+</ul>
+
+In practice, we find that Low stringency is what we normally use (hence the default) for large datasets where one is interested
+in exploring many different modifications or mutations.  When one is deeply in love with one protein, particularly when it has
+been intensively studied (e.g. TP53, RAS, etc.) then using Medium or High stringency can restrict what you see to changes that
+are of highest confidence.<br><br>
+
+The <i>all</i> setting is useful either if one has (say) a single variant or a few variants in one protein for which little is
+known and one is willing to consider new hypotheses about what the protein/positions might be doing.  It is also useful when looking
+at Yeast or bacterial datasets when limited data are available (e.g.) for protein-protein interactions (see the Mycoplasma modification
+datasets in the Examples pages).<br><br>
+
+Note that these settings are different from the H,M,L in the confidences reported when predictions are made.  These values (see below) are 
+derived by considering the false-positive rate deduced from benchmarking and have to do with the quality of individual predictions rather
+than templates selected.
+
+</div></div></div>
+
+
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2><a name="output"></a><a name="output_main"></a>The main output page</h2>
+
+<p><a name="output_main_top"></a>
+After your job has finished, you will see an initial summary page that consists of several sections. 
+At the top of the page (after a copy of your input in a collapsed input form) you will find two bar
+charts that count for both sites (i.e. protein positions, mutations or modifications specified) and for
+proteins overall the percentages and overall numbers in each category.  To the left of these plots you 
+will get a textual summary of the input and of what was found by the system from it.</p>
+
+<img src="/static/images/mechismo_help_main_top.png" alt="help main top"/>
+
+<p>Below this is an ineractive network view of the data.  Nodes (ie. circles) in this network are red for proteins given in the original search (usually mutated/modified proteins), grey
+for other proteins found to interact with them, magenta for chemicals and blue for DNA.  Node sizes are proportional to the number of mutations/modifications
+in each protein.  Links between molecules indicate a known or predicted interaction between them, and the thickness of the lines is proportional
+to the number of mutations/modifications predicted to affect the interation.  For protein-protein interactions, very thin lines indicate interacting
+proteins for which no modifications are at the interface, and colours apart from grey indicate a positive (green), negative (red) or mixture (both positive
+and negative effects) for the modifications affecting the interaction.</p>
+
+<p>You can navigate around this network by left-clicking and dragging in the X- or Y- direction.  Your mousewheel or a double click should zoom you in/out and left-clicking on a node (ie. molecule) will let you re-position it as desired.  Mousing over molecules or interactions gives you some information about it, and clicking on proteins will open a new page (see below) describing that protein and its interactions in more detail.</p>
+
+<p>Below the network you are provided with tables that provide summary data for both proteins and each specified site (if given).</p>
+
+<img src="/static/images/mechismo_help_protein_table_main.png" alt="help main protein table"/>
+
+<p><a name="output_main_per_protein_table"></a>The columns in the <i>Results per protein/gene</i> table are:</p>
+
+<table class="definitions">
+<tr><th>Protein       </th><td>the name of the gene in the system</td></tr>
+<tr><th>User input    </th><td>the protein specification given during input</td></tr>
+<tr><th>Species       </th><td>the species for the protein</td></tr>
+<tr><th>Description   </th><td>the uniprot short description of the protein</td></tr>
+<tr><th>n             </th><td>the number of sites found in a protein</td></tr>
+<tr><th>n!            </th><td>the number of site mismatches (i.e. where the given residue was not the same as that found in the system)</td></tr>
+<tr><th>nP            </th><td>the number of sites at protein-interaction interfaces</td></tr>
+<tr><th>nC            </th><td>the number of sites at chemical-interaction interfaces</td></tr>
+<tr><th>nD            </th><td>the number of sites at DNA/RNA-interaction interfaces</td></tr>
+<tr><th>Mechismo Score</th><td>Sum of Mechismo Scores for each site in this protein. The higher the Mechismo Score, the more likely a particular mutation or modification is to affect interactions with other molecules. Mechismo Score = the sum of (1 + maximum absolute change in pair-potential) for protein-protein, protein-chemical and protein-DNA/RNA interactions.</td></tr>
+</table>
+
+<p><a name="output_main_site_table"></a>The table labelled <i>Results per site</i> gives a summary for each site in the dataset.</p>
+
+<img src="/static/images/mechismo_help_site_table_main1.png" alt="help main site table" />
+
+The columns are:
+<table class="definitions">
+<tr><th>Protein       </th><td>the name of the gene in the system</td></tr>
+<tr><th>Site          </th><td>the site referred to in this row</td></tr>
+<tr><th>User input    </th><td>the protein specification given during input</td></tr>
+<tr><th>!             </th><td>indicates where the given residue was not the same as that found in the system</td></tr>
+<tr><th>nP            </th><td>the number of interacting proteins contacted by this site</td></tr>
+<tr><th>Prot          </th><td>the top five proteins (by sequence identity to the structural template) known or predicted to interact with this site</td></tr>
+<tr><th>nC            </th><td>the number of chemical classes with which this site interacts</td></tr>
+<tr><th>Chem          </th><td>the chemical classes with which this site interacts</td></tr>
+<tr><th>DNA           </th><td>indicates where the site is predicted or known to interact with DNA</td></tr>
+<tr><th>Mechismo Score</th><td>The higher the Mechismo Score, the more likely a particular mutation or modification is to affect interactions with other molecules. Mechismo Score = the sum of (1 + maximum absolute change in pair-potential) for protein-protein, protein-chemical and protein-DNA/RNA interactions.</td></tr>
+</table>
+
+<p>The hyperlinks labelled (A, I, T) take you (in all tables) to a page showing the structure referred to.  Clicking 'A' shows all
+sites given in the structure, 'I' shows all sites in the structure that are in contact with a molecule (if chemical, nucelic acid or protein is specified), and
+'T' shows only the particular site referred to in the table cell.</p>
+
+<p>Note that interactions are only accessible or counted if they satisfy the parameters you provided about how to find them.  For more about how
+to tune the set of interactions shown, see <a href="#advancedSearch">Advanced options</a>.</p>
+
+<p>Coloured boxes with H, M or L indicate High, Medium or Low <a href="/about#confidence">confidence</a> predictions, respectively.</p>
+
+<p>Coloured boxes with E, D or N indicate a prediction of the <a href="/about#directionPPints">effect of the mutation/modification on the given interaction</a>: Enabling, Disabling or Neutral, respectively.</p>
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2><a name="output_protein"></a>Protein specific pages</h2>
+
+<p>When you click on an individual protein (either via the network or tables in the main page) you are taken to a page
+specifically about that protein.  At the top of this page you are given a summary of the protein and the sites given
+for it in three ways. First, to the left you will see a domain <i>bubblegram</i> highlighting the location of domains (Pfam) and the positions of 
+sites provided.  Mousing over parts of this diagram will tell you what the displayed features are.  In the middle you are given
+a graphical summary of the number of sites in the protein, and the number/proportion of them that are in the various categories 
+considered (e.g. disordered, in contact with a chemical, protein, nucleotide, etc.).  On the right you will find a smaller network
+showing only this protein, and the molecules it interacts with (which is otherwise as for the network on the main page).  Below 
+this are four tables specific to this protein, which list sites lying in protein structures matched by the protein, 
+in protein-chemical interactions, protein-DNA/RNA interactions and protein-protein interactions.</p>
+
+<img src = "/static/images/mechismo_help_protein_page_top.png" alt="help protein page top" />
+
+<p><a name="output_protein_site_table"></a>The table labelled <i>Results per site</i> is identical to the
+table on the main results page, save that it gives a summary for each site only for those sites in the protein selected.</p>
+
+<img src = "/static/images/mechismo_help_protein_page_site_table.png" alt="help protein page site table" />
+
+The columns in this table are:
+<table class="definitions">
+<tr><th>Protein       </th><td>the name of the gene in the system</td></tr>
+<tr><th>Site          </th><td>the site referred to in this row</td></tr>
+<tr><th>User input    </th><td>the protein specification given during input</td></tr>
+<tr><th>!             </th><td>indicates where the given residue was not the same as that found in the system</td></tr>
+<tr><th>nP            </th><td>the number of interacting proteins contacted by this site</td></tr>
+<tr><th>Prot          </th><td>the top five proteins (by sequence identity to the structural template) known or predicted to interact with this site</td></tr>
+<tr><th>nC            </th><td>the number of chemical classes with which this site interacts</td></tr>
+<tr><th>Chem          </th><td>the chemical classes with which this site interacts</td></tr>
+<tr><th>DNA           </th><td>indicates where the site is predicted or known to interact with DNA</td></tr>
+<tr><th>Mechismo Score</th><td>The higher the Mechismo Score, the more likely a particular mutation or modification is to affect interactions with other molecules. Mechismo Score = the sum of (1 + maximum absolute change in pair-potential) for protein-protein, protein-chemical and protein-DNA/RNA interactions.</td></tr>
+</table>
+
+<p>The hyperlinks labelled (A, I, T) take you (in all tables) to a page showing the structure referred to.  Clicking 'A' shows all
+sites given in the structure, 'I' shows all sites in the structure that are in contact with a molecule (if chemical, nucelic acid or protein is specified), and
+'T' shows only the particular site referred to in the table cell.</p>
+
+<p>Note that interactions are only accessible or counted if they satisfy the parameters you provided about how to find them.  For more about how
+to tune the set of interactions shown, see <a href="#advancedSearch">Advanced options</a>.</p>
+
+<p>Coloured boxes with H, M or L indicate High, Medium or Low <a href="/about#confidence">confidence</a> predictions, respectively.</p>
+
+<p>Coloured boxes with E, D or N indicate a prediction of the <a href="/about#directionPPints">effect of the mutation/modification on the given interaction</a>: Enabling, Disabling or Neutral, respectively.</p>
+
+<p><a name="output_protein_chem_table"></a>The table labelled <i>Sites with predicted chemical interaction structures</i> shows sites predicted or known
+to be in contact with a small-molecule.</p>
+
+<img src="/static/images/mechismo_help_protein_page_chem_table1.png" alt="help protein page chem table" />
+
+The columnns in this table are:
+<table class="definitions">
+<tr><th>Site      </th><td>the site referred to in this row</td></tr>
+<tr><th>Start     </th><td>the first residue matching to known structure</td></tr>
+<tr><th>End       </th><td>the last residue matching to known structure</td></tr>
+<tr><th>Template  </th><td>the PDB code and the name of the protein stucture</td></tr>
+<tr><th>Start     </th><td>the first residue matched in the known structure</td></tr>
+<tr><th>End       </th><td>the last residue matched in the known structure</td></tr>
+<tr><th>%id       </th><td>the percent sequence identity between the protein and template structure. Coloured boxes with H, M or L indicate High, Medium or Low <a href="/about#confidence">confidence</a> predictions, respectively.</td></tr>
+<tr><th>e         </th><td>the BLAST E-value for the match</td></tr>
+<tr><th>IE        </th><td>Interaction Effect score. Coloured boxes with E, D or N indicate a prediction of the <a href="/about#directionPPints">effect of the mutation/modification on the given interaction</a>: Enabling, Disabling or Neutral, respectively.</td></tr>
+<tr><th>Chem Type </th><td>the broad chemical class of the molecule</td></tr>
+<tr><th>Chem      </th><td>the PDB three-letter code for the chemical (clicking shows more info)</td></tr>
+</table>
+
+<p>The hyperlinks labelled (A, I, T) take you (in all tables) to a page showing the structure referred to.
+Clicking 'A' shows all sites given in the structure, 'I' shows all sites in the structure that are in contact with a molecule
+(if chemical, nucelic acid or protein is specified), and 'T' shows only the particular site referred to in the table cell.</p>
+
+<p>Note that interactions are only accessible or counted if they satisfy the parameters you provided about how to find them.  For more about how to tune the set of interactions shown, see <a href="#advancedSearch">Advanced options</a>.</p>
+
+<p><a name="output_protein_nuc_table"></a>The table labelled <i>Sites with predicted DNA/RNA interaction structures</i> shows sites predicted or known
+to be in contact with a small-molecule.</p>
+
+<img src="/static/images/mechismo_help_protein_page_nuc_table2.png" alt="help protein page nuc table" />
+
+The columnns in this table are:
+<table class="definitions">
+<tr><th>Site      </th><td>the site referred to in this row</td></tr>
+<tr><th>Start     </th><td>the first residue matching to known structure</td></tr>
+<tr><th>End       </th><td>the last residue matching to known structure</td></tr>
+<tr><th>Template  </th><td>the PDB code and the name of the protein stucture</td></tr>
+<tr><th>Start     </th><td>the first residue matched in the known structure</td></tr>
+<tr><th>End       </th><td>the last residue matched in the known structure</td></tr>
+<tr><th>%id       </th><td>the percent sequence identity between the protein and template structure. Coloured boxes with H, M or L indicate High, Medium or Low <a href="/about#confidence">confidence</a> predictions, respectively.</td></tr>
+<tr><th>e         </th><td>the BLAST E-value for the match</td></tr>
+<tr><th>IE        </th><td>Interaction Effect score. Coloured boxes with E, D or N indicate a prediction of the <a href="/about#directionPPints">effect of the mutation/modification on the given interaction</a>: Enabling, Disabling or Neutral, respectively.</td></tr>
+</table>
+
+<p>The hyperlinks labelled (A, I, T) take you (in all tables) to a page showing the structure referred to.
+Clicking 'A' shows all sites given in the structure, 'I' shows all sites in the structure that are in contact with a
+molecule (if chemical, nucelic acid or protein is specified), and 'T' shows only the particular site referred to in the table cell.</p>
+
+<p>Note that interactions are only accessible or counted if they satisfy the parameters you provided about how to find them.
+For more about how to tune the set of interactions shown, see <a href="#advancedSearch">Advanced options</a>.</p>
+
+<p><a name="output_protein_pp_table"></a>The table labelled <i>Sites with predicted protein interaction structures</i> shows sites predicted or known
+to be in contact with another protein.</p>
+
+<img src="/static/images/mechismo_help_protein_page_prot-prot_table3.png" alt="help protein page prot-prot table" />
+
+The columnns in this table are:
+<table class="definitions">
+<tr><th>Site      </th><td>the site referred to in this row</td></tr>
+<tr><th>Start     </th><td>the first residue matching to known structure</td></tr>
+<tr><th>End       </th><td>the last residue matching to known structure</td></tr>
+<tr><th>Interactor</th><td>the name of the protein interaction partner</td></tr>
+<tr><th>Start     </th><td>the first residue matched in the known structure</td></tr>
+<tr><th>End       </th><td>the last residue matched in the known structure</td></tr>
+<tr><th>IntEv     </th><td>interaction evidence given either as a PubMed id, 'Structure' to denote it was deduced by high similarity to a known structure, or 'Inferred' in the case that the interaction is not known, but there is nevertheless a structure on which to model it.</td></tr>
+<tr><th>Template  </th><td>the PDB code and the name of the protein stucture</td></tr>
+<tr><th>Dimer     </th><td>the dimer type: homo = homo/pseudo-homodimer; hetero = heterodimer </td></tr>
+<tr><th>%id       </th><td>the percent sequence identity between the protein and template structure. Coloured boxes with H, M or L indicate High, Medium or Low <a href="/about#confidence">confidence</a> predictions, respectively.</td></tr>
+<tr><th>e         </th><td>the BLAST E-value for the match</td></tr>
+<tr><th>IE        </th><td>Interaction Effect score. Coloured boxes with E, D or N indicate a prediction of the <a href="/about#directionPPints">effect of the mutation/modification on the given interaction</a>: Enabling, Disabling or Neutral, respectively.</td></tr>
+</table>
+
+<p>The hyperlinks labelled (A, I, T) take you (in all tables) to a page showing the structure referred to.
+Clicking 'A' shows all sites given in the structure, 'I' shows all sites in the structure that are in contact with a
+molecule (if chemical, nucelic acid or protein is specified), and 'T' shows only the particular site referred to in the table cell.</p>
+
+<p>Note that interactions are only accessible or counted if they satisfy the parameters you provided about how to find them.
+For more about how to tune the set of interactions shown, see <a href="#advancedSearch">Advanced options</a>.</p>
+
+<p><a name="output_protein_struct_table"></a>The table labelled <i>Sites in regions with any predicted structures</i>
+shows sites matching to any known structure, regardless of whether that structure interacts with any other molecules.</p>
+ 
+<img src="/static/images/mechismo_help_protein_page_struct_table.png" alt="help protein page struct table" />
+
+The columnns in this table are:
+<table class="definitions">
+<tr><th>Site      </th><td>the site referred to in this row</td></tr>
+<tr><th>Start     </th><td>the first residue matching to known structure</td></tr>
+<tr><th>End       </th><td>the last residue matching to known structure</td></tr>
+<tr><th>Template  </th><td>the PDB code and the name of the protein stucture</td></tr>
+<tr><th>Start     </th><td>the first residue matched in the known structure</td></tr>
+<tr><th>End       </th><td>the last residue matched in the known structure</td></tr>
+<tr><th>%id       </th><td>the percent sequence identity between the protein and template structure</td></tr>
+<tr><th>e         </th><td>the BLAST E-value for the match</td></tr>
+</table>
+
+<p>The hyperlinks labelled (A, I, T) take you (in all tables) to a page showing the structure referred to.
+Clicking 'A' shows all sites given in the structure, 'I' shows all sites in the structure that are in contact with a
+molecule (if chemical, nucelic acid or protein is specified), and 'T' shows only the particular site referred to in the table cell.</p>
+
+<p>Note that interactions are only accessible or counted if they satisfy the parameters you provided about how to find them.
+For more about how to tune the set of interactions shown, see <a href="#advancedSearch">Advanced options</a>.</p>
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2><a name="output_structure_top"></a>Structure pages</h2>
+
+<p>Clicking on any of the "(A, I, T)" links will take you to a page that shows much more detailed information about a
+single or a small selection of sites related to a single 3D structure.  Proteins are summarised by domain bubblegrams
+showing the sites selected, and additional bubblegrams are shown for the protein of three-dimensional structure on which
+the interaction/site is modelled.  Note that typically proteins of 3D structure contain smaller pieces or fragments of
+structure amenable to structure determination, so comparing these two bubblegrams should give you a feeling for how much of
+the query protein is present in the structure.  Any matches to known structure are also accompanied by the percent sequence
+similarity between the query protein and the template and the associated BLAST E-value.  There is also an alignment for
+the query/template proteins where the selected sites are marked.  In the case of protein-protein interactions there are
+(of course) two sets of bubblegrams and two alignments. </p>
+</p>
+
+<img src="/static/images/mechismo_help_structure_protein_info.png" alt="help structure protein info" />
+
+<p>Below the protein description, there is an interactive <a href="http://jmol.sourceforge.net/">JSmol (Jmol)</a> viewer showing the template protein
+structure with the sites selected labelled (in red) and interacting residues (for protein-protein interactions) shown
+in black labels.   The query protein is coloured cyan and the interacting protein (if any) is shown in magenta.  Proteins
+and nucleic acids are shown as C-alpha/backbone trace and any bound small-molecules are shown as ball-and-stick format 
+and coloured by the CPK scheme (grey=carbon, red=oxygen, blue=nitrogen, etc.).  Nucleic acids are coloured gold.</p>
+
+<div class="gallery">
+  <img src = "/static/images/mechismo_help_structure_pp_int1.png" alt="pp int1" />
+  <img src = "/static/images/mechismo_help_structure_pp_int2.png" alt="pp int1" />
+  <img src = "/static/images/mechismo_help_structure_pc_int1.png" alt="pp int1" />
+  <img src = "/static/images/mechismo_help_structure_pn_int1.png" alt="pp int1" />
+</div>
+
+<p>Within the structure, amino acids in the structure that are identical to those given as sites are shown in normal ball-and-stick
+format, with atoms coloured by the CPK scheme above.  However, as we include structures whose sequences are non-identical to the protein of interest
+there can be disagreements between the residue in the protein of interest and the matched residue of known 3D structure.  In these instances we
+colour the residues pink and only draw a limited number of side-chain atoms.  The precise positioning of these residues would require careful
+modelling (and even then would often be inaccurate), but the approximate position (i.e. near to a bound chemical, protein or DNA) is normally 
+trustworthy.  For very low identity templates (e.g. <50% sequence identity) the alignment quality can be questionable, so it is important, when
+wishing to make deductions about a site predicted in a weakly matching structure, to inspect the alignment for (e.g.) many non-identical residues or
+insertions/deletions around the site of interest.</p>
+</p>
+
+<p>You can easily rotate these images by simply left clicking and dragging in an X or Y direction.  There are a many other
+JSmol commands that you can find <a href="http://jmol.sourceforge.net/docs/JmolUserGuide/">here</a>.</p>
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2><a name="advancedSearch">Advanced options</a></h2>
+
+<p>Mechismo also accepts a set of text-options prior to any protein or positional information, which you can use to construct more
+specific queries than are available via the standard input form.  Note that these take priority over any options selected in the
+input form. These are:</p>
+
+<h3>taxon=[number]</h3>
+This specifies the <a href="http://www.ncbi.nlm.nih.gov/taxonomy">NCBI Taxonomy</a> id specific to the organism of interest. The
+current list is:
+<table class="definitions">
+<tr><th>Taxon id</th><td>Common name</td><td>Species name</td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=9606">9606</a>     </th><td>Human        </td><td><i>Homo sapiens               </i></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=10090">10090</a>   </th><td>Mouse        </td><td><i>Mus musculus               </i></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=7227">7227</a>     </th><td>Fruit fly    </td><td><i>Drosophila melanogaster    </i></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=6239">6293</a>     </th><td>Nematode     </td><td><i>Caenorhabditis elegans     </t></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=559292">559292</a> </th><td>Budding Yeast</td><td><i>Saccharomyces cerevisae    </i></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=272634">272634</a> </th><td>M. pneumoniae</td><td><i>Mycoplasma pneumoniae M129 </i></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=224308">224308</a> </th><td>B. subtilis  </td><td><i>Bacilus subtilis str 168   </i></td></tr>
+<tr><th><a href="http://www.ncbi.nlm.nih.gov/taxonomy/?term=83333">83333</a>   </th><td>E. coli      </td><td><i>Escherischia coli K12      </i></td></tr>
+</table>
+
+<h3>min_pcid=[number between 0-100]</h3>
+<h3>min_pcid_homo=[number between 0-100]</h3>
+<h3>min_pcid_hetero=[number between 0-100]</h3>
+<h3>min_pcid_chem=[number between 0-100]</h3>
+<h3>min_pcid_nuc=[number between 0-100]</h3>
+
+<p>These are the minimum percent sequence identity thresholds to be considered when looking for proteins of known structure matching to query proteins.  Note that in
+all cases the match between the two sequences was deamed to be <i>significant</i> by exact matches, BLAST or other sequence matching methods.  The different
+values are for different types of matches.  The first (<b>min_pcid</b>) is for matches to any known structure (irrespective of whether there is anything
+in contact or not).  Values for <b>min_pcid_homo</b> and <b>min_pcid_hetero</b> specify thresholds for protein-protein interactions that involve homologous 
+proteins (e.g. homo or psuedo-homo dimers) or sequence distinct (e.g. hetero dimeric) proteins.
+</p>
+
+<h3>known=[uniref100,uniref90,uniref50,none]</h3>
+<p>This parameter specifies how you wish to define what "known" interactions are.  The most conservative setting is "uniref100" which specifies that interactions
+will only be shown if the exact proteins from the same species have been reported to interact.  Specifying "uniref90" allows for some sequence differences (down
+to 90% identity) to be tolerated when looking for interactions, which is useful if one wants (e.g.) mouse interactions to suggest and interaction between human
+equivalents.  Specifying "uniref50" is useful if one is looking in bacterial species or yeast or with sets of proteins for which very little is known (e.g.
+comparatively new discoveries or obscure proteins) and specifying "none" makes no requirement that an interaction be "known" to be reported - any match to a 
+known structure (given the sequence identity thresholds above) will be reported.  The latter is dangerous when looking at large datasets from human, but might
+be useful in situations with lower organisms or where little is known about a few proteins of interest.</p>
+
+<h3>min_pcid_known=[number between 0-100]</h3>
+<p>This value specifies the percent sequence identity above which (or equal to) an interaction between proteins is to be inferred purely on the basis of structure.  Simply
+put, if you see a structure that is (say) 90% identity to a pair of proteins then it is very likely that this interaction will be real even if it is absent from
+interaction databases (and yes, this does happen).</p>
+
+<h3>known_max_n_prots=[integer]</h3>
+<p>This value allows one to filter interactions that are less likely to identify direct, physical, binary interactions. Essentially the system will ignore interaction
+source that identify at least this many proteins in one interaction.</p>
+
+<h3>known_direct_physical=[0 or 1]</h3>
+<p>This value allows one to include only those interactions from experiments likely to identify proteins that are in direct contact with each other (known_direct_physical=1)</p>
+
+<h3>known_htp=[0 or 1]</h3>
+<p>This value allows one to include interactions if they come from low-throughput sources (known_htp=0)</p>
+
+<h3>known_high_quality=[0 or 1]</h3>
+<p>This value allows one to include only 'trustable' interactions (known_high_quality=1) - those identified more than three times</p>
+
+<!--
+<h2><a name="quality">Thresholds and Quality</a></h2>
+-->
+
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2><a name="downloads">Downloads</a></h2>
+Downloads are available in <a href="#downloadJSON">JSON</a> and <a href="#downloadTSV">TSV</a> format.
+These give general information about sites (name, protein, disorder, mapped to structure, mapped to interactions) and
+specific information about each interaction, down to the residue level for protein-protein interactions.
+
+<h3><a name="downloadJSON">JSON</a></h3>
+
+(Description and JSON schema to come.)
+
+<h3><a name="downloadTSV">TSV</a></h3>
+<p>
+The information in our TSV format files is designed to be easy to parse with grep and
+other line-based parsers. As such, some columns will be blank for some types of interactor
+and the contents of some columns are repeated in several rows (in particular columns 0-17).
+</p>
+
+Columns:
+
+<h4>General site information</h4>
+
+<ul>
+  <li>00 - name_a1: gene name of query</li>
+  <li>01 - primary_id_a1: primary identifier of query (usually UniProt accession)</li>
+  <li>02 - id_seq_a1: internal database id of query sequence</li>
+  <li>03 - pos_a1: position in the query sequence</li>
+  <li>04 - res_a1: wild-type residue at that position</li>
+  <li>05 - mut_a1: mutated residue / PTM at that position</li>
+  <li>06 - user input: the input string that found this site</li>
+  <li>07 - mismatch: whether or not res1_a1 agrees with the user input</li>
+  <li>08 - blosum62</li>
+  <li>09 - iupred</li>
+  <li>10 - nS: whether or not the site was mapped to any structure</li>
+  <li>11 - nP: number of different proteins with which the site interacts</li>
+  <li>12 - nC: number of different chemical classes with which the site interacts</li>
+  <li>13 - nD: whether or not the site interacts with DNA/RNA</li>
+  <li>14 - mechProt: mechismo protein-protein score</li>
+  <li>15 - mechChem: mechismo protein-chem score)</li>
+  <li>16 - mechDNA/RNA: mechismo protein-DNA/RNA score</li>
+  <li>17 - mech: mechProt + mechChem + mechDNA</li>
+</ul>
+
+<h4>Info for interactor</h4>
+
+<ul>
+  <li>18 - name_b1
+    <ul>
+      <li>protein-protein interactions: gene name of interactor</li>
+      <li>protein-chemical interactions: '[CHEM:type:id]'</li>
+      <li>DNA/RNA interactions: '[DNA/RNA]'</li>
+      <li>single-structure matches (i.e. no interaction): '[PROT]'</li>
+    </ul>
+  </li>
+  <li>19 - primary_id_b1: primary identifier of query (usually UniProt accession)</li>
+  <li>20 - id_seq_b1</li>
+</ul>
+
+<h4>Template info and interaction evidence</h4>
+
+<ul>
+  <li>21 - dimer: homo or hetero</li>
+  <li>22 - intEvLTP - interaction known from low-throughput evidence: true (1) or false (0)</li>
+  <li>23 - intEvHTP - interaction known from high-throughput evidence: true (1) or false (0)</li>
+  <li>24 - intEvStructure - interaction known from structure: true (1) or false (0)</li>
+  <li>
+    25 - intEv - all interaction evidence: in JSON format list of hashes with the following fields
+    <ul>
+      <li>pmid - PubMed identifier</li>
+      <li>sources - source databases from which the interaction was extracted</li>
+      <li>n_seqs - number of sequences involved in this interaction</li>
+      <li>methods - experimental methods given as identifiers from the <a href="http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=MI">PSI MI ontology</a> but with preceding zeros removed (eg. '4' = '<a href="http://www.ebi.ac.uk/ontology-lookup/?termId=MI:0004">MI:0004</a>');</li>
+      <li>htp - High ThroughPut study: true (1) or false (0)</li>
+      <li>dp - Direct Physical interaction: true (1) or false (0)</li>
+      <li>hq - High Quality interaction: true (1) or false (0)</li>
+    </ul>
+    To define direct-physical interactions we used the <a href="http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=MI">PSI MI ontology</a> of detection methods, excluding mass-spectrometry identified complexes from this set. We defined high-throughput experiments as those having 300 or more interactions in a single publication, and high-quality interactions as those detected by two or more distinct publications or detection methods.
+  </li>
+</ul>
+
+<p>If all of 22-25 are false then the interaction is implicitly 'inferred from structure'.</p>
+
+<ul>
+  <li>26 - conf: confidence in the structural template</li>
+  <li>27 - ie: interaction effect for all contacts of the site with this interactor</li>
+  <li>28 - ie_class: class of interaction effect</li>
+  <li>29 - pos_b1: position in interactor sequence</li>
+  <li>30 - res_b1: residue at that position</li>
+</ul>
+
+<ul>
+  <li>31 - id_hit: unique id of query-template match</li>
+  <li>32 - idcode: pdb identifier of template structure</li>
+  <li>33 - assembly: biounit assembly number (= 0 if directly from pdb)</li>
+</ul>
+
+<h4>Info for template matched to query</h4>
+
+<ul>
+  <li>34 - pcid_a: %identity between a1 and a2 sequences</li>
+  <li>35 - e_value_a</li>
+  <li>36 - model_a2: biounit model number (= 0 if directly from pdb)</li>
+  <li>37 - pos_a2: position in the template structure sequence</li>
+  <li>38 - res_a2: residue at that position</li>
+  <li>39 - chain_a2: PDB chain identifier</li>
+  <li>40 - resseq_a2: PDB residue sequence identifier</li>
+  <li>41 - icode_a2: PDB insertion code</li>
+</ul>
+
+<h4>Info for template matched to interactor</h4>
+
+<ul>
+  <li>42 - pcid_b</li>
+  <li>43 - e_value_b</li>
+  <li>44 - model_b2</li>
+  <li>45 - pos_b2</li>
+  <li>46 - res_b2</li>
+  <li>47 - chain_b2</li>
+  <li>48 - resseq_b2</li>
+  <li>49 - icode_b2</li>
+</ul>
+
+</div></div></div>

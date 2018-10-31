@@ -1,0 +1,220 @@
+[%
+  USE JSON (convert_blessed => 1);
+
+  MACRO number(n) GET n.chunk(-3).join(',');
+
+  n_seqs_given = json.results.search.n_seqs_given;
+  n_sites_given = json.results.search.n_sites_given;
+  n_sites_from_elsewhere = json.results.search.n_sites_from_elsewhere;
+%]
+
+[% IF json.results.search.seqs.defined AND json.results.search.seqs.size > 0; %]
+  <div class="oneColumn">
+    <div class="column">
+      Download
+  [% 
+    IF (fns = json.results.search.site_table.match('\AFILE:(.+)'));
+      "<a href='/static/data/jobs/${fns.0}'>JSON</a> ";
+    END;
+
+    IF (fns = json.results.search.site_table_tsv.match('\AFILE:(.+)'));
+      "<a href='/static/data/jobs/${fns.0}'>TSV</a>";
+    END;
+  %]
+    (<a href="/help#downloads" target="_blank">?</a>)
+    </div>
+  </div>
+
+  <div class="threeColumns">
+    <div class="column">
+      <div class="contents">
+        [%
+          IF json.params.given.search_name.defined && json.params.given.search_name != '';
+            "<h2>Search Name: ${json.params.given.search_name}</h2>";
+          END;
+        %]
+        [%
+          IF json.params.given.id_search.defined && json.params.given.id_search != '';
+            "<h2>Search ID: ${json.params.given.id_search}</h2>";
+          END;
+        %]
+        <p>
+          Data given:
+          <ul>
+           <li>
+           [%
+             IF n_seqs_given == 1;
+               "1 sequence";
+             ELSE;
+               number(n_seqs_given) _ " sequences";
+             END;
+           %]
+           </li>
+           <li>
+           [%
+             IF n_sites_given == 1;
+               "1 variation/modification";
+             ELSE;
+               number(n_sites_given) _ " variations/modifications";
+             END;
+           %]
+           </li>
+           <li>
+           [%
+             IF n_sites_from_elsewhere == 1;
+               "1 site added from other sources";
+             ELSE;
+               number(n_sites_from_elsewhere) _ " sites added from other sources";
+             END;
+           %]
+           </li>
+          </ul>
+        </p>
+        <p>Information used for this search:</p>
+        <ul>
+          <li>
+          [%
+            IF json.results.search.counts.pdbs == 1;
+              "1 three-dimensional structure";
+            ELSE;
+              number(json.results.search.counts.pdbs) _ " three-dimensional structures";
+            END;
+          %]
+          </li>
+          <li>
+          [%
+            IF json.results.search.counts.alignments == 1;
+              "1 alignment";
+            ELSE;
+              number(json.results.search.counts.alignments) _ " alignments";
+            END;
+          %]
+          </li>
+          <li>
+          [%
+            IF json.results.search.counts.PPI.contact_hits == 1;
+              "1 protein-protein interaction template";
+            ELSE;
+              number(json.results.search.counts.PPI.contact_hits) _ " protein-protein interaction structures";
+            END;
+          %]
+          </li>
+          <li>
+          [%
+            IF json.results.search.counts.known_ints == 1;
+              "1 experimentally identified interaction";
+            ELSE;
+              number(json.results.search.counts.known_ints) _ " experimentally identified interactions ";
+            END;
+          %]
+          </li>
+        </ul>
+        [% INCLUDE thresholds.tt; %]
+      </div>
+    </div>
+    <div class="column">
+      <div class="contents">
+        <h2>Protein Summary</h2>
+        [% IF (fns = json.results.search.prot_counts.match('\AFILE:(.+)')) %]
+          <div id="prot_counts_barchart" class="barchart" data-source='file' data-url='/static/data/jobs/[% fns.0 %]'></div>
+        [% ELSE %]
+          <div id="prot_counts_barchart" class="barchart" data-source="div" data-source-id="prot_counts_barchart_data"></div>
+          <script type="application/json" id="prot_counts_barchart_data" class="data">[% json.results.search.prot_counts.json %]</script>
+        [% END %]
+      </div>
+    </div>
+    <div class="column">
+      <div class="contents">
+        <h2>Site Summary</h2>
+        [% IF (fns = json.results.search.site_counts.match('\AFILE:(.+)')) %]
+          <div id="site_counts_barchart" class="barchart" data-source='file' data-url='/static/data/jobs/[% fns.0 %]'></div>
+        [% ELSE %]
+          <div id="site_counts_barchart" class="barchart" data-source="div" data-source-id="site_counts_barchart_data"></div>
+          <script type="application/json" id="site_counts_barchart_data" class="data">[% json.results.search.site_counts.json %]</script>
+        [% END %]
+      </div>
+    </div>
+  </div>
+  <div class="oneColumn">
+    <div class="column">
+The panel above left provides information about this job, including the various thresholds determining which interactions were included.
+The bar charts centre and right show percentages (numbers in mouseover) of proteins and sites known/predicted to be in various categories.
+The network below shows all proteins and their known or predicted interaction partners.
+Thicker links show where sites are at the intermolecular interface.
+Mouseover for more information.  
+    </div>
+  </div>
+  <div class="oneColumn">
+    <div class="column">
+      [% IF n_seqs_given > 2000 %]
+        <div id="network" class="contents">(Network view disabled for more than 2000 input sequences.)</div>
+      [% ELSE %]
+        [% IF (fns = json.results.search.network.match('\AFILE:(.+)')) %]
+          <div id="network" class="contents network" id-search='[% json.params.given.id_search %]' data-source='file' data-url='/static/data/jobs/[% fns.0 %]'></div>
+        [% ELSE %]
+          <div id="network" class="contents network" id-search='[% json.params.given.id_search %]'>[% json.results.search.network.json %]</div>
+        [% END %]
+      [% END %]
+    </div>
+  </div>
+
+  <div class="oneColumn">
+    <div class="column">
+      <div id="results-per-protein" class="contents">
+        <h2>Results per protein/gene</h2>
+        <p>
+        The table below gives various details for each gene/protein as a whole.  n = number of changes, n! = number of mismatches, nP = number of sites and protein-protein interfaces, nC = number of sites and protein-chemical interfaces, nD = number of sites and DNA/RNA interfaces.  Mechismo Score measures the overall impact of all changes on biomolecular interactions predicted. Mousing over on the column header gives more information.
+        </p>
+        [% IF (fns = json.results.search.prot_table.match('\AFILE:(.+)')) %]
+          <table id='protTable' class='dataTable protTable' id-search='[% json.params.given.id_search %]' data-source='file' data-url='/static/data/jobs/[% fns.0 %]'><thead></thead><tbody></tbody></table>
+        [% ELSE %]
+          <table id='protTable' class='dataTable protTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='protTableData'><thead></thead><tbody></tbody></table>
+          <script type="application/json" id='protTableData', class='data'>[% json.results.search.prot_table.json %]</script>
+        [% END %]
+      </div>
+    </div>
+  </div>
+
+  <div class="oneColumn">
+    <div class="column">
+      <div id="results-per-site" class="contents">
+        <h2>Results per site</h2>
+<p>
+The table below gives various details for each change.  ! = whether or not the original amino acid matched our sequence, nP = number of proteins this site interacts with, Prot = the most confident protein interactors, nC = the number of chemicals the site interacts with, Chem = list of all chemical classes, DNA = details of DNA/RNA binding sites.  Mechismo score measures the overall functional impact of this change on biomolecular interactions predicted.
+T, I, and A links take you to pages detailing the particular structure showing This change only, all changes at the Interface, or All changes respectively.
+The first square in Prot/Chem/DNA columns gives the confidence (High, Medium, or Low) and the second denotes the predicted effect (Enabling, Disabling or Neutral).
+Mousing over the column header gives more information.
+</p>
+        [% IF (fns = json.results.search.site_table.match('\AFILE:(.+)')) %]
+          <table id='siteTable' class='dataTable siteTable' id-search='[% json.params.given.id_search %]' data-source='file' data-url='/static/data/jobs/[% fns.0 %]'><thead></thead><tbody></tbody></table>
+        [% ELSE %]
+          <table id='siteTable' class='dataTable siteTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='siteTableData'><thead></thead><tbody></tbody></table>
+          <script type="application/json" id='siteTableData', class='data'>[% json.results.search.site_table.json %]</script>
+        [% END %]
+      </div>
+    </div>
+  </div>
+[% ELSE; %]
+  <div class="oneColumn">
+    <div class="column">
+      <div class="error">
+        <h1>Warning</h1>
+  [%
+    genus_dot_species = [];
+    FOREACH id_taxon IN json.params.processed.taxa.keys;
+      taxon = json.params.processed.taxa.${id_taxon};
+      genus_dot_species.push(taxon.genus_dot_species);
+    END;
+    genus_dot_species = genus_dot_species.join(', ');
+  %]
+  <p>
+    None of the identifiers you provided matched to sequences in the species you selected ([% genus_dot_species %]).
+    Please check that the identifiers you have used are recognised gene names or accessions for the proteins of interest.
+    You may also need to select a different species in the search form, or select 'Any' if you are unsure. Bear in
+    mind that Mechismo currently supports only a <a href="/help#advancedSearch">selected set of species</a>.
+  </p>
+  <p>Please <a href="/about#contactUs">contact us</a> if you have problems.</p>
+      </div>
+    </div>
+  </div>
+[% END; %]

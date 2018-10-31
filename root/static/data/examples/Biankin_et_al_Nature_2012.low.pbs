@@ -1,0 +1,11 @@
+#PBS -N biankin_low
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -l cput=04:59:59
+#PBS -l mem=5gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id Biankin_et_al_Nature_2012.low --stringency low < ${dn_fist}root/static/data/examples/Biankin_et_al_Nature_2012.txt 1> ${dn_out}Biankin_et_al_Nature_2012.low.out 2> ${dn_out}Biankin_et_al_Nature_2012.low.err
+

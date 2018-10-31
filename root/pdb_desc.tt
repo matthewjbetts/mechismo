@@ -1,0 +1,11 @@
+<a href="http://www.rcsb.org/pdb/explore/explore.do?structureId=[% pdb.idcode %]" target="_blank">[% pdb.idcode %]</a> (assembly [% assembly %]):
+[% pdb.title %]<br/>
+Structure solved by
+[% FOREACH expdta IN pdb.expdtas %]
+  [% expdta.expdta %].
+[% END %]<br/>
+[%
+  IF pdb.resolution < 1000;
+    "Resolution = ${pdb.resolution}&Aring;<br/>";
+  END;
+%]

@@ -1,0 +1,88 @@
+[%
+  USE JSON (convert_blessed => 1);
+  USE String;
+
+  seq = json.results.thing.seq;
+  posns = json.results.thing.sites.${seq.id}.keys.nsort;
+%]
+
+<div class="threeColumns">
+  <div class="column">
+    <div class="contents seq_desc">[% INCLUDE seq_desc.tt seq=seq posns=posns %]</div>
+  </div>
+  <div class="column">
+    <div class="contents">
+      <div id="site_counts_barchart" class="barchart" data-source="div" data-source-id="site_counts_barchart_data"></div>
+      <div id="site_counts_barchart_data" class="data">[% json.results.thing.site_counts.json %]</div>
+    </div>
+  </div>
+  <div class="column">
+    <div id="network" class="contents network" id-search='[% json.params.given.id_search %]'>[% json.results.thing.network.json %]</div>
+  </div>
+</div>
+<div class="oneColumn">
+  <div class="column">
+Above left is a domain diagram for your protein showing domains in rectangles and sites as lollipops.  The bar chart in the centre shows the percentage (numbers in mouseover) of sites in this protein known/predicted to be in various categories. The network on the right shows this protein and its known or predicted interaction partners.  Thicker links show where sites are at the intermolecular interface.  Mouseover gives more information.
+  </div>
+</div>
+
+<div class="oneColumn"><div class="column"><div id="results_per_site" class="contents">
+<h2>Results per site</h2>
+The table below gives various details for each change.  ! = whether or not the original amino acid matched our sequence, nP = number of proteins this site interacts with, Prot = the most confident protein interactors, nC = the number of chemicals the site interacts with, Chem = list of all chemical classes, DNA = details of DNA/RNA binding sites.  Mechismo score measures the overall functional impact of this change on biomolecular interactions predicted.  
+T, I, and A links take you to pages detailing the particular structure showing This change only, all changes at the Interface, or All changes respectively.  
+The first square in Prot/Chem/DNA columns gives the confidence (High, Medium, or Low) and the second denotes the predicted effect (Enabling, Disabling or Neutral).
+Mousing over the column header gives more information.
+
+[% IF (fns = json.results.thing.site_table.match('\AFILE:(.+)')) %]
+  <table id='siteTable' class='dataTable siteTable' id-search='[% json.params.given.id_search %]' data-source='file' data-url='/static/data/jobs/[% fns.0 %]'><thead></thead><tbody></tbody></table>
+[% ELSE %]
+  <table id='siteTable' class='dataTable siteTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='siteTableData'><thead></thead><tbody></tbody></table>
+  <script type="application/json" id='siteTableData', class='data'>[% json.results.thing.site_table.json %]</script>
+[% END %]
+
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2>Sites with predicted chemical interaction structures</h2>
+The table below gives various details for each change in contact with a chemical.  B62 is the Blosum62 value (roughly the evolutionary distance between amino acids), Start/End is the range of the query protein matched to the structure, Template = details of the structure used, Start/End = region in the matched structure, %id = the percent sequence identity between query/template structure, e = the Blast E-value for the match, IE = the interaction effect score, Chem Type = the class of chemical, Chem = the PDB code for the chemical matched (linked to details of the chemical). 
+T, I, and A links take you to pages detailing the particular structure showing This change only, all changes at the Interface, or All changes respectively.  
+Mousing over the column header gives more information.
+<table id='pciTable' class='dataTable pciTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='pciTableData'><thead></thead><tbody></tbody></table>
+<script type="application/json" id='pciTableData' class='data'>[% json.results.thing.pci_table.json %]</script>
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2>Sites with predicted DNA/RNA interaction structures</h2>
+The table below gives various details for each change in contact with DNA or RNA.  B62 is the Blosum62 value (roughly the evolutionary distance between amino acids), Start/End is the range of the query protein matched to the structure, Template = details of the structure used, Start/End = region in the matched structure, %id = the percent sequence identity between query/template structure, e = the Blast E-value for the match, IE = the interaction effect score.
+T, I, and A links take you to pages detailing the particular structure showing This change only, all changes at the Interface, or All changes respectively.  
+Mousing over the column header gives more information.
+<table id='pdiTable' class='dataTable pdiTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='pdiTableData'><thead></thead><tbody></tbody></table>
+<script type="application/json" id='pdiTableData' class='data'>[% json.results.thing.pdi_table.json %]</script>
+</div></div></div>
+
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2>Sites with predicted protein interaction structures</h2>
+The table below gives various details for each change at a protein interface.  
+B62 is the Blosum62 value (roughly the evolutionary distance between amino acids), 
+Start/End is the range of the query protein matched to the structure, 
+Interactor is the predicted binding partner, 
+Start/End = region in the matched structure, 
+IntEv = details of how the interaction is known (PubMed or otherwise; labels denote High/low-throughput studies (HTP/LTP), direct physical interactions (DP), or high-quality (HQ) defined by multiple detections)
+Template = details of the structure used, 
+Dimer = whether the interaction is a hetero- or homo-dimer,
+%id = the percent sequence identity between query/template structure, 
+e = the Blast E-value for the match, 
+IE = the interaction effect score.
+T, I and A links take you to pages detailing the particular structure showing This change only, all changes at the Interface, or All changes respectively.  
+Mousing over the column header gives more information.
+<table id='ppiTable' class='dataTable ppiTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='ppiTableData'><thead></thead><tbody></tbody></table>
+<script type="application/json" id='ppiTableData' class='data'>[% json.results.thing.ppi_table.json %]</script>
+</div></div></div>
+  
+<div class="oneColumn"><div class="column"><div class="contents">
+<h2>Sites in regions with any predicted structure (not necessarily involving an interaction)</h2>
+<table id='structTable' class='dataTable structTable' id-search='[% json.params.given.id_search %]' data-source='div' data-source-id='structTableData'><thead></thead><tbody></tbody></table>
+<script type="application/json" id='structTableData' class='data'>[% json.results.thing.struct_table.json %]</script>
+</div></div></div>
+
+[% INCLUDE thresholds.tt %]

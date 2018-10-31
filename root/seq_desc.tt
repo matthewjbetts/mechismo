@@ -1,0 +1,10 @@
+<h2>Protein [% seq.name %]</h2>
+Gene Name: [% seq.name %]<br/>
+Primary Identifier: <a href="[% seq.url_in_source %]" target="_blank">[% seq.primary_id %]</a><br/>
+Description: [% seq.description %]<br/>
+Species: [% FOREACH taxon IN seq.taxa %][% taxon.scientific_name %][% END %]<br/>
+Sequence Length: [% seq.len %]<br/>
+<br/>
+Domains in this protein and sites (if given):<br/>
+
+[% INCLUDE feature_instances.tt seq=seq suffix=suffix posns=posns source="Pfam" id_seq_b1=id_seq_b1 id_ch=id_ch type_chem=type_chem id_chem=id_chem id_fh=id_fh %]

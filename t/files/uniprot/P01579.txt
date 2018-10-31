@@ -1,0 +1,349 @@
+ID   IFNG_HUMAN              Reviewed;         166 AA.
+AC   P01579; B5BU88; Q53ZV4;
+DT   21-JUL-1986, integrated into UniProtKB/Swiss-Prot.
+DT   01-APR-1988, sequence version 1.
+DT   21-MAR-2012, entry version 143.
+DE   RecName: Full=Interferon gamma;
+DE            Short=IFN-gamma;
+DE   AltName: Full=Immune interferon;
+DE   Flags: Precursor;
+GN   Name=IFNG;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=82272342; PubMed=6180322; DOI=10.1038/298859a0;
+RA   Gray P.W., Goeddel D.V.;
+RT   "Structure of the human immune interferon gene.";
+RL   Nature 298:859-863(1982).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=82125473; PubMed=6173769; DOI=10.1038/295503a0;
+RA   Gray P.W., Leung D.W., Pennica D., Yelverton E., Najarian R.,
+RA   Simonsen C.C., Derynck R., Sherwood P.J., Wallace D.M., Berger S.L.,
+RA   Levinson A.D., Goeddel D.V.;
+RT   "Expression of human immune interferon cDNA in E. coli and monkey
+RT   cells.";
+RL   Nature 295:503-508(1982).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=85207508; PubMed=2860101;
+RA   Nishi T., Fujita T., Nishi-Takaoka C., Saito A., Matsumoto T.,
+RA   Sato M., Oka T., Itoh S., Yip Y.K., Vilcek J., Taniguchi T.;
+RT   "Cloning and expression of a novel variant of human interferon-gamma
+RT   cDNA.";
+RL   J. Biochem. 97:153-159(1985).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=84236074; PubMed=6329718;
+RA   Taya Y., Devos R., Tavernier J., Cheroutre H., Engler G., Fiers W.;
+RT   "Cloning and structure of the human immune interferon-gamma
+RT   chromosomal gene.";
+RL   EMBO J. 1:953-958(1982).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [MRNA].
+RX   MEDLINE=82196887; PubMed=6176945; DOI=10.1093/nar/10.8.2487;
+RA   Devos R., Cheroutre H., Taya Y., Degrave W., van Heuverswyn H.,
+RA   Fiers W.;
+RT   "Molecular cloning of human immune interferon cDNA and its expression
+RT   in eukaryotic cells.";
+RL   Nucleic Acids Res. 10:2487-2501(1982).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [MRNA], AND VARIANT GLN-160.
+RA   Chikara S.K., Jaiswal P., Sharma G.;
+RL   Submitted (MAR-2003) to the EMBL/GenBank/DDBJ databases.
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RG   SeattleSNPs variation discovery resource;
+RL   Submitted (JUN-2001) to the EMBL/GenBank/DDBJ databases.
+RN   [8]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RX   PubMed=19054851; DOI=10.1038/nmeth.1273;
+RA   Goshima N., Kawamura Y., Fukumoto A., Miura A., Honma R., Satoh R.,
+RA   Wakamatsu A., Yamamoto J., Kimura K., Nishikawa T., Andoh T., Iida Y.,
+RA   Ishikawa K., Ito E., Kagawa N., Kaminaga C., Kanehori K., Kawakami B.,
+RA   Kenmochi K., Kimura R., Kobayashi M., Kuroita T., Kuwayama H.,
+RA   Maruyama Y., Matsuo K., Minami K., Mitsubori M., Mori M.,
+RA   Morishita R., Murase A., Nishikawa A., Nishikawa S., Okamoto T.,
+RA   Sakagami N., Sakamoto Y., Sasaki Y., Seki T., Sono S., Sugiyama A.,
+RA   Sumiya T., Takayama T., Takayama Y., Takeda H., Togashi T., Yahata K.,
+RA   Yamada H., Yanagisawa Y., Endo Y., Imamoto F., Kisu Y., Tanaka S.,
+RA   Isogai T., Imai J., Watanabe S., Nomura N.;
+RT   "Human protein factory for converting the transcriptome into an in
+RT   vitro-expressed proteome.";
+RL   Nat. Methods 5:1011-1017(2008).
+RN   [9]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (JUL-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [10]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Blood;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [11]
+RP   PROTEIN SEQUENCE OF 24-157, AND GLYCOSYLATION AT ASN-48 AND ASN-120.
+RX   MEDLINE=84212517; PubMed=6427223;
+RA   Rinderknecht E., O'Conner B.H., Rodriguez H.;
+RT   "Natural human interferon-gamma. Complete amino acid sequence and
+RT   determination of sites of glycosylation.";
+RL   J. Biol. Chem. 259:6790-6797(1984).
+RN   [12]
+RP   PROTEIN SEQUENCE OF 24-161, AND PROTEOLYTIC PROCESSING OF THE
+RP   C-TERMINUS.
+RX   MEDLINE=87246669; PubMed=3109913;
+RX   DOI=10.1111/j.1432-1033.1987.tb13494.x;
+RA   Pan Y.C.E., Stern A.S., Familletti P.C., Khan F.R., Chizzonite R.;
+RT   "Structural characterization of human interferon gamma. Heterogeneity
+RT   of the carboxyl terminus.";
+RL   Eur. J. Biochem. 166:145-149(1987).
+RN   [13]
+RP   STRUCTURE OF CARBOHYDRATES.
+RX   MEDLINE=89359197; PubMed=2504704;
+RA   Yamamoto S., Hase S., Yamauchi H., Tanimoto T., Ikenaka T.;
+RT   "Studies on the sugar chains of interferon-gamma from human
+RT   peripheral-blood lymphocytes.";
+RL   J. Biochem. 105:1034-1039(1989).
+RN   [14]
+RP   X-RAY CRYSTALLOGRAPHY (3.5 ANGSTROMS).
+RX   MEDLINE=91220068; PubMed=1902591; DOI=10.1126/science.1902591;
+RA   Ealick S.E., Cook W.J., Vijay-Kumar S., Carson M., Nagabhushan T.L.,
+RA   Trotta P.P., Bugg C.E.;
+RT   "Three-dimensional structure of recombinant human interferon-gamma.";
+RL   Science 252:698-702(1991).
+RN   [15]
+RP   X-RAY CRYSTALLOGRAPHY (2.9 ANGSTROMS).
+RX   MEDLINE=95342235; PubMed=7617032; DOI=10.1038/376230a0;
+RA   Walter M.R., Windsor W.T., Nagabhushan T.L., Lundell D.J., Lunn C.A.,
+RA   Zauodny P.J., Narula S.K.;
+RT   "Crystal structure of a complex between interferon-gamma and its
+RT   soluble high-affinity receptor.";
+RL   Nature 376:230-235(1995).
+RN   [16]
+RP   X-RAY CRYSTALLOGRAPHY (2.9 ANGSTROMS).
+RX   MEDLINE=20328607; PubMed=10860730; DOI=10.1006/jmbi.2000.3734;
+RA   Landar A., Curry B., Parker M.H., DiGiacomo R., Indelicato S.R.,
+RA   Nagabhushan T.L., Rizzi G., Walter M.R.;
+RT   "Design, characterization, and structure of a biologically active
+RT   single-chain mutant of human IFN-gamma.";
+RL   J. Mol. Biol. 299:169-179(2000).
+RN   [17]
+RP   X-RAY CRYSTALLOGRAPHY (2.9 ANGSTROMS) OF COMPLEX WITH RECEPTOR.
+RX   PubMed=10986460; DOI=10.1016/S0969-2126(00)00184-2;
+RA   Thiel D.J., le Du M.-H., Walter R.L., D'Arcy A., Chene C.,
+RA   Fountoulakis M., Garotta G., Winkler F.K., Ealick S.E.;
+RT   "Observation of an unexpected third receptor molecule in the crystal
+RT   structure of human interferon-gamma receptor complex.";
+RL   Structure 8:927-936(2000).
+RN   [18]
+RP   STRUCTURE BY NMR.
+RX   MEDLINE=92399429; PubMed=1525157; DOI=10.1021/bi00150a009;
+RA   Grzesiek S., Doebeli H., Gentz R., Garotta G., Labhardt A.M., Bax A.;
+RT   "1H, 13C, and 15N NMR backbone assignments and secondary structure of
+RT   human interferon-gamma.";
+RL   Biochemistry 31:8180-8190(1992).
+RN   [19]
+RP   ASSOCIATION WITH APLASTIC ANEMIA.
+RX   PubMed=15327519; DOI=10.1111/j.1365-2141.2004.05102.x;
+RA   Dufour C., Capasso M., Svahn J., Marrone A., Haupt R., Bacigalupo A.,
+RA   Giordani L., Longoni D., Pillon M., Pistorio A., Di Michele P.,
+RA   Iori A.P., Pongiglione C., Lanciotti M., Iolascon A.;
+RT   "Homozygosis for (12) CA repeats in the first intron of the human IFN-
+RT   gamma gene is significantly associated with the risk of aplastic
+RT   anaemia in Caucasian population.";
+RL   Br. J. Haematol. 126:682-685(2004).
+CC   -!- FUNCTION: Produced by lymphocytes activated by specific antigens
+CC       or mitogens. IFN-gamma, in addition to having antiviral activity,
+CC       has important immunoregulatory functions. It is a potent activator
+CC       of macrophages, it has antiproliferative effects on transformed
+CC       cells and it can potentiate the antiviral and antitumor effects of
+CC       the type I interferons.
+CC   -!- SUBUNIT: Homodimer.
+CC   -!- SUBCELLULAR LOCATION: Secreted.
+CC   -!- TISSUE SPECIFICITY: Released primarily from activated T
+CC       lymphocytes.
+CC   -!- PTM: Proteolytic processing produces C-terminal heterogeneity,
+CC       with proteins ending alternatively at Gly-150, Met-157 or Gly-161.
+CC   -!- DISEASE: In Caucasians, genetic variation in IFNG is associated
+CC       with the risk of aplastic anemia (AA) [MIM:609135]. AA is a rare
+CC       disease in which the reduction of the circulating blood cells
+CC       results from damage to the stem cell pool in bone marrow. In most
+CC       patients, the stem cell lesion is caused by an autoimmune attack.
+CC       T-lymphocytes, activated by an endogenous or exogenous, and most
+CC       often unknown antigenic stimulus, secrete cytokines, including
+CC       IFN-gamma, which would in turn be able to suppress hematopoiesis.
+CC   -!- PHARMACEUTICAL: Available under the name Actimmune (Genentech).
+CC       Used for reducing the frequency and severity of serious infections
+CC       associated with chronic granulomatous disease (CGD).
+CC   -!- SIMILARITY: Belongs to the type II (or gamma) interferon family.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/IFNG";
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=Interferon gamma entry;
+CC       URL="http://en.wikipedia.org/wiki/Interferon_gamma";
+CC   -!- WEB RESOURCE: Name=SeattleSNPs;
+CC       URL="http://pga.gs.washington.edu/data/ifng/";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; X13274; CAA31639.1; -; mRNA.
+DR   EMBL; J00219; AAB59534.1; -; Genomic_DNA.
+DR   EMBL; X01992; CAA26022.1; -; mRNA.
+DR   EMBL; V00543; CAA23804.1; -; mRNA.
+DR   EMBL; AY255837; AAP20098.1; -; mRNA.
+DR   EMBL; AF375790; AAK53058.1; -; Genomic_DNA.
+DR   EMBL; AB451324; BAG70138.1; -; mRNA.
+DR   EMBL; AB451453; BAG70267.1; -; mRNA.
+DR   EMBL; CH471054; EAW97180.1; -; Genomic_DNA.
+DR   EMBL; BC070256; AAH70256.1; -; mRNA.
+DR   IPI; IPI00307209; -.
+DR   PIR; A93284; IVHUG.
+DR   RefSeq; NP_000610.2; NM_000619.2.
+DR   UniGene; Hs.856; -.
+DR   PDB; 1EKU; X-ray; 2.90 A; A/B=26-161.
+DR   PDB; 1FG9; X-ray; 2.90 A; A/B=24-156.
+DR   PDB; 1FYH; X-ray; 2.04 A; A/D=24-156.
+DR   PDB; 1HIG; X-ray; 3.50 A; A/B/C/D=24-161.
+DR   PDB; 3BES; X-ray; 2.20 A; L=24-161.
+DR   PDBsum; 1EKU; -.
+DR   PDBsum; 1FG9; -.
+DR   PDBsum; 1FYH; -.
+DR   PDBsum; 1HIG; -.
+DR   PDBsum; 3BES; -.
+DR   ProteinModelPortal; P01579; -.
+DR   SMR; P01579; 24-155.
+DR   DIP; DIP-483N; -.
+DR   IntAct; P01579; 2.
+DR   STRING; P01579; -.
+DR   GlycoSuiteDB; P01579; -.
+DR   PhosphoSite; P01579; -.
+DR   DMDM; 124479; -.
+DR   PRIDE; P01579; -.
+DR   DNASU; 3458; -.
+DR   Ensembl; ENST00000229135; ENSP00000229135; ENSG00000111537.
+DR   GeneID; 3458; -.
+DR   KEGG; hsa:3458; -.
+DR   UCSC; uc001stw.1; human.
+DR   CTD; 3458; -.
+DR   GeneCards; GC12M068548; -.
+DR   H-InvDB; HIX0036727; -.
+DR   HGNC; HGNC:5438; IFNG.
+DR   HPA; CAB010344; -.
+DR   MIM; 147570; gene.
+DR   MIM; 609135; phenotype.
+DR   neXtProt; NX_P01579; -.
+DR   Orphanet; 88; Idiopathic aplastic anemia.
+DR   PharmGKB; PA29674; -.
+DR   eggNOG; NOG45353; -.
+DR   GeneTree; ENSGT00390000007831; -.
+DR   HOGENOM; HBG127262; -.
+DR   HOVERGEN; HBG056912; -.
+DR   InParanoid; P01579; -.
+DR   KO; K04687; -.
+DR   OMA; KEYFNAS; -.
+DR   OrthoDB; EOG4MCX1G; -.
+DR   PhylomeDB; P01579; -.
+DR   Pathway_Interaction_DB; nfat_tfpathway; Calcineurin-regulated NFAT-dependent transcription in lymphocytes.
+DR   Pathway_Interaction_DB; tcrcalciumpathway; Calcium signaling in the CD4+ TCR pathway.
+DR   Pathway_Interaction_DB; cd8tcrdownstreampathway; Downstream signaling in naive CD8+ T cells.
+DR   Pathway_Interaction_DB; ifngpathway; IFN-gamma pathway.
+DR   Pathway_Interaction_DB; il12_stat4pathway; IL12 signaling mediated by STAT4.
+DR   Pathway_Interaction_DB; il12_2pathway; IL12-mediated signaling events.
+DR   Pathway_Interaction_DB; il2_1pathway; IL2-mediated signaling events.
+DR   Pathway_Interaction_DB; il23pathway; IL23-mediated signaling events.
+DR   Pathway_Interaction_DB; il27pathway; IL27-mediated signaling events.
+DR   Pathway_Interaction_DB; pdgfrapathway; PDGFR-alpha signaling pathway.
+DR   Pathway_Interaction_DB; telomerasepathway; Regulation of Telomerase.
+DR   Reactome; REACT_6900; Immune System.
+DR   DrugBank; DB01296; Glucosamine.
+DR   DrugBank; DB00033; Interferon gamma-1b.
+DR   DrugBank; DB00641; Simvastatin.
+DR   NextBio; 13624; -.
+DR   PMAP-CutDB; P01579; -.
+DR   ArrayExpress; P01579; -.
+DR   Bgee; P01579; -.
+DR   CleanEx; HS_IFNG; -.
+DR   Genevestigator; P01579; -.
+DR   GermOnline; ENSG00000111537; Homo sapiens.
+DR   GO; GO:0005615; C:extracellular space; IEA:UniProtKB-KW.
+DR   GO; GO:0005125; F:cytokine activity; IEA:UniProtKB-KW.
+DR   GO; GO:0005133; F:interferon-gamma receptor binding; TAS:ProtInc.
+DR   GO; GO:0007050; P:cell cycle arrest; IDA:BHF-UCL.
+DR   GO; GO:0060333; P:interferon-gamma-mediated signaling pathway; TAS:Reactome.
+DR   GO; GO:0032700; P:negative regulation of interleukin-17 production; IDA:BHF-UCL.
+DR   GO; GO:0003340; P:negative regulation of mesenchymal to epithelial transition involved in metanephros morphogenesis; ISS:BHF-UCL.
+DR   GO; GO:0072308; P:negative regulation of metanephric nephron tubule epithelial cell differentiation; ISS:BHF-UCL.
+DR   GO; GO:0048662; P:negative regulation of smooth muscle cell proliferation; IDA:BHF-UCL.
+DR   GO; GO:0000122; P:negative regulation of transcription from RNA polymerase II promoter; ISS:BHF-UCL.
+DR   GO; GO:0060559; P:positive regulation of calcidiol 1-monooxygenase activity; IDA:BHF-UCL.
+DR   GO; GO:0060550; P:positive regulation of fructose 1,6-bisphosphate 1-phosphatase activity; IDA:BHF-UCL.
+DR   GO; GO:0060552; P:positive regulation of fructose 1,6-bisphosphate metabolic process; IDA:BHF-UCL.
+DR   GO; GO:0032735; P:positive regulation of interleukin-12 production; IDA:UniProtKB.
+DR   GO; GO:0032747; P:positive regulation of interleukin-23 production; IDA:BHF-UCL.
+DR   GO; GO:0051712; P:positive regulation of killing of cells of other organism; IDA:BHF-UCL.
+DR   GO; GO:0051044; P:positive regulation of membrane protein ectodomain proteolysis; IDA:BHF-UCL.
+DR   GO; GO:0002053; P:positive regulation of mesenchymal cell proliferation; ISS:BHF-UCL.
+DR   GO; GO:0045429; P:positive regulation of nitric oxide biosynthetic process; IDA:BHF-UCL.
+DR   GO; GO:0045672; P:positive regulation of osteoclast differentiation; IDA:BHF-UCL.
+DR   GO; GO:0033141; P:positive regulation of peptidyl-serine phosphorylation of STAT protein; NAS:BHF-UCL.
+DR   GO; GO:0034393; P:positive regulation of smooth muscle cell apoptosis; IDA:BHF-UCL.
+DR   GO; GO:2000309; P:positive regulation of tumor necrosis factor (ligand) superfamily member 11 production; IDA:BHF-UCL.
+DR   GO; GO:0042511; P:positive regulation of tyrosine phosphorylation of Stat1 protein; IDA:BHF-UCL.
+DR   GO; GO:0060557; P:positive regulation of vitamin D biosynthetic process; IDA:BHF-UCL.
+DR   GO; GO:0000060; P:protein import into nucleus, translocation; IDA:UniProtKB.
+DR   GO; GO:0050796; P:regulation of insulin secretion; IDA:BHF-UCL.
+DR   GO; GO:0060334; P:regulation of interferon-gamma-mediated signaling pathway; TAS:Reactome.
+DR   GO; GO:0009615; P:response to virus; IDA:MGI.
+DR   InterPro; IPR009079; 4_helix_cytokine-like_core.
+DR   InterPro; IPR012351; 4_helix_cytokine_core.
+DR   InterPro; IPR002069; Interferon_gamma.
+DR   Gene3D; G3DSA:1.20.1250.10; 4_helix_cytokine_core; 1.
+DR   PANTHER; PTHR11419; IFN-gamma; 1.
+DR   Pfam; PF00714; IFN-gamma; 1.
+DR   PIRSF; PIRSF001936; IFN-gamma; 1.
+DR   ProDom; PD002435; Interferon_gamma; 1.
+DR   SUPFAM; SSF47266; 4_helix_cytokine; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Antiviral defense; Cleavage on pair of basic residues;
+KW   Complete proteome; Cytokine; Direct protein sequencing; Glycoprotein;
+KW   Growth regulation; Pharmaceutical; Polymorphism;
+KW   Pyrrolidone carboxylic acid; Reference proteome; Secreted; Signal.
+FT   SIGNAL        1     23
+FT   CHAIN        24    161       Interferon gamma.
+FT                                /FTId=PRO_0000016444.
+FT   PROPEP      162    166
+FT                                /FTId=PRO_0000259481.
+FT   MOD_RES      24     24       Pyrrolidone carboxylic acid.
+FT   CARBOHYD     48     48       N-linked (GlcNAc...).
+FT   CARBOHYD    120    120       N-linked (GlcNAc...); in dimeric form.
+FT   VARIANT      29     29       K -> Q.
+FT                                /FTId=VAR_004017.
+FT   VARIANT     160    160       R -> Q.
+FT                                /FTId=VAR_004018.
+FT   HELIX         2     18
+FT   HELIX        25     38
+FT   HELIX        53     58
+FT   HELIX        62     81
+FT   TURN         82     85
+FT   TURN         87     89
+FT   HELIX        90    104
+FT   HELIX       109    119
+FT   HELIX       126    140
+SQ   SEQUENCE   166 AA;  19348 MW;  1514E8F785FD81AA CRC64;
+     MKYTSYILAF QLCIVLGSLG CYCQDPYVKE AENLKKYFNA GHSDVADNGT LFLGILKNWK
+     EESDRKIMQS QIVSFYFKLF KNFKDDQSIQ KSVETIKEDM NVKFFNSNKK KRDDFEKLTN
+     YSVTDLNVQR KAIHELIQVM AELSPAAKTG KRKRSQMLFR GRRASQ
+//

@@ -1,0 +1,349 @@
+ID   FLII_HUMAN              Reviewed;        1269 AA.
+AC   Q13045;
+DT   26-SEP-2001, integrated into UniProtKB/Swiss-Prot.
+DT   01-JAN-1998, sequence version 2.
+DT   21-MAR-2012, entry version 126.
+DE   RecName: Full=Protein flightless-1 homolog;
+GN   Name=FLII; Synonyms=FLIL;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RX   MEDLINE=97321044; PubMed=9177775; DOI=10.1006/geno.1997.4709;
+RA   Campbell H.D., Fountain S., Young I.G., Claudianos C., Hoheisel J.D.,
+RA   Chen K.-S., Lupski J.R.;
+RT   "Genomic structure, evolution, and expression of human FLII, a
+RT   gelsolin and leucine-rich-repeat family member: overlap with LLGL.";
+RL   Genomics 42:46-54(1997).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA].
+RC   TISSUE=Kidney;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [3]
+RP   PROTEIN SEQUENCE OF 1-11, AND ACETYLATION AT MET-1.
+RC   TISSUE=Platelet;
+RX   MEDLINE=22608298; PubMed=12665801; DOI=10.1038/nbt810;
+RA   Gevaert K., Goethals M., Martens L., Van Damme J., Staes A.,
+RA   Thomas G.R., Vandekerckhove J.;
+RT   "Exploring proteomes and analyzing protein processing by mass
+RT   spectrometric identification of sorted N-terminal peptides.";
+RL   Nat. Biotechnol. 21:566-569(2003).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 2-1269.
+RC   TISSUE=Hippocampus;
+RX   MEDLINE=94068608; PubMed=8248259; DOI=10.1073/pnas.90.23.11386;
+RA   Campbell H.D., Schimansky T., Claudianos C., Ozsarac N.,
+RA   Kasprzak A.B., Cotsell J.N., Young I.G., de Couet H.G., Miklos G.L.G.;
+RT   "The Drosophila melanogaster flightless-I gene involved in
+RT   gastrulation and muscle degeneration encodes gelsolin-like and
+RT   leucine-rich repeat domains and is conserved in Caenorhabditis elegans
+RT   and humans.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 90:11386-11390(1993).
+RN   [5]
+RP   INTERACTION WITH ACTIN AND LRRFIP1, AND TISSUE SPECIFICITY.
+RX   MEDLINE=98192575; PubMed=9525888; DOI=10.1074/jbc.273.14.7920;
+RA   Liu Y.-T., Yin H.L.;
+RT   "Identification of the binding partners for flightless I, a novel
+RT   protein bridging the leucine-rich repeat and the gelsolin
+RT   superfamilies.";
+RL   J. Biol. Chem. 273:7920-7927(1998).
+RN   [6]
+RP   INTERACTION WITH LRRFIP1.
+RX   MEDLINE=98337902; PubMed=9671805; DOI=10.1093/nar/26.15.3460;
+RA   Wilson S.A., Brown E.C., Kingsman A.J., Kingsman S.M.;
+RT   "TRIP: a novel double stranded RNA binding protein which interacts
+RT   with the leucine rich repeat of flightless I.";
+RL   Nucleic Acids Res. 26:3460-3467(1998).
+RN   [7]
+RP   INTERACTION WITH LRRFIP1 AND LRRFIP2.
+RC   TISSUE=Skeletal muscle;
+RX   MEDLINE=99296829; PubMed=10366446; DOI=10.1006/geno.1999.5817;
+RA   Fong K.S.K., de Couet H.G.;
+RT   "Novel proteins interacting with the leucine-rich repeat domain of
+RT   human flightless-I identified by the yeast two-hybrid system.";
+RL   Genomics 58:146-157(1999).
+RN   [8]
+RP   FUNCTION, INTERACTION WITH CARM1; ESR1; THRB; NCOA2 AND ACTL6A, AND
+RP   MUTAGENESIS OF GLU-586 AND GLY-603.
+RX   PubMed=14966289; DOI=10.1128/MCB.24.5.2103-2117.2004;
+RA   Lee Y.-H., Campbell H.D., Stallcup M.R.;
+RT   "Developmentally essential protein flightless I is a nuclear receptor
+RT   coactivator with actin binding activity.";
+RL   Mol. Cell. Biol. 24:2103-2117(2004).
+RN   [9]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-856, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=15302935; DOI=10.1073/pnas.0404720101;
+RA   Beausoleil S.A., Jedrychowski M., Schwartz D., Elias J.E., Villen J.,
+RA   Li J., Cohn M.A., Cantley L.C., Gygi S.P.;
+RT   "Large-scale characterization of HeLa cell nuclear phosphoproteins.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 101:12130-12135(2004).
+RN   [10]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-436 AND SER-856, AND
+RP   MASS SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=17081983; DOI=10.1016/j.cell.2006.09.026;
+RA   Olsen J.V., Blagoev B., Gnad F., Macek B., Kumar C., Mortensen P.,
+RA   Mann M.;
+RT   "Global, in vivo, and site-specific phosphorylation dynamics in
+RT   signaling networks.";
+RL   Cell 127:635-648(2006).
+RN   [11]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-406 AND SER-856, AND
+RP   MASS SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=16964243; DOI=10.1038/nbt1240;
+RA   Beausoleil S.A., Villen J., Gerber S.A., Rush J., Gygi S.P.;
+RT   "A probability-based approach for high-throughput protein
+RT   phosphorylation analysis and site localization.";
+RL   Nat. Biotechnol. 24:1285-1292(2006).
+RN   [12]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-856, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=18187866; DOI=10.2116/analsci.24.161;
+RA   Imami K., Sugiyama N., Kyono Y., Tomita M., Ishihama Y.;
+RT   "Automated phosphoproteome analysis for cultured cancer cells by two-
+RT   dimensional nanoLC-MS using a calcined titania/C18 biphasic column.";
+RL   Anal. Sci. 24:161-166(2008).
+RN   [13]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-856, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=18691976; DOI=10.1016/j.molcel.2008.07.007;
+RA   Daub H., Olsen J.V., Bairlein M., Gnad F., Oppermann F.S., Korner R.,
+RA   Greff Z., Keri G., Stemmann O., Mann M.;
+RT   "Kinase-selective enrichment enables quantitative phosphoproteomics of
+RT   the kinome across the cell cycle.";
+RL   Mol. Cell 31:438-448(2008).
+RN   [14]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-856, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Cervix carcinoma;
+RX   PubMed=18669648; DOI=10.1073/pnas.0805139105;
+RA   Dephoure N., Zhou C., Villen J., Beausoleil S.A., Bakalarski C.E.,
+RA   Elledge S.J., Gygi S.P.;
+RT   "A quantitative atlas of mitotic phosphorylation.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 105:10762-10767(2008).
+RN   [15]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-856, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Embryonic kidney;
+RX   PubMed=19413330; DOI=10.1021/ac9004309;
+RA   Gauci S., Helbig A.O., Slijper M., Krijgsveld J., Heck A.J.,
+RA   Mohammed S.;
+RT   "Lys-N and trypsin cover complementary parts of the phosphoproteome in
+RT   a refined SCX-based approach.";
+RL   Anal. Chem. 81:4493-4501(2009).
+RN   [16]
+RP   PHOSPHORYLATION AT SER-436 AND THR-818, AND INTERACTION WITH SGK3.
+RX   PubMed=19293151; DOI=10.1074/jbc.M807770200;
+RA   Xu J., Liao L., Qin J., Xu J., Liu D., Songyang Z.;
+RT   "Identification of Flightless-I as a substrate of the cytokine-
+RT   independent survival kinase CISK.";
+RL   J. Biol. Chem. 284:14377-14385(2009).
+RN   [17]
+RP   INTERACTION WITH LRRFIP1; LRRFIP2 AND MYD88.
+RX   PubMed=19265123; DOI=10.4049/jimmunol.0802260;
+RA   Dai P., Jeong S.Y., Yu Y., Leng T., Wu W., Xie L., Chen X.;
+RT   "Modulation of TLR signaling by multiple MyD88-interacting partners
+RT   including leucine-rich repeat Fli-I-interacting proteins.";
+RL   J. Immunol. 182:3450-3460(2009).
+RN   [18]
+RP   PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-856, AND MASS
+RP   SPECTROMETRY.
+RC   TISSUE=Leukemic T-cell;
+RX   PubMed=19690332; DOI=10.1126/scisignal.2000007;
+RA   Mayya V., Lundgren D.H., Hwang S.-I., Rezaul K., Wu L., Eng J.K.,
+RA   Rodionov V., Han D.K.;
+RT   "Quantitative phosphoproteomic analysis of T cell receptor signaling
+RT   reveals system-wide modulation of protein-protein interactions.";
+RL   Sci. Signal. 2:RA46-RA46(2009).
+RN   [19]
+RP   ACETYLATION [LARGE SCALE ANALYSIS] AT LYS-21, AND MASS SPECTROMETRY.
+RX   PubMed=19608861; DOI=10.1126/science.1175371;
+RA   Choudhary C., Kumar C., Gnad F., Nielsen M.L., Rehman M., Walther T.,
+RA   Olsen J.V., Mann M.;
+RT   "Lysine acetylation targets protein complexes and co-regulates major
+RT   cellular functions.";
+RL   Science 325:834-840(2009).
+RN   [20]
+RP   IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=21269460; DOI=10.1186/1752-0509-5-17;
+RA   Burkard T.R., Planyavsky M., Kaupe I., Breitwieser F.P.,
+RA   Buerckstuemmer T., Bennett K.L., Superti-Furga G., Colinge J.;
+RT   "Initial characterization of the human central proteome.";
+RL   BMC Syst. Biol. 5:17-17(2011).
+CC   -!- FUNCTION: May play a role as coactivator in transcriptional
+CC       activation by hormone-activated nuclear receptors (NR) and acts in
+CC       cooperation with NCOA2 and CARM1. Involved in estrogen hormone
+CC       signaling. Involved in early embryonic development (By
+CC       similarity). May play a role in regulation of cytoskeletal
+CC       rearrangements involved in cytokinesis and cell migration.
+CC   -!- SUBUNIT: Interacts with actin, ACTL6A, NCOA2, CARM1 and MYD88.
+CC       Interacts with LRRFIP1 and LRRFIP2. Upon LPS stimulation, LRRFIP2
+CC       competes for MYD88-binding. LRRFIP1 constitutively blocks the
+CC       interaction with MyD88, even in the absence of LPS. Interacts with
+CC       the nuclear receptors ESR1 and THRB. Interacts with SGK3.
+CC   -!- INTERACTION:
+CC       Q32MZ4:LRRFIP1; NbExp=2; IntAct=EBI-351549, EBI-1369100;
+CC   -!- SUBCELLULAR LOCATION: Nucleus (By similarity). Cytoplasm,
+CC       cytoskeleton (By similarity). Cytoplasm, cytoskeleton, centrosome
+CC       (By similarity). Note=Colocalizes to actin-rich structures in
+CC       blastocysts and, together with HRAS1, RHOA and CDC42, in migrating
+CC       fibroblasts. Localizes to centrosomes (By similarity).
+CC   -!- TISSUE SPECIFICITY: Strongest expression in skeletal muscle with
+CC       high expression also in the heart and lung.
+CC   -!- DISEASE: Deletion of the FLII gene may be a cause of Smith-Magenis
+CC       syndrome (SMS) [MIM:182290]. It is a contiguous gene deletion
+CC       syndrome involving developmental abnormalities and mental
+CC       retardation. The spectrum of clinical findings includes short
+CC       stature, brachydactyly, developmental delay, dysmorphic features,
+CC       sleep disturbances, and behavioral problems.
+CC   -!- SIMILARITY: Contains 5 gelsolin-like repeats.
+CC   -!- SIMILARITY: Contains 15 LRR (leucine-rich) repeats.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; U80184; AAC02796.1; -; Genomic_DNA.
+DR   EMBL; BC025300; AAH25300.1; -; mRNA.
+DR   EMBL; U01184; AAC03568.1; -; mRNA.
+DR   IPI; IPI00031023; -.
+DR   PIR; A49674; A49674.
+DR   RefSeq; NP_002009.1; NM_002018.3.
+DR   UniGene; Hs.513984; -.
+DR   ProteinModelPortal; Q13045; -.
+DR   SMR; Q13045; 4-395, 493-839, 905-1265.
+DR   IntAct; Q13045; 6.
+DR   MINT; MINT-1399971; -.
+DR   STRING; Q13045; -.
+DR   PhosphoSite; Q13045; -.
+DR   DMDM; 18202493; -.
+DR   PeptideAtlas; Q13045; -.
+DR   PRIDE; Q13045; -.
+DR   DNASU; 2314; -.
+DR   Ensembl; ENST00000327031; ENSP00000324573; ENSG00000177731.
+DR   GeneID; 2314; -.
+DR   KEGG; hsa:2314; -.
+DR   UCSC; uc002gsq.1; human.
+DR   CTD; 2314; -.
+DR   GeneCards; GC17M018088; -.
+DR   H-InvDB; HIX0013598; -.
+DR   HGNC; HGNC:3750; FLII.
+DR   HPA; CAB016132; -.
+DR   HPA; HPA007084; -.
+DR   HPA; HPA008903; -.
+DR   MIM; 182290; phenotype.
+DR   MIM; 600362; gene.
+DR   neXtProt; NX_Q13045; -.
+DR   Orphanet; 819; Smith-Magenis syndrome.
+DR   PharmGKB; PA28171; -.
+DR   eggNOG; COG4886; -.
+DR   GeneTree; ENSGT00620000087896; -.
+DR   HOGENOM; HBG357462; -.
+DR   HOVERGEN; HBG051627; -.
+DR   InParanoid; Q13045; -.
+DR   OMA; EEEFGHF; -.
+DR   OrthoDB; EOG4TB49G; -.
+DR   PhylomeDB; Q13045; -.
+DR   NextBio; 9397; -.
+DR   ArrayExpress; Q13045; -.
+DR   Bgee; Q13045; -.
+DR   CleanEx; HS_FLII; -.
+DR   Genevestigator; Q13045; -.
+DR   GermOnline; ENSG00000177731; Homo sapiens.
+DR   GO; GO:0005813; C:centrosome; IDA:HPA.
+DR   GO; GO:0005634; C:nucleus; IDA:HPA.
+DR   GO; GO:0003779; F:actin binding; TAS:ProtInc.
+DR   GO; GO:0007275; P:multicellular organismal development; IEA:UniProtKB-KW.
+DR   GO; GO:0006936; P:muscle contraction; TAS:ProtInc.
+DR   GO; GO:0006355; P:regulation of transcription, DNA-dependent; IEA:UniProtKB-KW.
+DR   GO; GO:0006351; P:transcription, DNA-dependent; IEA:UniProtKB-KW.
+DR   InterPro; IPR007122; Gelsolin.
+DR   InterPro; IPR007123; Gelsolin_dom.
+DR   InterPro; IPR001611; Leu-rich_rpt.
+DR   InterPro; IPR003591; Leu-rich_rpt_typical-subtyp.
+DR   PANTHER; PTHR11977; Gelsolin; 1.
+DR   Pfam; PF00626; Gelsolin; 4.
+DR   Pfam; PF00560; LRR_1; 1.
+DR   PRINTS; PR00597; GELSOLIN.
+DR   SMART; SM00262; GEL; 6.
+DR   SMART; SM00369; LRR_TYP; 1.
+DR   PROSITE; PS51450; LRR; 11.
+PE   1: Evidence at protein level;
+KW   Acetylation; Actin-binding; Activator; Complete proteome; Cytoplasm;
+KW   Cytoskeleton; Developmental protein; Direct protein sequencing;
+KW   Leucine-rich repeat; Nucleus; Phosphoprotein; Polymorphism;
+KW   Reference proteome; Repeat; Transcription; Transcription regulation.
+FT   CHAIN         1   1269       Protein flightless-1 homolog.
+FT                                /FTId=PRO_0000218750.
+FT   REPEAT        7     32       LRR 1.
+FT   REPEAT       33     55       LRR 2.
+FT   REPEAT       56     78       LRR 3.
+FT   REPEAT       80    103       LRR 4.
+FT   REPEAT      104    126       LRR 5.
+FT   REPEAT      127    149       LRR 6.
+FT   REPEAT      150    173       LRR 7.
+FT   REPEAT      175    196       LRR 8.
+FT   REPEAT      197    222       LRR 9.
+FT   REPEAT      223    245       LRR 10.
+FT   REPEAT      247    268       LRR 11.
+FT   REPEAT      269    291       LRR 12.
+FT   REPEAT      293    316       LRR 13.
+FT   REPEAT      318    339       LRR 14.
+FT   REPEAT      340    363       LRR 15.
+FT   REPEAT      501    559       Gelsolin-like 1.
+FT   REPEAT      640    670       Gelsolin-like 2.
+FT   REPEAT      755    798       Gelsolin-like 3.
+FT   REPEAT     1068   1115       Gelsolin-like 4.
+FT   REPEAT     1176   1218       Gelsolin-like 5.
+FT   REGION        1    427       Interaction with LRRFIP1 and LRRFIP2.
+FT   REGION      495    827       Interaction with ACTL6A.
+FT   COMPBIAS    411    415       Poly-Ala.
+FT   COMPBIAS    892    978       Glu-rich.
+FT   MOD_RES       1      1       N-acetylmethionine.
+FT   MOD_RES      21     21       N6-acetyllysine.
+FT   MOD_RES     406    406       Phosphoserine.
+FT   MOD_RES     436    436       Phosphoserine; by SGK3.
+FT   MOD_RES     818    818       Phosphothreonine; by SGK3.
+FT   MOD_RES     856    856       Phosphoserine.
+FT   VARIANT    1243   1243       R -> H (in dbSNP:rs8821).
+FT                                /FTId=VAR_029258.
+FT   MUTAGEN     586    586       E->K: No change in ESR1 binding but
+FT                                reduced binding to ACTL6A and reduced
+FT                                coactivator function.
+FT   MUTAGEN     603    603       G->S: No change in binding to ACTL6A or
+FT                                in coactivator function.
+SQ   SEQUENCE   1269 AA;  144751 MW;  29AC7C07738B7B47 CRC64;
+     MEATGVLPFV RGVDLSGNDF KGGYFPENVK AMTSLRWLKL NRTGLCYLPE ELAALQKLEH
+     LSVSHNNLTT LHGELSSLPS LRAIVARANS LKNSGVPDDI FKLDDLSVLD LSHNQLTECP
+     RELENAKNML VLNLSHNSID TIPNQLFINL TDLLYLDLSE NRLESLPPQM RRLVHLQTLV
+     LNGNPLLHAQ LRQLPAMTAL QTLHLRSTQR TQSNLPTSLE GLSNLADVDL SCNDLTRVPE
+     CLYTLPSLRR LNLSSNQITE LSLCIDQWVH VETLNLSRNQ LTSLPSAICK LSKLKKLYLN
+     SNKLDFDGLP SGIGKLTNLE EFMAANNNLE LVPESLCRCP KLRKLVLNKN HLVTLPEAIH
+     FLTEIEVLDV RENPNLVMPP KPADRAAEWY NIDFSLQNQL RLAGASPATV AAAAAAGSGP
+     KDPMARKMRL RRRKDSAQDD QAKQVLKGMS DVAQEKNKKQ EESADARAPS GKVRRWDQGL
+     EKPRLDYSEF FTEDVGQLPG LTIWQIENFV PVLVEEAFHG KFYEADCYIV LKTFLDDSGS
+     LNWEIYYWIG GEATLDKKAC SAIHAVNLRN YLGAECRTVR EEMGDESEEF LQVFDNDISY
+     IEGGTASGFY TVEDTHYVTR MYRVYGKKNI KLEPVPLKGT SLDPRFVFLL DRGLDIYVWR
+     GAQATLSSTT KARLFAEKIN KNERKGKAEI TLLVQGQELP EFWEALGGEP SEIKKHVPED
+     FWPPQPKLYK VGLGLGYLEL PQINYKLSVE HKQRPKVELM PRMRLLQSLL DTRCVYILDC
+     WSDVFIWLGR KSPRLVRAAA LKLGQELCGM LHRPRHATVS RSLEGTEAQV FKAKFKNWDD
+     VLTVDYTRNA EAVLQSPGLS GKVKRDAEKK DQMKADLTAL FLPRQPPMSL AEAEQLMEEW
+     NEDLDGMEGF VLEGKKFARL PEEEFGHFYT QDCYVFLCRY WVPVEYEEEE KKEDKEEKAE
+     GKEGEEATAE AEEKQPEEDF QCIVYFWQGR EASNMGWLTF TFSLQKKFES LFPGKLEVVR
+     MTQQQENPKF LSHFKRKFII HRGKRKAVQG AQQPSLYQIR TNGSALCTRC IQINTDSSLL
+     NSEFCFILKV PFESEDNQGI VYAWVGRASD PDEAKLAEDI LNTMFDTSYS KQVINEGEEP
+     ENFFWVGIGA QKPYDDDAEY MKHTRLFRCS NEKGYFAVTE KCSDFCQDDL ADDDIMLLDN
+     GQEVYMWVGT QTSQVEIKLS LKACQVYIQH MRSKEHERPR RLRLVRKGNE QHAFTRCFHA
+     WSAFCKALA
+//

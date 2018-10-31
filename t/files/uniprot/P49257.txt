@@ -1,0 +1,327 @@
+ID   LMAN1_HUMAN             Reviewed;         510 AA.
+AC   P49257; Q12895; Q8N5I7; Q9UQG1; Q9UQG2; Q9UQG3; Q9UQG4; Q9UQG5;
+AC   Q9UQG6; Q9UQG7; Q9UQG8; Q9UQG9; Q9UQH0; Q9UQH1; Q9UQH2;
+DT   01-FEB-1996, integrated into UniProtKB/Swiss-Prot.
+DT   13-AUG-2002, sequence version 2.
+DT   21-MAR-2012, entry version 123.
+DE   RecName: Full=Protein ERGIC-53;
+DE   AltName: Full=ER-Golgi intermediate compartment 53 kDa protein;
+DE   AltName: Full=Gp58;
+DE   AltName: Full=Intracellular mannose-specific lectin MR60;
+DE   AltName: Full=Lectin mannose-binding 1;
+DE   Flags: Precursor;
+GN   Name=LMAN1; Synonyms=ERGIC53, F5F8D;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [MRNA], AND PROTEIN SEQUENCE OF 31-59 AND 418-432.
+RC   TISSUE=Liver, and Placenta;
+RX   MEDLINE=94039195; PubMed=8223692;
+RA   Schindler R., Itin C., Zerial M., Lottspeich F., Hauri H.-P.;
+RT   "ERGIC-53, a membrane protein of the ER-Golgi intermediate
+RT   compartment, carries an ER retention motif.";
+RL   Eur. J. Cell Biol. 61:1-9(1993).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA], AND PROTEIN SEQUENCE OF 31-41.
+RC   TISSUE=Peripheral blood;
+RX   MEDLINE=95181303; PubMed=7876089; DOI=10.1074/jbc.270.8.3551;
+RA   Arar C., Carpentier V., Le Caer J.-P., Monsigny M., Legrand A.,
+RA   Roche A.-C.;
+RT   "ERGIC-53, a membrane protein of the endoplasmic reticulum-Golgi
+RT   intermediate compartment, is identical to MR60, an intracellular
+RT   mannose-specific lectin of myelomonocytic cells.";
+RL   J. Biol. Chem. 270:3551-3553(1995).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA], VARIANTS GLN-14; ALA-39 AND
+RP   LEU-410, AND INVOLVEMENT IN F5F8D1.
+RX   MEDLINE=99192442; PubMed=10090935;
+RA   Nichols W.C., Terry V.H., Wheatley M.A., Yang A., Zivelin A.,
+RA   Ciavarella N., Stefanile C., Matsushita T., Saito H., de Bosch N.B.,
+RA   Ruiz-Saez A., Torres A., Thompson A.R., Feinstein D.I., White G.C.,
+RA   Negrier C., Vinciguerra C., Aktan M., Kaufman R.J., Ginsburg D.,
+RA   Seligsohn U.;
+RT   "ERGIC-53 gene structure and mutation analysis in 19 combined factors
+RT   V and VIII deficiency families.";
+RL   Blood 93:2261-2266(1999).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA], AND VARIANT LEU-410.
+RC   TISSUE=Brain;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [5]
+RP   PROTEIN SEQUENCE OF 31-44.
+RC   TISSUE=Platelet;
+RX   MEDLINE=22608298; PubMed=12665801; DOI=10.1038/nbt810;
+RA   Gevaert K., Goethals M., Martens L., Van Damme J., Staes A.,
+RA   Thomas G.R., Vandekerckhove J.;
+RT   "Exploring proteomes and analyzing protein processing by mass
+RT   spectrometric identification of sorted N-terminal peptides.";
+RL   Nat. Biotechnol. 21:566-569(2003).
+RN   [6]
+RP   SIMILARITY TO LEGUMINOUS LECTINS.
+RX   MEDLINE=94265253; PubMed=8205612; DOI=10.1016/0092-8674(94)90047-7;
+RA   Fiedler K., Simons K.;
+RT   "A putative novel class of animal lectins in the secretory pathway
+RT   homologous to leguminous lectins.";
+RL   Cell 77:625-626(1994).
+RN   [7]
+RP   MASS SPECTROMETRY.
+RC   TISSUE=Mammary cancer;
+RX   MEDLINE=21829512; PubMed=11840567;
+RX   DOI=10.1002/1615-9861(200202)2:2<212::AID-PROT212>3.0.CO;2-H;
+RA   Harris R.A., Yang A., Stein R.C., Lucy K., Brusten L., Herath A.,
+RA   Parekh R., Waterfield M.D., O'Hare M.J., Neville M.A., Page M.J.,
+RA   Zvelebil M.J.;
+RT   "Cluster analysis of an extensive human breast cancer cell line
+RT   protein expression map database.";
+RL   Proteomics 2:212-223(2002).
+RN   [8]
+RP   FUNCTION, TISSUE SPECIFICITY, SUBCELLULAR LOCATION, MOTIF ER EXPORT,
+RP   AND DISULFIDE BOND.
+RX   PubMed=13130098; DOI=10.1242/jcs.00759;
+RA   Nufer O., Kappeler F., Guldbrandsen S., Hauri H.-P.;
+RT   "ER export of ERGIC-53 is controlled by cooperation of targeting
+RT   determinants in all three of its domains.";
+RL   J. Cell Sci. 116:4429-4440(2003).
+RN   [9]
+RP   INTERACTION WITH MCFD2, AND FUNCTION.
+RX   PubMed=12717434; DOI=10.1038/ng1153;
+RA   Zhang B., Cunningham M.A., Nichols W.C., Bernat J.A., Seligsohn U.,
+RA   Pipe S.W., McVey J.H., Schulte-Overberg U., de Bosch N.B.,
+RA   Ruiz-Saez A., White G.C., Tuddenham E.G., Kaufman R.J., Ginsburg D.;
+RT   "Bleeding due to disruption of a cargo-specific ER-to-Golgi transport
+RT   complex.";
+RL   Nat. Genet. 34:220-225(2003).
+RN   [10]
+RP   SUBCELLULAR LOCATION, SUBUNIT, AND INTERCHAIN DISULFIDE BONDS.
+RX   PubMed=16257008; DOI=10.1016/j.jmb.2005.09.077;
+RA   Neve E.P., Lahtinen U., Pettersson R.F.;
+RT   "Oligomerization and interacellular localization of the glycoprotein
+RT   receptor ERGIC-53 is independent of disulfide bonds.";
+RL   J. Mol. Biol. 354:556-568(2005).
+RN   [11]
+RP   IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS].
+RX   PubMed=21269460; DOI=10.1186/1752-0509-5-17;
+RA   Burkard T.R., Planyavsky M., Kaupe I., Breitwieser F.P.,
+RA   Buerckstuemmer T., Bennett K.L., Superti-Furga G., Colinge J.;
+RT   "Initial characterization of the human central proteome.";
+RL   BMC Syst. Biol. 5:17-17(2011).
+RN   [12]
+RP   X-RAY CRYSTALLOGRAPHY (2.45 ANGSTROMS) OF 32-277 IN COMPLEX WITH MCFD2
+RP   AND CALCIUM IONS, SUBUNIT, AND DISULFIDE BOND.
+RX   PubMed=20138881; DOI=10.1016/j.febslet.2010.02.009;
+RA   Wigren E., Bourhis J.M., Kursula I., Guy J.E., Lindqvist Y.;
+RT   "Crystal structure of the LMAN1-CRD/MCFD2 transport receptor complex
+RT   provides insight into combined deficiency of factor V and factor
+RT   VIII.";
+RL   FEBS Lett. 584:878-882(2010).
+RN   [13]
+RP   X-RAY CRYSTALLOGRAPHY (1.84 ANGSTROMS) OF 31-285 IN COMPLEX WITH
+RP   CALCIUM IONS, SUBUNIT, AND DISULFIDE BOND.
+RX   PubMed=20142513; DOI=10.1073/pnas.0908526107;
+RA   Nishio M., Kamiya Y., Mizushima T., Wakatsuki S., Sasakawa H.,
+RA   Yamamoto K., Uchiyama S., Noda M., McKay A.R., Fukui K., Hauri H.P.,
+RA   Kato K.;
+RT   "Structural basis for the cooperative interplay between the two
+RT   causative gene products of combined factor V and factor VIII
+RT   deficiency.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 107:4034-4039(2010).
+CC   -!- FUNCTION: Mannose-specific lectin. May recognize sugar residues of
+CC       glycoproteins, glycolipids, or glycosylphosphatidyl inositol
+CC       anchors and may be involved in the sorting or recycling of
+CC       proteins, lipids, or both. The LMAN1-MCFD2 complex forms a
+CC       specific cargo receptor for the ER-to-Golgi transport of selected
+CC       proteins.
+CC   -!- SUBUNIT: Exists both as a covalent disulfide-linked homohexamer,
+CC       and a complex of three disulfide-linked dimers non-covalently kept
+CC       together. Interacts with MCFD2.
+CC   -!- INTERACTION:
+CC       O15260:SURF4; NbExp=3; IntAct=EBI-1057738, EBI-1044848;
+CC   -!- SUBCELLULAR LOCATION: Endoplasmic reticulum-Golgi intermediate
+CC       compartment membrane; Single-pass type I membrane protein. Golgi
+CC       apparatus membrane; Single-pass membrane protein. Endoplasmic
+CC       reticulum membrane; Single-pass type I membrane protein.
+CC   -!- TISSUE SPECIFICITY: Ubiquitous.
+CC   -!- DOMAIN: The FF ER export motif at the C-terminus is not sufficient
+CC       to support endoplasmic reticulum exit, and needs assistance of
+CC       Gln-501 for proper recognition of COPII coat components.
+CC   -!- PTM: The N-terminal may be partly blocked.
+CC   -!- MASS SPECTROMETRY: Mass=54222.91; Method=MALDI; Range=31-510;
+CC       Source=PubMed:11840567;
+CC   -!- DISEASE: Defects in LMAN1 are THE cause of factor V and factor
+CC       VIII combined deficiency type 1 (F5F8D1) [MIM:227300]; also known
+CC       as multiple coagulation factor deficiency I (MCFD1). F5F8D1 is an
+CC       autosomal recessive blood coagulation disorder characterized by
+CC       bleeding symptoms similar to those in hemophilia or
+CC       parahemophilia, that are caused by single deficiency of FV or
+CC       FVIII, respectively. The most common symptoms are epistaxis,
+CC       menorrhagia, and excessive bleeding during or after trauma. Plasma
+CC       levels of coagulation factors V and VIII are in the range of 5 to
+CC       30% of normal.
+CC   -!- SIMILARITY: Contains 1 L-type lectin-like domain.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; X71661; CAA50653.1; -; mRNA.
+DR   EMBL; U09716; AAA95960.1; -; mRNA.
+DR   EMBL; AF081866; AAD32479.1; -; Genomic_DNA.
+DR   EMBL; AF081865; AAD32479.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081867; AAD32480.1; -; Genomic_DNA.
+DR   EMBL; AF081869; AAD32481.1; -; Genomic_DNA.
+DR   EMBL; AF081868; AAD32481.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081871; AAD32482.1; -; Genomic_DNA.
+DR   EMBL; AF081870; AAD32482.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081873; AAD32483.1; -; Genomic_DNA.
+DR   EMBL; AF081872; AAD32483.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081875; AAD32484.1; -; Genomic_DNA.
+DR   EMBL; AF081874; AAD32484.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081877; AAD32485.1; -; Genomic_DNA.
+DR   EMBL; AF081876; AAD32485.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081879; AAD32486.1; -; Genomic_DNA.
+DR   EMBL; AF081878; AAD32486.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081880; AAD32487.1; -; Genomic_DNA.
+DR   EMBL; AF081882; AAD32488.1; -; Genomic_DNA.
+DR   EMBL; AF081881; AAD32488.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081884; AAD32489.1; -; Genomic_DNA.
+DR   EMBL; AF081883; AAD32489.1; JOINED; Genomic_DNA.
+DR   EMBL; AF081885; AAD32490.1; -; Genomic_DNA.
+DR   EMBL; BC032330; AAH32330.1; -; mRNA.
+DR   IPI; IPI00026530; -.
+DR   PIR; S42626; S42626.
+DR   RefSeq; NP_005561.1; NM_005570.3.
+DR   UniGene; Hs.465295; -.
+DR   PDB; 3A4U; X-ray; 1.84 A; A=31-285.
+DR   PDB; 3LCP; X-ray; 2.45 A; A/B=32-277.
+DR   PDBsum; 3A4U; -.
+DR   PDBsum; 3LCP; -.
+DR   ProteinModelPortal; P49257; -.
+DR   SMR; P49257; 37-269.
+DR   IntAct; P49257; 3.
+DR   MINT; MINT-4999949; -.
+DR   STRING; P49257; -.
+DR   PhosphoSite; P49257; -.
+DR   DMDM; 22261801; -.
+DR   PeptideAtlas; P49257; -.
+DR   PRIDE; P49257; -.
+DR   DNASU; 3998; -.
+DR   Ensembl; ENST00000251047; ENSP00000251047; ENSG00000074695.
+DR   GeneID; 3998; -.
+DR   KEGG; hsa:3998; -.
+DR   UCSC; uc002lhz.1; human.
+DR   CTD; 3998; -.
+DR   GeneCards; GC18M056969; -.
+DR   H-InvDB; HIX0014483; -.
+DR   HGNC; HGNC:6631; LMAN1.
+DR   HPA; HPA002320; -.
+DR   MIM; 227300; phenotype.
+DR   MIM; 601567; gene.
+DR   neXtProt; NX_P49257; -.
+DR   Orphanet; 35909; Combined deficiency of factor V and factor VIII.
+DR   PharmGKB; PA30399; -.
+DR   eggNOG; NOG292314; -.
+DR   GeneTree; ENSGT00530000062977; -.
+DR   HOVERGEN; HBG052332; -.
+DR   InParanoid; P49257; -.
+DR   KO; K10080; -.
+DR   OMA; GTVPFWA; -.
+DR   OrthoDB; EOG4NCMCM; -.
+DR   PhylomeDB; P49257; -.
+DR   Reactome; REACT_17015; Metabolism of proteins.
+DR   DrugBank; DB00025; Antihemophilic Factor.
+DR   NextBio; 15688; -.
+DR   ArrayExpress; P49257; -.
+DR   Bgee; P49257; -.
+DR   Genevestigator; P49257; -.
+DR   GermOnline; ENSG00000074695; Homo sapiens.
+DR   GO; GO:0005789; C:endoplasmic reticulum membrane; TAS:ProtInc.
+DR   GO; GO:0033116; C:endoplasmic reticulum-Golgi intermediate compartment membrane; IEA:UniProtKB-SubCell.
+DR   GO; GO:0012507; C:ER to Golgi transport vesicle membrane; TAS:Reactome.
+DR   GO; GO:0000139; C:Golgi membrane; TAS:ProtInc.
+DR   GO; GO:0016021; C:integral to membrane; TAS:ProtInc.
+DR   GO; GO:0005537; F:mannose binding; TAS:ProtInc.
+DR   GO; GO:0046872; F:metal ion binding; IEA:UniProtKB-KW.
+DR   GO; GO:0051082; F:unfolded protein binding; TAS:ProtInc.
+DR   GO; GO:0007596; P:blood coagulation; TAS:ProtInc.
+DR   GO; GO:0006888; P:ER to Golgi vesicle-mediated transport; TAS:ProtInc.
+DR   GO; GO:0007030; P:Golgi organization; IMP:UniProtKB.
+DR   GO; GO:0010638; P:positive regulation of organelle organization; IMP:UniProtKB.
+DR   GO; GO:0043687; P:post-translational protein modification; TAS:Reactome.
+DR   GO; GO:0006457; P:protein folding; TAS:ProtInc.
+DR   GO; GO:0018279; P:protein N-linked glycosylation via asparagine; TAS:Reactome.
+DR   GO; GO:0015031; P:protein transport; IEA:UniProtKB-KW.
+DR   InterPro; IPR008985; ConA-like_lec_gl.
+DR   InterPro; IPR013320; ConA-like_subgrp.
+DR   InterPro; IPR005052; Lectin_leg.
+DR   Gene3D; G3DSA:2.60.120.200; ConA_like_subgrp; 1.
+DR   PANTHER; PTHR12223; Lectin_leg; 1.
+DR   Pfam; PF03388; Lectin_leg-like; 1.
+DR   SUPFAM; SSF49899; ConA_like_lec_gl; 1.
+DR   PROSITE; PS51328; L_LECTIN_LIKE; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Complete proteome; Direct protein sequencing;
+KW   Disulfide bond; Endoplasmic reticulum; ER-Golgi transport;
+KW   Golgi apparatus; Lectin; Membrane; Metal-binding; Polymorphism;
+KW   Protein transport; Reference proteome; Signal; Transmembrane;
+KW   Transmembrane helix; Transport.
+FT   SIGNAL        1     30
+FT   CHAIN        31    510       Protein ERGIC-53.
+FT                                /FTId=PRO_0000017660.
+FT   TOPO_DOM     31    477       Lumenal (Potential).
+FT   TRANSMEM    478    498       Helical; (Potential).
+FT   TOPO_DOM    499    510       Cytoplasmic (Potential).
+FT   DOMAIN       44    267       L-type lectin-like.
+FT   REGION      251    253       Carbohydrate binding (By similarity).
+FT   MOTIF       509    510       ER export motif.
+FT   METAL       152    152       Calcium.
+FT   METAL       154    154       Calcium; via carbonyl oxygen.
+FT   METAL       156    156       Calcium.
+FT   METAL       181    181       Calcium.
+FT   BINDING      88     88       Carbohydrate (By similarity).
+FT   BINDING     121    121       Carbohydrate (By similarity).
+FT   BINDING     156    156       Carbohydrate (By similarity).
+FT   BINDING     178    178       Carbohydrate (By similarity).
+FT   SITE        501    501       Required for ER export.
+FT   DISULFID    190    230
+FT   DISULFID    466    466       Interchain.
+FT   DISULFID    475    475       Interchain.
+FT   VARIANT      14     14       R -> Q (in dbSNP:rs1043302).
+FT                                /FTId=VAR_013703.
+FT   VARIANT      39     39       V -> A (in dbSNP:rs33926449).
+FT                                /FTId=VAR_013704.
+FT   VARIANT     355    355       I -> T (in dbSNP:rs3737392).
+FT                                /FTId=VAR_049770.
+FT   VARIANT     410    410       M -> L (in dbSNP:rs2298711).
+FT                                /FTId=VAR_013705.
+FT   CONFLICT    153    153       S -> T (in Ref. 1; CAA50653).
+FT   STRAND       43     46
+FT   HELIX        48     50
+FT   STRAND       67     69
+FT   STRAND       80     83
+FT   STRAND       93     97
+FT   STRAND      102    113
+FT   STRAND      150    152
+FT   STRAND      163    167
+FT   HELIX       178    180
+FT   STRAND      187    191
+FT   STRAND      201    208
+FT   STRAND      211    217
+FT   STRAND      228    235
+FT   STRAND      256    268
+SQ   SEQUENCE   510 AA;  57549 MW;  B87EF117C0CD386C CRC64;
+     MAGSRQRGLR ARVRPLFCAL LLSLGRFVRG DGVGGDPAVA LPHRRFEYKY SFKGPHLVQS
+     DGTVPFWAHA GNAIPSSDQI RVAPSLKSQR GSVWTKTKAA FENWEVEVTF RVTGRGRIGA
+     DGLAIWYAEN QGLEGPVFGS ADLWNGVGIF FDSFDNDGKK NNPAIVIIGN NGQIHYDHQN
+     DGASQALASC QRDFRNKPYP VRAKITYYQN TLTVMINNGF TPDKNDYEFC AKVENMIIPA
+     QGHFGISAAT GGLADDHDVL SFLTFQLTEP GKEPPTPDKE ISEKEKEKYQ EEFEHFQQEL
+     DKKKEEFQKG HPDLQGQPAE EIFESVGDRE LRQVFEGQNR IHLEIKQLNR QLDMILDEQR
+     RYVSSLTEEI SKRGAGMPGQ HGQITQQELD TVVKTQHEIL RQVNEMKNSM SETVRLVSGM
+     QHPGSAGGVY ETTQHFIDIK EHLHIVKRDI DNLVQRNMPS NEKPKCPELP PFPSCLSTVH
+     FIIFVVVQTV LFIGYIMYRS QQEAAAKKFF
+//

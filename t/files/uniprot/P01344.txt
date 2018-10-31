@@ -1,0 +1,509 @@
+ID   IGF2_HUMAN              Reviewed;         180 AA.
+AC   P01344; B3KX48; B7WP08; P78449; Q14299; Q1WM26; Q9UC68; Q9UC69;
+DT   21-JUL-1986, integrated into UniProtKB/Swiss-Prot.
+DT   21-JUL-1986, sequence version 1.
+DT   21-MAR-2012, entry version 163.
+DE   RecName: Full=Insulin-like growth factor II;
+DE            Short=IGF-II;
+DE   AltName: Full=Somatomedin-A;
+DE   Contains:
+DE     RecName: Full=Insulin-like growth factor II;
+DE   Contains:
+DE     RecName: Full=Insulin-like growth factor II Ala-25 Del;
+DE   Contains:
+DE     RecName: Full=Preptin;
+DE   Flags: Precursor;
+GN   Name=IGF2; ORFNames=PP1446;
+OS   Homo sapiens (Human).
+OC   Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+OC   Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+OC   Catarrhini; Hominidae; Homo.
+OX   NCBI_TaxID=9606;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] (ISOFORM 1).
+RX   MEDLINE=84295593; PubMed=6382022; DOI=10.1038/310777a0;
+RA   Dull T.J., Gray A., Hayflick J.S., Ullrich A.;
+RT   "Insulin-like growth factor II precursor gene organization in relation
+RT   to insulin gene family.";
+RL   Nature 310:777-781(1984).
+RN   [2]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=84295592; PubMed=6382021; DOI=10.1038/310775a0;
+RA   Bell G.I., Merryweather J.P., Sanchez-Pescador R., Stempien M.M.,
+RA   Priestley L., Scott J., Rall L.B.;
+RT   "Sequence of a cDNA clone encoding human preproinsulin-like growth
+RT   factor II.";
+RL   Nature 310:775-777(1984).
+RN   [3]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=88158110; PubMed=2450353; DOI=10.1073/pnas.85.6.1947;
+RA   Shen S.-J., Daimon M., Wang C.-Y., Jansen M., Ilan J.;
+RT   "Isolation of an insulin-like growth factor II cDNA with a unique 5'
+RT   untranslated region from human placenta.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 85:1947-1951(1988).
+RN   [4]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] (ISOFORM 1).
+RX   MEDLINE=86108862; PubMed=3002851; DOI=10.1016/0014-5793(86)80156-9;
+RA   de Pagter-Holthuizen P., van Schaik F.M.A., Verduijn G.M.,
+RA   van Ommen G.J.B., Bouma B.N., Jansen M., Sussenbach J.S.;
+RT   "Organization of the human genes for insulin-like growth factors I and
+RT   II.";
+RL   FEBS Lett. 195:179-184(1986).
+RN   [5]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=87317645; PubMed=3476948; DOI=10.1073/pnas.84.18.6330;
+RA   Irminger J.C., Rosen K.M., Humbel R.E., Villa-Komaroff L.;
+RT   "Tissue-specific expression of insulin-like growth factor II mRNAs
+RT   with distinct 5' untranslated regions.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 84:6330-6334(1987).
+RN   [6]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=88065102; PubMed=3683205;
+RA   Rall L.B., Scott J., Bell G.I.;
+RT   "Human insulin-like growth factor I and II messenger RNA: isolation of
+RT   complementary DNA and analysis of expression.";
+RL   Methods Enzymol. 146:239-248(1987).
+RN   [7]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORMS 1 AND 2).
+RX   MEDLINE=85102019; PubMed=3881277; DOI=10.1016/0014-5793(85)80527-5;
+RA   Jansen M., van Schaik F.M.A., van Tol H., van den Brande J.L.,
+RA   Sussenbach J.S.;
+RT   "Nucleotide sequences of cDNAs encoding precursors of human insulin-
+RT   like growth factor II (IGF-II) and an IGF-II variant.";
+RL   FEBS Lett. 179:243-246(1985).
+RN   [8]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   MEDLINE=95247546; PubMed=7730145;
+RA   Hagiwara K., Kobayashi T., Tobita M., Kikyo N., Yazaki Y., Okabe T.;
+RT   "Isolation of a cDNA for a growth factor of vascular endothelial cells
+RT   from human lung cancer cells: its identity with insulin-like growth
+RT   factor II.";
+RL   Jpn. J. Cancer Res. 86:202-207(1995).
+RN   [9]
+RP   NUCLEOTIDE SEQUENCE [MRNA] (ISOFORM 1).
+RX   PubMed=16531418; DOI=10.1093/hmg/ddl041;
+RA   Monk D., Sanches R., Arnaud P., Apostolidou S., Hills F.A.,
+RA   Abu-Amero S., Murrell A., Friess H., Reik W., Stanier P.,
+RA   Constancia M., Moore G.E.;
+RT   "Imprinting of IGF2 P0 transcript and novel alternatively spliced INS-
+RT   IGF2 isoforms show differences between mouse and human.";
+RL   Hum. Mol. Genet. 15:1259-1269(2006).
+RN   [10]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RX   PubMed=15498874; DOI=10.1073/pnas.0404089101;
+RA   Wan D., Gong Y., Qin W., Zhang P., Li J., Wei L., Zhou X., Li H.,
+RA   Qiu X., Zhong F., He L., Yu J., Yao G., Jiang H., Qian L., Yu Y.,
+RA   Shu H., Chen X., Xu H., Guo M., Pan Z., Chen Y., Ge C., Yang S.,
+RA   Gu J.;
+RT   "Large-scale cDNA transfection screening for genes related to cancer
+RT   development and progression.";
+RL   Proc. Natl. Acad. Sci. U.S.A. 101:15724-15729(2004).
+RN   [11]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RA   Kalnine N., Chen X., Rolfs A., Halleck A., Hines L., Eisenstein S.,
+RA   Koundinya M., Raphael J., Moreira D., Kelley T., LaBaer J., Lin Y.,
+RA   Phelan M., Farmer A.;
+RT   "Cloning of human full-length CDSs in BD Creator(TM) system donor
+RT   vector.";
+RL   Submitted (MAY-2003) to the EMBL/GenBank/DDBJ databases.
+RN   [12]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA].
+RG   SeattleSNPs variation discovery resource;
+RL   Submitted (MAY-2002) to the EMBL/GenBank/DDBJ databases.
+RN   [13]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Cerebellum;
+RX   PubMed=14702039; DOI=10.1038/ng1285;
+RA   Ota T., Suzuki Y., Nishikawa T., Otsuki T., Sugiyama T., Irie R.,
+RA   Wakamatsu A., Hayashi K., Sato H., Nagai K., Kimura K., Makita H.,
+RA   Sekine M., Obayashi M., Nishi T., Shibahara T., Tanaka T., Ishii S.,
+RA   Yamamoto J., Saito K., Kawai Y., Isono Y., Nakamura Y., Nagahari K.,
+RA   Murakami K., Yasuda T., Iwayanagi T., Wagatsuma M., Shiratori A.,
+RA   Sudo H., Hosoiri T., Kaku Y., Kodaira H., Kondo H., Sugawara M.,
+RA   Takahashi M., Kanda K., Yokoi T., Furuya T., Kikkawa E., Omura Y.,
+RA   Abe K., Kamihara K., Katsuta N., Sato K., Tanikawa M., Yamazaki M.,
+RA   Ninomiya K., Ishibashi T., Yamashita H., Murakawa K., Fujimori K.,
+RA   Tanai H., Kimata M., Watanabe M., Hiraoka S., Chiba Y., Ishida S.,
+RA   Ono Y., Takiguchi S., Watanabe S., Yosida M., Hotuta T., Kusano J.,
+RA   Kanehori K., Takahashi-Fujii A., Hara H., Tanase T.-O., Nomura Y.,
+RA   Togiya S., Komai F., Hara R., Takeuchi K., Arita M., Imose N.,
+RA   Musashino K., Yuuki H., Oshima A., Sasaki N., Aotsuka S.,
+RA   Yoshikawa Y., Matsunawa H., Ichihara T., Shiohata N., Sano S.,
+RA   Moriya S., Momiyama H., Satoh N., Takami S., Terashima Y., Suzuki O.,
+RA   Nakagawa S., Senoh A., Mizoguchi H., Goto Y., Shimizu F., Wakebe H.,
+RA   Hishigaki H., Watanabe T., Sugiyama A., Takemoto M., Kawakami B.,
+RA   Yamazaki M., Watanabe K., Kumagai A., Itakura S., Fukuzumi Y.,
+RA   Fujimori Y., Komiyama M., Tashiro H., Tanigami A., Fujiwara T.,
+RA   Ono T., Yamada K., Fujii Y., Ozaki K., Hirao M., Ohmori Y.,
+RA   Kawabata A., Hikiji T., Kobatake N., Inagaki H., Ikema Y., Okamoto S.,
+RA   Okitani R., Kawakami T., Noguchi S., Itoh T., Shigeta K., Senba T.,
+RA   Matsumura K., Nakajima Y., Mizuno T., Morinaga M., Sasaki M.,
+RA   Togashi T., Oyama M., Hata H., Watanabe M., Komatsu T.,
+RA   Mizushima-Sugano J., Satoh T., Shirai Y., Takahashi Y., Nakagawa K.,
+RA   Okumura K., Nagase T., Nomura N., Kikuchi H., Masuho Y., Yamashita R.,
+RA   Nakai K., Yada T., Nakamura Y., Ohara O., Isogai T., Sugano S.;
+RT   "Complete sequencing and characterization of 21,243 full-length human
+RT   cDNAs.";
+RL   Nat. Genet. 36:40-45(2004).
+RN   [14]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RX   PubMed=16554811; DOI=10.1038/nature04632;
+RA   Taylor T.D., Noguchi H., Totoki Y., Toyoda A., Kuroki Y., Dewar K.,
+RA   Lloyd C., Itoh T., Takeda T., Kim D.-W., She X., Barlow K.F.,
+RA   Bloom T., Bruford E., Chang J.L., Cuomo C.A., Eichler E.,
+RA   FitzGerald M.G., Jaffe D.B., LaButti K., Nicol R., Park H.-S.,
+RA   Seaman C., Sougnez C., Yang X., Zimmer A.R., Zody M.C., Birren B.W.,
+RA   Nusbaum C., Fujiyama A., Hattori M., Rogers J., Lander E.S.,
+RA   Sakaki Y.;
+RT   "Human chromosome 11 DNA sequence and analysis including novel gene
+RT   identification.";
+RL   Nature 440:497-500(2006).
+RN   [15]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RA   Mural R.J., Istrail S., Sutton G.G., Florea L., Halpern A.L.,
+RA   Mobarry C.M., Lippert R., Walenz B., Shatkay H., Dew I., Miller J.R.,
+RA   Flanigan M.J., Edwards N.J., Bolanos R., Fasulo D., Halldorsson B.V.,
+RA   Hannenhalli S., Turner R., Yooseph S., Lu F., Nusskern D.R.,
+RA   Shue B.C., Zheng X.H., Zhong F., Delcher A.L., Huson D.H.,
+RA   Kravitz S.A., Mouchard L., Reinert K., Remington K.A., Clark A.G.,
+RA   Waterman M.S., Eichler E.E., Adams M.D., Hunkapiller M.W., Myers E.W.,
+RA   Venter J.C.;
+RL   Submitted (JUL-2005) to the EMBL/GenBank/DDBJ databases.
+RN   [16]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] (ISOFORM 1).
+RC   TISSUE=Muscle;
+RX   PubMed=15489334; DOI=10.1101/gr.2596504;
+RG   The MGC Project Team;
+RT   "The status, quality, and expansion of the NIH full-length cDNA
+RT   project: the Mammalian Gene Collection (MGC).";
+RL   Genome Res. 14:2121-2127(2004).
+RN   [17]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 103-180.
+RX   MEDLINE=89000779; PubMed=3167054; DOI=10.1016/0167-4781(88)90124-8;
+RA   de Pagter-Holthuizen P., van der Kammen R.A., Jansen M.,
+RA   van Schaik F.M.A., Sussenbach J.S.;
+RT   "Differential expression of the human insulin-like growth factor II
+RT   gene. Characterization of the IGF-II mRNAs and an mRNA encoding a
+RT   putative IGF-II-associated protein.";
+RL   Biochim. Biophys. Acta 950:282-295(1988).
+RN   [18]
+RP   NUCLEOTIDE SEQUENCE [MRNA] OF 1-161 (ISOFORM 2).
+RX   MEDLINE=88005137; PubMed=3653397; DOI=10.1016/0014-5793(87)80216-8;
+RA   le Bouc Y., Noguiez P., Sondermeijer P., Dreyer D., Girard F.,
+RA   Binoux M.;
+RT   "A new 5'-non-coding region for human placental insulin-like growth
+RT   factor II mRNA expression.";
+RL   FEBS Lett. 222:181-185(1987).
+RN   [19]
+RP   NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1-52.
+RC   TISSUE=Liver;
+RX   MEDLINE=88003966; PubMed=3652904;
+RA   Gray A., Tam A.W., Dull T.J., Hayflick J.S., Pintar J., Cavenee W.K.,
+RA   Koufos A., Ullrich A.;
+RT   "Tissue-specific and developmentally regulated transcription of the
+RT   insulin-like growth factor 2 gene.";
+RL   DNA 6:283-295(1987).
+RN   [20]
+RP   PROTEIN SEQUENCE OF 25-91.
+RX   MEDLINE=78191259; PubMed=658418; DOI=10.1016/0014-5793(78)80237-3;
+RA   Rinderknecht E., Humbel R.E.;
+RT   "Primary structure of human insulin-like growth factor II.";
+RL   FEBS Lett. 89:283-286(1978).
+RN   [21]
+RP   PARTIAL PROTEIN SEQUENCE, AND DISULFIDE BONDS.
+RX   MEDLINE=89255428; PubMed=2722836;
+RA   Smith M.C., Cook J.A., Furman T.C., Occolowitz J.L.;
+RT   "Structure and activity dependence of recombinant human insulin-like
+RT   growth factor II on disulfide bond pairing.";
+RL   J. Biol. Chem. 264:9314-9321(1989).
+RN   [22]
+RP   PROTEIN SEQUENCE OF 25-68.
+RX   MEDLINE=95360205; PubMed=7633596; DOI=10.1016/0378-4347(94)00576-Q;
+RA   De Ceuninck F., Willeput J., Corvol M.;
+RT   "Purification and characterization of insulin-like growth factor II
+RT   (IGF II) and an IGF II variant from human placenta.";
+RL   J. Chromatogr. B 666:203-214(1995).
+RN   [23]
+RP   POLYMORPHISM, AND ASSOCIATION WITH WITH BODY MASS INDEX.
+RX   PubMed=11448941; DOI=10.1093/hmg/10.14.1491;
+RA   Gaunt T.R., Cooper J.A., Miller G.J., Day I.N.M., O'Dell S.D.;
+RT   "Positive associations between single nucleotide polymorphisms in the
+RT   IGF2 gene region and body mass index in adult males.";
+RL   Hum. Mol. Genet. 10:1491-1501(2001).
+RN   [24]
+RP   MASS SPECTROMETRY, AND PROTEOLYTIC PROCESSING.
+RX   MEDLINE=22474139; PubMed=12586351; DOI=10.1016/S0014-5793(03)00042-5;
+RA   Nedelkov D., Nelson R.W., Kiernan U.A., Niederkofler E.E., Tubbs K.A.;
+RT   "Detection of bound and free IGF-1 and IGF-2 in human plasma via
+RT   biomolecular interaction analysis mass spectrometry.";
+RL   FEBS Lett. 536:130-134(2003).
+RN   [25]
+RP   MASS SPECTROMETRY, AND PROTEOLYTIC PROCESSING.
+RX   PubMed=15359740; DOI=10.1021/pr0499388;
+RA   Nelson R.W., Nedelkov D., Tubbs K.A., Kiernan U.A.;
+RT   "Quantitative mass spectrometric immunoassay of insulin like growth
+RT   factor 1.";
+RL   J. Proteome Res. 3:851-855(2004).
+RN   [26]
+RP   GLYCOSYLATION AT THR-99.
+RX   MEDLINE=92235026; PubMed=1569071;
+RA   Hudgins W.R., Hampton B., Burgess W.H., Perdue J.F.;
+RT   "The identification of O-glycosylated precursors of insulin-like
+RT   growth factor II.";
+RL   J. Biol. Chem. 267:8153-8160(1992).
+RN   [27]
+RP   OSTEOGENIC FUNCTION OF PREPTIN.
+RX   PubMed=16912056; DOI=10.1152/ajpendo.00642.2005;
+RA   Cornish J., Callon K.E., Bava U., Watson M., Xu X., Lin J.M.,
+RA   Chan V.A., Grey A.B., Naot D., Buchanan C.M., Cooper G.J., Reid I.R.;
+RT   "Preptin, another peptide product of the pancreatic beta-cell, is
+RT   osteogenic in vitro and in vivo.";
+RL   Am. J. Physiol. 292:E117-E122(2007).
+RN   [28]
+RP   INVOLVEMENT IN SRS.
+RX   PubMed=19066168; DOI=10.1136/jmg.2008.061820;
+RA   Bartholdi D., Krajewska-Walasek M., Ounap K., Gaspar H.,
+RA   Chrzanowska K.H., Ilyana H., Kayserili H., Lurie I.W., Schinzel A.,
+RA   Baumer A.;
+RT   "Epigenetic mutations of the imprinted IGF2-H19 domain in Silver-
+RT   Russell syndrome (SRS): results from a large cohort of patients with
+RT   SRS and SRS-like phenotypes.";
+RL   J. Med. Genet. 46:192-197(2009).
+RN   [29]
+RP   GLYCOSYLATION [LARGE SCALE ANALYSIS] AT THR-163, STRUCTURE OF
+RP   CARBOHYDRATES, AND MASS SPECTROMETRY.
+RC   TISSUE=Cerebrospinal fluid;
+RX   PubMed=19838169; DOI=10.1038/nmeth.1392;
+RA   Nilsson J., Rueetschi U., Halim A., Hesse C., Carlsohn E.,
+RA   Brinkmalm G., Larson G.;
+RT   "Enrichment of glycopeptides for glycan structure and attachment site
+RT   identification.";
+RL   Nat. Methods 6:809-811(2009).
+RN   [30]
+RP   3D-STRUCTURE MODELING.
+RX   MEDLINE=83210259; PubMed=6189745;
+RA   Blundell T.L., Bedarkar S., Humbel R.E.;
+RT   "Tertiary structures, receptor binding, and antigenicity of
+RT   insulinlike growth factors.";
+RL   Fed. Proc. 42:2592-2597(1983).
+RN   [31]
+RP   STRUCTURE BY NMR.
+RX   MEDLINE=95080243; PubMed=7527339;
+RA   Terasawa H., Kohda D., Hatanaka H., Nagata K., Higashihashi N.,
+RA   Fujiwara H., Sakano K., Inagaki F.;
+RT   "Solution structure of human insulin-like growth factor II;
+RT   recognition sites for receptors and binding proteins.";
+RL   EMBO J. 13:5590-5597(1994).
+CC   -!- FUNCTION: The insulin-like growth factors possess growth-promoting
+CC       activity. In vitro, they are potent mitogens for cultured cells.
+CC       IGF-II is influenced by placental lactogen and may play a role in
+CC       fetal development.
+CC   -!- FUNCTION: Preptin undergoes glucose-mediated co-secretion with
+CC       insulin, and acts as physiological amplifier of glucose-mediated
+CC       insulin secretion. Exhibits osteogenic properties by increasing
+CC       osteoblast mitogenic activity through phosphoactivation of MAPK1
+CC       and MAPK3.
+CC   -!- SUBCELLULAR LOCATION: Secreted.
+CC   -!- ALTERNATIVE PRODUCTS:
+CC       Event=Alternative splicing; Named isoforms=2;
+CC       Name=1;
+CC         IsoId=P01344-1; Sequence=Displayed;
+CC       Name=2;
+CC         IsoId=P01344-2; Sequence=VSP_002708;
+CC   -!- PTM: O-glycosylated with a core 1 or possibly core 8 glycan.
+CC   -!- MASS SPECTROMETRY: Mass=7469.4; Method=MALDI; Range=25-91;
+CC       Source=PubMed:12586351, PubMed:15359740;
+CC   -!- MASS SPECTROMETRY: Mass=7398.3; Method=MALDI; Range=26-91;
+CC       Source=PubMed:12586351, PubMed:15359740;
+CC   -!- POLYMORPHISM: Genetic variations in IGF2 are associated with body
+CC       mass index (BMI). The BMI is a statistical measurement which
+CC       compares a person's weight and height.
+CC   -!- DISEASE: Epigenetic changes of DNA hypomethylation in IGF2 are a
+CC       cause of Silver-Russell syndrome (SRS) [MIM:180860]. A clinically
+CC       heterogeneous condition characterized by severe intrauterine
+CC       growth retardation, poor postnatal growth, craniofacial features
+CC       such as a triangular shaped face and a broad forehead, body
+CC       asymmetry, and a variety of minor malformations. The phenotypic
+CC       expression changes during childhood and adolescence, with the
+CC       facial features and asymmetry usually becoming more subtle with
+CC       age.
+CC   -!- SIMILARITY: Belongs to the insulin family.
+CC   -!- WEB RESOURCE: Name=GeneReviews;
+CC       URL="http://www.ncbi.nlm.nih.gov/sites/GeneTests/lab/gene/IGF2";
+CC   -!- WEB RESOURCE: Name=Wikipedia; Note=Insulin-like growth factor 2
+CC       entry;
+CC       URL="http://en.wikipedia.org/wiki/Insulin-like_growth_factor_2";
+CC   -!- WEB RESOURCE: Name=SeattleSNPs;
+CC       URL="http://pga.gs.washington.edu/data/igf2/";
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; X03562; CAA27249.1; -; Genomic_DNA.
+DR   EMBL; X00910; CAA25426.1; -; mRNA.
+DR   EMBL; J03242; AAA52545.1; -; mRNA.
+DR   EMBL; X03425; CAA27155.1; -; Genomic_DNA.
+DR   EMBL; X03426; CAA27156.1; -; Genomic_DNA.
+DR   EMBL; X03427; CAA27157.1; -; Genomic_DNA.
+DR   EMBL; M17426; AAA60088.1; -; mRNA.
+DR   EMBL; M29645; AAA52544.1; -; mRNA.
+DR   EMBL; M17863; AAA52443.1; ALT_SEQ; mRNA.
+DR   EMBL; S77035; AAB34155.1; -; mRNA.
+DR   EMBL; DQ104203; ABD93451.1; -; mRNA.
+DR   EMBL; AF217977; AAG17220.1; -; mRNA.
+DR   EMBL; BT007013; AAP35659.1; -; mRNA.
+DR   EMBL; AF517226; AAM51825.1; -; Genomic_DNA.
+DR   EMBL; AC132217; -; NOT_ANNOTATED_CDS; Genomic_DNA.
+DR   EMBL; AK126688; BAG54360.1; -; mRNA.
+DR   EMBL; CH471158; EAX02485.1; -; Genomic_DNA.
+DR   EMBL; BC000531; AAH00531.1; -; mRNA.
+DR   EMBL; X07868; CAA30717.1; -; Genomic_DNA.
+DR   EMBL; X06159; CAA29516.1; -; mRNA.
+DR   EMBL; X06160; CAA29517.1; -; Transcribed_RNA.
+DR   EMBL; X06161; CAA29518.1; -; mRNA.
+DR   EMBL; M22373; AAA52536.1; -; Genomic_DNA.
+DR   IPI; IPI00001611; -.
+DR   IPI; IPI00940065; -.
+DR   PIR; B23614; IGHU2.
+DR   PIR; I67610; I67610.
+DR   PIR; S02423; S02423.
+DR   RefSeq; NP_000603.1; NM_000612.4.
+DR   RefSeq; NP_001007140.2; NM_001007139.4.
+DR   UniGene; Hs.272259; -.
+DR   PDB; 1GF2; Model; -; A=25-91.
+DR   PDB; 1IGL; NMR; -; A=25-91.
+DR   PDB; 2V5P; X-ray; 4.10 A; C/D=25-91.
+DR   PDB; 3E4Z; X-ray; 2.28 A; C/D=25-91.
+DR   PDB; 3KR3; X-ray; 2.20 A; D=25-91.
+DR   PDBsum; 1GF2; -.
+DR   PDBsum; 1IGL; -.
+DR   PDBsum; 2V5P; -.
+DR   PDBsum; 3E4Z; -.
+DR   PDBsum; 3KR3; -.
+DR   ProteinModelPortal; P01344; -.
+DR   SMR; P01344; 29-88.
+DR   DIP; DIP-29508N; -.
+DR   DIP; DIP-6026N; -.
+DR   MINT; MINT-6380943; -.
+DR   STRING; P01344; -.
+DR   PhosphoSite; P01344; -.
+DR   DMDM; 124255; -.
+DR   PRIDE; P01344; -.
+DR   DNASU; 3481; -.
+DR   Ensembl; ENST00000300632; ENSP00000300632; ENSG00000167244.
+DR   Ensembl; ENST00000337883; ENSP00000338297; ENSG00000167244.
+DR   Ensembl; ENST00000381389; ENSP00000370796; ENSG00000167244.
+DR   Ensembl; ENST00000381395; ENSP00000370802; ENSG00000167244.
+DR   Ensembl; ENST00000416167; ENSP00000414497; ENSG00000167244.
+DR   Ensembl; ENST00000418738; ENSP00000402047; ENSG00000167244.
+DR   GeneID; 3481; -.
+DR   KEGG; hsa:3481; -.
+DR   UCSC; uc001lvg.1; human.
+DR   CTD; 3481; -.
+DR   GeneCards; GC11M002113; -.
+DR   H-InvDB; HIX0128667; -.
+DR   HGNC; HGNC:5466; IGF2.
+DR   HPA; CAB024999; -.
+DR   HPA; HPA007993; -.
+DR   MIM; 147470; gene+phenotype.
+DR   MIM; 180860; phenotype.
+DR   neXtProt; NX_P01344; -.
+DR   Orphanet; 231117; Beckwith-Wiedemann syndrome due to imprinting defect of 11p15.
+DR   Orphanet; 2128; Hemihypertrophy.
+DR   Orphanet; 231144; Silver-Russell syndrome due to 11p15 microduplication.
+DR   Orphanet; 231140; Silver-Russell syndrome due to imprinting defect of 11p15.
+DR   eggNOG; NOG44017; -.
+DR   GeneTree; ENSGT00530000063856; -.
+DR   HOGENOM; HBG505321; -.
+DR   HOVERGEN; HBG006137; -.
+DR   KO; K13769; -.
+DR   OrthoDB; EOG4HMJBH; -.
+DR   Reactome; REACT_116125; Disease.
+DR   NextBio; 13686; -.
+DR   PMAP-CutDB; P01344; -.
+DR   ArrayExpress; P01344; -.
+DR   Bgee; P01344; -.
+DR   CleanEx; HS_IGF2; -.
+DR   Genevestigator; P01344; -.
+DR   GermOnline; ENSG00000167244; Homo sapiens.
+DR   GO; GO:0005615; C:extracellular space; IEA:InterPro.
+DR   GO; GO:0008083; F:growth factor activity; IDA:BHF-UCL.
+DR   GO; GO:0005179; F:hormone activity; IEA:UniProtKB-KW.
+DR   GO; GO:0005158; F:insulin receptor binding; IPI:BHF-UCL.
+DR   GO; GO:0005159; F:insulin-like growth factor receptor binding; TAS:ProtInc.
+DR   GO; GO:0043539; F:protein serine/threonine kinase activator activity; ISS:BHF-UCL.
+DR   GO; GO:0030546; F:receptor activator activity; ISS:BHF-UCL.
+DR   GO; GO:0006006; P:glucose metabolic process; IEA:UniProtKB-KW.
+DR   GO; GO:0038028; P:insulin receptor signaling pathway via phosphatidylinositol 3-kinase cascade; ISS:BHF-UCL.
+DR   GO; GO:0001503; P:ossification; IEA:UniProtKB-KW.
+DR   GO; GO:0042104; P:positive regulation of activated T cell proliferation; IDA:BHF-UCL.
+DR   GO; GO:0051781; P:positive regulation of cell division; IEA:UniProtKB-KW.
+DR   GO; GO:2000467; P:positive regulation of glycogen (starch) synthase activity; ISS:BHF-UCL.
+DR   GO; GO:0045725; P:positive regulation of glycogen biosynthetic process; ISS:BHF-UCL.
+DR   GO; GO:0046628; P:positive regulation of insulin receptor signaling pathway; IDA:BHF-UCL.
+DR   GO; GO:0043410; P:positive regulation of MAPK cascade; IDA:BHF-UCL.
+DR   GO; GO:0045840; P:positive regulation of mitosis; IDA:BHF-UCL.
+DR   GO; GO:0050731; P:positive regulation of peptidyl-tyrosine phosphorylation; ISS:BHF-UCL.
+DR   GO; GO:0051897; P:positive regulation of protein kinase B signaling cascade; IDA:BHF-UCL.
+DR   GO; GO:0006349; P:regulation of gene expression by genetic imprinting; TAS:ProtInc.
+DR   GO; GO:0006355; P:regulation of transcription, DNA-dependent; NAS:BHF-UCL.
+DR   GO; GO:0001501; P:skeletal system development; TAS:ProtInc.
+DR   InterPro; IPR022334; IGF2.
+DR   InterPro; IPR013576; IGF2_C.
+DR   InterPro; IPR016179; Insulin-like.
+DR   InterPro; IPR022350; Insulin-like_growth_factor.
+DR   InterPro; IPR022353; Insulin_CS.
+DR   InterPro; IPR022352; Insulin_family.
+DR   Gene3D; G3DSA:1.10.100.10; Ins/IGF/relaxin; 1.
+DR   Pfam; PF08365; IGF2_C; 1.
+DR   Pfam; PF00049; Insulin; 2.
+DR   PRINTS; PR02002; INSLNLIKEGF.
+DR   PRINTS; PR02006; INSLNLIKEGF2.
+DR   PRINTS; PR00276; INSULINFAMLY.
+DR   ProDom; PD005188; IGF2_C; 1.
+DR   SMART; SM00078; IlGF; 1.
+DR   SUPFAM; SSF56994; Insulin-like; 1.
+DR   PROSITE; PS00262; INSULIN; 1.
+PE   1: Evidence at protein level;
+KW   3D-structure; Alternative splicing; Carbohydrate metabolism;
+KW   Cleavage on pair of basic residues; Complete proteome;
+KW   Direct protein sequencing; Disulfide bond; Dwarfism;
+KW   Glucose metabolism; Glycoprotein; Growth factor; Hormone; Mitogen;
+KW   Osteogenesis; Polymorphism; Reference proteome; Secreted; Signal.
+FT   SIGNAL        1     24
+FT   CHAIN        25     91       Insulin-like growth factor II.
+FT                                /FTId=PRO_0000015717.
+FT   CHAIN        26     91       Insulin-like growth factor II Ala-25 Del.
+FT                                /FTId=PRO_0000015718.
+FT   PROPEP       92    180       E peptide.
+FT                                /FTId=PRO_0000015719.
+FT   PEPTIDE      93    126       Preptin.
+FT                                /FTId=PRO_0000370376.
+FT   REGION       25     52       B.
+FT   REGION       53     64       C.
+FT   REGION       65     85       A.
+FT   REGION       86     91       D.
+FT   CARBOHYD     99     99       O-linked (GalNAc...).
+FT   CARBOHYD    163    163       O-linked (GalNAc...).
+FT   DISULFID     33     71
+FT   DISULFID     45     84
+FT   DISULFID     70     75
+FT   VAR_SEQ      53     53       S -> RLPG (in isoform 2).
+FT                                /FTId=VSP_002708.
+FT   VARIANT     120    120       K -> N (in dbSNP:rs14367).
+FT                                /FTId=VAR_011959.
+FT   VARIANT     173    173       P -> Q (in dbSNP:rs1050342).
+FT                                /FTId=VAR_011960.
+FT   VARIANT     180    180       K -> N (in dbSNP:rs12993).
+FT                                /FTId=VAR_011961.
+FT   CONFLICT      3      3       I -> M (in Ref. 6; AAA52544).
+FT   CONFLICT    107    110       RYPV -> EIPL (in Ref. 1; CAA27249).
+FT   CONFLICT    147    147       E -> ELE (in Ref. 5).
+FT   HELIX        35     44
+FT   HELIX        66     70
+FT   HELIX        78     81
+SQ   SEQUENCE   180 AA;  20140 MW;  C1B0EB1E016BA37A CRC64;
+     MGIPMGKSML VLLTFLAFAS CCIAAYRPSE TLCGGELVDT LQFVCGDRGF YFSRPASRVS
+     RRSRGIVEEC CFRSCDLALL ETYCATPAKS ERDVSTPPTV LPDNFPRYPV GKFFQYDTWK
+     QSTQRLRRGL PALLRARRGH VLAKELEAFR EAKRHRPLIA LPTQDPAHGG APPEMASNRK
+//

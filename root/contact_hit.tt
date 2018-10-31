@@ -1,0 +1,518 @@
+[%
+  USE JSON (convert_blessed => 1);
+
+  ch             = json.results.thing.contact_hit;
+  id_ch          = ch.id;
+  rc             = ch.res_contact_table_list;
+  contact        = ch.contact;
+  seq_a1         = ch.seq_a1;
+  seq_b1         = ch.seq_b1;
+  seq_a2         = ch.seq_a2;
+  seq_b2         = ch.seq_b2;
+  fi_a2          = ch.contact.frag_inst1;
+  f_a2           = fi_a2.frag;
+  fi_b2          = ch.contact.frag_inst2;
+  f_b2           = fi_b2.frag;
+  pdb            = f_a2.pdb;
+  aln_a          = ch.hsp_a.aln;
+  aln_b          = ch.hsp_b.aln;
+  fist_to_pdb_a2 = f_a2.fist_to_pdb;
+  fist_to_pdb_b2 = f_b2.fist_to_pdb;
+  id_chem_a      = f_a2.chemical_type;
+  type_chem_a    = f_a2.type_chem;
+  id_chem_b      = f_b2.chemical_type;
+  type_chem_b    = f_b2.type_chem;
+
+  IF json.results.thing.sites.${ch.id_seq_a1}.defined;
+    sites_a1 = json.results.thing.sites.${ch.id_seq_a1};
+    posns_a1 = sites_a1.keys.nsort;
+  ELSE;
+    sites_a1 = {};
+    posns_a1 = [];
+  END;
+  
+  IF json.results.thing.sites.${ch.id_seq_b1}.defined;
+    sites_b1 = json.results.thing.sites.${ch.id_seq_b1};
+    posns_b1 = sites_b1.keys.nsort;
+  ELSE;
+    sites_b1 = {};
+    posns_b1 = [];
+  END;
+%]
+
+<div class="twoColumns">
+  <div class="column">
+    <div class="contents">
+[% INCLUDE chem_desc.tt type_chem=type_chem_a id_chem=id_chem_a seq=seq_a1 suffix="_a1" posns=posns_a1 id_seq_b1=ch.id_seq_b1 id_ch=id_ch %]
+[% INCLUDE template_desc.tt type_chem=type_chem_a id_chem=id_chem_a seq=seq_a2 frag=f_a2 pdb=pdb assembly=fi_a2.assembly model=fi_a2.model start2=ch.start_a2 end2=ch.end_a2 pcid=ch.pcid_a e_value=ch.e_value_a suffix="_a2" %]
+
+[% 
+  ids_seqs = [seq_a1.id, seq_a2.id];
+  names = {};
+  names.${seq_a1.id} = seq_a1.name;
+  names.${seq_a2.id} = pdb.idcode _ '-' _ fi_a2.assembly _ '-' _ fi_a2.model _ ' ' _ f_a2.dom;
+  posns = {};
+  posns.${seq_a1.id} = posns_a1;
+  "An alignment between protein and template is given below.";
+  # INCLUDE alignment.tt aln=aln_a pcid=ch.pcid_a e_value=ch.e_value_a ids_seqs=ids_seqs names=names posns=posns;
+%]
+   </div>
+ </div>
+ <div class="column">
+   <div class="contents">
+[% INCLUDE chem_desc.tt type_chem=type_chem_b id_chem=id_chem_b seq=seq_b1 suffix="_b1" posns=posns_b1 %]
+[% INCLUDE template_desc.tt type_chem=type_chem_b id_chem=id_chem_b seq=seq_b2 frag=f_b2 pdb=pdb assembly=fi_b2.assembly model=fi_b2.model start2=ch.start_b2 end2=ch.end_b2 pcid=ch.pcid_b e_value=ch.e_value_a suffix="_b2" %]
+
+[% 
+  ids_seqs = [seq_b1.id, seq_b2.id];
+  names = {};
+  names.${seq_b1.id} = seq_b1.name;
+  names.${seq_b2.id} = pdb.idcode _ '-' _ fi_b2.assembly _ '-' _ fi_b2.model _ ' ' _ f_b2.dom;
+  posns = {};
+  posns.${seq_b1.id} = posns_b1;
+  # INCLUDE alignment.tt aln=ch.hsp_b.aln pcid=ch.pcid_b e_value=ch.e_value_b ids_seqs=ids_seqs names=names posns=posns;
+%]
+  </div>
+ </div>
+</div>
+
+[%
+#IF fi_a2.assembly == 0;
+#  fn_pdb = "/static/data/pdb/" _ pdb.idcode.substr(1, 2) _ "/pdb" _ pdb.idcode _ ".ent.gz; restrict model = 1";
+#ELSE;
+#  fn_pdb = "/static/data/pdb-biounit/" _ pdb.idcode.substr(1, 2) _ "/" _ pdb.idcode _ ".pdb" _ fi_a2.assembly _ ".gz; models all;";
+#END;
+
+IF fi_a2.assembly == 0;
+  fn_pdb = "http://files.rcsb.org/view/" _ pdb.idcode _ ".pdb; restrict model = 1";
+ELSE;
+  fn_pdb = "http://files.rcsb.org/view/" _ pdb.idcode _ ".pdb" _ fi_a2.assembly _ "; models all";
+END;
+
+jsmol_script = [
+  "load ASYNC ${fn_pdb}",
+  "background white",
+  "colour labels black",
+  "background labels lightgrey",
+  "set showHydrogens false",
+  "wireframe off",
+  "spacefill off",
+  "colour [xEEEEEE]",
+  "backbone 50",
+  "select (hetero and !hoh)",
+  "wireframe 50",
+  "spacefill 100",
+  "colour cpk",
+  "select nucleic",
+  "colour cpk",
+
+  "define A2 $fi_a2.jmol_str",
+  "define B2 $fi_b2.jmol_str",
+
+  "select A2",
+  "colour [x${colours.A2}]",
+
+  "select B2",
+  "colour [x${colours.B2}]",
+];
+
+# Jmol selection strings for sidechain-sidechain contact residues involving sites or user-given positions
+jsmol_strs = ch.jmol_ss_str(posns_a1, sites_a1, posns_b1, sites_b1);
+site_resns_a2 = jsmol_strs.0;
+atomdiffs_a2 = jsmol_strs.1;
+lcas_a2 = jsmol_strs.2;
+contact_resns_a2 = jsmol_strs.3;
+
+site_resns_b2 = jsmol_strs.4;
+atomdiffs_b2 = jsmol_strs.5;
+lcas_b2 = jsmol_strs.6;
+contact_resns_b2 = jsmol_strs.7;
+
+res_jmol_str = jsmol_strs.8;
+labels_by_pdbres = jsmol_strs.9;
+
+IF contact_resns_a2;
+  IF contact_resns_b2;
+    jsmol_script.push(
+      "define cr $contact_resns_a2, $contact_resns_b2",
+      "select cr",
+      "wireframe off", # may be a hetatm and have had wireframe turned on for all atoms (inc mainchain)
+      "background labels white",
+      "select cr and (alpha, sidechain)",
+      "wireframe 50",
+      "select cr and sidechain", # jmol defines p and po as mainchain because of nucleic acids, even if they're in eg. TPO
+      "colour cpk",
+    );
+  ELSE;
+    jsmol_script.push(
+      "define cr $contact_resns_a2",
+      "select cr",
+      "wireframe off", # may be a hetatm and have had wireframe turned on for all atoms (inc mainchain)
+      "background labels white",
+      "select cr and (alpha, sidechain)",      
+      "wireframe 50",
+      "select cr and sidechain",      
+      "colour cpk",
+    );
+  END;
+ELSIF contact_resns_b2;
+  jsmol_script.push(
+    "define cr $contact_resns_b2",
+    "select cr",
+    "wireframe off", # may be a hetatm and have had wireframe turned on for all atoms (inc mainchain)
+    "background labels white",
+    "select cr and (alpha, sidechain)",
+    "wireframe 50",
+    "select cr and sidechain",
+    "colour cpk",
+  );
+END;
+
+IF res_jmol_str;
+  jsmol_script.push(
+    "define res $res_jmol_str"
+    "centre res",
+    "zoomto 1 {res} 0",
+  );
+ELSE;
+  jsmol_script.push("centre A2, B2");
+END;
+
+IF site_resns_a2;
+  jsmol_script.push(
+    "define A2s $site_resns_a2",
+    "select A2s",
+    "wireframe off", # may be a hetatm and have had wireframe turned on for all atoms (inc mainchain)
+    "select A2s and (alpha, sidechain)",
+    "wireframe 100",
+    "colour label red",
+    "select A2s and sidechain",
+    "colour cpk",
+  );
+END;
+
+IF site_resns_b2;
+  jsmol_script.push(
+    "define B2s $site_resns_b2",
+    "select B2s",
+    "wireframe off", # may be a hetatm and have had wireframe turned on for all atoms (inc mainchain)
+    "select B2s and (alpha, sidechain)",
+    "colour label red",
+    "wireframe 100",
+    "select B2s and sidechain",
+    "colour cpk",
+  );
+END;
+
+FOREACH pdbres IN labels_by_pdbres.keys;
+  label = labels_by_pdbres.${pdbres};
+  jsmol_script.push("select $pdbres and alpha", "label $label");
+END;
+
+FOREACH pos_a1 IN json.results.thing.sites.${ch.id_seq_a1}.keys.nsort;
+  pdbres_a2 = a1_to_pdbres.${pos_a1};
+  IF pdbres_a2.defined;
+    colour = json.results.thing.sites.${ch.id_seq_a1}.${pos_a1}.colour;
+    bg_colour = json.results.thing.sites.${ch.id_seq_a1}.${pos_a1}.bg_colour;
+    IF colour.defined && (colour != "");
+      IF bg_colour.defined && (bg_colour != "");
+        jsmol_script.push("select $pdbres_a2", "colour label $colour", "background labels $bg_colour");
+      ELSE;
+        jsmol_script.push("select $pdbres_a2", "colour label $colour");
+      END;
+    ELSIF bg_colour.defined && (bg_colour != "");
+      jsmol_script.push("select $pdbres_a2", "background labels $bg_colour");
+    END;
+  END;
+END;
+
+FOREACH pos_b1 IN json.results.thing.sites.${id_seq_b1}.keys.nsort;
+  pdbres_b2 = a1_to_pdbres.${pos_b1};
+  IF pdbres_b2.defined;
+    colour = json.results.thing.sites.${id_seq_b1}.${pos_b1}.colour;
+    bg_colour = json.results.thing.sites.${id_seq_b1}.${pos_b1}.bg_colour;
+    IF colour.defined && (colour != "");
+      IF bg_colour.defined && (bg_colour != "");
+        jsmol_script.push("select $pdbres_b2", "colour label $colour", "background labels $bg_colour");
+      ELSE;
+        jsmol_script.push("select $pdbres_b2", "colour label $colour");
+      END;
+    ELSIF bg_colour.defined && (bg_colour != "");
+      jsmol_script.push("select $pdbres_b2", "background labels $bg_colour");
+    END;
+  END;
+END;
+
+IF atomdiffs_a2;
+  jsmol_script.push(
+    "select ${atomdiffs_a2}",
+    "colour pink",
+  );
+END;
+
+IF lcas_a2;
+  jsmol_script.push(
+    "select ${lcas_a2}",
+    "spacefill 200",
+    "colour pink",
+  );
+END;
+
+IF atomdiffs_b2;
+  jsmol_script.push(
+    "select ${atomdiffs_b2}",
+    "colour pink",
+  );
+END;
+
+IF lcas_b2;
+  jsmol_script.push(
+    "select ${lcas_b2}",
+    "spacefill 200",
+    "colour pink",
+  );
+END;
+
+jsmol_script = jsmol_script.join("; ") _ ";";
+
+%]
+
+<div class="oneColumn">
+ <div class="column">
+  <div class="contents">
+  <p>
+  The protein on the left is the protein you selected and which contains sites (if any).  The protein on the right is the 
+  predicted/known interaction partner considered here.  Note that the protein on the right can be one of the proteins 
+  from your given set.  If all sites are selected (e.g. 'A' links), then modifications will be shown in this protein as well.
+  Domain bubblegrams are shown both for the proteins and the template 3D structure to which they are aligned.
+  </p>
+[%
+  # FIXME - put this code somewhere central
+  # FIXME - replace with link to String db
+  known_str = [];
+  pmids = {};
+  IF json.known_ints_by_uniref.${ch.id_seq_a1}.defined;
+    IF json.known_ints_by_uniref.${ch.id_seq_a1}.${ch.id_seq_b1}.defined;
+      FOREACH id_seq_a2 IN json.known_ints_by_uniref.${ch.id_seq_a1}.${ch.id_seq_b1}.keys;
+        FOREACH id_seq_b2 IN json.known_ints_by_uniref.${ch.id_seq_a1}.${ch.id_seq_b1}.${id_seq_a2}.keys;
+          FOREACH pmid IN json.known_ints.${id_seq_a2}.${id_seq_b2}.keys.nsort;
+            IF pmids.${pmid}.defined;
+              NEXT;
+            END;
+            pmids.${pmid} = 1;
+
+            known_desc = [];
+
+            n_seqs = json.known_ints.${id_seq_a2}.${id_seq_b2}.${pmid}.0;
+            htp = json.known_ints.${id_seq_a2}.${id_seq_b2}.${pmid}.1;
+            high_quality = json.known_ints.${id_seq_a2}.${id_seq_b2}.${pmid}.2;
+            direct_physical = json.known_ints.${id_seq_a2}.${id_seq_b2}.${pmid}.3;
+
+            IF htp == 0;
+              known_desc.push("<span title='low-throughput study'>LTP</span>");
+            ELSE;
+              known_desc.push("<span title='high-throughput study'>HTP</span>");
+            END;
+
+            IF direct_physical == 1;
+              known_desc.push("<span title='direct-physical interaction detection method'>DP</span>");
+            END;
+
+            IF high_quality == 1;
+              known_desc.push("<span title='high-quality interaction - detected by several different experiments'>HQ</span>");
+            END;
+
+            known_desc = known_desc.join(', ');
+  
+            hyperlink = "<li><a href='http://www.ncbi.nlm.nih.gov/pubmed/${pmid}' target='_blank'>${pmid}</a> (${known_desc})</li>";
+            known_str.push(hyperlink);
+          END;
+        END;
+      END;
+    END;
+  END;
+
+  IF ch.pcid_a < ch.pcid_b;
+    pp_conf = confidence('PP', ch.pcid_a);
+    pcid_ch = ch.pcid_a FILTER format('%.0f');
+  ELSE;
+    pp_conf = confidence('PP', ch.pcid_b);
+    pcid_ch = ch.pcid_b FILTER format('%.0f');
+  END;
+  pp_conf_symbol = pp_conf.substr(0, 1) FILTER upper;
+  "<p>Similarity between the two proteins and the 3D structure template = <span class='${pp_conf}Confidence' title='identity = ${pcid_ch}%, confidence = ${pp_conf}'>${pp_conf_symbol}</span>${pcid_ch}%</p>";
+
+  IF pcid_ch >= json.params.processed.min_pcid_known;
+    known_str.unshift('<li>Known from the match to structure shown below (percent sequence identity = ' _ pcid_ch _ ')</a>.');
+  END;
+
+  IF known_str.size > 0;
+    known = '<ul>' _ known_str.join('') _ '</ul>';
+  ELSE;
+    known = '<ul><li>Inferred from the match to structure shown below (percent sequence identity = ' _ pcid_ch _ ')</li></ul>.';
+  END;
+  "<p>Interaction evidence for these two proteins (PubMed links or other): ${known}
+   <p>Abbreviations: LTP = low-throughput, HTP = high-throughput, DP = direct-physical interaction, HQ = high-quality.</p>"
+;
+%]
+  
+  </div>
+ </div>
+</div>
+
+<div class="oneColumn">
+ <div class="column">
+   <div class="contents">
+
+<p>
+Templates from:<br/>
+[% INCLUDE pdb_desc.tt pdb=pdb assembly=fi_a2.assembly %]
+[% (contact.homo == 1) ? "Homo" : "Hetero"; %]dimer
+</p>
+
+<p>
+<span style="background-color: #[% colours.A2 %]; padding: 0.5em;">[% seq_a1.name %]</span>
+<span style="background-color: #[% colours.B2 %]; padding: 0.5em;">[% seq_b1.name %]</span>
+</p>
+
+<div class="jsmol" data-script-id="jsmol-script"></div>
+<div id="jsmol-script" class="jsmol-script">[% jsmol_script %]</div>
+
+  In the structure above the region corresponding to your protein is in cyan (greenish blue) and shown as
+  C-alpha trace, the interacting protein is shown as magenta (purplish) and any other protein regions found
+  are shown in grey.  Sites specified are labelled red, those residues from the interacting protein are labelled
+  black.  DNA/RNA are shown as gold trace, and small-molecules
+  are shown as ball-and-stick in CPK colour (grey=carbon, red=oxygen, blue=nitrogen, etc).  Residues shown
+  in pink are those where the residue in the <i>template</i> (i.e. known 3D structure) are different from
+  the residue in the protein of interest.  For these the larger sphere shows the approximate position of the
+  amino acid side-chain.
+
+    </div>
+  </div>
+</div>
+
+
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+<h2>Residue Contacts (sidechain-sidechain only)</h2>
+<table class='dataTable'>
+  <thead>
+    <tr>
+      <th class='annotatedNumber'>Res A1</th>
+      <th><span title="change in InterPreTS score caused by the site">IE</span></th>
+      <th class='annotatedNumber'>Res B1</th>
+      <th><span title="change in InterPreTS score caused by the site">IE</span></th>
+      <th class='annotatedNumber'>Res A2</th>
+      <th class='annotatedNumber'>Res B2</th>
+      <th class='annotatedNumber'>pdbRes A2</th>
+      <th class='annotatedNumber'>pdbRes B2</th>
+    </tr>
+  <tbody>
+[%
+  FOREACH row IN rc.rows;
+    #IF row.${rc.fields.ss};
+    IF row.${rc.fields.ss_unmod_salt} || row.${rc.fields.ss_unmod_hbond} || row.${rc.fields.ss_unmod_end};
+      res_a1 = row.${rc.fields.res_a1};
+      pos_a1 = row.${rc.fields.pos_a1};
+      labels_a1 = [];
+      IF json.results.thing.sites.${ch.id_seq_a1}.defined AND json.results.thing.sites.${ch.id_seq_a1}.${pos_a1}.defined;
+        FOREACH site IN json.results.thing.sites.${ch.id_seq_a1}.${pos_a1}.sites;
+          IF site.ppis.${ch.id_seq_b1}.${ch.id}.defined;
+            itps = site.ppis.${ch.id_seq_b1}.${ch.id}.ie FILTER format("%5.2f");
+            labels_a1.push("${site.label}</td><td>${itps}");
+          ELSE;
+            labels_a1.push("${site.label}</td><td>");
+          END;
+        END;
+      END;
+
+      res_b1 = row.${rc.fields.res_b1};
+      pos_b1 = row.${rc.fields.pos_b1};
+      labels_b1 = [];
+      IF json.results.thing.sites.${ch.id_seq_b1}.defined AND json.results.thing.sites.${ch.id_seq_b1}.${pos_b1}.defined;
+        FOREACH site IN json.results.thing.sites.${ch.id_seq_b1}.${pos_b1}.sites;
+          IF site.ppis.${ch.id_seq_a1}.${ch.id}.defined;
+            itps = site.ppis.${ch.id_seq_a1}.${ch.id}.ie FILTER format("%5.2f");
+            labels_b1.push("${site.label}</td><td>${itps}");
+          ELSE;
+            labels_b1.push("${site.label}</td><td>");
+          END;
+        END;
+      END;
+
+      res_a2 = row.${rc.fields.res_a2};
+      pos_a2 = row.${rc.fields.pos_a2};
+      pdbres_a2 = row.${rc.fields.chain_a2} _ row.${rc.fields.resseq_a2} _ row.${rc.fields.icode_a2};
+      pdbres_a2_with_model = (fi_a2.model > 0) ? ("(model = " _ fi_a2.model _ ") and " _ pdbres_a2) : pdbres_a2;
+
+      res_b2 = row.${rc.fields.res_b2};
+      pos_b2 = row.${rc.fields.pos_b2};
+      pdbres_b2 = row.${rc.fields.chain_b2} _ row.${rc.fields.resseq_b2} _ row.${rc.fields.icode_b2};
+      pdbres_b2_with_model = (fi_b2.model > 0) ? ("(model = " _ fi_b2.model _ ") and " _ pdbres_b2) : pdbres_b2;
+
+      IF labels_a1.size > 0;
+        FOREACH label_a1 IN labels_a1;
+          IF labels_b1.size > 0;
+            FOREACH label_b1 IN labels_b1;
+"
+    <tr>
+      <td>${label_a1}</td>
+      <td>${label_b1}</td>
+      <td>${res_a2}${pos_a2}</td>
+      <td>${res_b2}${pos_b2}</td>
+      <td>${pdbres_a2_with_model}</td>
+      <td>${pdbres_b2_with_model}</td>
+    </tr>
+";
+            END;
+          ELSE;
+"
+    <tr>
+      <td>${label_a1}</td>
+      <td>${res_b1}${pos_b1}</td><td></td>
+      <td>${res_a2}${pos_a2}</td>
+      <td>${res_b2}${pos_b2}</td>
+      <td>${pdbres_a2_with_model}</td>
+      <td>${pdbres_b2_with_model}</td>
+    </tr>
+";
+          END;
+        END;
+      ELSIF labels_b1.size > 0;
+        FOREACH label_b1 IN labels_b1;
+"
+    <tr>
+      <td>${res_a1}${pos_a1}</td><td></td>
+      <td>${label_b1}</td>
+      <td>${res_a2}${pos_a2}</td>
+      <td>${res_b2}${pos_b2}</td>
+      <td>${pdbres_a2_with_model}</td>
+      <td>${pdbres_b2_with_model}</td>
+    </tr>
+";
+        END;
+      ELSE;
+"
+    <tr>
+      <td>${res_a1}${pos_a1}</td><td></td>
+      <td>${res_b1}${pos_b1}</td><td></td>
+      <td>${res_a2}${pos_a2}</td>
+      <td>${res_b2}${pos_b2}</td>
+      <td>${pdbres_a2_with_model}</td>
+      <td>${pdbres_b2_with_model}</td>
+    </tr>
+";
+      END;
+    END;
+  END;
+%]
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+
+
+[% INCLUDE thresholds.tt %]

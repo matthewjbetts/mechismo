@@ -1,0 +1,10 @@
+#PBS -N sahni_medium
+#PBS -e /dev/null
+#PBS -o /dev/null
+#PBS -l cput=04:59:59
+#PBS -l mem=5gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id Sahni_et_al_Cell_2015_Table_S1A.medium --stringency medium < ${dn_fist}root/static/data/examples/Sahni_et_al_Cell_2015_Table_S1A.txt 1> ${dn_out}Sahni_et_al_Cell_2015_Table_S1A.medium.out 2> ${dn_out}Sahni_et_al_Cell_2015_Table_S1A.medium.err

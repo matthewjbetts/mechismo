@@ -1,0 +1,140 @@
+[%
+  USE JSON (convert_blessed => 1);
+  USE date (format = '%Y-%m-%d %H:%M', locale = 'de_DE');
+%]
+
+<div class="twoColumns">
+  <div class="column">
+    <div class="contents">
+      <h2>Counts</h2>
+      <div id="queue_counts_barchart" class="barchart" data-source="div" data-source-id="queue_counts_barchart_data"></div>
+      <script type="application/json" id="queue_counts_barchart_data" class="data">
+        [
+          {"name": "All",         "n": [% queue_stats.n_jobs.all %]},
+          {"name": "Queued",      "n": [% queue_stats.n_jobs.queued %]},
+          {"name": "Running",     "n": [% queue_stats.n_jobs.running %]},
+          {"name": "Finished",    "n": [% queue_stats.n_jobs.finished %]},
+          {"name": "Error",       "n": [% queue_stats.n_jobs.error %]},
+          {"name": "Short Queue", "n": [% queue_stats.n_jobs.short %]},
+          {"name": "Long Queue",  "n": [% queue_stats.n_jobs.long %]}
+        ]
+      </script>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="contents">
+      <h2>Mean Times in Seconds</h2>
+      <div id="queue_times_barchart" class="barchart" data-source="div" data-source-id="queue_times_barchart_data"></div>
+      <script type="application/json" id="queue_times_barchart_data" class="data">
+        [%
+          queue_mean = (queue_stats.n_jobs.all > 0)      ? (queue_stats.queue_time / queue_stats.n_jobs.all)      : 0;
+          run_mean   = (queue_stats.n_jobs.finished > 0) ? (queue_stats.run_time / queue_stats.n_jobs.finished)   : 0;
+          total_mean = (queue_stats.n_jobs.finished > 0) ? (queue_stats.total_time / queue_stats.n_jobs.finished) : 0;
+
+          queue_mean = queue_mean FILTER format('%.0f');
+          run_mean = run_mean FILTER format('%.0f');
+          total_mean = total_mean FILTER format('%.0f');
+        %]
+        [
+          {"name": "Queue Time", "n": [% queue_mean %]},
+          {"name": "Run Time",   "n": [% run_mean %]},
+          {"name": "Total Time", "n": [% total_mean %]}
+        ]
+      </script>
+    </div>
+  </div>
+</div>
+
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+      <h2>Run Time vs. Number of Sites Given</h2>
+      <div id="queue_scatter" class="scatterplot" data-source="div" data-source-id="queue_scatter_data"></div>
+      <script type="application/json" id="queue_scatter_data" class="data">
+      [%
+        rows = [];
+        FOREACH row IN queue_stats.run_time_vs_size;
+          x = row.n_labels ? row.n_labels + 0 : 0;
+          y = row.run_time ? row.run_time + 0 : 0;
+          z = (row.n_labels && (row.n_aliases > 0)) ? (row.n_labels / row.n_aliases) : 0;
+          label = (row.search_name.defined && (row.search_name != '')) ? "${row.search_name}: ${row.id_search}" : row.id_search;
+          rows.push([x, y, z, label, "/search/id/${row.id_search}"]);
+        END;
+      %]
+      { "columns": ["nLabels", "Run Time / s", "nLabels / nAliases", "id_search"], "data": [% rows.json %] }
+      </script>
+      <ul>
+        <li>nLabels = number of sites given</li>
+        <li>nAliases = number of protein aliases given</li>
+        <li>Dots are coloured in proportion to nLabels / nAliases</li>
+        <li>Mouse-over a dot for the relevant search id</li>
+        <li>Click a dot to go to the search page</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="oneColumn">
+  <div class="column">
+    <div class="contents">
+      <h2>All jobs</h2>
+      <table id='queue_jobs' class='dataTable'>
+        <thead>
+          <tr>
+            <th class='sort0desc annotatedNumber'>id</th>
+            <th>idSearch</th>
+            <th>name</th>
+            <th><span title='hostname from which job was submitted'>hostname</span></th>
+            <th>queue</th>
+            <th><span title='number of protein aliases given'>nAliases</span></th>
+            <th><span title='number of sites given'>nLabels</span></th>
+            <th><span title='queue type'>type</span></th>
+            <th><span title='job status'>status</span></th>
+            <th><span title='time at which the job entered the queue: year-month-day hour:minute'>queued</span></th>
+            <th><span title='time at which the job started running: year-month-day hour:minute'>started</span></th>
+            <th><span title='time at which the job finished: year-month-day hour:minute'>finished</span></th>
+            <th><span title='time spent in the queue: hours:minutes:seconds'>queue time</span></th>
+            <th><span title='time spent running: hours:minutes:seconds'>run time</span></th>
+            <th><span title='queue time + run time: hours:minutes:seconds'>total time</span></th>
+            <th>message</th>
+            <th>pid</th>
+         </tr>
+        </thead>
+        <tbody>
+        [%
+          FOREACH job IN queue_stats.jobs;
+            queued   = date.format(job.queued);
+            started  = date.format(job.started);
+            finished = (job.finished == 0) ? 0 : date.format(job.finished);
+            run_time = (job.run_time >= 0) ? hours_mins_secs(job.run_time) : 0;
+            queue_time = (job.queue_time >= 0) ? hours_mins_secs(job.queue_time) : 0;
+            total_time = (job.total_time >= 0) ? hours_mins_secs(job.total_time) : 0;
+"
+          <tr>
+            <td>${job.id}</td>
+            <td><a href='/search/id/${job.id_search}' target='_blank'>${job.id_search}</a></td>
+            <td><a href='/search/id/${job.id_search}' target='_blank'>${job.search_name}</a></td>
+            <td>${job.hostname}</td>
+            <td>${job.queue_name}</td>
+            <td>${job.n_aliases}</td>
+            <td>${job.n_labels}</td>
+            <td>${job.type}</td>
+            <td>${job.status}</td>
+            <td>${queued}</td>
+            <td>${started}</td>
+            <td>${finished}</td>
+            <td>${queue_time}</td>
+            <td>${run_time}</td>
+            <td>${total_time}</td>
+            <td>${job.message}</td>
+            <td>${job.pid}</td>
+          </tr>
+";
+          END;
+        %]
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

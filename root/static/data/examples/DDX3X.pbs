@@ -1,0 +1,11 @@
+#PBS -N DDX3X
+#PBS -o /net/netfile2/ag-russell/mechismo/jobs_responsive/DDX3X.pbs.out
+#PBS -e /net/netfile2/ag-russell/mechismo/jobs_responsive/DDX3X.pbs.err
+#PBS -l cput=04:59:59
+#PBS -l mem=5gb
+#PBS -m ae
+#PBS -M matthew.betts@bioquant.uni-heidelberg.de
+dn_out=/net/netfile2/ag-russell/mechismo/jobs/
+dn_fist=$GH/work/fist/trunk/Fist/
+perl -I${dn_fist}lib ${dn_fist}script/fist_search.pl --outdir $dn_out --id DDX3X --stringency low < ${dn_fist}root/static/data/examples/DDX3X.txt 1> ${dn_out}DDX3X.out 2> ${dn_out}DDX3X.err
+
