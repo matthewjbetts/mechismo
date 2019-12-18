@@ -52,7 +52,7 @@ sub usage {
 
     $usage = <<END;
 
-Usage: $prog [options] conffile < schema.sql
+Usage: $prog [options] conffile
 
 option   parameter  description                              default
 -------  ---------  ---------------------------------------  -------
@@ -87,11 +87,11 @@ $dbdomain = $config->{'Model::FistDB'}->{connect_info}->{domain};
 
 defined($dbh = DBI->connect("${dbi}:host=$dbhost", $user, $pass, {'RaiseError' => 0, 'AutoCommit' => 1})) or die;
 @cmds = (
-         "CREATE DATABASE $dbname",
+         #"CREATE DATABASE $dbname",
          "GRANT SELECT, INSERT, UPDATE, DELETE, LOCK TABLES, ALTER ON $dbname.* TO \"$dbuser\"@\"$dbdomain\" IDENTIFIED BY \"$dbpass\"",
          "USE $dbname",
         );
 defined($force) and unshift(@cmds, "DROP DATABASE IF EXISTS $dbname");
 foreach $cmd (@cmds) {
-    $dbh->do($cmd) or die "Error: could not do '$cmd'.";
+    $dbh->do($cmd) or warn "Error: could not do '$cmd'.";
 }

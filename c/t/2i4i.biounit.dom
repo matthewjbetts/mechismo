@@ -1,4 +1,4 @@
-/net/netfile1/ds-russell/pdb/i4/pdb2i4i.ent.gz 7 { CHAIN A }
-/net/netfile1/ds-russell/pdb-biounit/i4/2i4i-1-1.pdb.gz 8 { CHAIN A }
-/net/netfile1/ds-russell/pdb/i4/pdb2i4i.ent.gz 9 { A 600 _ to A 600 _ }
-/net/netfile1/ds-russell/pdb-biounit/i4/2i4i-1-1.pdb.gz 10 { A 600 _ to A 600 _ }
+/home/mbetts/work/data/external/pdb/i4/pdb2i4i.ent.gz 7 { CHAIN A }
+/home/mbetts/work/data/external/biounit/i4/2i4i-1-1.pdb.gz 8 { CHAIN A }
+/home/mbetts/work/data/external/pdb/i4/pdb2i4i.ent.gz 9 { A 600 _ to A 600 _ }
+/home/mbetts/work/data/external/biounit/i4/2i4i-1-1.pdb.gz 10 { A 600 _ to A 600 _ }

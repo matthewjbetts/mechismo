@@ -1,6 +1,6 @@
-/net/netfile1/ds-russell/pdb/00/pdb100d.ent.gz 12 { CHAIN A }
-/net/netfile1/ds-russell/pdb-biounit/00/100d-1-1.pdb.gz 13 { CHAIN A }
-/net/netfile1/ds-russell/pdb/00/pdb100d.ent.gz 14 { CHAIN B }
-/net/netfile1/ds-russell/pdb-biounit/00/100d-1-1.pdb.gz 15 { CHAIN B }
-/net/netfile1/ds-russell/pdb/00/pdb100d.ent.gz 16 { A 21 _ to A 21 _ }
-/net/netfile1/ds-russell/pdb-biounit/00/100d-1-1.pdb.gz 17 { A 21 _ to A 21 _ }
+/home/mbetts/work/data/external/pdb/00/pdb100d.ent.gz 12 { CHAIN A }
+/home/mbetts/work/data/external/biounit/00/100d-1-1.pdb.gz 13 { CHAIN A }
+/home/mbetts/work/data/external/pdb/00/pdb100d.ent.gz 14 { CHAIN B }
+/home/mbetts/work/data/external/biounit/00/100d-1-1.pdb.gz 15 { CHAIN B }
+/home/mbetts/work/data/external/pdb/00/pdb100d.ent.gz 16 { A 21 _ to A 21 _ }
+/home/mbetts/work/data/external/biounit/00/100d-1-1.pdb.gz 17 { A 21 _ to A 21 _ }

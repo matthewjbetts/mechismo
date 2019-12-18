@@ -73,7 +73,8 @@ sub run_dssp {
     # run dssp
     $dsspfile = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
     $errfile = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
-    $cmd = "dssp -na $pdbfile $dsspfile 1> /dev/null 2> $errfile"; # '-na' because quicker not to calculate asa
+    #$cmd = "dssp -na $pdbfile $dsspfile 1> /dev/null 2> $errfile"; # '-na' because quicker not to calculate asa
+    $cmd = "mkdssp -i $pdbfile -o $dsspfile 1> /dev/null 2> $errfile";
     $stat = $self->mysystem($cmd);
     $stat >>= 8;
 
@@ -179,10 +180,8 @@ sub run_dssp {
             ($phi    = $data[9]) =~ s/\s+//g;
             ($psi    = $data[10]) =~ s/\s+//g;
 
-            if($aa =~ /^\!/) {
-                # DSSP chain break identifier
-                next;
-            }
+            ($aa =~ /^\!/) and next; # DSSP chain break identifier
+            ($iCode eq '') and ($iCode = '_');
 
             if(defined($res_mapping->{$cid})) {
                 if(defined($res_mapping->{$cid}->{$resSeq})) {
@@ -192,6 +191,7 @@ sub run_dssp {
                     }
                     else {
                         Carp::cluck(join('-', $self->id, $cid, $resSeq, $iCode, "no iCode '$iCode' mapping"));
+                        die $pdbfile;
                     }
                 }
                 else {

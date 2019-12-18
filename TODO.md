@@ -1,3 +1,10 @@
+* install STAMP
+* write installation instructions
+* c programs
+    * add them to my path
+    * make them part of the installation makefile
+* rewrite README.md to my current standards
+
 ######
 
 - sifts matches are represented as global alignments but would be

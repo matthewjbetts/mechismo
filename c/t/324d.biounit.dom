@@ -1,8 +1,8 @@
-/net/netfile1/ds-russell/pdb/24/pdb324d.ent.gz 13 { CHAIN A }
-/net/netfile1/ds-russell/pdb-biounit/24/324d-1-1.pdb.gz 14 { CHAIN A }
-/net/netfile1/ds-russell/pdb/24/pdb324d.ent.gz 15 { CHAIN B }
-/net/netfile1/ds-russell/pdb-biounit/24/324d-1-1.pdb.gz 16 { CHAIN B }
-/net/netfile1/ds-russell/pdb/24/pdb324d.ent.gz 17 { A 21 _ to A 21 _ }
-/net/netfile1/ds-russell/pdb-biounit/24/324d-1-1.pdb.gz 18 { A 21 _ to A 21 _ }
-/net/netfile1/ds-russell/pdb/24/pdb324d.ent.gz 19 { A 22 _ to A 22 _ }
-/net/netfile1/ds-russell/pdb-biounit/24/324d-1-1.pdb.gz 20 { A 22 _ to A 22 _ }
+/home/mbetts/work/data/external/pdb/24/pdb324d.ent.gz 13 { CHAIN A }
+/home/mbetts/work/data/external/biounit/24/324d-1-1.pdb.gz 14 { CHAIN A }
+/home/mbetts/work/data/external/pdb/24/pdb324d.ent.gz 15 { CHAIN B }
+/home/mbetts/work/data/external/biounit/24/324d-1-1.pdb.gz 16 { CHAIN B }
+/home/mbetts/work/data/external/pdb/24/pdb324d.ent.gz 17 { A 21 _ to A 21 _ }
+/home/mbetts/work/data/external/biounit/24/324d-1-1.pdb.gz 18 { A 21 _ to A 21 _ }
+/home/mbetts/work/data/external/pdb/24/pdb324d.ent.gz 19 { A 22 _ to A 22 _ }
+/home/mbetts/work/data/external/biounit/24/324d-1-1.pdb.gz 20 { A 22 _ to A 22 _ }

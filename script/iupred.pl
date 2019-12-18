@@ -7,7 +7,6 @@ use Cwd qw(abs_path getcwd);
 use File::Path qw(make_path);
 use Dir::Self;
 use Config::General;
-use Sys::CPU;
 use Carp;
 use Fist::Schema;
 use File::Temp;
@@ -22,7 +21,7 @@ my $dn_out_default = './data/';
 my $dn_out = $dn_out_default;
 my $pbs_name;
 my $fork_name;
-my $max_n_jobs_default = Sys::CPU::cpu_count() - 2; # save two processors for other work...
+my $max_n_jobs_default = 6
 my $max_n_jobs = $max_n_jobs_default;
 my $q_max_default = 200;
 my $q_max = $q_max_default;
@@ -207,7 +206,7 @@ if($name) {
                             out_switch => '--outdir',
 
                             # FIXME - won't need to do this when FIST is properly installed
-                            prog       => 'perl -I/net/home.isilon/ag-russell/bq_mbetts/work/fist/branches/mechismo_v2beta/Fist/lib ' . abs_path(__FILE__),
+                            prog       => 'perl -I${MECHISMO}lib ' . abs_path(__FILE__),
                            );
     $processes->submit;
     $processes->monitor;

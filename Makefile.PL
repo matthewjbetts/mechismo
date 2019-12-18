@@ -21,6 +21,19 @@ requires 'Config::General'; # This should reflect the config file format you've 
 requires 'Catalyst::View::TT';
 requires 'Catalyst::View::JSON';
 
+###### mechismo-specific requirements (as opposed to those for catalyst) ######
+requires 'PerlIO::gzip';
+requires 'MooseX::MarkAsMethods';
+requires 'MooseX::NonMoose';
+requires 'DBIx::Class';
+requires 'CHI';
+requires 'Dir::Self';
+requires 'Net::IPAddress';
+requires 'String::Escape';
+requires 'DateTime::Format::ISO8601';
+requires 'Net::OpenSSH';
+###############################################################################
+
 test_requires 'Test::More' => '0.88';
 tests_recursive();
 

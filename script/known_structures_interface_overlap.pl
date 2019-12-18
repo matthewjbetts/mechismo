@@ -8,7 +8,6 @@ use File::Path qw(make_path);
 use Dir::Self;
 use Config::General;
 use DBI;
-use Sys::CPU;
 use Fist::Schema;
 use Fist::NonDB::FragInst;
 use Fist::NonDB::Contact;

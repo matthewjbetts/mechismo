@@ -1,8 +1,8 @@
-/net/netfile1/ds-russell/pdb/if/pdb1if9.ent.gz 1 { CHAIN A }
-/net/netfile1/ds-russell/pdb-biounit/if/1if9-1-1.pdb.gz 2 { CHAIN A }
-/net/netfile1/ds-russell/pdb/if/pdb1if9.ent.gz 3 { A 262 _ to A 262 _ }
-/net/netfile1/ds-russell/pdb-biounit/if/1if9-1-1.pdb.gz 4 { A 262 _ to A 262 _ }
-/net/netfile1/ds-russell/pdb/if/pdb1if9.ent.gz 5 { A 263 _ to A 263 _ }
-/net/netfile1/ds-russell/pdb-biounit/if/1if9-1-1.pdb.gz 6 { A 263 _ to A 263 _ }
-/net/netfile1/ds-russell/pdb/if/pdb1if9.ent.gz 7 { A 555 _ to A 555 _ }
-/net/netfile1/ds-russell/pdb-biounit/if/1if9-1-1.pdb.gz 8 { A 555 _ to A 555 _ }
+/home/mbetts/work/data/external/pdb/if/pdb1if9.ent.gz 1 { CHAIN A }
+/home/mbetts/work/data/external/biounit/if/1if9-1-1.pdb.gz 2 { CHAIN A }
+/home/mbetts/work/data/external/pdb/if/pdb1if9.ent.gz 3 { A 262 _ to A 262 _ }
+/home/mbetts/work/data/external/biounit/if/1if9-1-1.pdb.gz 4 { A 262 _ to A 262 _ }
+/home/mbetts/work/data/external/pdb/if/pdb1if9.ent.gz 5 { A 263 _ to A 263 _ }
+/home/mbetts/work/data/external/biounit/if/1if9-1-1.pdb.gz 6 { A 263 _ to A 263 _ }
+/home/mbetts/work/data/external/pdb/if/pdb1if9.ent.gz 7 { A 555 _ to A 555 _ }
+/home/mbetts/work/data/external/biounit/if/1if9-1-1.pdb.gz 8 { A 555 _ to A 555 _ }

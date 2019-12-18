@@ -1,30 +1,30 @@
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 1 { CHAIN A }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-1.pdb.gz 2 { CHAIN A }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-2.pdb.gz 3 { CHAIN A }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 4 { CHAIN B }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-1.pdb.gz 5 { CHAIN B }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-2.pdb.gz 6 { CHAIN B }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 7 { CHAIN C }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-1.pdb.gz 8 { CHAIN C }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-2.pdb.gz 9 { CHAIN C }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 10 { CHAIN D }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-1.pdb.gz 11 { CHAIN D }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-2.pdb.gz 12 { CHAIN D }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 13 { B 1523 _ to B 1523 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-1.pdb.gz 14 { B 1523 _ to B 1523 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-2.pdb.gz 15 { B 1523 _ to B 1523 _ }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 16 { B 1524 _ to B 1524 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-1.pdb.gz 17 { B 1524 _ to B 1524 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-2.pdb.gz 18 { B 1524 _ to B 1524 _ }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 19 { D 1523 _ to D 1523 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-1.pdb.gz 20 { D 1523 _ to D 1523 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-2.pdb.gz 21 { D 1523 _ to D 1523 _ }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 22 { D 1524 _ to D 1524 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-1.pdb.gz 23 { D 1524 _ to D 1524 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-2.pdb.gz 24 { D 1524 _ to D 1524 _ }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 25 { C 9 _ to C 160 _ D 1 _ to D 522 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-1.pdb.gz 26 { C 9 _ to C 160 _ D 1 _ to D 522 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-2-2.pdb.gz 27 { C 9 _ to C 160 _ D 1 _ to D 522 _ }
-/net/netfile1/ds-russell/pdb/gk/pdb1gk0.ent.gz 28 { A 9 _ to A 160 _ B 1 _ to B 522 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-1.pdb.gz 29 { A 9 _ to A 160 _ B 1 _ to B 522 _ }
-/net/netfile1/ds-russell/pdb-biounit/gk/1gk0-1-2.pdb.gz 30 { A 9 _ to A 160 _ B 1 _ to B 522 _ }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 1 { CHAIN A }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-1.pdb.gz 2 { CHAIN A }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-2.pdb.gz 3 { CHAIN A }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 4 { CHAIN B }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-1.pdb.gz 5 { CHAIN B }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-2.pdb.gz 6 { CHAIN B }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 7 { CHAIN C }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-1.pdb.gz 8 { CHAIN C }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-2.pdb.gz 9 { CHAIN C }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 10 { CHAIN D }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-1.pdb.gz 11 { CHAIN D }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-2.pdb.gz 12 { CHAIN D }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 13 { B 1523 _ to B 1523 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-1.pdb.gz 14 { B 1523 _ to B 1523 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-2.pdb.gz 15 { B 1523 _ to B 1523 _ }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 16 { B 1524 _ to B 1524 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-1.pdb.gz 17 { B 1524 _ to B 1524 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-2.pdb.gz 18 { B 1524 _ to B 1524 _ }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 19 { D 1523 _ to D 1523 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-1.pdb.gz 20 { D 1523 _ to D 1523 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-2.pdb.gz 21 { D 1523 _ to D 1523 _ }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 22 { D 1524 _ to D 1524 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-1.pdb.gz 23 { D 1524 _ to D 1524 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-2.pdb.gz 24 { D 1524 _ to D 1524 _ }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 25 { C 9 _ to C 160 _ D 1 _ to D 522 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-1.pdb.gz 26 { C 9 _ to C 160 _ D 1 _ to D 522 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-2-2.pdb.gz 27 { C 9 _ to C 160 _ D 1 _ to D 522 _ }
+/home/mbetts/work/data/external/pdb/gk/pdb1gk0.ent.gz 28 { A 9 _ to A 160 _ B 1 _ to B 522 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-1.pdb.gz 29 { A 9 _ to A 160 _ B 1 _ to B 522 _ }
+/home/mbetts/work/data/external/biounit/gk/1gk0-1-2.pdb.gz 30 { A 9 _ to A 160 _ B 1 _ to B 522 _ }

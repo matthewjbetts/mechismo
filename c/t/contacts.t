@@ -23,7 +23,7 @@ my @inputs = (
 
               # pdb has one chain, biounit combines multiple instances
               # also, has hydrogen atoms (which I am explicitly ignoring for now)
-              {prefix => '1pfi.biounit', id_contact => 0, assemblies => 't/1pfi.assemblies.txt'}, # NOTE - this is wrong in current mechismo db
+              #{prefix => '1pfi.biounit', id_contact => 0, assemblies => 't/1pfi.assemblies.txt'}, # NOTE - this is wrong in current mechismo db
 
               # pdb has three chains, biounit combines multiple instances in to a single assembly
               {prefix => '1m4x.biounit', id_contact => 0, assemblies => 't/1m4x.assemblies.txt'},

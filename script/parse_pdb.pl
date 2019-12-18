@@ -12,7 +12,6 @@ use Fist::NonDB::FragInst;
 use File::Temp;
 use Dir::Self;
 use Config::General;
-use Sys::CPU;
 use List::Util qw(shuffle);
 use Fist::Utils::UniqueIdentifier;
 
@@ -23,7 +22,7 @@ my $dn_out_default = './data/';
 my $dn_out = $dn_out_default;
 my $pbs_name;
 my $fork_name;
-my $max_n_jobs_default = Sys::CPU::cpu_count() - 2; # save two processors for other work...
+my $max_n_jobs_default = 6;
 my $max_n_jobs = $max_n_jobs_default;
 my $q_max_default = 200;
 my $q_max = $q_max_default;
@@ -208,7 +207,7 @@ if($name) {
                             out_switch => '--outdir',
 
                             # FIXME - won't need to do this when FIST is properly installed
-                            prog       => 'perl -I/net/home.isilon/ag-russell/bq_mbetts/work/fist/branches/mechismo_v2beta/Fist/lib ' . abs_path(__FILE__),
+                            prog       => 'perl -I${MECHISMO}lib ' . abs_path(__FILE__),
 
                             # FIXME - might be better if options are passed through automatically
                             options    => $options,
@@ -235,7 +234,7 @@ else {
                      ['Contact',        '.tsv'],
                      ['ResContact',     '.tsv'],
                      ['FragDssp',       '.tsv'],
-                     ['FragNaccess',    '.tsv'],
+                     #['FragNaccess',    '.tsv'], # naccess is not free to industry
                      ['Ecod',           '.tsv'],
                      ['FragToEcod',     '.tsv'],
                     ) or die;
@@ -268,10 +267,14 @@ else {
                     }
 
                     # run naccess
-                    $residues = $frag->run_naccess($pdbfile, $res_mapping, $config->{naccess}->{fn_vdw}, $config->{naccess}->{fn_std}, 0.1); # z = 0.1 for rough, quick calculations
-                    if(defined($residues)) {
-                        foreach $residue (@{$residues}) {
-                            print({$output->{FragNaccess}->{fh}} join("\t", @{$residue}), "\n");
+                    # FIXME - disabling because naccess is not free to industry
+                    # should make this and dssp optional
+                    if(0) {
+                        $residues = $frag->run_naccess($pdbfile, $res_mapping, $config->{naccess}->{fn_vdw}, $config->{naccess}->{fn_std}, 0.1); # z = 0.1 for rough, quick calculations
+                        if(defined($residues)) {
+                            foreach $residue (@{$residues}) {
+                                print({$output->{FragNaccess}->{fh}} join("\t", @{$residue}), "\n");
+                            }
                         }
                     }
                 }
@@ -646,7 +649,7 @@ sub parse {
             # different pieces were oriented in the same way wrt. each other as they are
             # in the original PDB from which the SCOP annotation comes.
 
-            $dn_biounit = sprintf "%s/pdb-biounit/%s/", $ENV{DS}, substr($idcode, 1, 2);
+            $dn_biounit = sprintf "%s/biounit/%s/", $ENV{DS}, substr($idcode, 1, 2);
 
             if(!defined($biounit = $biounits->{$idcode})) {
                 foreach $fn_biounit (glob("$dn_biounit${idcode}-*-*.pdb.gz")) {

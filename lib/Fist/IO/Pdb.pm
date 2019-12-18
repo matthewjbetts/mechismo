@@ -109,6 +109,19 @@ sub parse {
     my $chem;
     my $hetnams;
     my $hetresns;
+    my $sites;
+    my $site;
+    my $site_info_key;
+    my $site_info_value;
+    my $siteSeqNum;
+    my $siteName;
+    my $siteNumRes;
+    my $siteResName;
+    my $siteCid;
+    my $siteResSeq;
+    my $siteICode;
+    my $siteRes;
+    my $siteDom;
 
     defined($cleanup) or ($cleanup = 1);
 
@@ -122,6 +135,7 @@ sub parse {
     $resSeq_p = -1000000;
     $iCode_p = 'XXX';
     $resName_p = '';
+    $sites = {};
 
     $pdb = Fist::NonDB::Pdb->new();
     $pdb->cleanup($cleanup);
@@ -336,6 +350,45 @@ sub parse {
                 $connectivity->{$atomNum}->{$atomNum2}++;
             }
         }
+        elsif(/^REMARK 800 (\S+):\s+(.*?)\s+\Z/) {
+            ($site_info_key, $site_info_value) = ($1, $2);
+            if($site_info_key eq 'SITE_IDENTIFIER') {
+                $site = {
+                         id          => $site_info_value,
+                         description => [],
+                         residues    => [],
+                        };
+                $sites->{$site->{id}} = $site;
+            }
+            elsif($site_info_key eq 'EVIDENCE_CODE') {
+                # FIXME - use/store this evidence
+            }
+            elsif($site_info_key eq 'SITE_DESCRIPTION') {
+                push @{$site->{description}}, $site_info_value;
+            }
+        }
+        elsif(s/^SITE   (.{3}) (.{3}) (.{2})//) {
+            ($siteSeqNum, $siteName, $siteNumRes) = ($1, $2, $3);
+            $siteSeqNum =~ s/\s+//g;
+            $siteName =~ s/\s+//g;
+            $siteNumRes =~ s/\s+//g;
+            if(defined($site = $sites->{$siteName})) {
+                while(/ (.{3}) (.)(.{4})(.)/g) {
+                    ($siteResName, $siteCid, $siteResSeq, $siteICode) = ($1, $2, $3, $4);
+                    $siteResName =~ s/\s+//g;
+                    if(($siteResName ne '') and ($siteResName ne 'HOH')) { # FIXME - include water
+                        $siteCid =~ s/\s+//g;
+                        $siteResSeq =~ s/\s+//g;
+                        $siteICode =~ s/\s+//g;
+                        ($siteICode eq '') and ($siteICode = '_');
+                        push @{$site->{residues}}, [$siteCid, $siteResSeq, $siteICode];
+                    }
+                }
+            }
+            else {
+                Carp::cluck("site $siteName unknown");
+            }
+        }
     }
     ($resSeq_p > -1000000) and _add_res_info($chains, $modresns, $cid_p, $resSeq_p, $iCode_p, $resName_p);
 
@@ -463,6 +516,39 @@ sub parse {
                     $frag->add_to_chain_segments($chain_segment);
                 }
             }
+        }
+    }
+
+    foreach $site (values %{$sites}) {
+        (@{$site->{residues}} > 0) or next;
+
+        $siteDom = [];
+        foreach $siteRes (@{$site->{residues}}) {
+            push @{$siteDom}, sprintf("%s %d %s to %s %d %s", @{$siteRes}, @{$siteRes});
+        }
+
+        $frag = Fist::NonDB::Frag->new(
+                                       pdb           => $pdb,
+                                       fullchain     => 0,
+                                       chemical_type => 'SITE',
+                                       dom           => join(' ', @{$siteDom}),
+                                       description   => join(' ', @{$site->{description}}),
+                                       tempdir       => $pdb->tempdir,
+                                       cleanup       => $pdb->cleanup,
+                                      );
+        $pdb->add_to_frags($frag);
+        $frags->{$frag->id} = $frag;
+
+        foreach $siteRes (@{$site->{residues}}) {
+            $chain_segment = Fist::NonDB::ChainSegment->new(
+                                                            frag         => $frag,
+                                                            chain        => $siteRes->[0],
+                                                            resseq_start => $siteRes->[1],
+                                                            resseq_end   => $siteRes->[1],
+                                                            icode_start  => $siteRes->[2],
+                                                            icode_end    => $siteRes->[2],
+                                                           );
+            $frag->add_to_chain_segments($chain_segment);
         }
     }
 
