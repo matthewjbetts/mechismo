@@ -168,9 +168,43 @@ sub run_dssp {
             #    39   51   W  E <   -KL  36  98C   6
             #
 
+            # 20200923 - output format appears to have changed:
+            #
+            # ==== Secondary Structure Definition by the program DSSP, CMBI version by M.L. Hekkelman/2010-10-21 ==== DATE=2020-09-23        .
+            # REFERENCE W. KABSCH AND C.SANDER, BIOPOLYMERS 22 (1983) 2577-2637                                                              .
+            # HEADER    OXYGEN TRANSPORT                        07-MAR-84   4HHB                                                             .
+            # COMPND   2 MOLECULE: HEMOGLOBIN SUBUNIT ALPHA;                                                                                 .
+            # SOURCE   2 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                                                                  .
+            # AUTHOR    G.FERMI,M.F.PERUTZ                                                                                                   .
+            #   574  4  0  0  0 TOTAL NUMBER OF RESIDUES, NUMBER OF CHAINS, NUMBER OF SS-BRIDGES(TOTAL,INTRACHAIN,INTERCHAIN)                .
+            #  25759.5   ACCESSIBLE SURFACE OF PROTEIN (ANGSTROM**2)                                                                         .
+            #   456 79.4   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(J)  , SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS IN     PARALLEL BRIDGES, SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS IN ANTIPARALLEL BRIDGES, SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I-5), SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I-4), SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I-3), SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I-2), SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I-1), SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I+0), SAME NUMBER PER 100 RESIDUES                              .
+            #     0  0.0   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I+1), SAME NUMBER PER 100 RESIDUES                              .
+            #    12  2.1   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I+2), SAME NUMBER PER 100 RESIDUES                              .
+            #    94 16.4   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I+3), SAME NUMBER PER 100 RESIDUES                              .
+            #   336 58.5   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I+4), SAME NUMBER PER 100 RESIDUES                              .
+            #    10  1.7   TOTAL NUMBER OF HYDROGEN BONDS OF TYPE O(I)-->H-N(I+5), SAME NUMBER PER 100 RESIDUES                              .
+            #   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30     *** HISTOGRAMS OF ***           .
+            #   0  0  0  2  1  1  0  0  2  0  2  0  0  4  4  0  2  5  5  0  0  0  0  0  0  0  0  0  0  0    RESIDUES PER ALPHA HELIX         .
+            #   0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0    PARALLEL BRIDGES PER LADDER      .
+            #   0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0    ANTIPARALLEL BRIDGES PER LADDER  .
+            #   0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0    LADDERS PER SHEET                .
+            #   #  RESIDUE AA STRUCTURE BP1 BP2  ACC     N-H-->O    O-->H-N    N-H-->O    O-->H-N    TCO  KAPPA ALPHA  PHI   PSI    X-CA   Y-CA   Z-CA 
+            #     1    1 A V              0   0  133      0, 0.0     2,-0.4     0, 0.0   127,-0.1   0.000 360.0 360.0 360.0 144.8    6.9   17.8    4.6
+            #     2    2 A L        -     0   0   19     71,-0.1   122,-0.0     1,-0.1     0, 0.0  -0.791 360.0-141.9 -92.9 121.5   10.6   17.9    4.3
+            #     3    3 A S     >  -     0   0   43     -2,-0.4     4,-2.8     1,-0.0     5,-0.2  -0.150  29.4-103.9 -60.8-176.0   12.3   19.9    7.1
+
             #print;
 
-            @data = unpack 'a5a5a1a1a4a1a16a5a57a6a6', $_;
+            @data = unpack 'a5a5a1a1a4a1a16a5a65a6a6', $_;
 
             ($resSeq = $data[1]) =~ s/\s+//g;
             ($iCode  = $data[2]) =~ s/\s+//g;
