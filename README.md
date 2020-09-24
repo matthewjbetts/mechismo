@@ -106,80 +106,85 @@ sudo /etc/init.d/httpd/graceful
 
 ## Data generation and import
 
-~~~~
-# FIXME - won't need the following when mechismo is properly installed
-export MECHISMO=/home/mbetts/work/mechismo/
-~~~~
-
+### initialisation
 ~~~~
 # FIXME - make sure all code is installed on all computers to be used (inc. all cluster nodes)
 # edit fist.conf to set the host, dbname, dbuser and dbpassword
+
+# environment variables
+export MECHISMO=`pwd`/ # FIXME - won't need this if mechismo is properly installed
+export MECHISMO_V=3.0 # FIXME - set this in config file
+export MECHISMO_DN=./data/processed/${MECHISMO_V}/ # FIXME - set this in config file
+export DS=/net/home.isilon/ds-russell/ # FIXME - set this in config file, or paths to individual datasets
 
 # create the db and user
 ./script/create_db.pl fist.conf
 
 # load the schema
-mysql -p -D [dbname] < sql/schema.sql
+mysql -p -D [dbname] < sql/schema.sql # FIXME - get dbname from config file
 
-export DS=/home/mbetts/work/data/external/ # location of external data files
-# FIXME - add download instructions for these
-mkdir -p ./data/processed/
+mkdir -p ${MECHISMO_DN}
 ~~~~
 
 ### Taxa
 ~~~~
-mkdir -p ./data/processed/ncbi_taxa/
-/usr/bin/time -o ./data/processed/parse_taxa.time perl -I./lib/ ./script/parse_taxa.pl $DS/ncbi-taxonomy/names.dmp $DS/ncbi-taxonomy/nodes.dmp > ./data/processed/ncbi_taxa/Taxon.tsv
-/usr/bin/time -o ./data/processed/import_taxa.time perl -e 'print"Fist::IO::Taxon\tdata/processed/ncbi_taxa/Taxon.tsv\n"' | perl -I./lib ./script/import_tsv.pl 
-gzip ./data/processed/ncbi_taxa/Taxon.tsv
+mkdir -p ${MECHISMO_DN}ncbi_taxa/
+/usr/bin/time -o ${MECHISMO_DN}parse_taxa.time perl -I./lib/ ./script/parse_taxa.pl $DS/ncbi-taxonomy/names.dmp $DS/ncbi-taxonomy/nodes.dmp > ${MECHISMO_DN}ncbi_taxa/Taxon.tsv
+/usr/bin/time -o ${MECHISMO_DN}import_taxa.time perl -e 'print"Fist::IO::Taxon\t$ENV{MECHISMO_DN}ncbi_taxa/Taxon.tsv\n"' | perl -I./lib ./script/import_tsv.pl 
+gzip ${MECHISMO_DN}ncbi_taxa/Taxon.tsv
 ~~~~
 
 ### Structures
 ~~~~
 # FIXME - assumes biounit structures are stored in $DS/pdb-biounit/
-mkdir -p ./data/processed/pdb
-/usr/bin/time -o ./data/processed/pdb/parse.time perl -I./lib ./script/parse_pdb.pl --outdir ./data/processed/ --ecod $DS/ecod/ecod.latest.domains.txt --fork pdb --n_jobs 6 $DS/pdb 1> ./data/processed/pdb/parse.txt 2> ./data/processed/pdb/parse.err
+mkdir -p ${MECHISMO_DN}pdb
+/usr/bin/time -o ${MECHISMO_DN}pdb/parse.time perl -I./lib ./script/parse_pdb.pl --outdir ${MECHISMO_DN} --ecod $DS/ecod/ecod.latest.domains.txt --fork pdb --n_jobs 20 $DS/pdb 1> ${MECHISMO_DN}pdb/parse.txt 2> ${MECHISMO_DN}pdb/parse.err
 # FIXME - check for PBS errors, re-run any affected files
 
 # import
 # NOTE: fist and seqres sequences are stored non-redundantly by the mapping method below
-ls ./data/processed/pdb/*/Ecod.tsv | head -1 | perl -ne '/.*\/(\S+)\.tsv/ and print"Fist::IO::$1\t$_";' > ./data/processed/pdb/import.inp # Ecod.tsv was repeated for each job but only need to import once
-ls ./data/processed/pdb/*/Pdb.tsv | perl -ne '/(\d+)\/(\S+?)\./ and print"Fist::IO::$2\t$_";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/Expdta.tsv | perl -ne '/(\d+)\/(\S+?)\./ and print"Fist::IO::$2\t$_";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/Seq.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Seq\t$_\tid={name=$1}\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/Frag.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Frag\t$_\tid=$1,id_seq={name=$1}\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/ChainSegment.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::ChainSegment\t$_\tid=$1,id_frag=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/SeqToTaxon.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToTaxon\t$_\tid_seq={name=$1}\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq={name=$1},id_group=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/FragToSeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragToSeqGroup\t$_\tid_frag=$1,id_group=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/FragDssp.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragDssp\t$_\tid_frag=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/FragToEcod.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragToEcod\t$_\tid_frag=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/FragResMapping.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragResMapping\t$_\tid_frag=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/FragInst.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragInst\t$_\tid=$1,id_frag=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/Contact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Contact\t$_\tid=$1,id_frag_inst=$1\n";' >> ./data/processed/pdb/import.inp
-ls ./data/processed/pdb/*/ResContact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::ResContact\t$_\tid_contact=$1\n";' >> ./data/processed/pdb/import.inp
-/usr/bin/time -o ./data/processed/pdb/import.time perl -I./lib ./script/import_tsv.pl < ./data/processed/pdb/import.inp &> ./data/processed/pdb/import.err
+ls ${MECHISMO_DN}pdb/*/Ecod.tsv | head -1 | perl -ne '/.*\/(\S+)\.tsv/ and print"Fist::IO::$1\t$_";' > ${MECHISMO_DN}pdb/import.inp # Ecod.tsv was repeated for each job but only need to import once
+ls ${MECHISMO_DN}pdb/*/Pdb.tsv | perl -ne '/(\d+)\/([^\/]+)\.tsv/ and print"Fist::IO::$2\t$_";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Expdta.tsv | perl -ne '/(\d+)\/([^\/]+)\.tsv/ and print"Fist::IO::$2\t$_";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Seq.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Seq\t$_\tid={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Frag.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Frag\t$_\tid=$1,id_seq={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/ChainSegment.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::ChainSegment\t$_\tid=$1,id_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/SeqToTaxon.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToTaxon\t$_\tid_seq={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq={name=$1},id_group=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragToSeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragToSeqGroup\t$_\tid_frag=$1,id_group=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragDssp.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragDssp\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragToEcod.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragToEcod\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragResMapping.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragResMapping\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragInst.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragInst\t$_\tid=$1,id_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Contact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Contact\t$_\tid=$1,id_frag_inst=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/ResContact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::ResContact\t$_\tid_contact=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+/usr/bin/time -o ${MECHISMO_DN}pdb/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}pdb/import.inp &> ${MECHISMO_DN}pdb/import.err
 
 # archive the text files
 ~~~~
 
-### UniProt (swissprot canonical isoforms)
+### UniProt (swissprot canonical and alternative isoforms (sprot and varsplic, respectively))
 ~~~~
-mkdir -p ./data/processed/uniprot/sprot
+mkdir -p ${MECHISMO_DN}uniprot/sprot
 
-/usr/bin/time -o ./data/processed/uniprot/sprot/parse.time perl -I./lib ./script/parse_uniprot.pl --outdir ./data/processed/uniprot/sprot/ ${DS}/uniprot/2019_01/uniprot_sprot.dat.gz 1> ./data/processed/uniprot/sprot/parse.txt 2> ./data/processed/uniprot/sprot/parse.err
+/usr/bin/time -o ${MECHISMO_DN}uniprot/sprot/parse.time perl -I./lib ./script/parse_uniprot.pl \
+  --outdir ${MECHISMO_DN}uniprot/sprot/ \
+  --varsplic ${DS}/uniprot/knowledgebase/complete/uniprot_sprot_varsplic.fasta.gz \
+  ${DS}/uniprot/knowledgebase/complete/uniprot_sprot.dat.gz \
+  1> ${MECHISMO_DN}uniprot/sprot/parse.txt \
+  2> ${MECHISMO_DN}uniprot/sprot/parse.err &
 
 # import - need to map sequence ids to new ids so as not to clash with ids already in db
-echo -e "Fist::IO::Seq\t./data/processed/uniprot/sprot/Seq.tsv\tid=01" > ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::SeqToTaxon\t./data/processed/uniprot/sprot/SeqToTaxon.tsv\tid_seq=01" >> ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::SeqGroup\t./data/processed/uniprot/sprot/SeqGroup.tsv\tid=01" >> ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::SeqToGroup\t./data/processed/uniprot/sprot/SeqToGroup.tsv\tid_group=01,id_seq=01" >> ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::Alias\t./data/processed/uniprot/sprot/Alias.tsv\tid_seq=01" >> ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::Feature\t./data/processed/uniprot/sprot/Feature.tsv\tid=01" >> ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::FeatureInst\t./data/processed/uniprot/sprot/FeatureInst.tsv\tid=01,id_feature=01,id_seq=01" >> ./data/processed/uniprot/sprot/import.inp
-echo -e "Fist::IO::PmidToFeatureInst\t./data/processed/uniprot/sprot/PmidToFeatureInst.tsv\tid_feature_inst=01" >> ./data/processed/uniprot/sprot/import.inp
-/usr/bin/time -o ./data/processed/uniprot/sprot/import.time perl -I./lib ./script/import_tsv.pl < ./data/processed/uniprot/sprot/import.inp &> ./data/processed/uniprot/sprot/import.err
+echo -e "Fist::IO::Seq\t${MECHISMO_DN}uniprot/sprot/Seq.tsv\tid=01" > ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::SeqToTaxon\t${MECHISMO_DN}uniprot/sprot/SeqToTaxon.tsv\tid_seq=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::SeqGroup\t${MECHISMO_DN}uniprot/sprot/SeqGroup.tsv\tid=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::SeqToGroup\t${MECHISMO_DN}uniprot/sprot/SeqToGroup.tsv\tid_group=01,id_seq=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::Alias\t${MECHISMO_DN}uniprot/sprot/Alias.tsv\tid_seq=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::Feature\t${MECHISMO_DN}uniprot/sprot/Feature.tsv\tid=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::FeatureInst\t${MECHISMO_DN}uniprot/sprot/FeatureInst.tsv\tid=01,id_feature=01,id_seq=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+echo -e "Fist::IO::PmidToFeatureInst\t${MECHISMO_DN}uniprot/sprot/PmidToFeatureInst.tsv\tid_feature_inst=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
+/usr/bin/time -o ${MECHISMO_DN}uniprot/sprot/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}uniprot/sprot/import.inp &> ${MECHISMO_DN}uniprot/sprot/import.err
 
 # archive the text files
 
@@ -198,15 +203,15 @@ echo -e "Fist::IO::PmidToFeatureInst\t./data/processed/uniprot/sprot/PmidToFeatu
 
 
 ## get mapping of uniprot accessions to other identifiers
-/usr/bin/time -o ./data/processed/uniprot/id_mapping.time zcat /net/netfile1/ds-russell/uniprot/knowledgebase/idmapping/idmapping.dat.gz | perl -I./lib script/uniprot_mapping.pl 1> ./data/processed/uniprot/id_mapping.tsv 2> ./data/processed/uniprot/id_mapping.err
-/usr/bin/time -o ./data/processed/uniprot/id_mapping.import.time perl -e 'print"Fist::IO::Alias\t./data/processed/uniprot/id_mapping.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl &> ./data/processed/uniprot/id_mapping.import.err
-gzip ./data/processed/uniprot/id_mapping.tsv
+/usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.time zcat /net/netfile1/ds-russell/uniprot/knowledgebase/idmapping/idmapping.dat.gz | perl -I./lib script/uniprot_mapping.pl 1> ${MECHISMO_DN}uniprot/id_mapping.tsv 2> ${MECHISMO_DN}uniprot/id_mapping.err
+/usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.import.time perl -e 'print"Fist::IO::Alias\t${MECHISMO_DN}uniprot/id_mapping.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl &> ${MECHISMO_DN}uniprot/id_mapping.import.err
+gzip ${MECHISMO_DN}uniprot/id_mapping.tsv
 
 
 ## extract fasta format sprot and varsplic sequences with database ids for the taxa of interest
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  /usr/bin/time -o ./data/processed/uniprot/sprot/${id_taxon}_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source 'uniprot-sprot' --source varsplic --taxon $id_taxon > data/processed/uniprot/sprot/${id_taxon}_aa.fasta &
+  /usr/bin/time -o ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source 'uniprot-sprot' --source varsplic --taxon $id_taxon > ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta &
 done
 
 
@@ -235,19 +240,19 @@ mkdir -p ./data/blast/fist_na-fist_na
 #for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 #do
 #  mkdir -p ./data/blast/sprot_varsplic-fist/${id_taxon}
-#  /usr/bin/time -o ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/sprot_varsplic-fist --pbs $id_taxon --n_jobs 100 --db ./data/blast/fist --fasta ./data/processed/uniprot/sprot/${id_taxon}_aa.fasta 1> ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.out 2> ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.err &
+#  /usr/bin/time -o ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/sprot_varsplic-fist --pbs $id_taxon --n_jobs 100 --db ./data/blast/fist --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.out 2> ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.err &
 #done
 
 mkdir -p ./data/blast/sprot_varsplic-fist/
 /usr/bin/time -o ./data/blast/sprot_varsplic-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/ --pbs sprot_varsplic-fist --n_jobs 30 --db ./data/blast/fist \
---fasta ./data/processed/uniprot/sprot/272634_aa.fasta \
---fasta ./data/processed/uniprot/sprot/224308_aa.fasta \
---fasta ./data/processed/uniprot/sprot/83333_aa.fasta \
---fasta ./data/processed/uniprot/sprot/559292_aa.fasta \
---fasta ./data/processed/uniprot/sprot/6239_aa.fasta \
---fasta ./data/processed/uniprot/sprot/7227_aa.fasta \
---fasta ./data/processed/uniprot/sprot/10090_aa.fasta \
---fasta ./data/processed/uniprot/sprot/9606_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/272634_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/224308_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/83333_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/559292_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/6239_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/7227_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/10090_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/9606_aa.fasta \
 1> ./data/blast/sprot_varsplic-fist/blast.out 2> ./data/blast/sprot_varsplic-fist/blast.err &
 
 
@@ -255,19 +260,19 @@ mkdir -p ./data/blast/sprot_varsplic-fist/
 #for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 #do
 #  mkdir -p ./data/blast/sprot_varsplic-seqres/${id_taxon}
-#  /usr/bin/time -o ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/sprot_varsplic-seqres --pbs $id_taxon --n_jobs 100 --db ./data/blast/seqres --fasta ./data/processed/uniprot/sprot/${id_taxon}_aa.fasta 1> ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.out 2> ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.err &
+#  /usr/bin/time -o ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/sprot_varsplic-seqres --pbs $id_taxon --n_jobs 100 --db ./data/blast/seqres --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.out 2> ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.err &
 #done
 
 mkdir -p ./data/blast/sprot_varsplic-seqres/${id_taxon}
 /usr/bin/time -o ./data/blast/sprot_varsplic-seqres/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/ --pbs sprot_varsplic-seqres --n_jobs 30 --db ./data/blast/seqres \
---fasta ./data/processed/uniprot/sprot/272634_aa.fasta \
---fasta ./data/processed/uniprot/sprot/224308_aa.fasta \
---fasta ./data/processed/uniprot/sprot/83333_aa.fasta \
---fasta ./data/processed/uniprot/sprot/559292_aa.fasta \
---fasta ./data/processed/uniprot/sprot/6239_aa.fasta \
---fasta ./data/processed/uniprot/sprot/7227_aa.fasta \
---fasta ./data/processed/uniprot/sprot/10090_aa.fasta \
---fasta ./data/processed/uniprot/sprot/9606_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/272634_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/224308_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/83333_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/559292_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/6239_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/7227_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/10090_aa.fasta \
+--fasta ${MECHISMO_DN}uniprot/sprot/9606_aa.fasta \
 1> ./data/blast/sprot_varsplic-seqres/blast.out 2> ./data/blast/sprot_varsplic-seqres/blast.err &
 
 
@@ -629,12 +634,12 @@ perl -e 'print"Fist::IO::GoTerm\t./data/GO/gene_ontology_ext.tsv\n";' | perl -I.
 
 
 ## categorise query proteins by top level GO biological process
-perl -ne 'BEGIN{$flag = 1;} if(/^\[Term\]/){$flag and defined($term) and print(@{$term}); $term = []; $flag = 0;}elsif(/^is_a: GO:0008150/){$flag = 1;}elsif(/^\[/){$term = undef; $flag = 0;} if(defined($term)){push @{$term}, $_;}elsif($flag){print;} END{$flag and defined($term) and print(@{$term});}' /net/netfile1/ds-russell/GO/gene_ontology_ext.obo > ./data/processed/uniprot/sprot/goslim_biological_process.obo
+perl -ne 'BEGIN{$flag = 1;} if(/^\[Term\]/){$flag and defined($term) and print(@{$term}); $term = []; $flag = 0;}elsif(/^is_a: GO:0008150/){$flag = 1;}elsif(/^\[/){$term = undef; $flag = 0;} if(defined($term)){push @{$term}, $_;}elsif($flag){print;} END{$flag and defined($term) and print(@{$term});}' /net/netfile1/ds-russell/GO/gene_ontology_ext.obo > ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo
 
-mkdir -p ./data/processed/uniprot/sprot/goslim_biological_process/
-map2slim ./data/processed/uniprot/sprot/goslim_biological_process.obo /net/netfile1/ds-russell/GO/gene_ontology_ext.obo /net/netfile1/ds-russell/uniprot-goa/gene_association.goa_uniprot.gz 2> ./data/processed/uniprot/sprot/goslim_biological_process/uniprot-goa.slim.err | gzip >./data/processed/uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
-zcat ./data/processed/uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_biological_process 1> ./data/processed/uniprot/sprot/goslim_biological_process/GoAnnotation.tsv 2> ./data/processed/uniprot/sprot/goslim_biological_process/GoAnnotation.err
-perl -e 'print"Fist::IO::GoAnnotation\t./data/processed/uniprot/sprot/goslim_biological_process/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
+mkdir -p ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/
+map2slim ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo /net/netfile1/ds-russell/GO/gene_ontology_ext.obo /net/netfile1/ds-russell/uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
+zcat ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_biological_process 1> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.err
+perl -e 'print"Fist::IO::GoAnnotation\t${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
 
 
 ## load site types
@@ -1060,10 +1065,10 @@ perl -I./lib ./script/interactors_and_interfaces_per_query.pl < ./data/QueryInte
 
 
 ## categorise query proteins by GO slim terms
-mkdir -p ./data/processed/uniprot/sprot/goslim_generic/
-map2slim /net/netfile1/ds-russell/GO_slims/goslim_generic.obo /net/netfile1/ds-russell/GO/gene_ontology_ext.obo /net/netfile1/ds-russell/uniprot-goa/gene_association.goa_uniprot.gz 2> ./data/processed/uniprot/sprot/goslim_generic/uniprot-goa.slim.err | gzip >./data/processed/uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
-zcat ./data/processed/uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_generic 1> ./data/processed/uniprot/sprot/goslim_generic/GoAnnotation.tsv 2> ./data/processed/uniprot/sprot/goslim_generic/GoAnnotation.err
-perl -e 'print"Fist::IO::GoAnnotation\t./data/processed/uniprot/sprot/goslim_generic/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
+mkdir -p ${MECHISMO_DN}uniprot/sprot/goslim_generic/
+map2slim /net/netfile1/ds-russell/GO_slims/goslim_generic.obo /net/netfile1/ds-russell/GO/gene_ontology_ext.obo /net/netfile1/ds-russell/uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
+zcat ${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_generic 1> ${MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.tsv 2> ${MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.err
+perl -e 'print"Fist::IO::GoAnnotation\t${MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
 
 
 ## PDB chemical types (from Rob)
@@ -1107,21 +1112,21 @@ do
 done
 
 ## trembl
-mkdir -p ./data/processed/uniprot/trembl
-/usr/bin/time -o ./data/processed/uniprot/trembl/parse.time perl -I./lib ./script/parse_uniprot.pl --trembl --outdir ./data/processed/uniprot/trembl/ /net/netfile1/ds-russell/uniprot/knowledgebase/complete/uniprot_trembl.dat.gz 1> ./data/processed/uniprot/trembl/parse.txt 2> ./data/processed/uniprot/trembl/parse.err
-perl -e 'print"Fist::IO::Seq\t./data/processed/uniprot/trembl/Seq.tsv\tid=01\nFist::IO::SeqToTaxon\t./data/processed/uniprot/trembl/SeqToTaxon.tsv\tid_seq=01\nFist::IO::Alias\t./data/processed/uniprot/trembl/Alias.tsv\tid_seq=01\n";' > ./data/processed/uniprot/trembl/import.inp
-/usr/bin/time -o ./data/processed/uniprot/trembl/import.time perl -I./lib ./script/import_tsv.pl < ./data/processed/uniprot/trembl/import.inp &> ./data/processed/uniprot/trembl/import.err
+mkdir -p ${MECHISMO_DN}uniprot/trembl
+/usr/bin/time -o ${MECHISMO_DN}uniprot/trembl/parse.time perl -I./lib ./script/parse_uniprot.pl --trembl --outdir ${MECHISMO_DN}uniprot/trembl/ /net/netfile1/ds-russell/uniprot/knowledgebase/complete/uniprot_trembl.dat.gz 1> ${MECHISMO_DN}uniprot/trembl/parse.txt 2> ${MECHISMO_DN}uniprot/trembl/parse.err
+perl -e 'print"Fist::IO::Seq\t${MECHISMO_DN}uniprot/trembl/Seq.tsv\tid=01\nFist::IO::SeqToTaxon\t${MECHISMO_DN}uniprot/trembl/SeqToTaxon.tsv\tid_seq=01\nFist::IO::Alias\t${MECHISMO_DN}uniprot/trembl/Alias.tsv\tid_seq=01\n";' > ${MECHISMO_DN}uniprot/trembl/import.inp
+/usr/bin/time -o ${MECHISMO_DN}uniprot/trembl/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}uniprot/trembl/import.inp &> ${MECHISMO_DN}uniprot/trembl/import.err
 
 ## sprot-varsplic
-mkdir -p ./data/processed/uniprot/sprot_varsplic
-perl -I./lib ./script/parse_fasta.pl --source sprot --outdir ./data/processed/uniprot/sprot_varsplic /net/netfile1/ds-russell/uniprot/knowledgebase/complete/uniprot_sprot_varsplic.fasta.gz 1> ./data/processed/uniprot/sprot_varsplic/parse.txt 2> ./data/processed/uniprot/sprot_varsplic/parse.err
+mkdir -p ${MECHISMO_DN}uniprot/sprot_varsplic
+perl -I./lib ./script/parse_fasta.pl --source sprot --outdir ${MECHISMO_DN}uniprot/sprot_varsplic /net/netfile1/ds-russell/uniprot/knowledgebase/complete/uniprot_sprot_varsplic.fasta.gz 1> ${MECHISMO_DN}uniprot/sprot_varsplic/parse.txt 2> ${MECHISMO_DN}uniprot/sprot_varsplic/parse.err
 
 # get taxa via that of the 'master' isoform already in the db
-perl -F'/\t/' -nae 'chomp(@F); if($F[2] eq "UniProtKB accession"){($ac = $F[1]) =~ s/-\d+\Z//;print"SELECT $F[0], b.id_taxon FROM Alias AS a, SeqToTaxon AS b WHERE a.alias = \"$ac\" AND a.type = \"UniProtKB accession\" AND b.id_seq = a.id_seq;\n";}' ./data/processed/uniprot/sprot_varsplic/Alias.tsv | mysql -u anonymous -D fistdb --skip-column-names 1> data/processed/uniprot/sprot_varsplic/SeqToTaxon.tsv 2> data/processed/uniprot/sprot_varsplic/SeqToTaxon.err
+perl -F'/\t/' -nae 'chomp(@F); if($F[2] eq "UniProtKB accession"){($ac = $F[1]) =~ s/-\d+\Z//;print"SELECT $F[0], b.id_taxon FROM Alias AS a, SeqToTaxon AS b WHERE a.alias = \"$ac\" AND a.type = \"UniProtKB accession\" AND b.id_seq = a.id_seq;\n";}' ${MECHISMO_DN}uniprot/sprot_varsplic/Alias.tsv | mysql -u anonymous -D fistdb --skip-column-names 1> ${MECHISMO_DN}uniprot/sprot_varsplic/SeqToTaxon.tsv 2> ${MECHISMO_DN}uniprot/sprot_varsplic/SeqToTaxon.err
 
 
 ## count the number of sequences in the eight species currently of interest
-ls data/processed/uniprot/{sprot,sprot_varsplic,trembl}/SeqToTaxon.tsv | perl -ne 'chomp; $fn = $_; ($id = $_) =~ s/.*data\/uniprot\/(\S+?)\/SeqToTaxon\S+/$1/; push @ids, $id; open(I, $fn) or die; while(<I>){($id_seq, $id_taxon) = split; $S{$id_taxon}->{$id}++;} END{foreach $id_taxon (9606,10090,7227,6239,559292,83333,224308,272634){print $id_taxon; foreach $id (@ids) {$n = defined($S{$id_taxon}->{$id}) ? $S{$id_taxon}->{$id} : 0; print "\t$n";} print"\n";}}'
+ls ${MECHISMO_DN}uniprot/{sprot,sprot_varsplic,trembl}/SeqToTaxon.tsv | perl -ne 'chomp; $fn = $_; ($id = $_) =~ s/.*data\/uniprot\/(\S+?)\/SeqToTaxon\S+/$1/; push @ids, $id; open(I, $fn) or die; while(<I>){($id_seq, $id_taxon) = split; $S{$id_taxon}->{$id}++;} END{foreach $id_taxon (9606,10090,7227,6239,559292,83333,224308,272634){print $id_taxon; foreach $id (@ids) {$n = defined($S{$id_taxon}->{$id}) ? $S{$id_taxon}->{$id} : 0; print "\t$n";} print"\n";}}'
 
 
 ## known ints from unint

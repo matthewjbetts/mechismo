@@ -87,7 +87,7 @@ $dbdomain = $config->{'Model::FistDB'}->{connect_info}->{domain};
 
 defined($dbh = DBI->connect("${dbi}:host=$dbhost", $user, $pass, {'RaiseError' => 0, 'AutoCommit' => 1})) or die;
 @cmds = (
-         #"CREATE DATABASE $dbname",
+         "CREATE DATABASE $dbname",
          "GRANT SELECT, INSERT, UPDATE, DELETE, LOCK TABLES, ALTER ON $dbname.* TO \"$dbuser\"@\"$dbdomain\" IDENTIFIED BY \"$dbpass\"",
          "USE $dbname",
         );

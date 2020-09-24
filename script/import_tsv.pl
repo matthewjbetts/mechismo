@@ -124,6 +124,8 @@ END
 # Merging multiple output files (probably from PBS) and ensuring that
 # IDs are unique and properly referred to in all different objects
 #
+# FIXME - remove the need for this entirely by using UUIDs
+#
 # Pdb.tsv             - no ids, can be loaded as-is
 # ResMapping.tsv      - no ids, can be loaded as-is
 # Frag.tsv            - map frag->id

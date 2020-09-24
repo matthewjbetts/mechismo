@@ -216,6 +216,7 @@ sub run_dssp {
 
             ($aa =~ /^\!/) and next; # DSSP chain break identifier
             ($iCode eq '') and ($iCode = '_');
+            ($ss eq '') and ($ss = 'C');
 
             if(defined($res_mapping->{$cid})) {
                 if(defined($res_mapping->{$cid}->{$resSeq})) {

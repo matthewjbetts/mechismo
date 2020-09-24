@@ -139,6 +139,8 @@ while($fn = shift @fns1) {
     }
 }
 
+print "@fns2\n";
+
 $name = defined($fork_name) ? $fork_name : $pbs_name;
 if($name) {
     if($fork_name) {
@@ -394,11 +396,11 @@ sub output_ecod_hierarchy {
     my $f;
 
     foreach $x (sort {$a <=> $b} keys %{$ecod->{hierarchy}}) {
-        print $fh join("\t", $ecod->{hierarchy}->{$x}->{id}, $x, ('') x 3, $ecod->{hierarchy}->{$x}->{name}), "\n";
+        print $fh join("\t", $ecod->{hierarchy}->{$x}->{id}, $x, ('\N') x 3, $ecod->{hierarchy}->{$x}->{name}), "\n";
         foreach $h (sort {$a <=> $b} keys %{$ecod->{hierarchy}->{$x}->{hs}}) {
-            print $fh join("\t", $ecod->{hierarchy}->{$x}->{hs}->{$h}->{id}, $x, $h, ('') x 2, $ecod->{hierarchy}->{$x}->{hs}->{$h}->{name}), "\n";
+            print $fh join("\t", $ecod->{hierarchy}->{$x}->{hs}->{$h}->{id}, $x, $h, ('\N') x 2, $ecod->{hierarchy}->{$x}->{hs}->{$h}->{name}), "\n";
             foreach $t (sort {$a <=> $b} keys %{$ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}}) {
-                print $fh join("\t", $ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{id}, $x, $h, $t, '', $ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{name}), "\n";
+                print $fh join("\t", $ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{id}, $x, $h, $t, '\N', $ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{name}), "\n";
                 foreach $f (sort {$a <=> $b} keys %{$ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{fs}}) {
                     print $fh join("\t", $ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{fs}->{$f}->{id}, $x, $h, $t, $f, $ecod->{hierarchy}->{$x}->{hs}->{$h}->{ts}->{$t}->{fs}->{$f}->{name}), "\n";
                 }
@@ -620,9 +622,9 @@ sub parse {
             output_tsv($output, 'FragToSeqGroup', $frag->id, $seq_group->id);
             foreach $seq ($seq_group->seqs) {
                 $seq->output_tsv($output->{Seq}->{fh});
-                output_tsv($output, 'SeqToGroup', $seq->id, $seq_group->id);
+                output_tsv($output, 'SeqToGroup', $seq->id, $seq_group->id, 0); # FIXME - refactor - use object function
                 foreach $taxon ($seq->taxa) {
-                    output_tsv($output, 'SeqToTaxon', $seq->id, $taxon->id);
+                    output_tsv($output, 'SeqToTaxon', $seq->id, $taxon->id); # FIXME - refactor - use object function
                 }
             }
         }

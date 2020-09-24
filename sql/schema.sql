@@ -328,10 +328,12 @@ CREATE TABLE FragToEcod (
        id_frag      INTEGER UNSIGNED NOT NULL,
        id_ecod      INTEGER UNSIGNED NOT NULL,
        type         ENUM('ecod', 'match') NOT NULL DEFAULT 'ecod', # origin of the ECOD annotation
+       ac           VARCHAR(30) NOT NULL,
 
        PRIMARY KEY (id_frag, id_ecod),
        INDEX(id_ecod),
        INDEX(type),
+       INDEX(ac),
 
        FOREIGN KEY (id_frag) REFERENCES Frag(id) ON DELETE CASCADE ON UPDATE CASCADE,
        FOREIGN KEY (id_ecod) REFERENCES Ecod(id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -891,4 +893,3 @@ CREATE TABLE StringInt (
 )
 ENGINE=MyISAM
 ;
-

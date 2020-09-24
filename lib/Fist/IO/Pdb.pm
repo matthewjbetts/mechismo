@@ -524,6 +524,10 @@ sub parse {
 
         $siteDom = [];
         foreach $siteRes (@{$site->{residues}}) {
+            if($siteRes->[1] !~ /\A\d+\Z/) {
+                Carp::cluck(sprintf("non-numeric siteRes '%s %s %s' in '%s'", @{$siteRes}, $self->fn));
+                next;
+            }
             push @{$siteDom}, sprintf("%s %d %s to %s %d %s", @{$siteRes}, @{$siteRes});
         }
 
