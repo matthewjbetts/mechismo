@@ -162,8 +162,8 @@ ls ${MECHISMO_DN}pdb/*/ResContact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist:
 /usr/bin/time -o ${MECHISMO_DN}pdb/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}pdb/import.inp &> ${MECHISMO_DN}pdb/import.err
 
 # archive the text files
-tar -C ${MECHISMO_DN} -czf ${MECHISMO_DN}pdb.tar.gz ./pdb
-rm -rf ${MECHISMO_DN}
+tar -C ${MECHISMO_DN} -czf ${MECHISMO_DN}pdb_parsed.tar.gz ./pdb
+rm -rf ${MECHISMO_DN}/pdb
 ~~~~
 
 ### UniProt (swissprot canonical and alternative isoforms (sprot and varsplic, respectively))
@@ -189,6 +189,8 @@ echo -e "Fist::IO::PmidToFeatureInst\t${MECHISMO_DN}uniprot/sprot/PmidToFeatureI
 /usr/bin/time -o ${MECHISMO_DN}uniprot/sprot/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}uniprot/sprot/import.inp &> ${MECHISMO_DN}uniprot/sprot/import.err
 
 # archive the text files
+tar -C ${MECHISMO_DN} -czf ${MECHISMO_DN}uniprot_parsed.tar.gz ./uniprot
+rm -rf ${MECHISMO_DN}/uniprot
 
 ## NOTE: need to extract seqs from db, as below, rather than using Seq.tsv files generated
 ## above, since the ids in those are only unique to the specific fork / pbs job, and not
@@ -196,57 +198,64 @@ echo -e "Fist::IO::PmidToFeatureInst\t${MECHISMO_DN}uniprot/sprot/PmidToFeatureI
 
 
 ## extract fasta format fist and seqres sequences with database ids
-/usr/bin/time -o ./data/pdb/fist_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source fist > data/pdb/fist_aa.fasta
-/usr/bin/time -o ./data/pdb/seqres_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source seqres > data/pdb/seqres_aa.fasta
+mkdir -p ${MECHISMO_DN}/pdb/
+/usr/bin/time -o ${MECHISMO_DN}pdb/fist_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source fist > ${MECHISMO_DN}pdb/fist_aa.fasta
+/usr/bin/time -o ${MECHISMO_DN}pdb/seqres_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source seqres > ${MECHISMO_DN}pdb/seqres_aa.fasta
 
 
 ## extract fasta format fist nucleotide sequences with database ids
-/usr/bin/time -o ./data/pdb/fist_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type nucleotide --source fist > data/pdb/fist_na.fasta
+/usr/bin/time -o ${MECHISMO_DN}pdb/fist_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type nucleotide --source fist > ${MECHISMO_DN}pdb/fist_na.fasta
 
 
 ## get mapping of uniprot accessions to other identifiers
+mkdir -p ${MECHISMO_DN}uniprot
 /usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.time zcat /net/netfile1/ds-russell/uniprot/knowledgebase/idmapping/idmapping.dat.gz | perl -I./lib script/uniprot_mapping.pl 1> ${MECHISMO_DN}uniprot/id_mapping.tsv 2> ${MECHISMO_DN}uniprot/id_mapping.err
-/usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.import.time perl -e 'print"Fist::IO::Alias\t${MECHISMO_DN}uniprot/id_mapping.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl &> ${MECHISMO_DN}uniprot/id_mapping.import.err
+/usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.import.time perl -e 'print"Fist::IO::Alias\t$ENV{MECHISMO_DN}uniprot/id_mapping.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl &> ${MECHISMO_DN}uniprot/id_mapping.import.err
 gzip ${MECHISMO_DN}uniprot/id_mapping.tsv
 
 
+## define taxa of interest
+export TAXA='272634 224308 83333 559292 6239 7227 10090 9606 2697049 3702'
+
+
 ## extract fasta format sprot and varsplic sequences with database ids for the taxa of interest
-for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
+mkdir -p ${MECHISMO_DN}/uniprot/sprot
+for id_taxon in $TAXA
 do
   /usr/bin/time -o ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source 'uniprot-sprot' --source varsplic --taxon $id_taxon > ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta &
 done
 
 
 ## use SIFTS mapping to add uniprot accessions to fragment seq groups
-mkdir -p ./data/sifts
-/usr/bin/time -o ./data/sifts/sifts.time perl -I./lib ./script/parse_sifts.pl < /net/netfile1/ds-russell/sifts/text/pdb_chain_uniprot.lst 1> ./data/sifts/sifts.tsv 2> ./data/sifts/parse.err
-/usr/bin/time -o ./data/sifts/import.time perl -e 'print"Fist::IO::SeqToGroup\tdata/sifts/sifts.tsv\n";' | perl -I./lib ./script/import_tsv.pl &> ./data/sifts/import.err
+mkdir -p ${MECHISMO_DN}sifts
+/usr/bin/time -o ${MECHISMO_DN}sifts/sifts.time perl -I./lib ./script/parse_sifts.pl < ${DS}sifts/text/pdb_chain_uniprot.lst 1> ${MECHISMO_DN}sifts/sifts.tsv 2> ${MECHISMO_DN}sifts/parse.err
+/usr/bin/time -o ${MECHISMO_DN}sifts/import.time perl -e 'print"Fist::IO::SeqToGroup\t$ENV{MECHISMO_DN}sifts/sifts.tsv\n";' | perl -I./lib ./script/import_tsv.pl &> ${MECHISMO_DN}sifts/import.err
 
 
 ## blast dbs of Frag fist and seqres aa sequences
-mkdir -p ./data/blast/
-formatdb -t fist -i data/pdb/fist_aa.fasta -p T -n ./data/blast/fist
-formatdb -t seqres -i data/pdb/seqres_aa.fasta -p T -n ./data/blast/seqres
-formatdb -t fist -i data/pdb/fist_na.fasta -p F -n ./data/blast/fist_na
+mkdir -p ${MECHISMO_DN}blast/
+formatdb -t fist -i ${MECHISMO_DN}pdb/fist_aa.fasta -p T -n ${MECHISMO_DN}blast/fist
+formatdb -t seqres -i ${MECHISMO_DN}pdb/seqres_aa.fasta -p T -n ${MECHISMO_DN}blast/seqres
+formatdb -t fist -i ${MECHISMO_DN}pdb/fist_na.fasta -p F -n ${MECHISMO_DN}blast/fist_na
 
 
 ## blast fist vs fist
-mkdir -p ./data/blast/fist-fist
-/usr/bin/time -o ./data/blast/fist-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/ --pbs fist-fist --n_jobs 30 --db ./data/blast/fist --fasta data/pdb/fist_aa.fasta --no_self 1> ./data/blast/fist-fist/blast.out 2> ./data/blast/fist-fist/blast.err
+mkdir -p ${MECHISMO_DN}blast/fist-fist
+/usr/bin/time -o ${MECHISMO_DN}blast/fist-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --pbs fist-fist --n_jobs 30 --db ${MECHISMO_DN}blast/fist --fasta ${MECHISMO_DN}pdb/fist_aa.fasta --no_self 1> ${MECHISMO_DN}blast/fist-fist/blast.out 2> ${MECHISMO_DN}blast/fist-fist/blast.err
 
-mkdir -p ./data/blast/fist_na-fist_na
-/usr/bin/time -o ./data/blast/fist_na-fist_na/blast.time perl -I./lib ./script/blast.pl --program blastn --outdir ./data/blast/fist_na-fist_na --db ./data/blast/fist_na --fasta data/pdb/fist_na.fasta --no_self 1> ./data/blast/fist_na-fist_na/blast.out 2> ./data/blast/fist_na-fist_na/blast.err
+mkdir -p ${MECHISMO_DN}blast/fist_na-fist_na
+/usr/bin/time -o ${MECHISMO_DN}blast/fist_na-fist_na/blast.time perl -I./lib ./script/blast.pl --program blastn --outdir ${MECHISMO_DN}blast/fist_na-fist_na --db ${MECHISMO_DN}blast/fist_na --fasta ${MECHISMO_DN}pdb/fist_na.fasta --no_self 1> ${MECHISMO_DN}blast/fist_na-fist_na/blast.out 2> ${MECHISMO_DN}blast/fist_na-fist_na/blast.err
 
 
 ## blast uniprot sprot and varsplic vs fist
 #for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 #do
-#  mkdir -p ./data/blast/sprot_varsplic-fist/${id_taxon}
-#  /usr/bin/time -o ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/sprot_varsplic-fist --pbs $id_taxon --n_jobs 100 --db ./data/blast/fist --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.out 2> ./data/blast/sprot_varsplic-fist/${id_taxon}/blast.err &
+#  mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}
+#  /usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/sprot_varsplic-fist --pbs $id_taxon --n_jobs 100 --db ${MECHISMO_DN}blast/fist --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.err &
 #done
 
-mkdir -p ./data/blast/sprot_varsplic-fist/
-/usr/bin/time -o ./data/blast/sprot_varsplic-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/ --pbs sprot_varsplic-fist --n_jobs 30 --db ./data/blast/fist \
+mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-fist/
+/usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --pbs sprot_varsplic-fist --n_jobs 30 --db ${MECHISMO_DN}blast/fist \
 --fasta ${MECHISMO_DN}uniprot/sprot/272634_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/224308_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/83333_aa.fasta \
@@ -255,18 +264,18 @@ mkdir -p ./data/blast/sprot_varsplic-fist/
 --fasta ${MECHISMO_DN}uniprot/sprot/7227_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/10090_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/9606_aa.fasta \
-1> ./data/blast/sprot_varsplic-fist/blast.out 2> ./data/blast/sprot_varsplic-fist/blast.err &
+1> ${MECHISMO_DN}blast/sprot_varsplic-fist/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-fist/blast.err &
 
 
 ## blast uniprot sprot and varsplic vs seqres
 #for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 #do
-#  mkdir -p ./data/blast/sprot_varsplic-seqres/${id_taxon}
-#  /usr/bin/time -o ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/sprot_varsplic-seqres --pbs $id_taxon --n_jobs 100 --db ./data/blast/seqres --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.out 2> ./data/blast/sprot_varsplic-seqres/${id_taxon}/blast.err &
+#  mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-seqres/${id_taxon}
+#  /usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-seqres/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/sprot_varsplic-seqres --pbs $id_taxon --n_jobs 100 --db ${MECHISMO_DN}blast/seqres --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ${MECHISMO_DN}blast/sprot_varsplic-seqres/${id_taxon}/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-seqres/${id_taxon}/blast.err &
 #done
 
-mkdir -p ./data/blast/sprot_varsplic-seqres/${id_taxon}
-/usr/bin/time -o ./data/blast/sprot_varsplic-seqres/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ./data/blast/ --pbs sprot_varsplic-seqres --n_jobs 30 --db ./data/blast/seqres \
+mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-seqres/${id_taxon}
+/usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --pbs sprot_varsplic-seqres --n_jobs 30 --db ${MECHISMO_DN}blast/seqres \
 --fasta ${MECHISMO_DN}uniprot/sprot/272634_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/224308_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/83333_aa.fasta \
@@ -275,14 +284,14 @@ mkdir -p ./data/blast/sprot_varsplic-seqres/${id_taxon}
 --fasta ${MECHISMO_DN}uniprot/sprot/7227_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/10090_aa.fasta \
 --fasta ${MECHISMO_DN}uniprot/sprot/9606_aa.fasta \
-1> ./data/blast/sprot_varsplic-seqres/blast.out 2> ./data/blast/sprot_varsplic-seqres/blast.err &
+1> ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.err &
 
 
 ## import blast results
-find ./data/blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-seqres} -name Alignment.tsv | perl -ne 'chomp; /blast\/(\S+)\// and print "Fist::IO::Alignment\t$_\tid=$1\n";' > ./data/blast/import.inp
-find ./data/blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-seqres} -name AlignedSeq.tsv | perl -ne 'chomp; /blast\/(\S+)\// and print "Fist::IO::AlignedSeq\t$_\tid_aln=$1,id_seq=DB\n";' >> ./data/blast/import.inp
-find ./data/blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-seqres} -name Hsp.tsv | perl -ne 'chomp; /blast\/(\S+)\// and print "Fist::IO::Hsp\t$_\tid=$1,id_seq=DB,id_aln=$1\n";' >> ./data/blast/import.inp
-/usr/bin/time -o ./data/blast/import.time perl -I./lib ./script/import_tsv.pl < ./data/blast/import.inp &> ./data/blast/import.err
+find ${MECHISMO_DN}blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-seqres} -name Alignment.tsv | perl -ne 'chomp; /blast\/(\S+)\// and print "Fist::IO::Alignment\t$_\tid=$1\n";' > ${MECHISMO_DN}blast/import.inp
+find ${MECHISMO_DN}blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-seqres} -name AlignedSeq.tsv | perl -ne 'chomp; /blast\/(\S+)\// and print "Fist::IO::AlignedSeq\t$_\tid_aln=$1,id_seq=DB\n";' >> ${MECHISMO_DN}blast/import.inp
+find ${MECHISMO_DN}blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-seqres} -name Hsp.tsv | perl -ne 'chomp; /blast\/(\S+)\// and print "Fist::IO::Hsp\t$_\tid=$1,id_seq=DB,id_aln=$1\n";' >> ${MECHISMO_DN}blast/import.inp
+/usr/bin/time -o ${MECHISMO_DN}blast/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}blast/import.inp &> ${MECHISMO_DN}blast/import.err
 
 
 # archive text files
@@ -296,68 +305,68 @@ find ./data/blast/{fist-fist,fist_na-fist_na,sprot_varsplic-fist,sprot_varsplic-
 mysql -p -D m2b -e 'INSERT INTO Feature (source, ac_src, description) VALUES("iupred", "long", "iupred long disorder over a sliding window of size 11")'
 
 # run iupred on all fist sequences
-mkdir -p ./data/iupred/fist/
-/usr/bin/time -o ./data/iupred/fist/iupred.time perl -I./lib ./script/iupred.pl --outdir ./data/iupred/ --fork fist --source fist --source varsplic 1> ./data/iupred/fist/iupred.out 2> ./data/iupred/fist/iupred.err
+mkdir -p ${MECHISMO_DN}iupred/fist/
+/usr/bin/time -o ${MECHISMO_DN}iupred/fist/iupred.time perl -I./lib ./script/iupred.pl --outdir ${MECHISMO_DN}iupred/ --fork fist --source fist --source varsplic 1> ${MECHISMO_DN}iupred/fist/iupred.out 2> ${MECHISMO_DN}iupred/fist/iupred.err
 
 # run iupred on uniprot-sprot sequences from species of interest
-mkdir -p ./data/iupred/uniprot/sprot_varsplic/
-/usr/bin/time -o ./data/iupred/uniprot/sprot_varsplic/iupred.time perl -I./lib ./script/iupred.pl --outdir ./data/iupred/uniprot --fork sprot_varsplic --source 'uniprot-sprot' --source varsplic --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 1> ./data/iupred/uniprot/sprot_varsplic/iupred.out 2> ./data/iupred/uniprot/sprot_varsplic/iupred.err
+mkdir -p ${MECHISMO_DN}iupred/uniprot/sprot_varsplic/
+/usr/bin/time -o ${MECHISMO_DN}iupred/uniprot/sprot_varsplic/iupred.time perl -I./lib ./script/iupred.pl --outdir ${MECHISMO_DN}iupred/uniprot --fork sprot_varsplic --source 'uniprot-sprot' --source varsplic --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 1> ${MECHISMO_DN}iupred/uniprot/sprot_varsplic/iupred.out 2> ${MECHISMO_DN}iupred/uniprot/sprot_varsplic/iupred.err
 
 # import fist iupred and other iupred at the same time
-ls ./data/iupred/fist/*/FeatureInst.tsv ./data/iupred/uniprot/sprot_varsplic/*/FeatureInst.tsv | perl -ne 'chomp; /data\/iupred\/(\S+)\/FeatureInst\.tsv/ and print"Fist::IO::FeatureInst\t$_\tid=$1,id_seq=DB,id_feature=DB\n";' > ./data/iupred/import.inp
-/usr/bin/time -o ./data/iupred/import.time perl -I./lib ./script/import_tsv.pl < ./data/iupred/import.inp &> ./data/iupred/import.err
+ls ${MECHISMO_DN}iupred/fist/*/FeatureInst.tsv ${MECHISMO_DN}iupred/uniprot/sprot_varsplic/*/FeatureInst.tsv | perl -ne 'chomp; /data\/iupred\/(\S+)\/FeatureInst\.tsv/ and print"Fist::IO::FeatureInst\t$_\tid=$1,id_seq=DB,id_feature=DB\n";' > ${MECHISMO_DN}iupred/import.inp
+/usr/bin/time -o ${MECHISMO_DN}iupred/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}iupred/import.inp &> ${MECHISMO_DN}iupred/import.err
 ~~~~
 
 
 ### Pfam
 ~~~~
 # add Pfam domains as features
-mkdir -p ./data/pfam/
-zless $DS/Pfam/Pfam-A.hmm.gz | perl -ne 'if(/^NAME  (\S+)/){$id = $1;}elsif(/^ACC   (\S+)/){$ac = $1; $ac =~ s/\.\d+\Z//;}elsif(/^DESC  (.*)\s*\Z/){$de .= "$1 ";}elsif(/^\/{2}/){print join("\t", "Pfam", $ac, $id, $de), "\n"; $de = "";}' > ./data/pfam/pfam.tsv
-mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "./data/pfam/pfam.tsv" INTO TABLE Feature (source, ac_src, id_src, description);'
+mkdir -p ${MECHISMO_DN}pfam/
+zless $DS/Pfam/Pfam-A.hmm.gz | perl -ne 'if(/^NAME  (\S+)/){$id = $1;}elsif(/^ACC   (\S+)/){$ac = $1; $ac =~ s/\.\d+\Z//;}elsif(/^DESC  (.*)\s*\Z/){$de .= "$1 ";}elsif(/^\/{2}/){print join("\t", "Pfam", $ac, $id, $de), "\n"; $de = "";}' > ${MECHISMO_DN}pfam/pfam.tsv
+mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}pfam/pfam.tsv" INTO TABLE Feature (source, ac_src, id_src, description);'
 
 # find Pfam domains in fist sequences
-mkdir -p ./data/pfam/fist
-/usr/bin/time -o ./data/pfam/fist/hmmscan.time perl -I./lib script/hmmscan.pl --cut_ga --outdir ./data/pfam/ --pbs fist --n_jobs 30 --source fist 1> ./data/pfam/fist/hmmscan.out 2> ./data/pfam/fist/hmmscan.err
+mkdir -p ${MECHISMO_DN}pfam/fist
+/usr/bin/time -o ${MECHISMO_DN}pfam/fist/hmmscan.time perl -I./lib script/hmmscan.pl --cut_ga --outdir ${MECHISMO_DN}pfam/ --pbs fist --n_jobs 30 --source fist 1> ${MECHISMO_DN}pfam/fist/hmmscan.out 2> ${MECHISMO_DN}pfam/fist/hmmscan.err
 
 # find Pfam domains in UniProt sequences from species of interest
 # (UniProt entries do not give the positions of Pfam domains
 # for some reason... so have to run hmmscan myself.)
-mkdir -p ./data/pfam/uniprot/sprot_varsplic
-/usr/bin/time -o ./data/pfam/uniprot/sprot_varsplic/hmmscan.time perl -I./lib script/hmmscan.pl --cut_ga --outdir ./data/pfam/uniprot/ --pbs sprot_varsplic --n_jobs 30 --source 'uniprot-sprot' --source 'varsplic' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 1> ./data/pfam/uniprot/sprot_varsplic/hmmscan.out 2> ./data/pfam/uniprot/sprot_varsplic/hmmscan.err
+mkdir -p ${MECHISMO_DN}pfam/uniprot/sprot_varsplic
+/usr/bin/time -o ${MECHISMO_DN}pfam/uniprot/sprot_varsplic/hmmscan.time perl -I./lib script/hmmscan.pl --cut_ga --outdir ${MECHISMO_DN}pfam/uniprot/ --pbs sprot_varsplic --n_jobs 30 --source 'uniprot-sprot' --source 'varsplic' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 1> ${MECHISMO_DN}pfam/uniprot/sprot_varsplic/hmmscan.out 2> ${MECHISMO_DN}pfam/uniprot/sprot_varsplic/hmmscan.err
 
 
 # import
-find ./data/pfam/ -name FeatureInst.tsv | perl -ne 'chomp; /data\/pfam\/(\S+)\/FeatureInst\.tsv/ and print"Fist::IO::FeatureInst\t$_\tid=$1,id_seq=DB,id_feature=DB\n";' > ./data/pfam/import.inp
-/usr/bin/time -o ./data/pfam/import.time perl -I./lib ./script/import_tsv.pl < ./data/pfam/import.inp &> ./data/pfam/import.err
+find ${MECHISMO_DN}pfam/ -name FeatureInst.tsv | perl -ne 'chomp; /data\/pfam\/(\S+)\/FeatureInst\.tsv/ and print"Fist::IO::FeatureInst\t$_\tid=$1,id_seq=DB,id_feature=DB\n";' > ${MECHISMO_DN}pfam/import.inp
+/usr/bin/time -o ${MECHISMO_DN}pfam/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}pfam/import.inp &> ${MECHISMO_DN}pfam/import.err
 
 # archive
 ~~~~
 
 ### align subsequences that match to each pfam domain
 ~~~~
-mkdir -p ./data/pfam/hmmalign/
-/usr/bin/time -o ./data/pfam/hmmalign.time perl -I./lib ./script/hmmalign.pl --outdir ./data/pfam --pbs hmmalign --n_jobs 200 --feat_source Pfam 1> ./data/pfam/hmmalign.out 2> ./data/pfam/hmmalign.err
+mkdir -p ${MECHISMO_DN}pfam/hmmalign/
+/usr/bin/time -o ${MECHISMO_DN}pfam/hmmalign.time perl -I./lib ./script/hmmalign.pl --outdir ${MECHISMO_DN}pfam --pbs hmmalign --n_jobs 200 --feat_source Pfam 1> ${MECHISMO_DN}pfam/hmmalign.out 2> ${MECHISMO_DN}pfam/hmmalign.err
 
 # import
-ls ./data/pfam/hmmalign/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ./data/pfam/hmmalign/import.inp
-ls ./data/pfam/hmmalign/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ./data/pfam/hmmalign/import.inp
-ls ./data/pfam/hmmalign/*/Alignment.tsv | perl -ne 'chomp; /(\d+)/ and print "Fist::IO::Alignment\t$_\tid=$1\n";' >> ./data/pfam/hmmalign/import.inp
-ls ./data/pfam/hmmalign/*/AlignedSeq.tsv | perl -ne 'chomp; /(\d+)/ and print "Fist::IO::AlignedSeq\t$_\tid_aln=$1,id_seq=DB\n";' >> ./data/pfam/hmmalign/import.inp
-ls ./data/pfam/hmmalign/*/AlignmentToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::AlignmentToGroup\t$_\tid_aln=$1,id_group=$1\n";' >> ./data/pfam/hmmalign/import.inp
-/usr/bin/time -o ./data/pfam/hmmalign/import.time perl -I./lib/ ./script/import_tsv.pl < ./data/pfam/hmmalign/import.inp &> ./data/pfam/hmmalign/import.err
+ls ${MECHISMO_DN}pfam/hmmalign/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/Alignment.tsv | perl -ne 'chomp; /(\d+)/ and print "Fist::IO::Alignment\t$_\tid=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/AlignedSeq.tsv | perl -ne 'chomp; /(\d+)/ and print "Fist::IO::AlignedSeq\t$_\tid_aln=$1,id_seq=DB\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/AlignmentToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::AlignmentToGroup\t$_\tid_aln=$1,id_group=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+/usr/bin/time -o ${MECHISMO_DN}pfam/hmmalign/import.time perl -I./lib/ ./script/import_tsv.pl < ${MECHISMO_DN}pfam/hmmalign/import.inp &> ${MECHISMO_DN}pfam/hmmalign/import.err
 
 
 ## parse and import uniref
 for level in 100 90 50
 do
-  mkdir -p ./data/uniref/${level}/
-  /usr/bin/time -o ./data/uniref/${level}/parse.time perl -I./lib ./script/parse_uniref.pl --outdir ./data/uniref/${level}/ ${level} /net/netfile1/ds-russell/uniprot/uniref/uniref${level}/uniref${level}.xml.gz 1> ./data/uniref/${level}/parse.txt 2> ./data/uniref/${level}/parse.err &
+  mkdir -p ${MECHISMO_DN}uniref/${level}/
+  /usr/bin/time -o ${MECHISMO_DN}uniref/${level}/parse.time perl -I./lib ./script/parse_uniref.pl --outdir ${MECHISMO_DN}uniref/${level}/ ${level} ${DS}uniprot/uniref/uniref${level}/uniref${level}.xml.gz 1> ${MECHISMO_DN}uniref/${level}/parse.txt 2> ${MECHISMO_DN}uniref/${level}/parse.err &
 done
 
-ls ./data/uniref/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ./data/uniref/import.inp
-ls ./data/uniref/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ./data/uniref/import.inp
-/usr/bin/time -o ./data/uniref/import.time perl -I./lib ./script/import_tsv.pl < ./data/uniref/import.inp &> ./data/uniref/import.err
+ls ${MECHISMO_DN}uniref/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}uniref/import.inp
+ls ${MECHISMO_DN}uniref/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ${MECHISMO_DN}uniref/import.inp
+/usr/bin/time -o ${MECHISMO_DN}uniref/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}uniref/import.inp &> ${MECHISMO_DN}uniref/import.err
 ~~~~
 
 
@@ -365,9 +374,9 @@ ls ./data/uniref/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO:
 
 ## align fragment seq groups
 # FIXME - muscle fails silently on sequences >~ 10000 aa long
-mkdir -p ./data/align/frag/
-#/usr/bin/time -o ./data/align/frag/align.time perl -I./lib ./script/seqgroup_align.pl --type frag --outdir ./data/align/ --pbs frag --n_jobs 50 1> ./data/align/frag/align.txt 2> ./data/align/frag/align.err
-/usr/bin/time -o ./data/align/frag/align.time perl -I./lib ./script/seqgroup_align.pl --type frag --outdir ./data/align/frag 1> ./data/align/frag/align.txt 2> ./data/align/frag/align.err
+mkdir -p ${MECHISMO_DN}align/frag/
+#/usr/bin/time -o ${MECHISMO_DN}align/frag/align.time perl -I./lib ./script/seqgroup_align.pl --type frag --outdir ${MECHISMO_DN}align/ --pbs frag --n_jobs 50 1> ${MECHISMO_DN}align/frag/align.txt 2> ${MECHISMO_DN}align/frag/align.err
+/usr/bin/time -o ${MECHISMO_DN}align/frag/align.time perl -I./lib ./script/seqgroup_align.pl --type frag --outdir ${MECHISMO_DN}align/frag 1> ${MECHISMO_DN}align/frag/align.txt 2> ${MECHISMO_DN}align/frag/align.err
 
 # delete existing alignments of fragment seq groups from db
 # upload new alignments
@@ -382,22 +391,22 @@ mkdir -p ./data/align/frag/
 
 ## align isoform seq groups
 # FIXME - muscle fails silently on sequences >~ 10000 aa long
-mkdir -p ./data/align/isoforms/
-/usr/bin/time -o ./data/align/isoforms/align.time perl -I./lib ./script/seqgroup_align.pl --type isoforms --outdir ./data/align/ --pbs isoforms --n_jobs 50 1> ./data/align/isoforms/align.txt 2> ./data/align/isoforms/align.err
+mkdir -p ${MECHISMO_DN}align/isoforms/
+/usr/bin/time -o ${MECHISMO_DN}align/isoforms/align.time perl -I./lib ./script/seqgroup_align.pl --type isoforms --outdir ${MECHISMO_DN}align/ --pbs isoforms --n_jobs 50 1> ${MECHISMO_DN}align/isoforms/align.txt 2> ${MECHISMO_DN}align/isoforms/align.err
 
 
 ## align uniref sequence groups
 # FIXME - muscle fails silently on sequences >~ 10000 aa long
-mkdir -p ./data/align/uniref
-/usr/bin/time -o ./data/align/uniref/align.time perl -I./lib ./script/seqgroup_align.pl --type 'uniref 100' --type 'uniref 90' --type 'uniref 50' --outdir ./data/align/ --pbs uniref --n_jobs 50 1> ./data/align/uniref/align.txt 2> ./data/align/uniref/align.err
+mkdir -p ${MECHISMO_DN}align/uniref
+/usr/bin/time -o ${MECHISMO_DN}align/uniref/align.time perl -I./lib ./script/seqgroup_align.pl --type 'uniref 100' --type 'uniref 90' --type 'uniref 50' --outdir ${MECHISMO_DN}align/ --pbs uniref --n_jobs 50 1> ${MECHISMO_DN}align/uniref/align.txt 2> ${MECHISMO_DN}align/uniref/align.err
 
 
 ## import seq group alignments
 ## (more efficient to import them all at the same time)
-ls ./data/align/{frag,isoforms,uniref}/*/Alignment.tsv | perl -ne 'chomp;/.*\/(\S+)\/(\d+)/ and print"Fist::IO::Alignment\t$_\tid=$1$2\n";' > ./data/align/import.inp
-ls ./data/align/{frag,isoforms,uniref}/*/AlignedSeq.tsv | perl -ne 'chomp;/.*\/(\S+)\/(\d+)/ and print"Fist::IO::AlignedSeq\t$_\tid_aln=$1$2,id_seq=DB\n";' >> ./data/align/import.inp
-ls ./data/align/{frag,isoforms,uniref}/*/AlignmentToGroup.tsv | perl -ne 'chomp;/.*\/(\S+)\/(\d+)/ and print"Fist::IO::AlignmentToGroup\t$_\tid_aln=$1$2,id_group=DB\n";' >> ./data/align/import.inp
-/usr/bin/time -o ./data/align/import.time perl -I./lib/ ./script/import_tsv.pl < ./data/align/import.inp &> ./data/align/import.err
+ls ${MECHISMO_DN}align/{frag,isoforms,uniref}/*/Alignment.tsv | perl -ne 'chomp;/.*\/(\S+)\/(\d+)/ and print"Fist::IO::Alignment\t$_\tid=$1$2\n";' > ${MECHISMO_DN}align/import.inp
+ls ${MECHISMO_DN}align/{frag,isoforms,uniref}/*/AlignedSeq.tsv | perl -ne 'chomp;/.*\/(\S+)\/(\d+)/ and print"Fist::IO::AlignedSeq\t$_\tid_aln=$1$2,id_seq=DB\n";' >> ${MECHISMO_DN}align/import.inp
+ls ${MECHISMO_DN}align/{frag,isoforms,uniref}/*/AlignmentToGroup.tsv | perl -ne 'chomp;/.*\/(\S+)\/(\d+)/ and print"Fist::IO::AlignmentToGroup\t$_\tid_aln=$1$2,id_group=DB\n";' >> ${MECHISMO_DN}align/import.inp
+/usr/bin/time -o ${MECHISMO_DN}align/import.time perl -I./lib/ ./script/import_tsv.pl < ${MECHISMO_DN}align/import.inp &> ${MECHISMO_DN}align/import.err
 
 
 ## group similar sequences
@@ -406,16 +415,16 @@ ls ./data/align/{frag,isoforms,uniref}/*/AlignmentToGroup.tsv | perl -ne 'chomp;
 lf=0.9
 for pcid in 90 70 50 00
 do
-  mkdir -p ./data/seq_groups/fist_lf${lf}_pcid${pcid}/
-  /usr/bin/time -o ./data/seq_groups/fist_lf${lf}_pcid${pcid}/group.time perl -I./lib ./script/group_sequences.pl --source fist --lf ${lf} --pcid ${pcid} --outdir ./data/seq_groups/fist_lf${lf}_pcid${pcid}/ &> ./data/seq_groups/fist_lf${lf}_pcid${pcid}/group.err &
+  mkdir -p ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/
+  /usr/bin/time -o ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/group.time perl -I./lib ./script/group_sequences.pl --source fist --lf ${lf} --pcid ${pcid} --outdir ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/ &> ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/group.err &
 done
 
 # 'lf 0.5, pcid 50' for later marking of (pseudo)homodimeric contacts
 lf=0.5
 for pcid in 50
 do
-  mkdir -p ./data/seq_groups/fist_lf${lf}_pcid${pcid}/
-  /usr/bin/time -o ./data/seq_groups/fist_lf${lf}_pcid${pcid}/group.time perl -I./lib ./script/group_sequences.pl --source fist --lf ${lf} --pcid ${pcid} --outdir ./data/seq_groups/fist_lf${lf}_pcid${pcid}/ &> ./data/seq_groups/fist_lf${lf}_pcid${pcid}/group.err &
+  mkdir -p ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/
+  /usr/bin/time -o ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/group.time perl -I./lib ./script/group_sequences.pl --source fist --lf ${lf} --pcid ${pcid} --outdir ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/ &> ${MECHISMO_DN}seq_groups/fist_lf${lf}_pcid${pcid}/group.err &
 done
 
 ## FIXME - also group by ecod domains
@@ -425,29 +434,29 @@ done
 # method used above), so no need to form 'fist lf=1.0 pcid=100.0' groups
 
 # import
-ls ./data/seq_groups/fist_lf*_pcid*/SeqGroup.tsv | perl -ne 'chomp; /(lf\S+_pcid\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ./data/seq_groups/import.inp
-ls ./data/seq_groups/fist_lf*_pcid*/SeqToGroup.tsv | perl -ne 'chomp; /(lf\S+_pcid\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ./data/seq_groups/import.inp
-/usr/bin/time -o ./data/seq_groups/import.time perl -I./lib ./script/import_tsv.pl < ./data/seq_groups/import.inp &> ./data/seq_groups/import.err
+ls ${MECHISMO_DN}seq_groups/fist_lf*_pcid*/SeqGroup.tsv | perl -ne 'chomp; /(lf\S+_pcid\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}seq_groups/import.inp
+ls ${MECHISMO_DN}seq_groups/fist_lf*_pcid*/SeqToGroup.tsv | perl -ne 'chomp; /(lf\S+_pcid\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ${MECHISMO_DN}seq_groups/import.inp
+/usr/bin/time -o ${MECHISMO_DN}seq_groups/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}seq_groups/import.inp &> ${MECHISMO_DN}seq_groups/import.err
 
 
 ## mark homodimeric contacts (this depends on SeqGroup.type IN ('frag', 'fist lf=0.5 pcid=50.0')
-/usr/bin/time -o ./data/pdb/homo.time perl -I./lib ./script/contacts_homo.pl &> ./data/pdb/homo.err
+/usr/bin/time -o ${MECHISMO_DN}pdb/homo.time perl -I./lib ./script/contacts_homo.pl &> ${MECHISMO_DN}pdb/homo.err
 
 
 ## group PPI, PDI and PCI contacts
-/usr/bin/time -o ./data/fist_vs_fist_aseqs.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_fist_vs_fist_aseqs.sql 2> ./data/fist_vs_fist_aseqs.err | gzip > ./data/fist_vs_fist_aseqs.tsv.gz &
-/usr/bin/time -o ./data/frag_inst_to_fist.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_to_fist.sql 2> ./data/frag_inst_to_fist.err | gzip > ./data/frag_inst_to_fist.tsv.gz &
-/usr/bin/time -o ./data/frag_inst_chem_type.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_chem_type.sql 2> ./data/frag_inst_chem_type.err | gzip > ./data/frag_inst_chem_type.tsv.gz &
-/usr/bin/time -o ./data/contacts_with_fist_numbers.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_contacts_with_fist_numbers.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 1> > ./data/contacts_with_fist_numbers.tsv 2> ./data/contacts_with_fist_numbers.err &
-gzip ./data/contacts_with_fist_numbers.tsv
+/usr/bin/time -o ${MECHISMO_DN}fist_vs_fist_aseqs.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_fist_vs_fist_aseqs.sql 2> ${MECHISMO_DN}fist_vs_fist_aseqs.err | gzip > ${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_to_fist.sql 2> ${MECHISMO_DN}frag_inst_to_fist.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_chem_type.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_chem_type.sql 2> ${MECHISMO_DN}frag_inst_chem_type.err | gzip > ${MECHISMO_DN}frag_inst_chem_type.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_contacts_with_fist_numbers.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 1> > ${MECHISMO_DN}contacts_with_fist_numbers.tsv 2> ${MECHISMO_DN}contacts_with_fist_numbers.err &
+gzip ${MECHISMO_DN}contacts_with_fist_numbers.tsv
 
 
 
 # FIXME - compile groupContacts for cluster OSs
 # create PBS jobs
-mkdir -p ./data/contact_groups
+mkdir -p ${MECHISMO_DN}contact_groups
 
-perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "data/contact_groups/";}foreach $th ([1.0, 1.0, 1.0], [0.0, 0.8, 0.8], [0.0, 0.0, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; print "$fn\n"; printf PBS "#PBS -N gc${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=40gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoGroupContacts --contacts ${d}data/contacts_with_fist_numbers.tsv.gz --hsps ${d}data/fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}data/frag_inst_to_fist.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f --contact_group ${d}${d2}${id}.ContactGroup.tsv --contact_to_group ${d}${d2}${id}.ContactToGroup.tsv\n\n", @{$th}; close(PBS);}'
+perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/";}foreach $th ([1.0, 1.0, 1.0], [0.0, 0.8, 0.8], [0.0, 0.0, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; print "$fn\n"; printf PBS "#PBS -N gc${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=40gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f --contact_group ${d}${d2}${id}.ContactGroup.tsv --contact_to_group ${d}${d2}${id}.ContactToGroup.tsv\n\n", @{$th}; close(PBS);}'
 
 
 # now submit on cluster
@@ -455,81 +464,81 @@ perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "data/contact_groups/";
 # ensure id_group is in ascending order (needed for id_mapping with offsets to work).
 # could output this way from mechismoGroupContacts but is nice to see jaccard
 # sub groups immediately after contacts grouped by sequence
-ls data/contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; system("sort -n -k +1 -o $_ $_");'
-ls data/contact_groups/*.ContactToGroup.tsv | perl -ne 'chomp; system("sort -n -k +2 -o $_ $_");'
+ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; system("sort -n -k +1 -o $_ $_");'
+ls ${MECHISMO_DN}contact_groups/*.ContactToGroup.tsv | perl -ne 'chomp; system("sort -n -k +2 -o $_ $_");'
 
 
 # import
-ls ./data/contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; /.*\/(\S+)\.ContactGroup.tsv/ and print"Fist::IO::ContactGroup\t$_\tid=$1\n";' > ./data/contact_groups/import.inp
-ls ./data/contact_groups/*.ContactToGroup.tsv | perl -ne 'chomp; /.*\/(\S+)\.ContactToGroup.tsv/ and print"Fist::IO::ContactToGroup\t$_\tid_group=$1,id_contact=DB\n";' >> ./data/contact_groups/import.inp
-/usr/bin/time -o ./data/contact_groups/import.time perl -I./lib ./script/import_tsv.pl < ./data/contact_groups/import.inp &> ./data/contact_groups/import.err
+ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; /.*\/(\S+)\.ContactGroup.tsv/ and print"Fist::IO::ContactGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_groups/import.inp
+ls ${MECHISMO_DN}contact_groups/*.ContactToGroup.tsv | perl -ne 'chomp; /.*\/(\S+)\.ContactToGroup.tsv/ and print"Fist::IO::ContactToGroup\t$_\tid_group=$1,id_contact=DB\n";' >> ${MECHISMO_DN}contact_groups/import.inp
+/usr/bin/time -o ${MECHISMO_DN}contact_groups/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_groups/import.inp &> ${MECHISMO_DN}contact_groups/import.err
 
 
 # now extract just the jaccard groups, not the ones that use only sequence matching (which are included in the above output)
 # FIXME - mechismoGroupContacts could output these to separate files, or other progs could ignore the ones they don't need, or
 # I could extract from the db
-ls ./data/contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; $f1 = $_; ($f2 = $f1) =~ s/ContactGroup/ContactToGroup/; ($f3 = $f1) =~ s/ContactGroup/only.ContactToGroup/; open(I, $f1) or die; %S = (); while(<I>){chomp; @F = split /\t/; /jaccard/ and $S{$F[0]}++;}close(I); open(O, ">$f3") or die; open(I, $f2) or die; while(<I>){@F = split; defined($S{$F[1]}) and print(O $_);}close(I);close(O);'
+ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; $f1 = $_; ($f2 = $f1) =~ s/ContactGroup/ContactToGroup/; ($f3 = $f1) =~ s/ContactGroup/only.ContactToGroup/; open(I, $f1) or die; %S = (); while(<I>){chomp; @F = split /\t/; /jaccard/ and $S{$F[0]}++;}close(I); open(O, ">$f3") or die; open(I, $f2) or die; while(<I>){@F = split; defined($S{$F[1]}) and print(O $_);}close(I);close(O);'
 
 
 # archive
-gzip ./data/contact_groups/*.{ContactGroup,ContactToGroup}.tsv
+gzip ${MECHISMO_DN}contact_groups/*.{ContactGroup,ContactToGroup}.tsv
 
 
 ## measure interface overlap in known structures (aka. how bad is only using distance between atoms as the definition of an interface?)
-perl -I./lib ./script/known_structures_interface_overlap.pl 2> ./data/known_structures_interface_overlap.err | gzip > ./data/known_structures_interface_overlap.tsv.gz &
+perl -I./lib ./script/known_structures_interface_overlap.pl 2> ${MECHISMO_DN}known_structures_interface_overlap.err | gzip > ${MECHISMO_DN}known_structures_interface_overlap.tsv.gz &
 
 
 ########## TESTING mechismoGroupContacts, AND GROUPING WITH OTHER IDs ##########
 
 # test runs: 
-./c/mechismoGroupContacts --contacts ./data/contacts_with_fist_numbers.1000.tsv.gz --hsps ./data/fist_vs_fist_aseqs.1000.tsv.gz --dom_to_seq ./data/frag_inst_to_fist.1000.tsv.gz
-./c/mechismoGroupContacts --contacts ./data/contacts_with_fist_numbers.cg531629.tsv.gz --hsps ./data/fist_vs_fist_aseqs.cg531629.tsv.gz --dom_to_seq ./data/frag_inst_to_fist.cg531629.tsv.gz
-./c/mechismoGroupContacts --contacts ./data/contacts_with_fist_numbers.tsv.gz --hsps ./data/fist_vs_fist_aseqs.tsv.gz --dom_to_seq ./data/frag_inst_to_fist.tsv.gz
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.1000.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.1000.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.1000.tsv.gz
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.cg531629.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.cg531629.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.cg531629.tsv.gz
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.tsv.gz
 
 
 # using ECOD domain identifiers and STAMP format domain descriptions:
-/usr/bin/time -o ./data/frag_inst_to_fist.ecod.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_to_fist.ecod.sql 2> ./data/frag_inst_to_fist.ecod.err | gzip > ./data/frag_inst_to_fist.ecod.tsv.gz &
-/usr/bin/time -o ./data/contacts_with_fist_numbers.ecod.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_contacts_with_fist_numbers.ecod.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ./data/contacts_with_fist_numbers.ecod.err | gzip > ./data/contacts_with_fist_numbers.ecod.tsv.gz &
-./c/mechismoGroupContacts --contacts data/contacts_with_fist_numbers.ecod.1000.tsv.gz --hsps data/fist_vs_fist_aseqs.ecod.1000.tsv.gz --dom_to_seq data/frag_inst_to_fist.ecod.1000.tsv.gz
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.ecod.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_to_fist.ecod.sql 2> ${MECHISMO_DN}frag_inst_to_fist.ecod.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.ecod.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.ecod.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_contacts_with_fist_numbers.ecod.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.ecod.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.ecod.tsv.gz &
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.ecod.1000.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.ecod.1000.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.ecod.1000.tsv.gz
 
-mkdir -p ./data/contact_groups/ecod
-perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "data/contact_groups/ecod/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}data/contacts_with_fist_numbers.ecod.tsv.gz --hsps ${d}data/fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}data/frag_inst_to_fist.ecod.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
+mkdir -p ${MECHISMO_DN}contact_groups/ecod
+perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/ecod/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.ecod.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.ecod.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
 # now submit on cluster
 
 
 # using STAMP format domain descriptions
-/usr/bin/time -o ./data/frag_inst_to_fist.idcode.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_to_fist.idcode.sql 2> ./data/frag_inst_to_fist.idcode.err | gzip > ./data/frag_inst_to_fist.idcode.tsv.gz &
-/usr/bin/time -o ./data/contacts_with_fist_numbers.idcode.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_contacts_with_fist_numbers.idcode.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ./data/contacts_with_fist_numbers.idcode.err | gzip > ./data/contacts_with_fist_numbers.idcode.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.idcode.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_frag_inst_to_fist.idcode.sql 2> ${MECHISMO_DN}frag_inst_to_fist.idcode.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.idcode.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.idcode.time mysql -u anonymous -D m2b --quick --skip-column-names < sql/get_contacts_with_fist_numbers.idcode.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.idcode.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.idcode.tsv.gz &
 
-mkdir -p ./data/contact_groups/idcode
-perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "data/contact_groups/idcode/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}data/contacts_with_fist_numbers.idcode.tsv.gz --hsps ${d}data/fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}data/frag_inst_to_fist.idcode.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
+mkdir -p ${MECHISMO_DN}contact_groups/idcode
+perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/idcode/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.idcode.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.idcode.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
 # now submit on cluster
 
 ################################################################################
 
 
 ## load ELM features # FIXME - standardise adding of features, eg. from a file including iupred, pfam, etc
-mkdir -p ./data/elm/db/
+mkdir -p ${MECHISMO_DN}elm/db/
 
-wget -q http://elm.eu.org/elms/elms_index.tsv -O ./data/elm/db/elm_classes.tsv
-dos2unix ./data/elm/db/elm_classes.tsv
-perl -i -pe 's/"//g' ./data/elm/db/elm_classes.tsv
-perl -F'/\t/' -nae '/^#/ and next; chomp(@F); if(/^Accession/){@headings = @F;}else{@hash{@headings} = @F; print join("\t", "elm", $hash{Accession}, $hash{ELMIdentifier}, $hash{Description}, $hash{Regex}), "\n";}' data/elm/db/elm_classes.tsv > ./data/elm/db/elm_classes_tmp.tsv
-mysql -p -D m2b -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "./data/elm/db/elm_classes_tmp.tsv" INTO TABLE Feature (source, ac_src, id_src, description, regex);'
-rm -f data/elm/db/elm_classes_tmp.tsv
+wget -q http://elm.eu.org/elms/elms_index.tsv -O ${MECHISMO_DN}elm/db/elm_classes.tsv
+dos2unix ${MECHISMO_DN}elm/db/elm_classes.tsv
+perl -i -pe 's/"//g' ${MECHISMO_DN}elm/db/elm_classes.tsv
+perl -F'/\t/' -nae '/^#/ and next; chomp(@F); if(/^Accession/){@headings = @F;}else{@hash{@headings} = @F; print join("\t", "elm", $hash{Accession}, $hash{ELMIdentifier}, $hash{Description}, $hash{Regex}), "\n";}' ${MECHISMO_DN}elm/db/elm_classes.tsv > ${MECHISMO_DN}elm/db/elm_classes_tmp.tsv
+mysql -p -D m2b -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "${MECHISMO_DN}elm/db/elm_classes_tmp.tsv" INTO TABLE Feature (source, ac_src, id_src, description, regex);'
+rm -f ${MECHISMO_DN}elm/db/elm_classes_tmp.tsv
 
-wget -q 'http://elm.eu.org/instances.tsv?q=*' -O ./data/elm/db/elm_instances.tsv
-dos2unix ./data/elm/db/elm_instances.tsv
-perl -i -pe 's/"//g' ./data/elm/db/elm_instances.tsv
+wget -q 'http://elm.eu.org/instances.tsv?q=*' -O ${MECHISMO_DN}elm/db/elm_instances.tsv
+dos2unix ${MECHISMO_DN}elm/db/elm_instances.tsv
+perl -i -pe 's/"//g' ${MECHISMO_DN}elm/db/elm_instances.tsv
 
 
-## get elm instances by regex pattern matching, label true positives from ./data/elm/db/elm_instances.tsv
-mkdir -p ./data/elm/uniprot/sprot_varsplic/
-/usr/bin/time -o ./data/elm/uniprot/sprot_varsplic/FeatureInst.time perl -I./lib ./script/get_elm_instances.pl --source 'uniprot-sprot' --source varsplic  --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 ./data/elm/db/elm_instances.tsv 1> ./data/elm/uniprot/sprot_varsplic/FeatureInst.tsv 2> ./data/elm/uniprot/sprot_varsplic/FeatureInst.err
+## get elm instances by regex pattern matching, label true positives from ${MECHISMO_DN}elm/db/elm_instances.tsv
+mkdir -p ${MECHISMO_DN}elm/uniprot/sprot_varsplic/
+/usr/bin/time -o ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.time perl -I./lib ./script/get_elm_instances.pl --source 'uniprot-sprot' --source varsplic  --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 ${MECHISMO_DN}elm/db/elm_instances.tsv 1> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.tsv 2> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.err
 
 # import
-perl -e 'print "Fist::IO::FeatureInst\t./data/elm/uniprot/sprot_varsplic/FeatureInst.tsv\tid=01,id_seq=DB,id_feature=DB\n";' > ./data/elm/uniprot/sprot_varsplic/import.inp
-/usr/bin/time -o ./data/elm/uniprot/sprot_varsplic/import.time perl -I./lib ./script/import_tsv.pl < ./data/elm/uniprot/sprot_varsplic/import.inp &> ./data/elm/uniprot/sprot_varsplic/import.err
+perl -e 'print "Fist::IO::FeatureInst\t$ENV{MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.tsv\tid=01,id_seq=DB,id_feature=DB\n";' > ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.inp
+/usr/bin/time -o ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.inp &> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.err
 
 # archive
 
@@ -568,29 +577,29 @@ name=random
 # extract necessary information for each species
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  mkdir -p ./data/contact_hits/${id_taxon}
-  /usr/bin/time -o ./data/contact_hits/${id_taxon}/query_to_fist.time perl -I./lib ./script/get_query_to_fist.pl --source 'uniprot-sprot' --source varsplic --taxon ${id_taxon} 2> ./data/contact_hits/${id_taxon}/query_to_fist.err | gzip > ./data/contact_hits/${id_taxon}/query_to_fist.tsv.gz &
-  mysql -u anonymous -D m2b --quick --skip-column-names -e "SELECT id FROM Seq AS a, SeqToTaxon AS b WHERE a.source IN ('uniprot-sprot', 'varsplic') AND b.id_seq = a.id AND b.id_taxon = ${id_taxon}" > ./data/contact_hits/${id_taxon}/queries.txt &
+  mkdir -p ${MECHISMO_DN}contact_hits/${id_taxon}
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.time perl -I./lib ./script/get_query_to_fist.pl --source 'uniprot-sprot' --source varsplic --taxon ${id_taxon} 2> ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.err | gzip > ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz &
+  mysql -u anonymous -D m2b --quick --skip-column-names -e "SELECT id FROM Seq AS a, SeqToTaxon AS b WHERE a.source IN ('uniprot-sprot', 'varsplic') AND b.id_seq = a.id AND b.id_taxon = ${id_taxon}" > ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt &
 done
 
 
 # find ContactHits
 # FIXME - only the bigger species need 30gb (because more hsps)
-perl -e '$d = qx(pwd); chomp($d); $d .= "/"; foreach $id_taxon (272634,224308,83333,559292,6239,7227,10090,9606){$d2 = "data/contact_hits/${id_taxon}/"; foreach $th ([0.0, 0.8, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; print"$fn\n";open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N ch${id_taxon}.${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=30gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoContactHits --contacts ${d}data/contacts_with_fist_numbers.tsv.gz --dom_to_seq ${d}data/frag_inst_to_fist.tsv.gz --dom_to_chem_type ${d}data/frag_inst_chem_type.tsv.gz --queries ${d}${d2}queries.txt -hsps ${d}${d2}query_to_fist.tsv.gz --contact_to_group ${d}data/contact_groups/${id}.only.ContactToGroup.tsv --contact_hit ${d}${d2}${id}.ContactHit.tsv --pcid -1.0 --lf_fist 0.8 --resres 1\n", @{$th}; close(PBS);}}'
+perl -e '$d = qx(pwd); chomp($d); $d .= "/"; foreach $id_taxon (272634,224308,83333,559292,6239,7227,10090,9606){$d2 = "${MECHISMO_DN}contact_hits/${id_taxon}/"; foreach $th ([0.0, 0.8, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; print"$fn\n";open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N ch${id_taxon}.${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=30gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoContactHits --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.tsv.gz --dom_to_chem_type ${d}${MECHISMO_DN}frag_inst_chem_type.tsv.gz --queries ${d}${d2}queries.txt -hsps ${d}${d2}query_to_fist.tsv.gz --contact_to_group ${d}${MECHISMO_DN}contact_groups/${id}.only.ContactToGroup.tsv --contact_hit ${d}${d2}${id}.ContactHit.tsv --pcid -1.0 --lf_fist 0.8 --resres 1\n", @{$th}; close(PBS);}}'
 
 # now submit to pbs
 
 
 # import
-ls -rS ./data/contact_hits/*/0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/\S+ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ./data/contact_hits/import.inp
-/usr/bin/time -o ./data/contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/import.inp &> ./data/contact_hits/import.err
+ls -rS ${MECHISMO_DN}contact_hits/*/0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/\S+ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/import.inp
+/usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
 
 ################ split queries ################
 # split queries by single-linkage of all possible PPI pairs
 # FIXME - ensure same parameters are used as in mechismoContactHits (min_n_resres, min_lf_fist)
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  /usr/bin/time -o ./data/contact_hits/${id_taxon}/split_queries.time ./script/split_contact_hit_queries.pl 10 1 0.8 ./data/contact_hits/${id_taxon}/queries.txt ./data/contact_hits/${id_taxon}/query_to_fist.tsv.gz ./data/frag_inst_to_fist.tsv.gz ./data/contacts_with_fist_numbers.tsv.gz &> ./data/contact_hits/${id_taxon}/split_queries.err &
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.time ./script/split_contact_hit_queries.pl 10 1 0.8 ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz ${MECHISMO_DN}frag_inst_to_fist.tsv.gz ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz &> ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.err &
 done
 
 # get pbs scripts
@@ -599,30 +608,30 @@ done
 # submit to cluster
 
 # import
-ls -rS ./data/contact_hits/*/*.0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/(\d+)\.0\.0-0\.8-0\.8\.ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=${1}_${2}\n";' > ./data/contact_hits/import.inp
-/usr/bin/time -o ./data/contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/import.inp &> ./data/contact_hits/import.err
+ls -rS ${MECHISMO_DN}contact_hits/*/*.0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/(\d+)\.0\.0-0\.8-0\.8\.ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=${1}_${2}\n";' > ${MECHISMO_DN}contact_hits/import.inp
+/usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
 
 ###############################################
 
 ## string aliases and interactions
-mkdir -p ./data/string/
-perl -I./lib ./script/parse_string.pl --outdir ./data/string/ --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 --aliases $DS/string/protein.aliases.v10.txt.gz --links $DS/string/protein.links.v10.txt.gz > ./data/string/string.stdout 2> ./data/string/string.stderr &
+mkdir -p ${MECHISMO_DN}string/
+perl -I./lib ./script/parse_string.pl --outdir ${MECHISMO_DN}string/ --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 --aliases $DS/string/protein.aliases.v10.txt.gz --links $DS/string/protein.links.v10.txt.gz > ${MECHISMO_DN}string/string.stdout 2> ${MECHISMO_DN}string/string.stderr &
 
 # per taxon if needed:
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  mkdir -p ./data/string/${id_taxon}
-  perl -I./lib ./script/parse_string.pl --outdir ./data/string/${id_taxon} --taxon ${id_taxon} --aliases $DS/string/protein.aliases.v10.txt.gz --links $DS/string/protein.links.v10.txt.gz > ./data/string/${id_taxon}/String.stdout 2> ./data/string/${id_taxon}/String.stderr &
+  mkdir -p ${MECHISMO_DN}string/${id_taxon}
+  perl -I./lib ./script/parse_string.pl --outdir ${MECHISMO_DN}string/${id_taxon} --taxon ${id_taxon} --aliases $DS/string/protein.aliases.v10.txt.gz --links $DS/string/protein.links.v10.txt.gz > ${MECHISMO_DN}string/${id_taxon}/String.stdout 2> ${MECHISMO_DN}string/${id_taxon}/String.stderr &
 done
 
 # import
-mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "./data/string/Alias.tsv" INTO TABLE Alias (id_seq, alias, type);'
-mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "./data/string/StringInt.tsv" INTO TABLE StringInt (id_seq1, id_seq2, id_string1, id_string2, score);'
+mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}string/Alias.tsv" INTO TABLE Alias (id_seq, alias, type);'
+mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}string/StringInt.tsv" INTO TABLE StringInt (id_seq1, id_seq2, id_string1, id_string2, score);'
 
 
 ## PDB chemical types (from Rob)
-perl -ne 'chomp; @F = split; $F[0] =~ s/\A_+//; print join("\t", @F), "\n";' /home/bq_rrussell/jobs/het/current_classes.txt > ./data/pdb_chem.tsv
-mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "./data/pdb_chem.tsv" INTO TABLE PdbChem (id_chem, type);'
+perl -ne 'chomp; @F = split; $F[0] =~ s/\A_+//; print join("\t", @F), "\n";' /home/bq_rrussell/jobs/het/current_classes.txt > ${MECHISMO_DN}pdb_chem.tsv
+mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}pdb_chem.tsv" INTO TABLE PdbChem (id_chem, type);'
 
 
 
@@ -630,74 +639,74 @@ mysql -p -D m2b -e 'LOAD DATA LOCAL INFILE "./data/pdb_chem.tsv" INTO TABLE PdbC
 
 
 ## load GO terms in to db
-mkdir -p ./data/GO/
-./script/parse_go.pl < /net/netfile1/ds-russell/GO/gene_ontology_ext.obo 1> ./data/GO/gene_ontology_ext.tsv 2> ./data/GO/gene_ontology_ext.err
-perl -e 'print"Fist::IO::GoTerm\t./data/GO/gene_ontology_ext.tsv\n";' | perl -I./lib ./script/import_tsv.pl 
+mkdir -p ${MECHISMO_DN}GO/
+./script/parse_go.pl < ${DS}GO/gene_ontology_ext.obo 1> ${MECHISMO_DN}GO/gene_ontology_ext.tsv 2> ${MECHISMO_DN}GO/gene_ontology_ext.err
+perl -e 'print"Fist::IO::GoTerm\t$ENV{MECHISMO_DN}GO/gene_ontology_ext.tsv\n";' | perl -I./lib ./script/import_tsv.pl 
 
 
 ## categorise query proteins by top level GO biological process
-perl -ne 'BEGIN{$flag = 1;} if(/^\[Term\]/){$flag and defined($term) and print(@{$term}); $term = []; $flag = 0;}elsif(/^is_a: GO:0008150/){$flag = 1;}elsif(/^\[/){$term = undef; $flag = 0;} if(defined($term)){push @{$term}, $_;}elsif($flag){print;} END{$flag and defined($term) and print(@{$term});}' /net/netfile1/ds-russell/GO/gene_ontology_ext.obo > ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo
+perl -ne 'BEGIN{$flag = 1;} if(/^\[Term\]/){$flag and defined($term) and print(@{$term}); $term = []; $flag = 0;}elsif(/^is_a: GO:0008150/){$flag = 1;}elsif(/^\[/){$term = undef; $flag = 0;} if(defined($term)){push @{$term}, $_;}elsif($flag){print;} END{$flag and defined($term) and print(@{$term});}' ${DS}GO/gene_ontology_ext.obo > ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo
 
 mkdir -p ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/
-map2slim ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo /net/netfile1/ds-russell/GO/gene_ontology_ext.obo /net/netfile1/ds-russell/uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
+map2slim ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo ${DS}GO/gene_ontology_ext.obo ${DS}uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
 zcat ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_biological_process 1> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.err
-perl -e 'print"Fist::IO::GoAnnotation\t${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
+perl -e 'print"Fist::IO::GoAnnotation\t$ENV{MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
 
 
 ## load site types
-mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "./data/sites/types.tsv" INTO TABLE SiteType (abbr, type);'
+mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}sites/types.tsv" INTO TABLE SiteType (abbr, type);'
 
 
 ## load UniProt human variations
-mkdir -p ./data/sites/humsavar/
-perl -I./lib ./script/parse_humsavar.pl --outdir ./data/sites/humsavar/ /net/netfile1/ds-russell/uniprot/docs/humsavar.txt  1> ./data/sites/humsavar/stdout 2> ./data/sites/humsavar/stderr
-perl -e 'print"Fist::IO::Site\t./data/sites/humsavar/Site.tsv\tid_site=01\n";' > ./data/sites/humsavar/import.inp
-perl -e 'print"Fist::IO::DiseaseToSite\t./data/sites/humsavar/DiseaseToSite.tsv\tid_site=01,id_disease=DB\n";' >> ./data/sites/humsavar/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/humsavar/import.inp &> ./data/sites/humsavar/import.err
+mkdir -p ${MECHISMO_DN}sites/humsavar/
+perl -I./lib ./script/parse_humsavar.pl --outdir ${MECHISMO_DN}sites/humsavar/ ${DS}uniprot/docs/humsavar.txt  1> ${MECHISMO_DN}sites/humsavar/stdout 2> ${MECHISMO_DN}sites/humsavar/stderr
+perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/humsavar/Site.tsv\tid_site=01\n";' > ${MECHISMO_DN}sites/humsavar/import.inp
+perl -e 'print"Fist::IO::DiseaseToSite\t$ENV{MECHISMO_DN}sites/humsavar/DiseaseToSite.tsv\tid_site=01,id_disease=DB\n";' >> ${MECHISMO_DN}sites/humsavar/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/humsavar/import.inp &> ${MECHISMO_DN}sites/humsavar/import.err
 
 
 ## load PTMs
-mkdir -p ./data/sites/ptms/pablo/
-perl -I./lib ./script/parse_pablo_ptms.pl --outdir ./data/sites/ptms/pablo/ $GH/work/ptms/pablos_data/*.txt  1> ./data/sites/ptms/pablo/stdout 2> ./data/sites/ptms/pablo/stderr
-perl -e 'print"Fist::IO::Site\t./data/sites/ptms/pablo/Site.tsv\tid=01\n";' > ./data/sites/ptms/pablo/import.inp
-perl -e 'print"Fist::IO::Pmid\t./data/sites/ptms/pablo/Pmid.tsv\n";' >> ./data/sites/ptms/pablo/import.inp
-perl -e 'print"Fist::IO::PmidToSite\t./data/sites/ptms/pablo/PmidToSite.tsv\tid_site=01\n";' >> ./data/sites/ptms/pablo/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/pablo/import.inp &> ./data/sites/ptms/pablo/import.err
+mkdir -p ${MECHISMO_DN}sites/ptms/pablo/
+perl -I./lib ./script/parse_pablo_ptms.pl --outdir ${MECHISMO_DN}sites/ptms/pablo/ $GH/work/ptms/pablos_${MECHISMO_DN}*.txt  1> ${MECHISMO_DN}sites/ptms/pablo/stdout 2> ${MECHISMO_DN}sites/ptms/pablo/stderr
+perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/ptms/pablo/Site.tsv\tid=01\n";' > ${MECHISMO_DN}sites/ptms/pablo/import.inp
+perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/ptms/pablo/Pmid.tsv\n";' >> ${MECHISMO_DN}sites/ptms/pablo/import.inp
+perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/ptms/pablo/PmidToSite.tsv\tid_site=01\n";' >> ${MECHISMO_DN}sites/ptms/pablo/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/pablo/import.inp &> ${MECHISMO_DN}sites/ptms/pablo/import.err
 
 
 ## download data from www.phosida.com
-# filenames, taxa, pubmed ids, and site types are listed in ./data/sites/ptms/PHOSIDA/fofn.txt
+# filenames, taxa, pubmed ids, and site types are listed in ${MECHISMO_DN}sites/ptms/PHOSIDA/fofn.txt
 
-mkdir -p ./data/sites/ptms/PHOSIDA/
-perl -nae '/^filename/ and next; print"$F[0]\n";' ./data/sites/ptms/PHOSIDA/fofn.txt | wget --no-host-directories --cut-dirs 3 -P ./data/sites/ptms/PHOSIDA/ -i -
+mkdir -p ${MECHISMO_DN}sites/ptms/PHOSIDA/
+perl -nae '/^filename/ and next; print"$F[0]\n";' ${MECHISMO_DN}sites/ptms/PHOSIDA/fofn.txt | wget --no-host-directories --cut-dirs 3 -P ${MECHISMO_DN}sites/ptms/PHOSIDA/ -i -
 
 # FIXME - map flybase sequence identifiers to uniprot sequences via blast
-wget --no-host-directories --cut-dirs 3 -P ./data/blast ftp://ftp.flybase.net/releases/FB2013_02/reporting-xml/FBpp.xml.gz
-zcat ./data/blast/FBpp.xml.gz | perl -ne 'if(/<id acode="id">(\S+)<\/id>/){$id = $1;}elsif(/\A\s+<residues>(\S+)<\/residues>/){print">$id\n$1\n";}' | seq_convert.pl --in fasta --out fasta > ./data/blast/FBpp.aa
-perl -I./lib script/get_fasta.pl --chemical_type peptide --taxon 7227 --source 'uniprot-sprot' > ./data/blast/uniprot-sprot.7227.aa
-formatdb -t uniprot-sprot.7227 -i ./data/blast/uniprot-sprot.7227.aa -p T -n ./data/blast/uniprot-sprot.7227
-blastall -p blastp -d ./data/blast/uniprot-sprot.7227 -i ./data/blast/FBpp.aa -e 0.01 -F F 1> ./data/blast/FBpp.vs.uniprot-sprot.7227.blastp 2> ./data/blast/FBpp.vs.uniprot-sprot.7227.blastp.err
-./script/aliases_from_blast.pl FlyBase < ./data/blast/FBpp.vs.uniprot-sprot.7227.blastp 1> ./data/blast/FBpp.aliases.tsv 2> ./data/blast/FBpp.aliases.err
+wget --no-host-directories --cut-dirs 3 -P ${MECHISMO_DN}blast ftp://ftp.flybase.net/releases/FB2013_02/reporting-xml/FBpp.xml.gz
+zcat ${MECHISMO_DN}blast/FBpp.xml.gz | perl -ne 'if(/<id acode="id">(\S+)<\/id>/){$id = $1;}elsif(/\A\s+<residues>(\S+)<\/residues>/){print">$id\n$1\n";}' | seq_convert.pl --in fasta --out fasta > ${MECHISMO_DN}blast/FBpp.aa
+perl -I./lib script/get_fasta.pl --chemical_type peptide --taxon 7227 --source 'uniprot-sprot' > ${MECHISMO_DN}blast/uniprot-sprot.7227.aa
+formatdb -t uniprot-sprot.7227 -i ${MECHISMO_DN}blast/uniprot-sprot.7227.aa -p T -n ${MECHISMO_DN}blast/uniprot-sprot.7227
+blastall -p blastp -d ${MECHISMO_DN}blast/uniprot-sprot.7227 -i ${MECHISMO_DN}blast/FBpp.aa -e 0.01 -F F 1> ${MECHISMO_DN}blast/FBpp.vs.uniprot-sprot.7227.blastp 2> ${MECHISMO_DN}blast/FBpp.vs.uniprot-sprot.7227.blastp.err
+./script/aliases_from_blast.pl FlyBase < ${MECHISMO_DN}blast/FBpp.vs.uniprot-sprot.7227.blastp 1> ${MECHISMO_DN}blast/FBpp.aliases.tsv 2> ${MECHISMO_DN}blast/FBpp.aliases.err
 
 # FIXME - map flybase protein ids to uniprot ac using STRING aliases 
 
 # FIXME - map wormbase protein ids to uniprot ac using STRING aliases 
-/net/netfile1/ds-russell/string/protein.aliases.v9.05.txt.gz
+${DS}string/protein.aliases.v9.05.txt.gz
 
 # parse PHOSIDA ptms
-perl -nae '/^filename/ and next; $F[0] =~ s/.*\///; $f = "./data/sites/ptms/PHOSIDA/$F[0]"; $d = "./data/sites/ptms/PHOSIDA/$F[1]/$F[0]/"; $d =~ s/\.csv//; print "mkdir -p $d\nperl -I./lib ./script/parse_phosida_ptms.pl --outdir $d --taxon $F[1] --pmid $F[2] --type $F[3] $f  1> ./${d}stdout 2> ./${d}stderr\n\n";' ./data/sites/ptms/PHOSIDA/fofn.txt > ./data/sites/ptms/PHOSIDA/go.sh
+perl -nae '/^filename/ and next; $F[0] =~ s/.*\///; $f = "${MECHISMO_DN}sites/ptms/PHOSIDA/$F[0]"; $d = "${MECHISMO_DN}sites/ptms/PHOSIDA/$F[1]/$F[0]/"; $d =~ s/\.csv//; print "mkdir -p $d\nperl -I./lib ./script/parse_phosida_ptms.pl --outdir $d --taxon $F[1] --pmid $F[2] --type $F[3] $f  1> ./${d}stdout 2> ./${d}stderr\n\n";' ${MECHISMO_DN}sites/ptms/PHOSIDA/fofn.txt > ${MECHISMO_DN}sites/ptms/PHOSIDA/go.sh
 source go.sh
 
 ###### this time, map to sites already in db and add new PmidToSite entries ######
 
-ls ./data/sites/ptms/PHOSIDA/*/*/Site.tsv | perl -ne 'chomp;if(/PHOSIDA\/(\d+)/){$taxon = $1; ($f = $_) =~ s/Site.tsv\Z//;; open(I, $_) or die; while(<I>){@F = split; print"SELECT \"$f\", $F[0], id FROM Site WHERE source = \"PHOSIDA\" AND type = \"$F[2]\" AND id_seq = $F[3] AND pos = $F[4];\n";}}' | mysql -u anonymous -D fistdb --quick --skip-column-names | perl -nae '($F[0] == 224308) or ($F[0] == 83333) or ($F[0] == 6239) or print;' > data/sites/ptms/PHOSIDA/new_to_old_site_ids.tsv
+ls ${MECHISMO_DN}sites/ptms/PHOSIDA/*/*/Site.tsv | perl -ne 'chomp;if(/PHOSIDA\/(\d+)/){$taxon = $1; ($f = $_) =~ s/Site.tsv\Z//;; open(I, $_) or die; while(<I>){@F = split; print"SELECT \"$f\", $F[0], id FROM Site WHERE source = \"PHOSIDA\" AND type = \"$F[2]\" AND id_seq = $F[3] AND pos = $F[4];\n";}}' | mysql -u anonymous -D fistdb --quick --skip-column-names | perl -nae '($F[0] == 224308) or ($F[0] == 83333) or ($F[0] == 6239) or print;' > ${MECHISMO_DN}sites/ptms/PHOSIDA/new_to_old_site_ids.tsv
 
-ls ./data/sites/ptms/PHOSIDA/*/*/PmidToSite.tsv | perl -ne 'BEGIN{open(I, "data/sites/ptms/PHOSIDA/new_to_old_site_ids.tsv"); chomp; while(<I>){@F = split; $S{$F[0]}->{$F[1]}->{$F[2]}++;}close(I);} chomp; if(/PHOSIDA\/(\d+)/){$taxon = $1; ($f = $_) =~ s/PmidToSite.tsv\Z//; open(I, $_) or die; while(<I>){@F = split; if(defined($S{$f}->{$F[0]})){foreach $id_old (keys %{$S{$f}->{$F[0]}}){print(join("\t", $id_old, $F[1]), "\n");}}}}' > ./data/sites/ptms/PHOSIDA/PmidToSite.update_old.tsv
-perl -nae 'print"$F[1]\n";' data/sites/ptms/PHOSIDA/PmidToSite.update_old.tsv | sort -n -u -o data/sites/ptms/PHOSIDA/Pmid.update_old.tsv
+ls ${MECHISMO_DN}sites/ptms/PHOSIDA/*/*/PmidToSite.tsv | perl -ne 'BEGIN{open(I, "${MECHISMO_DN}sites/ptms/PHOSIDA/new_to_old_site_ids.tsv"); chomp; while(<I>){@F = split; $S{$F[0]}->{$F[1]}->{$F[2]}++;}close(I);} chomp; if(/PHOSIDA\/(\d+)/){$taxon = $1; ($f = $_) =~ s/PmidToSite.tsv\Z//; open(I, $_) or die; while(<I>){@F = split; if(defined($S{$f}->{$F[0]})){foreach $id_old (keys %{$S{$f}->{$F[0]}}){print(join("\t", $id_old, $F[1]), "\n");}}}}' > ${MECHISMO_DN}sites/ptms/PHOSIDA/PmidToSite.update_old.tsv
+perl -nae 'print"$F[1]\n";' ${MECHISMO_DN}sites/ptms/PHOSIDA/PmidToSite.update_old.tsv | sort -n -u -o ${MECHISMO_DN}sites/ptms/PHOSIDA/Pmid.update_old.tsv
 
-perl -e 'print"Fist::IO::Pmid\t./data/sites/ptms/PHOSIDA/Pmid.update_old.tsv\n";' > ./data/sites/ptms/PHOSIDA/import.update_old.inp
-perl -e 'print"Fist::IO::PmidToSite\t./data/sites/ptms/PHOSIDA/PmidToSite.update_old.tsv\tid_site=DB\n";' >> ./data/sites/ptms/PHOSIDA/import.update_old.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/PHOSIDA/import.update_old.inp &> ./data/sites/ptms/PHOSIDA/import.update_old.err
+perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/ptms/PHOSIDA/Pmid.update_old.tsv\n";' > ${MECHISMO_DN}sites/ptms/PHOSIDA/import.update_old.inp
+perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/ptms/PHOSIDA/PmidToSite.update_old.tsv\tid_site=DB\n";' >> ${MECHISMO_DN}sites/ptms/PHOSIDA/import.update_old.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/PHOSIDA/import.update_old.inp &> ${MECHISMO_DN}sites/ptms/PHOSIDA/import.update_old.err
 
 # directly add PMIDs for worm, as was a real pain to get from sequence aliases used in PHOSIDA files
 mysql -p -D fistdb -e 'INSERT INTO Pmid (pmid) VALUES (19530675); INSERT INTO PmidToSite (id_site, pmid) SELECT s.id, 19530675 FROM Site AS s, SeqToTaxon AS s_to_t WHERE s.source = "PHOSIDA" AND s_to_t.id_seq = s.id_seq AND s_to_t.id_taxon = 6239;'
@@ -709,10 +718,10 @@ mysql -p -D fistdb -e 'INSERT INTO Pmid (pmid) VALUES (19429919); INSERT INTO Pm
 ###### next time ######
 
 # import
-ls ./data/sites/ptms/PHOSIDA/*/*/Site.tsv | perl -ne 'chomp; /PHOSIDA\/(\d+)/ and print"Fist::IO::Site\t$_\tid=$1\n";' > ./data/sites/ptms/PHOSIDA/import.inp
-ls ./data/sites/ptms/PHOSIDA/*/*/Pmid.tsv | perl -ne 'chomp; /PHOSIDA\/(\d+)/ and print"Fist::IO::Pmid\t$_\n";' >> ./data/sites/ptms/PHOSIDA/import.inp
-ls ./data/sites/ptms/PHOSIDA/*/*/PmidToSite.tsv | perl -ne 'chomp; /PHOSIDA\/(\d+)/ and print"Fist::IO::PmidToSite\t$_\tid_site=$1\n";' >> ./data/sites/ptms/PHOSIDA/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/PHOSIDA/import.inp &> ./data/sites/ptms/PHOSIDA/import.err
+ls ${MECHISMO_DN}sites/ptms/PHOSIDA/*/*/Site.tsv | perl -ne 'chomp; /PHOSIDA\/(\d+)/ and print"Fist::IO::Site\t$_\tid=$1\n";' > ${MECHISMO_DN}sites/ptms/PHOSIDA/import.inp
+ls ${MECHISMO_DN}sites/ptms/PHOSIDA/*/*/Pmid.tsv | perl -ne 'chomp; /PHOSIDA\/(\d+)/ and print"Fist::IO::Pmid\t$_\n";' >> ${MECHISMO_DN}sites/ptms/PHOSIDA/import.inp
+ls ${MECHISMO_DN}sites/ptms/PHOSIDA/*/*/PmidToSite.tsv | perl -ne 'chomp; /PHOSIDA\/(\d+)/ and print"Fist::IO::PmidToSite\t$_\tid_site=$1\n";' >> ${MECHISMO_DN}sites/ptms/PHOSIDA/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/PHOSIDA/import.inp &> ${MECHISMO_DN}sites/ptms/PHOSIDA/import.err
 
 #########################################################################
 
@@ -721,43 +730,43 @@ perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/PHOSIDA/import.inp &> ./
 # convert 'identification scores' sheets to csv (tab-delimited fields, quotation marks removed)
 # NOTE: incorrect heading in downloaded acetylation file
 
-mkdir -p ./data/sites/ptms/mpn/phosphorylation
-perl -I./lib ./script/parse_mpn_ptms.pl --outdir ./data/sites/ptms/mpn/phosphorylation --pmid 22373819 --type phosphorylation ./data/sites/ptms/mpn/mpn-phosphorylated.csv  1> ./data/sites/ptms/mpn/phosphorylation/stdout 2> ./data/sites/ptms/mpn/phosphorylation/stderr
-perl -e 'print"Fist::IO::Site\t./data/sites/ptms/mpn/phosphorylation/Site.tsv\tid=01\n";' > ./data/sites/ptms/mpn/phosphorylation/import.inp
-perl -e 'print"Fist::IO::Pmid\t./data/sites/ptms/mpn/phosphorylation/Pmid.tsv\n";' >> ./data/sites/ptms/mpn/phosphorylation/import.inp
-perl -e 'print"Fist::IO::PmidToSite\t./data/sites/ptms/mpn/phosphorylation/PmidToSite.tsv\tid_site=01\n";' >> ./data/sites/ptms/mpn/phosphorylation/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/mpn/phosphorylation/import.inp &> ./data/sites/ptms/mpn/phosphorylation/import.err
+mkdir -p ${MECHISMO_DN}sites/ptms/mpn/phosphorylation
+perl -I./lib ./script/parse_mpn_ptms.pl --outdir ${MECHISMO_DN}sites/ptms/mpn/phosphorylation --pmid 22373819 --type phosphorylation ${MECHISMO_DN}sites/ptms/mpn/mpn-phosphorylated.csv  1> ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/stdout 2> ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/stderr
+perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/ptms/mpn/phosphorylation/Site.tsv\tid=01\n";' > ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/import.inp
+perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/ptms/mpn/phosphorylation/Pmid.tsv\n";' >> ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/import.inp
+perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/ptms/mpn/phosphorylation/PmidToSite.tsv\tid_site=01\n";' >> ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/import.inp &> ${MECHISMO_DN}sites/ptms/mpn/phosphorylation/import.err
 
-mkdir -p ./data/sites/ptms/mpn/acetylation
-perl -I./lib ./script/parse_mpn_ptms.pl --outdir ./data/sites/ptms/mpn/acetylation --pmid 22373819 --type acetylation ./data/sites/ptms/mpn/mpn-acetylated.csv  1> ./data/sites/ptms/mpn/acetylation/stdout 2> ./data/sites/ptms/mpn/acetylation/stderr
-perl -e 'print"Fist::IO::Site\t./data/sites/ptms/mpn/acetylation/Site.tsv\tid=01\n";' > ./data/sites/ptms/mpn/acetylation/import.inp
-perl -e 'print"Fist::IO::Pmid\t./data/sites/ptms/mpn/acetylation/Pmid.tsv\n";' >> ./data/sites/ptms/mpn/acetylation/import.inp
-perl -e 'print"Fist::IO::PmidToSite\t./data/sites/ptms/mpn/acetylation/PmidToSite.tsv\tid_site=01\n";' >> ./data/sites/ptms/mpn/acetylation/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/mpn/acetylation/import.inp &> ./data/sites/ptms/mpn/acetylation/import.err
+mkdir -p ${MECHISMO_DN}sites/ptms/mpn/acetylation
+perl -I./lib ./script/parse_mpn_ptms.pl --outdir ${MECHISMO_DN}sites/ptms/mpn/acetylation --pmid 22373819 --type acetylation ${MECHISMO_DN}sites/ptms/mpn/mpn-acetylated.csv  1> ${MECHISMO_DN}sites/ptms/mpn/acetylation/stdout 2> ${MECHISMO_DN}sites/ptms/mpn/acetylation/stderr
+perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/ptms/mpn/acetylation/Site.tsv\tid=01\n";' > ${MECHISMO_DN}sites/ptms/mpn/acetylation/import.inp
+perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/ptms/mpn/acetylation/Pmid.tsv\n";' >> ${MECHISMO_DN}sites/ptms/mpn/acetylation/import.inp
+perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/ptms/mpn/acetylation/PmidToSite.tsv\tid_site=01\n";' >> ${MECHISMO_DN}sites/ptms/mpn/acetylation/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/mpn/acetylation/import.inp &> ${MECHISMO_DN}sites/ptms/mpn/acetylation/import.err
 
 
 ## get sites from uniprot entries
 # FIXME - fix sites of unknown type - some may be useful. See 'parse.err'
-mkdir -p ./data/sites/uniprot/
-perl -I./lib ./script/parse_uniprot_sites.pl --outdir ./data/sites/uniprot/ $DS/uniprot/knowledgebase/complete/uniprot_sprot.dat.gz 1> ./data/sites/uniprot/parse.out 2> ./data/sites/uniprot/parse.err
+mkdir -p ${MECHISMO_DN}sites/uniprot/
+perl -I./lib ./script/parse_uniprot_sites.pl --outdir ${MECHISMO_DN}sites/uniprot/ $DS/uniprot/knowledgebase/complete/uniprot_sprot.dat.gz 1> ${MECHISMO_DN}sites/uniprot/parse.out 2> ${MECHISMO_DN}sites/uniprot/parse.err
 
 # FIXME - update schema to allow types of sites other than in the enum
 
 # This time, map to 'swissprot' sites already in db and add new PmidToSite entries
-perl -F'/\t/' -nae 'print"SELECT $F[0], id FROM Site WHERE source = \"swissprot\" AND type = \"$F[2]\" AND id_seq = $F[3] AND pos = $F[4];\n";' data/sites/uniprot/Site.tsv | mysql -u anonymous -D fistdb --quick --skip-column-names > data/sites/uniprot/new_to_old_site_ids.tsv
-perl -nae 'BEGIN{open(I, "data/sites/uniprot/new_to_old_site_ids.tsv"); while(<I>){@F = split; $S{$F[0]} = $F[1];}close(I);} defined($S{$F[0]}) and print(join("\t", $S{$F[0]}, $F[1]), "\n");' data/sites/uniprot/PmidToSite.tsv > data/sites/uniprot/PmidToSite.update_old.tsv
-perl -nae 'print"$F[1]\n";' data/sites/uniprot/PmidToSite.update_old.tsv | sort -n -u -o data/sites/uniprot/Pmid.update_old.tsv
+perl -F'/\t/' -nae 'print"SELECT $F[0], id FROM Site WHERE source = \"swissprot\" AND type = \"$F[2]\" AND id_seq = $F[3] AND pos = $F[4];\n";' ${MECHISMO_DN}sites/uniprot/Site.tsv | mysql -u anonymous -D fistdb --quick --skip-column-names > ${MECHISMO_DN}sites/uniprot/new_to_old_site_ids.tsv
+perl -nae 'BEGIN{open(I, "${MECHISMO_DN}sites/uniprot/new_to_old_site_ids.tsv"); while(<I>){@F = split; $S{$F[0]} = $F[1];}close(I);} defined($S{$F[0]}) and print(join("\t", $S{$F[0]}, $F[1]), "\n");' ${MECHISMO_DN}sites/uniprot/PmidToSite.tsv > ${MECHISMO_DN}sites/uniprot/PmidToSite.update_old.tsv
+perl -nae 'print"$F[1]\n";' ${MECHISMO_DN}sites/uniprot/PmidToSite.update_old.tsv | sort -n -u -o ${MECHISMO_DN}sites/uniprot/Pmid.update_old.tsv
 
-perl -e 'print"Fist::IO::Pmid\t./data/sites/uniprot/Pmid.update_old.tsv\n";' > ./data/sites/uniprot/import.update_old.inp
-perl -e 'print"Fist::IO::PmidToSite\t./data/sites/uniprot/PmidToSite.update_old.tsv\tid_site=DB\n";' >> ./data/sites/uniprot/import.update_old.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/uniprot/import.update_old.inp &> ./data/sites/uniprot/import.update_old.err
+perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/uniprot/Pmid.update_old.tsv\n";' > ${MECHISMO_DN}sites/uniprot/import.update_old.inp
+perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/uniprot/PmidToSite.update_old.tsv\tid_site=DB\n";' >> ${MECHISMO_DN}sites/uniprot/import.update_old.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/uniprot/import.update_old.inp &> ${MECHISMO_DN}sites/uniprot/import.update_old.err
 
 
 # import
-perl -e 'print"Fist::IO::Site\t./data/sites/uniprot/Site.tsv\tid=01\n";' > ./data/sites/uniprot/import.inp
-perl -e 'print"Fist::IO::Pmid\t./data/sites/uniprot/Pmid.tsv\n";' >> ./data/sites/uniprot/import.inp
-perl -e 'print"Fist::IO::PmidToSite\t./data/sites/uniprot/PmidToSite.tsv\tid_site=01\n";' >> ./data/sites/uniprot/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/uniprot/import.inp &> ./data/sites/uniprot/import.err
+perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/uniprot/Site.tsv\tid=01\n";' > ${MECHISMO_DN}sites/uniprot/import.inp
+perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/uniprot/Pmid.tsv\n";' >> ${MECHISMO_DN}sites/uniprot/import.inp
+perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/uniprot/PmidToSite.tsv\tid_site=01\n";' >> ${MECHISMO_DN}sites/uniprot/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/uniprot/import.inp &> ${MECHISMO_DN}sites/uniprot/import.err
 
 
 ## map p[STY] and aK in PDB to positions in uniprot sequences
@@ -767,19 +776,19 @@ perl -I./lib ./script/import_tsv.pl < ./data/sites/uniprot/import.inp &> ./data/
 ##   PTR = pY
 ##   ALY = aK
 ##
-mkdir -p ./data/sites/ptms/pdb/
-perl -I./lib ./script/get_pdb_ptms.pl 1> ./data/sites/ptms/pdb/Site.tsv 2> ./data/sites/ptms/pdb/Site.err
-perl -e 'print"Fist::IO::Site\t./data/sites/ptms/pdb/Site.tsv\tid=01\n";' > ./data/sites/ptms/pdb/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/sites/ptms/pdb/import.inp &> ./data/sites/ptms/pdb/import.err
+mkdir -p ${MECHISMO_DN}sites/ptms/pdb/
+perl -I./lib ./script/get_pdb_ptms.pl 1> ${MECHISMO_DN}sites/ptms/pdb/Site.tsv 2> ${MECHISMO_DN}sites/ptms/pdb/Site.err
+perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/ptms/pdb/Site.tsv\tid=01\n";' > ${MECHISMO_DN}sites/ptms/pdb/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/pdb/import.inp &> ${MECHISMO_DN}sites/ptms/pdb/import.err
 
 
 ## define throughput for each PMID by the number of distinct sequences with sites
-perl -I./lib script/set_pmid_throughput.pl --high 100 --medium 20 &> ./data/set_pmid_throughput.err
+perl -I./lib script/set_pmid_throughput.pl --high 100 --medium 20 &> ${MECHISMO_DN}set_pmid_throughput.err
 
 
 ## load the known enzymes for each PTM
-perl -I./lib/ ./script/site_enzymes.pl /net/netfile2/ag-russell/bq_mbetts/work/ptms/pablos_data/ptm_data_enzymes/* > ./data/sites/ptms/pablo/EnzymeToSite.tsv 2> ./data/sites/ptms/pablo/EnzymeToSite.err
-perl -e 'print"Fist::IO::EnzymeToSite\t./data/sites/ptms/pablo/EnzymeToSite.tsv\tid_site=DB,id_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl
+perl -I./lib/ ./script/site_enzymes.pl /net/netfile2/ag-russell/bq_mbetts/work/ptms/pablos_${MECHISMO_DN}ptm_data_enzymes/* > ${MECHISMO_DN}sites/ptms/pablo/EnzymeToSite.tsv 2> ${MECHISMO_DN}sites/ptms/pablo/EnzymeToSite.err
+perl -e 'print"Fist::IO::EnzymeToSite\t$ENV{MECHISMO_DN}sites/ptms/pablo/EnzymeToSite.tsv\tid_site=DB,id_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl
 
 
 ## get start positions of chain segments in the fist sequences of fragments
@@ -789,15 +798,15 @@ mysql -p -D fistdb < sql/chain_seqment_fist.sql
 
 ## get res mapping for fragments (saves complicated sql later on, with ChainSegment etc.)
 # FIXME - res3 and res1 were not included in the file generated. Added via sql on 2014-09-16
-/usr/bin/time -o ./data/FragResMapping.time perl -I./lib ./script/frag_res_mapping.pl > ./data/FragResMapping.tsv 2> ./data/FragResMapping.err
-/usr/bin/time -o ./data/FragResMapping.import.time mysql -p -D fistdb -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "./data/FragResMapping.tsv" INTO TABLE FragResMapping (id_frag, fist, chain, resseq, icode, res3, res1);' >&./data/FragResMapping.import.err
+/usr/bin/time -o ${MECHISMO_DN}FragResMapping.time perl -I./lib ./script/frag_res_mapping.pl > ${MECHISMO_DN}FragResMapping.tsv 2> ${MECHISMO_DN}FragResMapping.err
+/usr/bin/time -o ${MECHISMO_DN}FragResMapping.import.time mysql -p -D fistdb -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "${MECHISMO_DN}FragResMapping.tsv" INTO TABLE FragResMapping (id_frag, fist, chain, resseq, icode, res3, res1);' >&${MECHISMO_DN}FragResMapping.import.err
 
 
 ## get templates for all components (best templates for each position in each sequence by itself)
-mkdir -p ./data/frag_hits/uniprot/sprot
-/usr/bin/time -o ./data/frag_hits/uniprot/sprot/pbs.time perl -I./lib ./script/fragment_hits.pl --source 'uniprot-sprot' --outdir ./data/frag_hits/uniprot/ --pbs sprot --n_jobs 200 1> ./data/frag_hits/uniprot/sprot/pbs.out 2> ./data/frag_hits/uniprot/sprot/pbs.err
-ls ./data/frag_hits/uniprot/sprot/*/FragHit.tsv | perl -ne 'chomp; /(\d+)\/FragHit.tsv/ and print"Fist::IO::FragHit\t$_\tid_seq=DB,id_aln=DB\n";' > ./data/frag_hits/uniprot/sprot/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/frag_hits/uniprot/sprot/import.inp &> ./data/frag_hits/uniprot/sprot/import.err
+mkdir -p ${MECHISMO_DN}frag_hits/uniprot/sprot
+/usr/bin/time -o ${MECHISMO_DN}frag_hits/uniprot/sprot/pbs.time perl -I./lib ./script/fragment_hits.pl --source 'uniprot-sprot' --outdir ${MECHISMO_DN}frag_hits/uniprot/ --pbs sprot --n_jobs 200 1> ${MECHISMO_DN}frag_hits/uniprot/sprot/pbs.out 2> ${MECHISMO_DN}frag_hits/uniprot/sprot/pbs.err
+ls ${MECHISMO_DN}frag_hits/uniprot/sprot/*/FragHit.tsv | perl -ne 'chomp; /(\d+)\/FragHit.tsv/ and print"Fist::IO::FragHit\t$_\tid_seq=DB,id_aln=DB\n";' > ${MECHISMO_DN}frag_hits/uniprot/sprot/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}frag_hits/uniprot/sprot/import.inp &> ${MECHISMO_DN}frag_hits/uniprot/sprot/import.err
 
 
 ## map sites in taxa of interest to alignments of uniref sequence groups
@@ -805,98 +814,98 @@ perl -I./lib ./script/import_tsv.pl < ./data/frag_hits/uniprot/sprot/import.inp 
 # in the foreground for any sequence then assign it to the
 # set of foreground sites, otherwise use it as background.
 
-perl -I./lib ./script/sites_to_seqgroups.pl --outdir ./temp --type phosphorylation --background 'phosphorylation,[STY]' --group_type 'uniref 50' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 2> ./data/sites/uniref50.err | gzip > ./data/sites/uniref50.tsv.gz
+perl -I./lib ./script/sites_to_seqgroups.pl --outdir ./temp --type phosphorylation --background 'phosphorylation,[STY]' --group_type 'uniref 50' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 2> ${MECHISMO_DN}sites/uniref50.err | gzip > ${MECHISMO_DN}sites/uniref50.tsv.gz
 
-perl -I./lib ./script/sites_to_seqgroups.pl --outdir ./temp --type phosphorylation --background 'phosphorylation,[STY]' --group_type 'uniref 90' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 2> ./data/sites/uniref90.err | gzip > ./data/sites/uniref90.tsv.gz
+perl -I./lib ./script/sites_to_seqgroups.pl --outdir ./temp --type phosphorylation --background 'phosphorylation,[STY]' --group_type 'uniref 90' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 2> ${MECHISMO_DN}sites/uniref90.err | gzip > ${MECHISMO_DN}sites/uniref90.tsv.gz
 
-perl -I./lib ./script/sites_to_seqgroups.pl --outdir ./temp --type phosphorylation --background 'phosphorylation,[STY]' --group_type 'uniref 100' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 2> ./data/sites/uniref100.err | gzip > ./data/sites/uniref100.tsv.gz
+perl -I./lib ./script/sites_to_seqgroups.pl --outdir ./temp --type phosphorylation --background 'phosphorylation,[STY]' --group_type 'uniref 100' --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 2> ${MECHISMO_DN}sites/uniref100.err | gzip > ${MECHISMO_DN}sites/uniref100.tsv.gz
 
 
 ## generate domain files for frags grouped by sequence
-perl -I./lib ./script/get_frag_seq_group_dom_files.pl --type 'fist lf=0.0 pcid=0.0' 1> data/seq_groups/fist_lf0_pcid0/domains.dom 2> data/seq_groups/fist_lf0_pcid0/domains.err
-perl -I./lib ./script/get_frag_seq_group_dom_files.pl --type 'fist lf=0.9 pcid=90.0' 1> data/seq_groups/fist_lf0.9_pcid90/domains.dom 2> data/seq_groups/fist_lf0.9_pcid90/domains.err
-perl -I./lib ./script/get_frag_seq_group_dom_files.pl --type 'fist lf=0.5 pcid=50.0' 1> data/seq_groups/fist_lf0.5_pcid50/domains.dom 2> data/seq_groups/fist_lf0.5_pcid50/domains.err
-gzip data/seq_groups/*/domains.dom
+perl -I./lib ./script/get_frag_seq_group_dom_files.pl --type 'fist lf=0.0 pcid=0.0' 1> ${MECHISMO_DN}seq_groups/fist_lf0_pcid0/domains.dom 2> ${MECHISMO_DN}seq_groups/fist_lf0_pcid0/domains.err
+perl -I./lib ./script/get_frag_seq_group_dom_files.pl --type 'fist lf=0.9 pcid=90.0' 1> ${MECHISMO_DN}seq_groups/fist_lf0.9_pcid90/domains.dom 2> ${MECHISMO_DN}seq_groups/fist_lf0.9_pcid90/domains.err
+perl -I./lib ./script/get_frag_seq_group_dom_files.pl --type 'fist lf=0.5 pcid=50.0' 1> ${MECHISMO_DN}seq_groups/fist_lf0.5_pcid50/domains.dom 2> ${MECHISMO_DN}seq_groups/fist_lf0.5_pcid50/domains.err
+gzip ${MECHISMO_DN}seq_groups/*/domains.dom
 
 
 ## generate domain files linking groups that share a common scop superfamily
-mkdir ./data/seq_groups/fist_lf0.9_pcid90/scop/
-perl -I./lib ./script/get_scop_frag_seq_groups.pl --type 'fist lf=0.9 pcid=90.0' 1>  ./data/seq_groups/fist_lf0.9_pcid90/scop/domains.dom 2>  ./data/seq_groups/fist_lf0.9_pcid90/scop/domains.err
-gzip ./data/seq_groups/fist_lf0.9_pcid90/scop/domains.dom
+mkdir ${MECHISMO_DN}seq_groups/fist_lf0.9_pcid90/scop/
+perl -I./lib ./script/get_scop_frag_seq_groups.pl --type 'fist lf=0.9 pcid=90.0' 1>  ${MECHISMO_DN}seq_groups/fist_lf0.9_pcid90/scop/domains.dom 2>  ${MECHISMO_DN}seq_groups/fist_lf0.9_pcid90/scop/domains.err
+gzip ${MECHISMO_DN}seq_groups/fist_lf0.9_pcid90/scop/domains.dom
 
 
 ## get chemical info from pdbechem
-wget --no-host-directories --cut-dirs 4 -P ./data/ ftp://ftp.ebi.ac.uk/pub/databases/msd/pdbechem/chem_comp.xml
-./script/chem_comp_to_tsv.pl < ./data/chem_comp.xml 1> ./data/ChemComp.tsv 2> ChemComp.err
-mysql -p -D fistdb -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "./data/ChemComp.tsv" INTO TABLE ChemComp (id, name, formula, systematic_name, stereo_smiles, non_stereo_smiles, in_chi);'
+wget --no-host-directories --cut-dirs 4 -P ${MECHISMO_DN} ftp://ftp.ebi.ac.uk/pub/databases/msd/pdbechem/chem_comp.xml
+./script/chem_comp_to_tsv.pl < ${MECHISMO_DN}chem_comp.xml 1> ${MECHISMO_DN}ChemComp.tsv 2> ChemComp.err
+mysql -p -D fistdb -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "${MECHISMO_DN}ChemComp.tsv" INTO TABLE ChemComp (id, name, formula, systematic_name, stereo_smiles, non_stereo_smiles, in_chi);'
 
 
 ## generate domain files for interaction groups
 for j in 1.0 0.9 0.8 0.7 0.6 0.5 0.4 0.3 0.2 0.1
 do
-  perl -I./lib ./script/get_contact_group_dom_files.pl --lf 0.9 --pcid 90 --same_frag 0 --aln_jaccard 0 --full_jaccard $j 1> data/contact_groups/fist_lf0.9_pcid90/domains.j$j.dom 2> data/contact_groups/fist_lf0.9_pcid90/domains.j$j.err
-  perl -I./lib ./script/get_contact_group_dom_files.pl --lf 0.5 --pcid 50 --same_frag 0 --aln_jaccard 0 --full_jaccard $j 1> data/contact_groups/fist_lf0.5_pcid50/domains.j$j.dom 2> data/contact_groups/fist_lf0.5_pcid50/domains.j$j.err
-  perl -I./lib ./script/get_contact_group_dom_files.pl --lf 0.0 --pcid 0.1 --same_frag 0 --aln_jaccard 0 --full_jaccard $j 1> data/contact_groups/fist_lf0.0_pcid0/domains.j$j.dom  2> data/contact_groups/fist_lf0.0_pcid0/domains.j$j.err
+  perl -I./lib ./script/get_contact_group_dom_files.pl --lf 0.9 --pcid 90 --same_frag 0 --aln_jaccard 0 --full_jaccard $j 1> ${MECHISMO_DN}contact_groups/fist_lf0.9_pcid90/domains.j$j.dom 2> ${MECHISMO_DN}contact_groups/fist_lf0.9_pcid90/domains.j$j.err
+  perl -I./lib ./script/get_contact_group_dom_files.pl --lf 0.5 --pcid 50 --same_frag 0 --aln_jaccard 0 --full_jaccard $j 1> ${MECHISMO_DN}contact_groups/fist_lf0.5_pcid50/domains.j$j.dom 2> ${MECHISMO_DN}contact_groups/fist_lf0.5_pcid50/domains.j$j.err
+  perl -I./lib ./script/get_contact_group_dom_files.pl --lf 0.0 --pcid 0.1 --same_frag 0 --aln_jaccard 0 --full_jaccard $j 1> ${MECHISMO_DN}contact_groups/fist_lf0.0_pcid0/domains.j$j.dom  2> ${MECHISMO_DN}contact_groups/fist_lf0.0_pcid0/domains.j$j.err
 done
-gzip data/contact_groups/*/domains.*.dom
+gzip ${MECHISMO_DN}contact_groups/*/domains.*.dom
 
 
 ## find contacts for fist seq Pfam features
-perl -I./lib ./script/feature_contacts.pl --source Pfam 1> ./data/pfam/pfam_contacts.tsv 2> ./data/pfam/pfam_contacts.err
-perl -e 'print"Fist::IO::FeatureInstContact\tdata/pfam/pfam_contacts.tsv\n";' | perl -I./lib ./script/import_tsv.pl 
+perl -I./lib ./script/feature_contacts.pl --source Pfam 1> ${MECHISMO_DN}pfam/pfam_contacts.tsv 2> ${MECHISMO_DN}pfam/pfam_contacts.err
+perl -e 'print"Fist::IO::FeatureInstContact\t$ENV{MECHISMO_DN}pfam/pfam_contacts.tsv\n";' | perl -I./lib ./script/import_tsv.pl 
 mysql -p -D fistdb < sql/update_feature_contact.sql
 
 # summarise
-mysql -u anonymous -D fistdb < sql/pfam_contact_summary.sql | gzip > ./data/pfam/pfam_contact_summary.tsv.gz
-mysql -u anonymous -D fistdb < sql/pfam_instances_uniprot.sql | gzip > ./data/pfam/pfam_instances_uniprot.tsv.gz
-mysql -u anonymous -D fistdb < sql/iupred_instances_uniprot.sql | gzip > ./data/iupred_instances_uniprot.tsv.gz
+mysql -u anonymous -D fistdb < sql/pfam_contact_summary.sql | gzip > ${MECHISMO_DN}pfam/pfam_contact_summary.tsv.gz
+mysql -u anonymous -D fistdb < sql/pfam_instances_uniprot.sql | gzip > ${MECHISMO_DN}pfam/pfam_instances_uniprot.tsv.gz
+mysql -u anonymous -D fistdb < sql/iupred_instances_uniprot.sql | gzip > ${MECHISMO_DN}iupred_instances_uniprot.tsv.gz
 
 ## contact hits for all PDB sites mapped to uniprot
 ## WARNING: this was done separately for phosphorylation and acetylation in the files currently stored
-mkdir -p ./data/contact_hits/pdb/
-mysql -u anonymous -D fistdb --quick --skip-column-names -e 'SELECT b.id_seq, b.id_taxon FROM Site AS a, SeqToTaxon AS b WHERE a.source = "pdb" AND b.id_seq = a.id_seq GROUP BY b.id_seq, b.id_taxon;' | perl -nae 'BEGIN{$d1 = qx(pwd); chomp($d1); ($d2 = $d1) .= "/data/contact_hits/pdb/";} mkdir("$d2$F[0]"); open(PBS, ">$d2$F[0].pbs"); print PBS "#PBS -N $F[0]\n#PBS -o $d2/$F[0]/stdout\n#PBS -e $d2$F[0]/stderr\n#PBS -l cput=04:59:59\n#PBS -m n\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\nperl -I$d1/lib $d1/script/contact_hits.pl --id $F[0] --taxon $F[1] --source uniprot-sprot --outdir $d2$F[0]/\n"; close(PBS);'
+mkdir -p ${MECHISMO_DN}contact_hits/pdb/
+mysql -u anonymous -D fistdb --quick --skip-column-names -e 'SELECT b.id_seq, b.id_taxon FROM Site AS a, SeqToTaxon AS b WHERE a.source = "pdb" AND b.id_seq = a.id_seq GROUP BY b.id_seq, b.id_taxon;' | perl -nae 'BEGIN{$d1 = qx(pwd); chomp($d1); ($d2 = $d1) .= "/${MECHISMO_DN}contact_hits/pdb/";} mkdir("$d2$F[0]"); open(PBS, ">$d2$F[0].pbs"); print PBS "#PBS -N $F[0]\n#PBS -o $d2/$F[0]/stdout\n#PBS -e $d2$F[0]/stderr\n#PBS -l cput=04:59:59\n#PBS -m n\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\nperl -I$d1/lib $d1/script/contact_hits.pl --id $F[0] --taxon $F[1] --source uniprot-sprot --outdir $d2$F[0]/\n"; close(PBS);'
 
 # on appl2:
-ls ./data/contact_hits/pdb/*.pbs | pbs_siesta.pl --wait 0
+ls ${MECHISMO_DN}contact_hits/pdb/*.pbs | pbs_siesta.pl --wait 0
 
 # import
-ls ./data/contact_hits/pdb/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ./data/contact_hits/pdb/import.inp
-ls ./data/contact_hits/pdb/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ./data/contact_hits/pdb/import.inp
-/usr/bin/time -o ./data/contact_hits/pdb/import.time perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/pdb/import.inp &> ./data/contact_hits/pdb/import.err
+ls ${MECHISMO_DN}contact_hits/pdb/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/pdb/import.inp
+ls ${MECHISMO_DN}contact_hits/pdb/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ${MECHISMO_DN}contact_hits/pdb/import.inp
+/usr/bin/time -o ${MECHISMO_DN}contact_hits/pdb/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/pdb/import.inp &> ${MECHISMO_DN}contact_hits/pdb/import.err
 
 
 ## get all matches above a certain percent identity (to avoid problems with multiple kinases slowing things down),
 ## for checking whether there are alternative templates with and without phos in interface.
 
-mkdir -p ./data/contact_hits/pdb_all/
-mysql -u anonymous -D fistdb --quick --skip-column-names -e 'SELECT b.id_seq, b.id_taxon FROM Site AS a, SeqToTaxon AS b WHERE a.source = "pdb" AND b.id_seq = a.id_seq GROUP BY b.id_seq, b.id_taxon;' | perl -nae 'BEGIN{$d1 = qx(pwd); chomp($d1); ($d2 = $d1) .= "/data/contact_hits/pdb_all/";} mkdir("$d2$F[0]"); open(PBS, ">$d2$F[0].pbs"); print PBS "#PBS -N $F[0]\n#PBS -o $d2/$F[0]/stdout\n#PBS -e $d2$F[0]/stderr\n#PBS -l cput=04:59:59\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\nperl -I$d1/lib $d1/script/contact_hits.pl --id $F[0] --taxon $F[1] --source uniprot-sprot --outdir $d2$F[0]/ --all_matches --both_ways --min_pcid 40\n"; close(PBS);'
+mkdir -p ${MECHISMO_DN}contact_hits/pdb_all/
+mysql -u anonymous -D fistdb --quick --skip-column-names -e 'SELECT b.id_seq, b.id_taxon FROM Site AS a, SeqToTaxon AS b WHERE a.source = "pdb" AND b.id_seq = a.id_seq GROUP BY b.id_seq, b.id_taxon;' | perl -nae 'BEGIN{$d1 = qx(pwd); chomp($d1); ($d2 = $d1) .= "/${MECHISMO_DN}contact_hits/pdb_all/";} mkdir("$d2$F[0]"); open(PBS, ">$d2$F[0].pbs"); print PBS "#PBS -N $F[0]\n#PBS -o $d2/$F[0]/stdout\n#PBS -e $d2$F[0]/stderr\n#PBS -l cput=04:59:59\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\nperl -I$d1/lib $d1/script/contact_hits.pl --id $F[0] --taxon $F[1] --source uniprot-sprot --outdir $d2$F[0]/ --all_matches --both_ways --min_pcid 40\n"; close(PBS);'
 
 # import
-ls ./data/contact_hits/pdb_all/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ./data/contact_hits/pdb_all/import.inp
-ls ./data/contact_hits/pdb_all/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ./data/contact_hits/pdb_all/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/pdb_all/import.inp &> ./data/contact_hits/pdb_all/import.err
+ls ${MECHISMO_DN}contact_hits/pdb_all/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/pdb_all/import.inp
+ls ${MECHISMO_DN}contact_hits/pdb_all/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ${MECHISMO_DN}contact_hits/pdb_all/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/pdb_all/import.inp &> ${MECHISMO_DN}contact_hits/pdb_all/import.err
 
 
 ## run interprets on all matches
 ## FIXME - assumes the only ContactHits in the db are for the pdb sites
-mkdir -p ./data/contact_hits/pdb/itps/
-/usr/bin/time -o ./data/contact_hits/pdb/itps/time perl -I./lib ./script/contact_hit_interprets.pl --outdir ./data/contact_hits/pdb/ --pbs itps --n_jobs 200 --rand 1000 1> ./data/contact_hits/pdb/itps/pbs.out 2> ./data/contact_hits/pdb/itps/pbs.err
-ls ./data/contact_hits/pdb/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ./data/contact_hits/pdb/itps/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/pdb/itps/import.inp &> ./data/contact_hits/pdb/itps/import.err
+mkdir -p ${MECHISMO_DN}contact_hits/pdb/itps/
+/usr/bin/time -o ${MECHISMO_DN}contact_hits/pdb/itps/time perl -I./lib ./script/contact_hit_interprets.pl --outdir ${MECHISMO_DN}contact_hits/pdb/ --pbs itps --n_jobs 200 --rand 1000 1> ${MECHISMO_DN}contact_hits/pdb/itps/pbs.out 2> ${MECHISMO_DN}contact_hits/pdb/itps/pbs.err
+ls ${MECHISMO_DN}contact_hits/pdb/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ${MECHISMO_DN}contact_hits/pdb/itps/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/pdb/itps/import.inp &> ${MECHISMO_DN}contact_hits/pdb/itps/import.err
 
 
 ## summarise pdb sites
-mkdir -p ./data/site_summary/pdb
-perl -I./lib ./script/site_summary.pl --source pdb --hetatm '^[PS]' --background 'phosphorylation,[STY]' --background 'acetylation,K' --subset goslim_biological_process --outdir ./data/site_summary/ --seqgroups ./data/sites/uniref50.tsv.gz --pbs pdb --q_max 300 1> ./data/site_summary/pdb/pbs.out 2> ./data/site_summary/pdb/pbs.err
-head -q -n 1 `find ./data/site_summary/pdb/ -name SiteSummary.tsv` | sort -u > ./data/site_summary/pdb.tsv
-tail -q -n +2 `find ./data/site_summary/pdb/ -name SiteSummary.tsv` >> ./data/site_summary/pdb.tsv
+mkdir -p ${MECHISMO_DN}site_summary/pdb
+perl -I./lib ./script/site_summary.pl --source pdb --hetatm '^[PS]' --background 'phosphorylation,[STY]' --background 'acetylation,K' --subset goslim_biological_process --outdir ${MECHISMO_DN}site_summary/ --seqgroups ${MECHISMO_DN}sites/uniref50.tsv.gz --pbs pdb --q_max 300 1> ${MECHISMO_DN}site_summary/pdb/pbs.out 2> ${MECHISMO_DN}site_summary/pdb/pbs.err
+head -q -n 1 `find ${MECHISMO_DN}site_summary/pdb/ -name SiteSummary.tsv` | sort -u > ${MECHISMO_DN}site_summary/pdb.tsv
+tail -q -n +2 `find ${MECHISMO_DN}site_summary/pdb/ -name SiteSummary.tsv` >> ${MECHISMO_DN}site_summary/pdb.tsv
 
 # min identity for single fragment match = 77%... not 100% as
 # one might expect, since the best *by e-value* is reported.
 
 
 ## count things and calculate enrichment and significance
-./script/site_summary_table.pl --pcid 70 --lt_pcid 101 --n_ss 2 ./data/site_summary/pdb.tsv 1> ./data/site_summary/pdb.pcid70.ss2.counts.tsv 2> ./data/site_summary/pdb.pcid70.ss2.counts.err
+./script/site_summary_table.pl --pcid 70 --lt_pcid 101 --n_ss 2 ${MECHISMO_DN}site_summary/pdb.tsv 1> ${MECHISMO_DN}site_summary/pdb.pcid70.ss2.counts.tsv 2> ${MECHISMO_DN}site_summary/pdb.pcid70.ss2.counts.err
 
 
 ## get templates for uniprot matches to NR templates (best compatible templates for each pair of sequences)
@@ -905,7 +914,7 @@ tail -q -n +2 `find ./data/site_summary/pdb/ -name SiteSummary.tsv` >> ./data/si
 ## This gives a combinatorial problem when using all sequences to find contact hits.
 ## Could use all sequences but group them together. For now, just use the child taxon
 ## with the most phospho sites, as long as it has a lot of sequences.
-perl -I./lib ./script/phospho_sites_per_child_taxon.pl > ./data/phospho_sites_per_child_taxon.tsv
+perl -I./lib ./script/phospho_sites_per_child_taxon.pl > ${MECHISMO_DN}phospho_sites_per_child_taxon.tsv
 
 # starred taxon used from now on:
 #
@@ -928,35 +937,35 @@ perl -I./lib ./script/phospho_sites_per_child_taxon.pl > ./data/phospho_sites_pe
 
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  mkdir -p ./data/contact_hits/${id_taxon}/
-  /usr/bin/time -o ./data/contact_hits/${id_taxon}/time perl -I./lib ./script/contact_hits.pl --skip_done --taxon ${id_taxon} --source 'uniprot-sprot' --outdir ./data/contact_hits/ --pbs ${id_taxon} --n_jobs 200 1> ./data/contact_hits/${id_taxon}/pbs.out 2> ./data/contact_hits/${id_taxon}/pbs.err &
+  mkdir -p ${MECHISMO_DN}contact_hits/${id_taxon}/
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/time perl -I./lib ./script/contact_hits.pl --skip_done --taxon ${id_taxon} --source 'uniprot-sprot' --outdir ${MECHISMO_DN}contact_hits/ --pbs ${id_taxon} --n_jobs 200 1> ${MECHISMO_DN}contact_hits/${id_taxon}/pbs.out 2> ${MECHISMO_DN}contact_hits/${id_taxon}/pbs.err &
 done
 
 # run the following on pevolution as the id mapping may need a lot of memory
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  ls ./data/contact_hits/${id_taxon}/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ./data/contact_hits/${id_taxon}/import.inp
-  ls ./data/contact_hits/${id_taxon}/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ./data/contact_hits/${id_taxon}/import.inp
-  /usr/bin/time -o ./data/contact_hits/${id_taxon}/import.time perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/${id_taxon}/import.inp &> ./data/contact_hits/${id_taxon}/import.err
+  ls ${MECHISMO_DN}contact_hits/${id_taxon}/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/${id_taxon}/import.inp
+  ls ${MECHISMO_DN}contact_hits/${id_taxon}/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ${MECHISMO_DN}contact_hits/${id_taxon}/import.inp
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/${id_taxon}/import.inp &> ${MECHISMO_DN}contact_hits/${id_taxon}/import.err
 done
 
 
 ## run interprets on all matches
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  mkdir -p ./data/contact_hits/${id_taxon}/itps/
-  /usr/bin/time -o ./data/contact_hits/${id_taxon}/itps/time perl -I./lib ./script/contact_hit_interprets.pl --skip_done --outdir ./data/contact_hits/${id_taxon}/ --pbs itps --n_jobs 2000 --taxon ${id_taxon} --rand 1000 1> ./data/contact_hits/${id_taxon}/itps/pbs.out 2> ./data/contact_hits/${id_taxon}/itps/pbs.err
-  ls ./data/contact_hits/${id_taxon}/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ./data/contact_hits/${id_taxon}/itps/import.inp
+  mkdir -p ${MECHISMO_DN}contact_hits/${id_taxon}/itps/
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/itps/time perl -I./lib ./script/contact_hit_interprets.pl --skip_done --outdir ${MECHISMO_DN}contact_hits/${id_taxon}/ --pbs itps --n_jobs 2000 --taxon ${id_taxon} --rand 1000 1> ${MECHISMO_DN}contact_hits/${id_taxon}/itps/pbs.out 2> ${MECHISMO_DN}contact_hits/${id_taxon}/itps/pbs.err
+  ls ${MECHISMO_DN}contact_hits/${id_taxon}/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ${MECHISMO_DN}contact_hits/${id_taxon}/itps/import.inp
 done
 
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  ls ./data/contact_hits/${id_taxon}/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ./data/contact_hits/${id_taxon}/itps/import.inp
+  ls ${MECHISMO_DN}contact_hits/${id_taxon}/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ${MECHISMO_DN}contact_hits/${id_taxon}/itps/import.inp
 done
 
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  /usr/bin/time -o ./data/contact_hits/${id_taxon}/itps/import.time perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/${id_taxon}/itps/import.inp &> ./data/contact_hits/${id_taxon}/itps/import.err
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/itps/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/${id_taxon}/itps/import.inp &> ${MECHISMO_DN}contact_hits/${id_taxon}/itps/import.err
 done
 
 
@@ -965,18 +974,18 @@ done
 # 2014-07-23 SIFTS HSPs were added after contact_hits.pl was originally run,
 # so run it again for the affected sequences in the taxa of interest.
 
-mkdir -p ./data/contact_hits/sifts/
+mkdir -p ${MECHISMO_DN}contact_hits/sifts/
 
-perl -nae '/^id_seq/ and next; /NULL/ and $S{$F[0]}++; END{foreach $s (keys %S){print "SELECT id_seq, id_taxon FROM SeqToTaxon WHERE id_seq = $s;\n";}}' ./data/site_summary-v06/sifts_to_hsp.tsv | mysql -u anonymous -D fistdb --skip-column-names > ./data/site_summary-v06/sifts_to_hsp.missing.id_taxon.tsv
+perl -nae '/^id_seq/ and next; /NULL/ and $S{$F[0]}++; END{foreach $s (keys %S){print "SELECT id_seq, id_taxon FROM SeqToTaxon WHERE id_seq = $s;\n";}}' ${MECHISMO_DN}site_summary-v06/sifts_to_hsp.tsv | mysql -u anonymous -D fistdb --skip-column-names > ${MECHISMO_DN}site_summary-v06/sifts_to_hsp.missing.id_taxon.tsv
 
-perl -nae '$S{$F[1]}->{$F[0]}++; END{foreach $tax (272634,224308,83333,559292,6239,7227,10090,9606){(scalar(keys(%{$S{$tax}})) > 0) or next; print "mkdir -p ./data/contact_hits/sifts/$tax\nperl -I./lib ./script/contact_hits.pl --outdir ./data/contact_hits/sifts/ --pbs $tax --taxon $tax --source uniprot-sprot --n_jobs 31 --id ", join(" --id ", sort {$a <=> $b} keys %{$S{$tax}}), " 1> ./data/contact_hits/sifts/$tax/pbs.out 2> ./data/contact_hits/sifts/$tax/pbs.err &\n\n"}}' ./data/site_summary-v06/sifts_to_hsp.missing.id_taxon.tsv > ./data/contact_hits/sifts/pbs.sh
+perl -nae '$S{$F[1]}->{$F[0]}++; END{foreach $tax (272634,224308,83333,559292,6239,7227,10090,9606){(scalar(keys(%{$S{$tax}})) > 0) or next; print "mkdir -p ${MECHISMO_DN}contact_hits/sifts/$tax\nperl -I./lib ./script/contact_hits.pl --outdir ${MECHISMO_DN}contact_hits/sifts/ --pbs $tax --taxon $tax --source uniprot-sprot --n_jobs 31 --id ", join(" --id ", sort {$a <=> $b} keys %{$S{$tax}}), " 1> ${MECHISMO_DN}contact_hits/sifts/$tax/pbs.out 2> ${MECHISMO_DN}contact_hits/sifts/$tax/pbs.err &\n\n"}}' ${MECHISMO_DN}site_summary-v06/sifts_to_hsp.missing.id_taxon.tsv > ${MECHISMO_DN}contact_hits/sifts/pbs.sh
 
 # remove contact hits that duplicate those already in the db
 # for all others, repeat them in the other direction
-perl -I./lib ./script/contact_hits_remove_duplicates.pl data/contact_hits/sifts/*/*/ContactHit.tsv
+perl -I./lib ./script/contact_hits_remove_duplicates.pl ${MECHISMO_DN}contact_hits/sifts/*/*/ContactHit.tsv
 
 # back-up existing tables
-mysqldump -p fistdb ContactHit ContactHitResidue | gzip > data/contact_hits/sifts/ContactHit.pre_sifts.sql.gz
+mysqldump -p fistdb ContactHit ContactHitResidue | gzip > ${MECHISMO_DN}contact_hits/sifts/ContactHit.pre_sifts.sql.gz
 
 # get current max(ContactHit.id)
 # = 2984721
@@ -984,25 +993,25 @@ mysqldump -p fistdb ContactHit ContactHitResidue | gzip > data/contact_hits/sift
 # upload
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  if [ -e ./data/contact_hits/sifts/${id_taxon}/ ]
+  if [ -e ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/ ]
   then
-    ls ./data/contact_hits/sifts/${id_taxon}/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ./data/contact_hits/sifts/${id_taxon}/import.inp
-    ls ./data/contact_hits/sifts/${id_taxon}/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ./data/contact_hits/sifts/${id_taxon}/import.inp
-    perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/sifts/${id_taxon}/import.inp &> ./data/contact_hits/sifts/${id_taxon}/import.err
+    ls ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/*/ContactHit.tsv | perl -ne 'chomp; /(\d+)\/ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/import.inp
+    ls ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/*/ContactHitRes.tsv | perl -ne 'chomp; /(\d+)\/ContactHitRes.tsv/; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=$1\n";' >> ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/import.inp
+    perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/import.inp &> ${MECHISMO_DN}contact_hits/sifts/${id_taxon}/import.err
   fi
 done
 
 ## run interprets on all matches
-mkdir -p ./data/contact_hits/sifts/itps/
-mysql -u anonymous -D fistdb --skip-column-names --e 'SELECT id FROM ContactHit WHERE id > 2984721' | perl -ne 'chomp; push @ids, $_; END{print"perl -I./lib ./script/contact_hit_interprets.pl --outdir ./data/contact_hits/sifts/ --pbs itps --rand 1000 --id ", join(" --id ", @ids), " 1> ./data/contact_hits/sifts/itps/pbs.out 2> ./data/contact_hits/sifts/itps/pbs.err &\n";}' > ./data/contact_hits/sifts/itps/pbs.sh
-source ./data/contact_hits/sifts/itps/pbs.sh
+mkdir -p ${MECHISMO_DN}contact_hits/sifts/itps/
+mysql -u anonymous -D fistdb --skip-column-names --e 'SELECT id FROM ContactHit WHERE id > 2984721' | perl -ne 'chomp; push @ids, $_; END{print"perl -I./lib ./script/contact_hit_interprets.pl --outdir ${MECHISMO_DN}contact_hits/sifts/ --pbs itps --rand 1000 --id ", join(" --id ", @ids), " 1> ${MECHISMO_DN}contact_hits/sifts/itps/pbs.out 2> ${MECHISMO_DN}contact_hits/sifts/itps/pbs.err &\n";}' > ${MECHISMO_DN}contact_hits/sifts/itps/pbs.sh
+source ${MECHISMO_DN}contact_hits/sifts/itps/pbs.sh
 
-ls ./data/contact_hits/sifts/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ./data/contact_hits/sifts/itps/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/sifts/itps/import.inp &> ./data/contact_hits/sifts/itps/import.err
+ls ${MECHISMO_DN}contact_hits/sifts/itps/*/ContactHitInterprets.tsv | perl -ne 'chomp; /(\d+)\/ContactHitInterprets.tsv/; print"Fist::IO::ContactHitInterprets\t$_\tid_contact_hit=DB\n";' > ${MECHISMO_DN}contact_hits/sifts/itps/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/sifts/itps/import.inp &> ${MECHISMO_DN}contact_hits/sifts/itps/import.err
 
-mkdir -p ./data/site_summary-v06/sifts/
-perl -nae 'if(/NULL/){$S{$F[0]}++; $S{$F[1]}++;} END{foreach $s (sort {$a <=> $b} keys %S) {print"$s\n";}}' data/site_summary-v06/sifts_to_hsp.tsv > ./data/site_summary-v06/sifts/ids.txt
-perl -I./lib ./script/site_summary.pl `perl -ne 'chomp; print" --id $_";' ./data/site_summary-v06/sifts/ids.txt` --hetatm '^[PS]' --background 'phosphorylation,[STY]' --background 'acetylation,K' --subset goslim_biological_process --seqgroups ./data/sites/uniref50.tsv.gz --outdir ./data/site_summary-v06/ --pbs sifts 1> ./data/site_summary-v06/sifts/pbs.out 2> ./data/site_summary-v06/sifts/pbs.err &
+mkdir -p ${MECHISMO_DN}site_summary-v06/sifts/
+perl -nae 'if(/NULL/){$S{$F[0]}++; $S{$F[1]}++;} END{foreach $s (sort {$a <=> $b} keys %S) {print"$s\n";}}' ${MECHISMO_DN}site_summary-v06/sifts_to_hsp.tsv > ${MECHISMO_DN}site_summary-v06/sifts/ids.txt
+perl -I./lib ./script/site_summary.pl `perl -ne 'chomp; print" --id $_";' ${MECHISMO_DN}site_summary-v06/sifts/ids.txt` --hetatm '^[PS]' --background 'phosphorylation,[STY]' --background 'acetylation,K' --subset goslim_biological_process --seqgroups ${MECHISMO_DN}sites/uniref50.tsv.gz --outdir ${MECHISMO_DN}site_summary-v06/ --pbs sifts 1> ${MECHISMO_DN}site_summary-v06/sifts/pbs.out 2> ${MECHISMO_DN}site_summary-v06/sifts/pbs.err &
 
 
 ###################
@@ -1011,21 +1020,21 @@ perl -I./lib ./script/site_summary.pl `perl -ne 'chomp; print" --id $_";' ./data
 ############################## REDO ##############################
 
 ## get JSON data for all contact hits with %id >= 70
-mysql -u anonymous -D fistdb --quick --skip-column-names -e 'SELECT id FROM ContactHit WHERE pcid_a >= 70 AND pcid_b >= 70;' > ./data/contact_hits.pcid70.ids.txt
-/usr/bin/time -o ./data/contact_hits.pcid70.json.time ./script/get_contact_hit_json.pl < ./data/contact_hits.pcid70.ids.txt 1> ./data/contact_hits.pcid70.json 2> ./data/contact_hits.pcid70.json.err
-gzip ./data/contact_hits.pcid70.json
+mysql -u anonymous -D fistdb --quick --skip-column-names -e 'SELECT id FROM ContactHit WHERE pcid_a >= 70 AND pcid_b >= 70;' > ${MECHISMO_DN}contact_hits.pcid70.ids.txt
+/usr/bin/time -o ${MECHISMO_DN}contact_hits.pcid70.json.time ./script/get_contact_hit_json.pl < ${MECHISMO_DN}contact_hits.pcid70.ids.txt 1> ${MECHISMO_DN}contact_hits.pcid70.json 2> ${MECHISMO_DN}contact_hits.pcid70.json.err
+gzip ${MECHISMO_DN}contact_hits.pcid70.json
 
 ##################################################################
 
 
 
 ## calculate jaccard indices between different interfaces on the same query
-mkdir -p ./data/query_interface_jaccard/human
-perl -I./lib ./script/query_interface_jaccard.pl --source 'uniprot-sprot' --taxon 9606 --outdir ./data/query_interface_jaccard/ --pbs human 1> ./data/query_interface_jaccard/human/pbs.out 2> ./data/query_interface_jaccard/human/pbs.err
+mkdir -p ${MECHISMO_DN}query_interface_jaccard/human
+perl -I./lib ./script/query_interface_jaccard.pl --source 'uniprot-sprot' --taxon 9606 --outdir ${MECHISMO_DN}query_interface_jaccard/ --pbs human 1> ${MECHISMO_DN}query_interface_jaccard/human/pbs.out 2> ${MECHISMO_DN}query_interface_jaccard/human/pbs.err
 
 
 ## group query interfaces by jaccard indices
-/usr/bin/time -o ./data/QueryInterfaceGroup.time perl -I./lib ./script/group_query_interfaces.pl --source 'uniprot-sprot' --taxon 9606 --j 0.3 --resres 10 ./data/query_interface_jaccard/human/*/QueryInterfaceJaccard.tsv > ./data/QueryInterfaceGroup.tsv 2> ./data/QueryInterfaceGroup.err
+/usr/bin/time -o ${MECHISMO_DN}QueryInterfaceGroup.time perl -I./lib ./script/group_query_interfaces.pl --source 'uniprot-sprot' --taxon 9606 --j 0.3 --resres 10 ${MECHISMO_DN}query_interface_jaccard/human/*/QueryInterfaceJaccard.tsv > ${MECHISMO_DN}QueryInterfaceGroup.tsv 2> ${MECHISMO_DN}QueryInterfaceGroup.err
 
 
 ## FIXME - use query interface groups to define compatible interactions for each pair of proteins
@@ -1034,7 +1043,7 @@ perl -I./lib ./script/query_interface_jaccard.pl --source 'uniprot-sprot' --taxo
 # - which proteins have the most interface groups?
 # - which interface groups have the most interactors?
 # - for each protein, plot number of interactors vs. number of interfaces
-perl -I./lib ./script/interactors_and_interfaces_per_query.pl < ./data/QueryInterfaceGroup.tsv > ./data/QueryInterfaceGroup.interactors_and_interfaces_per_query.tsv
+perl -I./lib ./script/interactors_and_interfaces_per_query.pl < ${MECHISMO_DN}QueryInterfaceGroup.tsv > ${MECHISMO_DN}QueryInterfaceGroup.interactors_and_interfaces_per_query.tsv
 
 
 ## FIXME - introduce checks for IdMapping
@@ -1068,25 +1077,25 @@ perl -I./lib ./script/interactors_and_interfaces_per_query.pl < ./data/QueryInte
 
 ## categorise query proteins by GO slim terms
 mkdir -p ${MECHISMO_DN}uniprot/sprot/goslim_generic/
-map2slim /net/netfile1/ds-russell/GO_slims/goslim_generic.obo /net/netfile1/ds-russell/GO/gene_ontology_ext.obo /net/netfile1/ds-russell/uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
+map2slim ${DS}GO_slims/goslim_generic.obo ${DS}GO/gene_ontology_ext.obo ${DS}uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
 zcat ${MECHISMO_DN}uniprot/sprot/goslim_generic/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_generic 1> ${MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.tsv 2> ${MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.err
-perl -e 'print"Fist::IO::GoAnnotation\t${MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
+perl -e 'print"Fist::IO::GoAnnotation\t$ENV{MECHISMO_DN}uniprot/sprot/goslim_generic/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
 
 
 ## PDB chemical types (from Rob)
 
 
-#perl -ne 'chomp; @F = split /\s+/, $_, 6; $F[0] =~ s/\A_+//; print join("\t", $F[0], ($F[2] eq "---") ? "none" : $F[2], $F[5]), "\n";' ~bq_rrussell/jobs/het/het_count_class_name3.txt > ./data/pdb_chem.tsv
-perl -ne 'chomp; @F = split; $F[0] =~ s/\A_+//; print join("\t", @F), "\n";' /home/bq_rrussell/jobs/het/current_classes.txt > ./data/pdb_chem.tsv
+#perl -ne 'chomp; @F = split /\s+/, $_, 6; $F[0] =~ s/\A_+//; print join("\t", $F[0], ($F[2] eq "---") ? "none" : $F[2], $F[5]), "\n";' ~bq_rrussell/jobs/het/het_count_class_name3.txt > ${MECHISMO_DN}pdb_chem.tsv
+perl -ne 'chomp; @F = split; $F[0] =~ s/\A_+//; print join("\t", @F), "\n";' /home/bq_rrussell/jobs/het/current_classes.txt > ${MECHISMO_DN}pdb_chem.tsv
 
-mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "./data/pdb_chem.tsv" INTO TABLE PdbChem (id_chem, type);'
+mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}pdb_chem.tsv" INTO TABLE PdbChem (id_chem, type);'
 
 
 ## summary of protein, chemical and nucleic acid contacts for all residues
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  mkdir -p ./data/res_contact_info/${id_taxon}/
-  perl -I./lib ./script/res_contact_info.pl --taxon ${id_taxon} --source 'uniprot-sprot' --outdir ./data/res_contact_info/ --pbs ${id_taxon} 1> ./data/res_contact_info/${id_taxon}/pbs.out 2> ./data/res_contact_info/${id_taxon}/pbs.err &
+  mkdir -p ${MECHISMO_DN}res_contact_info/${id_taxon}/
+  perl -I./lib ./script/res_contact_info.pl --taxon ${id_taxon} --source 'uniprot-sprot' --outdir ${MECHISMO_DN}res_contact_info/ --pbs ${id_taxon} 1> ${MECHISMO_DN}res_contact_info/${id_taxon}/pbs.out 2> ${MECHISMO_DN}res_contact_info/${id_taxon}/pbs.err &
 done
 
 
@@ -1094,34 +1103,34 @@ done
 # NOTE: don't do all taxa together at the moment, as this will give inter-species interactions
 for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 do
-  mkdir -p ./data/res_contact_info/pp/${id_taxon}/
-  perl -I./lib ./script/contact_hits.pl --source 'uniprot-sprot' --outdir ./data/res_contact_info/pp/ --pbs ${id_taxon} --n_jobs 200 --all_matches --contact_info --taxon ${id_taxon} 1>./data/res_contact_info/pp/${id_taxon}/pbs.out 2> ./data/res_contact_info/pp/${id_taxon}/pbs.err &
+  mkdir -p ${MECHISMO_DN}res_contact_info/pp/${id_taxon}/
+  perl -I./lib ./script/contact_hits.pl --source 'uniprot-sprot' --outdir ${MECHISMO_DN}res_contact_info/pp/ --pbs ${id_taxon} --n_jobs 200 --all_matches --contact_info --taxon ${id_taxon} 1>${MECHISMO_DN}res_contact_info/pp/${id_taxon}/pbs.out 2> ${MECHISMO_DN}res_contact_info/pp/${id_taxon}/pbs.err &
 done
 
 # parse ids from killed jobs, and submit again in smaller jobs per taxon
-mkdir -p ./data/res_contact_info/pp/missing/
+mkdir -p ${MECHISMO_DN}res_contact_info/pp/missing/
 for id_taxon in 10090 9606
 do
-  mkdir -p ./data/res_contact_info/pp/missing/${id_taxon}
-  perl -I./lib ./script/contact_hits.pl --source 'uniprot-sprot' --outdir ./data/res_contact_info/pp/missing/ --pbs ${id_taxon} --n_jobs 200 --all_matches --contact_info --taxon ${id_taxon} --fn_id_queries ./data/res_contact_info/pp/missing/${id_taxon}.txt 1>./data/res_contact_info/pp/missing/${id_taxon}/pbs.out 2> ./data/res_contact_info/pp/missing/${id_taxon}/pbs.err &
+  mkdir -p ${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}
+  perl -I./lib ./script/contact_hits.pl --source 'uniprot-sprot' --outdir ${MECHISMO_DN}res_contact_info/pp/missing/ --pbs ${id_taxon} --n_jobs 200 --all_matches --contact_info --taxon ${id_taxon} --fn_id_queries ${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}.txt 1>${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}/pbs.out 2> ${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}/pbs.err &
 done
 
 
 ## number of sequences per organism in sprot, sprot varsplic (isoforms), and trembl
 for source in sprot sprot_varsplic trembl
 do
-  zcat $DS/uniprot/knowledgebase/complete/uniprot_${source}.fasta.gz | perl -ne 'if(/^>/){if(/^>.*OS=(.*?)\s+\S{2}=/){$os = $1;}elsif(/^>.*\s+OS=(.*)\Z/){$os = $1;}else{$os="UNK"; warn $_;} $S{$os}++;} END{foreach $os (sort {$S{$b} <=> $S{$a}} keys %S){print join("\t", $S{$os}, $os), "\n";}}' > ./data/${source}_seqs_per_os.txt 2> ./data/${source}_seqs_per_os.err &
+  zcat $DS/uniprot/knowledgebase/complete/uniprot_${source}.fasta.gz | perl -ne 'if(/^>/){if(/^>.*OS=(.*?)\s+\S{2}=/){$os = $1;}elsif(/^>.*\s+OS=(.*)\Z/){$os = $1;}else{$os="UNK"; warn $_;} $S{$os}++;} END{foreach $os (sort {$S{$b} <=> $S{$a}} keys %S){print join("\t", $S{$os}, $os), "\n";}}' > ${MECHISMO_DN}${source}_seqs_per_os.txt 2> ${MECHISMO_DN}${source}_seqs_per_os.err &
 done
 
 ## trembl
 mkdir -p ${MECHISMO_DN}uniprot/trembl
-/usr/bin/time -o ${MECHISMO_DN}uniprot/trembl/parse.time perl -I./lib ./script/parse_uniprot.pl --trembl --outdir ${MECHISMO_DN}uniprot/trembl/ /net/netfile1/ds-russell/uniprot/knowledgebase/complete/uniprot_trembl.dat.gz 1> ${MECHISMO_DN}uniprot/trembl/parse.txt 2> ${MECHISMO_DN}uniprot/trembl/parse.err
-perl -e 'print"Fist::IO::Seq\t${MECHISMO_DN}uniprot/trembl/Seq.tsv\tid=01\nFist::IO::SeqToTaxon\t${MECHISMO_DN}uniprot/trembl/SeqToTaxon.tsv\tid_seq=01\nFist::IO::Alias\t${MECHISMO_DN}uniprot/trembl/Alias.tsv\tid_seq=01\n";' > ${MECHISMO_DN}uniprot/trembl/import.inp
+/usr/bin/time -o ${MECHISMO_DN}uniprot/trembl/parse.time perl -I./lib ./script/parse_uniprot.pl --trembl --outdir ${MECHISMO_DN}uniprot/trembl/ ${DS}uniprot/knowledgebase/complete/uniprot_trembl.dat.gz 1> ${MECHISMO_DN}uniprot/trembl/parse.txt 2> ${MECHISMO_DN}uniprot/trembl/parse.err
+perl -e 'print"Fist::IO::Seq\t$ENV{MECHISMO_DN}uniprot/trembl/Seq.tsv\tid=01\nFist::IO::SeqToTaxon\t$ENV{MECHISMO_DN}uniprot/trembl/SeqToTaxon.tsv\tid_seq=01\nFist::IO::Alias\t$ENV{MECHISMO_DN}uniprot/trembl/Alias.tsv\tid_seq=01\n";' > ${MECHISMO_DN}uniprot/trembl/import.inp
 /usr/bin/time -o ${MECHISMO_DN}uniprot/trembl/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}uniprot/trembl/import.inp &> ${MECHISMO_DN}uniprot/trembl/import.err
 
 ## sprot-varsplic
 mkdir -p ${MECHISMO_DN}uniprot/sprot_varsplic
-perl -I./lib ./script/parse_fasta.pl --source sprot --outdir ${MECHISMO_DN}uniprot/sprot_varsplic /net/netfile1/ds-russell/uniprot/knowledgebase/complete/uniprot_sprot_varsplic.fasta.gz 1> ${MECHISMO_DN}uniprot/sprot_varsplic/parse.txt 2> ${MECHISMO_DN}uniprot/sprot_varsplic/parse.err
+perl -I./lib ./script/parse_fasta.pl --source sprot --outdir ${MECHISMO_DN}uniprot/sprot_varsplic ${DS}uniprot/knowledgebase/complete/uniprot_sprot_varsplic.fasta.gz 1> ${MECHISMO_DN}uniprot/sprot_varsplic/parse.txt 2> ${MECHISMO_DN}uniprot/sprot_varsplic/parse.err
 
 # get taxa via that of the 'master' isoform already in the db
 perl -F'/\t/' -nae 'chomp(@F); if($F[2] eq "UniProtKB accession"){($ac = $F[1]) =~ s/-\d+\Z//;print"SELECT $F[0], b.id_taxon FROM Alias AS a, SeqToTaxon AS b WHERE a.alias = \"$ac\" AND a.type = \"UniProtKB accession\" AND b.id_seq = a.id_seq;\n";}' ${MECHISMO_DN}uniprot/sprot_varsplic/Alias.tsv | mysql -u anonymous -D fistdb --skip-column-names 1> ${MECHISMO_DN}uniprot/sprot_varsplic/SeqToTaxon.tsv 2> ${MECHISMO_DN}uniprot/sprot_varsplic/SeqToTaxon.err
@@ -1132,9 +1141,9 @@ ls ${MECHISMO_DN}uniprot/{sprot,sprot_varsplic,trembl}/SeqToTaxon.tsv | perl -ne
 
 
 ## known ints from unint
-#perl -I./lib ./script/parse_unint_precalc.pl < /net/netfile1/ds-russell/unint/precalc_2014-01/mapped_interactions_exp_syn_fix.tsv 2> data/unint.err | sort -u -o data/unint.tsv
-perl -I./lib ./script/parse_unint_precalc.pl < /net/netfile1/ds-russell/unint/precalc_2014-01/unint_flags.tsv 2> data/unint.err | sort -u -o data/unint.tsv
-mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "./data/unint.tsv" INTO TABLE UnInt (id_seq1, id_seq2, type_ref, id_ref, method, id_int, source, id_source, physical, n_int_pmid, htp, n_discovery, trust);'
+#perl -I./lib ./script/parse_unint_precalc.pl < ${DS}unint/precalc_2014-01/mapped_interactions_exp_syn_fix.tsv 2> ${MECHISMO_DN}unint.err | sort -u -o ${MECHISMO_DN}unint.tsv
+perl -I./lib ./script/parse_unint_precalc.pl < ${DS}unint/precalc_2014-01/unint_flags.tsv 2> ${MECHISMO_DN}unint.err | sort -u -o ${MECHISMO_DN}unint.tsv
+mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}unint.tsv" INTO TABLE UnInt (id_seq1, id_seq2, type_ref, id_ref, method, id_int, source, id_source, physical, n_int_pmid, htp, n_discovery, trust);'
 mysql -p -D fistdb -e '
 CREATE TEMPORARY TABLE unint_count (source VARCHAR(10), id_source INTEGER UNSIGNED, n INTEGER UNSIGNED, PRIMARY KEY (source, id_source));
 INSERT INTO unint_count (source, id_source, n)
@@ -1144,24 +1153,24 @@ UPDATE UnInt AS a, unint_count AS b SET a.n = b.n WHERE b.source = a.source AND 
 
 ## counts for figure
 # (password required for creating temporary tables)
-mysql -p -D fistdb --skip-column-names < sql/mechismo_pipeline_counts.sql 1> data/mechismo_pipeline_counts.txt 2> data/mechismo_pipeline_counts.err
+mysql -p -D fistdb --skip-column-names < sql/mechismo_pipeline_counts.sql 1> ${MECHISMO_DN}mechismo_pipeline_counts.txt 2> ${MECHISMO_DN}mechismo_pipeline_counts.err
 
-mysql -u anonymous -D fistdb --quick --skip-column-names < sql/mechismo_pipeline_counts_ppPred_support.sql 1> data/mechismo_pipeline_counts_ppPred_support.txt 2> data/mechismo_pipeline_counts_ppPred_support.err
-mysql -u anonymous -D fistdb --quick --skip-column-names < sql/mechismo_pipeline_counts_pdPred.sql 1> data/mechismo_pipeline_counts_pdPred.txt 2> data/mechismo_pipeline_counts_pdPred.err
-mysql -u anonymous -D fistdb --quick --skip-column-names < sql/mechismo_pipeline_counts_pcPred.sql 1> data/mechismo_pipeline_counts_pcPred.txt 2> data/mechismo_pipeline_counts_pcPred.err
+mysql -u anonymous -D fistdb --quick --skip-column-names < sql/mechismo_pipeline_counts_ppPred_support.sql 1> ${MECHISMO_DN}mechismo_pipeline_counts_ppPred_support.txt 2> ${MECHISMO_DN}mechismo_pipeline_counts_ppPred_support.err
+mysql -u anonymous -D fistdb --quick --skip-column-names < sql/mechismo_pipeline_counts_pdPred.sql 1> ${MECHISMO_DN}mechismo_pipeline_counts_pdPred.txt 2> ${MECHISMO_DN}mechismo_pipeline_counts_pdPred.err
+mysql -u anonymous -D fistdb --quick --skip-column-names < sql/mechismo_pipeline_counts_pcPred.sql 1> ${MECHISMO_DN}mechismo_pipeline_counts_pcPred.txt 2> ${MECHISMO_DN}mechismo_pipeline_counts_pcPred.err
 
-cat data/mechismo_pipeline_counts_ppPred_support.txt data/mechismo_pipeline_counts_pdPred.txt data/mechismo_pipeline_counts_pcPred.txt >> data/mechismo_pipeline_counts.txt
+cat ${MECHISMO_DN}mechismo_pipeline_counts_ppPred_support.txt ${MECHISMO_DN}mechismo_pipeline_counts_pdPred.txt ${MECHISMO_DN}mechismo_pipeline_counts_pcPred.txt >> ${MECHISMO_DN}mechismo_pipeline_counts.txt
 
-./script/mechismo_pipeline_counts_to_d3.pl < data/mechismo_pipeline_counts.txt > root/static/data/mechismo_pipeline_counts.json
+./script/mechismo_pipeline_counts_to_d3.pl < ${MECHISMO_DN}mechismo_pipeline_counts.txt > root/static/${MECHISMO_DN}mechismo_pipeline_counts.json
 
-./script/mechismo_pipeline_counts_to_table.pl < data/mechismo_pipeline_counts.txt > data/mechismo_pipeline_counts.table.txt
+./script/mechismo_pipeline_counts_to_table.pl < ${MECHISMO_DN}mechismo_pipeline_counts.txt > ${MECHISMO_DN}mechismo_pipeline_counts.table.txt
 
 
 ## get crystallisation conditions from pdb entries (REMARK 280, free-text unfortunately...)
-find $DS/pdb/ -name '*.ent.gz' | perl -ne 'chomp; $f = $_; if($f =~ /pdb(\S{4}).ent.gz/){$idcode = $1; @rem = (); open(I, "zcat $f |") or die;while(<I>){if(/^REMARK 280 (.*?)\s*\Z/){push @rem, $1;}}close(I); (@rem > 0) and print join(" ", $idcode, @rem), "\n";}' > data/pdb.REMARK_280.txt 2> data/pdb.REMARK_280.err
+find $DS/pdb/ -name '*.ent.gz' | perl -ne 'chomp; $f = $_; if($f =~ /pdb(\S{4}).ent.gz/){$idcode = $1; @rem = (); open(I, "zcat $f |") or die;while(<I>){if(/^REMARK 280 (.*?)\s*\Z/){push @rem, $1;}}close(I); (@rem > 0) and print join(" ", $idcode, @rem), "\n";}' > ${MECHISMO_DN}pdb.REMARK_280.txt 2> ${MECHISMO_DN}pdb.REMARK_280.err
 
 # extract protein concentration where possible...
-./script/pdb_xray_conc.pl < data/pdb.REMARK_280.txt | grep -v UNK | sort -n -k +2
+./script/pdb_xray_conc.pl < ${MECHISMO_DN}pdb.REMARK_280.txt | grep -v UNK | sort -n -k +2
 
 
 ############################## Memory ##############################
@@ -1246,14 +1255,14 @@ site_table       11    705   24978   70419
 in some elements.)
 
 ## get homodimers in reverse direction (except for completely closed homodimers)
-mkdir -p ./data/contact_hits/reverse_homo
-perl -I./lib ./script/reverse_homo_contact_hits.pl --outdir ./data/contact_hits/reverse_homo/ 1> ./data/contact_hits/reverse_homo/reverse_homo.txt 2> ./data/contact_hits/reverse_homo/reverse_homo.err
+mkdir -p ${MECHISMO_DN}contact_hits/reverse_homo
+perl -I./lib ./script/reverse_homo_contact_hits.pl --outdir ${MECHISMO_DN}contact_hits/reverse_homo/ 1> ${MECHISMO_DN}contact_hits/reverse_homo/reverse_homo.txt 2> ${MECHISMO_DN}contact_hits/reverse_homo/reverse_homo.err
 
 ## import
 # MAX(contact.id) before import = 3509814
 # MAX(contact.id) after import  = 3584685
-ls ./data/contact_hits/reverse_homo/ContactHit.tsv | perl -ne 'chomp; print"Fist::IO::ContactHit\t$_\tid=1\n";' > ./data/contact_hits/reverse_homo/import.inp
-ls ./data/contact_hits/reverse_homo/ContactHitRes.tsv | perl -ne 'chomp; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=1\n";' >> ./data/contact_hits/reverse_homo/import.inp
-perl -I./lib ./script/import_tsv.pl < ./data/contact_hits/reverse_homo/import.inp &> ./data/contact_hits/reverse_homo/import.err
+ls ${MECHISMO_DN}contact_hits/reverse_homo/ContactHit.tsv | perl -ne 'chomp; print"Fist::IO::ContactHit\t$_\tid=1\n";' > ${MECHISMO_DN}contact_hits/reverse_homo/import.inp
+ls ${MECHISMO_DN}contact_hits/reverse_homo/ContactHitRes.tsv | perl -ne 'chomp; print"Fist::IO::ContactHitResidue\t$_\tid_contact_hit=1\n";' >> ${MECHISMO_DN}contact_hits/reverse_homo/import.inp
+perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/reverse_homo/import.inp &> ${MECHISMO_DN}contact_hits/reverse_homo/import.err
 
 # FIXME - then test Gsk3b/S219Sp

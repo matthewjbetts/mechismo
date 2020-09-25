@@ -91,7 +91,7 @@ while(<STDIN>) {
             # add the sequence to the sequence groups
             foreach $seq_group (@seq_groups) {
                 foreach $seq (@seqs) {
-                    print join("\t", $seq->id, $seq_group->id), "\n";
+                    print join("\t", $seq->id, $seq_group->id, 0), "\n"; # FIXME - use object method
                 }
             }
         }
