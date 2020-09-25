@@ -162,6 +162,8 @@ ls ${MECHISMO_DN}pdb/*/ResContact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist:
 /usr/bin/time -o ${MECHISMO_DN}pdb/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}pdb/import.inp &> ${MECHISMO_DN}pdb/import.err
 
 # archive the text files
+tar -C ${MECHISMO_DN} -czf ${MECHISMO_DN}pdb.tar.gz ./pdb
+rm -rf ${MECHISMO_DN}
 ~~~~
 
 ### UniProt (swissprot canonical and alternative isoforms (sprot and varsplic, respectively))

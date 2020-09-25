@@ -87,7 +87,7 @@ sub parse_uniprot {
     $source = defined($trembl) ? 'uniprot-trembl' : 'uniprot-sprot';
 
     if(!defined($in = $self->in)) {
-        $in = Bio::SeqIO->new(-fh => $self->fh, -format => 'swiss');
+        $in = Bio::SeqIO->new(-fh => $self->fh, -format => 'embl');
         $self->in($in);
     }
 
