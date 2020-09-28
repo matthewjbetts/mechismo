@@ -21,7 +21,7 @@ my $dn_out_default = './data/';
 my $dn_out = $dn_out_default;
 my $pbs_name;
 my $fork_name;
-my $max_n_jobs_default = 6
+my $max_n_jobs_default = 6;
 my $max_n_jobs = $max_n_jobs_default;
 my $types = [];
 my $q_max_default = 200;

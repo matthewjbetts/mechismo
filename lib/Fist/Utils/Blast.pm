@@ -42,7 +42,7 @@ with 'Fist::Utils::System';
 
 =cut
 
-=head2 run_blastp
+=head2 run_blast
 
  usage   : $self->run_blast(
                             -e       => 1e-6,         # E-value, default = 0.01
