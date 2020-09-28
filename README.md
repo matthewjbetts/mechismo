@@ -230,6 +230,7 @@ done
 mkdir -p ${MECHISMO_DN}sifts
 /usr/bin/time -o ${MECHISMO_DN}sifts/sifts.time perl -I./lib ./script/parse_sifts.pl < ${DS}sifts/text/pdb_chain_uniprot.lst 1> ${MECHISMO_DN}sifts/sifts.tsv 2> ${MECHISMO_DN}sifts/parse.err
 /usr/bin/time -o ${MECHISMO_DN}sifts/import.time perl -e 'print"Fist::IO::SeqToGroup\t$ENV{MECHISMO_DN}sifts/sifts.tsv\n";' | perl -I./lib ./script/import_tsv.pl &> ${MECHISMO_DN}sifts/import.err
+gzip ${MECHISMO_DN}sifts/sifts.tsv
 
 
 ## blast dbs of Frag fist and seqres aa sequences
@@ -241,7 +242,7 @@ formatdb -t fist -i ${MECHISMO_DN}pdb/fist_na.fasta -p F -n ${MECHISMO_DN}blast/
 
 ## blast fist vs fist
 mkdir -p ${MECHISMO_DN}blast/fist-fist
-/usr/bin/time -o ${MECHISMO_DN}blast/fist-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --pbs fist-fist --n_jobs 30 --db ${MECHISMO_DN}blast/fist --fasta ${MECHISMO_DN}pdb/fist_aa.fasta --no_self 1> ${MECHISMO_DN}blast/fist-fist/blast.out 2> ${MECHISMO_DN}blast/fist-fist/blast.err
+/usr/bin/time -o ${MECHISMO_DN}blast/fist-fist/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --fork fist-fist --n_jobs 20 --db ${MECHISMO_DN}blast/fist --fasta ${MECHISMO_DN}pdb/fist_aa.fasta --no_self 1> ${MECHISMO_DN}blast/fist-fist/blast.out 2> ${MECHISMO_DN}blast/fist-fist/blast.err
 
 mkdir -p ${MECHISMO_DN}blast/fist_na-fist_na
 /usr/bin/time -o ${MECHISMO_DN}blast/fist_na-fist_na/blast.time perl -I./lib ./script/blast.pl --program blastn --outdir ${MECHISMO_DN}blast/fist_na-fist_na --db ${MECHISMO_DN}blast/fist_na --fasta ${MECHISMO_DN}pdb/fist_na.fasta --no_self 1> ${MECHISMO_DN}blast/fist_na-fist_na/blast.out 2> ${MECHISMO_DN}blast/fist_na-fist_na/blast.err
@@ -251,7 +252,7 @@ mkdir -p ${MECHISMO_DN}blast/fist_na-fist_na
 #for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
 #do
 #  mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}
-#  /usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/sprot_varsplic-fist --pbs $id_taxon --n_jobs 100 --db ${MECHISMO_DN}blast/fist --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.err &
+#  /usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/sprot_varsplic-fist --pb $sid_taxon --n_jobs 100 --db ${MECHISMO_DN}blast/fist --fasta ${MECHISMO_DN}uniprot/sprot/${id_taxon}_aa.fasta 1> ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-fist/${id_taxon}/blast.err &
 #done
 
 mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-fist/

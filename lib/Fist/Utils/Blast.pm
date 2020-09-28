@@ -106,6 +106,7 @@ sub run_blast {
 
     $tmpfile_blast = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
     $cmd = "blastall -p $program -d $db $input -v 10000 -b 10000 -e $e -F F 2> /dev/null | gzip > $tmpfile_blast";
+    #print "CMD = '$cmd'\n";
     $stat = $self->mysystem($cmd);
     $stat >>= 8;
     if($stat != 0) {

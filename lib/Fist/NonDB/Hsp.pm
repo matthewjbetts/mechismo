@@ -37,17 +37,18 @@ has 'aln'     => (is => 'ro', isa => 'Any'); # FIXME - should be Fist::Interface
 around 'id_seq1' => sub {
     my($orig, $self, $id_seq1) = @_;
 
-    $id_seq1 = defined($id_seq1) ? $self->$orig($id_seq1) : $self->$orig($self->seq1->id);
-
-    return $id_seq1;
+    defined($id_seq1) and return $self->$orig($id_seq1);
+    defined($self->seq1) and return $self->$orig($self->seq1->id);
+    return $self->$orig;
 };
 
 around 'id_seq2' => sub {
     my($orig, $self, $id_seq2) = @_;
 
-    $id_seq2 = defined($id_seq2) ? $self->$orig($id_seq2) : $self->$orig($self->seq2->id);
+    defined($id_seq2) and return $self->$orig($id_seq2);
+    defined($self->seq2) and return $self->$orig($self->seq2->id);
 
-    return $id_seq2;
+    return $self->$orig;
 };
 
 =head1 ROLES
