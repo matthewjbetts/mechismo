@@ -39,6 +39,7 @@ my $id;
 my @seqgroups;
 my $seqgroup;
 my $bioaln;
+my $method;
 my $alignmentio;
 my $aln;
 my $aseq;
@@ -228,11 +229,18 @@ else {
         if($seqgroup->seqs > 1) {
             $seqgroup->tempdir($tempdir);
             $seqgroup->cleanup($cleanup);
-            $bioaln = $seqgroup->run_muscle;
+            if($seqgroup->max_len < 10000) {
+                $bioaln = $seqgroup->run_muscle;
+                $method = 'muscle';
+            }
+            else {
+                $bioaln = $seqgroup->run_kalign;
+                $method = 'kalign';
+            }
 
             eval { $alignmentio = Fist::IO::Alignment->new(); };
             $@ and next;
-            if(defined($aln = $alignmentio->parse('muscle', $bioaln))) {
+            if(defined($aln = $alignmentio->parse($method, $bioaln))) {
                 $aln->output_tsv($fh_aln);
                 print $fh_aln_to_group join("\t", $aln->id, $seqgroup->id), "\n";
                 foreach $aseq ($aln->aligned_seqs) {

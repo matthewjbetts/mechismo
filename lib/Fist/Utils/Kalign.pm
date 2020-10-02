@@ -1,4 +1,4 @@
-package Fist::Utils::Muscle;
+package Fist::Utils::Kalign;
 
 use Moose::Role;
 use Carp ();
@@ -8,7 +8,7 @@ use namespace::autoclean;
 
 =head1 NAME
 
- Fist::Utils::Muscle - a Moose::Role
+ Fist::Utils::Kalign - a Moose::Role
 
 =cut
 
@@ -39,16 +39,16 @@ with 'Fist::Utils::System';
 
 =cut
 
-=head2 run_muscle
+=head2 run_kalign
 
  usage   :
- function: align sequences with muscle
+ function: align sequences with kalign
  args    :
  returns : a Bio::Align::AlignI compliant object, or undef on error
 
 =cut
 
-sub run_muscle {
+sub run_kalign {
     my($self) = @_;
 
     my $tmpfile_seq;
@@ -62,13 +62,11 @@ sub run_muscle {
 
     $tmpfile_seq = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
     foreach $seq ($self->seqs) {
-        #($seq->len >= 10000) and Carp::cluck('muscle may fail for id_seq = ', $seq->id, ' length = ', $seq->len);
         print $tmpfile_seq '>', $seq->id, "\n", $seq->seq, "\n"; # FIXME - use bioperl / have a seq io module
     }
 
     $tmpfile_aln = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
-    #$cmd = "muscle -maxhours 1 -quiet -clwstrict < $tmpfile_seq > $tmpfile_aln";
-    $cmd = "muscle -quiet -clwstrict < $tmpfile_seq > $tmpfile_aln"; # -maxhours can mean the alignment is output in clustalw format...
+    $cmd = "kalign -format fasta < $tmpfile_seq 1> $tmpfile_aln 2> /dev/null";
     $stat = $self->mysystem($cmd);
     $stat >>= 8;
     if($stat != 0) {
@@ -76,7 +74,7 @@ sub run_muscle {
         return undef;
     }
 
-    eval { $in = Bio::AlignIO->new(-file => $tmpfile_aln, -format => 'clustalw'); };
+    eval { $in = Bio::AlignIO->new(-file => $tmpfile_aln, -format => 'fasta'); };
 
     if($@) {
         Carp::cluck($@);

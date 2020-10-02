@@ -115,7 +115,7 @@ while($row = $sth->fetchrow_arrayref) {
 }
 
 
-$sth = $dbh->prepare('UPDATE Contact SET homo = ? WHERE id = ?');
+$sth = $dbh->prepare('UPDATE Contact SET homo = ? WHERE id = ?'); # FIXME - update via object
 foreach $id_contact (sort {$a <=> $b} keys %{$homos}) {
     $sth->execute($homos->{$id_contact}, $id_contact);
 }

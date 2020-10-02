@@ -244,7 +244,7 @@ else {
 
         if($seqs->n_seqs > 1) {
             $ac_src = $feature->ac_src;
-            $seqgroup = Fist::NonDB::SeqGroup->new(type => "Pfam:$ac_src");
+            $seqgroup = Fist::NonDB::SeqGroup->new(type => 'pfam', ac => $ac_src);
             $seqgroup->output_tsv($output->{SeqGroup}->{fh});
 
             if($ac_src =~ /\.\d+\Z/) {

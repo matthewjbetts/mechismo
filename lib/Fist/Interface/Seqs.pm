@@ -56,10 +56,44 @@ has 'cleanup' => (is => 'rw', isa => 'Bool', default => 1);
 
 with 'Fist::Utils::Blast';
 with 'Fist::Utils::Muscle';
+with 'Fist::Utils::Kalign';
 with 'Fist::Utils::Hmmalign';
 
 =head1 METHODS
 
 =cut
+
+=head2 max_len
+
+ usage   :
+ function: get the maximum length of any of the sequences in this object
+ args    :
+ returns : an integer
+
+=cut
+
+sub max_len {
+    my($self) = @_;
+
+    my $longest_seq = (sort {$b->len <=> $a->len} $self->seqs)[0];
+
+    return $longest_seq->len;
+}
+
+=head2 align
+
+ usage   :
+ function: align sequences with muscle (max_len < 10000) or kalign (max_len >= 10000)
+ args    :
+ returns : a Bio::Align::AlignI compliant object, or undef on error
+
+=cut
+
+sub align {
+    my($self) = @_;
+
+    #return(($self->max_len < 10000) ? $self->run_muscle : $self->run_kalign);
+    return $self->run_kalign;
+}
 
 1;

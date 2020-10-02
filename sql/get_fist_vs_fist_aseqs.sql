@@ -51,12 +51,12 @@ SELECT a_to_g.id_aln,
        a.len1,
        a.start1,
        a.end1,
-       as1._edit_str,
+       #as1._edit_str,
 
        a.len2,
        a.start2,
        a.end2,
-       as2._edit_str,
+       #as2._edit_str,
 
        'pfam',
        a.ac_src
@@ -98,15 +98,15 @@ FROM   (
         WHERE  h.id IS NULL
        ) AS a,
        SeqGroup         AS g,
-       AlignmentToGroup AS a_to_g,
-       AlignedSeq       AS as1,
-       AlignedSeq       AS as2
+       AlignmentToGroup AS a_to_g#,
+       #AlignedSeq       AS as1,
+       #AlignedSeq       AS as2
 
 WHERE  g.type = 'pfam'
 AND    g.ac = a.ac_src
 AND    a_to_g.id_group = g.id
-AND    as1.id_aln = a_to_g.id_aln
-AND    as1.id_seq = a.id_seq1
-AND    as2.id_aln = a_to_g.id_aln
-AND    as2.id_seq = a.id_seq2
+#AND    as1.id_aln = a_to_g.id_aln
+#AND    as1.id_seq = a.id_seq1
+#AND    as2.id_aln = a_to_g.id_aln
+#AND    as2.id_seq = a.id_seq2
 ;
