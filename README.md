@@ -332,15 +332,15 @@ find ${MECHISMO_DN}pfam/ -name FeatureInst.tsv | perl -ne 'chomp; /.*\/pfam\/(\S
 mkdir -p ${MECHISMO_DN}pfam/hmmalign/
 /usr/bin/time -o ${MECHISMO_DN}pfam/hmmalign.time perl -I./lib ./script/hmmalign.pl --outdir ${MECHISMO_DN}pfam --fork hmmalign --n_jobs 60 --feat_source Pfam 1> ${MECHISMO_DN}pfam/hmmalign.out 2> ${MECHISMO_DN}pfam/hmmalign.err
 
-# import - TODO
-ls ${MECHISMO_DN}pfam/hmmalign/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}pfam/hmmalign/import.inp
-ls ${MECHISMO_DN}pfam/hmmalign/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
-ls ${MECHISMO_DN}pfam/hmmalign/*/Alignment.tsv | perl -ne 'chomp; /(\d+)/ and print "Fist::IO::Alignment\t$_\tid=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
-ls ${MECHISMO_DN}pfam/hmmalign/*/AlignedSeq.tsv | perl -ne 'chomp; /(\d+)/ and print "Fist::IO::AlignedSeq\t$_\tid_aln=$1,id_seq=DB\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
-ls ${MECHISMO_DN}pfam/hmmalign/*/AlignmentToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::AlignmentToGroup\t$_\tid_aln=$1,id_group=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+# import
+ls ${MECHISMO_DN}pfam/hmmalign/*/SeqGroup.tsv | perl -ne 'chomp; /hmmalign\/(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/SeqToGroup.tsv | perl -ne 'chomp; /hmmalign\/(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq=DB,id_group=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/Alignment.tsv | perl -ne 'chomp; /hmmalign\/(\d+)/ and print "Fist::IO::Alignment\t$_\tid=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/AlignedSeq.tsv | perl -ne 'chomp; /hmmalign\/(\d+)/ and print "Fist::IO::AlignedSeq\t$_\tid_aln=$1,id_seq=DB\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
+ls ${MECHISMO_DN}pfam/hmmalign/*/AlignmentToGroup.tsv | perl -ne 'chomp; /hmmalign\/(\d+)/ and print"Fist::IO::AlignmentToGroup\t$_\tid_aln=$1,id_group=$1\n";' >> ${MECHISMO_DN}pfam/hmmalign/import.inp
 /usr/bin/time -o ${MECHISMO_DN}pfam/hmmalign/import.time perl -I./lib/ ./script/import_tsv.pl < ${MECHISMO_DN}pfam/hmmalign/import.inp &> ${MECHISMO_DN}pfam/hmmalign/import.err
 
-# archive text files - TODO
+# archive text files
 tar -C ${MECHISMO_DN}pfam -czf ${MECHISMO_DN}pfam/fist.tar.gz ./fist
 rm -rf ${MECHISMO_DN}pfam/fist
 tar -C ${MECHISMO_DN}pfam/uniprot -czf ${MECHISMO_DN}pfam/uniprot/sprot_varsplic.tar.gz ./sprot_varsplic

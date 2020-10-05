@@ -80,20 +80,4 @@ sub max_len {
     return $longest_seq->len;
 }
 
-=head2 align
-
- usage   :
- function: align sequences with muscle (max_len < 10000) or kalign (max_len >= 10000)
- args    :
- returns : a Bio::Align::AlignI compliant object, or undef on error
-
-=cut
-
-sub align {
-    my($self) = @_;
-
-    #return(($self->max_len < 10000) ? $self->run_muscle : $self->run_kalign);
-    return $self->run_kalign;
-}
-
 1;
