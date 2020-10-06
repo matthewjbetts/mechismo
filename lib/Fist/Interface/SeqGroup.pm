@@ -77,7 +77,7 @@ requires 'seqs_by_source';
 sub output_tsv {
     my($self, $fh) = @_;
 
-    print $fh join("\t", $self->id, $self->type, $self->ac), "\n";
+    print $fh join("\t", $self->id, $self->type, $self->ac ? $self->ac : ''), "\n";
 }
 
 1;

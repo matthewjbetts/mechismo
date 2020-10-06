@@ -252,9 +252,13 @@ else {
     foreach $fn (@fns2) {
         $time_start = time;
         $pdb = parse($fn, $ecod, $output, $tempdir, $cleanup);
-
-        # calculate contacts
-        $pdb->get_contacts(\$id_contact, $output->{Contact}->{fn}, $output->{ResContact}->{fn});
+        if($pdb->stamp_safe) {
+            $pdb->get_contacts(\$id_contact, $output->{Contact}->{fn}, $output->{ResContact}->{fn});
+        }
+        else {
+            warn "Warning: '$fn' is not STAMP safe. Cannot calculate contacts.";
+            # FIXME - fix C programs to read multi-chain identifiers
+        }
 
         foreach $frag ($pdb->frags) {
             if($frag->chemical_type eq 'peptide') {
@@ -378,9 +382,9 @@ sub parse_ecod {
     }
     close($fh);
 
-    foreach $idcode (sort keys %{$large}) {
-        warn "Warning: multi-letter chain identifier(s) for '$idcode': ", join(', ', sort keys %{$large->{$idcode}}), '.';
-    }
+    #foreach $idcode (sort keys %{$large}) {
+    #    warn "Warning: multi-letter chain identifier(s) for '$idcode': ", join(', ', sort keys %{$large->{$idcode}}), '.';
+    #}
 
     return $ecod;
 }

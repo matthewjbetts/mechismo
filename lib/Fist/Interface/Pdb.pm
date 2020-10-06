@@ -265,6 +265,27 @@ sub get_contacts {
     return 1;
 }
 
+=head2 stamp_safe
+
+ usage   : $pdb->stamp_safe or next;
+ function: checks if a pdb complies with STAMP format dom
+ args    : none
+ returns : 0 or 1
+
+=cut
+
+sub stamp_safe {
+    my($self) = @_;
+
+    my $frag;
+
+    foreach $frag ($self->frags) {
+        $frag->stamp_safe or return(0);
+    }
+
+    return 1;
+}
+
 =head2 TO_JSON
 
  usage   :

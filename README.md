@@ -122,7 +122,7 @@ export DS=/net/home.isilon/ds-russell/ # FIXME - set this in config file, or pat
 ./script/create_db.pl fist.conf
 
 # load the schema
-mysql -p -D [dbname] < sql/schema.sql # FIXME - get dbname from config file
+mysql -p -D ${MECHISMO_DB} < sql/schema.sql # FIXME - get dbname from config file
 
 mkdir -p ${MECHISMO_DN}
 ~~~~
@@ -139,27 +139,27 @@ gzip ${MECHISMO_DN}ncbi_taxa/Taxon.tsv
 ~~~~
 # FIXME - assumes biounit structures are stored in $DS/pdb-biounit/
 mkdir -p ${MECHISMO_DN}pdb
-/usr/bin/time -o ${MECHISMO_DN}pdb/parse.time perl -I./lib ./script/parse_pdb.pl --outdir ${MECHISMO_DN} --ecod $DS/ecod/ecod.latest.domains.txt --fork pdb --n_jobs 20 $DS/pdb 1> ${MECHISMO_DN}pdb/parse.txt 2> ${MECHISMO_DN}pdb/parse.err
+/usr/bin/time -o ${MECHISMO_DN}pdb/parse.time perl -I./lib ./script/parse_pdb.pl --outdir ${MECHISMO_DN} --ecod $DS/ecod/ecod.latest.domains.txt --fork pdb --n_jobs 60 $DS/pdb 1> ${MECHISMO_DN}pdb/parse.txt 2> ${MECHISMO_DN}pdb/parse.err
 # FIXME - check for PBS errors, re-run any affected files
 
 # import
 # NOTE: fist and seqres sequences are stored non-redundantly by the mapping method below
 ls ${MECHISMO_DN}pdb/*/Ecod.tsv | head -1 | perl -ne '/.*\/(\S+)\.tsv/ and print"Fist::IO::$1\t$_";' > ${MECHISMO_DN}pdb/import.inp # Ecod.tsv was repeated for each job but only need to import once
-ls ${MECHISMO_DN}pdb/*/Pdb.tsv | perl -ne '/(\d+)\/([^\/]+)\.tsv/ and print"Fist::IO::$2\t$_";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/Expdta.tsv | perl -ne '/(\d+)\/([^\/]+)\.tsv/ and print"Fist::IO::$2\t$_";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/Seq.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Seq\t$_\tid={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/Frag.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Frag\t$_\tid=$1,id_seq={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/ChainSegment.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::ChainSegment\t$_\tid=$1,id_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/SeqToTaxon.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToTaxon\t$_\tid_seq={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/SeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/SeqToGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq={name=$1},id_group=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/FragToSeqGroup.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragToSeqGroup\t$_\tid_frag=$1,id_group=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/FragDssp.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragDssp\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/FragToEcod.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragToEcod\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/FragResMapping.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragResMapping\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/FragInst.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::FragInst\t$_\tid=$1,id_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/Contact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::Contact\t$_\tid=$1,id_frag_inst=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
-ls ${MECHISMO_DN}pdb/*/ResContact.tsv | perl -ne 'chomp; /(\d+)/ and print"Fist::IO::ResContact\t$_\tid_contact=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Pdb.tsv | perl -ne '/pdb\/(\d+)\/([^\/]+)\.tsv/ and print"Fist::IO::$2\t$_";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Expdta.tsv | perl -ne '/pdb\/(\d+)\/([^\/]+)\.tsv/ and print"Fist::IO::$2\t$_";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Seq.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::Seq\t$_\tid={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Frag.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::Frag\t$_\tid=$1,id_seq={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/ChainSegment.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::ChainSegment\t$_\tid=$1,id_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/SeqToTaxon.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::SeqToTaxon\t$_\tid_seq={name=$1}\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/SeqGroup.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/SeqToGroup.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::SeqToGroup\t$_\tid_seq={name=$1},id_group=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragToSeqGroup.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::FragToSeqGroup\t$_\tid_frag=$1,id_group=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragDssp.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::FragDssp\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragToEcod.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::FragToEcod\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragResMapping.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::FragResMapping\t$_\tid_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/FragInst.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::FragInst\t$_\tid=$1,id_frag=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/Contact.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::Contact\t$_\tid=$1,id_frag_inst=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
+ls ${MECHISMO_DN}pdb/*/ResContact.tsv | perl -ne 'chomp; /pdb\/(\d+)/ and print"Fist::IO::ResContact\t$_\tid_contact=$1\n";' >> ${MECHISMO_DN}pdb/import.inp
 /usr/bin/time -o ${MECHISMO_DN}pdb/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}pdb/import.inp &> ${MECHISMO_DN}pdb/import.err
 
 # archive the text files
@@ -451,25 +451,28 @@ done
 /usr/bin/time -o ${MECHISMO_DN}pdb/homo.time perl -I./lib ./script/contacts_homo.pl &> ${MECHISMO_DN}pdb/homo.err
 ~~~~
 
-################################################################################
-
 
 ### group PPI, PDI and PCI contacts
 ~~~~
-# FIXME - do via objects
-/usr/bin/time -o ${MECHISMO_DN}fist_vs_fist_aseqs.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_fist_vs_fist_aseqs.sql 2> ${MECHISMO_DN}fist_vs_fist_aseqs.err | gzip > ${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz &
-/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_to_fist.sql 2> ${MECHISMO_DN}frag_inst_to_fist.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.tsv.gz &
-/usr/bin/time -o ${MECHISMO_DN}frag_inst_chem_type.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_chem_type.sql 2> ${MECHISMO_DN}frag_inst_chem_type.err | gzip > ${MECHISMO_DN}frag_inst_chem_type.tsv.gz &
-/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_contacts_with_fist_numbers.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 1> ${MECHISMO_DN}contacts_with_fist_numbers.tsv 2> ${MECHISMO_DN}contacts_with_fist_numbers.err &
-gzip ${MECHISMO_DN}contacts_with_fist_numbers.tsv
+# FIXME - this whole section is hacky
 
-# create PBS jobs
+/usr/bin/time -o ${MECHISMO_DN}fist_vs_fist_aseqs.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_fist_vs_fist_aseqs.sql 2> ${MECHISMO_DN}fist_vs_fist_aseqs.err | gzip > ${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_to_fist.sql 2> ${MECHISMO_DN}frag_inst_to_fist.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.tsv.gz
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_chem_type.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_chem_type.sql 2> ${MECHISMO_DN}frag_inst_chem_type.err | gzip > ${MECHISMO_DN}frag_inst_chem_type.tsv.gz
+/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.time mysql -p -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_contacts_with_fist_numbers.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz
+
+
+# create shell jobs
 mkdir -p ${MECHISMO_DN}contact_groups
+./script/get_contact_group_sh.pl
 
-perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/";}foreach $th ([1.0, 1.0, 1.0], [0.0, 0.8, 0.8], [0.0, 0.0, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; print "$fn\n"; printf PBS "#PBS -N gc${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=40gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f --contact_group ${d}${d2}${id}.ContactGroup.tsv --contact_to_group ${d}${d2}${id}.ContactToGroup.tsv\n\n", @{$th}; close(PBS);}'
-~~~~
 
-# now submit on cluster
+# now run on local machine
+for fn in ${MECHISMO_DN}contact_groups/*.sh
+do
+  source ${fn} &
+done
+
 
 # ensure id_group is in ascending order (needed for id_mapping with offsets to work).
 # could output this way from mechismoGroupContacts but is nice to see jaccard

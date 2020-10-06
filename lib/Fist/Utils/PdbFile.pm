@@ -74,11 +74,27 @@ sub _parse_dom {
     return $dom;
 }
 
+sub _strToCid {
+    my($cid) = @_;
+
+    # FIXME: refactor - put this somewhere central
+
+    # chain identifiers are often given in two columns of a pdb string and can be either:
+    # - a single non-space character (most common)
+    # - a single space (if there is only one chain)
+    # - two non-space characters (slight abuse of the pdb format)
+
+    $cid =~ s/\A\s//;
+
+    return $cid;
+}
+
 sub _extract_dom {
     my($fn, $id_dom, $dom, $cidNew, $pdbfile, $res_mapping) = @_;
 
     # FIXME - use Carp for error messages
 
+    my $cidReplace;
     my $fh;
     my $dom1;
     my $domSub;
@@ -91,6 +107,18 @@ sub _extract_dom {
     my $resSeq_p;
     my $iCode_p;
     my $state;
+
+    # cid might be two characters, so need to add an
+    # extra space if the new cid is only one character
+    if(length($cidNew) == 1) {
+        $cidReplace = ' ' . $cidNew;
+    }
+    elsif(length($cidNew == 0)) {
+        $cidReplace = '  ';
+    }
+    else {
+        $cidReplace = $cidNew;
+    }
 
     $dom1 = _parse_dom($dom);
     $cid_p = 'XXXXXXXX';
@@ -109,7 +137,8 @@ sub _extract_dom {
         while(<$fh>) {
             if(/^ATOM/ or /^HETATM/) {
                 ($resName = substr($_, 17, 3)) =~ s/\s+//g;
-                ($cid = substr($_, 21, 1, $cidNew)) =~ s/\s+//g;
+                ($cid = substr($_, 20, 2, $cidReplace));
+                $cid = _strToCid($cid);
                 ($resSeq = substr($_, 22, 4)) =~ s/\s+//g;
                 ($iCode = substr($_, 26, 1)) =~ s/\s+//g;
                 ($iCode eq '') and ($iCode = '_');

@@ -31,6 +31,21 @@ with 'Fist::IO';
 
 =cut
 
+sub _strToCid {
+    my($cid) = @_;
+
+    # FIXME: refactor - put this somewhere central
+
+    # chain identifiers are often given in two columns of a pdb string and can be either:
+    # - a single non-space character (most common)
+    # - a single space (if there is only one chain)
+    # - two non-space characters (slight abuse of the pdb format)
+
+    $cid =~ s/\A\s//;
+
+    return $cid;
+}
+
 =head2 parse
 
  usage   : $pdb = $io->parse($tempdir, 'cleanup');
@@ -179,19 +194,18 @@ sub parse {
             $updated = _revdat2date($1, $2, $3);
             (!defined($pdb->updated) or ($updated > $pdb->updated)) and $pdb->updated($updated);
 	}
-	elsif(/^COMPND.*MOL_ID:\s*(\d+)/) {
+	elsif(/^COMPND\s*MOL_ID:\s*(\d+)/) {
 	    $id_mol = $1;
 	    $molecules->{$id_mol} = {name => '', chains => []};
 	}
-	elsif(/^COMPND\s*\S+\s*MOLECULE:\s*(.*?)\s*\Z/) {
+	elsif(/^COMPND\s*\d+\s*MOLECULE:\s*(.*?)\s*\Z/) {
 	    $molecules->{$id_mol}->{name} .= $1;
 	}
-	elsif(/^COMPND\s*\S+\s*CHAIN:\s*(.*)/) {
+	elsif(/^COMPND\s*\d+\s*CHAIN:\s*(\s+)/) {
 	    ($cid_str = $1) =~ s/;?\s*\Z//;
 
 	    foreach $cid (split(/\s*,\s*/, $cid_str)) {
-		(length($cid) > 1) and next; # some people abuse the CHAIN info, eg. 3e6p has 'CHAIN: UNP RESIDUES 206-363;'
-
+                $cid = _strToCid($cid);
 		push @{$molecules->{$id_mol}->{chains}}, $cid;
 		$cid2mol->{$cid} = $id_mol;
 	    }
@@ -223,8 +237,9 @@ sub parse {
         elsif(/\AEXPDTA.{4}\s*(.*?)\s*\Z/) {
             $expdta_str_all .= $1;
         }
-        elsif(/\ASEQRES\s.{3}\s(.)\s(.{4})\s+(.*)\Z/) {
+        elsif(/\ASEQRES\s.{3}(.{2})\s(.{4})\s+(.*)\Z/) {
             ($cid, $numRes, $str) = ($1, $2, $3);
+            $cid = _strToCid($cid);
             defined($seqres->{$cid}) or ($seqres->{$cid} = {numRes => $2, res3 => [], res1 => []});
             foreach $res3 (split /\s+/, $str) {
                 $res1 = _res3to1($res3);
@@ -232,26 +247,26 @@ sub parse {
                 push @{$seqres->{$cid}->{res1}}, $res1;
             }
         }
-        elsif(/^MODRES\s.{4}\s(.{3})\s(.)\s(.{4})(.)\s(.{3})/) {
+        elsif(/^MODRES\s.{4}\s(.{3})(.{2})\s(.{4})(.)\s(.{3})/) {
             # MODRES info will be used to
             # - place the one-letter code of the residue in the sequence
             # - ignore modified residues when storing HETATMs as chemical fragments
 
             ($modResName, $cid, $resSeq, $iCode, $resName) = ($1, $2, $3, $4, $5);
             $modResName =~ s/\s+//g;
-            #$cid        =~ s/\s+//g;
+            $cid =_strToCid($cid);
             $resSeq     =~ s/\s+//g;
             #$iCode      =~ s/\s+//g;
             $resName    =~ s/\s+//g;
             $modresns->{$cid}->{$resSeq}->{$iCode}->{$modResName} = $resName;
         }
-        elsif(/^SEQADV\s.{4}\s(.{3})\s(.)\s(.{4})(.)/) {
+        elsif(/^SEQADV\s.{4}\s(.{3})(.{2})\s(.{4})(.)/) {
             # SEQADV info will be used to
             # - ignore residues that differ between the pdb entry and the dbREF when storing HETATMs as chemical fragments
 
             ($modResName, $cid, $resSeq, $iCode) = ($1, $2, $3, $4);
             $modResName =~ s/\s+//g;
-            #$cid        =~ s/\s+//g;
+            $cid = _strToCid($cid);
             $resSeq     =~ s/\s+//g;
             #$iCode      =~ s/\s+//g;
             $seqadvs->{$cid}->{$resSeq}->{$iCode}->{$modResName} = $resName;
@@ -265,18 +280,63 @@ sub parse {
             }
         }
 	elsif(/^ATOM/ or /^HETATM.{7}CA /) {
+            # FIXME - refactor: extract function for this and non-CA HETATM lines
+
             # parse residues from any ATOM or any C-alpha HETATM
 
-            #                0 1 23 456 78
-	    @data = unpack 'a6a5a5aa3aaa4a', $_;
+            # COLUMNS        DATA  TYPE    FIELD        DEFINITION
+            # -------------------------------------------------------------------------------------
+            #  1 -  6        Record name   "ATOM  "
+            #  7 - 11        Integer       serial       Atom  serial number.
+            # 13 - 16        Atom          name         Atom name.
+            # 17             Character     altLoc       Alternate location indicator.
+            # 18 - 20        Residue name  resName      Residue name.
+            # 22             Character     chainID      Chain identifier.
+            # 23 - 26        Integer       resSeq       Residue sequence number.
+            # 27             AChar         iCode        Code for insertion of residues.
+            # 31 - 38        Real(8.3)     x            Orthogonal coordinates for X in Angstroms.
+            # 39 - 46        Real(8.3)     y            Orthogonal coordinates for Y in Angstroms.
+            # 47 - 54        Real(8.3)     z            Orthogonal coordinates for Z in Angstroms.
+            # 55 - 60        Real(6.2)     occupancy    Occupancy.
+            # 61 - 66        Real(6.2)     tempFactor   Temperature  factor.
+            # 77 - 78        LString(2)    element      Element symbol, right-justified.
+            # 79 - 80        LString(2)    charge       Charge  on the atom.
 
-	    ($atomName  = $data[2]) =~ s/\s+//g;
-	    ($altLoc    = $data[3]) =~ s/\s+//g;
-	    ($resName   = $data[4]) =~ s/\s+//g;
-	    #($cid       = $data[6]) =~ s/\s+//g;
-            $cid = $data[6];
+            # The pdb format specification, above, says the chain identifier is a single character
+            # at column 22 but some pdbs, eg. 5nmb, use two characters in columns 21 and 22:
+
+            #
+            # 0        1         2         3         4         5         6         7         8
+            # 12345678901234567890123456789012345678901234567890123456789012345678901234567890
+            #
+            # |||||| - 0: Record name
+            #       ||||| - 1: Atom serial number
+            #            | - 2: space
+            #             |||| - 3: Atom name
+            #                 | - 4: Alternative location indicator
+            #                  ||| - 5: Residue name
+            #                     || - 6: Chain identifier
+            #                       |||| - 7: Residue sequence number
+            #                           | - 8: Code for insertion of residues
+            # ATOM      1  N   HISA2 154     -38.174  39.657  25.231  1.00144.98           N
+            # ATOM      2  CA  HISA2 154     -38.790  40.833  24.628  1.00139.36           C
+            # ATOM      3  C   HISA2 154     -39.382  40.485  23.259  1.00127.39           C
+            # ATOM      4  O   HISA2 154     -39.888  39.379  23.085  1.00126.04           O
+            # ATOM      5  CB  HISA2 154     -37.773  41.968  24.525  1.00140.17           C
+            # ATOM      6  CG  HISA2 154     -36.454  41.550  23.957  1.00138.32           C
+            # ATOM      7  ND1 HISA2 154     -35.381  41.199  24.748  1.00143.99           N
+            # ATOM      8  CD2 HISA2 154     -36.028  41.446  22.677  1.00135.93           C
+            # ATOM      9  CE1 HISA2 154     -34.354  40.887  23.980  1.00139.86           C
+            # ATOM     10  NE2 HISA2 154     -34.720  41.029  22.718  1.00137.92           N
+
+            #                0 12 34 5 6 78
+	    @data = unpack 'a6a5aa4aa3a2a4a', $_;
+
+	    ($atomName  = $data[3]) =~ s/\s+//g;
+	    ($altLoc    = $data[4]) =~ s/\s+//g;
+	    ($resName   = $data[5]) =~ s/\s+//g;
+            $cid = _strToCid($data[6]);
 	    ($resSeq    = $data[7]) =~ s/\s+//g;
-	    #($iCode     = $data[8]) =~ s/\s+//g;
             $iCode = $data[8];
 
 	    $id_mol = $cid2mol->{$cid};
@@ -310,17 +370,17 @@ sub parse {
 	    $iCode_p = $iCode;
 	}
         elsif(/^HETATM/) {
-            #                0 1 23 456 78
-	    @data = unpack 'a6a5a5aa3aaa4a', $_;
+            # FIXME - refactor: extract function for this and the above
+
+            #                0 12 34 5 6 78
+	    @data = unpack 'a6a5aa4aa3a2a4a', $_;
 
             ($atomNum   = $data[1]) =~ s/\s+//g;
-	    ($atomName  = $data[2]) =~ s/\s+//g;
-	    ($altLoc    = $data[3]) =~ s/\s+//g;
-	    ($resName   = $data[4]) =~ s/\s+//g;
-	    #($cid       = $data[6]) =~ s/\s+//g;
-            $cid = $data[6];
+	    ($atomName  = $data[3]) =~ s/\s+//g;
+	    ($altLoc    = $data[4]) =~ s/\s+//g;
+	    ($resName   = $data[5]) =~ s/\s+//g;
+            $cid = _strToCid($data[6]);
 	    ($resSeq    = $data[7]) =~ s/\s+//g;
-	    #($iCode     = $data[8]) =~ s/\s+//g;
             $iCode = $data[8];
 
             if(($resName ne 'HOH') and ($resName ne 'DOD')) {
@@ -368,12 +428,15 @@ sub parse {
             }
         }
         elsif(s/^SITE   (.{3}) (.{3}) (.{2})//) {
+            # ____   ___ ___ __ ___-- ___  ___--
+            # SITE     1 AC1 13 TYRA2 175  LEUA2 258  SERA2 265  ILEA2 299
+
             ($siteSeqNum, $siteName, $siteNumRes) = ($1, $2, $3);
             $siteSeqNum =~ s/\s+//g;
             $siteName =~ s/\s+//g;
             $siteNumRes =~ s/\s+//g;
             if(defined($site = $sites->{$siteName})) {
-                while(/ (.{3}) (.)(.{4})(.)/g) {
+                while(/ (.{3})(.{2})(.{4})(.)/g) {
                     ($siteResName, $siteCid, $siteResSeq, $siteICode) = ($1, $2, $3, $4);
                     $siteResName =~ s/\s+//g;
                     if(($siteResName ne '') and ($siteResName ne 'HOH')) { # FIXME - include water

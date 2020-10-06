@@ -344,6 +344,28 @@ sub label {
     return $label;
 }
 
+=head2 stamp_safe
+
+ usage   : $frag->stamp_safe or next;
+ function: checks if a fragment complies with STAMP format dom
+ args    : none
+ returns : 0 or 1
+
+=cut
+
+sub stamp_safe {
+    my($self) = @_;
+
+    my $chain_segment;
+
+    foreach $chain_segment ($self->chain_segments) {
+        (length($chain_segment->chain) > 1) and return(0); # STAMP can't handle multi-character chain identifiers
+    }
+
+    return 1;
+}
+
+
 =head2 TO_JSON
 
  usage   :
