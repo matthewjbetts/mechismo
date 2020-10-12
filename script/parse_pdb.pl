@@ -139,8 +139,6 @@ while($fn = shift @fns1) {
     }
 }
 
-print "@fns2\n";
-
 $name = defined($fork_name) ? $fork_name : $pbs_name;
 if($name) {
     if($fork_name) {

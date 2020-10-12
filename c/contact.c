@@ -1534,7 +1534,7 @@ LIST *contactGroupByJaccards(LIST *contacts, HASH *domToSeq, float minJaccard, H
 
                 // now calculate the actual jaccard
                 jaccard = (*calcJaccard)(c1, c2, domToSeq, hsps);
-                printf("JACCARD\t%u\t%u\t%u\t%u\t%.2f\n", c1->id, c2->id, c1->nResRes, c2->nResRes, jaccard);
+                //printf("JACCARD\t%u\t%u\t%u\t%u\t%.2f\n", c1->id, c2->id, c1->nResRes, c2->nResRes, jaccard);
                 if(jaccard < minJaccard) continue;
                 listAddElement(queue, 1, c2);
                 visited[c2->id] = seen;

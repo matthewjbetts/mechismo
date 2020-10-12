@@ -5,7 +5,10 @@
   * [ ] rewrite README.md to my current standards
   * [ ] add download instructions for primary data
 * [ ] refactoring
-  * [ ] use unique identifiers directly rather than having to remap
+  * [ ] use unique identifiers directly rather than having to remap. This would
+        also make re-importing tsv files possible, since ids would be maintained
+        between different programs. (eg. blast results use unique ids of sequences,
+        which might change when the sequence tsvs are remapped before reimporting.)
   * [ ] objects
     * [ ] remove Interface and NonDB versions of libraries
     * [ ] identify and replace code added to 'do not change' sections of DBIx::Class objects
@@ -14,6 +17,8 @@
     * [ ] add them to my path
     * [ ] make them part of the installation makefile
     * [ ] allow multi-character chain identifiers
+    * [ ] explain/control differences in number of res-res pairs in contacts between
+          mechismoGroupContacts input and internal calculation
 * [ ] database
   * [ ] add table for primary data versions (uniprot release, etc)
 * [ ] bug fixes

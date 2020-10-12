@@ -64,8 +64,7 @@ FROM   Contact        AS c,   #FROM   (SELECT * FROM Contact LIMIT 10000)       
        Frag           AS fb1
 
 WHERE  c.id_frag_inst2 != c.id_frag_inst1
-AND    rc.id_frag_inst1 = c.id_frag_inst1
-AND    rc.id_frag_inst2 = c.id_frag_inst2
+AND    rc.id_contact = c.id
 
 AND    fia1.id = c.id_frag_inst1
 AND    fa1.id = fia1.id_frag

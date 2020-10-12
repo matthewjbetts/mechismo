@@ -198,13 +198,10 @@ rm -rf ${MECHISMO_DN}/uniprot
 ## overall, and the import also stores fist and seqres sequences non-redundantly
 
 
-## extract fasta format fist and seqres sequences with database ids
+## extract fasta format fist, seqres and fist nucleotide sequences with database ids
 mkdir -p ${MECHISMO_DN}/pdb/
 /usr/bin/time -o ${MECHISMO_DN}pdb/fist_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source fist > ${MECHISMO_DN}pdb/fist_aa.fasta
 /usr/bin/time -o ${MECHISMO_DN}pdb/seqres_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type peptide --source seqres > ${MECHISMO_DN}pdb/seqres_aa.fasta
-
-
-## extract fasta format fist nucleotide sequences with database ids
 /usr/bin/time -o ${MECHISMO_DN}pdb/fist_aa.time perl -I./lib ./script/get_fasta.pl --chemical_type nucleotide --source fist > ${MECHISMO_DN}pdb/fist_na.fasta
 
 
@@ -260,7 +257,7 @@ mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-fist/
 
 ## blast uniprot sprot and varsplic vs seqres
 mkdir -p ${MECHISMO_DN}blast/sprot_varsplic-seqres/${id_taxon}
-/usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --fork sprot_varsplic-seqres --n_jobs 30 --db ${MECHISMO_DN}blast/seqres \
+/usr/bin/time -o ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.time perl -I./lib ./script/blast.pl --program blastp --outdir ${MECHISMO_DN}blast/ --fork sprot_varsplic-seqres --n_jobs 20 --db ${MECHISMO_DN}blast/seqres \
 `for taxon in $TAXA; do echo "--fasta ./data/processed/3.0/uniprot/sprot/${taxon}_aa.fasta"; done` \
 1> ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.out 2> ${MECHISMO_DN}blast/sprot_varsplic-seqres/blast.err
 
@@ -330,7 +327,7 @@ find ${MECHISMO_DN}pfam/ -name FeatureInst.tsv | perl -ne 'chomp; /.*\/pfam\/(\S
 
 # align subsequences that match to each pfam domain
 mkdir -p ${MECHISMO_DN}pfam/hmmalign/
-/usr/bin/time -o ${MECHISMO_DN}pfam/hmmalign.time perl -I./lib ./script/hmmalign.pl --outdir ${MECHISMO_DN}pfam --fork hmmalign --n_jobs 60 --feat_source Pfam 1> ${MECHISMO_DN}pfam/hmmalign.out 2> ${MECHISMO_DN}pfam/hmmalign.err
+/usr/bin/time -o ${MECHISMO_DN}pfam/hmmalign.time perl -I./lib ./script/hmmalign.pl --outdir ${MECHISMO_DN}pfam --fork hmmalign --n_jobs 20 --feat_source Pfam 1> ${MECHISMO_DN}pfam/hmmalign.out 2> ${MECHISMO_DN}pfam/hmmalign.err
 
 # import
 ls ${MECHISMO_DN}pfam/hmmalign/*/SeqGroup.tsv | perl -ne 'chomp; /hmmalign\/(\d+)/ and print"Fist::IO::SeqGroup\t$_\tid=$1\n";' > ${MECHISMO_DN}pfam/hmmalign/import.inp
@@ -445,6 +442,8 @@ do
 done
 ~~~~
 
+## mysqldump for db up to here: data/processed/3.0/dump/20201009.sql.gz
+
 ### mark homodimeric contacts
 (this depends on SeqGroup.type IN ('frag', 'fist lf=0.5 pcid=50.0')
 ~~~~
@@ -495,7 +494,7 @@ ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; $f1 = $_; 
 
 # archive
 gzip ${MECHISMO_DN}contact_groups/*.{ContactGroup,ContactToGroup}.tsv
-
+~~~~
 
 ## measure interface overlap in known structures (aka. how bad is only using distance between atoms as the definition of an interface?)
 perl -I./lib ./script/known_structures_interface_overlap.pl 2> ${MECHISMO_DN}known_structures_interface_overlap.err | gzip > ${MECHISMO_DN}known_structures_interface_overlap.tsv.gz &
@@ -537,7 +536,7 @@ wget -q http://elm.eu.org/elms/elms_index.tsv -O ${MECHISMO_DN}elm/db/elm_classe
 dos2unix ${MECHISMO_DN}elm/db/elm_classes.tsv
 perl -i -pe 's/"//g' ${MECHISMO_DN}elm/db/elm_classes.tsv
 perl -F'/\t/' -nae '/^#/ and next; chomp(@F); if(/^Accession/){@headings = @F;}else{@hash{@headings} = @F; print join("\t", "elm", $hash{Accession}, $hash{ELMIdentifier}, $hash{Description}, $hash{Regex}), "\n";}' ${MECHISMO_DN}elm/db/elm_classes.tsv > ${MECHISMO_DN}elm/db/elm_classes_tmp.tsv
-mysql -p -D ${MECHISMO_DB} -e 'SET sql_log_bin = 0; LOAD DATA LOCAL INFILE "${MECHISMO_DN}elm/db/elm_classes_tmp.tsv" INTO TABLE Feature (source, ac_src, id_src, description, regex);'
+echo "SET sql_log_bin = 0; LOAD DATA LOCAL INFILE \"${MECHISMO_DN}elm/db/elm_classes_tmp.tsv\" INTO TABLE Feature (source, ac_src, id_src, description, regex);" | mysql -p -D ${MECHISMO_DB}
 rm -f ${MECHISMO_DN}elm/db/elm_classes_tmp.tsv
 
 wget -q 'http://elm.eu.org/instances.tsv?q=*' -O ${MECHISMO_DN}elm/db/elm_instances.tsv
@@ -547,7 +546,7 @@ perl -i -pe 's/"//g' ${MECHISMO_DN}elm/db/elm_instances.tsv
 
 ## get elm instances by regex pattern matching, label true positives from ${MECHISMO_DN}elm/db/elm_instances.tsv
 mkdir -p ${MECHISMO_DN}elm/uniprot/sprot_varsplic/
-/usr/bin/time -o ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.time perl -I./lib ./script/get_elm_instances.pl --source 'uniprot-sprot' --source varsplic  --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 ${MECHISMO_DN}elm/db/elm_instances.tsv 1> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.tsv 2> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.err
+/usr/bin/time -o ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.time perl -I./lib ./script/get_elm_instances.pl --source 'uniprot-sprot' --source varsplic `for taxon in $TAXA; do echo "--taxon ${taxon}"; done` ${MECHISMO_DN}elm/db/elm_instances.tsv 1> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.tsv 2> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.err
 
 # import
 perl -e 'print "Fist::IO::FeatureInst\t$ENV{MECHISMO_DN}elm/uniprot/sprot_varsplic/FeatureInst.tsv\tid=01,id_seq=DB,id_feature=DB\n";' > ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.inp
