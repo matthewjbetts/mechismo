@@ -1373,6 +1373,7 @@ LIST *contactGroupBySequence(LIST *contacts, HASH *domToSeq, LIST *seqGroups, un
         if((seqToGroup = hashCreate(0)) == NULL) return NULL;
         for(i = 0; i < seqGroups->n; i++) {
             seqGroupA = (LIST *) seqGroups->all[i];
+            //printf("seqGroup %8d\n", seqGroupA->n);
             for(j = 0; j < seqGroupA->n; j++) {
                 idSeqA1 = (char *) seqGroupA->all[j];
                 hashAddElement(seqToGroup, idSeqA1, seqGroupA);
@@ -1508,23 +1509,27 @@ LIST *contactGroupByJaccards(LIST *contacts, HASH *domToSeq, float minJaccard, H
             for(j = 0; j < contacts->n; j++) { // don't start with j = i + 1
                 c2 = (CONTACT *) contacts->all[j];
                 if(visited[c2->id] != unvisited) continue;
-                // max possible jaccard is if one contact is a complete subset of the other
 
+                // max possible jaccard is if one contact is a complete subset of the other
                 if(c1->nResRes < c2->nResRes) {
                     jaccard = (float) c1->nResRes / c2->nResRes;
-                    //printf("JACCARD\t%u\t%u\t%u\t%u\t%.2f\t(MAX POSSIBLE)\n", c1->id, c2->id, c1->nResRes, c2->nResRes, jaccard);
                     /*
                      * since the contact list is ordered by increasing nResRes,
                      * c1->nResRes will be less than all subsequent c2->nResRes
                      * and so comparisons of c1 to subsequent c2s will also have
                      * a max possible jaccard that is below the minJaccard threshold
                      */
-                    if(jaccard < minJaccard) break;
+                    if(jaccard < minJaccard) {
+                        //printf("JACCARD\t%u\t%u\t%u\t%u\t%.2f\t(MAX POSSIBLE)\n", c1->id, c2->id, c1->nResRes, c2->nResRes, jaccard);
+                        break;
+                    }
                 }
                 else if(c2->nResRes < c1->nResRes) {
                     jaccard = (float) c2->nResRes / c1->nResRes;
-                    //printf("JACCARD\t%u\t%u\t%u\t%u\t%.2f\t(MAX POSSIBLE)\n", c1->id, c2->id, c1->nResRes, c2->nResRes, jaccard);
-                    if(jaccard < minJaccard) continue;
+                    if(jaccard < minJaccard) {
+                        //printf("JACCARD\t%u\t%u\t%u\t%u\t%.2f\t(MAX POSSIBLE)\n", c1->id, c2->id, c1->nResRes, c2->nResRes, jaccard);
+                        continue;
+                    }
                 }
                 /*
                 else {

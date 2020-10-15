@@ -171,6 +171,7 @@ int main(int argc, char **argv) {
     HASH         *domToSeq  = NULL;
     LIST         *seqIds    = NULL;
     LIST         *seqGroups = NULL;
+    LIST         *seqGroup  = NULL;
     LIST         *contacts  = NULL;
     int          i, j;
     unsigned int idSeqGroup, idContactGroup;
@@ -279,6 +280,7 @@ int main(int argc, char **argv) {
                 for(i = 0; i < contactGroupsBySeq->n; i++) {
                     contactGroupBySeq = (LIST *) contactGroupsBySeq->all[i];
                     (*contactGroupOutput)(label1, contactGroupBySeq, 0, fh_contact_group, fh_contact_to_group);
+                    //printf("ContactGroupsBySeq %d %u %4.2f %u\n", i, contactGroupsBySeq->n, (float) i / contactGroupsBySeq->n, contactGroupBySeq->n);
 
                     /*
                      * it isn't strictly necessary to subdivide a group that only has one member...

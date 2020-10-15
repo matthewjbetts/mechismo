@@ -120,6 +120,34 @@ int listSortById(const void *a, const void *b) {
     return 0;
 }
 
+int listSortByAscN(const void *a, const void *b) {
+    const LIST *la = *(const LIST **) a;
+    const LIST *lb = *(const LIST **) b;
+
+    if(la->n < lb->n) {
+        return -1;
+    }
+    else if(la->n > lb->n) {
+        return 1;
+    }
+
+    return 0;
+}
+
+int listSortByDescN(const void *a, const void *b) {
+    const LIST *la = *(const LIST **) a;
+    const LIST *lb = *(const LIST **) b;
+
+    if(la->n > lb->n) {
+        return -1;
+    }
+    else if(la->n < lb->n) {
+        return 1;
+    }
+
+    return 0;
+}
+
 int listDeleteList(void *thing) {
     LIST *group;
 

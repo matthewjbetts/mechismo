@@ -496,9 +496,11 @@ ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; $f1 = $_; 
 gzip ${MECHISMO_DN}contact_groups/*.{ContactGroup,ContactToGroup}.tsv
 ~~~~
 
-## measure interface overlap in known structures (aka. how bad is only using distance between atoms as the definition of an interface?)
+### measure interface overlap in known structures
+(aka. how bad is only using distance between atoms as the definition of an interface?)
+~~~~
 perl -I./lib ./script/known_structures_interface_overlap.pl 2> ${MECHISMO_DN}known_structures_interface_overlap.err | gzip > ${MECHISMO_DN}known_structures_interface_overlap.tsv.gz &
-
+~~~~
 
 ########## TESTING mechismoGroupContacts, AND GROUPING WITH OTHER IDs ##########
 
@@ -528,7 +530,8 @@ perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_
 
 ################################################################################
 
-
+### ELM
+~~~~
 ## load ELM features # FIXME - standardise adding of features, eg. from a file including iupred, pfam, etc
 mkdir -p ${MECHISMO_DN}elm/db/
 
@@ -553,41 +556,37 @@ perl -e 'print "Fist::IO::FeatureInst\t$ENV{MECHISMO_DN}elm/uniprot/sprot_varspl
 /usr/bin/time -o ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.inp &> ${MECHISMO_DN}elm/uniprot/sprot_varsplic/import.err
 
 # archive
+find ./data/processed/3.0/elm/ -name '*.tsv' -exec gzip {} +
+~~~~
 
+########## DONE TO HERE ##########
 
-## hierarchical uniprot to fist matching
+### hierarchical uniprot to fist matching
 
-# 1) For each uniprot, find all matches to fist sequences from these sources:
-#
-#    a) SIFTS - frag group alignments
-#    b) BLAST vs fist
-#    c) BLAST vs seqres - and then to fist via frag group alignment
-#    d) Pfam - uniprot and fist seq have common pfam domain, map position using pfam seq group alignment
-#
-# 2) For each uniprot - fist pair, prefer the alignments in that order
-#
-# 3) When that is done, find pairs of uniprots that hit the same idcode,
-#    then check which of these pairs of fist sequences are represented by contacts
-#
-# 4) foreach pair of uniprots, group the contacts by their contact groups (exact match? or something wider?)
-#
+1. For each uniprot, find all matches to fist sequences from these sources:
+    a. SIFTS - frag group alignments
+    b. BLAST vs fist
+    c. BLAST vs seqres - and then to fist via frag group alignment
+    d. Pfam - uniprot and fist seq have common pfam domain, map position using pfam seq group alignment
+2. For each uniprot - fist pair, prefer the alignments in that order
+3. When that is done, find pairs of uniprots that hit the same idcode,
+   then check which of these pairs of fist sequences are represented by contacts
+4. foreach pair of uniprots, group the contacts by their contact groups (exact match? or something wider?)
 
-# For each species need:
-#
-# - uniprot to fist matches for that species
-# - all contacts - same as for groupContacts input
-# - all frag inst to fist links - same as for groupContacts input
-# - all contact groups - groupContacts output, but with ContactToGroups for only relevant ContactGroups extracted
-#
+For each species need:
+* uniprot to fist matches for that species
+* all contacts - same as for groupContacts input
+* all frag inst to fist links - same as for groupContacts input
+* all contact groups - groupContacts output, but with ContactToGroups for only relevant ContactGroups extracted
 
-
+~~~~
 # for testing:
 name=random
 ./c/mechismoContactHits --contacts ./test/${name}/contacts_with_fist_numbers.tsv --dom_to_seq ./test/${name}/frag_inst_to_fist.tsv --dom_to_chem_type ./test/${name}/frag_inst_chem_type.tsv --queries ./test/${name}/queries.txt -hsps ./test/${name}/query_to_fist.tsv --contact_to_group ./test/${name}/0.0-0.8-0.8.only.ContactToGroup.tsv --contact_hit ./test/${name}/ContactHit.tsv --pcid -1 --lf_fist 0.8 --resres 1
 
 
 # extract necessary information for each species
-for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
+for id_taxon in $TAXA
 do
   mkdir -p ${MECHISMO_DN}contact_hits/${id_taxon}
   /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.time perl -I./lib ./script/get_query_to_fist.pl --source 'uniprot-sprot' --source varsplic --taxon ${id_taxon} 2> ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.err | gzip > ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz &
@@ -597,6 +596,7 @@ done
 
 # find ContactHits
 # FIXME - only the bigger species need 30gb (because more hsps)
+# FIXME - create shell scripts rather than PBS
 perl -e '$d = qx(pwd); chomp($d); $d .= "/"; foreach $id_taxon (272634,224308,83333,559292,6239,7227,10090,9606){$d2 = "${MECHISMO_DN}contact_hits/${id_taxon}/"; foreach $th ([0.0, 0.8, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; print"$fn\n";open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N ch${id_taxon}.${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=30gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoContactHits --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.tsv.gz --dom_to_chem_type ${d}${MECHISMO_DN}frag_inst_chem_type.tsv.gz --queries ${d}${d2}queries.txt -hsps ${d}${d2}query_to_fist.tsv.gz --contact_to_group ${d}${MECHISMO_DN}contact_groups/${id}.only.ContactToGroup.tsv --contact_hit ${d}${d2}${id}.ContactHit.tsv --pcid -1.0 --lf_fist 0.8 --resres 1\n", @{$th}; close(PBS);}}'
 
 # now submit to pbs

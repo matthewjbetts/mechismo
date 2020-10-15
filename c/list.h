@@ -19,6 +19,8 @@ int listDelete(LIST * list, int (*deleteThing)(void *thing));
 void *listShift(LIST *list);
 int listSort(LIST *list, int (*cmp)(const void *, const void *));
 int listSortById(const void *a, const void *b);
+int listSortByAscN(const void *a, const void *b);
+int listSortByDescN(const void *a, const void *b);
 int listDeleteList(void *thing);
 
 #endif
