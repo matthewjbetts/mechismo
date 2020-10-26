@@ -173,10 +173,17 @@ int contactHitNR(unsigned int *idCh, const char *idSeqA1, HASH *contactHits, HAS
                         memset(idContactKey1, '\0', IDLEN);
                         sprintf(idContactKey1, "%u", ch1->cA2B2->id);
                         ch1->id = ++(*idCh);
+
                         contactHitResiduesCreate(ch1);
-                        //contactHitResiduesDelete(ch1); // create then delete as want counts but not massive output files at the moment
+                        if(ch1->nResResA1B1 == 0) {
+                            discardCh[j] = 1;
+                            //printf("discarding %u\n", ch1->id);
+                            contactHitResiduesDelete(ch1);
+                            continue;
+                        }
                         contactHitOutput(ch1, fhContactHit, fhContactHitResidue);
                         contactHitResiduesDelete(ch1);
+
                         if(++nTemplates >= maxNTemplates) break;
 
                         idGroup1 = (char *) hashGetElement(contactToGroup, idContactKey1);

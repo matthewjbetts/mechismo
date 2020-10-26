@@ -62,14 +62,16 @@ ls *.pbs | pbs_siesta.pl --wait 0
 
 ~~~~
 # copy the helper script to the proper location, ensure it is triggered on reboot, and start the app 
+# FIXME - replace "fist" with server name (inc. in fist_fastcgi.int)
+# FIXME - replace hardcoded paths in fist_fastcgi.init
 sudo cp ./script/fist_fastcgi.init /etc/init.d/fist
 sudo /sbin/chkconfig --add fist
 sudo /etc/init.d/fist restart
 
 
 # set up virtual host in /etc/httpd/conf/httpd.conf
-cat << EOF >> /etc/httpd/conf/httpd.conf
-
+# FIXME - replace "mechismo" with server name
+# FIXME - replace hardcoded paths if possible
 <VirtualHost *:80>
   ServerName mechismo.russelllab.org
 
@@ -87,8 +89,8 @@ cat << EOF >> /etc/httpd/conf/httpd.conf
     SetHandler default-handler
   </Location>
 
-  FastCgiExternalServer /net/netfile2/ag-russell/mechismo/processes/mechismo.fcgi -socket /net/netfile2/ag-russell/mechismo/processes/mechismo.socket -idle-timeout 300
-  Alias / /net/netfile2/ag-russell/mechismo/processes/mechismo.fcgi/
+  FastCgiExternalServer /net/home.isilon/ag-russell/mechismo/processes/mechismo.fcgi -socket /net/home.isilon/ag-russell/mechismo/processes/mechismo.socket -idle-timeout 300
+  Alias / /net/home.isilon/ag-russell/mechismo/processes/mechismo.fcgi/
 
   AddEncoding gzip .gz
   <FilesMatch "\.gz$">
@@ -97,11 +99,9 @@ cat << EOF >> /etc/httpd/conf/httpd.conf
   </FilesMatch>
 </VirtualHost>
 
-EOF
-
 # FIXME - make graceful reload conditional on successful configtest 
-sudo /etc/init.d/httpd/configtest
-sudo /etc/init.d/httpd/graceful
+sudo /etc/init.d/httpd configtest
+sudo /etc/init.d/httpd graceful
 ~~~~
 
 ## Data generation and import
@@ -115,8 +115,9 @@ sudo /etc/init.d/httpd/graceful
 export MECHISMO=`pwd`/ # FIXME - won't need this if mechismo is properly installed
 export MECHISMO_V=3.0 # FIXME - set this in config file
 export MECHISMO_DN=./data/processed/${MECHISMO_V}/ # FIXME - set this in config file
-export MECHISM_DB=mechismo3_0 # FIXME - use value in config file
+export MECHISMO_DB=mechismo3_0 # FIXME - use value in config file
 export DS=/net/home.isilon/ds-russell/ # FIXME - set this in config file, or paths to individual datasets
+export TAXA='272634 224308 83333 559292 6239 7227 10090 9606 2697049 3702'
 
 # create the db and user
 ./script/create_db.pl fist.conf
@@ -210,10 +211,6 @@ mkdir -p ${MECHISMO_DN}uniprot
 /usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.time zcat /net/netfile1/ds-russell/uniprot/knowledgebase/idmapping/idmapping.dat.gz | perl -I./lib script/uniprot_mapping.pl 1> ${MECHISMO_DN}uniprot/id_mapping.tsv 2> ${MECHISMO_DN}uniprot/id_mapping.err
 /usr/bin/time -o ${MECHISMO_DN}uniprot/id_mapping.import.time perl -e 'print"Fist::IO::Alias\t$ENV{MECHISMO_DN}uniprot/id_mapping.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl &> ${MECHISMO_DN}uniprot/id_mapping.import.err
 gzip ${MECHISMO_DN}uniprot/id_mapping.tsv
-
-
-## define taxa of interest
-export TAXA='272634 224308 83333 559292 6239 7227 10090 9606 2697049 3702'
 
 
 ## extract fasta format sprot and varsplic sequences with database ids for the taxa of interest
@@ -463,7 +460,7 @@ done
 
 # create shell jobs
 mkdir -p ${MECHISMO_DN}contact_groups
-./script/get_contact_group_sh.pl
+./script/get_contact_group_sh.pl # FIXME - only need 0.0-0.8-0.8 groups
 
 
 # now run on local machine
@@ -476,6 +473,7 @@ done
 # ensure id_group is in ascending order (needed for id_mapping with offsets to work).
 # could output this way from mechismoGroupContacts but is nice to see jaccard
 # sub groups immediately after contacts grouped by sequence
+# FIXME - wouldn't need to do this if unique ids were output
 ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; system("sort -n -k +1 -o $_ $_");'
 ls ${MECHISMO_DN}contact_groups/*.ContactToGroup.tsv | perl -ne 'chomp; system("sort -n -k +2 -o $_ $_");'
 
@@ -495,40 +493,6 @@ ls ${MECHISMO_DN}contact_groups/*.ContactGroup.tsv | perl -ne 'chomp; $f1 = $_; 
 # archive
 gzip ${MECHISMO_DN}contact_groups/*.{ContactGroup,ContactToGroup}.tsv
 ~~~~
-
-### measure interface overlap in known structures
-(aka. how bad is only using distance between atoms as the definition of an interface?)
-~~~~
-perl -I./lib ./script/known_structures_interface_overlap.pl 2> ${MECHISMO_DN}known_structures_interface_overlap.err | gzip > ${MECHISMO_DN}known_structures_interface_overlap.tsv.gz &
-~~~~
-
-########## TESTING mechismoGroupContacts, AND GROUPING WITH OTHER IDs ##########
-
-# test runs: 
-./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.1000.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.1000.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.1000.tsv.gz
-./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.cg531629.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.cg531629.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.cg531629.tsv.gz
-./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.tsv.gz
-
-
-# using ECOD domain identifiers and STAMP format domain descriptions:
-/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.ecod.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_to_fist.ecod.sql 2> ${MECHISMO_DN}frag_inst_to_fist.ecod.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.ecod.tsv.gz &
-/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.ecod.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_contacts_with_fist_numbers.ecod.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.ecod.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.ecod.tsv.gz &
-./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.ecod.1000.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.ecod.1000.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.ecod.1000.tsv.gz
-
-mkdir -p ${MECHISMO_DN}contact_groups/ecod
-perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/ecod/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.ecod.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.ecod.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
-# now submit on cluster
-
-
-# using STAMP format domain descriptions
-/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.idcode.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_to_fist.idcode.sql 2> ${MECHISMO_DN}frag_inst_to_fist.idcode.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.idcode.tsv.gz &
-/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.idcode.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_contacts_with_fist_numbers.idcode.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.idcode.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.idcode.tsv.gz &
-
-mkdir -p ${MECHISMO_DN}contact_groups/idcode
-perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/idcode/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.idcode.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.idcode.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
-# now submit on cluster
-
-################################################################################
 
 ### ELM
 ~~~~
@@ -559,7 +523,6 @@ perl -e 'print "Fist::IO::FeatureInst\t$ENV{MECHISMO_DN}elm/uniprot/sprot_varspl
 find ./data/processed/3.0/elm/ -name '*.tsv' -exec gzip {} +
 ~~~~
 
-########## DONE TO HERE ##########
 
 ### hierarchical uniprot to fist matching
 
@@ -586,75 +549,104 @@ name=random
 
 
 # extract necessary information for each species
+# FIXME - allow specific inter-species contacts hits
 for id_taxon in $TAXA
 do
   mkdir -p ${MECHISMO_DN}contact_hits/${id_taxon}
   /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.time perl -I./lib ./script/get_query_to_fist.pl --source 'uniprot-sprot' --source varsplic --taxon ${id_taxon} 2> ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.err | gzip > ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz &
-  mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names -e "SELECT id FROM Seq AS a, SeqToTaxon AS b WHERE a.source IN ('uniprot-sprot', 'varsplic') AND b.id_seq = a.id AND b.id_taxon = ${id_taxon}" > ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt &
+  mysql -D ${MECHISMO_DB} --quick --skip-column-names -e "SELECT id FROM Seq AS a, SeqToTaxon AS b WHERE a.source IN ('uniprot-sprot', 'varsplic') AND b.id_seq = a.id AND b.id_taxon = ${id_taxon}" > ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt &
 done
 
 
 # find ContactHits
-# FIXME - only the bigger species need 30gb (because more hsps)
-# FIXME - create shell scripts rather than PBS
-perl -e '$d = qx(pwd); chomp($d); $d .= "/"; foreach $id_taxon (272634,224308,83333,559292,6239,7227,10090,9606){$d2 = "${MECHISMO_DN}contact_hits/${id_taxon}/"; foreach $th ([0.0, 0.8, 0.8]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; print"$fn\n";open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N ch${id_taxon}.${id}\n#PBS -o ${d}${d2}${id}.stdout\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=30gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n/usr/bin/time -o ${d}${d2}${id}.time ${d}c/mechismoContactHits --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.tsv.gz --dom_to_chem_type ${d}${MECHISMO_DN}frag_inst_chem_type.tsv.gz --queries ${d}${d2}queries.txt -hsps ${d}${d2}query_to_fist.tsv.gz --contact_to_group ${d}${MECHISMO_DN}contact_groups/${id}.only.ContactToGroup.tsv --contact_hit ${d}${d2}${id}.ContactHit.tsv --pcid -1.0 --lf_fist 0.8 --resres 1\n", @{$th}; close(PBS);}}'
+ ./script/get_contact_hit_sh.pl
 
-# now submit to pbs
-
+# now run on server
+for fn in ${MECHISMO_DN}contact_hits/*/*.sh; do source ${fn}; done & # not running in parallel as big ones take a lot of memory
 
 # import
-ls -rS ${MECHISMO_DN}contact_hits/*/0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/\S+ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/import.inp
+ls -rS ${MECHISMO_DN}contact_hits/*/0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /contact_hits\/(\d+)\/\S+ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/import.inp
 /usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
 
-################ split queries ################
-# split queries by single-linkage of all possible PPI pairs
-# FIXME - ensure same parameters are used as in mechismoContactHits (min_n_resres, min_lf_fist)
-for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
+# archive
+for taxon in $TAXA
 do
-  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.time ./script/split_contact_hit_queries.pl 10 1 0.8 ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz ${MECHISMO_DN}frag_inst_to_fist.tsv.gz ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz &> ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.err &
+  tar -C ${MECHISMO_DN}contact_hits -czf ${MECHISMO_DN}contact_hits/${taxon}.tar.gz ./${taxon} &
+  rm -rf ${MECHISMO_DN}contact_hits/${taxon}/
 done
+~~~~
 
-# get pbs scripts
-./scripts/contact_hits_pbs.pl
-
-# submit to cluster
-
-# import
-ls -rS ${MECHISMO_DN}contact_hits/*/*.0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/(\d+)\.0\.0-0\.8-0\.8\.ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=${1}_${2}\n";' > ${MECHISMO_DN}contact_hits/import.inp
-/usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
-
-###############################################
-
-## string aliases and interactions
+### string aliases and interactions
+~~~~
 mkdir -p ${MECHISMO_DN}string/
-perl -I./lib ./script/parse_string.pl --outdir ${MECHISMO_DN}string/ --taxon 272634 --taxon 224308 --taxon 83333 --taxon 559292 --taxon 6239 --taxon 7227 --taxon 10090 --taxon 9606 --aliases $DS/string/protein.aliases.v10.txt.gz --links $DS/string/protein.links.v10.txt.gz > ${MECHISMO_DN}string/string.stdout 2> ${MECHISMO_DN}string/string.stderr &
+export STRING_V=v11.0
+perl -I./lib ./script/parse_string.pl --outdir ${MECHISMO_DN}string/ `for taxon in $TAXA; do echo "--taxon ${taxon}"; done` --aliases $DS/string/protein.aliases.${STRING_V}.txt.gz --links $DS/string/protein.links.${STRING_V}.txt.gz > ${MECHISMO_DN}string/string.stdout 2> ${MECHISMO_DN}string/string.stderr &
 
 # per taxon if needed:
-for id_taxon in 272634 224308 83333 559292 6239 7227 10090 9606
+for id_taxon in $TAXA
 do
   mkdir -p ${MECHISMO_DN}string/${id_taxon}
-  perl -I./lib ./script/parse_string.pl --outdir ${MECHISMO_DN}string/${id_taxon} --taxon ${id_taxon} --aliases $DS/string/protein.aliases.v10.txt.gz --links $DS/string/protein.links.v10.txt.gz > ${MECHISMO_DN}string/${id_taxon}/String.stdout 2> ${MECHISMO_DN}string/${id_taxon}/String.stderr &
+  perl -I./lib ./script/parse_string.pl --outdir ${MECHISMO_DN}string/${id_taxon} --taxon ${id_taxon} --aliases $DS/string/protein.aliases.${STRING_V}.txt.gz --links $DS/string/protein.links.${STRING_V}.txt.gz > ${MECHISMO_DN}string/${id_taxon}/String.stdout 2> ${MECHISMO_DN}string/${id_taxon}/String.stderr &
 done
 
 # import
-mysql -p -D ${MECHISMO_DB} -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}string/Alias.tsv" INTO TABLE Alias (id_seq, alias, type);'
-mysql -p -D ${MECHISMO_DB} -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}string/StringInt.tsv" INTO TABLE StringInt (id_seq1, id_seq2, id_string1, id_string2, score);'
+echo "LOAD DATA LOCAL INFILE \"${MECHISMO_DN}string/Alias.tsv\" INTO TABLE Alias (id_seq, alias, type);" | mysql -p -D ${MECHISMO_DB}
+echo "LOAD DATA LOCAL INFILE \"${MECHISMO_DN}string/StringInt.tsv\" INTO TABLE StringInt (id_seq1, id_seq2, id_string1, id_string2, score);" | mysql -p -D ${MECHISMO_DB}
 
+# archive
+gzip ${MECHISMO_DN}string/{Alias,StringInt}.tsv
 
-## PDB chemical types (from Rob)
+~~~~
+
+### PDB chemical types (from Rob)
+~~~~
 perl -ne 'chomp; @F = split; $F[0] =~ s/\A_+//; print join("\t", @F), "\n";' /home/bq_rrussell/jobs/het/current_classes.txt > ${MECHISMO_DN}pdb_chem.tsv
-mysql -p -D ${MECHISMO_DB} -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}pdb_chem.tsv" INTO TABLE PdbChem (id_chem, type);'
+echo "LOAD DATA LOCAL INFILE \"${MECHISMO_DN}pdb_chem.tsv\" INTO TABLE PdbChem (id_chem, type);" | mysql -p -D ${MECHISMO_DB}
+gzip ${MECHISMO_DN}pdb_chem.tsv
+~~~~
 
 
+## Old/test stuff
+Poorly structured notes. May need updating.
 
-###### OLD STUFF, NEEDS UPDATING ######
+### measure interface overlap in known structures
+(aka. how bad is only using distance between atoms as the definition of an interface?)
+~~~~
+perl -I./lib ./script/known_structures_interface_overlap.pl 2> ${MECHISMO_DN}known_structures_interface_overlap.err | gzip > ${MECHISMO_DN}known_structures_interface_overlap.tsv.gz &
+~~~~
+
+### Testing mechismoGroupContacts, and grouping with other ids
+~~~~
+# test runs: 
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.1000.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.1000.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.1000.tsv.gz
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.cg531629.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.cg531629.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.cg531629.tsv.gz
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.tsv.gz
+
+# using ECOD domain identifiers and STAMP format domain descriptions:
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.ecod.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_to_fist.ecod.sql 2> ${MECHISMO_DN}frag_inst_to_fist.ecod.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.ecod.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.ecod.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_contacts_with_fist_numbers.ecod.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.ecod.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.ecod.tsv.gz &
+./c/mechismoGroupContacts --contacts ${MECHISMO_DN}contacts_with_fist_numbers.ecod.1000.tsv.gz --hsps ${MECHISMO_DN}fist_vs_fist_aseqs.ecod.1000.tsv.gz --dom_to_seq ${MECHISMO_DN}frag_inst_to_fist.ecod.1000.tsv.gz
+
+mkdir -p ${MECHISMO_DN}contact_groups/ecod
+perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/ecod/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.ecod.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.ecod.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
+# now submit on cluster
 
 
-## load GO terms in to db
+# using STAMP format domain descriptions
+/usr/bin/time -o ${MECHISMO_DN}frag_inst_to_fist.idcode.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_frag_inst_to_fist.idcode.sql 2> ${MECHISMO_DN}frag_inst_to_fist.idcode.err | gzip > ${MECHISMO_DN}frag_inst_to_fist.idcode.tsv.gz &
+/usr/bin/time -o ${MECHISMO_DN}contacts_with_fist_numbers.idcode.time mysql -u anonymous -D ${MECHISMO_DB} --quick --skip-column-names < sql/get_contacts_with_fist_numbers.idcode.sql | ./script/contacts_with_fist_numbers_one_per_line.pl 2> ${MECHISMO_DN}contacts_with_fist_numbers.idcode.err | gzip > ${MECHISMO_DN}contacts_with_fist_numbers.idcode.tsv.gz &
+
+mkdir -p ${MECHISMO_DN}contact_groups/idcode
+perl -e 'BEGIN{$d = qx(pwd); chomp($d); $d .= "/"; $d2 = "${MECHISMO_DN}contact_groups/idcode/";}foreach $th ([100.0, 1.0, 1.0], [100.0, 0.9, 0.9], [90.0, 0.9, 0.9], [70.0, 0.9, 0.9], [50.0, 0.9, 0.9], [0.0, 0.9, 0.9]){$id = sprintf "%.1f-%.1f-%.1f", @{$th}; $fn = "${d}${d2}${id}.pbs"; open(PBS, ">$fn") or die $fn; printf PBS "#PBS -N gc${id}\n#PBS -o /dev/null\n#PBS -e ${d}${d2}${id}.stderr\n#PBS -l nodes=1:ppn=1\n#PBS -l mem=20gb\n#PBS -m ae\n#PBS -M matthew.betts\@bioquant.uni-heidelberg.de\n${d}c/mechismoGroupContacts --contacts ${d}${MECHISMO_DN}contacts_with_fist_numbers.idcode.tsv.gz --hsps ${d}${MECHISMO_DN}fist_vs_fist_aseqs.tsv.gz --dom_to_seq ${d}${MECHISMO_DN}frag_inst_to_fist.idcode.tsv.gz --pcid %.1f --lf %.1f --jaccard %.1f | gzip > ${d}${d2}${id}.txt.gz\n\n", @{$th}; close(PBS);}'
+# now submit on cluster
+~~~~
+
+### GO
+~~~~
+#load GO terms in to db
 mkdir -p ${MECHISMO_DN}GO/
 ./script/parse_go.pl < ${DS}GO/gene_ontology_ext.obo 1> ${MECHISMO_DN}GO/gene_ontology_ext.tsv 2> ${MECHISMO_DN}GO/gene_ontology_ext.err
 perl -e 'print"Fist::IO::GoTerm\t$ENV{MECHISMO_DN}GO/gene_ontology_ext.tsv\n";' | perl -I./lib ./script/import_tsv.pl 
-
 
 ## categorise query proteins by top level GO biological process
 perl -ne 'BEGIN{$flag = 1;} if(/^\[Term\]/){$flag and defined($term) and print(@{$term}); $term = []; $flag = 0;}elsif(/^is_a: GO:0008150/){$flag = 1;}elsif(/^\[/){$term = undef; $flag = 0;} if(defined($term)){push @{$term}, $_;}elsif($flag){print;} END{$flag and defined($term) and print(@{$term});}' ${DS}GO/gene_ontology_ext.obo > ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo
@@ -663,28 +655,31 @@ mkdir -p ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/
 map2slim ${MECHISMO_DN}uniprot/sprot/goslim_biological_process.obo ${DS}GO/gene_ontology_ext.obo ${DS}uniprot-goa/gene_association.goa_uniprot.gz 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.err | gzip >${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz # run on pevolution as takes a lot of memory
 zcat ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/uniprot-goa.slim.txt.gz | perl -I./lib ./script/parse_goa.pl --subset goslim_biological_process 1> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv 2> ${MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.err
 perl -e 'print"Fist::IO::GoAnnotation\t$ENV{MECHISMO_DN}uniprot/sprot/goslim_biological_process/GoAnnotation.tsv\tid_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl 
+~~~~
 
-
-## load site types
+### load site types
+~~~~
 mysql -p -D fistdb -e 'LOAD DATA LOCAL INFILE "${MECHISMO_DN}sites/types.tsv" INTO TABLE SiteType (abbr, type);'
+~~~~
 
-
-## load UniProt human variations
+### load UniProt human variations
+~~~~
 mkdir -p ${MECHISMO_DN}sites/humsavar/
 perl -I./lib ./script/parse_humsavar.pl --outdir ${MECHISMO_DN}sites/humsavar/ ${DS}uniprot/docs/humsavar.txt  1> ${MECHISMO_DN}sites/humsavar/stdout 2> ${MECHISMO_DN}sites/humsavar/stderr
 perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/humsavar/Site.tsv\tid_site=01\n";' > ${MECHISMO_DN}sites/humsavar/import.inp
 perl -e 'print"Fist::IO::DiseaseToSite\t$ENV{MECHISMO_DN}sites/humsavar/DiseaseToSite.tsv\tid_site=01,id_disease=DB\n";' >> ${MECHISMO_DN}sites/humsavar/import.inp
 perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/humsavar/import.inp &> ${MECHISMO_DN}sites/humsavar/import.err
+~~~~
 
-
-## load PTMs
+### PTMs
+~~~~
+# load PTMs
 mkdir -p ${MECHISMO_DN}sites/ptms/pablo/
 perl -I./lib ./script/parse_pablo_ptms.pl --outdir ${MECHISMO_DN}sites/ptms/pablo/ $GH/work/ptms/pablos_${MECHISMO_DN}*.txt  1> ${MECHISMO_DN}sites/ptms/pablo/stdout 2> ${MECHISMO_DN}sites/ptms/pablo/stderr
 perl -e 'print"Fist::IO::Site\t$ENV{MECHISMO_DN}sites/ptms/pablo/Site.tsv\tid=01\n";' > ${MECHISMO_DN}sites/ptms/pablo/import.inp
 perl -e 'print"Fist::IO::Pmid\t$ENV{MECHISMO_DN}sites/ptms/pablo/Pmid.tsv\n";' >> ${MECHISMO_DN}sites/ptms/pablo/import.inp
 perl -e 'print"Fist::IO::PmidToSite\t$ENV{MECHISMO_DN}sites/ptms/pablo/PmidToSite.tsv\tid_site=01\n";' >> ${MECHISMO_DN}sites/ptms/pablo/import.inp
 perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}sites/ptms/pablo/import.inp &> ${MECHISMO_DN}sites/ptms/pablo/import.err
-
 
 ## download data from www.phosida.com
 # filenames, taxa, pubmed ids, and site types are listed in ${MECHISMO_DN}sites/ptms/PHOSIDA/fofn.txt
@@ -801,8 +796,10 @@ perl -I./lib script/set_pmid_throughput.pl --high 100 --medium 20 &> ${MECHISMO_
 ## load the known enzymes for each PTM
 perl -I./lib/ ./script/site_enzymes.pl /net/netfile2/ag-russell/bq_mbetts/work/ptms/pablos_${MECHISMO_DN}ptm_data_enzymes/* > ${MECHISMO_DN}sites/ptms/pablo/EnzymeToSite.tsv 2> ${MECHISMO_DN}sites/ptms/pablo/EnzymeToSite.err
 perl -e 'print"Fist::IO::EnzymeToSite\t$ENV{MECHISMO_DN}sites/ptms/pablo/EnzymeToSite.tsv\tid_site=DB,id_seq=DB\n";' | perl -I./lib ./script/import_tsv.pl
+~~~~
 
-
+### misc
+~~~~
 ## get start positions of chain segments in the fist sequences of fragments
 ## (which are not necessarily the same as in the full chain fist sequence)
 mysql -p -D fistdb < sql/chain_seqment_fist.sql
@@ -1128,6 +1125,26 @@ do
 done
 
 
+################ split contact_hit queries ################
+# split queries by single-linkage of all possible PPI pairs
+# FIXME - ensure same parameters are used as in mechismoContactHits (min_n_resres, min_lf_fist)
+for id_taxon in $TAXA
+do
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.time ./script/split_contact_hit_queries.pl 10 1 0.8 ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz ${MECHISMO_DN}frag_inst_to_fist.tsv.gz ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz &> ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.err &
+done
+
+# get pbs scripts
+./scripts/contact_hits_pbs.pl
+
+# submit to cluster
+
+# import
+ls -rS ${MECHISMO_DN}contact_hits/*/*.0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/(\d+)\.0\.0-0\.8-0\.8\.ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=${1}_${2}\n";' > ${MECHISMO_DN}contact_hits/import.inp
+/usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
+
+##########################################################
+
+
 ## number of sequences per organism in sprot, sprot varsplic (isoforms), and trembl
 for source in sprot sprot_varsplic trembl
 do
@@ -1278,3 +1295,4 @@ ls ${MECHISMO_DN}contact_hits/reverse_homo/ContactHitRes.tsv | perl -ne 'chomp; 
 perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/reverse_homo/import.inp &> ${MECHISMO_DN}contact_hits/reverse_homo/import.err
 
 # FIXME - then test Gsk3b/S219Sp
+~~~~

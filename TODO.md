@@ -17,8 +17,8 @@
     * [ ] add them to my path
     * [ ] make them part of the installation makefile
     * [ ] allow multi-character chain identifiers
-    * [ ] explain/control differences in number of res-res pairs in contacts between
-          mechismoGroupContacts input and internal calculation
+    * [ ] mechismoGroupContacts: explain/control differences in number of res-res
+          pairs in contacts between input and internal calculation
 * [ ] database
   * [ ] add table for primary data versions (uniprot release, etc)
 * [ ] bug fixes

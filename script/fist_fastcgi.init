@@ -13,34 +13,34 @@ server_name=mechismo
 
 start() {
     # create a temporary directory for the server
-    /bin/su bq_mbetts -c "mkdir -p /net/netfile2/ag-russell/mechismo/processes/$server_name";
+    /bin/su bq_mbetts -c "mkdir -p /net/home.isilon/ag-russell/mechismo/processes/$server_name";
 
     # run queues as user bq_mbetts
     echo $"Starting $server_name queues..."
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue01.pid &"
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue02.pid &"
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue03.pid &"
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue04.pid &"
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue05.pid &"
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/netfile2/ag-russell/mechismo/processes/$server_name/queue06.pid &"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/home.isilon/ag-russell/mechismo/processes/$server_name/queue01.pid &"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/home.isilon/ag-russell/mechismo/processes/$server_name/queue02.pid &"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type long --pid /net/home.isilon/ag-russell/mechismo/processes/$server_name/queue03.pid &"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/home.isilon/ag-russell/mechismo/processes/$server_name/queue04.pid &"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/home.isilon/ag-russell/mechismo/processes/$server_name/queue05.pid &"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; perl -I./lib ./script/fist_queue.pl --type short --pid /net/home.isilon/ag-russell/mechismo/processes/$server_name/queue06.pid &"
 
     # run server as user bq_mbetts
     echo $"Starting $server_name FastCGI server..."
-    /bin/su bq_mbetts -c "source /net/netfile2/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; ./script/fist_fastcgi.pl -l /net/netfile2/ag-russell/mechismo/processes/${server_name}.socket -n 5 -p /net/netfile2/ag-russell/mechismo/processes/${server_name}.pid -d"
+    /bin/su bq_mbetts -c "source /net/home.isilon/ag-russell/admin/profile; cd /var/www/catalyst_apps/${server_name}; ./script/fist_fastcgi.pl -l /net/home.isilon/ag-russell/mechismo/processes/${server_name}.socket -n 5 -p /net/home.isilon/ag-russell/mechismo/processes/${server_name}.pid -d"
     echo
 }
 
 
 stop() {
     echo $"Stopping $server_name queues..."
-    for fn in /net/netfile2/ag-russell/mechismo/processes/${server_name}/queue*.pid
+    for fn in /net/home.isilon/ag-russell/mechismo/processes/${server_name}/queue*.pid
     do
       cat $fn | xargs kill
       rm -f $fn
     done
     echo $"Stopping $server_name FastCGI server..."
-    cat /net/netfile2/ag-russell/mechismo/processes/${server_name}.pid | xargs kill
-    rm -f /net/netfile2/ag-russell/mechismo/processes/${server_name}.pid
+    cat /net/home.isilon/ag-russell/mechismo/processes/${server_name}.pid | xargs kill
+    rm -f /net/home.isilon/ag-russell/mechismo/processes/${server_name}.pid
 }
 
 # See how we were called.
