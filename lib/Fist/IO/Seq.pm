@@ -87,6 +87,14 @@ sub parse_uniprot {
     $source = defined($trembl) ? 'uniprot-trembl' : 'uniprot-sprot';
 
     if(!defined($in = $self->in)) {
+        # UniProt changed their feature table format with release 2019_11,
+        # breaking the bioperl parser...
+        #
+        # The bioperl embl parser can parse the new feature tables, but it
+        # doesn't parse some of the other uniprot stuff, eg. GN (gene names);
+        #
+        # argh...
+        #$in = Bio::SeqIO->new(-fh => $self->fh, -format => 'swiss');
         $in = Bio::SeqIO->new(-fh => $self->fh, -format => 'embl');
         $self->in($in);
     }

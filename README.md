@@ -190,6 +190,13 @@ echo -e "Fist::IO::FeatureInst\t${MECHISMO_DN}uniprot/sprot/FeatureInst.tsv\tid=
 echo -e "Fist::IO::PmidToFeatureInst\t${MECHISMO_DN}uniprot/sprot/PmidToFeatureInst.tsv\tid_feature_inst=01" >> ${MECHISMO_DN}uniprot/sprot/import.inp
 /usr/bin/time -o ${MECHISMO_DN}uniprot/sprot/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}uniprot/sprot/import.inp &> ${MECHISMO_DN}uniprot/sprot/import.err
 
+
+# uniprot changed their feature table format with release 2019_11, such
+# that the bioperl swiss parser cannot parse it. Now using the bioperl embl
+# parser, but that doesn't get gene names, so:
+zcat ${DS}/uniprot/knowledgebase/complete/uniprot_sprot.dat.gz | perl -I./lib ./script/update_genenames.pl 1> ${MECHISMO_DN/uniprot/update_genenames.txt 2> ${MECHISMO_DN/uniprot/update_genenames.err
+
+
 # archive the text files
 tar -C ${MECHISMO_DN} -czf ${MECHISMO_DN}uniprot_parsed.tar.gz ./uniprot
 rm -rf ${MECHISMO_DN}/uniprot
