@@ -64,6 +64,7 @@ $rs_aliases = $schema->resultset('Alias');
 $gnString = '';
 while(<STDIN>) {
     if(/^AC   (\S+)/) {
+        defined($acc) and next;
         $acc = $1;
         $acc =~ s/;.*//;
     }
@@ -72,7 +73,10 @@ while(<STDIN>) {
         $gnString .= $_;
     }
     elsif(/^\/{2}/) {
+        print "HERE: '$acc'\n";
         if(defined($seq = $schema->resultset('Seq')->find({primary_id => $acc}))) {
+            print "HERE\n";
+
             $gnString =~ s/\s*\{.*?\}//g;
             foreach $keyValuePair (split /\s*;\s*/, $gnString) {
                 if($keyValuePair =~ /\A(.*?)=(.*)/) {
@@ -91,7 +95,7 @@ while(<STDIN>) {
             $seq->update();
         }
 
-        $acc = '';
+        $acc = undef;
         $gnString = '';
     }
 }
