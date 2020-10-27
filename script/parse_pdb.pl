@@ -653,7 +653,11 @@ sub parse {
             # different pieces were oriented in the same way wrt. each other as they are
             # in the original PDB from which the SCOP annotation comes.
 
-            $dn_biounit = sprintf "%s/biounit/%s/", $ENV{DS}, substr($idcode, 1, 2);
+            $dn_biounit = sprintf "%s/pdb-biounit/%s/", $ENV{DS}, substr($idcode, 1, 2);
+            if(!(-d $dn_biounit)) {
+                warn "Warning: parse: '$dn_biounit' dir does not exist.";
+                next;
+            }
 
             if(!defined($biounit = $biounits->{$idcode})) {
                 foreach $fn_biounit (glob("$dn_biounit${idcode}-*-*.pdb.gz")) {

@@ -25,6 +25,7 @@
   * [ ] sifts matches are represented as global alignments but would be
         clearer to remove N and C-terminal overhangs to fix start and end
         positions in HSPs (probably easiest in alignment.c)
+  * [ ] ecod uses mmCIF residue numbering not ATOM resSeq
 
 ## Old
 (Check if still relevant...)

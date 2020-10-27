@@ -467,7 +467,7 @@ done
 
 # create shell jobs
 mkdir -p ${MECHISMO_DN}contact_groups
-./script/get_contact_group_sh.pl # FIXME - only need 0.0-0.8-0.8 groups
+./script/get_contact_group_sh.pl
 
 
 # now run on local machine
