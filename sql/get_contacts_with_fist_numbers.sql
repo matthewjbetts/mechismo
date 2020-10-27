@@ -1,80 +1,52 @@
-# PPIs and PDIs
-SELECT c.id,             # 00
-       c.id_frag_inst1,  # 01
-       c.id_frag_inst2,  # 02
-       c.crystal,        # 03
-       c.n_res1,         # 04
-       c.n_res2,         # 05
-       c.n_clash,        # 06
-       c.n_resres,       # 07
-       frma1.fist fist1, # 08
-       frmb1.fist fist2  # 09
+SELECT ppx.id,                          # 00
+       ppx.id_frag_inst1,               # 01
+       ppx.id_frag_inst2,               # 02
+       ppx.crystal,                     # 03
+       ppx.n_res1,                      # 04
+       ppx.n_res2,                      # 05
+       ppx.n_clash,                     # 06
+       ppx.n_resres,                    # 07
+       frma1.fist AS fist1,             # 08
+       COALESCE(frmb1.fist, 1) AS fist2 # 09 # '1' for frags with no fist sequence (i.e. chemicals)
+FROM (
+SELECT c.id,
+       c.id_frag_inst1,
+       c.id_frag_inst2,
+       fia1.id_frag AS id_frag1,
+       fib1.id_frag AS id_frag2,
+       c.crystal,
+       c.n_res1,
+       c.n_res2,
+       c.n_clash,
+       c.n_resres,
+       rc.chain1,
+       rc.resseq1,
+       rc.icode1,
+       rc.chain2,
+       rc.resseq2,
+       rc.icode2
+       
+FROM Contact AS c
+JOIN ResContact AS rc ON rc.id_contact = c.id
 
-FROM   Contact        AS c,   #FROM   (SELECT * FROM Contact LIMIT 10000)        AS c,
-       ResContact     AS rc,
+JOIN FragInst AS fia1 ON fia1.id = c.id_frag_inst1
+JOIN Frag AS fa1 ON fa1.id = fia1.id_frag AND fa1.chemical_type = 'peptide'
 
-       FragInst       AS fia1,
-       Frag           AS fa1,
-       FragResMapping AS frma1,
+JOIN FragInst AS fib1 ON fib1.id = c.id_frag_inst2
+JOIN Frag AS fb1 ON fb1.id = fib1.id_frag AND fb1.chemical_type != 'SITE'
 
-       FragInst       AS fib1,
-       Frag           AS fb1,
-       FragResMapping AS frmb1
+WHERE c.id_frag_inst2 != c.id_frag_inst1
+) AS ppx
 
-WHERE  c.id_frag_inst2 != c.id_frag_inst1
-AND    rc.id_contact = c.id
+LEFT JOIN FragResMapping AS frma1
+ON frma1.id_frag = ppx.id_frag1
+AND frma1.chain = ppx.chain1
+AND frma1.resSeq = ppx.resSeq1
+AND frma1.iCode = ppx.iCode1
 
-AND    fia1.id = c.id_frag_inst1
-AND    fa1.id = fia1.id_frag
-AND    fa1.chemical_type = 'peptide'
-AND    frma1.id_frag = fia1.id_frag
-AND    frma1.chain = rc.chain1
-AND    frma1.resSeq = rc.resSeq1
-AND    frma1.iCode = rc.iCode1
-
-AND    fib1.id = c.id_frag_inst2
-AND    fb1.id = fib1.id_frag
-AND    fb1.chemical_type IN ('peptide', 'nucleotide')
-AND    frmb1.id_frag = fib1.id_frag
-AND    frmb1.chain = rc.chain2
-AND    frmb1.resSeq = rc.resSeq2
-AND    frmb1.iCode = rc.iCode2
-;
-
-# PCIs
-SELECT c.id,             # 00
-       c.id_frag_inst1,  # 01
-       c.id_frag_inst2,  # 02
-       c.crystal,        # 03
-       c.n_res1,         # 04
-       c.n_res2,         # 05
-       c.n_clash,        # 06
-       c.n_resres,       # 07
-       frma1.fist fist1, # 08
-       1          fist2  # 09
-
-FROM   Contact        AS c,   #FROM   (SELECT * FROM Contact LIMIT 10000)        AS c,
-       ResContact     AS rc,
-
-       FragInst       AS fia1,
-       Frag           AS fa1,
-       FragResMapping AS frma1,
-
-       FragInst       AS fib1,
-       Frag           AS fb1
-
-WHERE  c.id_frag_inst2 != c.id_frag_inst1
-AND    rc.id_contact = c.id
-
-AND    fia1.id = c.id_frag_inst1
-AND    fa1.id = fia1.id_frag
-AND    fa1.chemical_type = 'peptide'
-AND    frma1.id_frag = fia1.id_frag
-AND    frma1.chain = rc.chain1
-AND    frma1.resSeq = rc.resSeq1
-AND    frma1.iCode = rc.iCode1
-
-AND    fib1.id = c.id_frag_inst2
-AND    fb1.id = fib1.id_frag
-AND    fb1.chemical_type NOT IN ('peptide', 'nucleotide')
+LEFT JOIN FragResMapping AS frmb1
+ON frmb1.id_frag = ppx.id_frag2
+AND frmb1.chain = ppx.chain2
+AND frmb1.resSeq = ppx.resSeq2
+AND frmb1.iCode = ppx.iCode2
 ;
