@@ -28,6 +28,8 @@ my $q_max_default = 200;
 my $q_max = $q_max_default;
 my $fn_fofn;
 my $fn_ecod;
+my $dn_biounit_default = $ENV{DS} . '/pdb-biounit/';
+my $dn_biounit = $dn_biounit_default;
 
 # other variables
 my $cleanup;
@@ -69,6 +71,7 @@ GetOptions(
            'q_max=i'   => \$q_max,
            'fofn=s'    => \$fn_fofn,
            'ecod=s'    => \$fn_ecod,
+           'biounit=s' => \$dn_biounit,
 	  );
 
 $cleanup = $nocleanup ? 0 : 1;
@@ -99,6 +102,7 @@ option       parameter  description                                  default
 --q_max      integer    max number of jobs on the scheduler at once  $q_max_default
 --fofn       string     file of file names of pdbs
 --ecod       string     name of ecod file
+--biounit    string     pdb biounit root directory                   $dn_biounit_default
 
 END
     die($usage);
@@ -249,7 +253,7 @@ else {
     $id_contact = 0;
     foreach $fn (@fns2) {
         $time_start = time;
-        $pdb = parse($fn, $ecod, $output, $tempdir, $cleanup);
+        $pdb = parse($fn, $dn_biounit, $ecod, $output, $tempdir, $cleanup);
         if($pdb->stamp_safe) {
             $pdb->get_contacts(\$id_contact, $output->{Contact}->{fn}, $output->{ResContact}->{fn});
         }
@@ -350,6 +354,7 @@ sub parse_ecod {
                 $pdb = {idcode => $hash{pdb}, domains => []};
                 $ecod->{pdbs}->{$hash{pdb}} = $pdb;
             }
+
             $domain = {id => $hash{ecod_domain_id}, id_ecod => $id_ecod, hierarchy => [$x, $h, $t, $f], ranges => []};
             push @{$pdb->{domains}}, $domain;
             foreach $range (split /,/, $hash{pdb_range}) {
@@ -413,7 +418,7 @@ sub output_ecod_hierarchy {
 
 
 sub parse {
-    my($fn, $ecod, $output, $tempdir, $cleanup) = @_;
+    my($fn, $dn_biounit, $ecod, $output, $tempdir, $cleanup) = @_;
 
     my $pdbio;
     my $pdb;
@@ -429,7 +434,7 @@ sub parse {
     my $frag_inst;
     my $cids;
     my $cid;
-    my $dn_biounit;
+    my $dn_biounit_sub;
     my $fn_biounit;
     my $biounits;
     my $biounit;
@@ -653,14 +658,14 @@ sub parse {
             # different pieces were oriented in the same way wrt. each other as they are
             # in the original PDB from which the SCOP annotation comes.
 
-            $dn_biounit = sprintf "%s/pdb-biounit/%s/", $ENV{DS}, substr($idcode, 1, 2);
-            if(!(-d $dn_biounit)) {
-                warn "Warning: parse: '$dn_biounit' dir does not exist.";
+            $dn_biounit_sub = sprintf "%s/%s/", $dn_biounit, substr($idcode, 1, 2);
+            if(!(-d $dn_biounit_sub)) {
+                warn "Warning: parse: '${dn_biounit_sub}' dir does not exist.";
                 next;
             }
 
             if(!defined($biounit = $biounits->{$idcode})) {
-                foreach $fn_biounit (glob("$dn_biounit${idcode}-*-*.pdb.gz")) {
+                foreach $fn_biounit (glob("${dn_biounit_sub}${idcode}-*-*.pdb.gz")) {
                     get_biounits($biounits, $fn_biounit);
                 }
                 $biounit = $biounits->{$idcode};
