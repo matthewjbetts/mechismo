@@ -118,12 +118,13 @@ export MECHISMO_DN=./data/processed/${MECHISMO_V}/ # FIXME - set this in config 
 export MECHISMO_DB=mechismo3_0 # FIXME - use value in config file
 export DS=/net/home.isilon/ds-russell/ # FIXME - set this in config file, or paths to individual datasets
 export TAXA='272634 224308 83333 559292 6239 7227 10090 9606 2697049 3702'
+export PDB_DN=${DS}/pdb/
 
 # create the db and user
 ./script/create_db.pl fist.conf
 
 # load the schema
-mysql -p -D ${MECHISMO_DB} < sql/schema.sql # FIXME - get dbname from config file
+mysql -D ${MECHISMO_DB} < sql/schema.sql # FIXME - get dbname from config file
 
 mkdir -p ${MECHISMO_DN}
 ~~~~
@@ -138,9 +139,8 @@ gzip ${MECHISMO_DN}ncbi_taxa/Taxon.tsv
 
 ### Structures
 ~~~~
-# FIXME - assumes biounit structures are stored in $DS/pdb-biounit/
 mkdir -p ${MECHISMO_DN}pdb
-/usr/bin/time -o ${MECHISMO_DN}pdb/parse.time perl -I./lib ./script/parse_pdb.pl --outdir ${MECHISMO_DN} --ecod $DS/ecod/ecod.latest.domains.txt --fork pdb --n_jobs 60 $DS/pdb 1> ${MECHISMO_DN}pdb/parse.txt 2> ${MECHISMO_DN}pdb/parse.err
+/usr/bin/time -o ${MECHISMO_DN}pdb/parse.time perl -I./lib ./script/parse_pdb.pl --outdir ${MECHISMO_DN} --ecod $DS/ecod/ecod.latest.domains.txt --fork pdb --n_jobs 60 $PDB_DN 1> ${MECHISMO_DN}pdb/parse.txt 2> ${MECHISMO_DN}pdb/parse.err
 # FIXME - check for PBS errors, re-run any affected files
 
 # import

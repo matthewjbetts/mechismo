@@ -4,6 +4,7 @@
   * [ ] write installation instructions
   * [ ] rewrite README.md to my current standards
   * [ ] add download instructions for primary data
+* [ ] move data construction to a pipeline, eg. in snakemake
 * [ ] refactoring
   * [ ] use unique identifiers directly rather than having to remap. This would
         also make re-importing tsv files possible, since ids would be maintained
