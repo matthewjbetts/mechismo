@@ -9,11 +9,8 @@ use Fist::IO::Ecod;
 my $help;
 my $dn_cif_default = $ENV{DS} . '/pdb-cif/';
 my $dn_cif = $dn_cif_default;
-my $fn_ecod;
 
 # other variables
-my $ecod_io;
-my $ecod;
 
 GetOptions(
 	   'help'  => \$help,
@@ -32,7 +29,7 @@ sub usage {
 
     $usage = <<END;
 
-Usage: $prog [options] ecod.latest.domains.txt
+Usage: $prog [options] < ecod.latest.domains.txt
 
 option       parameter  description                                  default
 ---------    ---------  ---------------- --------------------------  -------
@@ -44,21 +41,21 @@ END
 }
 
 defined($help) and usage();
-defined($fn_ecod = shift @ARGV) or usage();
-
-$ecod_io = Fist::IO::Ecod->new();
-$ecod = $ecod_io->parse_ecod_latest_domains($fn_ecod);
-map_all_to_auth($ecod);
+map_all_to_auth(\*STDIN);
 
 sub map_all_to_auth {
-    my($ecod) = @_;
+    my($fh) = @_;
 
+    my $idcode_p;
+    my $headings;
+    my @F;
+    my $rows;
+    my $row;
     my $idcode;
     my $fn_cif;
     my $to_auth_seq_id;
-    my $domain;
-    my $range;
     my $new_ranges;
+    my $range;
     my $cid;
     my $resSeq1;
     my $iCode1;
@@ -69,53 +66,87 @@ sub map_all_to_auth {
     my $resSeq1b;
     my $resSeq2b;
 
-    foreach $idcode (keys %{$ecod->{pdbs}}) {
-        print "# $idcode\n";
-        $fn_cif = sprintf "%s/%s/%s.cif.gz", $dn_cif, substr($idcode, 1, 2), $idcode;
-        if(!(-e $fn_cif)) {
-            warn "Warning: map_all_to_auth: '$fn_cif' not found.";
-            next;
-        }
-        $to_auth_seq_id = pdbx_poly_seq_scheme_to_auth_seq_id($fn_cif);
+    $_ = <$fh>;
+    until($_ =~ s/^#uid/uid/) {
+        print;
+        $_ = <$fh>;
+    }
+    chomp $_;
+    $headings = [split /\t/, $_];
+    push @{$headings}, 'resSeq_range';
+    print '#', join("\t", @{$headings}), "\n";
 
-        foreach $domain (@{$ecod->{pdbs}->{$idcode}->{domains}}) {
-            $new_ranges = [];
-            foreach $range (@{$domain->{ranges}}) {
-                ($cid, $resSeq1, $iCode1, $resSeq2, $iCode2) = @{$range};
+    $rows = [];
+    while(<$fh>) {
+        chomp;
+        @F = split /\t/;
+        $row = {};
+        @{$row}{@{$headings}} = (@F, '');
+        push @{$rows}, $row;
+    }
 
-                #printf "1: %s:%s%s-%s%s\n", $cid, $resSeq1, $iCode1, $resSeq2, $iCode2;
-
-                $resSeq1a = $resSeq1;
-                while(!defined($resSeq1b = $to_auth_seq_id->{$cid}->{$resSeq1a})) {
-                    # track forward to next defined position
-                    ++$resSeq1a;
-                    exists($to_auth_seq_id->{$cid}->{$resSeq1a}) or last; # $resSeq1a is after the end of $cid in $fn_cif
-                }
-                if(!defined($resSeq1b)) {
-                    warn "Error: map_all_to_auth: $cid:$resSeq1 not found in $fn_cif.";
-                    next;
-                }
-
-                $resSeq2a = $resSeq2;
-                while(!defined($resSeq2b = $to_auth_seq_id->{$cid}->{$resSeq2a})) {
-                    # track backwards to previous defined position
-                    --$resSeq2a;
-                    exists($to_auth_seq_id->{$cid->{$resSeq2a}}) or last; # $resSeq2a is after the end of $cid in $fn_cif
-                }
-                if(!defined($resSeq2b)) {
-                    warn "Error: map_all_to_auth: $cid:$resSeq2 not found in $fn_cif.";
-                    next;
-                }
-
-                if($resSeq2b < $resSeq1b) {
-                    warn "Error: map_all_to_auth: $cid:$resSeq1-$resSeq2 not found in $fn_cif.";
-                    next;
-                }
-
-                push @{$new_ranges}, sprintf "%s:%s%s-%s%s", $cid, $resSeq1b, $iCode1, $resSeq2b, $iCode2;
+    $idcode_p = '';
+    $to_auth_seq_id = undef;
+    foreach $row (sort {$a->{pdb} cmp $b->{pdb}} @{$rows}) {
+        $idcode = $row->{pdb};
+        if($idcode ne $idcode_p) {
+            $fn_cif = sprintf "%s/%s/%s.cif.gz", $dn_cif, substr($idcode, 1, 2), $idcode;
+            if(-e $fn_cif) {
+                $to_auth_seq_id = pdbx_poly_seq_scheme_to_auth_seq_id($fn_cif);
             }
-            print join("\t", $domain->{id}, $domain->{id_ecod}, join(',', @{$new_ranges})), "\n";
+            else {
+                warn "Warning: map_all_to_auth: '$fn_cif' not found.";
+                $to_auth_seq_id = undef;
+            }
         }
+        $idcode_p = $idcode;
+        defined($to_auth_seq_id) or next;
+
+        $new_ranges = [];
+        foreach $range (split /,/, $row->{seqid_range}) { # "derives from the 'seq_id' attribute of the 'pdbx_poly_seq_scheme'"
+            if($range =~ /\A(\S+?):(-{0,1}[\d]+)(\S{0,1}?)-(-{0,1}[\d]+)(\S{0,1})\Z/) {
+                ($cid, $resSeq1, $iCode1, $resSeq2, $iCode2) = ($1, $2, $3, $4, $5);
+            }
+            elsif($range =~ /\A(\S+?):(-{0,1}[\d]+)(\S{0,1})\Z/) {
+                ($cid, $resSeq1, $iCode1) = ($1, $2, $3);
+                ($resSeq2, $iCode2) = ($resSeq1, $iCode1);
+            }
+            else {
+                warn "Error: map_all_to_auth: do not understand $idcode range '$range'.";
+                next;
+            }
+
+            #printf "1: %s:%s%s-%s%s\n", $cid, $resSeq1, $iCode1, $resSeq2, $iCode2;
+
+            $resSeq1a = $resSeq1;
+            while(!defined($resSeq1b = $to_auth_seq_id->{$cid}->{$resSeq1a})) {
+                # track forward to next defined position
+                ++$resSeq1a;
+                exists($to_auth_seq_id->{$cid}->{$resSeq1a}) or last; # $resSeq1a is after the end of $cid in $fn_cif
+            }
+            if(!defined($resSeq1b)) {
+                warn "Error: map_all_to_auth: $cid:$resSeq1 not found in $fn_cif.";
+                next;
+            }
+
+            $resSeq2a = $resSeq2;
+            while(!defined($resSeq2b = $to_auth_seq_id->{$cid}->{$resSeq2a})) {
+                # track backwards to previous defined position
+                --$resSeq2a;
+                exists($to_auth_seq_id->{$cid}->{$resSeq2a}) or last; # $resSeq2a is after the end of $cid in $fn_cif
+            }
+            if(!defined($resSeq2b)) {
+                warn "Error: map_all_to_auth: $cid:$resSeq2 not found in $fn_cif.";
+                next;
+            }
+
+            push @{$new_ranges}, sprintf "%s:%s%s-%s%s", $cid, @{$resSeq1b}, @{$resSeq2b};
+        }
+        $row->{resSeq_range} = join(',', @{$new_ranges});
+    }
+
+    foreach $row (@{$rows}) {
+        print join("\t", @{$row}{@{$headings}}), "\n";
     }
 }
 
@@ -179,7 +210,10 @@ sub pdbx_poly_seq_scheme_to_auth_seq_id {
             @{$row}{@{$headings}} = @F;
 
             # ($row->{auth_seq_num} eq '?') means the position is not resolved in the structure
-            $map->{$row->{pdb_strand_id}}->{$row->{seq_id}} = ($row->{auth_seq_num} eq '?') ? undef : $row->{pdb_seq_num};
+            (defined($row->{pdb_ins_code}) and ($row->{pdb_ins_code} ne '.')) or ($row->{pdb_ins_code} = '');
+            $map->{$row->{pdb_strand_id}}->{$row->{seq_id}} = ($row->{auth_seq_num} eq '?') ? undef : [$row->{pdb_seq_num}, $row->{pdb_ins_code}];
+
+            #print join("\t", 'CIF', $row->{pdb_strand_id}, $row->{seq_id}), "\n";
         }
     }
     close($fh_cif);

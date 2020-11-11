@@ -110,7 +110,7 @@ while($row = $sth->fetchrow_arrayref) {
         }
     }
 
-    print join("\t", $id_contact, $homo), "\n";
+    #print join("\t", $id_contact, $homo), "\n";
     $homos->{$id_contact} = $homo;
 }
 

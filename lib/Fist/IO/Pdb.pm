@@ -201,7 +201,7 @@ sub parse {
 	elsif(/^COMPND\s*\d+\s*MOLECULE:\s*(.*?)\s*\Z/) {
 	    $molecules->{$id_mol}->{name} .= $1;
 	}
-	elsif(/^COMPND\s*\d+\s*CHAIN:\s*(\s+)/) {
+	elsif(/^COMPND\s*\d+\s*CHAIN:\s*(.*)/) {
 	    ($cid_str = $1) =~ s/;?\s*\Z//;
 
 	    foreach $cid (split(/\s*,\s*/, $cid_str)) {
@@ -282,6 +282,8 @@ sub parse {
 	elsif(/^ATOM/ or /^HETATM.{7}CA /) {
             # FIXME - refactor: extract function for this and non-CA HETATM lines
 
+            # FIXME - check LINK records to see if a HETATM is linked to an ATOM even if it doesn't have a CA
+
             # parse residues from any ATOM or any C-alpha HETATM
 
             # COLUMNS        DATA  TYPE    FIELD        DEFINITION
@@ -349,13 +351,14 @@ sub parse {
                     # for each chain is not given contiguously. This may of course mean that
                     # the ATOMs and HETATMs are not connected, but ignoring that possibility here.
                     push @cids, $cid;
-                    $chains->{$cid} = {resSeq => [], iCode => [], modResName => [], resName => [], aa => []};
+                    $chains->{$cid} = {resSeq => [], iCode => [], modResName => [], resName => [], aa => [], atomNames => {}};
                 }
 
 		$resSeq_p = -1000000;
 		$iCode_p = 'XXX';
 		$resName_p = '';
 	    }
+            $chains->{$cid}->{atomNames}->{$atomName}++;
 
 	    if($resSeq eq $resSeq_p) {
 		($iCode ne $iCode_p) and $resName_p and _add_res_info($chains, $modresns, $cid, $resSeq_p, $iCode_p, $resName_p);
@@ -481,6 +484,7 @@ sub parse {
 
         # create new frag object
         $frag = Fist::NonDB::Frag->new(pdb => $pdb, fullchain => 1, chemical_type => $type, dom => _get_dom($chains, $cid), description => $chain_name, tempdir => $pdb->tempdir, cleanup => $pdb->cleanup);
+        (keys(%{$chains->{$cid}->{atomNames}}) == 1) and defined($chains->{$cid}->{atomNames}->{CA}) and $frag->ca_only(1);
         $pdb->add_to_frags($frag);
         $frags->{$frag->id} = $frag;
         $taxon and $taxa->{$frag->id} = $taxon;
@@ -587,7 +591,7 @@ sub parse {
 
         $siteDom = [];
         foreach $siteRes (@{$site->{residues}}) {
-            if($siteRes->[1] !~ /\A\d+\Z/) {
+            if($siteRes->[1] !~ /\A[\-\+]{0,1}\d+\Z/) {
                 Carp::cluck(sprintf("non-numeric siteRes '%s %s %s' in '%s'", @{$siteRes}, $self->fn));
                 next;
             }

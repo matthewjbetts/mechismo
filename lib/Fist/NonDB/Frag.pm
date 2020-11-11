@@ -19,6 +19,7 @@ has 'schema' => (is => 'ro', isa => 'Fist::Schema');
 has 'pdb' => (is => 'ro', isa => 'Fist::Interface::Pdb', weak_ref => 1);
 has 'id_seq' => (is => 'rw', isa => 'Int', default => 0);
 has 'fullchain' => (is => 'rw', isa => 'Bool');
+has 'ca_only' => (is => 'rw', isa => 'Bool', default => 0);
 has 'description' => (is => 'rw', isa => 'Str');
 has 'chemical_type' => (is => 'rw', isa => 'Str');
 has 'dom' => (is => 'ro', isa => 'Str');

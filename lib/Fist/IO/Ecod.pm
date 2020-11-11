@@ -83,6 +83,8 @@ sub parse_ecod_latest_domains {
             chomp;
             @F = split /\t/;
             @hash{@headings} = @F;
+            $hash{resSeq_range} or next;
+
             ($x, $h, $t, $f) = split(/\./, $hash{f_id}, 4);
             defined($ecod->{hierarchy}->{$x}) or ($ecod->{hierarchy}->{$x} = {id => ++$id, name => ($hash{x_name} eq 'NO_X_NAME') ? '' : $hash{x_name} , h => {}});
             defined($ecod->{hierarchy}->{$x}->{hs}->{$h}) or ($ecod->{hierarchy}->{$x}->{hs}->{$h} = {id => ++$id, name => ($hash{h_name} eq 'NO_H_NAME') ? '' : $hash{h_name}, ts => {}});
@@ -103,7 +105,7 @@ sub parse_ecod_latest_domains {
 
             $domain = {id => $hash{ecod_domain_id}, id_ecod => $id_ecod, hierarchy => [$x, $h, $t, $f], ranges => []};
             push @{$pdb->{domains}}, $domain;
-            foreach $range (split /,/, $hash{pdb_range}) {
+            foreach $range (split /,/, $hash{resSeq_range}) {
                 if($range =~ /\A(\S+?):(-{0,1}[\d]+)(\S{0,1}?)-(-{0,1}[\d]+)(\S{0,1})\Z/) {
                     ($cid, $resSeq1, $iCode1, $resSeq2, $iCode2) = ($1, $2, $3, $4, $5);
                     ($iCode1 eq '') and ($iCode1 = ' ');

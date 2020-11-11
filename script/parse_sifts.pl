@@ -96,5 +96,5 @@ while(<STDIN>) {
             }
         }
     }
-    ($n == 0) and Carp::cluck("no fragment with idcode='$idcode' and chain='$chain'.");
+    ($n == 0) and Carp::cluck("Warning: no fragment with idcode='$idcode' and chain='$chain'.");
 }

@@ -5,7 +5,7 @@
   * [ ] rewrite README.md to my current standards
   * [ ] add download instructions for primary data
 * [ ] move data construction to a pipeline, eg. in snakemake
-* [ ] refactoring
+* [ ] rewrites
   * [ ] use unique identifiers directly rather than having to remap. This would
         also make re-importing tsv files possible, since ids would be maintained
         between different programs. (eg. blast results use unique ids of sequences,

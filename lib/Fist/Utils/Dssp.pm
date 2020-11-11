@@ -64,6 +64,8 @@ sub run_dssp {
     my $iCode_dom;
     my $dssp_residues;
 
+    $self->ca_only and return(undef);
+
     $pdbfile_is_mine = 0;
     if(!defined($pdbfile)) {
         ($pdbfile, $res_mapping) = $self->write_pdbfile;

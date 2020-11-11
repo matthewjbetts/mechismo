@@ -333,6 +333,7 @@ sub parse {
     my $fist_to_pdb;
     my $res_mappings;
     my $fist_aas;
+    my $ca_only;
 
     eval { $pdbio = Fist::IO::Pdb->new(fn => $fn); };
     if($@) {
@@ -405,11 +406,16 @@ sub parse {
             if(!$found) {
                 # create new frag object
                 $dom = [];
+                $ca_only = 1;
                 foreach $range (@{$domain->{ranges}}) {
+                    if(defined($frag = $cid_to_frag->{$range->[0]}->{frag})) {
+                        $frag->ca_only or ($ca_only = 0);
+                    }
                     push @{$dom}, sprintf("%s %s %s to %s %s %s", @{$range}[0..1], (($range->[2] eq ' ') ? '_' : $range->[2]), @{$range}[3..4], (($range->[5] eq ' ') ? '_' : $range->[5]));
                 }
                 $dom = join ' ', @{$dom};
                 $frag = Fist::NonDB::Frag->new(pdb => $pdb, fullchain => 0, chemical_type => 'peptide', dom => $dom, description => '', tempdir => $pdb->tempdir, cleanup => $pdb->cleanup); # FIXME - set description
+                $frag->ca_only($ca_only);
                 $pdb->add_to_frags($frag);
 
                 # create Seq, ChainSegments and FragResMappings
