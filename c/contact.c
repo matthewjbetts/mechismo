@@ -1338,10 +1338,10 @@ int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONT
             if((c->nClash > 0) && (noclash == 1)) {
                 contactDelete(c);
             }
-            else if(strcmp(c->type, "PPI") && (c->nResRes < minPPIResRes)) {
+            else if((strcmp(c->type, "PPI") == 0) && (c->nResRes < minPPIResRes)) {
                 contactDelete(c);
             }
-            else if(strcmp(c->type, "PDI") && (c->nResRes < minPDIResRes)) {
+            else if((strcmp(c->type, "PDI") == 0) && (c->nResRes < minPDIResRes)) {
                 contactDelete(c);
             }
             else if(c->nResRes < minPCIResRes) {

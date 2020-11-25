@@ -26,9 +26,9 @@ void usage() {
     fprintf(stderr, "--lf_fist           float      minimum fraction of template (fist) sequence covered by hsps        0.8\n");
     fprintf(stderr, "--contact_hit       string     name of file for ContactHit output                                  [to stdout]\n");
     fprintf(stderr, "--contact_hit_res   string     name of file for ContactHitResidue output                           [none]\n");
-    fprintf(stderr, "--resres_ppi        integer    minimum number of residue-residue contacts per PPI contact          10\n");
-    fprintf(stderr, "--resres_pdi        integer    minimum number of residue-base contacts per PDI contact             10\n");
-    fprintf(stderr, "--resres_pci        integer    minimum number of residue-chemical contacts per PCI contact         1\n");
+    fprintf(stderr, "--ppiresres         integer    minimum number of residue-residue contacts per PPI contact          10\n");
+    fprintf(stderr, "--pdiresres         integer    minimum number of residue-base contacts per PDI contact             10\n");
+    fprintf(stderr, "--pciresres         integer    minimum number of residue-chemical contacts per PCI contact         1\n");
     fprintf(stderr, "--n_templates       integer    maximum number of non-redundant interaction templates to use        5\n");
     fprintf(stderr, "                               pair of query proteins\n");
     fprintf(stderr, "\n");
@@ -198,8 +198,8 @@ int contactHitNR(
                         contactHitResiduesCreate(ch1);
                         if(
                            (ch1->nResResA1B1 == 0)
-                           || (strncmp(ch1->type, "PPI", 3) && (ch1->nResResA1B1 < minPPIResRes))
-                           || (strncmp(ch1->type, "PDI", 3) && (ch1->nResResA1B1 < minPDIResRes))
+                           || ((strncmp(ch1->type, "PPI", 3) == 0) && (ch1->nResResA1B1 < minPPIResRes))
+                           || ((strncmp(ch1->type, "PDI", 3) == 0) && (ch1->nResResA1B1 < minPDIResRes))
                            || (ch1->nResResA1B1 < minPCIResRes)
                            ) {
                             discardCh[j] = 1;
@@ -361,7 +361,7 @@ int main(int argc, char **argv) {
     // FIXME - could save memory by ignoring contacts involving fist sequences that are not in an hsp
     if((contacts = hashCreate(0)) == NULL) exit(1);
     if((contactParse(args->fn_contacts, contacts, contactSaveToHash, 1, args->minPPIResRes, args->minPDIResRes, args->minPCIResRes)) != 0) exit(1); // NB. contacts only stored in given direction
-    
+
     // read in contact groups
     if((contactToGroup = hashParseTsv(args->fn_contact_to_group, NULL)) == NULL) exit(1);
     hashResize(contactToGroup, contactToGroup->nKeys * 4 / 3);

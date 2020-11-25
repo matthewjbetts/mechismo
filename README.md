@@ -117,7 +117,7 @@ export MECHISMO_V=3.0 # FIXME - set this in config file
 export MECHISMO_DN=./data/processed/${MECHISMO_V}/ # FIXME - set this in config file
 export MECHISMO_DB=mechismo3_0 # FIXME - use value in config file
 export DS=/net/home.isilon/ds-russell/ # FIXME - set this in config file, or paths to individual datasets
-export TAXA='272634 224308 83333 559292 6239 7227 10090 9606 2697049 3702'
+export TAXA='2697049 272634 9606 224308 83333 559292 6239 7227 10090 3702'
 export PDB_DN=${DS}/pdb/
 
 # create the db and user
@@ -571,7 +571,14 @@ done
 ./script/get_contact_hit_sh.pl
 
 # now run on server
-for fn in ${MECHISMO_DN}contact_hits/*/*.sh; do source ${fn}; done & # not running in parallel as big ones take a lot of memory
+#for fn in ${MECHISMO_DN}contact_hits/*/*.sh; do source ${fn}; done & # not running in parallel as big ones take a lot of memory
+for taxon in $TAXA
+do
+  for fn in ${MECHISMO_DN}contact_hits/${taxon}/*.sh
+  do
+    source ${fn}
+  done
+done
 
 # import
 ls -rS ${MECHISMO_DN}contact_hits/*/0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /contact_hits\/(\d+)\/\S+ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=$1\n";' > ${MECHISMO_DN}contact_hits/import.inp

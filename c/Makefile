@@ -1,8 +1,8 @@
 # Makefile for building contacts
 
 CC = gcc
-#CCFLAGS = -O2 # for speed
-CCFLAGS = -Wall -g # for debugging
+CCFLAGS = -O2 # for speed
+#CCFLAGS = -Wall -g # for debugging
 
 # NOTE: binaries to be installed are now prefixed with 'mechismo', to avoid
 # confusion with otherwise similarly named binaries elsewhere in the path
