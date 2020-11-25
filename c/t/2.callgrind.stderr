@@ -1,0 +1,155 @@
+==127023== Callgrind, a call-graph generating cache profiler
+==127023== Copyright (C) 2002-2017, and GNU GPL'd, by Josef Weidendorfer et al.
+==127023== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==127023== Command: ./mechismoContactHits --contacts ./t/2.contacts_with_fist_numbers.tsv.gz --dom_to_seq ./t/2.frag_inst_to_fist.tsv.gz --dom_to_chem_type ./t/2.frag_inst_chem_type.tsv.gz --queries ./t/2.queries.txt --hsps ./t/2.query_to_fist.tsv.gz --contact_to_group ./t/2.0.0-0.8-0.8.only.ContactToGroup.tsv.gz --contact_hit ./t/2.ContactHit.callgrind.tsv
+==127023== 
+--127023-- Valgrind options:
+--127023--    -v
+--127023--    --tool=callgrind
+--127023--    --callgrind-out-file=./t/2.callgrind.out
+--127023-- Contents of /proc/version:
+--127023--   Linux version 3.10.0-514.21.1.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) ) #1 SMP Thu May 25 17:04:51 UTC 2017
+--127023-- 
+--127023-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--127023-- Page sizes: currently 4096, max supported 4096
+--127023-- Valgrind library directory: /usr/lib64/valgrind
+==127023== For interactive control, run 'callgrind_control -h'.
+--127023-- Reading syms from /net/home.isilon/ag-russell/bq_mbetts/work/mechismo3.0/c_dev/mechismoContactHits
+--127023-- Reading syms from /usr/lib64/ld-2.17.so
+--127023--   Considering /usr/lib/debug/.build-id/22/fa66da7d14c88bf36c69454a357e5f1defae4e.debug ..
+--127023--   .. build-id is valid
+--127023-- Reading syms from /usr/lib64/valgrind/callgrind-amd64-linux
+--127023--    object doesn't have a symbol table
+--127023--    object doesn't have a dynamic symbol table
+--127023-- Scheduler: using generic scheduler lock implementation.
+==127023== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-127023-by-bq_mbetts-on-pevolution2.bioquant.uni-heidelberg.de
+==127023== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-127023-by-bq_mbetts-on-pevolution2.bioquant.uni-heidelberg.de
+==127023== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-127023-by-bq_mbetts-on-pevolution2.bioquant.uni-heidelberg.de
+==127023== 
+==127023== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==127023== don't want to do, unless you know exactly what you're doing,
+==127023== or are doing some strange experiment):
+==127023==   /usr/lib64/valgrind/../../bin/vgdb --pid=127023 ...command...
+==127023== 
+==127023== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==127023==   /path/to/gdb ./mechismoContactHits
+==127023== and then give GDB the following command
+==127023==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=127023
+==127023== --pid is optional if only one valgrind process is running
+==127023== 
+--127023-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--127023-- Reading syms from /usr/lib64/libm-2.17.so
+--127023--   Considering /usr/lib/debug/.build-id/80/8bd35686c193f218a5aaac6194c49214cff379.debug ..
+--127023--   .. build-id is valid
+--127023-- Reading syms from /usr/lib64/libz.so.1.2.7
+--127023--   Considering /usr/lib/debug/.build-id/b9/d5f73428bd6ad68c96986b57bea3b7cedb9745.debug ..
+--127023--   .. build-id is valid
+--127023-- Reading syms from /usr/lib64/libc-2.17.so
+--127023--   Considering /usr/lib/debug/.build-id/95/ff02a4bebabc573c7827a66d447f7babddaa44.debug ..
+--127023--   .. build-id is valid
+==127023== brk segment overflow in thread #1: can't grow to 0x4a25000
+==127023== (see section Limitations in user manual)
+==127023== NOTE: further instances of this message will not be shown
+Warning: contactParseLine: nResRes found for contact 1023743 != given nResRes (53 != 132).
+Warning: contactParseLine: nResRes found for contact 1721146 != given nResRes (26 != 86).
+Warning: contactParseLine: nResRes found for contact 2776462 != given nResRes (50 != 62).
+Warning: contactParseLine: nResRes found for contact 2776470 != given nResRes (108 != 132).
+Warning: contactParseLine: nResRes found for contact 2776482 != given nResRes (34 != 56).
+Warning: contactParseLine: nResA found for contact 3701426 != given nResA (7 != 8).
+Warning: contactParseLine: nResRes found for contact 3701426 != given nResRes (7 != 8).
+Warning: contactParseLine: nResA found for contact 4616006 != given nResA (3 != 7).
+Warning: contactParseLine: nResRes found for contact 4616006 != given nResRes (3 != 7).
+Warning: contactParseLine: nResA found for contact 6208611 != given nResA (14 != 15).
+Warning: contactParseLine: nResRes found for contact 6208611 != given nResRes (14 != 15).
+Warning: contactParseLine: nResA found for contact 6208619 != given nResA (10 != 11).
+Warning: contactParseLine: nResRes found for contact 6208619 != given nResRes (10 != 11).
+Warning: contactParseLine: nResRes found for contact 7163047 != given nResRes (41 != 43).
+Warning: contactParseLine: nResA found for contact 7723348 != given nResA (42 != 112).
+Warning: contactParseLine: nResRes found for contact 7723348 != given nResRes (48 != 303).
+Warning: contactParseLine: nResA found for contact 7723349 != given nResA (42 != 112).
+Warning: contactParseLine: nResRes found for contact 7723349 != given nResRes (48 != 303).
+Warning: contactParseLine: nResRes found for contact 7723357 != given nResRes (48 != 120).
+Warning: contactParseLine: nResRes found for contact 7723359 != given nResRes (95 != 122).
+Warning: contactParseLine: nResA found for contact 9507581 != given nResA (11 != 12).
+Warning: contactParseLine: nResRes found for contact 9507581 != given nResRes (11 != 12).
+Warning: contactParseLine: nResRes found for contact 11454000 != given nResRes (85 != 128).
+Warning: contactParseLine: nResRes found for contact 11454018 != given nResRes (52 != 80).
+Warning: contactParseLine: nResRes found for contact 11454032 != given nResRes (40 != 65).
+Warning: contactParseLine: nResRes found for contact 11454034 != given nResRes (59 != 79).
+Warning: contactParseLine: nResRes found for contact 11454411 != given nResRes (34 != 54).
+Warning: contactParseLine: nResRes found for contact 11476353 != given nResRes (83 != 122).
+Warning: contactParseLine: nResRes found for contact 11476379 != given nResRes (48 != 80).
+Warning: contactParseLine: nResRes found for contact 11476383 != given nResRes (59 != 75).
+Warning: contactParseLine: nResRes found for contact 11476666 != given nResRes (38 != 64).
+Warning: contactParseLine: nResRes found for contact 11476692 != given nResRes (18 != 35).
+Warning: contactParseLine: nResRes found for contact 12152580 != given nResRes (14 != 17).
+Warning: contactParseLine: nResRes found for contact 12152589 != given nResRes (82 != 97).
+Warning: contactParseLine: nResRes found for contact 12152593 != given nResRes (32 != 36).
+Warning: contactParseLine: nResRes found for contact 12152595 != given nResRes (25 != 29).
+Warning: contactParseLine: nResRes found for contact 12683940 != given nResRes (66 != 79).
+Warning: contactParseLine: nResA found for contact 15568465 != given nResA (7 != 8).
+Warning: contactParseLine: nResRes found for contact 15568465 != given nResRes (7 != 8).
+Warning: contactParseLine: nResA found for contact 15926736 != given nResA (16 != 24).
+Warning: contactParseLine: nResRes found for contact 15926736 != given nResRes (40 != 62).
+Warning: contactParseLine: nResA found for contact 15926749 != given nResA (16 != 24).
+Warning: contactParseLine: nResRes found for contact 15926749 != given nResRes (40 != 62).
+Warning: contactParseLine: nResA found for contact 16357857 != given nResA (58 != 59).
+Warning: contactParseLine: nResRes found for contact 16357857 != given nResRes (162 != 164).
+Warning: contactParseLine: nResRes found for contact 16357885 != given nResRes (145 != 146).
+Warning: contactParseLine: nResA found for contact 16358163 != given nResA (57 != 58).
+Warning: contactParseLine: nResRes found for contact 16358163 != given nResRes (162 != 164).
+Warning: contactParseLine: nResA found for contact 16358171 != given nResA (58 != 59).
+Warning: contactParseLine: nResRes found for contact 16358171 != given nResRes (163 != 165).
+Warning: contactParseLine: nResRes found for contact 17552107 != given nResRes (53 != 98).
+Warning: contactParseLine: nResA found for contact 17734448 != given nResA (3 != 4).
+Warning: contactParseLine: nResRes found for contact 17734448 != given nResRes (3 != 4).
+Warning: contactParseLine: nResRes found for contact 18188498 != given nResRes (12 != 28).
+Warning: contactParseLine: nResA found for contact 18544398 != given nResA (8 != 13).
+Warning: contactParseLine: nResRes found for contact 18544398 != given nResRes (8 != 13).
+Warning: contactParseLine: nResA found for contact 19064983 != given nResA (2 != 3).
+Warning: contactParseLine: nResRes found for contact 19064983 != given nResRes (2 != 3).
+Warning: contactParseLine: nResA found for contact 19064987 != given nResA (14 != 15).
+Warning: contactParseLine: nResRes found for contact 19064987 != given nResRes (48 != 70).
+Warning: contactParseLine: nResA found for contact 19065051 != given nResA (2 != 3).
+Warning: contactParseLine: nResRes found for contact 19065051 != given nResRes (2 != 3).
+Warning: contactParseLine: nResA found for contact 19065055 != given nResA (14 != 41).
+Warning: contactParseLine: nResRes found for contact 19065055 != given nResRes (47 != 128).
+Warning: contactParseLine: nResRes found for contact 19517264 != given nResRes (17 != 33).
+Warning: contactParseLine: nResRes found for contact 19517268 != given nResRes (55 != 71).
+Warning: contactParseLine: nResRes found for contact 19517390 != given nResRes (80 != 116).
+Warning: contactParseLine: nResRes found for contact 19517474 != given nResRes (40 != 64).
+Warning: contactParseLine: nResRes found for contact 19517492 != given nResRes (35 != 51).
+Warning: contactParseLine: nResRes found for contact 19851427 != given nResRes (22 != 28).
+Warning: contactParseLine: nResRes found for contact 19851433 != given nResRes (20 != 26).
+Warning: contactParseLine: nResRes found for contact 19851435 != given nResRes (20 != 21).
+Warning: contactParseLine: nResRes found for contact 19851439 != given nResRes (21 != 29).
+Warning: contactParseLine: nResRes found for contact 19851441 != given nResRes (19 != 29).
+Warning: contactParseLine: nResRes found for contact 19851462 != given nResRes (20 != 30).
+Warning: contactParseLine: nResRes found for contact 19851464 != given nResRes (20 != 27).
+Warning: contactParseLine: nResA found for contact 20270315 != given nResA (8 != 9).
+Warning: contactParseLine: nResRes found for contact 20270315 != given nResRes (16 != 19).
+Warning: contactParseLine: nResA found for contact 20270321 != given nResA (22 != 23).
+Warning: contactParseLine: nResRes found for contact 20270321 != given nResRes (49 != 52).
+Warning: contactParseLine: nResA found for contact 20270440 != given nResA (22 != 23).
+Warning: contactParseLine: nResRes found for contact 20270440 != given nResRes (48 != 51).
+Warning: contactParseLine: nResA found for contact 20541537 != given nResA (8 != 18).
+Warning: contactParseLine: nResRes found for contact 20541537 != given nResRes (8 != 18).
+Warning: contactParseLine: nResA found for contact 20765782 != given nResA (2 != 25).
+Warning: contactParseLine: nResRes found for contact 20765782 != given nResRes (2 != 25).
+Warning: contactParseLine: nResA found for contact 20765791 != given nResA (2 != 25).
+Warning: contactParseLine: nResRes found for contact 20765791 != given nResRes (2 != 25).
+Warning: contactParseLine: nResA found for contact 20765841 != given nResA (2 != 25).
+Warning: contactParseLine: nResRes found for contact 20765841 != given nResRes (2 != 25).
+Warning: contactParseLine: nResA found for contact 20765855 != given nResA (2 != 25).
+Warning: contactParseLine: nResRes found for contact 20765855 != given nResRes (2 != 25).
+Warning: contactParseLine: nResA found for contact 20765889 != given nResA (2 != 25).
+Warning: contactParseLine: nResRes found for contact 20765889 != given nResRes (2 != 25).
+Warning: contactParseLine: nResRes found for contact 21525242 != given nResRes (56 != 76).
+==127023== 
+--127023-- Start dumping at BB 5434392248 (Prg.Term.)...
+--127023-- Dump to /net/home.isilon/ag-russell/bq_mbetts/work/mechismo3.0/c_dev/./t/2.callgrind.out
+--127023-- Dumping done.
+==127023== Events    : Ir
+==127023== Collected : 28807032438
+==127023== 
+==127023== I   refs:      28,807,032,438
