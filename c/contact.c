@@ -286,6 +286,7 @@ CONTACT *contactCreate(DOMAIN_LOC *domainA, DOMAIN_LOC *domainB) {
     c->homo        = 0;
     c->resContacts = listCreate(NULL);
     c->rc          = NULL;
+    c->type        = NULL;
 
     return c;
 }
@@ -298,6 +299,8 @@ int contactDelete(void *thing) {
         free(c->idDomA);
     if(c->idDomB != NULL)
         free(c->idDomB);
+    if(c->type != NULL)
+        free(c->type);
     listDelete(c->resContacts, resContactDelete);
     if(c->rc != NULL) {
         free(c->rc);
@@ -1225,6 +1228,7 @@ CONTACT *contactParseLine(char *line) {
     int            i, j, k;
     unsigned char  crystal;
     unsigned short nResA, nResB, nResRes, nClash, nResCheck, nResResCheck, idxResA;
+    char           **type;
     CONTACT        *c;
     LIST           *posStringsAll, *posStrings; // sequence positions as strings
     int            rcLength;
@@ -1240,7 +1244,8 @@ CONTACT *contactParseLine(char *line) {
          * 05   - nResB
          * 06   - nClash
          * 07   - nResRes
-         * 08.. - pos1:pos2a,pos2b,...
+         # 08   - type
+         * 09.. - pos1:pos2a,pos2b,...
          */
         idContact = (unsigned int) strtoul(tokens->all[0], NULL, 0);
         crystal   = (unsigned char)  strtoul(tokens->all[3], NULL, 0);
@@ -1249,7 +1254,7 @@ CONTACT *contactParseLine(char *line) {
         nClash    = (unsigned short) strtoul(tokens->all[6], NULL, 0);
         nResRes   = (unsigned short) strtoul(tokens->all[7], NULL, 0);
 
-        nResCheck = tokens->n - 8;
+        nResCheck = tokens->n - 9; // '9' for columns 0..8
         if(nResCheck != nResA) {
             fprintf(stderr, "Warning: contactParseLine: nResA found for contact %d != given nResA (%d != %d).\n", idContact, nResCheck, nResA);
             nResA = nResCheck;
@@ -1259,24 +1264,15 @@ CONTACT *contactParseLine(char *line) {
             //printf("%09d: %d\t%s\t%s\t%d\n", n, idContact, idDomA, idDomB, nResA);
             nResResCheck = 0;
             if((c = contactCreate(NULL, NULL)) != NULL) {
-                if((c->idDomA = (char *) malloc((strlen(tokens->all[1]) + 1) * sizeof(char))) == NULL) {
-                    fprintf(stderr, "Error: contactParseLine: malloc failed.\n");
-                    return NULL;
-                }
-                strcpy(c->idDomA, tokens->all[1]);
-
-                if((c->idDomB = (char *) malloc((strlen(tokens->all[2]) + 1) * sizeof(char))) == NULL) {
-                    fprintf(stderr, "Error: contactParseLine: malloc failed.\n");
-                    return NULL;
-                }
-                strcpy(c->idDomB, tokens->all[2]);
-
+                c->idDomA = stringCopy(tokens->all[1]);
+                c->idDomB = stringCopy(tokens->all[2]);
                 c->id = idContact;
                 c->crystal = crystal;
                 c->nResA = nResA;
                 c->nResB = nResB;
                 c->nClash = nClash;
                 c->nResRes = nResRes;
+                c->type = stringCopy(tokens->all[8]);
                 if((posStringsAll = listCreate(NULL)) == NULL)
                     return NULL;
 
@@ -1327,7 +1323,7 @@ CONTACT *contactParseLine(char *line) {
     return c;
 }
 
-int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONTACT *), int noclash, unsigned short minResRes) {
+int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONTACT *), int noclash, unsigned short minPPIResRes, unsigned short minPDIResRes, unsigned short minPCIResRes) {
     MYFILE  *file;
     char    *line;
     CONTACT *c;
@@ -1339,7 +1335,16 @@ int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONT
     line = (*file->nextLine)(file);
     while(line != NULL) {
         if((c = contactParseLine(line)) != NULL) {
-            if(((c->nClash > 0) && (noclash == 1)) || (c->nResRes < minResRes)) {
+            if((c->nClash > 0) && (noclash == 1)) {
+                contactDelete(c);
+            }
+            else if(strcmp(c->type, "PPI") && (c->nResRes < minPPIResRes)) {
+                contactDelete(c);
+            }
+            else if(strcmp(c->type, "PDI") && (c->nResRes < minPDIResRes)) {
+                contactDelete(c);
+            }
+            else if(c->nResRes < minPCIResRes) {
                 contactDelete(c);
             }
             else {

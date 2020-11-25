@@ -61,6 +61,7 @@ typedef struct contact {
     unsigned short nResRes;
     unsigned char  crystal;
     unsigned char  homo;
+    char           *type;
 
     /*
      * rc = residue contacts as (1d) array of positions.
@@ -134,7 +135,7 @@ int contactSortByNResRes(const void *a, const void *b);
 int contactSaveToList(void *thing, CONTACT *c);
 int contactSaveToHash(void *thing, CONTACT *c);
 CONTACT *contactParseLine(char *line);
-int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONTACT *), int noclash, unsigned short minResRes);
+int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONTACT *), int noclash, unsigned short minPPIResRes, unsigned short minPDIResRes, unsigned short minPCIResRes);
 LIST *contactGroupBySequence(LIST *contacts, HASH *domToSeq, LIST *seqGroups, unsigned int *idGroup);
 int contactsJaccards(LIST *group, HASH *domToSeq, float minJaccard, HASH *hsps);
 LIST *contactGroupByJaccards(LIST *contacts, HASH *domToSeq, float minJaccard, HASH *hsps, unsigned int *idGroup);

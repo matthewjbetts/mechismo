@@ -27,6 +27,11 @@
         clearer to remove N and C-terminal overhangs to fix start and end
         positions in HSPs (probably easiest in alignment.c)
   * [ ] ecod uses mmCIF residue numbering not ATOM resSeq
+  * [ ] deal with out-of-order chains, especially involving HETATMs
+        with CAs. eg. 3qaj { J 6 _ to J 304 _ J 306 _ to J 445 _ },
+        where HETATM J 445 is given after lots of CHAIN K and L
+        residues, which are then incorporated in the fragment
+
 
 ## Old
 (Check if still relevant...)

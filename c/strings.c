@@ -170,7 +170,7 @@ char *stringStrtokSingle(char *string, char const *delims) {
 
 /*
  * various conversions functions for use in stringSplit.
- * all return 'void *' to make them more easilt interchangeable,
+ * all return 'void *' to make them more easily interchangeable,
  * and useable with LIST.
  */
 
@@ -250,6 +250,8 @@ LIST *stringSplit(char *str, char const *delims, void *(*convert)(char *)) {
     tokens = listCreate(NULL);
     if(tokens == NULL)
         return NULL;
+
+    // FIXME - multiple calls to listAddElement (and therefore realloc) are quite expensive...
 
     if(convert == NULL) {
         token = stringStrtokSingle(copy, delims);

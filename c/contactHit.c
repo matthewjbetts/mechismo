@@ -167,14 +167,15 @@ int contactHitResiduesCreate(CONTACTHIT *ch) {
     ch->nResB1 = 0;
     ch->nResResA1B1 = 0;
 
-    // calculate contact hit residues, ie. posB1 and posB1
+    // calculate contact hit residues, ie. posA1 and posB1
 
     // store as 1d array of positions, cf. contact->rc
+    // FIXME - safer to store the length of the contact->rc array somewhere rather than recalculating?
     cRcLength = 1; // first element gives the number of posAs
     tPosA2 = ch->cA2B2->nResA;
     nPosA2 = 0;
     idx2End = 0;
-    while(nPosA2 < tPosA2) {
+    while(nPosA2 <= tPosA2) {
         ++nPosA2;
         idx2Start = idx2End + 2;
         cRcLength += (1 + ch->cA2B2->rc[idx2End + 1]); // 1 for the element that gives the number of positions, + the number of positions

@@ -225,7 +225,7 @@ int main(int argc, char **argv) {
 
     // read in contacts given as sequence numbers
     if((contacts = listCreate(NULL)) == NULL) exit(1);
-    if((contactParse(args->fns_contacts->all[0], contacts, contactSaveToList, 0, 1)) != 0) exit(1);
+    if((contactParse(args->fns_contacts->all[0], contacts, contactSaveToList, 0, 1, 1, 1)) != 0) exit(1);
 
     // group contacts by sequence and by jaccard index of res-res contacts
     idContactGroup = 0;

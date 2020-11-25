@@ -16,8 +16,8 @@ while(<>) {
         (keys(%{$rc}) > 0) and output($ids, $rc);
         $rc = {};
     }
-    $ids = [@F[0..7]];
-    $rc->{$F[8]}->{$F[9]}++;
+    $ids = [@F[0..8]];
+    $rc->{$F[9]}->{$F[10]}++;
 }
 (keys(%{$rc}) > 0) and output($ids, $rc);
 

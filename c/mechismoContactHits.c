@@ -26,7 +26,9 @@ void usage() {
     fprintf(stderr, "--lf_fist           float      minimum fraction of template (fist) sequence covered by hsps        0.8\n");
     fprintf(stderr, "--contact_hit       string     name of file for ContactHit output                                  [to stdout]\n");
     fprintf(stderr, "--contact_hit_res   string     name of file for ContactHitResidue output                           [none]\n");
-    fprintf(stderr, "--resres            integer    minimum number of residue-residue contacts per contact              10\n");
+    fprintf(stderr, "--resres_ppi        integer    minimum number of residue-residue contacts per PPI contact          10\n");
+    fprintf(stderr, "--resres_pdi        integer    minimum number of residue-base contacts per PDI contact             10\n");
+    fprintf(stderr, "--resres_pci        integer    minimum number of residue-chemical contacts per PCI contact         1\n");
     fprintf(stderr, "--n_templates       integer    maximum number of non-redundant interaction templates to use        5\n");
     fprintf(stderr, "                               pair of query proteins\n");
     fprintf(stderr, "\n");
@@ -42,7 +44,7 @@ typedef struct args {
     char           fn_contact_to_group[FILENAMELEN];
     char           fn_contact_hit[FILENAMELEN];
     char           fn_contact_hit_res[FILENAMELEN];
-    unsigned short minResRes;
+    unsigned short minPPIResRes, minPDIResRes, minPCIResRes;
     unsigned short maxNTemplates;
     float          minPcid;
     float          minLfQuery;
@@ -68,7 +70,9 @@ ARGS *getArgs(int argc, char **argv) {
     args->minPcid = -1.0;
     args->minLfQuery = 0.0;
     args->minLfFist = 0.8;
-    args->minResRes = 10;
+    args->minPPIResRes = 10;
+    args->minPDIResRes = 10;
+    args->minPCIResRes = 1;
     args->maxNTemplates = 5;
     memset(args->fn_queries, '\0', FILENAMELEN);
     memset(args->fn_contacts, '\0', FILENAMELEN);
@@ -115,8 +119,14 @@ ARGS *getArgs(int argc, char **argv) {
         else if(strncmp(&argv[i][j], "lf_fist", len) == 0) { 
             sscanf(argv[++i], "%f", &args->minLfFist);
         }
-        else if(strncmp(&argv[i][j], "resres", len) == 0) { 
-            args->minResRes = (unsigned short) strtoul(argv[++i], NULL, 0);
+        else if(strncmp(&argv[i][j], "ppiresres", len) == 0) { 
+            args->minPPIResRes = (unsigned short) strtoul(argv[++i], NULL, 0);
+        }
+        else if(strncmp(&argv[i][j], "pdiresres", len) == 0) { 
+            args->minPDIResRes = (unsigned short) strtoul(argv[++i], NULL, 0);
+        }
+        else if(strncmp(&argv[i][j], "pciresres", len) == 0) { 
+            args->minPCIResRes = (unsigned short) strtoul(argv[++i], NULL, 0);
         }
         else if(strncmp(&argv[i][j], "n_templates", len) == 0) { 
             args->maxNTemplates = (unsigned short) strtoul(argv[++i], NULL, 0);
@@ -144,7 +154,18 @@ ARGS *getArgs(int argc, char **argv) {
     return args;
 }
 
-int contactHitNR(unsigned int *idCh, const char *idSeqA1, HASH *contactHits, HASH *contactToGroup, unsigned short maxNTemplates, FILE *fhContactHit, FILE *fhContactHitResidue) { // contactHits = contact hits of idSeqA1 will all its interactors
+int contactHitNR(
+                 unsigned int *idCh,
+                 const char *idSeqA1,
+                 HASH *contactHits,  // contactHits = contact hits of idSeqA1 will all its interactors
+                 HASH *contactToGroup,
+                 unsigned short maxNTemplates,
+                 FILE *fhContactHit,
+                 FILE *fhContactHitResidue,
+                 unsigned short minPPIResRes,
+                 unsigned short minPDIResRes,
+                 unsigned short minPCIResRes
+                 ) {
     LIST           *idsInteractors;
     char           *idInteractor;
     LIST           *contactHitsInteractor; // all contact hits of idSeqA1 with the specific interactor
@@ -175,7 +196,12 @@ int contactHitNR(unsigned int *idCh, const char *idSeqA1, HASH *contactHits, HAS
                         ch1->id = ++(*idCh);
 
                         contactHitResiduesCreate(ch1);
-                        if(ch1->nResResA1B1 == 0) {
+                        if(
+                           (ch1->nResResA1B1 == 0)
+                           || (strncmp(ch1->type, "PPI", 3) && (ch1->nResResA1B1 < minPPIResRes))
+                           || (strncmp(ch1->type, "PDI", 3) && (ch1->nResResA1B1 < minPDIResRes))
+                           || (ch1->nResResA1B1 < minPCIResRes)
+                           ) {
                             discardCh[j] = 1;
                             //printf("discarding %u\n", ch1->id);
                             contactHitResiduesDelete(ch1);
@@ -334,7 +360,7 @@ int main(int argc, char **argv) {
     // read in contacts given as sequence numbers
     // FIXME - could save memory by ignoring contacts involving fist sequences that are not in an hsp
     if((contacts = hashCreate(0)) == NULL) exit(1);
-    if((contactParse(args->fn_contacts, contacts, contactSaveToHash, 1, args->minResRes)) != 0) exit(1); // NB. contacts only stored in given direction
+    if((contactParse(args->fn_contacts, contacts, contactSaveToHash, 1, args->minPPIResRes, args->minPDIResRes, args->minPCIResRes)) != 0) exit(1); // NB. contacts only stored in given direction
     
     // read in contact groups
     if((contactToGroup = hashParseTsv(args->fn_contact_to_group, NULL)) == NULL) exit(1);
@@ -343,6 +369,7 @@ int main(int argc, char **argv) {
     // get contact hits
     flag = 0; 
     idCh = 0;
+    //for(i = 0; i < 0; i++) {
     for(i = 0; i < queries->n; i++) {
         idSeqA1 = (char *) queries->all[i];
         //printf("idSeqA1\t%d\t%s\n", i, idSeqA1);
@@ -428,8 +455,8 @@ int main(int argc, char **argv) {
             }
         }
 
-        contactHitNR(&idCh, idSeqA1, contactHitsA1B1s, contactToGroup, args->maxNTemplates, fhContactHit, fhContactHitResidue);
-        contactHitNR(&idCh, idSeqA1, contactHitsA1B2s, contactToGroup, args->maxNTemplates, fhContactHit, fhContactHitResidue);
+        contactHitNR(&idCh, idSeqA1, contactHitsA1B1s, contactToGroup, args->maxNTemplates, fhContactHit, fhContactHitResidue, args->minPPIResRes, args->minPDIResRes, args->minPCIResRes);
+        contactHitNR(&idCh, idSeqA1, contactHitsA1B2s, contactToGroup, args->maxNTemplates, fhContactHit, fhContactHitResidue, args->minPPIResRes, args->minPDIResRes, args->minPCIResRes);
         hashDelete(contactHitsA1B1s, NULL);
         hashDelete(contactHitsA1B2s, NULL);
 

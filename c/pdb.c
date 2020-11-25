@@ -1264,6 +1264,7 @@ int domainGetAllCoords(DOMAIN_LOC *domain, MYFILE *file) {
                    ) {
                     begin = 1;
                     onlastresidue = 0;
+                    //printf("BEGIN %c %d %c == %c %d %c }\n", domain->start[i].chain, domain->start[i].resSeq, domain->start[i].iCode, chain, resSeq, iCode);
                 }
 
                 /* Test if this is a new residue */
@@ -1347,6 +1348,7 @@ int domainGetAllCoords(DOMAIN_LOC *domain, MYFILE *file) {
                    && domain->type[i] == 3
                    )
                ) {
+                //printf("END %c %d %c == %c %d %c }\n", domain->end[i].chain, domain->end[i].resSeq, domain->end[i].iCode, chain, resSeq, iCode);
                 onlastresidue = 1;
             }
 

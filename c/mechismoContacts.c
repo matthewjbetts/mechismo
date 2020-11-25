@@ -171,6 +171,7 @@ int main(int argc, char **argv) {
     for(i = 0, n = 1; i < domains->n; ++i, ++n) {
         domain = (DOMAIN_LOC *) domains->all[i];
 
+        //printf("%d { %c %d %c to %c %d %c }\n", i, domain->start->chain, domain->start->resSeq, domain->start->iCode, domain->end->chain, domain->end->resSeq, domain->end->iCode);
         if(strcmp(fnPdb, domain->filename) != 0) {
             memset(fnPdb, '\0', FILENAMELEN);
             strcpy(fnPdb, domain->filename);
