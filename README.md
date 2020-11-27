@@ -567,6 +567,26 @@ do
 done
 
 
+################ split contact_hit queries ################
+# split queries by single-linkage of all possible PPI pairs
+# FIXME - ensure same parameters are used as in mechismoContactHits (min_n_resres, min_lf_fist)
+for id_taxon in $TAXA
+do
+  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.time ./script/split_contact_hit_queries.pl 10 10 10 1 0.8 ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz ${MECHISMO_DN}frag_inst_to_fist.tsv.gz ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz &> ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.err
+done
+
+# get pbs scripts
+./script/contact_hits_pbs.pl
+
+# submit to cluster
+
+# import
+ls -rS ${MECHISMO_DN}contact_hits/*/*.0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/(\d+)\.0\.0-0\.8-0\.8\.ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=${1}_${2}\n";' > ${MECHISMO_DN}contact_hits/import.inp
+/usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
+
+##########################################################
+
+
 # find ContactHits
 ./script/get_contact_hit_sh.pl
 
@@ -1139,26 +1159,6 @@ do
   mkdir -p ${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}
   perl -I./lib ./script/contact_hits.pl --source 'uniprot-sprot' --outdir ${MECHISMO_DN}res_contact_info/pp/missing/ --pbs ${id_taxon} --n_jobs 200 --all_matches --contact_info --taxon ${id_taxon} --fn_id_queries ${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}.txt 1>${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}/pbs.out 2> ${MECHISMO_DN}res_contact_info/pp/missing/${id_taxon}/pbs.err &
 done
-
-
-################ split contact_hit queries ################
-# split queries by single-linkage of all possible PPI pairs
-# FIXME - ensure same parameters are used as in mechismoContactHits (min_n_resres, min_lf_fist)
-for id_taxon in $TAXA
-do
-  /usr/bin/time -o ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.time ./script/split_contact_hit_queries.pl 10 1 0.8 ${MECHISMO_DN}contact_hits/${id_taxon}/queries.txt ${MECHISMO_DN}contact_hits/${id_taxon}/query_to_fist.tsv.gz ${MECHISMO_DN}frag_inst_to_fist.tsv.gz ${MECHISMO_DN}contacts_with_fist_numbers.tsv.gz &> ${MECHISMO_DN}contact_hits/${id_taxon}/split_queries.err &
-done
-
-# get pbs scripts
-./scripts/contact_hits_pbs.pl
-
-# submit to cluster
-
-# import
-ls -rS ${MECHISMO_DN}contact_hits/*/*.0.0-0.8-0.8.ContactHit.tsv | perl -ne 'chomp; /(\d+)\/(\d+)\.0\.0-0\.8-0\.8\.ContactHit.tsv/; print"Fist::IO::ContactHit\t$_\tid=${1}_${2}\n";' > ${MECHISMO_DN}contact_hits/import.inp
-/usr/bin/time -o ${MECHISMO_DN}contact_hits/import.time perl -I./lib ./script/import_tsv.pl < ${MECHISMO_DN}contact_hits/import.inp &> ${MECHISMO_DN}contact_hits/import.err
-
-##########################################################
 
 
 ## number of sequences per organism in sprot, sprot varsplic (isoforms), and trembl

@@ -3,7 +3,9 @@
 use strict;
 
 my $n_groups;
-my $min_n_resres;
+my $minPPIResRes;
+my $minPDIResRes;
+my $minPCIResRes;
 my $min_lf_fist;
 my $n_queries;
 my $group_size;
@@ -24,13 +26,17 @@ sub usage {
 
     die <<END;
 
-Usage: $prog n_groups min_n_resres min_lf_fist queries.txt.gz query_to_fist.tsv.gz frag_inst_to_fist.tsv.gz contacts_with_fist_numbers.gz
+Usage: $prog n_groups min_ppi_resres min_pdi_resres min_pci_resres min_lf_fist queries.txt.gz query_to_fist.tsv.gz frag_inst_to_fist.tsv.gz contacts_with_fist_numbers.gz
 
 END
 }
 
+# FIXME - use GetArgs
+
 defined($n_groups = shift @ARGV) or usage();
-defined($min_n_resres = shift @ARGV) or usage();
+defined($minPPIResRes = shift @ARGV) or usage();
+defined($minPDIResRes = shift @ARGV) or usage();
+defined($minPCIResRes = shift @ARGV) or usage();
 defined($min_lf_fist = shift @ARGV) or usage();
 defined($fn_query = shift @ARGV) or usage();
 defined($fn_query_to_fist = shift @ARGV) or usage();
@@ -41,7 +47,7 @@ $dn = ($fn_query =~ /\A(\S+\/)/) ? $1 : "./";
 defined($queries = parse_queries($fn_query)) or die;
 defined($fist_to_query = get_fist_to_query($fn_query_to_fist, $min_lf_fist)) or die;
 defined($frag_inst_to_seq = parse_frag_inst_to_seq($fn_frag_inst_to_fist, $fist_to_query)) or die;
-defined($contacts = parse_contacts($fn_contacts, $frag_inst_to_seq, $min_n_resres)) or die;
+defined($contacts = parse_contacts($fn_contacts, $frag_inst_to_seq, $minPPIResRes, $minPDIResRes, $minPCIResRes)) or die;
 
 $n_queries = scalar keys %{$queries};
 $group_size = sprintf "%.0f", $n_queries / $n_groups;
@@ -227,7 +233,7 @@ sub get_fist_to_query {
 }
 
 sub parse_contacts {
-    my($fn, $frag_inst_to_seq, $min_n_resres) = @_;
+    my($fn, $frag_inst_to_seq, $minPPIResRes, $minPDIResRes, $minPCIResRes) = @_;
 
     # store contacts by the fist sequences involved
 
@@ -241,17 +247,20 @@ sub parse_contacts {
     my $nres2;
     my $n_clash;
     my $n_resres;
+    my $type;
     my $id_sa2;
     my $id_sb2;
 
     defined($fh = myopen($fn)) or return undef;
     $contacts = {};
     while(<$fh>) {
-        ($id_contact, $id_fia2, $id_fib2, $crystal, $nres1, $nres2, $n_clash, $n_resres) = split;
+        ($id_contact, $id_fia2, $id_fib2, $crystal, $nres1, $nres2, $n_clash, $n_resres, $type) = split;
 
         ($crystal == 1) and next;
         ($n_clash > 0) and next;
-        ($n_resres >= $min_n_resres) or next;
+        ($type eq 'PPI') and ($n_resres < $minPPIResRes) and next;
+        ($type eq 'PDI') and ($n_resres < $minPDIResRes) and next;
+        ($n_resres < $minPCIResRes) and next; # FIXME - assumes minPCIResRes is less than minPPIResRes and minPDIResRes
 
         #print join("\t", 'CONTACT', $id_fia2, $id_fib2, defined($frag_inst_to_seq->{$id_fia2}) ? 'y' : 'n', defined($frag_inst_to_seq->{$id_fib2}) ? 'y' : 'n'), "\n";
         defined($id_sa2 = $frag_inst_to_seq->{$id_fia2}) or next;

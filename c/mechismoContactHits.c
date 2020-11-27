@@ -200,7 +200,7 @@ int contactHitNR(
                            (ch1->nResResA1B1 == 0)
                            || ((strncmp(ch1->type, "PPI", 3) == 0) && (ch1->nResResA1B1 < minPPIResRes))
                            || ((strncmp(ch1->type, "PDI", 3) == 0) && (ch1->nResResA1B1 < minPDIResRes))
-                           || (ch1->nResResA1B1 < minPCIResRes)
+                           || (ch1->nResResA1B1 < minPCIResRes) // FIXME - assumes minPCIResRes is less than minPPIResRes and minPDIResRes
                            ) {
                             discardCh[j] = 1;
                             //printf("discarding %u\n", ch1->id);

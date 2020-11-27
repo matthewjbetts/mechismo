@@ -1345,6 +1345,7 @@ int contactParse(char *fileName, void *contacts, int (*contactSave)(void *, CONT
                 contactDelete(c);
             }
             else if(c->nResRes < minPCIResRes) {
+                // FIXME - assumes minPCIResRes is less than minPPIResRes and minPDIResRes
                 contactDelete(c);
             }
             else {
