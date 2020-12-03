@@ -17,7 +17,6 @@ use Catalyst::Runtime 5.80;
 #                 directory
 
 use Catalyst qw/
-    -Debug
     ConfigLoader
     Static::Simple
 /;
@@ -46,7 +45,8 @@ __PACKAGE__->config(
 );
 
 # Start the application
-__PACKAGE__->setup(qw(-Debug));
+#__PACKAGE__->setup(qw(-Debug));
+__PACKAGE__->setup();
 
 
 =head1 NAME
