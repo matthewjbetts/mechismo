@@ -2001,11 +2001,11 @@ sub pci_table {
     my $pos_a1;
     my $site;
     my $type_chem;
+    my $id_chem;
     my $ids_ch;
     my $id_ch;
     my $ch;
     my $ids_ch_b1;
-    my $id_seq_b1;
     my $ppis;
     my $intev;
     my $n_posns;
@@ -2016,8 +2016,8 @@ sub pci_table {
         foreach $site (@{$site_info->{sites}->{$pos_a1}->{sites}}) {
             foreach $type_chem (keys %{$site->{$type_ch}}) {
                 $ids_ch = [];
-                foreach $id_seq_b1 (keys %{$site->{$type_ch}->{$type_chem}}) {
-                    $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} keys %{$site->{$type_ch}->{$type_chem}->{$id_seq_b1}}];
+                foreach $id_chem (keys %{$site->{$type_ch}->{$type_chem}}) {
+                    $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} keys %{$site->{$type_ch}->{$type_chem}->{$id_chem}}];
 
                     # get all contact hits for each interactor
                     push @{$ids_ch}, @{$ids_ch_b1};
@@ -2029,7 +2029,7 @@ sub pci_table {
                     foreach $id_ch (@{$ids_ch}) {
                         ++${$id_row};
                         $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
-                        $id_seq_b1 = $ch->id_seq_b1;
+                        $id_chem = $ch->contact->frag_inst2->frag->chemical_type;
 
                         # common to all interaction types
                         $pci_table->add_row(${$id_row});
@@ -2046,15 +2046,15 @@ sub pci_table {
                         $pci_table->element(${$id_row}, 'pcid',          $ch->pcid);
                         $pci_table->element(${$id_row}, 'e_value',       $ch->e_value);
                         $pci_table->element(${$id_row}, 'conf',          $ch->conf);
-                        $pci_table->element(${$id_row}, 'ie',            $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie});
-                        $pci_table->element(${$id_row}, 'ie_class',      $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie_class});
+                        $pci_table->element(${$id_row}, 'ie',            $site->{$type_ch}->{$type_chem}->{$id_chem}->{$id_ch}->{ie});
+                        $pci_table->element(${$id_row}, 'ie_class',      $site->{$type_ch}->{$type_chem}->{$id_chem}->{$id_ch}->{ie_class});
 
                         # unique to PCIs
                         $pci_table->element(${$id_row}, 'id_seq_a2',     $ch->id_seq_a2);
                         $pci_table->element(${$id_row}, 'start_a2',      $ch->start_a2);
                         $pci_table->element(${$id_row}, 'end_a2',        $ch->end_a2);
                         $pci_table->element(${$id_row}, 'type_chem',     $type_chem);
-                        $pci_table->element(${$id_row}, 'id_chem',       $id_seq_b1);
+                        $pci_table->element(${$id_row}, 'id_chem',       $id_chem);
                     }
                 }
             }
@@ -2063,8 +2063,8 @@ sub pci_table {
 
     # interactions with no sites
     foreach $type_chem (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}}) {
-        foreach $id_seq_b1 (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}}) {
-            foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}->{$id_seq_b1}}) {
+        foreach $id_chem (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}}) {
+            foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}->{$id_chem}}) {
                 $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
                 $n_posns = $site_info->{ch_to_interface_sites}->{$id_ch};
                 $n_posns = defined($n_posns) ? scalar keys %{$n_posns} : 0;
@@ -2091,7 +2091,7 @@ sub pci_table {
                     $pci_table->element(${$id_row}, 'start_a2',      $ch->start_a2);
                     $pci_table->element(${$id_row}, 'end_a2',        $ch->end_a2);
                     $pci_table->element(${$id_row}, 'type_chem',     $type_chem);
-                    $pci_table->element(${$id_row}, 'id_chem',       $id_seq_b1);
+                    $pci_table->element(${$id_row}, 'id_chem',       $id_chem);
                 }
             }
         }
@@ -2116,11 +2116,11 @@ sub pdi_table {
     my $pos_a1;
     my $site;
     my $type_chem;
+    my $id_chem;
     my $ids_ch;
     my $id_ch;
     my $ch;
     my $ids_ch_b1;
-    my $id_seq_b1;
     my $ppis;
     my $intev;
     my $n_posns;
@@ -2131,8 +2131,8 @@ sub pdi_table {
         foreach $site (@{$site_info->{sites}->{$pos_a1}->{sites}}) {
             foreach $type_chem (keys %{$site->{$type_ch}}) {
                 $ids_ch = [];
-                foreach $id_seq_b1 (keys %{$site->{$type_ch}->{$type_chem}}) {
-                    $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} keys %{$site->{$type_ch}->{$type_chem}->{$id_seq_b1}}];
+                foreach $id_chem (keys %{$site->{$type_ch}->{$type_chem}}) {
+                    $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} keys %{$site->{$type_ch}->{$type_chem}->{$id_chem}}];
 
                     # get all contact hits for each interactor
                     push @{$ids_ch}, @{$ids_ch_b1};
@@ -2144,7 +2144,7 @@ sub pdi_table {
                     foreach $id_ch (@{$ids_ch}) {
                         ++${$id_row};
                         $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
-                        $id_seq_b1 = $ch->id_seq_b1;
+                        $id_chem = $ch->contact->frag_inst2->frag->chemical_type;
 
                         # common to all interaction types
                         $pdi_table->add_row(${$id_row});
@@ -2161,15 +2161,15 @@ sub pdi_table {
                         $pdi_table->element(${$id_row}, 'pcid',          $ch->pcid);
                         $pdi_table->element(${$id_row}, 'e_value',       $ch->e_value);
                         $pdi_table->element(${$id_row}, 'conf',          $ch->conf);
-                        $pdi_table->element(${$id_row}, 'ie',            $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie});
-                        $pdi_table->element(${$id_row}, 'ie_class',      $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie_class});
+                        $pdi_table->element(${$id_row}, 'ie',            $site->{$type_ch}->{$type_chem}->{$id_chem}->{$id_ch}->{ie});
+                        $pdi_table->element(${$id_row}, 'ie_class',      $site->{$type_ch}->{$type_chem}->{$id_chem}->{$id_ch}->{ie_class});
 
                         # unique to PCIs and PDIs
                         $pdi_table->element(${$id_row}, 'id_seq_a2',     $ch->id_seq_a2);
                         $pdi_table->element(${$id_row}, 'start_a2',      $ch->start_a2);
                         $pdi_table->element(${$id_row}, 'end_a2',        $ch->end_a2);
                         $pdi_table->element(${$id_row}, 'type_chem',     $type_chem);
-                        $pdi_table->element(${$id_row}, 'id_chem',       $id_seq_b1);
+                        $pdi_table->element(${$id_row}, 'id_chem',       $id_chem);
                     }
                 }
             }
@@ -2178,8 +2178,8 @@ sub pdi_table {
 
     # interactions with no sites
     foreach $type_chem (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}}) {
-        foreach $id_seq_b1 (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}}) {
-            foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}->{$id_seq_b1}}) {
+        foreach $id_chem (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}}) {
+            foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}->{$id_chem}}) {
                 $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
                 $n_posns = $site_info->{ch_to_interface_sites}->{$id_ch};
                 $n_posns = defined($n_posns) ? scalar keys %{$n_posns} : 0;
@@ -2201,12 +2201,12 @@ sub pdi_table {
                     $pdi_table->element(${$id_row}, 'e_value',       $ch->e_value);
                     $pdi_table->element(${$id_row}, 'conf',          $ch->conf);
 
-                    # unique to PCIs
+                    # unique to PDIs
                     $pdi_table->element(${$id_row}, 'id_seq_a2',     $ch->id_seq_a2); # FIXME - should a2 info be in other int tables too?
                     $pdi_table->element(${$id_row}, 'start_a2',      $ch->start_a2);
                     $pdi_table->element(${$id_row}, 'end_a2',        $ch->end_a2);
                     $pdi_table->element(${$id_row}, 'type_chem',     $type_chem);
-                    $pdi_table->element(${$id_row}, 'id_chem',       $id_seq_b1);
+                    $pdi_table->element(${$id_row}, 'id_chem',       $id_chem);
                 }
             }
         }
