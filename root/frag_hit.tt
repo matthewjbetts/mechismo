@@ -47,7 +47,7 @@ Template from:<br/>
 
 [%
 #fn_pdb = "/static/data/pdb/" _ pdb.idcode.substr(1, 2) _ "/pdb" _ pdb.idcode _ ".ent.gz; restrict model = 1";
-fn_pdb = "http://www.rcsb.org/pdb/files/" _ pdb.idcode _ ".pdb; restrict model = 1";
+fn_pdb = "https://files.rcsb.org/download/" _ pdb.idcode _ ".cif; restrict model = 1";
 jsmol_script = [
   "zap",
   "load ASYNC ${fn_pdb}",

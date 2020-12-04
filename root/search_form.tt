@@ -24,7 +24,8 @@
           <option value="83333"  title="Escherichia coli K-12">E.coli</option>
           <option value="224308" title="Bacillus subtilis subsp. subtilis str. 168">B.subtilis</option>
           <option value="272634" title="Mycoplasma pneumoniae M129">M.pneumoniae</option>
-          <option value="9606,10090,559292,6239,7227,83333,224308,272634" title="Any of these species">Any of the above</option> 
+          <option value="3702"   title="Arabidopsis thaliana">Arabidopsis thaliana</option>
+          <option value="9606,10090,559292,6239,7227,83333,224308,272634,3702" title="Any of these species">Any of the above</option> 
         </select>
       </li>
 

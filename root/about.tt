@@ -13,18 +13,24 @@ within a set of proteins or genes provided by you.</p>
 <h2><a name="publications">Publications using mechismo</a></h2>
 
 <p>The primary reference for mechismo is: <br>
-Betts MJ, Lu Q, Jiang YY, Drusko A, Wichmann A, Utz M, Valtierra-Gutiérrez IA, Schlesner M, Jaeger N, Jones DT, Pfister S, Lichter P, Eils R, Siebert R, Bork B, Apic G, Gavin AC, Russell RB<br>
+Betts MJ, Lu Q, Jiang YY, Drusko A, Wichmann A, Utz M, Valtierra-Gutierrez IA, Schlesner M, Jaeger N, Jones DT, Pfister S,<br>
+Lichter P, Eils R, Siebert R, Bork B, Apic G, Gavin AC, Russell RB<br>
 Mechismo: predicting the mechanistic impact of mutations and modifications on molecular interactions<br>
 Nucl Acids Res, 43(2):e10, 2015 (<a href="http://www.ncbi.nlm.nih.gov/pubmed/25392414">PubMed</a>).</p>
 
-<p>Mechismo, or the data behind it, has been used in a number of studies:
+<p>Mechismo, or the data behind it, has been used in a number of studies:<br>
+<i>Our group:</i><br>
 <ul>
+<li>Staufner et al, Defining clinical subgroups including genotype-phenotype correlations in NBAS-associated disease: results from > 100 patients, Genet Med, 2020 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/31761904">PubMed</a></li>
+<li>Mundo et al, Molecular switch from MYC to MYCN expression in MYC protein negative Burkitt lymphoma cases, Blood Canc J, 2019 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/31748534">PubMed</a></li>
+<li>Raimondi et al, Rare, functional, somatic variants in gene families linked to cancer genes: GPCR signaling as a paradigm. Oncogene 2019 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/31337866">PubMed</a></li>
+<li>Groeschel et al, Defective homologous recombination DNA repair as therapeutic targt in advanced chordoma. Nat Commun 2019 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/30967556">PubMed</a></li>
+<li>Lopez et al, Genomic and transcriptomic changes complement each other in the pathogenesis of sporadic Burkitt lymphoma. Nat Commun 2019 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/30926794">PubMed</a></li>
+<li>Wagener et al, The mutational landscape of Burkitt-like lymphoma with 11q aberration is distinct from that of Burkitt lymphoma. Blood 2019 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/30567752">PubMed</a></li>
+<li>Kishore et al, Understanding the role of genetic variability in LRRK2 in Indian population. Mov Disord  2019 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/30485545">PubMed</a></li>
 <li>Vitale et al, Cryptogenic cholestasis in young and adults: ATP8B1, ABCB11, ABCB4, and TJP2 gene variants analysis by high-throughput sequencing. J. Gastroenterol  2017 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/29238877">PubMed</a></li>
-
 <li>Raimondi et al, Natural genetic variants affecting equivalent protein family positions reflect human diversity. Sci. Rep. 2017 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/28986545">PubMed</a></li>
-
 <li>Betts et al, Systematic identification of phosphorylation-mediated protein interaction switches. PLoS Comp. Biol. 2017 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/28346509">PubMed</a></li>
-
 <li>Raimondi, Singh et al, Insights into cancer severity from biomolecular interaction mechanisms. Sci. Rep. 2016 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/27698488">PubMed</a></li>
 
 <li>Boldt et al, An organelle-specific protein landscape identifies novel diseases and molecular mechanisms. Nat Commun. 2016 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/27173435">PubMed</a></li>
@@ -35,11 +41,6 @@ Nucl Acids Res, 43(2):e10, 2015 (<a href="http://www.ncbi.nlm.nih.gov/pubmed/253
 
 <li>Wagener et al. The PCBP1 gene encoding poly(rc) binding protein I is recurrently mutated in Burkitt lymphoma.  Genes Chromosomes Cancer. 2015 <a href = "http://www.ncbi.nlm.nih.gov/pubmed/26173642">PubMed</a></li>
 
-<li>Sahni et al.  Widespread macromolecular interaction perturbations in human genetic disorders.
-Cell. 2015  <a href="http://www.ncbi.nlm.nih.gov/pubmed/25910212">PubMed</a>.</li>
-
-<li>Yang et al.  Protein domain-level landscape of cancer-type-specific somatic mutations.
-PLoS Comput Biol. 2015 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25794154">PubMed</a>.</li>
 
 <li>Vater et al. The mutational pattern of primary lymphoma of the central nervous system determined by whole exomoe sequencing.  
 Leukemia. 2014 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25189415">PubMed</a>.</li>
@@ -69,7 +70,20 @@ medulloblastoma. Nature. 2012 <a href="http://www.ncbi.nlm.nih.gov/pubmed/228325
 lysine acetylation in a genome-reduced bacterium. Mol Syst Biol. 2012
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/22373819">PubMed</a>.</li>
 </ul>
+<i>Other groups</i>:<br>
+<ul>
+<li>Wang et al. iTRAQ-Based Global Phosphoproteomics Reveals Novel Molecular Differences Between Toxoplasma gondii Strains of Different Genotypes. Front Cell Infect Microbil 2019. <a href="http://www.ncbi.nlm.nih.gov/pubmed/31508380">PubMed</a>.</li>
+
+<li>Fancello et al. The ribosomal protein gene RPL5 is a haploinsufficient tumor suppressor in multiple cancer types. Oncotarget 2017.  <a href="http://www.ncbi.nlm.nih.gov/pubmed/28147343">PubMed</a>.</li>
+
+<li>Porta-Pardo & Godzik. Mutation Drivers of Immunological Responses to Cancer. Cancer Immunol. Res. 2016  <a href="http://www.ncbi.nlm.nih.gov/pubmed/27401919">PubMed</a>.</li>
+
+<li>Sahni et al.  Widespread macromolecular interaction perturbations in human genetic disorders.  Cell. 2015  <a href="http://www.ncbi.nlm.nih.gov/pubmed/25910212">PubMed</a>.</li>
+
+<li>Yang et al.  Protein domain-level landscape of cancer-type-specific somatic mutations.
+PLoS Comput Biol. 2015 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25794154">PubMed</a>.</li>
 </p>
+</ul>
 
 
 <h2><a name="moreAboutMechismo">More about Mechismo</a></h2>
