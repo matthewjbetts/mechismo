@@ -93,7 +93,6 @@ sub group {
                 foreach $id_sb1 (keys %{$fist_to_query->{$id_sb2}}) {
                     $links->{$id_sa1}->{$id_sb1}++;
                     $links->{$id_sb1}->{$id_sa1}++;
-                    #print join("\t", 'LINK', $id_sa1, $id_sb1, $id_sa2, $id_sb2), "\n";
                 }
             }
         }
@@ -211,6 +210,7 @@ sub get_fist_to_query {
     my $fist_to_query;
     my $fh;
     my @F;
+    my $id_aln;
     my $id_sa1;
     my $id_sa2;
     my $start_sa2;
@@ -222,11 +222,12 @@ sub get_fist_to_query {
     $fist_to_query = {};
     while(<$fh>) {
         @F = split /\t/;
+        $id_aln = $F[0];
         ($id_sa1, $id_sa2) = @F[4..5];
         ($len_sa2, $start_sa2, $end_sa2) = @F[10..12];
         $lf_sa2 = ($end_sa2 - $start_sa2 + 1) / $len_sa2;
         ($lf_sa2 >= $min_lf_fist) or next;
-        $fist_to_query->{$id_sa2}->{$id_sa1}++;
+        $fist_to_query->{$id_sa2}->{$id_sa1}->{$id_aln}++;
     }
     close($fh);
 
@@ -257,13 +258,11 @@ sub parse_contacts {
     while(<$fh>) {
         ($id_contact, $id_fia2, $id_fib2, $crystal, $nres1, $nres2, $n_clash, $n_resres, $type) = split;
 
-        # filtering is done by mechismoContactHits, so don't do it here
-        # FIXME - why doesn't filtering here give the same number of contact hits in the end?...
-        #($crystal == 1) and next;
-        #($n_clash > 0) and next;
-        #($type eq 'PPI') and ($n_resres < $minPPIResRes) and next;
-        #($type eq 'PDI') and ($n_resres < $minPDIResRes) and next;
-        #($n_resres < $minPCIResRes) and next; # FIXME - assumes minPCIResRes is less than minPPIResRes and minPDIResRes
+        #($crystal == 1) and next; # mechismoContactHits allows crystal contacts
+        ($n_clash > 0) and next;
+        ($type eq 'PPI') and ($n_resres < $minPPIResRes) and next;
+        ($type eq 'PDI') and ($n_resres < $minPDIResRes) and next;
+        ($n_resres < $minPCIResRes) and next; # FIXME - assumes minPCIResRes is less than minPPIResRes and minPDIResRes
 
         #print join("\t", 'CONTACT', $id_fia2, $id_fib2, defined($frag_inst_to_seq->{$id_fia2}) ? 'y' : 'n', defined($frag_inst_to_seq->{$id_fib2}) ? 'y' : 'n'), "\n";
         defined($id_sa2 = $frag_inst_to_seq->{$id_fia2}) or next;
