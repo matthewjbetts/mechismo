@@ -1816,10 +1816,12 @@ sub pciIntInfo {
 sub ppi_table {
     my($self, $json, $ppi_table, $id_row, $results_type, $site_info) = @_;
 
+    my $type_ch = 'PPI';
     my $seq_a1;
     my $id_seq_a1;
     my $pos_a1;
     my $site;
+    my $type_chem;
     my $ids_ch;
     my $id_ch;
     my $ch;
@@ -1833,32 +1835,68 @@ sub ppi_table {
     $id_seq_a1 = $seq_a1->id;
     foreach $pos_a1 (keys %{$site_info->{sites}}) {
         foreach $site (@{$site_info->{sites}->{$pos_a1}->{sites}}) {
-            $ids_ch = [];
-            foreach $id_seq_b1 (keys %{$site->{PPI}->{peptide}}) {
-                $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{PPI}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{PPI}->{$a}->pcid} keys %{$site->{PPI}->{peptide}->{$id_seq_b1}}];
+            foreach $type_chem (keys %{$site->{$type_ch}}) { # should only be 'peptide'
+                $ids_ch = [];
+                foreach $id_seq_b1 (keys %{$site->{$type_ch}->{$type_chem}}) {
+                    $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} keys %{$site->{$type_ch}->{$type_chem}->{$id_seq_b1}}];
 
-                # get all contacts hit for each interactor
-                #push @{$ids_ch}, $ids_ch_b1->[0];
+                    # get all contact hits for each interactor
+                    push @{$ids_ch}, @{$ids_ch_b1};
+                }
 
-                # get all contact hits for each interactor
-                push @{$ids_ch}, @{$ids_ch_b1};
+                if(@{$ids_ch} > 0) {
+                    $ids_ch = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} @{$ids_ch}]; # FIXME - refactor: extract function
+                    $ppis = [];
+                    foreach $id_ch (@{$ids_ch}) {
+                        ++${$id_row};
+                        $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
+                        $id_seq_b1 = $ch->id_seq_b1;
+
+                        $ppi_table->add_row(${$id_row});
+                        $ppi_table->element(${$id_row}, 'id_ch',         $id_ch);
+                        $ppi_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
+                        $ppi_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
+                        $ppi_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
+                        $ppi_table->element(${$id_row}, 'pos_a1',        $pos_a1);
+                        $ppi_table->element(${$id_row}, 'site',          $site->{label});
+                        $ppi_table->element(${$id_row}, 'start_a1',      $ch->start_a1);
+                        $ppi_table->element(${$id_row}, 'end_a1',        $ch->end_a1);
+                        $ppi_table->element(${$id_row}, 'id_seq_b1',     $id_seq_b1);
+                        $ppi_table->element(${$id_row}, 'name_b1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_b1}->{name});
+                        $ppi_table->element(${$id_row}, 'primary_id_b1', $json->{results}->{$results_type}->{seqs}->{$id_seq_b1}->{primary_id});
+                        $ppi_table->element(${$id_row}, 'start_b1',      $ch->start_b1);
+                        $ppi_table->element(${$id_row}, 'end_b1',        $ch->end_b1);
+                        $ppi_table->element(${$id_row}, 'intev',         _intev($json, $ch->pcid, $id_seq_a1, $id_seq_b1));
+                        $ppi_table->element(${$id_row}, 'idcode',        $ch->contact->frag_inst1->frag->idcode);
+                        $ppi_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$ch->contact->frag_inst1->frag->idcode}); # inefficient but easier to put this in every row that needs it
+                        $ppi_table->element(${$id_row}, 'homo',          $ch->contact->homo);
+                        $ppi_table->element(${$id_row}, 'pcid',          $ch->pcid);
+                        $ppi_table->element(${$id_row}, 'e_value',       $ch->e_value);
+                        $ppi_table->element(${$id_row}, 'conf',          $ch->conf);
+                        $ppi_table->element(${$id_row}, 'ie',            $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie});
+                        $ppi_table->element(${$id_row}, 'ie_class',      $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie_class});
+                        $ppi_table->element(${$id_row}, 'sswitch',       $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{sswitch}); # currently only relevant for phosphosites
+                    }
+                }
             }
+        }
+    }
 
-            if(@{$ids_ch} > 0) {
-                $ids_ch = [sort {$json->{temporary}->{contact_hits}->{by_id}->{PPI}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{PPI}->{$a}->pcid} @{$ids_ch}];
-                $ppis = [];
-                foreach $id_ch (@{$ids_ch}) {
+    foreach $type_chem (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}}) {
+        foreach $id_seq_b1 (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}}) {
+            foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}->{$id_seq_b1}}) {
+                $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
+                $n_posns = $site_info->{ch_to_interface_sites}->{$id_ch};
+                $n_posns = defined($n_posns) ? scalar keys %{$n_posns} : 0;
+                if($n_posns == 0) {
                     ++${$id_row};
-                    $ch = $json->{temporary}->{contact_hits}->{by_id}->{PPI}->{$id_ch};
-                    $id_seq_b1 = $ch->id_seq_b1;
 
                     $ppi_table->add_row(${$id_row});
                     $ppi_table->element(${$id_row}, 'id_ch',         $id_ch);
                     $ppi_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
                     $ppi_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
                     $ppi_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
-                    $ppi_table->element(${$id_row}, 'pos_a1',        $pos_a1);
-                    $ppi_table->element(${$id_row}, 'site',          $site->{label});
+                    $ppi_table->element(${$id_row}, 'site',          '(none)');
                     $ppi_table->element(${$id_row}, 'start_a1',      $ch->start_a1);
                     $ppi_table->element(${$id_row}, 'end_a1',        $ch->end_a1);
                     $ppi_table->element(${$id_row}, 'id_seq_b1',     $id_seq_b1);
@@ -1866,49 +1904,14 @@ sub ppi_table {
                     $ppi_table->element(${$id_row}, 'primary_id_b1', $json->{results}->{$results_type}->{seqs}->{$id_seq_b1}->{primary_id});
                     $ppi_table->element(${$id_row}, 'start_b1',      $ch->start_b1);
                     $ppi_table->element(${$id_row}, 'end_b1',        $ch->end_b1);
-                    $ppi_table->element(${$id_row}, 'intev',         _intev($json, $ch->pcid, $id_seq_a1, $id_seq_b1));
-                    $ppi_table->element(${$id_row}, 'idcode',        $ch->contact->frag_inst1->frag->idcode);
-                    $ppi_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$ch->contact->frag_inst1->frag->idcode}); # inefficient but easier to put this in every row that needs it
+                    $ppi_table->element(${$id_row}, 'intev',         _intev($json, $ch->{pcid}, $id_seq_a1, $id_seq_b1));
+                    $ppi_table->element(${$id_row}, 'idcode',        $ch->idcode);
+                    $ppi_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$ch->idcode}); # inefficient but easier to put this in every row that needs it
                     $ppi_table->element(${$id_row}, 'homo',          $ch->contact->homo);
                     $ppi_table->element(${$id_row}, 'pcid',          $ch->pcid);
                     $ppi_table->element(${$id_row}, 'e_value',       $ch->e_value);
                     $ppi_table->element(${$id_row}, 'conf',          $ch->conf);
-                    $ppi_table->element(${$id_row}, 'ie',            $site->{PPI}->{peptide}->{$id_seq_b1}->{$id_ch}->{ie});
-                    $ppi_table->element(${$id_row}, 'ie_class',      $site->{PPI}->{peptide}->{$id_seq_b1}->{$id_ch}->{ie_class});
-                    $ppi_table->element(${$id_row}, 'sswitch',       $site->{PPI}->{peptide}->{$id_seq_b1}->{$id_ch}->{sswitch}); # currently only relevant for phosphosites
                 }
-            }
-        }
-    }
-
-    foreach $id_seq_b1 (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{PPI}->{$id_seq_a1}->{peptide}}) {
-        foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{PPI}->{$id_seq_a1}->{peptide}->{$id_seq_b1}}) {
-            $ch = $json->{temporary}->{contact_hits}->{by_id}->{PPI}->{$id_ch};
-            $n_posns = $site_info->{ch_to_interface_sites}->{$id_ch};
-            $n_posns = defined($n_posns) ? scalar keys %{$n_posns} : 0;
-            if($n_posns == 0) {
-                ++${$id_row};
-
-                $ppi_table->add_row(${$id_row});
-                $ppi_table->element(${$id_row}, 'id_ch',         $id_ch);
-                $ppi_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
-                $ppi_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
-                $ppi_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
-                $ppi_table->element(${$id_row}, 'site',          '(none)');
-                $ppi_table->element(${$id_row}, 'start_a1',      $ch->start_a1);
-                $ppi_table->element(${$id_row}, 'end_a1',        $ch->end_a1);
-                $ppi_table->element(${$id_row}, 'id_seq_b1',     $id_seq_b1);
-                $ppi_table->element(${$id_row}, 'name_b1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_b1}->{name});
-                $ppi_table->element(${$id_row}, 'primary_id_b1', $json->{results}->{$results_type}->{seqs}->{$id_seq_b1}->{primary_id});
-                $ppi_table->element(${$id_row}, 'start_b1',      $ch->start_b1);
-                $ppi_table->element(${$id_row}, 'end_b1',        $ch->end_b1);
-                $ppi_table->element(${$id_row}, 'intev',         _intev($json, $ch->{pcid}, $id_seq_a1, $id_seq_b1));
-                $ppi_table->element(${$id_row}, 'idcode',        $ch->idcode);
-                $ppi_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$ch->idcode}); # inefficient but easier to put this in every row that needs it
-                $ppi_table->element(${$id_row}, 'homo',          $ch->contact->homo);
-                $ppi_table->element(${$id_row}, 'pcid',          $ch->pcid);
-                $ppi_table->element(${$id_row}, 'e_value',       $ch->e_value);
-                $ppi_table->element(${$id_row}, 'conf',          $ch->conf);
             }
         }
     }
@@ -1990,92 +1993,103 @@ sub _intev_v01 {
 sub pci_table {
     my($self, $json, $pci_table, $id_row, $results_type, $site_info) = @_;
 
+    my $type_ch = 'PCInqm';
     my $seq_a1;
     my $id_seq_a1;
     my $pos_a1;
     my $site;
     my $type_chem;
-    my $id_chem;
-    my $id_fh;
-    my $id_frag;
-    my $conf;
-    my $key;
+    my $ids_ch;
+    my $id_ch;
+    my $ch;
+    my $ids_ch_b1;
+    my $id_seq_b1;
+    my $ppis;
+    my $intev;
     my $n_posns;
 
     $seq_a1 = $self;
     $id_seq_a1 = $seq_a1->id;
     foreach $pos_a1 (keys %{$site_info->{sites}}) {
         foreach $site (@{$site_info->{sites}->{$pos_a1}->{sites}}) {
-            foreach $type_chem (keys %{$site->{pcis}}) {
-                foreach $id_chem (keys %{$site->{pcis}->{$type_chem}}) {
-                    foreach $id_fh (keys %{$site->{pcis}->{$type_chem}->{$id_chem}}) {
+            foreach $type_chem (keys %{$site->{$type_ch}}) {
+                $ids_ch = [];
+                foreach $id_seq_b1 (keys %{$site->{$type_ch}->{$type_chem}}) {
+                    $ids_ch_b1 = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} keys %{$site->{$type_ch}->{$type_chem}->{$id_seq_b1}}];
+
+                    # get all contact hits for each interactor
+                    push @{$ids_ch}, @{$ids_ch_b1};
+                }
+
+                if(@{$ids_ch} > 0) {
+                    $ids_ch = [sort {$json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$b}->pcid <=> $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$a}->pcid} @{$ids_ch}]; # FIXME - refactor: extract function
+                    $ppis = [];
+                    foreach $id_ch (@{$ids_ch}) {
                         ++${$id_row};
-                        #warn join("\t", 'PCI', $pci_table, ${$id_row}), "\n";
+                        $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
+                        $id_seq_b1 = $ch->id_seq_b1;
 
-                        $id_frag = $json->{temporary}->{frag_hit_info}->{$id_fh}->{id_frag};
-                        $conf = $json->{temporary}->{pcis}->{$id_seq_a1}->{$type_chem}->{$id_chem}->{$id_fh};
-
+                        # common to all interaction types
                         $pci_table->add_row(${$id_row});
-                        $pci_table->element(${$id_row}, 'id_fh',         $id_fh);
+                        $pci_table->element(${$id_row}, 'id_fh',         $id_ch); # FIXME - should be a contact hit not a fragment hit
                         $pci_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
                         $pci_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
                         $pci_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
                         $pci_table->element(${$id_row}, 'pos_a1',        $pos_a1);
                         $pci_table->element(${$id_row}, 'site',          $site->{label});
-                        $pci_table->element(${$id_row}, 'start_a1',      $json->{temporary}->{frag_hit_info}->{$id_fh}->{start_a1});
-                        $pci_table->element(${$id_row}, 'end_a1',        $json->{temporary}->{frag_hit_info}->{$id_fh}->{end_a1});
-                        $pci_table->element(${$id_row}, 'id_seq_a2',     $json->{temporary}->{frag_hit_info}->{$id_fh}->{id_seq_a2});
-                        $pci_table->element(${$id_row}, 'start_a2',      $json->{temporary}->{frag_hit_info}->{$id_fh}->{start_a2});
-                        $pci_table->element(${$id_row}, 'end_a2',        $json->{temporary}->{frag_hit_info}->{$id_fh}->{end_a2});
+                        $pci_table->element(${$id_row}, 'start_a1',      $ch->start_a1);
+                        $pci_table->element(${$id_row}, 'end_a1',        $ch->end_a1);
+                        $pci_table->element(${$id_row}, 'idcode',        $ch->contact->frag_inst1->frag->idcode);
+                        $pci_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$ch->contact->frag_inst1->frag->idcode}); # inefficient but easier to put this in every row that needs it
+                        $pci_table->element(${$id_row}, 'pcid',          $ch->pcid);
+                        $pci_table->element(${$id_row}, 'e_value',       $ch->e_value);
+                        $pci_table->element(${$id_row}, 'conf',          $ch->conf);
+                        $pci_table->element(${$id_row}, 'ie',            $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie});
+                        $pci_table->element(${$id_row}, 'ie_class',      $site->{$type_ch}->{$type_chem}->{$id_seq_b1}->{$id_ch}->{ie_class});
+
+                        # unique to PCIs
+                        $pci_table->element(${$id_row}, 'id_seq_a2',     $ch->id_seq_a2);
+                        $pci_table->element(${$id_row}, 'start_a2',      $ch->start_a2);
+                        $pci_table->element(${$id_row}, 'end_a2',        $ch->end_a2);
                         $pci_table->element(${$id_row}, 'type_chem',     $type_chem);
-                        $pci_table->element(${$id_row}, 'id_chem',       $id_chem);
-                        $pci_table->element(${$id_row}, 'idcode',        $json->{temporary}->{frags}->{$id_frag}->{idcode});
-                        $pci_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$json->{temporary}->{frags}->{$id_frag}->{idcode}}); # inefficient but easier to put this in every row that needs it
-                        $pci_table->element(${$id_row}, 'pcid',          $json->{temporary}->{frag_hit_info}->{$id_fh}->{pcid});
-                        $pci_table->element(${$id_row}, 'e_value',       $json->{temporary}->{frag_hit_info}->{$id_fh}->{e_value});
-                        $pci_table->element(${$id_row}, 'conf',          $conf);
-                        $pci_table->element(${$id_row}, 'ie',            $site->{pcis}->{$type_chem}->{$id_chem}->{$id_fh}->{ie});
-                        $pci_table->element(${$id_row}, 'ie_class',      $site->{pcis}->{$type_chem}->{$id_chem}->{$id_fh}->{ie_class});
+                        $pci_table->element(${$id_row}, 'id_chem',       $id_seq_b1);
                     }
                 }
             }
         }
     }
 
-    # pcis with no sites
-    $key = 'pcis';
-    if(defined($json->{temporary}->{$key}->{$id_seq_a1})) {
-        foreach $type_chem (keys %{$json->{temporary}->{$key}->{$id_seq_a1}}) {
-            foreach $id_chem (keys %{$json->{temporary}->{$key}->{$id_seq_a1}->{$type_chem}}) {
-                foreach $id_fh (keys %{$json->{temporary}->{$key}->{$id_seq_a1}->{$type_chem}->{$id_chem}}) {
-                    $n_posns = 0;
-                    if(defined($site_info->{fh_to_interface_sites}->{$id_fh}->{$type_chem}->{$id_chem})) {
-                        $n_posns = scalar keys %{$site_info->{fh_to_interface_sites}->{$id_fh}->{$type_chem}->{$id_chem}};
-                    }
-                    if($n_posns == 0) {
-                        ++${$id_row};
-                        $id_frag = $json->{temporary}->{frag_hit_info}->{$id_fh}->{id_frag};
+    # interactions with no sites
+    foreach $type_chem (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}}) {
+        foreach $id_seq_b1 (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}}) {
+            foreach $id_ch (keys %{$json->{temporary}->{contact_hits}->{by_seq}->{$type_ch}->{$id_seq_a1}->{$type_chem}->{$id_seq_b1}}) {
+                $ch = $json->{temporary}->{contact_hits}->{by_id}->{$type_ch}->{$id_ch};
+                $n_posns = $site_info->{ch_to_interface_sites}->{$id_ch};
+                $n_posns = defined($n_posns) ? scalar keys %{$n_posns} : 0;
+                if($n_posns == 0) {
+                    ++${$id_row};
 
-                        $pci_table->add_row(${$id_row});
-                        $pci_table->element(${$id_row}, 'id_fh',         $id_fh);
-                        $pci_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
-                        $pci_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
-                        $pci_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
-                        $pci_table->element(${$id_row}, 'pos_a1',        $pos_a1);
-                        $pci_table->element(${$id_row}, 'site',          '(none)');
-                        $pci_table->element(${$id_row}, 'start_a1',      $json->{temporary}->{frag_hit_info}->{$id_fh}->{start_a1});
-                        $pci_table->element(${$id_row}, 'end_a1',        $json->{temporary}->{frag_hit_info}->{$id_fh}->{end_a1});
-                        $pci_table->element(${$id_row}, 'id_seq_a2',     $json->{temporary}->{frag_hit_info}->{$id_fh}->{id_seq_a2});
-                        $pci_table->element(${$id_row}, 'start_a2',      $json->{temporary}->{frag_hit_info}->{$id_fh}->{start_a2});
-                        $pci_table->element(${$id_row}, 'end_a2',        $json->{temporary}->{frag_hit_info}->{$id_fh}->{end_a2});
-                        $pci_table->element(${$id_row}, 'type_chem',     $type_chem);
-                        $pci_table->element(${$id_row}, 'id_chem',       $id_chem);
-                        $pci_table->element(${$id_row}, 'idcode',        $json->{temporary}->{frags}->{$id_frag}->{idcode});
-                        $pci_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$json->{temporary}->{frags}->{$id_frag}->{idcode}}); # inefficient but easier to put this in every row that needs it
-                        $pci_table->element(${$id_row}, 'pcid',          $json->{temporary}->{frag_hit_info}->{$id_fh}->{pcid});
-                        $pci_table->element(${$id_row}, 'e_value',       $json->{temporary}->{frag_hit_info}->{$id_fh}->{e_value});
-                        $pci_table->element(${$id_row}, 'conf',          $conf);
-                    }
+                    # common to all interaction types
+                    $pci_table->add_row(${$id_row});
+                    $pci_table->element(${$id_row}, 'id_fh',         $id_ch); # FIXME - contact hit not fragment hit
+                    $pci_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
+                    $pci_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
+                    $pci_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
+                    $pci_table->element(${$id_row}, 'site',          '(none)');
+                    $pci_table->element(${$id_row}, 'start_a1',      $ch->start_a1);
+                    $pci_table->element(${$id_row}, 'end_a1',        $ch->end_a1);
+                    $pci_table->element(${$id_row}, 'idcode',        $ch->idcode);
+                    $pci_table->element(${$id_row}, 'pdb_desc',      $json->{temporary}->{pdbs}->{$ch->idcode}); # inefficient but easier to put this in every row that needs it
+                    $pci_table->element(${$id_row}, 'pcid',          $ch->pcid);
+                    $pci_table->element(${$id_row}, 'e_value',       $ch->e_value);
+                    $pci_table->element(${$id_row}, 'conf',          $ch->conf);
+
+                    # unique to PCIs
+                    $pci_table->element(${$id_row}, 'id_seq_a2',     $ch->id_seq_a2); # FIXME - should a2 info be in other int tables too?
+                    $pci_table->element(${$id_row}, 'start_a2',      $ch->start_a2);
+                    $pci_table->element(${$id_row}, 'end_a2',        $ch->end_a2);
+                    $pci_table->element(${$id_row}, 'type_chem',     $type_chem);
+                    $pci_table->element(${$id_row}, 'id_chem',       $id_seq_b1);
                 }
             }
         }
