@@ -2033,7 +2033,7 @@ sub pci_table {
 
                         # common to all interaction types
                         $pci_table->add_row(${$id_row});
-                        $pci_table->element(${$id_row}, 'id_fh',         $id_ch); # FIXME - should be a contact hit not a fragment hit
+                        $pci_table->element(${$id_row}, 'id_ch',         $id_ch);
                         $pci_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
                         $pci_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
                         $pci_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
@@ -2073,7 +2073,7 @@ sub pci_table {
 
                     # common to all interaction types
                     $pci_table->add_row(${$id_row});
-                    $pci_table->element(${$id_row}, 'id_fh',         $id_ch); # FIXME - contact hit not fragment hit
+                    $pci_table->element(${$id_row}, 'id_ch',         $id_ch);
                     $pci_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
                     $pci_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
                     $pci_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
@@ -2148,7 +2148,7 @@ sub pdi_table {
 
                         # common to all interaction types
                         $pdi_table->add_row(${$id_row});
-                        $pdi_table->element(${$id_row}, 'id_fh',         $id_ch); # FIXME - should be a contact hit not a fragment hit
+                        $pdi_table->element(${$id_row}, 'id_ch',         $id_ch);
                         $pdi_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
                         $pdi_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
                         $pdi_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});
@@ -2188,7 +2188,7 @@ sub pdi_table {
 
                     # common to all interaction types
                     $pdi_table->add_row(${$id_row});
-                    $pdi_table->element(${$id_row}, 'id_fh',         $id_ch); # FIXME - contact hit not fragment hit
+                    $pdi_table->element(${$id_row}, 'id_ch',         $id_ch);
                     $pdi_table->element(${$id_row}, 'id_seq_a1',     $id_seq_a1);
                     $pdi_table->element(${$id_row}, 'name_a1',       $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{name});
                     $pdi_table->element(${$id_row}, 'primary_id_a1', $json->{results}->{$results_type}->{seqs}->{$id_seq_a1}->{primary_id});

@@ -121,8 +121,8 @@ sub mechismo {
                     site_table   => Fist::Utils::Table->new(column_names => [qw(id_seq name primary_id pos_a1 res1_a1 res2_a1 site user_input mismatch blosum62 disordered structure nP ppis nC pcis pdis mechProt mechChem mechDNA mechScore)]),
                     site_counts  => site_counts_new(),
                     ppi_table    => Fist::Utils::Table->new(column_names => [qw(id_ch id_seq_a1 name_a1 primary_id_a1 pos_a1 site start_a1 end_a1 id_seq_b1 name_b1 primary_id_b1 start_b1 end_b1 intev idcode pdb_desc homo pcid e_value conf ie ie_class sswitch)]),
-                    pci_table    => Fist::Utils::Table->new(column_names => [qw(id_fh id_seq_a1 name_a1 primary_id_a1 pos_a1 site start_a1 end_a1 id_seq_a2 start_a2 end_a2 type_chem id_chem idcode pdb_desc pcid e_value conf ie ie_class)]),
-                    pdi_table    => Fist::Utils::Table->new(column_names => [qw(id_fh id_seq_a1 name_a1 primary_id_a1 pos_a1 site start_a1 end_a1 id_seq_a2 start_a2 end_a2 idcode pdb_desc pcid e_value conf ie ie_class)]),
+                    pci_table    => Fist::Utils::Table->new(column_names => [qw(id_ch id_seq_a1 name_a1 primary_id_a1 pos_a1 site start_a1 end_a1 id_seq_a2 start_a2 end_a2 type_chem id_chem idcode pdb_desc pcid e_value conf ie ie_class)]),
+                    pdi_table    => Fist::Utils::Table->new(column_names => [qw(id_ch id_seq_a1 name_a1 primary_id_a1 pos_a1 site start_a1 end_a1 id_seq_a2 start_a2 end_a2 idcode pdb_desc pcid e_value conf ie ie_class)]),
                     struct_table => Fist::Utils::Table->new(column_names => [qw(id_fh id_seq_a1 name_a1 primary_id_a1 pos_a1 site start_a1 end_a1 id_seq_a2 start_a2 end_a2 idcode pdb_desc pcid e_value)]),
                    };
 
