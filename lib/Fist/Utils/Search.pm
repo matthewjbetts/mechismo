@@ -111,6 +111,7 @@ sub search_by_text {
                 @my_seqs = $schema->resultset('Seq')->search(
                                                              {
                                                               'aliases.alias'          => $alias,
+                                                              'source'                 => 'uniprot-sprot',
                                                               'seq_to_taxons.id_taxon' => {in => $json->{temporary_search}->{aliases}->{$alias}->{ids_taxa}},
                                                              },
                                                              {
