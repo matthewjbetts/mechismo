@@ -999,20 +999,6 @@ sub phos_switch_score {
            - a reference to a hash keyed by jsmol/pdb residue identifiers with values
              as the corresponding site labels
 
- returns : - a string containing jsmol/pdb residue identifiers of the
-             site residues
-           - a string containing jsmol/pdb residue identifiers of the
-             atoms in the fragment contact residues that differ from
-             the corresponding residues in the query
-           - a string containing jsmol/pdb residue identifiers of the
-             last common atoms of the fragment contact residues and
-             the corresponding residues in the query
-           - a reference to a hash keyed by positions in the query
-             with values as the corresponding jsmol/pdb residue
-             identifiers from the fragment
-           - a reference to a hash keyed by jsmol/pdb residue
-             identifiers with values as the corresponding site labels
-
 =cut
 
 
@@ -1159,7 +1145,7 @@ sub jmol_ss_str {
                             $labels_by_pdbres->{$pdbres_b2_with_model} = "$res_b1$pos_b1";
                         }
                     }
-            }
+                }
             }
             else {
                 $res_a1 = substr($aa_a1, $pos_a1 - 1, 1);

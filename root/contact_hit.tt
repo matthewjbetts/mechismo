@@ -54,8 +54,7 @@
   names.${seq_a2.id} = pdb.idcode _ '-' _ fi_a2.assembly _ '-' _ fi_a2.model _ ' ' _ f_a2.dom;
   posns = {};
   posns.${seq_a1.id} = posns_a1;
-  "An alignment between protein and template is given below.";
-  # INCLUDE alignment.tt aln=aln_a pcid=ch.pcid_a e_value=ch.e_value_a ids_seqs=ids_seqs names=names posns=posns;
+  INCLUDE alignment.tt aln=aln_a pcid=ch.pcid_a e_value=ch.e_value_a ids_seqs=ids_seqs names=names posns=posns;
 %]
    </div>
  </div>
@@ -64,14 +63,17 @@
 [% INCLUDE chem_desc.tt type_chem=type_chem_b id_chem=id_chem_b seq=seq_b1 suffix="_b1" posns=posns_b1 %]
 [% INCLUDE template_desc.tt type_chem=type_chem_b id_chem=id_chem_b seq=seq_b2 frag=f_b2 pdb=pdb assembly=fi_b2.assembly model=fi_b2.model start2=ch.start_b2 end2=ch.end_b2 pcid=ch.pcid_b e_value=ch.e_value_a suffix="_b2" %]
 
-[% 
-  ids_seqs = [seq_b1.id, seq_b2.id];
-  names = {};
-  names.${seq_b1.id} = seq_b1.name;
-  names.${seq_b2.id} = pdb.idcode _ '-' _ fi_b2.assembly _ '-' _ fi_b2.model _ ' ' _ f_b2.dom;
-  posns = {};
-  posns.${seq_b1.id} = posns_b1;
-  # INCLUDE alignment.tt aln=ch.hsp_b.aln pcid=ch.pcid_b e_value=ch.e_value_b ids_seqs=ids_seqs names=names posns=posns;
+[%
+
+  IF type_ch == "PPI"; 
+    ids_seqs = [seq_b1.id, seq_b2.id];
+    names = {};
+    names.${seq_b1.id} = seq_b1.name;
+    names.${seq_b2.id} = pdb.idcode _ '-' _ fi_b2.assembly _ '-' _ fi_b2.model _ ' ' _ f_b2.dom;
+    posns = {};
+    posns.${seq_b1.id} = posns_b1;
+    INCLUDE alignment.tt aln=ch.hsp_b.aln pcid=ch.pcid_b e_value=ch.e_value_b ids_seqs=ids_seqs names=names posns=posns;
+  END;
 %]
   </div>
  </div>

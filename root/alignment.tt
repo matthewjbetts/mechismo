@@ -48,7 +48,7 @@
 %]
 
 <div class="aln">
-  [% "${pcid}, E = ${e_value}"; %]
+  [% "Sequence identity = ${pcid}, E = ${e_value}"; %]
   <div class="aseqs">
     <ul class="ids">[% id_str %]</ul>
     <ul class="seqs">[% seq_str %]</ul>

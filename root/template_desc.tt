@@ -20,5 +20,5 @@
   #    "Scop: ${scop_str}<br/>";
   #  END;
   %]
-  <p>Protein-template similarity: [% pcid FILTER format('%.2f%%') %], E = [% e_value FILTER format('%.2e') %]</p>
+  <!-- <p>Protein-template similarity: [% pcid FILTER format('%.2f%%') %], E = [% e_value FILTER format('%.2e') %]</p> -->
 [% END %]
