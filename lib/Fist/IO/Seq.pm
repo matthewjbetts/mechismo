@@ -65,6 +65,7 @@ sub parse_uniprot {
     my $name;
     my $source;
     my $biofeature;
+    my $evidence;
     my $description;
     my $ac_src;
     my $feature;
@@ -141,12 +142,18 @@ sub parse_uniprot {
 
         # get sequence feature instances
         foreach $biofeature ($bioseq->get_SeqFeatures) {
-            $description = $biofeature->has_tag('description') ? join(' ', $biofeature->get_tag_values('description')) : '';
+            #$description = $biofeature->has_tag('description') ? join(' ', $biofeature->get_tag_values('description')) : '';
+
             $pmids = {};
-            while($description =~ /PubMed:(\d+)/g) {
-                $pmids->{$1}++;
+            if($biofeature->has_tag('evidence')) {
+                $evidence = join(' ', $biofeature->get_tag_values('evidence'));
+                while($evidence =~ /PubMed:(\d+)/g) {
+                    $pmids->{$1}++;
+                }
             }
             $pmids = [sort {$a <=> $b} keys %{$pmids}];
+
+            $description = $biofeature->has_tag('note') ? join(' ', $biofeature->get_tag_values('note')) : '';
 
             $ac_src = $biofeature->primary_tag;
             defined($ignore_features->{$ac_src}) and next;

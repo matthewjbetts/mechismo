@@ -1120,8 +1120,10 @@ sub jmol_ss_str {
 
                         $pdbres_b2 = join ':', $row->[$rc->{fields}->{resseq_b2}], $row->[$rc->{fields}->{chain_b2}];
                         $pdbres_b2_with_model = ($fi_b2->model > 0) ? sprintf("(model = %d) and %s", $fi_b2->model, $pdbres_b2) : $pdbres_b2;
-                        ($atomdiff_b2 = Fist::Utils::JSmol::pdbres_atomdiff($pdbres_b2, $res_b1, $res_b2)) and $atomdiffs_b2->{$atomdiff_b2}++;
-                        ($lca_b2 = Fist::Utils::JSmol::pdbres_lca($pdbres_b2, $res_b1, $res_b2)) and $lcas_b2->{$lca_b2}++;
+                        if($res_b1 ne '') {
+                            ($atomdiff_b2 = Fist::Utils::JSmol::pdbres_atomdiff($pdbres_b2, $res_b1, $res_b2)) and $atomdiffs_b2->{$atomdiff_b2}++;
+                            ($lca_b2 = Fist::Utils::JSmol::pdbres_lca($pdbres_b2, $res_b1, $res_b2)) and $lcas_b2->{$lca_b2}++;
+                        }
 
                         $site_resns_a2->{$pdbres_a2}++;
                         $contact_resns_a2->{$pdbres_a2}++;
