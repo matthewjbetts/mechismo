@@ -161,6 +161,21 @@ sub parse_uniprot {
             if(($ac_src eq 'MUTAGEN') or ($ac_src eq 'VARIANT')) {
                 $type = '';
                 ($wt, $mt) = ($description =~ /\A(\S+)->(\S+?):/) ? ($1, $2) : ('', '');
+
+                if($description =~ /\(in dbSNP/) {
+                    $type = 'dbSNP only'; # FIXME - parse out and use the dbSNP identifier
+                }
+                elsif($description =~ /\(in [a-z]+/) {
+                    $type = 'sample';
+                }
+                elsif($description =~ /\(in [A-Z]+/) {
+                    $type = 'disease'; # FIXME - parse out and use the disease info
+                }
+                else {
+                    $type = 'other';
+                }
+
+                # FIXME - a variant could have more than one type?...
             }
             elsif($ac_src eq 'MOD_RES') {
                 $type = ($description =~ /\A(.*?)[\.;]/) ? $1 : '';

@@ -602,6 +602,7 @@ sub json_new {
     my $extSite;
     my $source;
     my $ac_src;
+    my $type;
 
     $json = {
              # params are stored here as given and also after they have been processed.
@@ -659,8 +660,9 @@ sub json_new {
     foreach $extSite (@{$params->{extSites}}) {
         defined($extSite) or next;
         ($extSite eq 'all') and next;
-        ($source, $ac_src) = split /\|/, $extSite;
-        $json->{params}->{processed}->{extSites}->{$source}->{$ac_src}++;
+        ($source, $ac_src, $type) = split /\|/, $extSite;
+        print join("\t", 'EXT', $source, $ac_src, $type), "\n";
+        $json->{params}->{processed}->{extSites}->{$source}->{$ac_src}->{$type}++;
     }
 
     # ... which can then be overwritten by parameters in the URL / search form...

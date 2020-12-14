@@ -192,7 +192,7 @@ sub aseq {
         #print join("\t", 'ASEQ', $self->id, $id_seq), "\n";
         #$aseq = $self->find_related('aligned_seqs', {id_seq => $id_seq});
         $aseq = $schema->resultset('AlignedSeq')->find({id_aln => $self->id, id_seq => $id_seq});
-        #(ref($aseq) ne '') or warn("Error: '$aseq' is not a reference");
+        (ref($aseq) ne '') or Carp::cluck("Error: '$aseq' (id_aln = '", $self->id, "', id_seq = '", $id_seq, "' is not a reference");
         $self->cache->set($key, $schema->freeze($aseq));
     }
 
