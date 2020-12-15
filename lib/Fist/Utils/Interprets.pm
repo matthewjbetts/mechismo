@@ -78,10 +78,13 @@ sub run_interprets {
     # work directly with interprets. Would need to merge the hsp alignment and the
     # alignment for the seq group of the fragment
 
-    # FIXME - no longer storing the interprets sequence, so will have to generate it
 
     $seq_a1 = $self->seq_a1;
-    $seq_a2 = $self->frag_inst_a2->frag->interprets_seq;
+
+    # no longer storing the interprets sequence, so will have to generate it
+    #$seq_a2 = $self->contact->frag_inst1->frag->interprets_seq;
+    $seq_a2 = $self->contact->frag_inst1->frag->run_interprets_fasta;
+    $seq_a2 = $seq_a2->{$self->contact->frag_inst1->frag->id};
     $tmpfile_aln_a = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
 
     $cmd = "muscle -clwstrict -quiet > $tmpfile_aln_a 2> /dev/null";
@@ -89,12 +92,16 @@ sub run_interprets {
 	warn "Error: aln_muscle: cannot open pipe to '$cmd'.";
 	return undef;
     }
-    printf $fh ">%s\n%s\n>%s\n%s\n", $seq_a1->id, $seq_a1->seq, $self->frag_inst_a2->id, $seq_a2->seq;
+    printf $fh ">%s\n%s\n>%s\n%s\n", $seq_a1->id, $seq_a1->seq, $self->contact->frag_inst1->id, $seq_a2;
     close($fh);
 
     # output b1b2 alignment
     $seq_b1 = $self->seq_b1;
-    $seq_b2 = $self->frag_inst_b2->frag->interprets_seq;
+
+    # no longer storing the interprets sequence, so will have to generate it
+    #$seq_b2 = $self->contact->frag_inst2->frag->interprets_seq;
+    $seq_b2 = $self->contact->frag_inst2->frag->run_interprets_fasta;
+    $seq_b2 = $seq_b2->{$self->contact->frag_inst2->frag->id};
     $tmpfile_aln_b = File::Temp->new(DIR => $self->tempdir, UNLINK => $self->cleanup);
 
     $cmd = "muscle -clwstrict -quiet > $tmpfile_aln_b 2> /dev/null";
@@ -102,7 +109,7 @@ sub run_interprets {
 	warn "Error: aln_muscle: cannot open pipe to '$cmd'.";
 	return undef;
     }
-    printf $fh ">%s\n%s\n>%s\n%s\n", $seq_b1->id, $seq_b1->seq, $self->frag_inst_b2->id, $seq_b2->seq;
+    printf $fh ">%s\n%s\n>%s\n%s\n", $seq_b1->id, $seq_b1->seq, $self->contact->frag_inst2->id, $seq_b2;
     close($fh);
 
     # run interprets

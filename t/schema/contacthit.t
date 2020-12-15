@@ -10,8 +10,8 @@ my $conf;
 my %config;
 my $schema;
 my $contacthit;
-my $contacthit2;
-my $res;
+my $frag_a2;
+my $seq_a2;
 my $tempdir;
 my $raw;
 my $mean;
@@ -33,6 +33,14 @@ $tempdir = File::Temp->newdir(CLEANUP => 0);
 
 $contacthit->cleanup(1);
 $contacthit->tempdir($tempdir);
+
+$frag_a2 = $contacthit->contact->frag_inst1->frag;
+ok(defined($frag_a2), 'got frag_a2');
+$seq_a2 = $frag_a2->run_interprets_fasta;
+$seq_a2 = $seq_a2->{$frag_a2->id};
+ok(defined($seq_a2), 'got interprets sequence');
+#ok(ref $seq_a2 eq 'Fist::NonDB::
+
 ($raw, $mean, $sd, $z) = $contacthit->run_interprets(mode => 4, rand => 200);
 ok(defined($raw), 'ran interprets');
 

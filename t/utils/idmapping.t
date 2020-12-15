@@ -55,19 +55,20 @@ for($space = 1; $space <= $n_spaces; $space++) {
         for($id_old = 1; $id_old <= $n; $id_old++) {
             $id_new = $id_mapping->id_new($space, $type, $id_old);
             store_mapping($my_mapping, $unique, $space, $type, $id_old, $id_new);
-            #print join("\t", $space, $type, $id_old, $id_new), "\n";
+            print "space = $space, type = $type, id_old = $id_old, id_new = $id_new\n";
         }
     }
 }
 
 # add some old identifiers to a space already seen
-if(1) {
+# FIXME - this doesn't work - all ids from the same space should be dealt with before moving on to another space
+if(0) {
     $space = 1;
     $type = 'TestA';
     for($id_old = $n + 1; $id_old <= $n + 10; $id_old++) {
         $id_new = $id_mapping->id_new($space, $type, $id_old);
         store_mapping($my_mapping, $unique, $space, $type, $id_old, $id_new);
-        #print join("\t", $space, $type, $id_old, $id_new), "\n";
+        print "space = $space, type = $type, id_old = $id_old, id_new = $id_new\n";
     }
 }
 
@@ -91,12 +92,12 @@ sub check_unique {
     my $id_new;
 
     $n_not_unique = 0;
-    foreach $type (keys %{$unique}) {
-        foreach $id_new (keys %{$unique->{$type}}) {
+    foreach $type (sort keys %{$unique}) {
+        foreach $id_new (sort {$a <=> $b} keys %{$unique->{$type}}) {
             #(scalar(keys(%{$unique->{$type}->{$id_new}})) > 1) and ++$n_not_unique;
             if(scalar(keys(%{$unique->{$type}->{$id_new}})) > 1) {
-                print join("\t", $type, $id_new, sort(keys(%{$unique->{$type}->{$id_new}}))), "\n";
-                ++$n_not_unique;
+                print "type = $type, id_new = $id_new, old = [", join('; ', sort(keys(%{$unique->{$type}->{$id_new}}))), "]\n";
+               ++$n_not_unique;
             }
         }
     }

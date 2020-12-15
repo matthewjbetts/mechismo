@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More;
+use Test::More skip_all => 'PBS jobs currently unsupported';
 
 use Fist::Utils::PBS;
 use Config::General;

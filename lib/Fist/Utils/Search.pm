@@ -362,8 +362,8 @@ sub copy_sites_from_search {
     my $posns_to_keep;
     my $pos;
 
-    $dn_search = $json->{params}->{given}->{dn_search};
-    $id_search = $json->{params}->{given}->{id_search};
+    defined($dn_search = $json->{params}->{given}->{dn_search}) or return(0);
+    defined($id_search = $json->{params}->{given}->{id_search}) or return(0);
     $dn = join '', $id_search, '/', $seq->id, '.', $seq->primary_id, '/';
     $fn = join '', $dn, join('.', $id_search, $seq->id, $seq->primary_id, 'site_info', 'json.gz');
     $site_info = read_json_file("$dn_search$fn");

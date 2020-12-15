@@ -16,7 +16,14 @@ $conf = Config::General->new('fist.conf');
 eval { $schema = Fist::Schema->connect($config{"Model::FistDB"}->{connect_info}->{dsn}, $config{"Model::FistDB"}->{connect_info}->{user}, $config{"Model::FistDB"}->{connect_info}->{password}); };
 ok(!$@, 'connect to schema');
 
-eval { $job = $schema->resultset('Job')->new_result({id_search => "wibble", type => "long", status => "finished"}); };
+eval {
+    $job = $schema->resultset('Job')->new_result({
+                                                  id_search  => "wibble",
+                                                  queue_name => "wibble",
+                                                  type       => "long",
+                                                  status     => "finished",
+                                                 });
+};
 ok(!$@, 'construct job object');
 
 eval { $job->insert; };
