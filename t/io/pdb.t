@@ -87,15 +87,15 @@ foreach $frag ($pdb->frags) {
         $seqgroup->add_to_alignments($aln);
         @alns = $seqgroup->alignments;
         ok(@alns == 1, 'alignment added to seqgroup');
+
+        # write pdbfile for frag
+        $pdbfile = $frag->write_pdbfile;
+        ok($pdbfile, 'pdb file written');
+
+        # run dssp
+        $dssp_residues = $frag->run_dssp;
+        ok($dssp_residues, 'dssp ran');
     }
-
-    # write pdbfile for frag
-    $pdbfile = $frag->write_pdbfile;
-    ok($pdbfile, 'pdb file written');
-
-    # run dssp
-    $dssp_residues = $frag->run_dssp;
-    ok($dssp_residues, 'dssp ran');
 }
 
 $pdbio = Fist::IO::Pdb->new(fn => 't/files/pdb11as.ent.gz');
