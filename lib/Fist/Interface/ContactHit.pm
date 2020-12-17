@@ -549,7 +549,7 @@ sub res_contact_table_list {
             if(defined($seqB2)) {
                 $bondType = $fist_contacts->{pos}->{$posA2}->{$posB2}->[6];
 
-                defined($bondType) or print(join("\t", 'MISSING', $self->id, $self->contact->id, $posA2, $posB2), "\n");
+                defined($bondType) or next; # FIXME
 
                 # convert bondType using bit masks in c/contact.h
                 $bondTypes = [];
