@@ -14,6 +14,7 @@
     * [ ] remove Interface and NonDB versions of libraries
     * [ ] identify and replace code added to 'do not change' sections of DBIx::Class objects
   * [ ] remove repetition of column names eg. in IO modules
+  * output TSV wherever practical, rather than json
 * [ ] c programs
     * [ ] add them to my path
     * [ ] make them part of the installation makefile

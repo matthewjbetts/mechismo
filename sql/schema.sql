@@ -660,7 +660,8 @@ CREATE TABLE ContactHit (
        INDEX(id_seq_a2, start_a2, end_a2),
        INDEX(id_seq_b2, start_b2, end_b2),
        INDEX(pcid_a),
-       INDEX(pcid_b)
+       INDEX(pcid_b),
+       INDEX(id_contact),
 
        #INDEX(n_resres_a1b1),
        #INDEX(e_value_a),
