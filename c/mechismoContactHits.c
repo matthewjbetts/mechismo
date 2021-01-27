@@ -188,6 +188,7 @@ int contactHitNR(
                     fprintf(stderr, "Error: calloc failed for discardCh.\n");
                     continue;
                 }
+
                 for(j = 0; j < contactHitsInteractor->n; j++) {
                     ch1 = (CONTACTHIT *) contactHitsInteractor->all[j];
                     if(discardCh[j] == 0) {
@@ -203,14 +204,20 @@ int contactHitNR(
                            || (ch1->nResResA1B1 < minPCIResRes) // FIXME - assumes minPCIResRes is less than minPPIResRes and minPDIResRes
                            ) {
                             discardCh[j] = 1;
-                            //printf("discarding %u\n", ch1->id);
+                            //printf("discarding %06d %06d %s %s: minResRes threshold not reached\n", i, j, idSeqA1, idInteractor);
                             contactHitResiduesDelete(ch1);
+                            //contactHitOutput(ch1, stdout, stdout);
                             continue;
                         }
                         contactHitOutput(ch1, fhContactHit, fhContactHitResidue);
                         contactHitResiduesDelete(ch1);
+                        //printf("keeping %06d %06d\n", i, j);
+                        //contactHitOutput(ch1, stdout, stdout);
 
-                        if(++nTemplates >= maxNTemplates) break;
+                        if(++nTemplates >= maxNTemplates) {
+                            //printf("maxNTemplates (%d) reached\n", maxNTemplates);
+                            break;
+                        }
 
                         idGroup1 = (char *) hashGetElement(contactToGroup, idContactKey1);
                         if(idGroup1 != NULL) {
@@ -224,7 +231,8 @@ int contactHitNR(
                                     // are the contacts in the same contact group?
                                     if((idGroup2 != NULL) && (strcmp(idGroup2, idGroup1) == 0)) {
                                         discardCh[k] = 1;
-                                        //printf("discarding %u\n", ch2->id);
+                                        //printf("discarding %06d %06d %s %s: same group (%d) as %06d\n", i, k, idSeqA1, idInteractor, idGroup2, j);
+                                        //contactHitOutput(ch2, stdout, stdout);
                                     }
 
                                     // old measure of redundancy - hits overlap on both A1 and B1
